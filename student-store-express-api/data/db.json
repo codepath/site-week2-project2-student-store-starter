@@ -1,0 +1,149 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Rice Krispies",
+      "category": "food",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/cd/RKTsquares.jpg",
+      "source": "https://en.wikipedia.org/wiki/Rice_Krispies_Treats",
+      "description": "Delicious corn-based rice grains melted together with marshmallows into a square-like shape.",
+      "price": 0.99
+    },
+    {
+      "id": 2,
+      "name": "Flamin Hot Cheetos",
+      "category": "food",
+      "image": "https://static.openfoodfacts.org/images/products/896/400/009/0879/front_en.14.full.jpg",
+      "source": "https://world.openfoodfacts.org/cgi/product_image.pl?code=8964000090879&id=front_en",
+      "description": "No one knows what's in the powder that covers these snacks, but wow is it amazing!",
+      "price": 1.5
+    },
+    {
+      "id": 3,
+      "name": "Cinnamon Rolls",
+      "category": "food",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Johns_Inc_Cinnamon_Rolls.jpg",
+      "source": "https://en.wikipedia.org/wiki/File:Johns_Inc_Cinnamon_Rolls.jpg",
+      "description": "Basically just cake for breakfast, but who's complaining?",
+      "price": 2.99
+    },
+    {
+      "id": 4,
+      "name": "Coconut Water",
+      "category": "food",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Coconut_Drink%2C_Pangandaran.JPG/1920px-Coconut_Drink%2C_Pangandaran.JPG",
+      "source": "https://commons.wikimedia.org/wiki/Category:Coconut_water#/media/File:Coconut_Drink,_Pangandaran.JPG",
+      "description": "Somehow incredibly hydrating, while also not really being water.",
+      "price": 3.25
+    },
+    {
+      "id": 5,
+      "name": "Fruit Medley",
+      "category": "food",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Fruits.png/640px-Fruits.png",
+      "source": "https://commons.wikimedia.org/wiki/File:Fruits.png",
+      "description": "More fruit than you know what to do with!",
+      "price": 7.5
+    },
+    {
+      "id": 6,
+      "name": "Bar Code Shirts",
+      "category": "clothing",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Barcode_wikipedia_shirt.svg/640px-Barcode_wikipedia_shirt.svg.png",
+      "source": "https://commons.wikimedia.org/wiki/File:Barcode_wikipedia_shirt.svg",
+      "description": "So you can scan yourself in the checkout aisle.",
+      "price": 19.99
+    },
+    {
+      "id": 7,
+      "name": "Striped Socks",
+      "category": "clothing",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Bulk_tube_socks.png",
+      "source": "https://commons.wikimedia.org/wiki/File:Bulk_tube_socks.png",
+      "description": "Because the dryer ate most of your socks and it never hurts to have another clean pair.",
+      "price": 4.99
+    },
+    {
+      "id": 8,
+      "name": "Knitted Beanie",
+      "category": "clothing",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Blue_knit-cap_beanie_by_RobertLender.jpeg/640px-Blue_knit-cap_beanie_by_RobertLender.jpeg",
+      "source": "https://commons.wikimedia.org/wiki/File:Blue_knit-cap_beanie_by_RobertLender.jpeg",
+      "description": "Keeps your head absurdly warm while the rest of your body freezes.",
+      "price": 19.99
+    },
+    {
+      "id": 9,
+      "name": "Pullover Sweater",
+      "category": "clothing",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Jumper_altered_PsCSJPG10.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Jumper_altered_PsCSJPG10.jpg",
+      "description": "At $4.99, can you really afford NOT to buy this?",
+      "price": 4.99
+    },
+    {
+      "id": 10,
+      "name": "Alpaca Wool Scarf",
+      "category": "clothing",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Alpaca_wool_scarf.JPG/800px-Alpaca_wool_scarf.JPG",
+      "source": "https://commons.wikimedia.org/wiki/File:Alpaca_wool_scarf.JPG",
+      "description": "Legends say that the Alpaca knitted this scarf from its own fur.",
+      "price": 34.99
+    },
+    {
+      "id": 11,
+      "name": "Matching Rings",
+      "category": "accessories",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Wedding_rings.jpg/800px-Wedding_rings.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Wedding_rings.jpg",
+      "description": "Ball out and get one for each finger!",
+      "price": 200
+    },
+    {
+      "id": 12,
+      "name": "Apple Watch",
+      "category": "accessories",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Apple_Watch.jpg/800px-Apple_Watch.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Apple_Watch.jpg",
+      "description": "Why check your phone all the time when you can check your watch all the time?",
+      "price": 399.99
+    },
+    {
+      "id": 13,
+      "name": "Copper Bracelet",
+      "category": "accessories",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Copper_bracelet_04.jpg/640px-Copper_bracelet_04.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Copper_bracelet_04.jpg",
+      "description": "Compliment this accessory with a batter and some wire and you have yourself a portable charger right on your wrist!",
+      "price": 70
+    },
+    {
+      "id": 14,
+      "name": "Keyboard",
+      "category": "tech",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Apple-wireless-keyboard.jpg/800px-Apple-wireless-keyboard.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Apple-wireless-keyboard.jpg",
+      "description": "A wireless keyboard for your computer! Because who doesn't like walking around while they type up an essay.",
+      "price": 110
+    },
+    {
+      "id": 15,
+      "name": "Mouse from 1998",
+      "category": "tech",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Mouse_Microsoft_PS2.jpg/640px-Mouse_Microsoft_PS2.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Mouse_Microsoft_PS2.jpg",
+      "description": "Check out this fancy Microsoft mouse that was in use right before the dot com bubble crash of the 2000s! It's a collectors' item that still works great. Brings back that 'on the verge of the world collapsing' feeling.",
+      "price": 19.98
+    },
+    {
+      "id": 16,
+      "name": "Smart Glasses",
+      "category": "tech",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Google_Glass_photo.JPG/330px-Google_Glass_photo.JPG",
+      "source": "https://en.wikipedia.org/wiki/Google_Glass",
+      "description": "Have the internet mounted to your face, and get the added benefit of looking silly all the time!",
+      "price": 999.99
+    }
+  ],
+  "purchases": []
+}
