@@ -1,0 +1,32 @@
+.hero{
+    transform: translateY(15%);
+}
+
+.hero .content{
+    background-color: #00c385;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+}
+
+.hero-media{
+    min-height: 100%;
+    width: auto;
+}
+
+.intro{
+    color:white;
+    max-width: 80%;
+}
+.intro h1{
+    margin: 0;
+    font-size: 3rem;
+}
+.intro span{
+    font-size: 1.5rem;
+}
+
+.hero-img {
+    width: 7rem;
+}
