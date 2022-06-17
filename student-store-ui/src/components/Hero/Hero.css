@@ -4,7 +4,7 @@
     justify-content: center;
     background-color: #21D4FD;
     background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);    
-    margin-top: 5%;
+    margin-top: 3%;
 
 
 }
@@ -16,7 +16,11 @@
     color: white;
 
 }
-
+.heading1 {
+    margin-top: 10%;
+    margin-bottom: 0%;
+    font-size: 500%;
+}
 
 .welcome-headings {
     display: inline-block;

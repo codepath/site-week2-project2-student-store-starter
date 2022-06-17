@@ -24,6 +24,7 @@ export default function App() {
   const [shoppingCart, setShoppingCart] = useState([]); 
   const [checkoutForm, setCheckoutForm] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("All Categories")
+ 
 
 
 
@@ -57,11 +58,11 @@ export default function App() {
         <Navbar />
         <Sidebar /> 
         <Routes>
-          <Route path = "/" element = {<Home products = {products} selectedCategory = {selectedCategory} setSelectedCategory = {setSelectedCategory}/>} />
+          <Route path = "/" element = {<Home products = {products} selectedCategory = {selectedCategory} setSelectedCategory = {setSelectedCategory}/>}  />
           <Route path = "/products/:productId" element = {<ProductDetail isFetching = {isFetching} setIsFetching = {setIsFetching} error = {error} setError = {setError}/>} /> 
           <Route path = "*" element = {<NotFound />}/> 
         </Routes> 
-        <Footer/>
+        {/* <Footer/> */}
 
       </BrowserRouter>
     </div>

@@ -83,9 +83,31 @@
 }
 
 .category {
-  margin-right: 10%;
+
   color: #000000; font-family: 'Raleway',sans-serif; font-size: 18px; font-weight: 500; line-height: 32px; 
+
+
+}
+.category-menu, .category {
+  display: flex;
+  margin-right: 10%;
+  align-items: center;
   cursor: pointer;
+
+
+
+
+}
+
+
+.category-menu, .category {
+  position: relative;
+  top: 0;
+  transition: top ease 1s;
+}
+
+.category-menu:hover, .category:hover{
+  top: -10px;
   border-bottom: solid 2px;
   border-bottom-color:  rgb(22, 113, 233);
 }
