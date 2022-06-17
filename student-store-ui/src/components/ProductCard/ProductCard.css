@@ -6,6 +6,7 @@
     margin-left: 150px;
     background-color: white;
     margin-bottom: 5%;
+    border-radius: 5%;
 }
 
 .product-image {
@@ -15,10 +16,16 @@
 }
 
 .product-details {
-    font-family: sans-serif;
+    font-family: Arial;
     width: 350px;
+    margin-left: 5%;
+    
 
     
 }
 
+
+.product-name {
+    margin-bottom: 0;
+}
 

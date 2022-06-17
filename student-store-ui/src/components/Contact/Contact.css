@@ -1,0 +1,19 @@
+.text-container {
+    display: flex;
+    justify-content: center;
+    background: rgb(44, 64, 71);
+    margin: 20%;
+    margin-top: 2%;
+}
+
+.info, .personal-info {
+    list-style-type: none;
+    color: white;
+}
+
+.happy-person {
+    margin-left: 20%;
+    margin-top: 10%;
+    margin-bottom: 0;
+}
+

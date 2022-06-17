@@ -3,6 +3,7 @@ import "./Home.css"
 import Hero from "../Hero/Hero"
 import About from "../About/About"
 import ProductGrid from "../ProductGrid/ProductGrid"
+import Contact from "../Contact/Contact"
 
 export default function Home(props) {
 
@@ -45,12 +46,15 @@ export default function Home(props) {
       </div>
 
 
-
+      <h2 className = "about-header"> About</h2>
       <div className = "about-container">
         <About />
       </div>
 
-
+      <h2 className = "contact-header"> Contact</h2>
+      <div className = "contact-container">
+        <Contact />
+      </div>
     </div>
   )
 }

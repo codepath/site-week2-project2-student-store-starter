@@ -12,10 +12,10 @@ export default function ProductCard(props) {
     <div className = "product-card">
         <Link to = {linkAddress}><img className = "product-image" src={props.image} alt="product image" /></Link>
         <div className = "product-details">
-            <h3 className = "product-name">{props.name}</h3>
+            <h5 className = "product-name">{props.name}</h5>
             <button className = "add"><i class="fa-solid fa-cart-plus"></i></button>
             <button className = "remove"><i class="fa-solid fa-trash-can"></i></button>
-            <h5 className = "product-price">Price: ${price}</h5>
+            <p className = "product-price"><i class="fa-solid fa-coins"></i>  ${price}</p>
         </div>
 
 

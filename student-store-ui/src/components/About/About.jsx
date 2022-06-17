@@ -5,7 +5,7 @@ import codepathLogo from '../codepath_icon.webp'
 export default function About() {
   return (
     <div className="About">
-    <h2 className = "heading"> About</h2>
+    
       <div className="about-container">
 
         <div className = "about-texts">

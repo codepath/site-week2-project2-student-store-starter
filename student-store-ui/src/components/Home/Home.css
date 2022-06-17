@@ -6,6 +6,7 @@
   justify-content: center;
   width: 100%;
 
+
   
 }
 
@@ -41,7 +42,6 @@
 .about-container {
   display: flex;
   justify-content: center;
-  margin-top: 20%;
 }
 
 
@@ -88,4 +88,17 @@
   cursor: pointer;
   border-bottom: solid 2px;
   border-bottom-color:  rgb(22, 113, 233);
+}
+
+.about-header, .contact-header {
+  display: flex;
+  justify-content: center;
+  margin-right: 59%;
+  margin-bottom: .5%;
+}
+
+.contact-header {
+  margin-top:10%;
+  margin-bottom: 0;
+  margin-left: 4%;
 }

@@ -4,7 +4,7 @@ import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
 import "./App.css"
 
-import { BrowserRouter, Routes, Route, } from "react-router-dom"
+import { BrowserRouter, Routes, Route, useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 
 import NotFound from "../NotFound/NotFound"
@@ -58,10 +58,10 @@ export default function App() {
         <Sidebar /> 
         <Routes>
           <Route path = "/" element = {<Home products = {products} selectedCategory = {selectedCategory} setSelectedCategory = {setSelectedCategory}/>} />
-          <Route path = "/products/:productId" element = {<ProductDetail />} /> 
+          <Route path = "/products/:productId" element = {<ProductDetail isFetching = {isFetching} setIsFetching = {setIsFetching} error = {error} setError = {setError}/>} /> 
           <Route path = "*" element = {<NotFound />}/> 
         </Routes> 
-        {/* <Footer/> */}
+        <Footer/>
 
       </BrowserRouter>
     </div>
