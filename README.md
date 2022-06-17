@@ -4,17 +4,24 @@
 
 Selling merchandise in the modern era requires digital solutions. For this project, you'll be tasked with designing and constructing an online student store for the College of Codepath. The application entails a frontend user interface for potential customers to peruse the goods, and a backend API to handle data management. The API will be built with Node and Express and the UI will be built with React.
 
-// Include your gif here
+Displays the header, banner, search, product grid, about, contact, and footer sections.
+![](https://i.imgur.com/LPO7UW1.gif)
+
+User can sort by clicking the cateogories and can search for products
+![](https://i.imgur.com/SCnDX96.gif)
+
+User can click on a product in the grid to view additional product details with a React Router. User can click the logo in the navigation bar to return to the home page
+![](https://i.imgur.com/GdvQFfa.gif)
 
 ### Application Features
 
 #### Core Features
 
-- [ ] Displays the following sections: header, banner, search, product grid, about, contact, and footer.
-- [ ] On initial page load, display the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store).
-- [ ] User can click on the categories (Clothing, food, etc) to filter the product grid by type.
-- [ ] User can search for products.
-- [ ] User can click on a product in the grid to view additional product details. Navigation is via a React Router.
+- [X] Displays the following sections: header, banner, search, product grid, about, contact, and footer.
+- [X] On initial page load, display the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store).
+- [X] User can click on the categories (Clothing, food, etc) to filter the product grid by type.
+- [X] User can search for products.
+- [X] User can click on a product in the grid to view additional product details. Navigation is via a React Router.
 - [ ] User can click to expand the shopping cart in the left navigation.
 - [ ] User can click the '+' button on a product cart to increment that product in the shopping cart.
 - [ ] User can click the '-' button on a product cart to increment that product in the shopping cart.
