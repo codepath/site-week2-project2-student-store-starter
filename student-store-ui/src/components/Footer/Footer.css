@@ -17,14 +17,14 @@
 }
 
 .footer-column > h3 {
-    weight: 400;
+    font-weight: 400;
     font-size: 1.3em;
     color: var(--codepath-dark-grey);
 }
 
 
 .footer-column > p {
-    weight: 400;
+    font-weight: 400;
     color: var(--font-secondary)
 }
 
