@@ -22,7 +22,6 @@ export default function App() {
   const [isOpen, setIsOpen] = React.useState(false);
   const [shoppingCart, setShoppingCart] = React.useState([shoppingCartObject]);
   const [checkoutForm, submitCheckoutForm] = React.useState({});
-  console.log(products)
   useEffect(() => {
     // Update the document title using the browser API
 
