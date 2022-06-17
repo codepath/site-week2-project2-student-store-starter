@@ -1,0 +1,19 @@
+.hero .content {
+    background: #00c385;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+}
+
+.intro{
+    color:white;
+    max-width: 80%;
+}
+.intro h1{
+    margin: 0;
+    font-size: 3rem;
+}
+.intro span{
+    font-size: 1.5rem;
+}

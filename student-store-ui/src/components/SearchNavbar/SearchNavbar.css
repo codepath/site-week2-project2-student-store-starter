@@ -1,0 +1,6 @@
+.product-categories{
+    display: flex;
+    padding-right: 2rem;
+    min-width: 65%;
+    align-items: center;
+}

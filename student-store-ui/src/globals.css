@@ -9,3 +9,20 @@ body {
 * {
   box-sizing: border-box;
 }
+
+.content{
+  margin: 0 10rem;
+}
+
+.footer {
+  width: 100%;
+  max-width: 100vw;
+  height: 350px;
+  background: whitesmoke; 
+}
+
+.footer .content .top {
+  flex: 1;
+  padding-top: 40px;
+}
+

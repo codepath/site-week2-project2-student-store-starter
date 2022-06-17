@@ -1,0 +1,15 @@
+.product-card {
+    height: 350px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+}
+
+.media img {
+    width: 100%;
+    max-width: 500px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+}
