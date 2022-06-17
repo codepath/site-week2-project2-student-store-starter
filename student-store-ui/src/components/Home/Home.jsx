@@ -19,11 +19,11 @@ export default function Home(props) {
   return (
     <div className="home" id="header">
       <Hero/>
-      <SubNavbar searchInput={props.searchInput} handleOnSearch={props.handleOnSearch} activeCategory={props.activeCategory} setActiveCategory={props.setActiveCategory}/>
+      <SubNavbar setIsOpen={props.setIsOpen} searchInput={props.searchInput} handleOnSearch={props.handleOnSearch} activeCategory={props.activeCategory} setActiveCategory={props.setActiveCategory}/>
       <ProductGrid products={productList} handleAddItemToCart={props.handleAddItemToCart} handleRemoveItemFromCart={props.handleRemoveItemFromCart} shoppingCart={props.shoppingCart}/>
       <About />
       <Contact />
-      <Footer />
+      <Footer setActiveCategory={props.setActiveCategory}/>
     </div>
   )
 }
@@ -87,7 +87,7 @@ export function Contact(){
 }
 
 
-export function Footer(){
+export function Footer(props){
   return(
     <footer className="footer">
       <div className="content">
@@ -96,11 +96,11 @@ export function Footer(){
             <div className="link-column">
               <h4>Categories</h4>
               <ul>
-                <li className="footer-li">All Categories</li>
-                <li className="footer-li">Clothing</li>
-                <li className="footer-li">Food</li>
-                <li className="footer-li">Accessories</li>
-                <li className="footer-li">Tech</li>
+                <li className="footer-li"><a href="#buy" onClick={()=>props.setActiveCategory("All Categories")}>All Categories</a></li>
+                <li className="footer-li"><a href="#buy" onClick={()=>props.setActiveCategory("Clothing")}>Clothing</a></li>
+                <li className="footer-li"><a href="#buy" onClick={()=>props.setActiveCategory("Food")}>Food</a></li>
+                <li className="footer-li"><a href="#buy" onClick={()=>props.setActiveCategory("Accessories")}>Accessories</a></li>
+                <li className="footer-li"><a href="#buy" onClick={()=>props.setActiveCategory("Tech")}>Tech</a></li>
               </ul>
             </div>
             <div className="link-column">

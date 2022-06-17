@@ -20,6 +20,11 @@
 .product-card .media img{
     height: 250px;
     width: 248px;
+    transition: all .2s ease-in-out
+}
+
+.product-card .media img:hover{
+    transform: scale(1.05);
 }
 
 .product-card .product-info{

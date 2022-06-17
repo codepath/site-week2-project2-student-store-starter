@@ -100,6 +100,17 @@
   color: #5b5b5b !important;
   padding: .5rem 0 !important;
   font-weight: normal !important;
+  cursor: pointer;
+}
+
+.footer-li a{
+  color: #5b5b5b;
+  font-weight: normal;
+  padding: 0;
+}
+
+.footer-li:hover{
+  text-decoration: underline;
 }
 
 .payment-options{

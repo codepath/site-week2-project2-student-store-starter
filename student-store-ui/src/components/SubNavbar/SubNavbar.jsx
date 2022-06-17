@@ -18,7 +18,7 @@ return (
                         <i className="fa-solid fa-circle-question"></i>
                         <span>Help</span>
                     </div>
-                    <div className="my-cart">
+                    <div className="my-cart" onClick={() => props.setIsOpen(true)}>
                         My Cart <i className="fa-solid fa-cart-shopping"></i>
                     </div>
                 </div>
