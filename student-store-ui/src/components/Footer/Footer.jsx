@@ -31,8 +31,8 @@ export function FooterColumn( {mainLabel, links}) {
   return (
     <div className="footer-column">
       <h3>{mainLabel}</h3>
-      {links.map(link =>
-        <p>{link}</p>  
+      {links.map((link, index) =>
+        <p key={index}>{link}</p>  
       )}
     </div>
     )
