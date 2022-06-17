@@ -8,20 +8,25 @@ import "./Home.css"
 export default function Home(props) {
 
   const [activeCategory, setActiveCategory] = React.useState(null)
-  const [searchboxInput, setSearchboxInput] = React.useState("")
+  const [searchQuery, setSearchQuery] = React.useState("")
+
+  console.log(searchQuery)
+
 
   return (
     <div className="home">
       <Hero />
       <div className="main-content">
         <div className="product-area">
-          <Searchbar />
+          <Searchbar 
+            setSearchQuery={setSearchQuery}/>
           <CategoryFilterBar
             activeCategory={activeCategory}
             setActiveCategory={setActiveCategory}/>
           <ProductGrid
             products={props.products}
             activeCategory={activeCategory}
+            searchQuery={searchQuery}
             handleAddItemToCart={props.handleAddItemToCart}
             handleRemoveItemFromCart={props.handleRemoveItemFromCart}/>
         </div>
@@ -32,12 +37,15 @@ export default function Home(props) {
   )
 }
 
-export function Searchbar() {
+export function Searchbar( {setSearchQuery}) {
   return (
-  <form>
-    <input type="text" id="searchbox" placeholder="Search"></input>
-    <button id="search-button">Search</button>
+  <form className="search-bar">
+    <input type="text" id="searchbox-input" placeholder="Search"
+      onChange={(evt) => setSearchQuery(evt.target.value.toLocaleLowerCase())}
+      ></input>
+    <button id="search-button" className="fa fa-search"></button>
   </form>
+
   )
 }
 

@@ -6,6 +6,10 @@ export default function ProductGrid(props) {
   
   // if there is a chosen category, render the appropriate products else render all
   let productsToRender = props.activeCategory ? props.products.filter(product => product.category == props.activeCategory) : props.products
+  
+  if (props.searchQuery) {
+    productsToRender = productsToRender.filter(product => product.name.toLowerCase().includes(props.searchQuery))
+  }
 
   return (
     <div className="product-grid">
