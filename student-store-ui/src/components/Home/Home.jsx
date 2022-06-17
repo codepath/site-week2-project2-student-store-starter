@@ -9,6 +9,7 @@ export default function Home(props) {
 
   const [activeCategory, setCategory] = React.useState(null)
   const [search, setSearch] = React.useState('')
+  
 
   // Filter
   function handleCategoryChange(event) {
@@ -27,7 +28,12 @@ let filteredList = useMemo(getFilteredList, [activeCategory, products]);
 // Search
 function handleSearchChange(event) {
   setSearch(event.target.value);
-  console.log(event.target.value)
+}
+
+if (search.length > 0) {
+  filteredList = filteredList.filter((i) => {
+    return i.name.toLowerCase().match(search.toLowerCase())
+  });
 }
 
   return (

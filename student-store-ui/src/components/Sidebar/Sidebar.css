@@ -1,0 +1,25 @@
+.sidebar {
+    height: 100vh;
+    padding-left: 20px;
+    background-color: navy;
+    opacity: 0.8;
+    color: white;
+    width: 400px;
+    position: fixed;
+    z-index: 200;
+    left: -100%;
+    animation: slide-open .5s forwards;
+}
+
+.sidebar.close {
+    left: 0;
+    animation: slide-closed .5s forwards;
+}
+
+@keyframes slide-open {
+    100% {left: 0}
+}
+
+@keyframes slide-closed {
+    100% {left: -100%}
+}
