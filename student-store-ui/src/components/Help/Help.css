@@ -1,0 +1,12 @@
+.help_wrapper{
+
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    margin-right: 20px;
+}
+.Help_writing{
+  
+    justify-items: center;
+    margin-left: 20px;
+}
