@@ -34,6 +34,10 @@ export default function App() {
     getProducts();
   }, []);
 
+  if(isFetching){
+    return <h1>Loading...</h1>
+  }
+
   return (
     <div className="app">
       <BrowserRouter>

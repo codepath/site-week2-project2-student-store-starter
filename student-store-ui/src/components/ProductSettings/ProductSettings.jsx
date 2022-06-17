@@ -3,9 +3,9 @@ import "./ProductSettings.css"
 
 export default function ProductSettings(props) {
 
-    // const setCategoryByButton = (cat) => {
-    //     props.setCategory()
-    // }
+    const setCategoryByButton = (cat) => {
+        props.setCategory(cat);
+    }
     
     return (
         <div className="product-settings">
@@ -20,20 +20,20 @@ export default function ProductSettings(props) {
                     />
             </div>
             <div className="product-categories">
-                <button id="food" onClick={() => {
-                    props.setCategory("all")
+                <button id="all" onClick={(e) => {
+                    setCategoryByButton(e.target.id);
                 }}>All</button>
-                <button id="food" onClick={() => {
-                    props.setCategory("food")
+                <button id="food" onClick={(e) => {
+                    setCategoryByButton(e.target.id);
                 }}>Food</button>
-                <button id="clothing" onClick={() => {
-                    props.setCategory("clothing")
+                <button id="clothing" onClick={(e) => {
+                    setCategoryByButton(e.target.id);
                 }}>Clothing</button>
-                <button id="accessories" onClick={() => {
-                    props.setCategory("accessories")
+                <button id="accessories" onClick={(e) => {
+                    setCategoryByButton(e.target.id);
                 }}>Accessories</button>
                 <button id="tech" onClick={(e) => {
-                    props.setCategory("tech")
+                    setCategoryByButton(e.target.id);
                 }}>Tech</button>
             </div>
         </div>

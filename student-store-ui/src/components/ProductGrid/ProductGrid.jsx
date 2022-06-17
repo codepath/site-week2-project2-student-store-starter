@@ -12,6 +12,12 @@ export default function ProductGrid(props) {
 			return product.category === props.category;
 		})
 	}
+	// if there is a query, pick up the products the user wants to see and run another filter
+	if(props.searchQuery !== '') {
+		productsToShow = productsToShow.filter(product => {
+			return product.name.toLowerCase().includes(props.searchQuery.toLowerCase());
+		})
+	}
 
 	return (
 		<div className="product-grid">
@@ -21,6 +27,5 @@ export default function ProductGrid(props) {
 				productsToShow.map((e, i) => {
 					return <ProductCard key={e.name} product={e} />
 				})}
-
 		</div>)
 }
