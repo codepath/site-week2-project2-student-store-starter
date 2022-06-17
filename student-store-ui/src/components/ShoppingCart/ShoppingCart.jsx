@@ -116,8 +116,8 @@ export function CheckoutInfo(props) {
                         </ul>
                     </section>
                     <footer className="card-foot">
-                        <button className="button" onClick={() => props.setGetReceipt(false)}>Shop More</button>
-                        <button className="button" onClick={() => props.setGetReceipt(false)} >Exit</button>
+                        <button className="button" onClick={() => {props.setGetReceipt(false); props.setIsOpen(false)}}>Shop More</button>
+                        <button className="button" onClick={() => {props.setGetReceipt(false); props.setIsOpen(false)}} >Exit</button>
                     </footer>
                 </div>
             </div>

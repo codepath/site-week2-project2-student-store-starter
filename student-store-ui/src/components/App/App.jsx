@@ -118,7 +118,7 @@ export default function App() {
       <BrowserRouter>
         <main>
           <Navbar />
-          <Sidebar order={order} getReceipt={getReceipt} setGetReceipt={setGetReceipt}isOpen={isOpen} handleOnToggle={handleOnToggle} shoppingCart={shoppingCart} products={products} checkoutForm={checkoutForm} handleOnCheckoutFormChange={handleOnCheckoutFormChange} handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm} checkoutError={checkoutError}/>
+          <Sidebar setIsOpen={setIsOpen} order={order} getReceipt={getReceipt} setGetReceipt={setGetReceipt}isOpen={isOpen} handleOnToggle={handleOnToggle} shoppingCart={shoppingCart} products={products} checkoutForm={checkoutForm} handleOnCheckoutFormChange={handleOnCheckoutFormChange} handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm} checkoutError={checkoutError}/>
           <Routes>
             <Route exact path="/" element={ <Home setIsOpen={setIsOpen}products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} shoppingCart={shoppingCart} searchInput={searchInput} handleOnSearch={handleOnSearch} activeCategory={activeCategory} setActiveCategory={setActiveCategory} />}/>
             <Route path="/products/:productId" element={<ProductDetail isFetching={isFetching} setIsFetching={setIsFetching} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} setError={setError} shoppingCart={shoppingCart}/>}/>
