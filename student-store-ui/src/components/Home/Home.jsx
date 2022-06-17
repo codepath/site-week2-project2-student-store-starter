@@ -9,12 +9,13 @@ import Contact from "../Contact/Contact"
 
 export default function Home(props) {
   const [category, setCategory] = React.useState('all');
+  const [searchQuery, setSearchQuery] = React.useState('');
 
   return (
     <div className="home">
       <Hero/>
-      <ProductSettings setCategory={setCategory}/>
-      <ProductGrid category={category} products={props.products}/>
+      <ProductSettings searchQuery={searchQuery} setSearchQuery={setSearchQuery} setCategory={setCategory}/>
+      <ProductGrid category={category} searchQuery={searchQuery} products={props.products}/>
       <About/>
       <Contact/>
     </div>

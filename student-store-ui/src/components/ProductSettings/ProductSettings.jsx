@@ -6,9 +6,19 @@ export default function ProductSettings(props) {
     // const setCategoryByButton = (cat) => {
     //     props.setCategory()
     // }
-
+    
     return (
         <div className="product-settings">
+            <div className="search-input">
+                <label htmlFor="productSearch">Search</label>
+                <input
+                    name="movieTitle"
+                    type="text"
+                    placeholder="Pineapple Pizza"
+                    value={props.searchQuery}
+                    onChange={(e) => props.setSearchQuery(e.target.value)}
+                    />
+            </div>
             <div className="product-categories">
                 <button id="food" onClick={() => {
                     props.setCategory("all")
