@@ -1,0 +1,47 @@
+
+p { color: #000000; font-family: 'Raleway',sans-serif; font-size: 18px; font-weight: 500; line-height: 32px; margin: 0 0 24px; }
+
+.heading { font-family: 'Raleway',sans-serif; font-size: 30px; font-weight: 600; line-height: 36px; margin: 0 0 24px; text-align: left; }
+.about-texts {
+    justify-content: center;
+    background-color: white;
+    width: 600px;
+    height: 400px;
+
+}
+.about-text1, .about-text2, .about-text3 {
+    margin-left: 5%;
+    margin-top: 8%;
+    margin-right: 5%;
+
+}
+
+
+
+.codepath-logo {
+    background: rgb(44, 64, 71);
+    width: 600px;
+    height: 400px;
+}
+
+.logo-about {
+    width: 300px;;
+    height: 300px;
+
+}
+
+.logo-about, .codepath-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.about-container, .heading {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+

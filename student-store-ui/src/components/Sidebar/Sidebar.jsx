@@ -4,7 +4,17 @@ import "./Sidebar.css"
 export default function Sidebar() {
   return (
     <section className="sidebar">
-      <p>Sidebar</p>
+        <RightArrowIcon/>
     </section>
+  )
+}
+
+
+
+export function RightArrowIcon() {
+  return (
+    <div className="right-arrow-icon">
+      <i className="fa-solid fa-arrow-right-from-line"></i>
+    </div>
   )
 }
