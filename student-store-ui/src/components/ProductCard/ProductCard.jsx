@@ -9,7 +9,7 @@ export default function ProductCard(props) {
       <img src={props.product.image} />
       <p>{props.product.description}</p>
       <div className="product-card-footer">
-        {isSelected === true ? <button className="btn">See More!</button> : <p>${props.product.price}</p>}
+        {isSelected === true ? <button className="btn">See More!</button> : <p>${(props.product.price).toFixed(2)}</p>}
       </div>
     </div>)
 }

@@ -11,20 +11,36 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 export default function App() {
   const [products, setProducts] = React.useState({});
-  const [isFetching, setFetching] = React.useState(true);
+  const [isFetching, setFetching] = React.useState(false);
 
-  async function getProducts() {
-    const response = axios.get("https://codepath-store-api.herokuapp.com/store")
-      .then(function (response) {
-        setProducts(response.data.products);
-        setFetching(false);
-      })
-      .catch(function (error) {
-        console.error(error);
-      })
-  }
+  // async function getProducts() {
+  //   const response = axios.get("https://codepath-store-api.herokuapp.com/store")
+  //     .then(function (response) {
+  //       setProducts(response.data.products);
+  //       setLoading(false);
+  //     })
+  //     .catch(function (error) {
+  //       console.error(error);
+  //     })
+  // }
 
   React.useEffect(() => {
+    const getProducts = async () => {
+      setFetching(true);
+      try {
+        const response = await axios.get("https://codepath-store-api.herokuapp.com/store");
+        console.log("useEffect try ", response?.data?.products);
+        if(response?.data?.products) {
+          // set data if response is not undefined
+          setProducts(response?.data?.products);
+        }
+      } catch (error) {
+        console.log("fetch error: ", error);
+      } finally {
+        //set useState false after doing request
+        setFetching(false);
+      }
+    }
     getProducts();
   }, []);
 
@@ -35,7 +51,7 @@ export default function App() {
           <Navbar />
           <Sidebar />
           <Routes>
-            <Route path="/" element={<Home products={products} isFetching={isFetching} setFetching={setFetching} />} />
+            <Route path="/" element={<Home products={products}/>} />
             <Route path="/products/:productId" element={<ProductDetail />} />
           </Routes>
           {/* <NotFound></NotFound> */}

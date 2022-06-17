@@ -4,9 +4,8 @@ import ProductCard from "../ProductCard/ProductCard"
 
 export default function ProductGrid(props) {
 	let productsToShow = {};
-
 	//check what category does the user want to see
-	console.log("woah ", props.category);
+	console.log("request grid:", props);
 	if (props.category === "all") {
 		productsToShow = props.products;
 	} else { 
@@ -18,7 +17,7 @@ export default function ProductGrid(props) {
 
 	return (
 		<div className="product-grid">
-			{props.isFetching ?
+			{props.isLoading ?
 				<h1>Loading...</h1>
 				:
 				productsToShow.map((e, i) => {

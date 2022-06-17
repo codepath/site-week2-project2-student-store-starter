@@ -1,8 +1,21 @@
-:root { 
+:root {
   --maxContentWidth: 1300px;
 
   --darkBlue: rgb(0, 40, 73);
-  --white: rgb(230,230,230);
+  --white: rgb(230, 230, 230);
+}
+
+.main>div {
+  max-width: var(--maxContentWidth);
+  width: 100%;
+
+  margin: 0 auto;
+
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: var(--darkBlue);
+  color: var(--white);
 }
 
 body {

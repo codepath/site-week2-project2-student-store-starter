@@ -1,0 +1,9 @@
+.footer {
+    max-width: var(--maxContentWidth);
+    width: 100%;
+    text-align:center;
+    padding:10px;
+    margin:10px auto;
+    background-color: var(--darkBlue);
+    color: var(--white);
+}
