@@ -10,21 +10,21 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 
 #### Core Features
 
-- [ ] Displays the following sections: header, banner, search, product grid, about, contact, and footer.
-- [ ] On initial page load, display the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store).
-- [ ] User can click on the categories (Clothing, food, etc) to filter the product grid by type.
-- [ ] User can search for products.
-- [ ] User can click on a product in the grid to view additional product details. Navigation is via a React Router.
-- [ ] User can click to expand the shopping cart in the left navigation.
-- [ ] User can click the '+' button on a product cart to increment that product in the shopping cart.
-- [ ] User can click the '-' button on a product cart to increment that product in the shopping cart.
-- [ ] Shopping cart displays a table of products, quantities, subtotal, tax, and total.
-- [ ] User can check out, and can view receipt upon completion.
+- [x] Displays the following sections: header, banner, search, product grid, about, contact, and footer.
+- [x] On initial page load, display the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store).
+- [x] User can click on the categories (Clothing, food, etc) to filter the product grid by type.
+- [x] User can search for products.
+- [x] User can click on a product in the grid to view additional product details. Navigation is via a React Router.
+- [x] User can click to expand the shopping cart in the left navigation.
+- [x] User can click the '+' button on a product cart to increment that product in the shopping cart.
+- [x] User can click the '-' button on a product cart to increment that product in the shopping cart.
+- [x] Shopping cart displays a table of products, quantities, subtotal, tax, and total.
+- [x] User can check out, and can view receipt upon completion.
 
 #### Stretch Features
 
-- [ ] User can click in the top navigation bar to scroll to the relevant section.
-- [ ] User sees a "not found" display when searching for a nonexistent product.
+- [x] User can click in the top navigation bar to scroll to the relevant section.
+- [x] User sees a "not found" display when searching for a nonexistent product.
 - [ ] Create an endpoint for fetching all orders in the database, and an endpoint for serving an individual order based on its id.
 - [ ] Build a page in the UI that displays the list of all past orders and lets the user click on any individual order to take them to a more detailed page of the transaction.
 - [ ] Allow users to use an input to filter orders by the email of the person who placed the order.
@@ -40,8 +40,8 @@ The following specifications were met on the Express backend and the React front
   - [x] The core App component that contains the routes for the app and does the initial data fetching
   - [x] Renders a `BrowserRouter` component that contains a `Routes` component with the following routes:
     - [x] `/` - Should render the `Home.jsx` component
-    - [ ] `/products/:productId` - should render the `ProductDetail` component
-    - [ ] `*` - anything else should render the `NotFound` component
+    - [x] `/products/:productId` - should render the `ProductDetail` component
+    - [x] `*` - anything else should render the `NotFound` component
   - [x] Renders the `Navbar` component on every route
   - [x] Renders the `Sidebar` component on every route
   - [x] Should create **at least** the following state variables:
@@ -81,19 +81,19 @@ The following specifications were met on the Express backend and the React front
           - [x] `name` - the `name` attribute of the input being updated
           - [x] `value` - the new value to set for that input
         - [x] It should update the `checkoutForm` object with the new value from the correct input(s)
-      - [ ] The **`handleOnSubmitCheckoutForm`** function. When called...
-        - [ ] It should submit the user's order to the API
-        - [ ] To submit the user's order, it should leverage the `axios.post` method to send a `POST` request to the `/store` endpoint.
-        - [ ] The body of that `POST` request should be an object with two fields:
-          - [ ] The `user` field:
-            - [ ] Should be an object containing `name` and `email` properties
-            - [ ] Each property should be set to the correct value found in the `checkoutForm`
-          - [ ] The `shoppingCart` field:
-            - [ ] Should contain the user's order formatted as an array of objects.
-            - [ ] Each object in the array should have two fields:
-              - [ ] The `itemId` field should store the `id` of the item being purchased.
-              - [ ] The `quantity` field should store a number representing how many of that item the user is purchasing.
-            - [ ] Don't include the `total` price here, since we'll be calculating that on the backend. Remember to never trust the client!
+      - [x] The **`handleOnSubmitCheckoutForm`** function. When called...
+        - [x] It should submit the user's order to the API
+        - [x] To submit the user's order, it should leverage the `axios.post` method to send a `POST` request to the `/store` endpoint.
+        - [x] The body of that `POST` request should be an object with two fields:
+          - [x] The `user` field:
+            - [x] Should be an object containing `name` and `email` properties
+            - [x] Each property should be set to the correct value found in the `checkoutForm`
+          - [x] The `shoppingCart` field:
+            - [x] Should contain the user's order formatted as an array of objects.
+            - [x] Each object in the array should have two fields:
+              - [x] The `itemId` field should store the `id` of the item being purchased.
+              - [x] The `quantity` field should store a number representing how many of that item the user is purchasing.
+            - [x] Don't include the `total` price here, since we'll be calculating that on the backend. Remember to never trust the client!
 
 **Navbar.jsx**
 
@@ -132,30 +132,30 @@ The following specifications were met on the Express backend and the React front
 
 **ProductDetail.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `div` element with a `className` of `product-detail`
-  - [ ] Should accept **at least** the following props:
+  - [x] Should render JSX that is wrapped by a `div` element with a `className` of `product-detail`
+  - [x] Should accept **at least** the following props:
     - `handleAddItemToCart` - handler function defined in the `App.jsx` component
     - `handleRemoveItemToCart` - handler function defined in the `App.jsx` component
-  - [ ] Should define **at least** a `product` state variable and updater
-  - [ ] It should leverage the `useParams` hook from `react-router-dom` to extract the `productId` param from the url.
-  - [ ] When the component is mounted to the screen...
-    - [ ] It should make a `GET` request to the `/store/:productId` endpoint with the `axios.get` method.
-    - [ ] The `:productId` part of the request should be replaced with the `productId` pulled from the url.
-    - [ ] When the initial request is loading, it should render an `h1` element with the `className` of `loading` and contain the text `"Loading..."`
-    - [ ] It should store the `product` received by the request in state and then render the `ProductView` component.
-    - [ ] If no `product` is found with that `id`, it should render the `NotFound` component
+  - [x] Should define **at least** a `product` state variable and updater
+  - [x] It should leverage the `useParams` hook from `react-router-dom` to extract the `productId` param from the url.
+  - [x] When the component is mounted to the screen...
+    - [x] It should make a `GET` request to the `/store/:productId` endpoint with the `axios.get` method.
+    - [x] The `:productId` part of the request should be replaced with the `productId` pulled from the url.
+    - [x] When the initial request is loading, it should render an `h1` element with the `className` of `loading` and contain the text `"Loading..."`
+    - [x] It should store the `product` received by the request in state and then render the `ProductView` component.
+    - [x] If no `product` is found with that `id`, it should render the `NotFound` component
 
 **ProductView.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `div` element with a `className` of `product-view`
-  - [ ] Should accept **at least** the following props:
+  - [x] Should render JSX that is wrapped by a `div` element with a `className` of `product-view`
+  - [x] Should accept **at least** the following props:
     - `product` - the `product` object returned by the API request
     - `productId` - the id of the product extracted from the url
     - `quantity` - the quantity for this product found in the `shoppingCart`
     - `handleAddItemToCart` - handler function
     - `handleRemoveItemToCart` - handler function
-  - [ ] It should display an `h1` element with the `className` of `product-id` that contains the text: `Product #` followed by the `productId` prop
-  - [ ] It should render a `ProductCard` component and pass it the props it needs. It should also set the `showDescription` prop to `true` for this product card.
+  - [x] It should display an `h1` element with the `className` of `product-id` that contains the text: `Product #` followed by the `productId` prop
+  - [x] It should render a `ProductCard` component and pass it the props it needs. It should also set the `showDescription` prop to `true` for this product card.
 
 **ProductCard.jsx**
 
