@@ -33,7 +33,7 @@
     justify-content: flex-end;
     width: 85%;
     margin: 0 auto;
-    padding: 30px;
+    padding: 30px 0px;
     border-top: var(--border-style);
     gap: 20px;
   }
