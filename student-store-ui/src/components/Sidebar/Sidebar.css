@@ -2,7 +2,7 @@
     height: 100%; /* Full-height: remove this if you want "auto" height */
     width: 3%; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 1; /* Stay on top */
+    z-index: 0; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
     background: rgb(44, 64, 71);
@@ -10,3 +10,26 @@
     padding-top: 20px;
 
   }
+
+  .sidebar-container {
+    margin-top: 100%;
+    display: inline-block;
+    justify-content: center;
+
+
+
+  }
+
+  .right-arrow-icon i, .coin-icon i, .shop-cart-icon i, .form-icon i {
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+
+  }
+
+  .right-arrow-icon{
+    margin-bottom: 100%;
+  }
+
+

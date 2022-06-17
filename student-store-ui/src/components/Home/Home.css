@@ -104,12 +104,12 @@
   position: relative;
   top: 0;
   transition: top ease 1s;
+
 }
 
 .category-menu:hover, .category:hover{
   top: -10px;
-  border-bottom: solid 2px;
-  border-bottom-color:  rgb(22, 113, 233);
+
 }
 
 .about-header, .contact-header {

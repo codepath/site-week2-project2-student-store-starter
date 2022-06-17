@@ -1,7 +1,7 @@
 .notFound {
-    margin-top: 0%;
+    margin-top: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 38%;
+    margin-bottom: 10%;
 }

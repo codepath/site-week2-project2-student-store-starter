@@ -55,6 +55,7 @@ export default function App() {
   return (
     <div className="app">
       <BrowserRouter>
+      <main>
         <Navbar />
         <Sidebar /> 
         <Routes>
@@ -62,8 +63,8 @@ export default function App() {
           <Route path = "/products/:productId" element = {<ProductDetail isFetching = {isFetching} setIsFetching = {setIsFetching} error = {error} setError = {setError}/>} /> 
           <Route path = "*" element = {<NotFound />}/> 
         </Routes> 
-        {/* <Footer/> */}
-
+        <Footer/>
+        </main>
       </BrowserRouter>
     </div>
   )
