@@ -4,7 +4,7 @@
   height: 100%;
   min-height: 100vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 .app main {
   width: 100%;
@@ -13,4 +13,8 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+.horizontal {
+  display: flex;
+  flex-direction: row;
 }

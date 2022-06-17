@@ -9,3 +9,11 @@ body {
 * {
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
+:root {
+  --light-blue: #64C5DE;
+  --gray: rgba(0, 0, 0, .2);
+  --light-gray: #4b4c4d0c;
+}

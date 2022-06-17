@@ -4,7 +4,9 @@ import "./Sidebar.css"
 export default function Sidebar() {
   return (
     <section className="sidebar">
-      <p>Sidebar</p>
+      <div className="icon-box">
+        <i className="icon ion-android-arrow-dropright-circle"></i>
+      </div>
     </section>
   )
 }

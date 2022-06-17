@@ -1,0 +1,13 @@
+.product-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 60px;
+}
+.card-container {
+    width: 280px;
+    height: 350px;
+    margin: 10px;
+}
