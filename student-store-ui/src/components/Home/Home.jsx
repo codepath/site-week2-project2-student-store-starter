@@ -49,7 +49,7 @@ const removeFromCart = (el) => {
   if (sidebarOpen) {
     sidebar = <Sidebar shoppingCart={cart} close={closeHandler} sidebar={"sidebar"}/>
   }
-  
+  // product grid, about, contact, and footer.
 
   // Filter
   function handleCategoryChange(event) {
@@ -79,7 +79,14 @@ if (search.length > 0) {
   return (
     <div className="home">
       <Navbar />
-      <p>Home</p>
+      <div className="hero">
+        <div className="content">
+          <div className="intro">
+          <h1>Welcome!</h1>
+          <h1>Buy Some Stuff!</h1>
+          </div>
+        </div>
+      </div>
       <button onClick={openHandler}>Open Shopping Cart</button>
       {sidebar}
       <input placeholder="Search For a Product" onChange={handleSearchChange} type="text" name="search-input"></input>
@@ -97,6 +104,15 @@ if (search.length > 0) {
       </select>
       </div>
       <ProductGrid products={filteredList} addToCart={addToCart} />
+      <div className="about">
+      <p> I'm the about section</p>
+      </div>
+      <div className="contact">
+        <p> This is where the contact info would be IF I HAD ANY &gt;:( </p>
+      </div>
+      <div className="Footer">
+        <p> I am the footer </p>
+      </div>
     </div>
   )
 }
