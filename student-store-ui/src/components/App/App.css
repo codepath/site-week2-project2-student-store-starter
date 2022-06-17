@@ -5,6 +5,8 @@
   min-height: 100vh;
   display: flex;
   flex-direction: row;
+  text-align: center;
+  /*background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(175,141,134,1) 99%, rgba(132,160,124,1) 100%);*/
 }
 .app main {
   width: 100%;
@@ -13,4 +15,56 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+h1 {
+  display: inline-block;
+  font-family: monospace;
+  font-size: 45px;
+}
+
+.about-text, .logo {
+  flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 330px;
+}
+
+.about{
+  border-radius: 2px;
+  border-style: solid;
+  border-color: lightgray;
+  padding: 2em;
+  margin-left: 100px;
+  margin-right: 100px;
+ 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 350px;
+}
+.contact-us {
+  text-align: left;
+  background-color: #af8d86;
+  padding: 2em;
+  margin-left: 100px;
+  margin-right: 100px;
+;
+}
+
+.welcome {
+  background-color: #af8d86;
+  padding: 2em;
+  margin-left: 100px;
+  margin-right: 100px;
+ 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 350px;
+
 }

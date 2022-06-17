@@ -1,0 +1,30 @@
+
+.navbar {
+    background-color: #432e36;
+}
+
+ul {
+    list-style-type: none;
+    background-color: #432e36;
+    overflow: hidden;
+    padding: 8px;
+    text-align: center;
+}
+
+li {
+    display: inline;
+    padding: 10px;
+    padding: 3em;
+    
+}
+
+li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    
+}
+
+li:hover {
+    background-color: #af8d86;
+}
