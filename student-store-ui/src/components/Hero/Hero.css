@@ -1,17 +1,31 @@
 .hero {
-    display: flex;
-    text-align: center;
-    background:linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url("https://images.pexels.com/photos/2292919/pexels-photo-2292919.jpeg?cs=srgb&dl=pexels-artem-beliaikin-2292919.jpg&fm=jpg");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-color: black;
-    height: 300px;
-  }
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url("https://images.pexels.com/photos/2292919/pexels-photo-2292919.jpeg?cs=srgb&dl=pexels-artem-beliaikin-2292919.jpg&fm=jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  height: 300px;
+}
+
+.hero-text {
+  width: 50%;
+  display: flex;
+  color: white;
+  padding: 0 0 40px 0;
+  flex-direction: column;
+}
+
+.hero-text>h1, .hero-text>p {
+  margin-top:30px;
+  margin-left: 40px;
+}
+
+.hero-text>img {
+  width: 30%;
   
-  .hero .hero-text {
-    display:flex;
-    color:white;
-    padding: 40px;
-  }
+  margin: 30px auto auto;
+}

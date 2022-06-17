@@ -1,8 +1,31 @@
 .about {
     width: 100%;
-    text-align:center;
+    text-align:left;
     padding:10px;
     margin:10px 0;
+    /* background-color: var(--darkBlue); */
+    color: var(--darkBlue);
+}
+
+.about>.about-container {
+    display:flex;
+    justify-content: center;
+
     background-color: var(--darkBlue);
     color: var(--white);
+    padding: 20px;
+}
+
+.about-container>.section {
+    flex-basis: 50%;
+    font-size: 16px;
+
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.about-container>.section>img {
+    margin: 0 auto;
+    width: 60%;
 }

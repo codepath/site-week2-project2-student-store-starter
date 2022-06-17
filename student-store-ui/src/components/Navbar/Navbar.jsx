@@ -1,15 +1,17 @@
 import * as React from "react"
 import "./Navbar.css"
 import Logo from "../Logo/Logo"
+import { Link } from "react-router-dom"
 export default function Navbar() {
+
   return (
     <nav className="navbar">
       <div className="navbar-items">
         <Logo/>
         <div className="actions">
-          <p>home?</p>
-          <p>about?</p>
-          <p>idk</p>
+          <a>Home</a>
+          <a>About</a>
+          <a>Contact</a>
         </div>
       </div>
     </nav>

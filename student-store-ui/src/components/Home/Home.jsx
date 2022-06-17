@@ -12,11 +12,11 @@ export default function Home(props) {
   const [searchQuery, setSearchQuery] = React.useState('');
 
   return (
-    <div className="home">
+    <div id="home" className="home">
       <Hero/>
       <ProductSettings searchQuery={searchQuery} setSearchQuery={setSearchQuery} setCategory={setCategory}/>
       <ProductGrid category={category} searchQuery={searchQuery} products={props.products}/>
-      <About/>
+      <About id="about"/>
       <Contact/>
     </div>
   )

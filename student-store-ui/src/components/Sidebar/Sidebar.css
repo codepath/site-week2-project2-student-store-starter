@@ -1,9 +1,18 @@
 
 .sidebar {
-    display:none;
+    /* display:none; */
     position: fixed;
     overflow: hidden;
     height: 100vh;
-    width: 5vw;
-    background-color: blue;
+    width: 300px;
+    background-color: var(--darkBlueAccent);
+    text-align: center;
+    transition: all 300ms linear;
+
+    padding-top: 20px;
+    color: var(--white);
+}
+
+.sidebar.hidden {
+    width: 50px;
 }

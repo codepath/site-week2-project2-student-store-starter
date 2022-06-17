@@ -25,7 +25,7 @@ export default function ProductGrid(props) {
 				<h1>Loading...</h1>
 				:
 				productsToShow.map((e, i) => {
-					return <ProductCard key={e.name} product={e} />
+					return <ProductCard key={e.name} class="product-card" product={e} />
 				})}
 		</div>)
 }

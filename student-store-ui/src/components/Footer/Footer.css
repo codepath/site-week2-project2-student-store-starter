@@ -3,7 +3,7 @@
     width: 100%;
     text-align:center;
     padding:10px;
-    margin:10px auto;
+    margin:10px auto 0 auto;
     background-color: var(--darkBlue);
     color: var(--white);
 }
