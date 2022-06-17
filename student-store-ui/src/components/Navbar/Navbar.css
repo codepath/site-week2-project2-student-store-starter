@@ -1,0 +1,29 @@
+.navbar {
+    width: 99vw;
+    height: fit-content;
+
+    /* placeholder */
+    background-color: var(--darkBlue); 
+}
+
+.navbar-items {
+    max-width: var(--maxContentWidth);
+    width: 100%;
+    display: flex;
+    
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    
+    color:var(--white);
+}
+
+.navbar .logo {
+    color: blue;
+}
+
+.navbar .actions {
+    display: flex;
+    gap: 30px;
+
+}

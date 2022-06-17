@@ -1,9 +1,17 @@
+:root { 
+  --maxContentWidth: 1300px;
+
+  --darkBlue: rgb(0, 40, 73);
+  --white: rgb(230,230,230);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
     "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--white);
 }
 
 * {
