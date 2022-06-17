@@ -5,11 +5,22 @@ import About from "../About/About"
 import ProductGrid from "../ProductGrid/ProductGrid"
 
 export default function Home(props) {
+
+
+  const sortByCategory =
+    props.selectedCategory != "All Categories"
+      ? props.products.filter((product) => product.category === props.selectedCategory.toLowerCase()) : props.products
+    
+
   return (
     <div className="home">
       <div className="hero-container">
         <Hero />
       </div>
+
+
+
+
 
       <div className = "search-bar">
         <form id="form"> 
@@ -20,16 +31,16 @@ export default function Home(props) {
       </div>
 
       <span className = "category-list">
-        <span className = "category">All Categories</span>
-        <span className = "category">Clothing</span>
-        <span className = "category">Food</span>
-        <span className = "category">Accessories</span>
-        <span className = "category">Tech</span>
+        <span className = "category" onClick= {() => props.setSelectedCategory("All Categories")}>All Categories</span>
+        <span className = "category" onClick= {() => props.setSelectedCategory("Clothing")}>Clothing</span>
+        <span className = "category" onClick= {() => props.setSelectedCategory("Food")}>Food</span>
+        <span className = "category" onClick= {() => props.setSelectedCategory("Accessories")}>Accessories</span>
+        <span className = "category" onClick= {() => props.setSelectedCategory("Tech")}>Tech</span>
       </span>
       
 
       <div className = "grid">
-        {/* <ProductGrid products = {props.products}/> */}
+         <ProductGrid products = {sortByCategory}/> 
 
       </div>
 

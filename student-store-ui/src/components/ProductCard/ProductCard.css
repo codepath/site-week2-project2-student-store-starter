@@ -1,0 +1,24 @@
+.product-card{
+    display: inline-block;
+    font-size: 20px;
+    width: 300px;
+    justify-content: center;
+    margin-left: 150px;
+    background-color: white;
+    margin-bottom: 5%;
+}
+
+.product-image {
+    width: 300px;
+    height: 300px;
+
+}
+
+.product-details {
+    font-family: sans-serif;
+    width: 350px;
+
+    
+}
+
+

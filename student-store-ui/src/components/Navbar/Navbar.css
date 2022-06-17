@@ -6,9 +6,9 @@ nav {
     z-index: 1000;
     width: 100%;
     background: rgb(44, 64, 71);
-    height: 8%;
     border-bottom: 1px solid var(--nav-border);
     display: flex;
+
   }
   .navbar-container {
     max-width: 1260px;
@@ -17,6 +17,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     margin-left: 30%;
+
 
 
   }
@@ -42,6 +43,7 @@ nav {
     margin-left: 20%;
     font-weight: 600;
     font-size: large;
+    
   }
 
   

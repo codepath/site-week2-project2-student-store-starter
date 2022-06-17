@@ -1,14 +1,11 @@
 .home {
-  width: 100%;
-  max-width: 100vw;
-  height: 75px;
-  min-height: 100vh;
+  background-color: rgb(250, 249, 246);
   display: flex;
   flex-direction: column;    
-  background: rgb(250, 249, 246);
-  background-attachment: fixed;
   margin: 0;
   justify-content: center;
+  width: 100%;
+
   
 }
 
@@ -81,11 +78,14 @@
   justify-content: center;
   margin-left: 10%;
   margin-right: 0;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
 
 }
 
 .category {
   margin-right: 10%;
   color: #000000; font-family: 'Raleway',sans-serif; font-size: 18px; font-weight: 500; line-height: 32px; 
+  cursor: pointer;
+  border-bottom: solid 2px;
+  border-bottom-color:  rgb(22, 113, 233);
 }

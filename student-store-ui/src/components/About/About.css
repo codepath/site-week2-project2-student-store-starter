@@ -4,7 +4,7 @@ p { color: #000000; font-family: 'Raleway',sans-serif; font-size: 18px; font-wei
 .heading { font-family: 'Raleway',sans-serif; font-size: 30px; font-weight: 600; line-height: 36px; margin: 0 0 24px; text-align: left; }
 .about-texts {
     justify-content: center;
-    background-color: white;
+    background-color: #ffffff;
     width: 600px;
     height: 400px;
 
@@ -45,3 +45,9 @@ p { color: #000000; font-family: 'Raleway',sans-serif; font-size: 18px; font-wei
     margin: auto;
 }
 
+.About {
+    margin-top: 10%;
+}
+.heading {
+    margin-bottom: 5%;
+}
