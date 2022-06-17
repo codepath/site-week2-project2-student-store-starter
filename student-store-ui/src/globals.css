@@ -2,10 +2,23 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
     "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: 'Be Vietnam Pro', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 * {
   box-sizing: border-box;
+}
+
+:root {
+  --bg-light-grey: rgb(251, 251, 251);
+  --accent-light-grey: rgb(211, 211, 211);
+  --accent-mid-grey: rgb(150,150,150);
+  --codepath-dark-grey: rgb(44,64,71);
+  --codepath-green: rgb(0,195,133);
+  --font-primary: rgb(48,48,48);
+  --font-secondary: rgb(112, 112, 112);
+  --navbar-height: 75px;
+  --border-style: 1px solid var(--accent-light-grey);
 }

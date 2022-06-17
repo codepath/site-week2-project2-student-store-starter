@@ -1,0 +1,20 @@
+.product-card {
+  width: 240px;
+  z-index: 9;
+  position: relative;
+}
+
+.media img {
+  height: 250px;
+  width: 240px;
+  object-fit: cover;
+}
+
+.product-name h1 {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.product-price h2 {
+  font-size: 14px;
+  font-weight: 300;}

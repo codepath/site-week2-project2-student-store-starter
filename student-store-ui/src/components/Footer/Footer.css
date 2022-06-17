@@ -1,0 +1,39 @@
+.footer {
+    width: 100%;
+    height: 300px;
+    background-color: white;
+    border-top: var(--border-style);
+    margin-top: 100px;
+    color: var(--font-secondary);
+}
+
+.footer-links-container {
+    padding: 40px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.footer-column > h3 {
+    weight: 400;
+    font-size: 1.3em;
+    color: var(--codepath-dark-grey);
+}
+
+
+.footer-column > p {
+    weight: 400;
+    color: var(--font-secondary)
+}
+
+#payment-icons {
+    display: flex;
+    justify-content: flex-end;
+    width: 85%;
+    margin: 0 auto;
+    padding: 30px;
+    border-top: var(--border-style);
+    gap: 20px;
+  }

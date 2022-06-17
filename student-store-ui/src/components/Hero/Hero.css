@@ -1,0 +1,31 @@
+.hero {
+  height: 50vh;
+  margin-top: var(--navbar-height);
+  background-color: var(--codepath-green);
+  background-color: rgb(240, 242, 242);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro {
+  width: 50vw;
+  color: white;
+}
+
+.intro > h1 {
+  font-size: 54px;
+  color: var(--font-primary);
+  margin: 0;
+}
+
+.intro > h2 {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--font-secondary)
+}
+
+.hero-img {
+  height: 150%;
+}

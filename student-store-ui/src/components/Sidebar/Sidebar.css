@@ -1,0 +1,8 @@
+.sidebar {
+    background-color: var(--codepath-dark-grey);
+    position: fixed;
+    height: 100%;
+    width: 80px;
+    z-index: 9999;
+    display: none;
+}
