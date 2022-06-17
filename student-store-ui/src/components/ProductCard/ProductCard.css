@@ -84,6 +84,12 @@
     margin: 10px 5px;
 }
 
+button:disabled .remove-btn{
+    color: #8f8f8f;
+    border: solid 1px #8f8f8f;
+
+}
+
 .shop-btns i{
     width: 20px;
     height: 20px;
@@ -103,4 +109,26 @@
 
 .product-card p{
     margin: 0;
+}
+
+.product-card .quantity{
+    width: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 5px;
+}
+
+.product-card .amt{
+    background: #ff9017;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.product-card .amt.hide{
+    display: none;
 }

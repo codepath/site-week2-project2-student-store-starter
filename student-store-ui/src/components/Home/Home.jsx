@@ -2,7 +2,7 @@ import * as React from "react"
 import "./Home.css"
 import Hero from "../Hero/Hero"
 import ProductGrid from "../ProductGrid/ProductGrid"
-import ShopNavbar from "../ShopNavbar/ShopNavbar"
+import SubNavbar from "../SubNavbar/SubNavbar"
 import codepathPic from "/Users/duynguyen/Desktop/codepath/tdd-student-store-starter/student-store-ui/src/assets/giant_codepath.6952ef57.svg"
 import happyPerson from "/Users/duynguyen/Desktop/codepath/tdd-student-store-starter/student-store-ui/src/assets/happy_person.517b658d.svg"
 import appStore from "/Users/duynguyen/Desktop/codepath/tdd-student-store-starter/student-store-ui/src/assets/app_store.a7d8c549.svg"
@@ -13,11 +13,14 @@ import paypal from "/Users/duynguyen/Desktop/codepath/tdd-student-store-starter/
 import visa from "/Users/duynguyen/Desktop/codepath/tdd-student-store-starter/student-store-ui/src/assets/visa.a818ddc4.svg"
 
 export default function Home(props) {
+  const productsByCategory = props.activeCategory.toLowerCase() === "all categories" ? props.products : props.products.filter((product) => product.category === props.activeCategory.toLowerCase())
+  
+  const productList = props.searchInput === "" ? productsByCategory : productsByCategory.filter((product) => product.name.includes(props.searchInput))
   return (
     <div className="home" id="header">
       <Hero/>
-      <ShopNavbar />
-      <ProductGrid products={props.products} handleAddItemToCart={props.handleAddItemToCart} handleRemoveItemFromCart={props.handleRemoveItemFromCart}shoppingCart={props.shoppingCart}/>
+      <SubNavbar searchInput={props.searchInput} handleOnSearch={props.handleOnSearch} activeCategory={props.activeCategory} setActiveCategory={props.setActiveCategory}/>
+      <ProductGrid products={productList} handleAddItemToCart={props.handleAddItemToCart} handleRemoveItemFromCart={props.handleRemoveItemFromCart} shoppingCart={props.shoppingCart}/>
       <About />
       <Contact />
       <Footer />

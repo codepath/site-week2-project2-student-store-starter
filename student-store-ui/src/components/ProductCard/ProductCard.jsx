@@ -4,7 +4,6 @@ import "./ProductCard.css"
 
 export default function ProductCard(props) {
     const product = props.product
-    console.log(product)
     return (
         <div className="product-card">
             <div className="media">
@@ -24,14 +23,17 @@ export default function ProductCard(props) {
                     </div>
                     <p className="product-price">${product.price.toFixed(2)}</p>
                 </div>
+                {props.showDescription ? <div className="desc">
+                    <p className="product-description">{product.description}</p>
+                </div> : null}
                 <div className="actions">
                     <div className="shop-btns">
-                        <button className="remove"><i className="material-icons">remove</i></button>
-                        <button className="add"><i className="material-icons">add</i></button>
-                        <span className="quantity">
-                            <span className="amt"></span>
-                        </span>
+                        <button className="remove" disabled={props.quantity === 0 ? true : false} onClick={() => props.handleRemoveItemFromCart(product.id)}><i className="material-icons remove-btn">remove</i></button>
+                        <button className="add" onClick={() => props.handleAddItemToCart(product.id)}><i className="material-icons">add</i></button>
                     </div>
+                    <span className="quantity">
+                        {props.quantity === 0 ? <span className="amt hide">{props.quantity}</span> : <span className="amt">{props.quantity}</span>}
+                    </span>
                 </div>    
             </div>    
         </div>

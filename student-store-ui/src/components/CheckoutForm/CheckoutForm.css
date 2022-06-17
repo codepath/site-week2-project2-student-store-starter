@@ -46,3 +46,9 @@
     border: solid 1px white;
     color: white;
 }
+
+.checkout-error{
+    color: rgb(206, 53, 53);
+    font-weight: bold;
+    font-size: 18px;
+}

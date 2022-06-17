@@ -78,15 +78,22 @@
     transition: all .2s ease-in-out;
 }
 
+.menu li.closed{
+    transform: scale(0);
+}
+
 .menu li{
     list-style-type: none;
     font-weight: bold;
     font-size: 18px;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
 }
 
 .menu li.active{
     border-bottom: solid 2px #00c385;
 }
+
 
 .subnav-icon span{
     display: block;

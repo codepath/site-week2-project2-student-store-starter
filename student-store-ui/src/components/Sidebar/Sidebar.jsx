@@ -2,14 +2,14 @@ import * as React from "react"
 import ShoppingCart from "../ShoppingCart/ShoppingCart"
 import "./Sidebar.css"
 
-export default function Sidebar() {
+export default function Sidebar(props) {
   return (
-    <section className="sidebar closed">
+    <section className={`sidebar ${props.isOpen ? `open` : `closed`}`}>
       <div className="sidebar-wrapper">
-        <button className="toggle-button">
-          <i className="fa-solid fa-arrow-right arrow"></i>
+        <button className="toggle-button" onClick={props.handleOnToggle}>
+          <i className={`fa-solid fa-arrow-right arrow ${props.isOpen ? `closed` : `open`}`}></i>
         </button>
-        <ShoppingCart />
+        <ShoppingCart order={props.order} getReceipt={props.getReceipt} setGetReceipt={props.setGetReceipt} checkoutError={props.checkoutError} checkoutForm={props.checkoutForm} handleOnCheckoutFormChange={props.handleOnCheckoutFormChange} handleOnSubmit={props.handleOnSubmitCheckoutForm} products={props.products} isOpen={props.isOpen} shoppingCart={props.shoppingCart}/>
       </div>
     </section>
   )

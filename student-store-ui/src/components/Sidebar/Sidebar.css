@@ -23,6 +23,11 @@
 
 .arrow{
     font-size: 40px;
+    transition: all .2s ease-in-out;
+}
+
+.arrow.closed{
+    transform: rotate(-180deg);
 }
 
 .sidebar i{

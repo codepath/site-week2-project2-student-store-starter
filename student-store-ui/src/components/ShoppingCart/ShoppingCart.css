@@ -42,3 +42,92 @@
     border: solid 1px white;
     color: white;
 }
+
+.checkout-success .content{
+    width: 100%;
+    margin: 0;
+    padding: 0 1rem;
+}
+
+.checkout-success .content p{
+    margin: 0;
+    color: white;
+    font-size: 18px;
+}
+
+.cart-table{
+    padding: 0 1rem;
+}
+
+.cart-table .header{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: solid 1px white;
+    border-radius: 4px 4px 0 0;
+}
+
+.cart-table .header-row{
+    display: flex;
+    height: 50px;
+    border-bottom: solid 1px #b5b5b5;
+}
+
+.cart-table .header-row span{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    font-weight: 600;
+    margin-left: 15px;
+    flex: 1 1 0%;
+}
+
+.totals{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: white;
+    margin-top: 15px;
+    border-radius: 4px;
+}
+
+.totals span{
+    flex: 1 1 0%;
+}
+
+.totals .subtotal, .taxes, .total{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.totals .label{
+    font-weight: 600;
+    padding-left: 10px;
+}
+
+.product-row{
+    display: flex;
+    flex-direction: row;
+    background: white;
+    border-bottom: solid 1px #b5b5b5;
+    align-items: center;
+    height: 70px;
+}
+
+.product-row span{
+    flex: 1 1 0%;
+}
+
+.product-row .flex-2{
+    padding-left: 2rem;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    
+}
