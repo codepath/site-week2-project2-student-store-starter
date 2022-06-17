@@ -1,7 +1,3 @@
-.hero{
-    transform: translateY(15%);
-}
-
 .hero .content{
     background-color: #00c385;
     display: flex;

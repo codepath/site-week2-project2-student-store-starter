@@ -48,14 +48,19 @@ export default function App() {
     setCheckoutForm((oldCheckoutForm) => (oldCheckoutForm[name]= value))
   }
 
+  const handleOnSubmitCheckoutForm = () => {
+    console.log("ok")
+  }
+
   React.useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await axios.get("http://localhost:3001/store")
+        // const res = await axios.get("http://localhost:3001/store")
+        const res = await axios.get("https://codepath-store-api.herokuapp.com/store")
         const products = res.data //maybe need to add question mark
         if (products) {
-          setProducts(products)
-          console.log(products)
+          // console.log(products.products)
+          setProducts(products.products)
         }
         else {
           setError(new Error("No Products returned!"))
