@@ -1,0 +1,44 @@
+.productCard {
+    background: var(--pure-white);
+    display: flex;
+    flex-direction: column;
+    border: solid 1px var(--border-color);
+    max-width: 800px;
+    object-fit: contain;
+}
+
+.productCard .media {
+    height: 50%;
+    width: 100%;
+    object-fit: contain;
+    display: flex;
+    justify-content: center;
+}
+
+.name{
+    text-align: center;
+}
+.price{
+    text-align: center;
+}
+
+.productGrid .productCard .media img {
+    height: 250px;
+    width: 248px;
+}
+
+.productCard .media img {
+    max-width: 800px;
+}
+
+.stars {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 40px;
+}
+
+h4{
+    display: flex;
+    justify-content: center;
+}

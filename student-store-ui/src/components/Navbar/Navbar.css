@@ -1,0 +1,38 @@
+.navbar {
+    width: 100%;
+    max-width: 100vw;
+    background: #2c4047;
+    color: white;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+}
+
+.navbar .header {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navbar .header .logo {
+    width: 100px;
+    margin-right: 50px;
+}
+
+.nav-links {
+    color: white;
+    text-decoration: none;
+    font-weight: bolder;
+    white-space: nowrap;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.nav-links-div {
+    display: flex;
+    justify-content: space-evenly;
+}
