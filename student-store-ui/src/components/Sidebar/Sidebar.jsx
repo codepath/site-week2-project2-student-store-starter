@@ -20,7 +20,7 @@ export default function Sidebar(props) {
   return (
     <section className={sidebarClass}>
       <button id="close" onClick={closeHandler}> &times; Close Shopping Cart</button>
-      <ShoppingCart />
+      <ShoppingCart cart={props.shoppingCart}/>
     </section>
   )
 }

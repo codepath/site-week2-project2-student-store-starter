@@ -1,8 +1,11 @@
 import * as React from "react"
 import { useState} from "react";
 import "./ProductCard.css"
+import { Link } from "react-router-dom";
 
 export default function ProductCard(props) {
+
+  //console.log(props)
 
   const [modal, setModal] = useState(false);
 
@@ -20,14 +23,16 @@ export default function ProductCard(props) {
       <div>
       <div className="product-card">
         <div>
-        <img className="image" src={props.product.image} onClick={toggleModal} alt="Product cover" />
+        <Link to={`/products/${props.product.id}`}>
+        <img className="image" src={props.product.image} alt="Product cover" />
+        </Link>
         <div className="main-info">
         <p>Name: {props.product.name}</p>
         <p>Price: {props.product.price}</p>
         </div>
       </div>
             <div className="buttons">
-              <button className="add">
+              <button className="add" >
                 <i className="material-icons">add</i>
               </button>
               <button className="remove">
@@ -35,20 +40,6 @@ export default function ProductCard(props) {
               </button>
             </div>
       </div>
-      {modal && (
-        <div className="modal">
-          <div className="modal-content">
-            <img className="modal-image" src={props.product.image} alt="Product cover" />
-            <p>Name: {props.product.name}</p>
-            <p>Category: {props.product.category}</p>
-            <p>{props.product.description}</p>
-            <p>Price: {props.product.price}</p>
-            <button className="close-modal" onClick={toggleModal}>
-              CLOSE
-            </button>
-          </div>
-        </div>
-      )}
       </div>
 
     )
