@@ -1,6 +1,6 @@
 import * as React from "react"
 import "./ProductDetail.css"
-import ProductView from "../ProductView./ProductView"
+import ProductView from "../ProductView/ProductView"
 import NotFound from "../NotFound/NotFound"
 import { useParams } from "react-router-dom"
 import axios from "axios"

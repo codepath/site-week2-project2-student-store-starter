@@ -106,7 +106,7 @@ export function Footer(props){
             <div className="link-column">
               <h4>Company</h4>
               <ul>
-                <li className="footer-li">About Us</li>
+                <li className="footer-li"><a href="#about">About Us</a></li>
                 <li className="footer-li">Find a Store</li>
                 <li className="footer-li">Terms</li>
                 <li className="footer-li">Sitemap</li>
@@ -116,7 +116,7 @@ export function Footer(props){
             <div className="link-column">
               <h4>Support</h4>
               <ul>
-                <li className="footer-li">Contact Us</li>
+                <li className="footer-li"><a href="#contact">Contact Us</a></li>
                 <li className="footer-li">Money Refund</li>
                 <li className="footer-li">Order Status</li>
                 <li className="footer-li">Shipping Info</li>
