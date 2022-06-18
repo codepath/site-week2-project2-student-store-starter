@@ -12,14 +12,14 @@ export default function CartTable(props) {
                 </tr>
                 {props.getShoppingCartItems()}
             </table>
-            <table className="cart-table">
+            {/* <table className="cart-table">
                 <tr className="cart-table-column">
                     <th className="cart-table-row"></th>
                     <th className="cart-table-row">Subtotal</th>
                     <th className="cart-table-row">Tax</th>
                     <th className="cart-table-row">Name</th>
                 </tr>
-            </table>
+            </table> */}
         </div>
     )
 }
