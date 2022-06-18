@@ -24,23 +24,23 @@ export default function App() {
 
   // remove console.logs later
 
-    const getData = async () => {
-      setIsFetching(true)
-      try {
-        const response = await axios.get("https://codepath-store-api.herokuapp.com/store");
-        setProducts(response.data.products);
-        console.log(response.data.products);
-      } catch (error) {
-        console.log(error);
-        setError(error)
-      } finally {
-        setIsFetching(false)
-      }
+  const getData = async () => {
+    setIsFetching(true)
+    try {
+      const response = await axios.get("https://codepath-store-api.herokuapp.com/store");
+      setProducts(response.data.products);
+      console.log(response.data.products);
+    } catch (error) {
+      console.log(error);
+      setError(error)
+    } finally {
+      setIsFetching(false)
     }
+  }
 
-    React.useEffect(() => {
-      getData();
-    }, []);
+  React.useEffect(() => {
+    getData();
+  }, []);
 
   // handler functions
 
@@ -65,7 +65,6 @@ export default function App() {
   function handleOnCheckoutFormChange(name, value) {
     setCheckoutForm([name, value])
   }
-  
 
   return (
     <div className="app">
