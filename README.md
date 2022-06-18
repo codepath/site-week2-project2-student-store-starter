@@ -19,7 +19,7 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 - [x] User can click the '+' button on a product cart to increment that product in the shopping cart.
 - [x] User can click the '-' button on a product cart to increment that product in the shopping cart.
 - [x] Shopping cart displays a table of products, quantities, subtotal, tax, and total.
-- [x] User can check out, and can view receipt upon completion.
+- [ ] User can check out, and can view receipt upon completion.
 
 #### Stretch Features
 
