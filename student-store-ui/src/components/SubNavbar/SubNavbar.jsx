@@ -6,7 +6,7 @@ export default function ShopNavbar(props) {
 
     const toggleShopNavbar = () => setClosed((prevState) => !prevState)
 return (
-    <nav className="shop-navbar">
+    <nav className="shop-navbar" id="shop">
         <div className="content">
             <div className="row search-bar-wrapper">
                 <div className="search-bar">

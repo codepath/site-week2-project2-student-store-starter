@@ -12,7 +12,7 @@ export default function ShoppingCart(props) {
                 </div> : <CartTable products={props.products} shoppingCart={props.shoppingCart}/>}
                 
                 <CheckoutForm checkoutError={props.checkoutError} checkoutForm={props.checkoutForm} handleOnCheckoutFormChange={props.handleOnCheckoutFormChange} handleOnSubmit={props.handleOnSubmit}/>
-                <CheckoutInfo order={props.order} getReceipt={props.getReceipt} setGetReceipt={props.setGetReceipt} shoppingCart={props.shoppingCart}/>
+                <CheckoutInfo setIsOpen={props.setIsOpen} shopMore={props.shopMore} order={props.order} getReceipt={props.getReceipt} setGetReceipt={props.setGetReceipt} shoppingCart={props.shoppingCart}/>
             </div> : <span className="cart-icons">
                 <i className="fa-solid fa-cart-plus side-icon"></i>
                 <i className="fa-solid fa-sack-dollar side-icon"></i>
@@ -116,8 +116,8 @@ export function CheckoutInfo(props) {
                         </ul>
                     </section>
                     <footer className="card-foot">
-                        <button className="button" onClick={() => {props.setGetReceipt(false)}}>Shop More</button>
-                        <button className="button" onClick={() => {props.setGetReceipt(false)}} >Exit</button>
+                        <button className="button" onClick={() => props.shopMore()}>Shop More</button>
+                        <button className="button" onClick={() => {props.setGetReceipt(false); props.setIsOpen(false)}} >Exit</button>
                     </footer>
                 </div>
             </div>

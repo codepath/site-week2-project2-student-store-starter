@@ -24,6 +24,12 @@ export default function App() {
     email: ""
   })
 
+  const shopMore = () =>{
+    const offsetTop = document.getElementById("shop").offsetTop;
+    setGetReceipt(false);
+    setIsOpen(false);
+    window.scrollTo(0, offsetTop);
+  }
 
   const handleOnToggle = () => {
     setIsOpen((prevIsOpen) => !prevIsOpen)
@@ -40,7 +46,7 @@ export default function App() {
     else {
       setShoppingCart((oldShoppingCart) => ({...oldShoppingCart, [productId]: 1}))
     }
-    // setTotalPrice((currTotal) => currTotal + )     
+    setCheckoutError("")  
   }
 
   const handleRemoveItemFromCart = (productId) => {
@@ -57,18 +63,20 @@ export default function App() {
     let newCheckoutForm = {...checkoutForm}
     newCheckoutForm[name] = value
     setCheckoutForm(newCheckoutForm)
+    setCheckoutError("")
   }
 
   const handleOnSubmitCheckoutForm = () => {
     // axios POST request
     if (Object.keys(shoppingCart).length === 0) {
-        setCheckoutError("item")
-        return;
+      setCheckoutError("item")
+      return;
     }
     if (checkoutForm.name === "" || checkoutForm.email === "") {
       setCheckoutError("field")
       return;
     }
+
     let cartArray = []
     for (const item in shoppingCart){
       cartArray.push({itemId: item, quantity: shoppingCart[item]})
@@ -118,7 +126,7 @@ export default function App() {
       <BrowserRouter>
         <main>
           <Navbar />
-          <Sidebar setIsOpen={setIsOpen} order={order} getReceipt={getReceipt} setGetReceipt={setGetReceipt}isOpen={isOpen} handleOnToggle={handleOnToggle} shoppingCart={shoppingCart} products={products} checkoutForm={checkoutForm} handleOnCheckoutFormChange={handleOnCheckoutFormChange} handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm} checkoutError={checkoutError}/>
+          <Sidebar setIsOpen={setIsOpen}shopMore={shopMore} order={order} getReceipt={getReceipt} setGetReceipt={setGetReceipt}isOpen={isOpen} handleOnToggle={handleOnToggle} shoppingCart={shoppingCart} products={products} checkoutForm={checkoutForm} handleOnCheckoutFormChange={handleOnCheckoutFormChange} handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm} checkoutError={checkoutError}/>
           <Routes>
             <Route exact path="/" element={ <Home setIsOpen={setIsOpen}products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} shoppingCart={shoppingCart} searchInput={searchInput} handleOnSearch={handleOnSearch} activeCategory={activeCategory} setActiveCategory={setActiveCategory} />}/>
             <Route path="/products/:productId" element={<ProductDetail isFetching={isFetching} setIsFetching={setIsFetching} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} setError={setError} shoppingCart={shoppingCart}/>}/>
