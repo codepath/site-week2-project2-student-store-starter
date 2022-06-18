@@ -13,14 +13,13 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 export default function App() {
   const [products, setProducts] = React.useState([]);
   const [isFetching, setFetching] = React.useState(false);
+  const [shoppingCart, setShoppingCart] = React.useState([]);
 
-  console.log("App.jsx", products);
   React.useEffect(() => {
     const getProducts = async () => {
       setFetching(true);
       try {
         const response = await axios.get("https://codepath-store-api.herokuapp.com/store");
-        console.log("App.jsx try ", response?.data?.products);
         if (response?.data?.products) {
           // set data if response is not undefined
           setProducts(response?.data?.products);
@@ -44,10 +43,10 @@ export default function App() {
       <BrowserRouter>
         <main>
           <Navbar />
-          <Sidebar />
+          <Sidebar shoppingCart={shoppingCart}/>
           <Routes>
-            <Route path="/" element={<Home isFetching={isFetching} products={products} />} />
-            <Route path="/products/:productId" element={<ProductDetail products={products} />} />
+            <Route path="/" element={<Home isFetching={isFetching} products={products} setShoppingCart={setShoppingCart} shoppingCart={shoppingCart} />} />
+            <Route path="/products/:productId" element={<ProductDetail products={products} setShoppingCart={setShoppingCart} shoppingCart={shoppingCart} />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer></Footer>

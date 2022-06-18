@@ -15,8 +15,8 @@ export default function Home(props) {
     <div id="home" className="home">
       <Hero/>
       <ProductSettings searchQuery={searchQuery} setSearchQuery={setSearchQuery} setCategory={setCategory}/>
-      <ProductGrid category={category} searchQuery={searchQuery} products={props.products}/>
-      <About id="about"/>
+      <ProductGrid category={category} searchQuery={searchQuery} products={props.products} shoppingCart={props.shoppingCart} setShoppingCart={props.setShoppingCart}/>
+      <About/>
       <Contact/>
     </div>
   )

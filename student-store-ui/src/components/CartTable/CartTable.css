@@ -1,0 +1,31 @@
+:root {
+    --tableHeader: rgb(207, 207, 207);
+    --tableElement: rgb(175, 175, 175);
+    --tableElementEven: rgb(155, 155, 155);
+}
+
+.cart-table {
+    width: 100%; 
+    font-size: 20px;
+}
+
+th {
+    background-color: var(--tableHeader);
+    color:black;
+}
+
+tr {
+    background-color: var(--tableElement);
+    color:black;
+}
+
+tr:nth-child(even) {
+    background-color: var(--tableElementEven);
+}
+
+.cart-table-column {
+    /* display:grid; */
+    /* grid-template-rows: 1fr 1fr; */
+    /* justify-content: space-between; */
+    /* flex-direction: row; */
+}

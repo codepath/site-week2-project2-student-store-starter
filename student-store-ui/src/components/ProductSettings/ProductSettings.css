@@ -6,3 +6,27 @@
     background-color: var(--darkBlue);
     color: var(--white);
 }
+
+.product-categories>button {
+    box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+    font-size: 20px;
+    border: none;
+    padding: 10px;
+    transition: all 100ms;
+    margin:10px;
+}
+
+.product-categories>button:hover {
+    
+    background:none;
+    box-shadow:0px 0px 0px 5px whitesmoke inset;
+
+    color:whitesmoke;
+    cursor:pointer;
+}
+
+.product-categories>button:active {
+    transform: translateY(5px);
+}

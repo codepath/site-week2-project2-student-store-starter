@@ -9,9 +9,10 @@ export default function Navbar() {
       <div className="navbar-items">
         <Logo/>
         <div className="actions">
-          <a>Home</a>
-          <a>About</a>
-          <a>Contact</a>
+          <a href="/#home">Home</a>
+          <a href="/#about">About</a>
+          <a href="/#contact">Contact</a>
+          <a href="/#buy-now">Buy Now</a>
         </div>
       </div>
     </nav>

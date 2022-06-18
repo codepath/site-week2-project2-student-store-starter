@@ -4,7 +4,7 @@
     position: fixed;
     overflow: hidden;
     height: 100vh;
-    width: 300px;
+    width: 600px;
     background-color: var(--darkBlueAccent);
     text-align: center;
     transition: all 300ms linear;
@@ -15,4 +15,26 @@
 
 .sidebar.hidden {
     width: 50px;
+}
+
+.sidebar-header.hidden, .sidebar-container.hidden {
+    display:none;
+}
+
+.sidebar-container {
+    margin-top: 40px;
+}
+
+.material-icons {
+    cursor:pointer;
+    user-select: none;
+    transition: all 200ms linear;
+}
+
+.material-icons:active{
+    transform: translateY(5px);
+}
+
+.material-icons:hover {
+    transform: scale(1.2);
 }

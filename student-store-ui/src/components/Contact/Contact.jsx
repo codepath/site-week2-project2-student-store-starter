@@ -2,8 +2,8 @@ import "./Contact.css"
 
 export default function Contact() {
     return (
-        <div className="contact">
-            hello contact!! :)
+        <div id="contact" className="contact">
+            hello contact :)
         </div>
     )
         

@@ -14,7 +14,7 @@ export default function ProductDetail(props) {
         // if the length of our ID is greater than the array, return NotFound component
         productId < props.products.length ? 
         <div className="product-detail">
-            <ProductView product={product[0]}/>
+            <ProductView shoppingCart={props.shoppingCart} setShoppingCart={props.setShoppingCart} product={product[0]}/>
         </div> 
         :
         <NotFound/>

@@ -3,7 +3,15 @@
 
   --darkBlue: rgb(0, 40, 73);
   --darkBlueAccent: rgb(1, 31, 56);
+  --darkBlueUneven: rgb(0, 84, 153);
+  --darkBlueEven: rgb(0, 53, 95);
   --white: rgb(230, 230, 230);
+}
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 .main>div {
@@ -27,6 +35,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--white);
 }
+
+input[type=text],
+input[type=password] {
+  border: none;
+  background: none;
+  border-bottom: 2px solid whitesmoke;
+  color: white;
+  margin: 20px;
+  font-size: 20px;
+}
+
+input[type=text]:focus,
+input[type=password] {
+  outline: none;
+}
+
 
 * {
   box-sizing: border-box;

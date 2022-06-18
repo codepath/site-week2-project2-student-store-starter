@@ -20,12 +20,12 @@ export default function ProductGrid(props) {
 	}
 
 	return (
-		<div className="product-grid">
+		<div id="buy-now" className="product-grid">
 			{props.isFetching ?
 				<h1>Loading...</h1>
 				:
 				productsToShow.map((e, i) => {
-					return <ProductCard key={e.name} class="product-card" product={e} />
+					return <ProductCard key={e.name} class="product-card" product={e} shoppingCart={props.shoppingCart} setShoppingCart={props.setShoppingCart} />
 				})}
 		</div>)
 }

@@ -27,3 +27,12 @@
     gap: 30px;
 
 }
+
+.actions>a {
+    text-decoration: none;
+    color:whitesmoke;
+}
+
+.actions>a:active {
+    transform: translateY(2px);
+}

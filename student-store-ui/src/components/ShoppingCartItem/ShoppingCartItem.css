@@ -1,0 +1,11 @@
+.cart-item {
+    background-color: var(--darkBlueEven);
+}
+
+.cart-item:nth-child(even) {
+    background-color: var(--darkBlueUneven);
+}
+
+.cart-item p {
+    margin:0;
+}
