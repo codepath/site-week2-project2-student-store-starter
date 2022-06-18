@@ -278,3 +278,27 @@ The following specifications were met on the Express backend and the React front
         - **optional**:
           - [ ] `receipt` - text describing the order (what might go on a receipt)
       - [ ] It should then send a JSON response back to the client with the new purchase like so: `{ "purchase": purchase }`. The response should have a `201` status code for a resource created action.
+
+---
+
+### Reflection
+
+* Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
+
+Mostly the labs were able to prepare me for this week's project. All of the labs were about React and creating components, so being able to get familiar with those topics helped, but there were some topics that weren't covered in the labs that were in the project, so I did feel underprepared this week. In particular, axios and React Router weren't covered in the labs, but thankfully Moe had covered these in the slides throughout the week. 
+
+* If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
+  
+I would have changed the way I went about starting the project. I initially had focused on one component at a time, completing both the functionality and the CSS, which really hindered my time on the core functionalities. I should have left out as much CSS as I could, just so I could be working with the skeleton layout so I can focus on the core features more. 
+
+* Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
+
+Overall I believe my project demo went well, I went from having just a nav bar on thursday to having all core features done and having the CSS really well done, so I'm proud of what I accomplished overnight. Some things that my peers implemented that I will attempt over the weekend is the shopping cart and sidebar functionalities, I really am impressed by my peers and how they accomplish so much, I look forward to stepping up my game in the weeks to come.
+
+### Open-source libraries used
+
+- tps://fontawesome.com/
+
+### Shout out
+
+Shoutout to Angelo and Annesa for sticking with me through that whole project, we really overcame a lot this week!
