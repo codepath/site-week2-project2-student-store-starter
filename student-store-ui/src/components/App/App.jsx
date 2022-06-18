@@ -7,11 +7,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import api from '../api/api'
 import ProductDetail from '../ProductDetail/ProductDetail'
+import axios from 'axios'
 export default function App() {
 
   const [products, setProducts] = React.useState([])
   
-  const [isFetching, setisFetcing] = React.useState(false)
+  const [isFetching, setisFetching] = React.useState(true)
   
   const [error, seterror] = React.useState("")
   
@@ -20,29 +21,18 @@ export default function App() {
   const [shoppingCart, setshoppingCart] = React.useState("")
 
 
-  React.useEffect(() => {
-    const fetchpost = async () => {
-      try {
-        const response = await api.get()
-        setProducts(response.data)
-        setisFetcing(true)
-      }
-      catch (err)
-      {
-        if (err.response)
-        {
-             seterror(err.response.data)
-        }
-        else {
-          seterror(err.message)
-        }
-     
-      }
-    }
-    fetchpost()
-  }, [])
-  
 
+  
+  React.useEffect(() => {
+    axios.get("https://codepath-store-api.herokuapp.com/store/").then(function (response) {
+      
+        setProducts(response.data.products);
+        setisFetching(false);
+      })
+      .catch(function (error) {
+        console.log(error.message);
+      });
+  },[products]);
   
   
 
@@ -55,9 +45,21 @@ export default function App() {
           <Navbar />
           <Sidebar />
           <Routes>
-            <Route path='/' element={<Home  products={products.products} />} 
+          
+           {/*
+           condition ? exprIfTrue : exprIfFalse*/ }
+              {isFetching ? (
+      ""
+      ) : (
+         <Route path='/' element={<Home  products={products} />} 
             />
-            <Route path='/products/:productId' element={<ProductDetail error={ error} isFetching={isFetching}  />} />
+      )}
+            
+                   
+          <Route path='/products/:productId' element={<ProductDetail products={products.products}   />} />
+                
+            
+           
 '
            
           </Routes>

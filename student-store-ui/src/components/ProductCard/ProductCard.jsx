@@ -28,7 +28,10 @@ export default function ProductCard({
         </h4>
         <p> &#11088;&#11088;&#11088;&#11088;</p>
         <p></p>
-        <p>{formatter.format(product.price)}</p>
+              <p>{formatter.format(product.price)}</p>
+                {!showDescription ? "": (
+                  <h5>{product.description}</h5>
+      )}
       </div>
     </div>
   );

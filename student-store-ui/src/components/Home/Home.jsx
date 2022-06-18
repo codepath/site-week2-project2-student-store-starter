@@ -5,16 +5,33 @@ import SearchInput from "../SearchBox/SearchInput";
 import "./Home.css";
 
 export default function Home({ products }) {
-  var array = [];
 
-  const [selectCategory, setselectedCategory] = React.useState([null]);
 
-  function sortCategory(props) {
-    console.log(props)
-    array = products.filter((product) => product.category === props);
-    setselectedCategory(array);
-    console.log(selectCategory);
+  const[category,setcategory]=React.useState("all category")
+
+  const [filter_product, setfilter_product] = React.useState([]);
+
+
+
+
+ 
+
+
+  
+  function isCategory(value)
+  {
+    return value.category === category
   }
+  let products_array = [...products].filter(isCategory)
+
+
+  if (category == "all category")
+  {
+    products_array = products
+  }
+  
+  console.log(products_array)
+ 
 
   return (
     <div className="home">
@@ -27,48 +44,64 @@ export default function Home({ products }) {
           </div>
           <div className="product-category">
             <ul className="cat">
-              <li
-                onClick={() => sortCategory("all categories")}
-                key="All"
-                className="category all"
-              >
+              <li key="All" className="category all" onClick={()=>setcategory("all category")}>
                 <p>All Categories</p>
+                
               </li>
 
-              <li
-                onClick={() => sortCategory("clothing")}
-                key="Clothing"
-                className="category clothing"
-              >
+              <li key="Clothing" className="category clothing" onClick={()=>setcategory("clothing")}>
                 <p>Clothing</p>
               </li>
-              <li
-                onClick={() => sortCategory("food")}
-                key="Food"
-                className="category food"
-              >
+              <li key="Food" className="category food" onClick={()=>setcategory("food")}>
                 <p>Food</p>
               </li>
-              <li
-                onClick={() => sortCategory("accessories")}
-                key="Accessories"
-                className="category accessories"
-              >
+              <li key="Accessories" className="category accessories" onClick={()=>setcategory("accessories")}>
                 <p>Accessories</p>
               </li>
-              <li
-                onClick={() => sortCategory("tech")}
-                key="tech"
-                className="category tech"
-              >
+              <li key="tech" className="category tech" onClick={()=>setcategory("tech")}>
                 <p>Tech</p>
               </li>
             </ul>
           </div>
         </div>
-        <h3>Best Selling Products</h3>
       </div>
-      <ProductGrid products={products} />
+      <ProductGrid products={products_array} />
+    </div>
+  );
+}
+
+export function Headline() {
+  return (
+    <div>
+      <Hero className="Hero" />
+      <div className="headlines">
+        <SearchInput className="search" />
+        <div className="content">
+          <div className="hamburger-menu">
+            <i className="material-icons">menu</i>
+          </div>
+          <div className="product-category">
+            <ul className="cat">
+              <li key="All" className="category all">
+                <p>All Categories</p>
+              </li>
+
+              <li key="Clothing" className="category clothing">
+                <p>Clothing</p>
+              </li>
+              <li key="Food" className="category food">
+                <p>Food</p>
+              </li>
+              <li key="Accessories" className="category accessories">
+                <p>Accessories</p>
+              </li>
+              <li key="tech" className="category tech">
+                <p>Tech</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

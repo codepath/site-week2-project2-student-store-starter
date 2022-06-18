@@ -2,6 +2,9 @@ import ProductCard from "../ProductCard/ProductCard";
 import './ProductGrid.css'
 
 export default function ProductGrid({ products }) {
+
+  let new_array = [...products]
+  
   function showproducts() {
     if (products != null) {
       {
