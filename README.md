@@ -285,20 +285,21 @@ The following specifications were met on the Express backend and the React front
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+The topics discussed in my labs prepare me really well in completing the assignment, especially when we did the tweet input on lab 3, it helped me a lot in creating my search bar, since they should update as soon as the user type something. 
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Add your response here
+If I had more time I would add more to the css, I've only focused on the features and so I just tried to get the website to as close as the example website but I would like to add more of my personal touch as possible.
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+Everything went as planned on my demo, I made sure everything works and intended and showed the demo based more on the stretch features that I was able to implement, especially the shopping cart. 
 
 ### Open-source libraries used
 
-- Add any links to open-source libraries used in your project.
+- [React Router Document](https://v5.reactrouter.com/web/api/BrowserRouter) [StackOverflow](https://stackoverflow.com/)
 
 ### Shout out
 
 Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+I would like to give shoutout to one of my pod mate during the last 3 days of the week, Kian, though he didn't actually help me with the technical stuff but I was able to notice some of the minor features or naming that I tend to miss when skimming through the spec of the project, which is really helpful. 
