@@ -1,7 +1,7 @@
 .two {
   margin-left: 125px;
   margin-right: 20px;
-  width: 300px;
+  width: 250px;
   padding: 10px;
   font-size: 25px;
 
@@ -9,6 +9,7 @@
 }
 .three {
   margin-left: 125px;
+   width: 1150px;
   margin-right: 20px;
   display: flex;
   border: 1px solid #e6e6d8;
@@ -19,9 +20,9 @@
 }
 .text {
   width: 600px;
-  font-size: 20px;
+  font-size: 18px;
 
-  padding: 2rem 3rem;
+  padding: 3rem 3rem;
 }
 .media {
   height: 350px;

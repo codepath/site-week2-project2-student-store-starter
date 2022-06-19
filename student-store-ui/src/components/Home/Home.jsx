@@ -1,6 +1,7 @@
 import * as React from 'react'
 import About from '../About/About'
 import Contact from '../ContactUs/Contact'
+import Footer from '../Footer/Footer'
 import Help from '../Help/Help'
 import Hero from '../Hero/Hero'
 import ProductGrid from '../ProductGrid/ProductGrid'
@@ -94,7 +95,8 @@ export default function Home({ products }) {
         </div>
         <ProductGrid products={products_array} />
         <About />
-        <Contact/>
+        <Contact />
+        <Footer/>
       </div>
     
    

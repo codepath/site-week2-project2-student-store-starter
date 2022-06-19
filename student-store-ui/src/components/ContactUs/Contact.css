@@ -1,3 +1,16 @@
+.contact-container{
+ background-color: #363746;
+
+ margin-right: 80px;
+ margin-left: 120px;
+ margin-bottom: 20px;
+ height: 300px;
+ display: flex;
+ flex-direction: row;
+}
+.img_happy{
+  height: 300px;
+}
 .contactUs{
  
 
@@ -6,6 +19,46 @@
   width: 300px;
   padding: 10px;
   font-size: 25px;
-  font-weight:bolder
+  font-weight:bolder;
+ 
 
+}
+.label-list{
+  list-style: none;
+}
+.answers-list{
+  list-style: none;
+}
+.form{
+  display: flex;
+  flex-direction: row;
+  color: white;
+}
+.image{
+
+  margin-top:0px;
+  margin-left: 300px;
+
+}
+.la-li{
+  margin-bottom: 50px;
+  
+}
+.ans-li{
+  margin-bottom: 28px;
+ 
+}
+.ans-li p{
+ 
+
+}
+.ans-li .icon{
+  display: flex;
+  flex-direction: row;
+ 
+ 
+}
+.ans-li .icon i{
+   margin-right: 10px;
+ 
 }

@@ -1,0 +1,22 @@
+.footer{
+    margin-left: 50px;
+}
+.content{
+     margin-left: 50px;
+     display: flex;
+     flex-direction: column;
+}
+.links{
+    display: flex;
+    flex-direction: row;
+}
+.h4{
+    margin-left: 20px;
+    background-color: aqua;
+}
+.link-column{
+  
+}
+.ul{
+    list-style: none;
+}
