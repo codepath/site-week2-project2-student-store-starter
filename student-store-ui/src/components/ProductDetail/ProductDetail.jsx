@@ -4,6 +4,7 @@ import {useParams} from "react-router-dom"
 export default function ProjectDetail(props) {
     const {productId} = useParams()
     const thisProduct = props.products.find(prod => prod.id == productId)
+    console.log(thisProduct)
     return (
         <div>
             <img className="modal-image" src={thisProduct.image} alt="Product cover" />

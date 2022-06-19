@@ -3,14 +3,16 @@ import "./Navbar.css"
 
 export default function Navbar() {
   return (
-    <nav className="navbar">
+    <div className="navbar">
+    <nav >
       <img src="../../../assets/icons8-alien-monster-emoji-96.png" alt="Alien Monster Emoji" width="60" heigh="60" />  
-      <a href="#"><i class="fa fa-dollar"></i> Buy Now!</a>
-      <a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
-      <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact Us</a> 
-      <a href="#"><i class="fa fa-group"></i> About Us</a> 
-      <a href="#"><i class="fa fa-fw fa-home"></i> Home</a>
+      <a href="#"><i className="fa fa-dollar"></i> Buy Now!</a>
+      <a href="#"><i className="fa fa-fw fa-user"></i> Login</a>
+      <a href="#"><i className="fa fa-fw fa-envelope"></i> Contact Us</a> 
+      <a href="#"><i className="fa fa-group"></i> About Us</a> 
+      <a href="#"><i className="fa fa-fw fa-home"></i> Home</a>
     </nav>
+    </div>
   )
 }
 

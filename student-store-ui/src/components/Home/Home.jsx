@@ -78,7 +78,6 @@ if (search.length > 0) {
 
   return (
     <div className="home">
-      <Navbar />
       <div className="hero">
         <div className="content">
           <div className="intro">

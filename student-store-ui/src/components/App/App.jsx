@@ -1,18 +1,21 @@
 import * as React from "react"
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Link} from "react-router-dom";
-import ProjectDetail from "../ProjectDetail/ProjectDetail"
 import axios from 'axios';
-import Navbar from "../Navbar/Navbar"
+
 import Home from "../Home/Home"
+import Navbar from "../Navbar/Navbar";
+import Sidebar from "../Sidebar/Sidebar";
+import ProductDetail from "../ProductDetail/ProductDetail"
+import NotFound from "../NotFound/NotFound";
+
+
 import "./App.css"
 
 
 export default function App() {
 
   let [products, setProducts] = useState([]);
-
-
 
   useEffect(async () => {
       try {
@@ -27,9 +30,9 @@ export default function App() {
     <div className="app">
       <BrowserRouter>
         <Routes>
-        <Route exact path="/" element={<Home products={products}/>} />
-        <Route path="/products/:productId" element={<ProjectDetail products={products}/>}>
-        </Route>
+        <Route path="/" element={<div><Navbar /><Home products={products}/></div>}></Route>
+        <Route path="/products/:productId" element={<div><Navbar /><ProductDetail products={products}/></div>}></Route>
+        <Route path="*" element={<div><Navbar /><NotFound /></div>}></Route>
       </Routes>
       </BrowserRouter>
     </div>
