@@ -12,7 +12,7 @@ export default function ProductCard(props) {
   return (
     <div className="product-card">
       <div className="media">
-        <Link to={"/products/" + props.product.id}>
+        <Link to={"/products/" + props.productId}>
           <img src={props.product.image} alt={`Image of ${props.product.name}`} />
         </Link>
       </div>
@@ -27,8 +27,8 @@ export default function ProductCard(props) {
         <p>{props.showDescription ? props.product.description : null}</p>
       </div>
 
-      <button className="remove" onClick={props.handleRemoveItemFromCart(props.productId)}>-</button>
-      <button className="add" onClick={props.handleAddItemToCart(props.productId)}>+</button>
+      <button className="remove" onClick={() => props.handleRemoveItemFromCart(props.productId)}>-</button>
+      <button className="add" onClick={() => props.handleAddItemToCart(props.productId)}>+</button>
 
       {/* need to define shoppingCart object first */}
       {/* <p className="product-quantity">{shoppingCart > 0 : {shoppingCart} : null}</p> */}

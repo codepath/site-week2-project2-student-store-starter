@@ -18,9 +18,6 @@ export default function App() {
   const [isOpen, setIsOpen] = React.useState(false)
   const [shoppingCart, setShoppingCart] = React.useState([])
   const [checkoutForm, setCheckoutForm] = React.useState()
-  const [shoppingCartTotal, setShoppingCartTotal] = React.useState(0)
-
-  let productsInShoppingCart = shoppingCart.map(product => product.id)
 
   // remove console.logs later
 
@@ -29,7 +26,7 @@ export default function App() {
     try {
       const response = await axios.get("https://codepath-store-api.herokuapp.com/store");
       setProducts(response.data.products);
-      console.log(response.data.products);
+      console.log("received this data:", response.data.products);
     } catch (error) {
       console.log(error);
       setError(error)
@@ -50,16 +47,29 @@ export default function App() {
   }
 
   function handleAddItemToCart(productId) {
-    // if (productId in productsInShoppingCart) {
-    //   shoppingCart[productId] += 1;
-    // } else {
-    //   setShoppingCart(shoppingCart.concat({"itemId": {productId}, "quantity": 1}))
-    // }
-    // setShoppingCartTotal(3)
+    let targetIndex = shoppingCart.findIndex(item => item.itemId === productId)
+    // checking if item is already in cart; findIndex returns -1 if it doesn't find a match
+    if (!(targetIndex==-1)) {
+      // making a copy and because of how status objects update
+      let newShoppingCart = shoppingCart
+      newShoppingCart[targetIndex].quantity += 1
+      setShoppingCart([...newShoppingCart])
+    } else {
+      setShoppingCart([...shoppingCart, {itemId: productId, quantity: 1}])
+    }
   }
 
   function handleRemoveItemFromCart(productId) {
-
+    let targetIndex = shoppingCart.findIndex(item => item.itemId === productId)
+    if (!(targetIndex==-1)) {
+      let newShoppingCart = shoppingCart
+      newShoppingCart[targetIndex].quantity -= 1
+      // removing the item if the new quantity is now 0
+      if (newShoppingCart[targetIndex].quantity == 0) {
+        newShoppingCart.splice(targetIndex, 1)
+      }
+      setShoppingCart([...newShoppingCart])
+    }
   }
 
   function handleOnCheckoutFormChange(name, value) {
@@ -88,9 +98,7 @@ export default function App() {
               setIsFetching={setIsFetching}
               shoppingCart={shoppingCart}/>} />
           <Route path="*" element={
-            <NotFound
-              handleAddItemToCart={handleAddItemToCart}
-              handleRemoveItemToCart={handleRemoveItemFromCart}/>} />
+            <NotFound />} />
         </Routes>
         <Footer />
         </main>
