@@ -1,4 +1,54 @@
+.form_wrapper {
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-top:40px;
+  height: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
 
+}
+.search{
+   width: 672px;
+   border-radius: 5px;
+   height: 40px;
+    font-size: 18px;
+    padding: 10px;
+   
+}
+::placeholder {
+ 
+  font-size: 1.0em;
+  padding: 10px;
+}
+.search-bar{
+    margin-right: 2px;
+    align-items: center;
+}
+.search-icon{
+    background-color:  	#48bf91;
+    width: 43px;
+    height: 40px;
+    padding:10px ;
+    align-content: center;
+    align-items: center;
+    color: white;
+}
+.cart{
+
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    margin-left: 95px;
+    background-color: #48bf91;
+    color: white;
+}
+.writing{
+  
+    justify-items: center;
+    margin-left: 20px;
+    padding-right: 10px;
+}
 .hamburger-menu{
     justify-content: space-between;
     margin-top: 40px;
@@ -7,9 +57,14 @@
     margin-left: 150px;
 
 }
+.headlines{
+    display: flex;
+    flex-direction: column;
+}
 .content{
     display: flex;
     flex-direction: row;
+   
 }
 .product-category{
     display: flex;
@@ -39,4 +94,9 @@
 
   
    
+}
+.home{
+   
+    display: flex;
+    flex-direction: column;
 }

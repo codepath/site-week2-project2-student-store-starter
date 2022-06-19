@@ -1,3 +1,11 @@
+.search{
+   width: 672px;
+   border-radius: 5px;
+   height: 40px;
+    font-size: 18px;
+    padding: 10px;
+   
+}
 .form_wrapper {
   margin-left: 150px;
   margin-right: 150px;
@@ -7,14 +15,6 @@
   display: flex;
   flex-direction: row;
 
-}
-.search{
-   width: 672px;
-   border-radius: 5px;
-   height: 40px;
-    font-size: 18px;
-    padding: 10px;
-   
 }
 ::placeholder {
  
@@ -48,4 +48,12 @@
     justify-items: center;
     margin-left: 20px;
     padding-right: 10px;
+}
+.hamburger-menu{
+    justify-content: space-between;
+    margin-top: 40px;
+    align-items: center;
+    margin-right: 80px;
+    margin-left: 150px;
+
 }

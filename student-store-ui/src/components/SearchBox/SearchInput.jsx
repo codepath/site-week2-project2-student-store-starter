@@ -4,7 +4,7 @@ export default function SearchInput() {
   return (
     <div className="form_wrapper">
       <form className="search-bar">
-        <input className="search" placeholder="Search" name="search" />
+        <input className="search" placeholder="Search" name="search" onChange={e => setFirstName(e.target.value)}  />
       </form>
       <SearchIcon />
       <Help />
