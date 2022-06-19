@@ -15,7 +15,10 @@ import "./App.css"
 
 export default function App() {
 
-  let [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [shoppingCart, setShoppingCart] = useState([]);
+
+  const [search, setSearch] = React.useState('')
 
   useEffect(async () => {
       try {
@@ -30,7 +33,15 @@ export default function App() {
     <div className="app">
       <BrowserRouter>
         <Routes>
-        <Route path="/" element={<div><Navbar /><Home products={products}/></div>}></Route>
+        <Route path="/" 
+        element={
+        <div>
+          <Navbar />
+          <Home products={products}
+          search={search}
+          setSearch={setSearch}/>
+        </div>}>
+        </Route>
         <Route path="/products/:productId" element={<div><Navbar /><ProductDetail products={products}/></div>}></Route>
         <Route path="*" element={<div><Navbar /><NotFound /></div>}></Route>
       </Routes>

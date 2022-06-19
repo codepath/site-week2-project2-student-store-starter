@@ -1,4 +1,3 @@
-/* Add a black background color to the top navigation */
 .navbar {
     width: 100%;
     background-color: #555;
@@ -6,26 +5,31 @@
     position: fixed;
 }
   
-  .navbar a {
+.navbar a {
     float: right;
     padding: 12px;
     color: white;
     text-decoration: none;
     font-size: 17px;
-  }
+}
   
-  .navbar a:hover {
+.navbar a:hover {
     background-color: #000;
-  }
+}
   
-  .active {
-    background-color: #04AA6D;
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
   }
-  
-  @media screen and (max-width: 500px) {
-    .navbar a {
-      float: none;
-      display: block;
-    }
-  }
+}
+
+.logo {
+  float: left;
+}
+
+.nav-links {
+  position: relative;
+  top: 6px;
+}
   
