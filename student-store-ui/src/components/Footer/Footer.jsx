@@ -48,10 +48,24 @@ export default function Footer() {
           <h4 className = "footer-header">Our App</h4>
           <p><i class="fa-brands fa-google-play"></i></p>
           <p><i class="fa-brands fa-app-store"></i></p>
-
         </span>
-
-
+        
+      </div>
+      <div className = "payment-logos">
+        <ul className = "payment-list">
+          <li className = "pay-logo">
+            <i class="fa-brands fa-cc-paypal fa-xl"></i>
+          </li>
+          <li className = "pay-logo">
+            <i class="fa-brands fa-cc-visa fa-xl"></i>
+          </li>
+          <li className = "pay-logo">
+            <i class="fa-brands fa-cc-mastercard fa-xl"></i>
+          </li>
+          <li className = "pay-logo">
+            <i class="fa-brands fa-cc-discover fa-xl"></i>
+          </li>
+        </ul>
       </div>
     </div>
   )
