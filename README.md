@@ -38,14 +38,14 @@ The following specifications were met on the Express backend and the React front
 **App.jsx**
 
   - [ ] The core App component that contains the routes for the app and does the initial data fetching
-  - [ ] Renders a `BrowserRouter` component that contains a `Routes` component with the following routes:
-    - [ ] `/` - Should render the `Home.jsx` component
-    - [ ] `/products/:productId` - should render the `ProductDetail` component
-    - [ ] `*` - anything else should render the `NotFound` component
-  - [ ] Renders the `Navbar` component on every route
+  - [X] Renders a `BrowserRouter` component that contains a `Routes` component with the following routes:
+    - [X] `/` - Should render the `Home.jsx` component
+    - [X] `/products/:productId` - should render the `ProductDetail` component
+    - [X] `*` - anything else should render the `NotFound` component (UPDATED)
+  - [X] Renders the `Navbar` component on every route (UPDATED)
   - [ ] Renders the `Sidebar` component on every route
   - [ ] Should create **at least** the following state variables:
-    - [ ] `products` - an array of product objects that is initially empty.
+    - [X] `products` - an array of product objects that is initially empty.
     - [ ] `isFetching` - a boolean value representing whether or not the App is currently fetching the `products` from the API.
     - [ ] `error` - a variable used to display a message when something goes wrong with the API requests.
     - [ ] `isOpen` - a boolean value representing whether or not the `Sidebar.jsx` is in the open or closed state.
@@ -57,9 +57,9 @@ The following specifications were met on the Express backend and the React front
         - [ ] The `quantity` field should store a number representing how many of that item the user is purchasing.
     - [ ] `checkoutForm` - the user's information that will be sent to the API when they checkout.
   - [ ] Leverage the `useEffect` hook to ensure that when the `App.jsx` component is mounted to the screen...
-    - [ ] It should make a `GET` request to the API's `/store` endpoint with the `axios.get` method.
-    - [ ] When the request completes successfully, it should store the `products` returned by the response in state.
-    - [ ] If the request does not complete successfully, or there are no `products` found in the response,
+    - [X] It should make a `GET` request to the API's `/store` endpoint with the `axios.get` method.
+    - [X] When the request completes successfully, it should store the `products` returned by the response in state.
+    - [X] If the request does not complete successfully, or there are no `products` found in the response,
             it should create an error message and store it in the `error` state variable.
   - [ ] The `App.jsx` component should define handler functions to be passed as props to the `Home` and `ProductDetail` components.
     - [ ] Define as many as are needed.
@@ -97,7 +97,7 @@ The following specifications were met on the Express backend and the React front
 
 **Navbar.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `nav` element with a `className` of `navbar`
+  - [X] Should render JSX that is wrapped by a `nav` element with a `className` of `navbar`
   - [ ] Should render the `Logo` component that links to the `/` route when clicked
 
 **Logo.jsx**
@@ -107,7 +107,7 @@ The following specifications were met on the Express backend and the React front
 
 **Home.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `div` element with a `className` of `home`
+  - [X] Should render JSX that is wrapped by a `div` element with a `className` of `home`
   - [ ] Should accept **at least** the following props:
     - `products` - an array of product objects
     - `handleAddItemToCart` - handler function defined in the `App.jsx` component
