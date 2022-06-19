@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom"
 import axios from "axios"
 import NotFound from "../NotFound/NotFound"
 import ProductView from "../ProductView/ProductView"
+import Loading from "../Loading/Loading"
 
 export default function ProductDetail(props) {
   const [currentProduct, setCurrentProduct] = useState(null)  
@@ -13,6 +14,9 @@ export default function ProductDetail(props) {
   let apiUrl = "https://codepath-store-api.herokuapp.com/store/" + productId.productId
   console.log(productId.productId)
   console.log(apiUrl)
+
+  let invalidId = (productId.productId < 0 || productId.productId > props.products.length )
+
 
 
   useEffect(() => {
@@ -38,7 +42,9 @@ export default function ProductDetail(props) {
     return (        
       
     <div className = "product-detail">
-      {currentProduct != null ? (<ProductView product = {currentProduct} />) : (<NotFound />)}
+
+
+      {currentProduct != null ? (<ProductView product = {currentProduct} />) : invalidId ? (<NotFound />) : (<Loading/>)}
 
         
     </div>

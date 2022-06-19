@@ -60,7 +60,7 @@ export default function App() {
         <Sidebar /> 
         <Routes>
           <Route path = "/" element = {<Home products = {products} selectedCategory = {selectedCategory} setSelectedCategory = {setSelectedCategory}/>}  />
-          <Route path = "/products/:productId" element = {<ProductDetail isFetching = {isFetching} setIsFetching = {setIsFetching} error = {error} setError = {setError}/>} /> 
+          <Route path = "/products/:productId" element = {<ProductDetail products = {products} isFetching = {isFetching} setIsFetching = {setIsFetching} error = {error} setError = {setError}/>} /> 
           <Route path = "*" element = {<NotFound />}/> 
         </Routes> 
         <Footer/>
