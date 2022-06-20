@@ -3,22 +3,34 @@ import "./Contact.css"
 
 export default function Contact() {
   return(
-    <>
-    <h2 className="title">About Us</h2>
-    <div className="content-div">
-      <div className="contact-info-div">
-        <p>Email: codepath.org</p>
-        <p>Phone: 1-800-CODEPATH</p>
-        <p>Address: 123 Fake Avenue, San Francisco, CA</p>
-        <p>Socials: 😀 😃 😄 😁 </p>
+    <div className= "contact">
+    <div className="contact-content">
+    <h3 className="contact-title">Contact Us</h3>
+      <div className="contact-summary">
+        <ul>
+          <li>
+          <span class="contact-label">Email:</span>
+          <span class="contact-label">code@path.org</span>
+          </li>
+          <li>
+          <span class="contact-label">Phone:</span>
+          <span class="contact-label">1-800-CODEPATH</span>
+          </li>
+          <li>
+          <span class="contact-label">Address:</span>
+          <span class="contact-label">123 Fake Street, San Francisco, CA</span>
+          </li>
+          <li>
+          <span class="contact-label">Socials: </span>
+          <span class="contact-socials"></span>
+          </li>
+        </ul>
+        <div className="contact-photo">
+        <img className="contact-media" src='https://codepath-student-store-demo.surge.sh/assets/happy_person.517b658d.svg'/>
       </div>
-      <div className="contact-photo-div">
-        <img className="media" src='https://images.unsplash.com/photo-1559030623-0226b1241edd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2062&q=80'/>
       </div>
-
-      <p></p>
     </div>
-    </>
+    </div>
     
   )
 }

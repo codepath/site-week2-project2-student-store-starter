@@ -6,18 +6,18 @@ import { MdPayment } from "react-icons/md"
 export default function Sidebar() {
   return (
     <section className="sidebar closed">
-      <div className="wrapper">
-        <button className="toggle-button button closed"><p className="material-icons"><BsFillArrowRightCircleFill /></p></button>
-        <div className="shopping-cart">
-          <div className="cart-icons">
-            <span className="cart-icon icon button">
-              <i className="material-icons"><BsFillCartPlusFill /></i>
+      <div className="sidebar-wrapper">
+        <button className="toggle-button button closed"><p className="sidebar-material-icons"><BsFillArrowRightCircleFill /></p></button>
+        <div className="sidebar-shopping-cart">
+          <div className="sidebar-cart-icons">
+            <span className="sidebar-cart-icon icon button">
+              <i className="sidebar-material-icons"><BsFillCartPlusFill /></i>
             </span>
-            <span className="cart-icon icon button">
-              <i className="material-icons"><MdPayment /></i>
+            <span className="sidebar-cart-icon icon button">
+              <i className="sidebar-material-icons"><MdPayment /></i>
             </span>
-            <span className="cart-icon icon button">
-              <i className="material-icons"><BsFillInfoCircleFill /></i>
+            <span className="sidebar-cart-icon icon button">
+              <i className="sidebar-material-icons"><BsFillInfoCircleFill /></i>
             </span>
           </div>
         </div>

@@ -1,45 +1,80 @@
-.content-div {
+.contact{
+    width: 90%;
+    max-width:100vw;
+    min-height:350px;
+    margin-left: 100px;
+}
+.contact-content{
+    max-width:var(--content-width);
+    width:100%;
+    margin:0 auto;
+    display:flex;
+    flex-direction:column;
+    min-height:350px
+    
+}
+.contact-title{
+    margin:10px 0 30px;
+    font-size:24px;
+    font-weight:600;
+}
+.contact-summary{
+    display:flex;
+    flex-direction:row;
+    background:var(--dark-blue);
+    color:var(--pure-white);
+    height:330px;
+    border:solid 1px #e0e0e0;
+    overflow:visible;
     background-color: #2c4047;
-    padding: 30px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
+}
+.contact-info{
+    padding:28px 36px;
     color: white;
-    font-size: 18px;
-    margin-left: 50px;
+    list-style-type:none;
+    flex:1;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:space-between;
 }
-
-.media {
-    height: 200px;
-    width: 400px;
-}
-
-.title {
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-}
-ignore that
-Contact.css
-.content-div {
-    background-color: #2c4047;
-    padding: 30px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
+li{
     color: white;
-    font-size: 18px;
-    margin-left: 50px;
+    margin-bottom:18px;
+    font-size:18px;
+    display:flex;
+    align-items:center;
+    width:100%;
 }
-
-.media {
-    height: 200px;
-    width: 400px;
+.contact-socials{
+    color:var(--pure-white);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    width:150px;
 }
-
-.title {
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
+svg{
+    height:24px;
+    width:24px;
 }
-
+span{
+    width:100px;
+    margin-right:20px;
+    color: var(--pure-white);
+}
+.contact-photo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 330px;
+}
+.contact-media{
+    transform:translateY(-2px);
+    margin-left: 100px;
+    height: 400px;
+}
+.contact-label{
+    padding-top: 10px;
+}

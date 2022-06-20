@@ -1,0 +1,49 @@
+
+.about{
+    width:90%;
+    max-width:100vw;
+    min-height:350px;
+    margin-left: 100px;
+}
+.about-content{
+    max-width:var(--content-width);
+    width:100%;
+    margin:0 auto;
+    display:flex;
+    flex-direction:column;
+    min-height:350px
+}
+.about-header{
+    margin:30px 0 30px;
+    font-size:24px;
+    font-weight:600
+}
+.about-summary{
+    display:flex;
+    flex-direction:row;
+    background:white;
+    height:330px;
+    border:solid 1px #e0e0e0
+}
+.about-text, .about-media{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    height:330px
+}
+.about-text{
+    align-items:flex-start;
+    padding:28px 36px;
+    margin-bottom:18px;
+    font-size:18px;
+}
+.about-words{
+    color: #5b5b5b;
+}
+
+.about-media{
+    background:#2c4047;
+    height:329px
+}

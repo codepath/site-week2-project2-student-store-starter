@@ -1,0 +1,8 @@
+.search-input{
+    margin-left: 7%;
+    padding: 10px 30px 0px 10px;
+}
+.search-input .textbox{
+    padding: 10px 300px 10px 5px;
+    border-radius: 10px;
+}
