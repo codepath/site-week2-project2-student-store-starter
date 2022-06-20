@@ -5,6 +5,7 @@ import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
 import Hero from "../Hero/Hero";
 import "./App.css"
+import ProductCard from "../ProductCard/ProductCard"
 
 export default function App() {
   const [products, setProducts] = useState([]);
@@ -17,7 +18,6 @@ export default function App() {
           {/* YOUR CODE HERE! */}
           <Navbar />
           <Sidebar />
-          <Hero></Hero>
           {/* <Home /> */}
         </main>
       </BrowserRouter>
