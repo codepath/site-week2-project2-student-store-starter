@@ -1,4 +1,4 @@
-.sidebar{
+.sidebar-active{
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
@@ -6,9 +6,18 @@
   background-color: #363746; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s;
+ 
   height: 100%;
+   transform: translate(00%);
+
   width: 70px;
+}
+.side-container{
+    display: flex;
+    width: 500px;
+    flex-direction: row;
+    position: absolute;
+    
 }
 .wrapper{
     height: 100%;
@@ -34,6 +43,11 @@
 }
 .shopping-cart .cart-icon{
     margin-top: 50px;
+    border: none;
 
-    height: 90px;
+    height: 35px;
+    background-color: white;
+    border: 0px;
+    align-items: center;
+    justify-content: center;
 }

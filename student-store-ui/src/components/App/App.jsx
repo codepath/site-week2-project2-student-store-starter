@@ -18,6 +18,9 @@ export default function App() {
   const [isOpen, setisOpen] = React.useState(false);
 
   const [shoppingCart, setshoppingCart] = React.useState("");
+  const handleOnToggle = (isOpen) => {
+    setisOpen(!isOpen)
+  }
 
   React.useEffect(() => {
     axios
@@ -37,7 +40,7 @@ export default function App() {
         <main>
           {/* YOUR CODE HERE! */}
           <Navbar />
-          <Sidebar />
+          <Sidebar isOpen={isOpen} setisOpen={setisOpen} handleOnToggle={handleOnToggle} products={products} />
           <Routes>
         
             {isFetching ? (
