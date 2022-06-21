@@ -11,21 +11,38 @@ import "./App.css"
 
 export default function App() {
   const[products, setProducts] = useState([])
+  const[type, setType] = useState('')
+  const[search, setSearch] = useState('')
   const[isFetching, setIsFetching] = useState(false)
   const[error, setError] = useState('')
   const[isOpen, setIsOpen] = useState(false)
   const[shoppingCart, setShoppingCart] = useState([])
   const[checkoutForm, setCheckoutForm] = useState(null)
+
+  console.log(search)
   
   useEffect(() => {
     axios.get("https://codepath-store-api.herokuapp.com/store").then(res => {
-      console.log(res)
-      setProducts(res.data.products)
+      console.log(res.data.products)
+      let newProduct = res.data.products
+      if (search !== ''){
+        setProducts(newProduct = newProduct.filter((product) => {
+          return product.name.toLowerCase().includes(search)
+        })) 
+      } else {
+        setProducts(newProduct)
+      }
+      if (type !== ''){
+        setProducts(newProduct = newProduct.filter((product) => {
+          return product.category === type
+        }))
+      }
+      
     }).catch(err => {
       console.log(err)
       setError(err)
     })
-  }, [])
+  }, [search, type])
 
   const handleOnToggle = () => {
     setIsOpen(!isOpen)
@@ -39,7 +56,7 @@ export default function App() {
           <Navbar />
           <Sidebar isOpen={isOpen} handleOnToggle={handleOnToggle}/>
           <Routes>
-            <Route path="/" element={<Home products={products} />}/>
+            <Route path="/" element={<Home products={products} setSearch={setSearch} setType={setType}/>}/>
             <Route path="/products/:productId" element={<ProductDetail />}/>
             
           </Routes>
