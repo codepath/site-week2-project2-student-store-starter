@@ -5,11 +5,10 @@ import CheckoutForm from "../CheckoutForm/CheckoutForm"
 
 
 export default function Sidebar({isOpen, shoppingCart, products, checkoutForm, handleOnCheckoutFormChange, handleOnSubmitCheckoutForm, handleOnToggle}){
-  console.log(isOpen)
   return (
     <section className={isOpen == true ? "sidebar open" : "sidebar closed"}>
       <button className="toggle-button" onClick={handleOnToggle}>Button</button>
-      {isOpen == true ? <><ShoppingCart /><CheckoutForm /></> : null}
+      {isOpen == true ? <><ShoppingCart isOpen={isOpen} shoppingCart={shoppingCart} products={products}/><CheckoutForm /></> : null}
     </section>
   )
 }

@@ -9,7 +9,7 @@ export default function Home({products, handleAddItemToCart, handleRemoveItemToC
     <div className="home">
       <Hero />
       <SubNavBar setType={setType} setSearch={setSearch} type={type}/>
-      <ProductGrid products={products}/>
+      <ProductGrid products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemToCart}/>
       
     </div>
   )

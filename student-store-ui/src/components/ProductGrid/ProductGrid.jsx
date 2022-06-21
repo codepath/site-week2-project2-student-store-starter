@@ -7,7 +7,7 @@ export const ProductGrid = ({products, handleAddItemToCart, handleRemoveItemToCa
     <div className='product-grid'>
       <div className="content">
         <div className="grid">
-          {products.map((product, idx) => <ProductCard showDescription={false} product={product} productId={product.id} key={idx}/>)}
+          {products.map((product, idx) => <ProductCard showDescription={false} product={product} productId={product.id} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemToCart} key={idx}/>)}
         </div>
       </div>
     </div>
