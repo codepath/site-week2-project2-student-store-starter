@@ -54,8 +54,11 @@ const [shoppingCart, setShoppingCart] = useState([])
 // The user's information that will be sent to the API when they checkout.
 const [checkoutForm, setCheckoutForm] = useState("") 
 
-const [searchFormContent, setSearchFormContent] = useState();
+const [searchFormContent, setSearchFormContent] = useState("");
 
+const [selectedCategory, setSelectedCategory] = useState("all")
+
+const [selectedProductId, setSelectedProductId] = useState(0)
 
 
 
@@ -122,7 +125,7 @@ function handleOnSubmitCheckoutForm() {
            
           </Navbar>
             
-          <Sidebar> {/* All routes */}
+          <Sidebar handleOnToggle={() => handleOnToggle}> {/* All routes */}
   
           </Sidebar>
 
@@ -139,6 +142,10 @@ function handleOnSubmitCheckoutForm() {
               handleRemoveItemFromCart={handleRemoveItemFromCart}
               searchFormContent={searchFormContent} 
               setSearchFormContent={setSearchFormContent}
+              selectedCategory={selectedCategory}
+              setSelectedCategory={setSelectedCategory}
+              selectedProductId={selectedProductId}
+              setSelectedProductId={setSelectedProductId}
               />}
             ></Route>
 
@@ -147,7 +154,10 @@ function handleOnSubmitCheckoutForm() {
 
             <Route
             path="/products/:productId"
-            element={<ProductDetail ></ProductDetail>} />
+            element={<ProductDetail 
+              selectedProductId={selectedProductId}
+              products={products}
+            ></ProductDetail>} />
 
             {/* All other routes that don't match */}
             <Route 

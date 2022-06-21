@@ -16,3 +16,76 @@
     height: 250px;
     width: 100%;
 }
+
+.product-card .product-info {
+    flex: 1;
+    display: flex;
+    border-top: solid 1px var(--border-color);
+}
+
+.product-card .main-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 12px;
+}
+
+.product-card .main-info .product-name {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.stars {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 40px;
+}
+
+.stars svg {
+    height: 20px;
+    width: 20px;
+}
+
+.product-card .main-info .product-price {
+    font-size: 14px;
+}
+
+.product-card .actions {
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.product-card .buttons {
+    width: 80px;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.product-card .buttons button {
+    display: flex;
+    outline: none;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    max-height: fit-content;
+    max-width: fit-content;
+    margin: 10px 5px;
+}
+
+.product-card .buttons i {
+    width: 20px;
+    height: 20px;
+    border: solid 1px var(--bright-green);
+    color: var(--bright-green);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
