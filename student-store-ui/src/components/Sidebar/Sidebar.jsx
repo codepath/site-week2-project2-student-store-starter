@@ -3,8 +3,8 @@ import "./Sidebar.css";
 import arrow from "../assets/arrow.png";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
 
-export default function Sidebar({ isOpen, products, handleOnToggle,setisOpen }) {
-
+export default function Sidebar({ isOpen, products, handleOnToggle, setisOpen,shoppingCart,setshoppingCart}) {
+  
     var classNames = `sidebar${!isOpen ? '-active' : ''}`
 
   return (
@@ -34,7 +34,7 @@ export default function Sidebar({ isOpen, products, handleOnToggle,setisOpen }) 
         </div>
         
       </section>
-      <ShoppingCart isOpen={isOpen} setisOpen={setisOpen} />
+      <ShoppingCart products={products} shoppingCart={shoppingCart} setshoppingCart={setshoppingCart} isOpen={isOpen} setisOpen={setisOpen} />
 
     </div>
   );

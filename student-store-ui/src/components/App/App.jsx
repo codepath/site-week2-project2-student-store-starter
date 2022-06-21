@@ -19,6 +19,8 @@ export default function App() {
 
   const [shoppingCart, setshoppingCart] = React.useState([])
 
+  
+
 
   const handleRemoveItemFromCart = (productID) => {
     var value = shoppingCart.find((element) => {
@@ -32,8 +34,15 @@ export default function App() {
         if (element.itemId == productID) {
           if (element['quantity'] > 0)
           {
-             element['quantity'] = element['quantity'] -1
+            element['quantity'] = element['quantity'] - 1
+            
+           
           }
+           if (element['quantity'] <= 0)
+            {
+              shoppingCart.pop(element)
+            }
+        
          
         }
       

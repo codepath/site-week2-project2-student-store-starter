@@ -47,14 +47,4 @@ export default function ProductCard({product, productId,shoppingCart,handleAddIt
   )
 }
 
-export function AddButton({ handleOnSubmit, tweetText = '' }) {
-  console.log(tweetText.length)
-  var disableTweet = true
-  if (tweetText.length < 1) {
-    disableTweet = true
-  } else if (tweetText.length > 140) {
-    disableTweet = true
-  } else {
-    disableTweet = false
-  }
-}
+
