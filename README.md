@@ -15,13 +15,12 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 - [X] User can click on the categories (Clothing, food, etc) to filter the product grid by type.
 - [X] User can search for products.
 - [X] User can click on a product in the grid to view additional product details. Navigation is via a React Router.
-
-#### Stretch Features
-
-- [X] User can click to expand the shopping cart in the left navigation.
+- [ ] User can click to expand the shopping cart in the left navigation.
 - [ ] User can click the '+' button on a product cart to increment that product in the shopping cart.
 - [ ] User can click the '-' button on a product cart to increment that product in the shopping cart.
 - [ ] Shopping cart displays a table of products, quantities, subtotal, tax, and total.
+
+#### Stretch Features
 - [ ] User can check out, and can view receipt upon completion.
 - [ ] User can click in the top navigation bar to scroll to the relevant section.
 - [ ] User sees a "not found" display when searching for a nonexistent product.
@@ -37,26 +36,26 @@ The following specifications were met on the Express backend and the React front
 
 **App.jsx**
 
-  - [ ] The core App component that contains the routes for the app and does the initial data fetching
+  - [X] The core App component that contains the routes for the app and does the initial data fetching
   - [X] Renders a `BrowserRouter` component that contains a `Routes` component with the following routes:
     - [X] `/` - Should render the `Home.jsx` component
     - [X] `/products/:productId` - should render the `ProductDetail` component
     - [X] `*` - anything else should render the `NotFound` component (UPDATED)
   - [X] Renders the `Navbar` component on every route (UPDATED)
-  - [ ] Renders the `Sidebar` component on every route
+  - [X] Renders the `Sidebar` component on every route
   - [ ] Should create **at least** the following state variables:
     - [X] `products` - an array of product objects that is initially empty.
-    - [ ] `isFetching` - a boolean value representing whether or not the App is currently fetching the `products` from the API.
-    - [ ] `error` - a variable used to display a message when something goes wrong with the API requests.
-    - [ ] `isOpen` - a boolean value representing whether or not the `Sidebar.jsx` is in the open or closed state.
-    - [ ] `shoppingCart` - should store state for the active user's shopping cart (items they want to purchase and the quantity of each item).
+    - [X] `isFetching` - a boolean value representing whether or not the App is currently fetching the `products` from the API.
+    - [X] `error` - a variable used to display a message when something goes wrong with the API requests.
+    - [X] `isOpen` - a boolean value representing whether or not the `Sidebar.jsx` is in the open or closed state.
+    - [X] `shoppingCart` - should store state for the active user's shopping cart (items they want to purchase and the quantity of each item). (UPDATED)
       - [ ] Use whatever data type works best here, but make sure the format the `shoppingCart` as an array before passing it to other components.
       - [ ] When passed down to other components as a prop, it should formatted as an array of objects.
       - [ ] Each object in the array should have two fields:
         - [ ] The `itemId` field should store the `id` of the item being purchased.
         - [ ] The `quantity` field should store a number representing how many of that item the user is purchasing.
     - [ ] `checkoutForm` - the user's information that will be sent to the API when they checkout.
-  - [ ] Leverage the `useEffect` hook to ensure that when the `App.jsx` component is mounted to the screen...
+  - [X] Leverage the `useEffect` hook to ensure that when the `App.jsx` component is mounted to the screen...
     - [X] It should make a `GET` request to the API's `/store` endpoint with the `axios.get` method.
     - [X] When the request completes successfully, it should store the `products` returned by the response in state.
     - [X] If the request does not complete successfully, or there are no `products` found in the response,
@@ -97,13 +96,13 @@ The following specifications were met on the Express backend and the React front
 
 **Navbar.jsx**
 
-  - [X] Should render JSX that is wrapped by a `nav` element with a `className` of `navbar`
-  - [ ] Should render the `Logo` component that links to the `/` route when clicked
+  - [X] Should render JSX that is wrapped by a `nav` element with a `className` of `navbar` 
+  - [X] Should render the `Logo` component that links to the `/` route when clicked (UPDATED)
 
 **Logo.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `div` element with a `className` of `logo`
-  - [ ] Should use the `Link` component from `react-router-dom` to link to the home route (`/`) when clicked
+  - [X] Should render JSX that is wrapped by a `div` element with a `className` of `logo` (UPDATED)
+  - [X] Should use the `Link` component from `react-router-dom` to link to the home route (`/`) when clicked (UPDATED)
 
 **Home.jsx**
 
@@ -112,18 +111,18 @@ The following specifications were met on the Express backend and the React front
     - `products` - an array of product objects
     - `handleAddItemToCart` - handler function defined in the `App.jsx` component
     - `handleRemoveItemToCart` - handler function defined in the `App.jsx` component
-  - [ ] Should render the `Hero` component
-  - [ ] Should render the `ProductGrid` component
+  - [X] Should render the `Hero` component (UPDATED)
+  - [X] Should render the `ProductGrid` component
 
 **Hero.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `div` element with a `className` of `hero`
-  - [ ] Should display an intro message inside an element with the `className` of `intro`. That message should contain the text `"Welcome!"` somewhere within it.
-  - [ ] Should render a hero image inside an `img` tag with the `className` of `hero-img`.
+  - [X] Should render JSX that is wrapped by a `div` element with a `className` of `hero`
+  - [X] Should display an intro message inside an element with the `className` of `intro`. That message should contain the text `"Welcome!"` somewhere within it.
+  - [X] Should render a hero image inside an `img` tag with the `className` of `hero-img`.
 
 **ProductGrid.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `div` element with a `className` of `product-grid`
+  - [X] Should render JSX that is wrapped by a `div` element with a `className` of `product-grid`
   - [ ] Should accept **at least** the following props:
     - `products` - an array of product objects
     - `handleAddItemToCart` - handler function defined in the `App.jsx` component
@@ -137,7 +136,7 @@ The following specifications were met on the Express backend and the React front
     - `handleAddItemToCart` - handler function defined in the `App.jsx` component
     - `handleRemoveItemToCart` - handler function defined in the `App.jsx` component
   - [ ] Should define **at least** a `product` state variable and updater
-  - [ ] It should leverage the `useParams` hook from `react-router-dom` to extract the `productId` param from the url.
+  - [X] It should leverage the `useParams` hook from `react-router-dom` to extract the `productId` param from the url.
   - [ ] When the component is mounted to the screen...
     - [ ] It should make a `GET` request to the `/store/:productId` endpoint with the `axios.get` method.
     - [ ] The `:productId` part of the request should be replaced with the `productId` pulled from the url.
@@ -297,7 +296,8 @@ What went well was I was able to show that I implemented all the core features i
 
 ### Open-source libraries used
 
-- https://icons8.com for the logo
+* https://icons8.com for the logo
+* Bootstrap - https://getbootstrap.com
 
 ### Shout out
 

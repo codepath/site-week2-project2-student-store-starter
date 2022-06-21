@@ -18,9 +18,10 @@ export default function Sidebar(props) {
   }
 
   return (
-    <section className={sidebarClass}>
-      <button id="close" onClick={closeHandler}> &times; Close Shopping Cart</button>
-      <ShoppingCart cart={props.shoppingCart}/>
-    </section>
+    // <section className={sidebarClass}>
+    //   <button id="close" onClick={closeHandler}> &times; Close Shopping Cart</button>
+    //   <ShoppingCart cart={props.shoppingCart}/>
+    // </section>
+    <p style={{display: "none"}}> I am the sidebar but you can't see me</p>
   )
 }

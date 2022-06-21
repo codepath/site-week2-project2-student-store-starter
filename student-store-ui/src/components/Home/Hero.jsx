@@ -7,7 +7,11 @@ export default function Hero() {
             <div className="content">
                 <div className="intro">
                     <h1>Welcome!</h1>
-                    <h1>Buy Some Stuff!</h1>
+                    <h2>Come Buy Some Stuff!</h2>
+                    
+                </div>
+                <div >
+                    <img className="hero-img" src="../../../assets/shopping-cart.png" alt="Cart image"/>
                 </div>
             </div>
         </div>

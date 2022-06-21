@@ -12,10 +12,7 @@ import "./Home.css"
 export default function Home(props) {
 
   let products = props.products
-
-  const [activeCategory, setCategory] = React.useState(null)
   
-
 //   const addToCart = (el) => {
 //     setCart([...cart, el]);
 // };
@@ -55,17 +52,17 @@ export default function Home(props) {
 
   // Filter
   function handleCategoryChange(event) {
-    setCategory(event.target.value);
+    props.setCategory(event.target.value);
   }
 
  function getFilteredList() {
-    if (!activeCategory) {
+    if (!props.activeCategory) {
       return products;
     }
-    return products.filter((product) => product.category === activeCategory);
+    return products.filter((product) => product.category === props.activeCategory);
   }
 
-let filteredList = useMemo(getFilteredList, [activeCategory, products]);
+let filteredList = useMemo(getFilteredList, [props.activeCategory, products]);
 
 // Search
 function handleSearchChange(event) {
