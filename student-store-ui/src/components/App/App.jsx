@@ -46,9 +46,11 @@ export default function App() {
   }
 
   const handleAddItemToCart = (productId) => {
-    let prod = shoppingCart.find(item => item.itemId === productId)
-    if (prod) {
-      prod.quantity += 1
+    let prodIdx = shoppingCart.findIndex(item => item.itemId === productId)
+    if (prodIdx != -1) {
+      let newCart = [...shoppingCart]
+      newCart[prodIdx].quantity += 1
+      setShoppingCart(newCart)
     }
     else {
       let newProduct = {itemId: productId, quantity: 1}
@@ -58,14 +60,15 @@ export default function App() {
   }
 
   const handleRemoveItemFromCart = (productId) => {
-    let prod = shoppingCart.find(item => item.itemId === productId)
-    if (prod) {
-      prod.quantity -= 1
-      if (prod.quantity == 0){
-        let idx = shoppingCart.findIndex(item => item.itemId === productId)
-        let newArray = shoppingCart
-        newArray.slice(idx, 1)
-        setShoppingCart(newArray)
+    let prodIdx = shoppingCart.findIndex(item => item.itemId === productId)
+    if (prodIdx != -1) {
+      let newCart = [...shoppingCart]
+      newCart[prodIdx].quantity -= 1
+      if (newCart[prodIdx].quantity == 0){
+        newCart.splice(prodIdx, 1)
+        setShoppingCart(newCart)
+      } else {
+        setShoppingCart(newCart)
       }
     }
     console.log(shoppingCart)
