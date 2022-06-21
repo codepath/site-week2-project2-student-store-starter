@@ -285,20 +285,20 @@ The following specifications were met on the Express backend and the React front
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+For the most part it did but there was many things such as "BrowserRouter" that wasnt covered.
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Add your response here
+In the begining I wouldve started out on the css, making changes to certain parts was harder to understand without seeing it updated on the website. I most likely wouldve been able to finish the sidebar features along with the cart as Im fairly cinfident I knew what to do. Along with that I wouldve renamed al9ot of my variables as I got very confused at some parts due to using the right code but wrong variable name as many of my names were similar.
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+I don't think this project went well for me at all. While I was able to complete the core featues I did struglle through many of the parts. I really wished I had been more organized as many of my peers were able to make their website look nice in terms of the css. Many were also able to implement alot of the strech features. Some of the people in my group started off with doing a base for the css then going into the api code to get things to appear, if given another chance I would proabaly go that route as it seemed easier for them to know what exactly their code was doing.
 
 ### Open-source libraries used
 
 - Add any links to open-source libraries used in your project.
 
-### Shout out
+Shout Out to my pod members Lacie and Gabriel and Wynnie couldnt have completed my project without them.
 
 Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
