@@ -13,11 +13,11 @@ export default function Sidebar({ isOpen, products, handleOnToggle,setisOpen }) 
       <div className="wrapper">
         <ul className="sidebar-icons">
           <div className="shopping-cart">
-            <button className="toggle-button button closed">
+            <button className="toggle-button button closed" onClick={() => handleOnToggle(isOpen)}>
               <i className="material-icons md-48">arrow_forward</i>
             </button>
             <div className="cart-icons">
-              <button className="cart-icon add">
+              <button className="cart-icon add" onClick={() => handleOnToggle(isOpen)}>
                 <i className="material-icons md-48">add_shopping_cart</i>
               </button>
                 <button className="cart-icon money"  onClick={() => handleOnToggle(isOpen)}>

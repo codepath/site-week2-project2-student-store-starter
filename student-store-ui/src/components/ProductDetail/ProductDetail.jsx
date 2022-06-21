@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 import ProductView from "../ProductView/ProductView";
 
-export default function ProductDetail(props) {
+export default function ProductDetail({handleAddItemToCart,shoppingCart,setshoppingCart,quantity,setQuantity, handleRemoveItemFromCart}) {
   const [product, setProduct] = useState();
   const [isFetching, setFetching] = useState(true);
   let { productId } = useParams();
@@ -18,13 +18,14 @@ export default function ProductDetail(props) {
         console.log(error.message);
       });
   });
-  
+
+
   return (
     <div className="product-detail">
       {isFetching ? (
         <h4>Loading...</h4>
       ) : (
-        <ProductView product={product} productId={productId}  showDescription={true}></ProductView>
+        <ProductView quantity={quantity}  handleRemoveItemFromCart={handleRemoveItemFromCart} handleAddItemToCart={handleAddItemToCart} shoppingCart={shoppingCart} setshoppingCart={setshoppingCart} product={product} productId={productId}  showDescription={true}></ProductView>
       )}
     </div>
   );

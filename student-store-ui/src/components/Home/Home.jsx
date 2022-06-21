@@ -8,7 +8,7 @@ import ProductGrid from '../ProductGrid/ProductGrid'
 import SearchInput, { MyCart, SearchIcon } from '../SearchBox/SearchInput'
 import './Home.css'
 
-export default function Home({ products }) {
+export default function Home({ products,handleAddItemToCart,shoppingCart,handleRemoveItemFromCart, setshoppingCart }) {
   const [category, setcategory] = React.useState('all category')
 
   const [search, setSearch] = React.useState("")
@@ -93,7 +93,7 @@ export default function Home({ products }) {
             </ul>
           </div>
         </div>
-        <ProductGrid products={products_array} />
+        <ProductGrid products={products_array} handleRemoveItemFromCart={handleRemoveItemFromCart} handleAddItemToCart={handleAddItemToCart} shoppingCart={shoppingCart} setshoppingCart={setshoppingCart}  />
         <About />
         <Contact />
         <Footer/>

@@ -1,19 +1,21 @@
-import { Link } from "react-router-dom";
-import "./ProductCard.css";
-export default function ProductCard({
-  product,
-  productId,
-  quantity,
-  handleAddItemToCart,
-  handleRemoveItemToCart,
-  showDescription,
-}) {
+import { Link } from 'react-router-dom'
+import './ProductCard.css'
+export default function ProductCard({product, productId,shoppingCart,handleAddItemToCart,handleRemoveItemFromCart,showDescription,quantity
+})
+{
+  var formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  })
+  let linkAddress = '/products/' + productId
 
-  var formatter = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-  });
-  let linkAddress = "/products/" + productId;
+  shoppingCart.map((element) => {
+    if (element.itemId === productId)
+    {
+      quantity = element.quantity
+    }
+  })
+
 
   return (
     <div className="card">
@@ -23,28 +25,36 @@ export default function ProductCard({
         </Link>
       </div>
       <div className="container">
-        <h4 className="product-name">
+        <h5 className="product-name">
           <b>{product.name}</b>
-        </h4>
+          <div className="pro-buttons">
+            <button className="pro-add" onClick={() => handleAddItemToCart(productId)}>
+              <i className="material-icons">add</i>
+              {quantity <= 0 ? '' : <p>{quantity}</p>}
+            </button>
+       
+            <button className="pro-remove" onClick={() =>handleRemoveItemFromCart (productId)}>
+              <i className="material-icons">remove</i>
+            </button>
+          </div>
+        </h5>
         <p> &#11088;&#11088;&#11088;&#11088;</p>
         <p></p>
-              <p>{formatter.format(product.price)}</p>
-                {!showDescription ? "": (
-                  <h5>{product.description}</h5>
-      )}
+        <p>{formatter.format(product.price)}</p>
+        {!showDescription ? '' : <h5>{product.description}</h5>}
       </div>
     </div>
-  );
+  )
 }
 
-export function AddButton({ handleOnSubmit, tweetText = "" }) {
-  console.log(tweetText.length);
-  var disableTweet = true;
+export function AddButton({ handleOnSubmit, tweetText = '' }) {
+  console.log(tweetText.length)
+  var disableTweet = true
   if (tweetText.length < 1) {
-    disableTweet = true;
+    disableTweet = true
   } else if (tweetText.length > 140) {
-    disableTweet = true;
+    disableTweet = true
   } else {
-    disableTweet = false;
+    disableTweet = false
   }
 }

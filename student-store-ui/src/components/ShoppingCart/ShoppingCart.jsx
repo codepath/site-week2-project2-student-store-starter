@@ -2,7 +2,7 @@ import './ShoppingCart.css'
 export default function ShoppingCart({ isOpen,setisOpen }) {
   var classNames = `shhopping-cart${isOpen ? '-active' : ''}`
 
-  console.log(classNames)
+
   return (
     <div className={classNames}>
      
@@ -37,7 +37,7 @@ export default function ShoppingCart({ isOpen,setisOpen }) {
                 className="checkout-form-input"
                 type="text"
                 placeholder="Student Name"
-                value=""
+              
               />
             </div>
           </div>
@@ -49,7 +49,7 @@ export default function ShoppingCart({ isOpen,setisOpen }) {
                 className="checkout-form-input"
                 type="email"
                 placeholder="student@codepath.org"
-                value=""
+                
               />
             </div>
           </div>
