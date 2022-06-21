@@ -11,11 +11,10 @@ export default function ProductSettings(props) {
         <div className="product-settings">
             <div className="container">
                 <div className="search-input">
-                    <label htmlFor="productSearch">Search</label>
                     <input
                         name="movieTitle"
                         type="text"
-                        placeholder="Pineapple Pizza"
+                        placeholder="Search..."
                         value={props.searchQuery}
                         onChange={(e) => props.setSearchQuery(e.target.value)}
                     />

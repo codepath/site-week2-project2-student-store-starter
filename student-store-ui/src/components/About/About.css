@@ -2,30 +2,34 @@
     width: 100%;
     text-align:left;
     padding:10px;
-    margin:10px 0;
     /* background-color: var(--darkBlue); */
     color: var(--darkBlue);
 }
 
-.about>.about-container {
+.about h1 {
+    color: var(--darkBlue)
+}
+
+.content {
     display:flex;
     justify-content: center;
 
     background-color: var(--darkBlue);
     color: var(--white);
-    padding: 20px;
+    
+    padding: 5%;
 }
 
-.about-container>.section {
+.content>.section {
     flex-basis: 50%;
-    font-size: 16px;
+    font-size: 24px;
 
     display: flex;
     flex-direction: column;
-    padding: 30px;
 }
 
-.about-container>.section>img {
+.content img {
     margin: 0 auto;
-    width: 60%;
+    width: 70%;
+    height: fit-content;
 }

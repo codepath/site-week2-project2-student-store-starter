@@ -3,7 +3,9 @@ import "./Footer.css"
 export default function Footer() {
     return (
         <div className="footer">
-            <h1 className="footer-text">this might be a footer</h1>
+            <div className="container">
+                <img className="store-badge" src="../../res/gp_badge.svg"/>
+            </div>
         </div>
     )
 }

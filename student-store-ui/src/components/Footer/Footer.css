@@ -1,9 +1,15 @@
 .footer {
-    max-width: var(--maxContentWidth);
     width: 100%;
-    text-align:center;
-    padding:10px;
-    margin:10px auto 0 auto;
+    margin-top: 5vh;
     background-color: var(--darkBlue);
-    color: var(--white);
+}
+
+.footer .container {
+    display:flex;
+    justify-content: flex-end;
+}
+
+.store-badge {
+    width: 200px;
+    height: 200px;
 }
