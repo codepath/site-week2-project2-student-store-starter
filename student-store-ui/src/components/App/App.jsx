@@ -19,7 +19,7 @@ export default function App() {
   const[shoppingCart, setShoppingCart] = useState([])
   const[checkoutForm, setCheckoutForm] = useState(null)
 
-  console.log(search)
+  console.log(type)
   
   useEffect(() => {
     axios.get("https://codepath-store-api.herokuapp.com/store").then(res => {
@@ -56,7 +56,7 @@ export default function App() {
           <Navbar />
           <Sidebar isOpen={isOpen} handleOnToggle={handleOnToggle}/>
           <Routes>
-            <Route path="/" element={<Home products={products} setSearch={setSearch} setType={setType}/>}/>
+            <Route path="/" element={<Home products={products} setSearch={setSearch} setType={setType} type={type}/>}/>
             <Route path="/products/:productId" element={<ProductDetail />}/>
             
           </Routes>
