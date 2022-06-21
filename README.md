@@ -10,10 +10,10 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 
 #### Core Features
 
-- [ ] Displays the following sections: header, banner, search, product grid, about, contact, and footer.
+- [X] Displays the following sections: header, banner, search, product grid, about, contact, and footer.
 - [X] On initial page load, display the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store).
 - [ ] User can click on the categories (Clothing, food, etc) to filter the product grid by type.
-- [ ] User can search for products.
+- [X] User can search for products.
 - [ ] User can click on a product in the grid to view additional product details. Navigation is via a React Router.
 - [ ] User can click to expand the shopping cart in the left navigation.
 - [ ] User can click the '+' button on a product cart to increment that product in the shopping cart.
@@ -278,3 +278,15 @@ The following specifications were met on the Express backend and the React front
         - **optional**:
           - [ ] `receipt` - text describing the order (what might go on a receipt)
       - [ ] It should then send a JSON response back to the client with the new purchase like so: `{ "purchase": purchase }`. The response should have a `201` status code for a resource created action.
+
+
+Reflection:
+  The topics discussed in the labs did not prepare me for the completion of this assignmnent. I felt unprepared to complete all of the features described in here
+  
+  If I had more time I would spend it on figuring out what I'm doing and how to do it, I feel extremely lost on what I am trying to do with most of the features.
+  
+  At least I had something to show visually on my demo, that went well. However I didnt plan for showing functionality of my project, since their is virtually none. I noticed my peers were able to show more of what they have in a better way despite not being fully done themselves, next time I will focus on more functionality than the css.
+
+
+
+
