@@ -18,7 +18,9 @@ export default function App() {
           <Route path="/products/:productId" element={<ProductDetail />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-        <footer />
+        <footer>
+          Footer
+        </footer>
       </main>
     </div>
   );
