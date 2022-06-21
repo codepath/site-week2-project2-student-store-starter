@@ -1,10 +1,11 @@
-import * as React from "react"
-import "./ProductView.css"
+import * as React from 'react';
+import ProductCard from '../ProductCard/ProductCard';
+import './ProductView.css';
 
 export default function ProductView() {
   return (
     <div className="productView">
-      <p>ProductView</p>
+      <ProductCard />
     </div>
-  )
+  );
 }
