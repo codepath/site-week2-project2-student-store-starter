@@ -1,7 +1,6 @@
 import * as React from "react"
 import Hero from "../Hero/Hero"
 import ProductGrid from "../ProductGrid/ProductGrid"
-import Footer from "../Footer/Footer"
 import codepathLogo from "/src/assets/codepath_logo.svg"
 import "./Home.css"
 
@@ -9,9 +8,6 @@ export default function Home(props) {
 
   const [activeCategory, setActiveCategory] = React.useState(null)
   const [searchQuery, setSearchQuery] = React.useState("")
-
-  console.log(searchQuery)
-
 
   return (
     <div className="home">
@@ -28,7 +24,8 @@ export default function Home(props) {
             activeCategory={activeCategory}
             searchQuery={searchQuery}
             handleAddItemToCart={props.handleAddItemToCart}
-            handleRemoveItemFromCart={props.handleRemoveItemFromCart}/>
+            handleRemoveItemFromCart={props.handleRemoveItemFromCart}
+            shoppingCart={props.shoppingCart} />
         </div>
         <AboutUs />
         <ContactUs />

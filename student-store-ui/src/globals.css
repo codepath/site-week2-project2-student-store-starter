@@ -20,5 +20,6 @@ body {
   --font-primary: rgb(48,48,48);
   --font-secondary: rgb(112, 112, 112);
   --navbar-height: 75px;
+  --sidebar-width: 75px;
   --border-style: 1px solid var(--accent-light-grey);
 }

@@ -81,13 +81,20 @@ export default function App() {
       <BrowserRouter>
         <main>
         <Navbar />
-        <Sidebar />
+        <Sidebar
+          isOpen={isOpen}
+          shoppingCart={shoppingCart}
+          products={products}
+          checkoutForm={checkoutForm}
+          handleOnCheckoutFormChange={handleOnCheckoutFormChange}
+          handleOnToggle={handleOnToggle} />
         <Routes>
           <Route path="/" element={
             <Home
               products={products}
               handleAddItemToCart={handleAddItemToCart}
-              handleRemoveItemFromCart={handleRemoveItemFromCart} />} />
+              handleRemoveItemFromCart={handleRemoveItemFromCart}
+              shoppingCart={shoppingCart}/>} />
           <Route path="/products/:productId" element={
             <ProductDetail 
               handleAddItemToCart={handleAddItemToCart}

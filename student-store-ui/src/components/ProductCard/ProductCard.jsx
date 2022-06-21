@@ -29,6 +29,8 @@ export default function ProductCard(props) {
 
       <button className="remove" onClick={() => props.handleRemoveItemFromCart(props.productId)}>-</button>
       <button className="add" onClick={() => props.handleAddItemToCart(props.productId)}>+</button>
+      
+      <p>{props.quantity}</p>
 
       {/* need to define shoppingCart object first */}
       {/* <p className="product-quantity">{shoppingCart > 0 : {shoppingCart} : null}</p> */}

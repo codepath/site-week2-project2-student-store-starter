@@ -19,7 +19,7 @@ export default function ProductGrid(props) {
         product={product}
         productId={product.id}
         // would need to get info from shopping cart, not defined yet
-        quantity={0}
+        quantity={9}
         handleAddItemToCart={props.handleAddItemToCart}
         handleRemoveItemFromCart={props.handleRemoveItemFromCart}
         showDescription={false}/>

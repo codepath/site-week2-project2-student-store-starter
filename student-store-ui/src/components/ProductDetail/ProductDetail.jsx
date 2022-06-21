@@ -15,7 +15,7 @@ export default function ProductDetail(props) {
     try {
       const response = await axios.get(`https://codepath-store-api.herokuapp.com/store/${productId}`);
       setProduct(response.data.product);
-      console.log(response.data.product);
+      console.log("received this product data:", response.data.product);
     } catch (error) {
       props.setError(error)
       console.log(props.error);
@@ -24,20 +24,27 @@ export default function ProductDetail(props) {
     }
   }
 
-
   React.useEffect(() => {
     getProductData();
   }, []);
 
+  // get quantity of the product
+  let productQuantity=0
+  let  targetProduct = props.shoppingCart.find(productObj => productObj.itemId == product.id)
+  if (targetProduct) {
+    productQuantity = targetProduct.quantity
+  }
+  //let productQuantity = targetProduct.quantity
+
   return (
       <div className="product-detail">
         {/* need to update so that it shows not found */}
-
         <ProductView
           product={product}
           productId={productId}
           // need to figure out shopping cart obj to get quantity
-          quantity={0}
+          //quantity={0}
+          quantity={productQuantity}
           handleAddItemToCart={props.handleAddItemToCart}
           handleRemoveItemFromCart={props.handleRemoveItemFromCart}
           shoppingCart={props.shoppingCart}

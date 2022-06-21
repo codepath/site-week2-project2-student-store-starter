@@ -2,7 +2,27 @@
     background-color: var(--codepath-dark-grey);
     position: fixed;
     height: 100%;
-    width: 80px;
-    z-index: 9999;
+    max-width: 500px;
+    z-index: 9999999999999999999;
+    transition: width 0.5s;
+    transition-timing-function: ease-in-out;
+    color: white;
+
+    /* background-color: white;
+    border-right: var(--border-style);
+    color: var(--font-primary); */
+}
+
+.hidden {
+    width: var(--sidebar-width);
+}
+
+.hidden > .sidebar-contents {
     display: none;
+}
+
+.sidebar-contents {
+    /* white-space: nowrap;
+    overflow: hidden; */
+    margin: 20px;
 }
