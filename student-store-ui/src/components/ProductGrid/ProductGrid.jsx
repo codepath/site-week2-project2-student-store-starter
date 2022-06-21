@@ -7,13 +7,13 @@ export default function ProductGrid(props) {
 	//check what category does the user want to see
 	if (props.category === "all") {
 		productsToShow = props.products;
-	} else { 
+	} else {
 		productsToShow = props.products.filter(product => {
 			return product.category === props.category;
 		})
 	}
 	// if there is a query, pick up the products the user wants to see and run another filter
-	if(props.searchQuery !== '') {
+	if (props.searchQuery !== '') {
 		productsToShow = productsToShow.filter(product => {
 			return product.name.toLowerCase().includes(props.searchQuery.toLowerCase());
 		})
@@ -21,11 +21,13 @@ export default function ProductGrid(props) {
 
 	return (
 		<div id="buy-now" className="product-grid">
-			{props.isFetching ?
-				<h1>Loading...</h1>
-				:
-				productsToShow.map((e, i) => {
-					return <ProductCard key={e.name} class="product-card" product={e} shoppingCart={props.shoppingCart} setShoppingCart={props.setShoppingCart} />
-				})}
+			<div className="product-grid container">
+				{props.isFetching ?
+					<h1>Loading...</h1>
+					:
+					productsToShow.map((e, i) => {
+						return <ProductCard key={e.name} class="product-card" product={e} shoppingCart={props.shoppingCart} setShoppingCart={props.setShoppingCart} />
+					})}
+			</div>
 		</div>)
 }

@@ -14,17 +14,21 @@
   -webkit-box-sizing: border-box;
 }
 
-.main>div {
+.material-icons {
+  user-select: none;
+}
+
+.container {
   max-width: var(--maxContentWidth);
   width: 100%;
+  padding: 10px;
+
+  /* background-color: var(--darkBlue); */
+  color: var(--white);
 
   margin: 0 auto;
 
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  background-color: var(--darkBlue);
-  color: var(--white);
+
 }
 
 body {

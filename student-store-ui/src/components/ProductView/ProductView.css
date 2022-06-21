@@ -1,4 +1,12 @@
 .product-view {
     width: 100%;
-    max-width: var(--maxContentWidth);
+}
+
+.product-view .product-card-extended {
+    width: 100%;
+}
+
+.product-view .product-card-extended img {
+    user-select: none;
+    cursor: default;
 }

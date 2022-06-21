@@ -6,7 +6,7 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="navbar-items">
+      <div id="navbar-items" className="container">
         <Logo/>
         <div className="actions">
           <a href="/#home">Home</a>

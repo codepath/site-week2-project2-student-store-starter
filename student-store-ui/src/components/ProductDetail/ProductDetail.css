@@ -1,5 +1,7 @@
 .product-detail {
-    max-width: var(--maxContentWidth);
+    width: 100%;
+
+    /* max-width: var(--maxContentWidth);
     width: 100%;
     display: flex;
 
@@ -7,5 +9,5 @@
     justify-content: space-between;
     align-items: center;
 
-    color: var(--white);
+    color: var(--white); */
 }

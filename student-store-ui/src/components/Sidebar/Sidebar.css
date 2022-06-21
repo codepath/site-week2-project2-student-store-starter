@@ -11,6 +11,7 @@
 
     padding-top: 20px;
     color: var(--white);
+    z-index: 999;
 }
 
 .sidebar.hidden {
@@ -25,16 +26,16 @@
     margin-top: 40px;
 }
 
-.material-icons {
+.sidebar>.material-icons {
     cursor:pointer;
     user-select: none;
     transition: all 200ms linear;
 }
 
-.material-icons:active{
+.sidebar>.material-icons:active{
     transform: translateY(5px);
 }
 
-.material-icons:hover {
+.sidebar>.material-icons:hover {
     transform: scale(1.2);
 }

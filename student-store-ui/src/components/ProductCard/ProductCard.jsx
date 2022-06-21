@@ -5,7 +5,7 @@ import './ProductCard.css'
 export default function ProductCard(props) {
   const [isSelected, setSelected] = React.useState(false);
 
-  const handleShoppingCartAdd = (toAdd) => {
+  const handleAddItemToCart = (toAdd) => {
     let newProduct = props.product;
 
     if ((!props.shoppingCart.find((cartProduct) => cartProduct.id === props.product.id))) {
@@ -29,7 +29,7 @@ export default function ProductCard(props) {
     }
   }
   //TODO: fix spaghetti code
-  const handleShoppingCartSubtract = (toAdd) => {
+  const handleRemoveItemFromCart = (toAdd) => {
     let newProduct = props.product;
     let findProduct = props.shoppingCart.find((cartProduct) => cartProduct.id === props.product.id);
     if (findProduct) {
@@ -49,44 +49,70 @@ export default function ProductCard(props) {
 
 
   const getCardFooter = () => {
-    if (!isSelected && (props.class === 'product-card')) {
-      return (
-        <div className="product-card-footer">
-          <div className="section">
-            <p>${(props.product.price).toFixed(2)}</p>
+    // if (!isSelected && (props.class === 'product-card')) {
+    return (
+      <div className="product-card-footer">
 
-          </div>
-          <div className="section">
-            <div className="shoppingCartCount">{props.product.count || 0}</div>
-          </div>
-        </div>
-      )
+        <div className="section">
+          {(props.product.count > 0 && props.product.count) ? <span className="amount">{props.product.count}</span> : null}
 
-    } else {
-      return (
-        <div className="product-card-footer">
-          <div className="section">
-            <Link to={"products/" + props.product.id}><button className="btn see-more">See More!</button></Link>
-            <p>${(props.product.price).toFixed(2)}</p>
-          </div>
-          <div className="section">
-            <button onClick={(e) => handleShoppingCartSubtract(-1)} className="btn right">-</button>
-            <button onClick={(e) => handleShoppingCartAdd(1)} className="btn right">+</button>
-            <div className="shopping-cart-count">{props.product.count || 0}</div>
-          </div>
         </div>
-      )
-    }
+
+        <div className="section right">
+          <p>${(props.product.price).toFixed(2)}</p>
+
+        </div>
+      </div>
+    )
+
+    // } else {
+    //   return (
+    //     <div className="product-card-footer">
+
+
+    //       <div className="section">
+    //         {/* <Link to={"products/" + props.product.id}><button className="btn see-more">See More!</button></Link> */}
+    //       </div>
+    //       <div className="section">
+    //         <p>${(props.product.price).toFixed(2)}</p>
+    //       </div>
+    //     </div>
+    //   )
+    // }
   }
 
   return (
     <div onMouseEnter={() => setSelected(true)}
       onMouseLeave={() => setSelected(false)}
       className={props.class}>
-      <h1 className="title">{props.product.name}</h1>
-      <img src={props.product.image} />
-      <p>{props.product.description}</p>
-      {getCardFooter()}
 
+      {(props.class == 'product-card') ?
+        <Link className="product-link" to={"products/" + props.product.id}>
+          <img className="product-image" src={props.product.image} />
+        </Link>
+        :
+        <img className="product-image" src={props.product.image} />
+      }
+
+      <div className="product-card-overview">
+
+
+        <div className="product-card-header">
+          <div className="section">
+            <h1 className="title">{props.product.name}</h1>
+          </div>
+          <div className="section">
+            <button onClick={(e) => handleRemoveItemFromCart(-1)} className="btn right">-</button>
+            <button onClick={(e) => handleAddItemToCart(1)} className="btn right">+</button>
+            {/* <p className="shopping-cart-count">{props.product.count || 0}</p> */}
+          </div>
+        </div>
+
+        <span className="material-icons product-rating">star star star star star</span>
+        {(props.class != "product-card") ?
+          <span className="product-description">{props.product.description}</span> : null}
+
+      </div>
+      {getCardFooter()}
     </div>)
 }
