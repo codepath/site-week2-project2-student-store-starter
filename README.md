@@ -301,4 +301,8 @@ I don't think this project went well for me at all. While I was able to complete
 
 Shout Out to my pod members Lacie and Gabriel and Wynnie couldnt have completed my project without them.
 
+<<<<<<< HEAD
 Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+=======
+Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+>>>>>>> 349b766c97cbc630d18acb6b0d796e6b95ae3fdd
