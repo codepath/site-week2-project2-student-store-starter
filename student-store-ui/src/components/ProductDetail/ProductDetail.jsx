@@ -19,7 +19,7 @@ export const ProductDetail = ({handleAddItemToCart, handleRemoveItemToCart}) => 
 
   return (
     <div className='product-detail'>
-      {product !== '' ? <ProductView product={product} productId={productId}/> : null}
+      {product !== '' ? <ProductView product={product} productId={productId} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemToCart}/> : null}
     </div>
   )
 }
