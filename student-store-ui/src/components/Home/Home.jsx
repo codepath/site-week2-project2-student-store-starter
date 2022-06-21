@@ -20,8 +20,7 @@ export default function Home(props) {
       <ProductGrid 
       isCategory={isCategory}
       products={props.products} 
-      search={search}
-      />
+      search={search} />
       <About/>
       <Contact/>
       <Footer/>

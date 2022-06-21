@@ -6,6 +6,7 @@ import "./App.css"
 import {BrowserRouter, Routes, Route,} from "react-router-dom"
 import axios from "axios"
 import { useState, useEffect } from "react"
+//import ProductDetail from "../ProductDetail/ProductDetail"
 
 export default function App() {
 
@@ -70,15 +71,23 @@ React.useEffect(() => {
           <Navbar />
           <Sidebar />
           <Routes> 
-          {/* <Route path="/products/:productId" element={<ProductDetail />} />  */}
-            <Route exact path = "/" 
-            element={<Home 
+            <Route
+              path="/"
+              element={
+                <Home
+                  products={products}
+                />
+              }
+            />
+{/* 
+          <Route
+            path="/products/:productid"
+            element={
+              <ProductDetail
+              />
+            }
+          /> */}
 
-              products={products} 
-            
-            />} />
-
-           
           </Routes>
         </main>
       </BrowserRouter>

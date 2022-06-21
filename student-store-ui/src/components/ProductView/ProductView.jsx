@@ -1,13 +1,24 @@
-import * as React from "react"
-import ProductCard from "../ProductCard/ProductCard"
+// import * as React from "react"
+// import ProductCard from "../ProductCard/ProductCard" 
 
-//FIXME It should display an h1 element with the className of product-id that contains the text: Product # followed by the productId prop
+// export default function ProductView(props) {
+// console.log(product.id)
+//   return (
+//     <div className="product-view">
+//       <h1 className="product-id">Product # </h1>
+//       con
+//       <ProductCard
+//               // product = {product.product}
+//                productId = {product.id}
+//                image = {product.image}
+//                name = {product.name}
+//                price = {product.price}
 
-export default function ProductView(props) {
-    return (
-      <div className="product-view">
-        <h1 className={props.productId}>Product #{props.productId}</h1>
-        <ProductCard product={props.product} productId={props.productId} quantity={props.quantity} handleAddItemToCart={props.handleAddItemToCart} handleRemoveItemFromCart={props.handleRemoveItemFromCart}  showDescription={true} />
-      </div>
-    )
-  }
+
+//       />
+      
+//     </div>
+//   )
+// }
+
+//CANT GET PROPS.PRODUCT.anything to be deifned nor can i get product.anything to be defined
