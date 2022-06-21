@@ -12,7 +12,7 @@ export default function productGrid(props) {
         <div className="grid">
         {props.products.map((product, i) => {
           return (<ProductCard className="productCard" key={i} name={product.name}
-          price={product.price} pic={product.image} showDescription={showDescription}/> )
+          price={product.price} pic={product.image} showDescription={showDescription} id={product.id}/> )
         })}
         </div>
         </div>

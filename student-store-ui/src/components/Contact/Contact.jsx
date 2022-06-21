@@ -9,20 +9,20 @@ export default function Contact() {
       <div className="contact-summary">
         <ul>
           <li>
-          <span class="contact-label">Email:</span>
-          <span class="contact-label">code@path.org</span>
+          <span className="contact-label">Email:</span>
+          <span className="contact-label">code@path.org</span>
           </li>
           <li>
-          <span class="contact-label">Phone:</span>
-          <span class="contact-label">1-800-CODEPATH</span>
+          <span className="contact-label">Phone:</span>
+          <span className="contact-label">1-800-CODEPATH</span>
           </li>
           <li>
-          <span class="contact-label">Address:</span>
-          <span class="contact-label">123 Fake Street, San Francisco, CA</span>
+          <span className="contact-label">Address:</span>
+          <span className="contact-label">123 Fake Street, San Francisco, CA</span>
           </li>
           <li>
-          <span class="contact-label">Socials: </span>
-          <span class="contact-socials"></span>
+          <span className="contact-label">Socials: </span>
+          <span className="contact-socials"></span>
           </li>
         </ul>
         <div className="contact-photo">

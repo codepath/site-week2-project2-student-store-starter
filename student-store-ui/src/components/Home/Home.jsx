@@ -14,7 +14,6 @@ export default function Home(props) {
       <Searchbar />
       <ProductGrid products={props.products} handleAddItemToCart={props.handleAddItemToCart} 
       handleRemoveItemFromCart={props.handleRemoveItemFromCart} />
-
       <About />
       <Contact />
       <Footer />

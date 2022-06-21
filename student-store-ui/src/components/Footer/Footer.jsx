@@ -46,8 +46,8 @@ export default function Footer() {
         </span>
         <span className = "section">
           <h4 className = "footer-header">Our App</h4>
-          <p><i class="fa-brands fa-google-play"></i></p>
-          <p><i class="fa-brands fa-app-store"></i></p>
+          <p><i className="fa-brands fa-google-play"></i></p>
+          <p><i className="fa-brands fa-app-store"></i></p>
         </span>
         
       </div>

@@ -1,8 +1,8 @@
 import * as React from "react"
 import "./ProductCard.css"
+import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
 
 export default function ProductCard(props) {
-  console.log(props)
     return (
       <div className="productCard">
         <img className="media" src={props.pic} alt="" />

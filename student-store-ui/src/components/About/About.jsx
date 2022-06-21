@@ -6,7 +6,7 @@ export default function About() {
   return (
     <div className="about">
 
-    <div classname="about-content">
+    <div className="about-content">
     <h3 className="about-header">About</h3>
 
       <div className="about-summary">

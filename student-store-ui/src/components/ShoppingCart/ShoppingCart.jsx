@@ -6,33 +6,36 @@ export default function ShoppingCart() {
     <div className="shopping-cart">
       <div className ="open">
         <h3 className="shopping-cart-title">Shopping Cart 
-        <span class="button"><i class="shopping-cart-material-icons"></i></span></h3>
-        <div class="notification">No items added to cart yet. Start shopping now!</div>
-        <div class="checkout-form"><h3 class="">Payment Info <span class="button"><i class="material-icons md-48">monetization_on</i></span></h3>
-        <div class="input-field">
-        <label class="label">Name</label>
-        <div class="control ">
-        <input name="name" class="checkout-form-input" type="text" placeholder="Student Name" value=""/>
+        <span className="button"><i className="shopping-cart-material-icons"></i></span></h3>
+        <div className="notification">No items added to cart yet. Start shopping now!</div>
+        <div className="checkout-form">
+        <h3 className="">Payment Info <span className="button">
+        <i className="material-icons md-48">monetization_on</i>
+        </span></h3>
+        <div className="input-field">
+        <label className="label">Name</label>
+        <div className="control ">
+        <input id="name" className="checkout-form-input" type="text" placeholder="Student Name" value=""/>
         </div>
         </div>
-        <div class="input-field">
-        <label class="label">Email</label>
-        <div class="control">
-        <input name="email" class="checkout-form-input" type="email" placeholder="student@codepath.org" value=""/>
+        <div className="input-field">
+        <label className="label">Email</label>
+        <div className="control">
+        <input id="email" className="checkout-form-input" type="email" placeholder="student@codepath.org" value=""/>
         </div>
         </div>
-        <div class="field">
-        <div class="control">
-        <label class="checkbox">
-        <input name="termsAndConditions" type="checkbox"/>
-        <span class="label">I agree to the <a href="#terms-and-conditions">terms and conditions</a></span>
+        <div className="field">
+        <div className="control">
+        <label className="checkbox">
+        <input id="termsAndConditions" type="checkbox"/>
+        <span className="label">I agree to the <a href="#terms-and-conditions">terms and conditions</a></span>
         </label>
         </div>
         </div>
-        <p class="is-danger">
-        </p><div class="field">
-        <div class="control">
-        <button class="button checkout-button">Checkout</button>
+        <p className="is-danger">
+        </p><div className="field">
+        <div className="control">
+        <button className="button checkout-button">Checkout</button>
         </div>
         </div>
         </div>

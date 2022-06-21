@@ -2,7 +2,7 @@
     background: var(--pure-white);
     display: flex;
     flex-direction: column;
-    border: solid 1px var(--border-color);
+    border: solid 1px black;
     max-width: 800px;
     object-fit: contain;
 }

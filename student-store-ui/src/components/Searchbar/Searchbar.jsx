@@ -4,7 +4,6 @@ import { useState } from "react"
 export default function Searchbar(props){
     //prop variables
     const {products} = props;
-    console.log(24,products);
     //state variables
     const [searchInput, setSearchInput] = useState("");
     //searchBar function
