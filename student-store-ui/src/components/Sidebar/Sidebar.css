@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    position: fixed;
+    z-index: 100;
+    top: 0px;
+    height: 100vh;
+    padding: 0;
+    padding-bottom: 2rem;
+    background: #2c4047;
+    border-right: solid 1px white;
+}
+
+.sidebar.closed {
+    width: 60px;
+}
+
+.sidebar.open {
+    width: 575px;
+}

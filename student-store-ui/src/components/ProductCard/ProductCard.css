@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+
+.product-card {
+    height: 350px;
+    width: 250px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border: solid 1px #e4e4e4;
+}
+
+.product-card .media img {
+    width: 248px;
+    height: 203px;
+}
