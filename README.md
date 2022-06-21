@@ -287,8 +287,6 @@ The following specifications were met on the Express backend and the React front
       - [ ] It should then send a JSON response back to the client with the new purchase like so: `{ "purchase": purchase }`. The response should have a `201` status code for a resource created action.
 
 
----
-
 ### Reflection
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
@@ -297,11 +295,11 @@ Initially, I felt most unprepared to complete the routing with BrowserRouter, Ro
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Currently, I have yet to properly implement the checkout form, so that would be the first thing I would be working on as I start on Week 3. 
+Currently, I have yet to properly implement some parts of the shopping cart and the checkout form components, so that would be the first thing I would be working on as I start on Week 3. In terms of additional features, I hope to add the top bar navigation links and create the "Not Found" display. The UI is currently not great in terms of spacing and interaction, so that is also definitely something I want to continue to improve over the course of Week 3 before I submit the final project. In terms of specific functionalities, one thing I would like to change is to make my category filtering be more reusable by changing how the "All categories" button works. Lastly, my site is not very robust and is heavily reliant on all the data getting passed to its props being formatted in a very specific way, so it probably would not handle errors very well. So, to improve my site, I will have to go back in and make sure that the components will still render without errors even with "incorrect" or missing props through adding default values for my components. 
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+One thing that I did not anticipate is how long it would take to do the styling for the website. Although it was not necessarily difficult, it definitely takes some time to get things in the right places, and I ended up spending a lot of my work time on the CSS and I did not make as much progress as I had hoped. Another obstacle I faced with this project was with working with state variables. When I was working on the shopping cart, I had a lot of trouble updating the cart because it would change a step late. I was able to fiture out my issue, but I realized that I did not understand how state variables updated with the rest of the page as well as I had thought, and I had to do some more research on this in order to get my project going. Lastly, when thinking about some of the features my peers incorporated in their projects, I feel that most of the demos I saw generally just followed the same functionalities listed in the requirements. But, I noticed that people really customized their UI, so I would like to incorporate some of the design decisions I saw, such as a sidebar for the category filters.
 
 ### Open-source libraries used
 
@@ -309,7 +307,5 @@ Add your response here
 - [Google Fonts](https://fonts.google.com/)
 
 ### Shout out
-
-Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
 
 I'd like to shoutout all of my podmates: Angelo, Charidi, Evans, and Travis; it was great working with one group for a couple days! There were a lot of instances where I got frustrated with bugs in my code, and they provided a fresh set of eyes that helped me identify what was going on and get past those setbacks.
