@@ -22,9 +22,9 @@ User can click on a product in the grid to view additional product details with 
 - [X] User can click on the categories (Clothing, food, etc) to filter the product grid by type.
 - [X] User can search for products.
 - [X] User can click on a product in the grid to view additional product details. Navigation is via a React Router.
-- [ ] User can click to expand the shopping cart in the left navigation.
-- [ ] User can click the '+' button on a product cart to increment that product in the shopping cart.
-- [ ] User can click the '-' button on a product cart to increment that product in the shopping cart.
+- [X] User can click to expand the shopping cart in the left navigation.
+- [X] User can click the '+' button on a product cart to increment that product in the shopping cart.
+- [X] User can click the '-' button on a product cart to increment that product in the shopping cart.
 - [ ] Shopping cart displays a table of products, quantities, subtotal, tax, and total.
 - [ ] User can check out, and can view receipt upon completion.
 
@@ -285,3 +285,31 @@ The following specifications were met on the Express backend and the React front
         - **optional**:
           - [ ] `receipt` - text describing the order (what might go on a receipt)
       - [ ] It should then send a JSON response back to the client with the new purchase like so: `{ "purchase": purchase }`. The response should have a `201` status code for a resource created action.
+
+
+---
+
+### Reflection
+
+* Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
+
+Initially, I felt most unprepared to complete the routing with BrowserRouter, Routes, and Links. Although it ended up being more straightforward than I had anticipated, it still felt intimidating since we weren't able to cover it during the labs. The API call with axios was another instance of this since I didn't really practice using useEffect hooks before the project. Overall, though, I felt like the labs did cover the major parts of the assignment such as incorporating controlled text inputs, filtering objects, and passing props between components. One thing of note is that this project had a lot more components than the labs with a lot more props being passed between them. So, I definitely still felt this was a step up from the labs as I had to take extra care in making sure that all the necessary props were passed properly.
+
+* If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
+  
+Currently, I have yet to properly implement the checkout form, so that would be the first thing I would be working on as I start on Week 3. 
+
+* Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
+
+Add your response here
+
+### Open-source libraries used
+
+- [FontAwesome Icons](https://fontawesome.com/icons)
+- [Google Fonts](https://fonts.google.com/)
+
+### Shout out
+
+Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+
+I'd like to shoutout all of my podmates: Angelo, Charidi, Evans, and Travis; it was great working with one group for a couple days! There were a lot of instances where I got frustrated with bugs in my code, and they provided a fresh set of eyes that helped me identify what was going on and get past those setbacks.
