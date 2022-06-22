@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import * as React from 'react';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
@@ -71,7 +72,7 @@ export default function App() {
   };
 
   const handleAddItemToCart = (productId) => {
-    const productIndex = shoppingCart.findIndex((product) => product.id === productId);
+    const productIndex = shoppingCart.findIndex((product) => product.itemId === productId);
     // if productId doesn't exist in shoppingCart, add it as a new product
     if (productIndex === -1) {
       setShoppingCart([...shoppingCart, {
@@ -81,24 +82,26 @@ export default function App() {
     // if productId is in shoppingCart, increment its quantity by 1
     } else {
       shoppingCart[productIndex].quantity += 1;
-      setShoppingCart(shoppingCart);
+      setShoppingCart([...shoppingCart]);
     }
+    console.log('added item #', productId);
   };
 
   const handleRemoveItemFromCart = (productId) => {
-    const productIndex = shoppingCart.findIndex((product) => product.id === productId);
+    const productIndex = shoppingCart.findIndex((product) => product.itemId === productId);
     // if product is in cart
     if (productIndex !== -1) {
       const { quantity } = shoppingCart[productIndex];
       // if only 1 left of product, remove from shoppingCart entirely
       if (quantity === 1) {
         shoppingCart.splice(productIndex, 1);
-        setShoppingCart(shoppingCart);
+        setShoppingCart([...shoppingCart]);
       } else {
         shoppingCart[productIndex].quantity -= 1;
-        setShoppingCart(shoppingCart);
+        setShoppingCart([...shoppingCart]);
       }
     }
+    console.log('removed item #', productId);
   };
 
   const handleOnCheckoutFormChange = (name, value) => {
@@ -125,7 +128,12 @@ export default function App() {
     <div className="app">
       <main>
         <Navbar />
-        <Sidebar />
+        <Sidebar
+          isOpen={isOpen}
+          handleOnToggle={handleOnToggle}
+          handleOnCheckoutFormChange={handleOnCheckoutFormChange}
+          handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
+        />
         <Routes>
           <Route
             path="/"

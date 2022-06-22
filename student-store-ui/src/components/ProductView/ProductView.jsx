@@ -7,7 +7,7 @@ export default function ProductView({
   product, productId, quantity, handleAddItemToCart, handleRemoveItemFromCart,
 }) {
   return (
-    <div className="productView">
+    <div className="product-view">
       <h1 className="product-id">
         Product #
         {productId}

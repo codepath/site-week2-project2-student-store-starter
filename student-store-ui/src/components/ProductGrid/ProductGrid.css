@@ -1,4 +1,31 @@
-.productGrid {
-    width: 100%;
-  }
-  
+.product-grid {
+  max-width: 1500px;
+  margin: 20%;
+  grid-template-columns: auto;
+  display: grid;
+  gap: 0.3rem;
+}
+
+@media (min-width: 562px) {
+  .product-grid { 
+    margin: 0 auto;
+    grid-template-columns: auto auto; }
+}
+
+@media (min-width: 880px) {
+  .product-grid { 
+    margin: 0 auto;
+    grid-template-columns: auto auto auto; }
+}
+
+@media (min-width: 1150px) {
+  .product-grid { 
+    margin: 0 auto;
+    grid-template-columns: auto auto auto auto; }
+}
+
+@media (min-width: 1400px) {
+  .product-grid { 
+    margin: 0 auto;
+    grid-template-columns: auto auto auto auto auto; }
+}
