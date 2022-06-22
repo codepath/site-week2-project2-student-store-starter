@@ -84,8 +84,7 @@ export default function App() {
   }, [subtotalPrice, taxPrice])
 
   const handleOnCheckoutFormChange = (name, value) => {
-    let newCheckoutForm = {...checkoutForm, name: value}
-    setCheckoutForm(newCheckoutForm)
+    setCheckoutForm({...checkoutForm, [name]: value})
     console.log(checkoutForm)
   }
 
@@ -99,10 +98,36 @@ export default function App() {
         <main>
           {/* YOUR CODE HERE! */}
           <Navbar />
-          <Sidebar products={products} shoppingCart={shoppingCart} subtotalPrice={subtotalPrice} taxPrice={taxPrice} totalPrice={totalPrice} checkoutForm={checkoutForm} isOpen={isOpen} handleOnToggle={handleOnToggle} handleOnCheckoutFormChange={handleOnCheckoutFormChange}/>
+          <Sidebar 
+            products={products} 
+            shoppingCart={shoppingCart} 
+            subtotalPrice={subtotalPrice} 
+            taxPrice={taxPrice} 
+            totalPrice={totalPrice} 
+            checkoutForm={checkoutForm} 
+            isOpen={isOpen} 
+            handleOnToggle={handleOnToggle} 
+            handleOnCheckoutFormChange={handleOnCheckoutFormChange}
+          />
           <Routes>
-            <Route path="/" element={<Home products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemFromCart} setSearch={setSearch} setType={setType} type={type}/>}/>
-            <Route path="/products/:productId" element={<ProductDetail handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemFromCart}/>}/>
+            <Route path="/" 
+              element={
+              <Home 
+                products={products} 
+                handleAddItemToCart={handleAddItemToCart} 
+                handleRemoveItemToCart={handleRemoveItemFromCart} 
+                setSearch={setSearch} 
+                setType={setType} 
+                type={type}
+              />}
+            />
+            <Route path="/products/:productId" 
+              element={
+              <ProductDetail 
+                handleAddItemToCart={handleAddItemToCart} 
+                handleRemoveItemToCart={handleRemoveItemFromCart}
+              />}
+            />
             <Route path="*" element={<NotFound />}/>
             
           </Routes>

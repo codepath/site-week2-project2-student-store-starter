@@ -2,7 +2,14 @@ import React from 'react'
 import "./ProductCard.css"
 import { Link } from 'react-router-dom'
 
-export const ProductCard = ({product, productId, quantity, handleAddItemToCart, handleRemoveItemToCart, showDescription}) => {
+export const ProductCard = ({
+  product, 
+  productId, 
+  quantity, 
+  handleAddItemToCart, 
+  handleRemoveItemToCart, 
+  showDescription
+}) => {
   return (
     <div className='product-card'>
       <div className="media">

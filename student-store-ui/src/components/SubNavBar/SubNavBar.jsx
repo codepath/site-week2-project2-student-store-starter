@@ -1,7 +1,11 @@
 import React from 'react'
 import "./SubNavBar.css"
 
-export const SubNavBar = ({setSearch, setType, type}) => {
+export const SubNavBar = ({
+    setSearch, 
+    setType, 
+    type
+}) => {
   return (
     <nav className="sub-navbar">
         <div className="content">

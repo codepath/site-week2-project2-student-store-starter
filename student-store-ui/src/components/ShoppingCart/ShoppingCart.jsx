@@ -1,7 +1,14 @@
 import React from 'react'
 import "./ShoppingCart.css"
 
-export default function ShoppingCart({isOpen, subtotalPrice, taxPrice, totalPrice, products, shoppingCart}) {
+export default function ShoppingCart({
+  isOpen, 
+  subtotalPrice, 
+  taxPrice, 
+  totalPrice, 
+  products, 
+  shoppingCart
+}) {
   var formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',

@@ -5,7 +5,10 @@ import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-export const ProductDetail = ({handleAddItemToCart, handleRemoveItemToCart}) => {
+export const ProductDetail = ({
+  handleAddItemToCart, 
+  handleRemoveItemToCart
+}) => {
   const[product, setProduct] = useState('')
   let {productId} = useParams()
 
@@ -19,7 +22,13 @@ export const ProductDetail = ({handleAddItemToCart, handleRemoveItemToCart}) => 
 
   return (
     <div className='product-detail'>
-      {product !== '' ? <ProductView product={product} productId={productId} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemToCart}/> : null}
+      {product !== '' ? 
+      <ProductView 
+        product={product} 
+        productId={productId}
+        handleAddItemToCart={handleAddItemToCart} 
+        handleRemoveItemToCart={handleRemoveItemToCart}
+      /> : null}
     </div>
   )
 }
