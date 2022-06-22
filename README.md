@@ -40,17 +40,17 @@ The following specifications were met on the Express backend and the React front
 
 **App.jsx**
 
-  - [ ] The core App component that contains the routes for the app and does the initial data fetching
+  - [x] The core App component that contains the routes for the app and does the initial data fetching
   - [x] Renders a `BrowserRouter` component that contains a `Routes` component with the following routes:
-    - [ ] `/` - Should render the `Home.jsx` component
+    - [x] `/` - Should render the `Home.jsx` component
     - [ ] `/products/:productId` - should render the `ProductDetail` component
     - [ ] `*` - anything else should render the `NotFound` component
   - [x] Renders the `Navbar` component on every route
   - [ ] Renders the `Sidebar` component on every route
-  - [ ] Should create **at least** the following state variables:
-    - [ ] `products` - an array of product objects that is initially empty.
-    - [ ] `isFetching` - a boolean value representing whether or not the App is currently fetching the `products` from the API.
-    - [ ] `error` - a variable used to display a message when something goes wrong with the API requests.
+  - [x] Should create **at least** the following state variables:
+    - [x] `products` - an array of product objects that is initially empty.
+    - [x] `isFetching` - a boolean value representing whether or not the App is currently fetching the `products` from the API.
+    - [x] `error` - a variable used to display a message when something goes wrong with the API requests.
     - [ ] `isOpen` - a boolean value representing whether or not the `Sidebar.jsx` is in the open or closed state.
     - [ ] `shoppingCart` - should store state for the active user's shopping cart (items they want to purchase and the quantity of each item).
       - [ ] Use whatever data type works best here, but make sure the format the `shoppingCart` as an array before passing it to other components.
@@ -59,12 +59,12 @@ The following specifications were met on the Express backend and the React front
         - [ ] The `itemId` field should store the `id` of the item being purchased.
         - [ ] The `quantity` field should store a number representing how many of that item the user is purchasing.
     - [ ] `checkoutForm` - the user's information that will be sent to the API when they checkout.
-  - [ ] Leverage the `useEffect` hook to ensure that when the `App.jsx` component is mounted to the screen...
-    - [ ] It should make a `GET` request to the API's `/store` endpoint with the `axios.get` method.
-    - [ ] When the request completes successfully, it should store the `products` returned by the response in state.
+  - [x] Leverage the `useEffect` hook to ensure that when the `App.jsx` component is mounted to the screen...
+    - [x] It should make a `GET` request to the API's `/store` endpoint with the `axios.get` method.
+    - [x] When the request completes successfully, it should store the `products` returned by the response in state.
     - [ ] If the request does not complete successfully, or there are no `products` found in the response,
             it should create an error message and store it in the `error` state variable.
-  - [ ] The `App.jsx` component should define handler functions to be passed as props to the `Home` and `ProductDetail` components.
+  - [x] The `App.jsx` component should define handler functions to be passed as props to the `Home` and `ProductDetail` components.
     - [ ] Define as many as are needed.
     - [ ] At minimum, **create these five handlers**:
       - [ ] The **`handleOnToggle`** function. When called...
@@ -100,18 +100,18 @@ The following specifications were met on the Express backend and the React front
 
 **Navbar.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `nav` element with a `className` of `navbar`
-  - [ ] Should render the `Logo` component that links to the `/` route when clicked
+  - [x] Should render JSX that is wrapped by a `nav` element with a `className` of `navbar`
+  - [x] Should render the `Logo` component that links to the `/` route when clicked
 
 **Logo.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `div` element with a `className` of `logo`
-  - [ ] Should use the `Link` component from `react-router-dom` to link to the home route (`/`) when clicked
+  - [x] Should render JSX that is wrapped by a `div` element with a `className` of `logo`
+  - [x] Should use the `Link` component from `react-router-dom` to link to the home route (`/`) when clicked
 
 **Home.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `div` element with a `className` of `home`
-  - [ ] Should accept **at least** the following props:
+  - [x] Should render JSX that is wrapped by a `div` element with a `className` of `home`
+  - [x] Should accept **at least** the following props:
     - `products` - an array of product objects
     - `handleAddItemToCart` - handler function defined in the `App.jsx` component
     - `handleRemoveItemToCart` - handler function defined in the `App.jsx` component
@@ -135,7 +135,7 @@ The following specifications were met on the Express backend and the React front
 
 **ProductDetail.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `div` element with a `className` of `product-detail`
+  - [x] Should render JSX that is wrapped by a `div` element with a `className` of `product-detail`
   - [ ] Should accept **at least** the following props:
     - `handleAddItemToCart` - handler function defined in the `App.jsx` component
     - `handleRemoveItemToCart` - handler function defined in the `App.jsx` component
@@ -150,7 +150,7 @@ The following specifications were met on the Express backend and the React front
 
 **ProductView.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `div` element with a `className` of `product-view`
+  - [x] Should render JSX that is wrapped by a `div` element with a `className` of `product-view`
   - [ ] Should accept **at least** the following props:
     - `product` - the `product` object returned by the API request
     - `productId` - the id of the product extracted from the url
@@ -162,7 +162,7 @@ The following specifications were met on the Express backend and the React front
 
 **ProductCard.jsx**
 
-  - [ x] Should render JSX that is wrapped by a `div` element with a `className` of `product-card`
+  - [x] Should render JSX that is wrapped by a `div` element with a `className` of `product-card`
   - [ ] Should accept **at least** the following props:
     - `product` - a product object
     - `productId` - a `number` representing the `id` of the product
@@ -170,7 +170,7 @@ The following specifications were met on the Express backend and the React front
     - `handleAddItemToCart` - handler function
     - `handleRemoveItemToCart` - handler function
     - `showDescription` - boolean
-  - [ x] Should render the `name` of the product inside an element with the `className` of `product-name`
+  - [x] Should render the `name` of the product inside an element with the `className` of `product-name`
   - [ ] Should render the `price` of the product inside an element with the `className` of `product-price`. The price should formatted so that it starts with a `$`, and has **at least one** integer digit, along with **exactly two** decimal digits. Examples - `$22.99`, `$860.20`, and `$0.50`
   - [ ] If the `showDescription` prop is set to `true`, it should render the `description` of the product inside an element with the `className` of `product-description`.
   - [ ] Should render an `img` element for the product:
