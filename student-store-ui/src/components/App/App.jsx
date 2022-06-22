@@ -33,6 +33,7 @@ export default function App() {
   // **********************************************************************
 
   async function fetchAllProductData() {
+    setIsFetching(true);
     try {
       const { data } = await axios(URL);
       console.log('productData ', data);
@@ -41,10 +42,13 @@ export default function App() {
     } catch (err) {
       console.error(err);
       setError(err);
+    } finally {
+      setIsFetching(false);
     }
   }
 
   async function sendPostRequest(body) {
+    setIsFetching(true);
     try {
       const resp = await axios.post(URL, body);
       console.log(resp.data);
@@ -52,6 +56,8 @@ export default function App() {
     } catch (err) {
       console.error(err);
       setError(err);
+    } finally {
+      setIsFetching(false);
     }
   }
 

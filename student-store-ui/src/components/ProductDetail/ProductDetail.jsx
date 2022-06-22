@@ -20,7 +20,7 @@ function getProductQuantity(shoppingCart, productId) {
 }
 
 export default function ProductDetail({
-  shoppingCart, handleAddItemToCart, handleRemoveItemFromCart, setError, error,
+  shoppingCart, handleAddItemToCart, handleRemoveItemFromCart, isFetching, setIsFetching, setError, error,
 }) {
   // **********************************************************************
   // CONSTANTS
@@ -46,6 +46,7 @@ export default function ProductDetail({
 
   async function fetchProduct(id) {
     if (productIDisValid(id)) {
+      setIsFetching(true);
       try {
         const { data } = await axios(`${URL}/${id}`);
         console.log('Product ', data);
@@ -54,6 +55,8 @@ export default function ProductDetail({
       } catch (err) {
         console.error(err);
         setError(err);
+      } finally {
+        setIsFetching(false);
       }
     }
   }
