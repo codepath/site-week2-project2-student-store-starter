@@ -1,0 +1,17 @@
+.navbar {
+    background-color: olive;
+    text-align: right;
+    padding: 20px 10px;
+    width: 100%;
+}
+
+.navbar a{
+    line-height: 3em;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.2em;
+    color: black;
+    display: inline;
+    transition: all ease-out 300ms;
+    margin: 10px;
+}

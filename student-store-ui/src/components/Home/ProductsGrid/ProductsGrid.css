@@ -1,0 +1,21 @@
+.productsgrid{
+    background-color: orangered;
+}
+
+.categoriesNav ul{
+    list-style: none;
+}
+
+.categoriesNav li{
+    display: inline;
+    text-align: center;
+    margin: 10px 5px;
+}
+
+.categoriesNav a{
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    color: black;
+    line-height: 3em;
+    transition: all ease-out 300ms;
+}
