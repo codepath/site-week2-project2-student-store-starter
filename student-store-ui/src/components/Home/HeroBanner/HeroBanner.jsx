@@ -2,7 +2,7 @@ import "./HeroBanner.css"
 import * as React from "react"
 
 export default function HeroBanner() {
-    console.log("herobanner")
+    
     return (
         <section className = "HeroBanner">
             <h1>Welcome!</h1>

@@ -2,7 +2,7 @@ import "./ProductsGrid.css"
 import * as React from "react"
 
 export default function ProductsGrid() {
-    console.log("products grid")
+    
 
     return (
         <section className = "productsgrid">
