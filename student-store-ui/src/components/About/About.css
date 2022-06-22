@@ -1,0 +1,22 @@
+.about {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.aboutContent {
+    display: flex;
+    flex-direction: row;
+}
+
+.text {
+    align-items: flex-start;
+    background: white;
+}
+
+.aboutImage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

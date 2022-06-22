@@ -1,0 +1,133 @@
+.SubNavbar {
+    width: 100%;
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    padding: 0 var(--side-padding);
+  }
+  .SubNavbar .content {
+    max-width: var(--content-width);
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+  }
+  .SubNavbar .content .row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+  .SubNavbar .content .search-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+    margin-right: 40px;
+    /* max-width: 500px; */
+    /* width: 100%; */
+  }
+  .SubNavbar .content .search-bar input {
+    height: 40px;
+    padding: 0 15px;
+    border-radius: 8px 0px 0px 8px;
+    border: solid 1px #e4e4e4;
+    flex: 1;
+    font-size: 16px;
+  }
+  .SubNavbar .content .search-bar i {
+    height: 40px;
+    width: 40px;
+    background: var(--bright-green);
+    color: white;
+    fill: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .SubNavbar .content .links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 400px;
+  }
+  
+  .SubNavbar .content .help,
+  .SubNavbar .content .auth a,
+  .SubNavbar .content .cart a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: 500;
+  }
+  
+  .SubNavbar .content .help i {
+    color: #969696;
+    margin-right: 10px;
+  }
+  
+  .SubNavbar .content .auth a {
+    color: #212121;
+    margin: 0 5px;
+  }
+  
+  .SubNavbar .content .cart {
+    color: #fff;
+    background: #00c385;
+    width: 170px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+  }
+  .SubNavbar .content .cart i,
+  .SubNavbar .content .cart a {
+    color: #fff;
+    margin: 0 5px;
+  }
+  .SubNavbar .hamburger-menu {
+    margin-right: 40px;
+  }
+  .SubNavbar .hamburger-menu i {
+    cursor: pointer;
+    color: #969696;
+  }
+  .SubNavbar .category-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex: 1;
+    list-style-type: none;
+    height: 40px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  .SubNavbar .category-menu.closed {
+    opacity: 0;
+  }
+  .SubNavbar .category-menu.closed li button {
+    transform: scale(0.01);
+  }
+  .SubNavbar .category-menu li.is-active button {
+    border-bottom: solid 2px #00c385;
+  }
+  .SubNavbar .category-menu li button {
+    cursor: pointer;
+    transition: all 0.1s ease;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-weight: 500;
+    font-size: 18px;
+    padding-bottom: 10px;
+    border-bottom: solid 2px transparent;
+    transition: all 0.2s ease;
+  }
+  .SubNavbar .category-menu li button:active {
+    transform: translateY(1px);
+  }
