@@ -2,6 +2,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import "./App.css";
 import { useEffect, useState } from "react";
 import axios from "axios"
+import { API_URL } from "../../../utils/constants";
 
 // Components
 import Navbar from "../Navbar/Navbar"
@@ -31,6 +32,8 @@ export default function App() {
 
   const handleAddItemToCart = (productId) => {
 
+    // Usar un objeto de shopping cart, dentro otro objetos de cada producto, comparamos si el is del objeto existe y si existe agregamos una cantidad de uno
+
     const auxArray = [];
     let wasAdded = false;
 
@@ -58,8 +61,8 @@ export default function App() {
 
   }
 
-  const handleRemoveItemFromCart = () => {
-    let auxArray = [];
+  const handleRemoveItemFromCart = (productId) => {
+    const auxArray = [];
     shoppingCart.map((item) => {
       if (item.itemId != productId) {
         auxArray.push(item);
@@ -74,6 +77,16 @@ export default function App() {
     })
   }
 
+  const handleOnCheckoutFormChange = (name, value) => {
+    const prev = checkoutForm;
+    const _new = {
+      ...prev,
+      [name]: value,
+    };
+
+    setCheckoutForm(_new);
+  }
+
   // Fetching
 
   useEffect(() => {  
@@ -86,7 +99,7 @@ export default function App() {
     try{
 
       const response = await axios.get (
-        "https://codepath-store-api.herokuapp.com/store"
+        `${API_URL}/store` 
       )
       
       setProducts(response.data.products);
@@ -111,6 +124,8 @@ export default function App() {
             shoppingCart={shoppingCart}
             products={products}
             checkoutForm={checkoutForm}
+            handleOnToggle={handleOnToggle}
+            handleOnCheckoutFormChange={handleOnCheckoutFormChange}
             />
           <Routes>
             <Route
