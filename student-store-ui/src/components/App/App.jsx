@@ -6,6 +6,8 @@ import { useEffec, useState } from "react";
 import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
+import ProductDetail from "../ProductDetail/ProductDetail";
+import NotFound from "../NotFound/NotFound";
 
 export default function App() {
   return (
@@ -15,7 +17,26 @@ export default function App() {
           {/* YOUR CODE HERE! */}
           <Navbar />
           <Sidebar />
-          <Home />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Home />
+              }
+            />
+            <Route
+              path="/product/:productsId"
+              element={
+                <ProductDetail />
+              }
+            />
+            <Route 
+              path="*"
+              element={
+                <NotFound />
+              }
+            />
+          </Routes>
         </main>
       </BrowserRouter>
     </div>
