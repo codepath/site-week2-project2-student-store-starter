@@ -30,7 +30,32 @@ export default function App() {
   }
 
   const handleAddItemToCart = (productId) => {
-    // It should add that product to the shoppingCart if it doesn't exist, and set its quantity to 1
+
+    const auxArray = [];
+    let wasAdded = false;
+
+    shoppingCart.map((item) => {
+
+      if (item.itemId != productId) {
+        auxArray.push(item);
+      } else {
+        auxArray.push({
+          itemId: productId,
+          quantity: item.quantity + 1,
+        });
+        wasAdded=true
+      }
+
+      if (!wasAdded) {
+        auxArray.push( {
+          itemId: productId,
+          quantity: 1
+        } )
+      }
+    })
+
+    setShoppingCart(auxArray);
+
   }
 
   // Fetching
