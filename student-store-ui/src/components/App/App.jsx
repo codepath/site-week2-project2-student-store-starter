@@ -12,7 +12,7 @@ import NotFound from "../NotFound/NotFound";
 
 export default function App() {
 
-  const [product, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
   const [error, setError] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -91,19 +91,28 @@ export default function App() {
           {/* YOUR CODE HERE! */}
           <Navbar />
           <Sidebar 
-            handleOnToggle={handleOnToggle}
+            isOpen={isOpen}
+            shoppingCart={shoppingCart}
+            products={products}
+            checkoutForm={checkoutForm}
             />
           <Routes>
             <Route
               path="/"
               element={
-                <Home />
+                <Home 
+                  products={products}
+                  shoppingCart={shoppingCart}
+                  />
               }
             />
             <Route
               path="/product/:productsId"
               element={
-                <ProductDetail />
+                <ProductDetail 
+                  products={products}
+                  shoppingCart={shoppingCart}
+                  />
               }
             />
             <Route 
