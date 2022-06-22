@@ -20,7 +20,8 @@ function getProductQuantity(shoppingCart, productId) {
 }
 
 export default function ProductDetail({
-  shoppingCart, handleAddItemToCart, handleRemoveItemFromCart, isFetching, setIsFetching, setError, error,
+  shoppingCart, handleAddItemToCart, handleRemoveItemFromCart,
+  isFetching, setIsFetching, setError, error,
 }) {
   // **********************************************************************
   // CONSTANTS
