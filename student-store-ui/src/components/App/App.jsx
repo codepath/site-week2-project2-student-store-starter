@@ -23,12 +23,14 @@ export default function App() {
     name:''
   });
 
-  const API_URL = "https://codepath-store-api.herokuapp.com/store"
-
   // Handlers
 
   const handleOnToggle = () => {
     setIsOpen((prev) => !prev);
+  }
+
+  const handleAddItemToCart = (productId) => {
+    // It should add that product to the shoppingCart if it doesn't exist, and set its quantity to 1
   }
 
   // Fetching
@@ -43,15 +45,15 @@ export default function App() {
     try{
 
       const response = await axios.get (
-        API_URL
+        "https://codepath-store-api.herokuapp.com/store"
       )
       
-      setProducts(response.data);
+      setProducts(response.data.products);
 
       setIsFetching(false);
 
     } catch (error) {
-      console.log('Server error')
+      console.error('Server error')
       setError("Server error");
     }
 
