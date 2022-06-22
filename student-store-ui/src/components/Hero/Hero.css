@@ -1,4 +1,15 @@
 .hero {
     width: 100%;
   }
+
+.intro {
+  font-size: 50px;
+  text-align:center;
+}
+
+.hero-img {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: auto;
+}
   
