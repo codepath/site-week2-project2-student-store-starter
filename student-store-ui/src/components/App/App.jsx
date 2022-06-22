@@ -58,6 +58,22 @@ export default function App() {
 
   }
 
+  const handleRemoveItemFromCart = () => {
+    let auxArray = [];
+    shoppingCart.map((item) => {
+      if (item.itemId != productId) {
+        auxArray.push(item);
+      } else {
+        if (item.quantity - 1 > 0) {
+          auxArray.push({
+            itemId: productId,
+            quantity: item.quantity - 1,
+          });
+        }
+      }
+    })
+  }
+
   // Fetching
 
   useEffect(() => {  
@@ -103,6 +119,8 @@ export default function App() {
                 <Home 
                   products={products}
                   shoppingCart={shoppingCart}
+                  handleAddItemToCart={handleAddItemToCart}
+                  handleRemoveItemFromCart={handleRemoveItemFromCart}
                   />
               }
             />
