@@ -4,17 +4,17 @@
 
 Selling merchandise in the modern era requires digital solutions. For this project, you'll be tasked with designing and constructing an online student store for the College of Codepath. The application entails a frontend user interface for potential customers to peruse the goods, and a backend API to handle data management. The API will be built with Node and Express and the UI will be built with React.
 
-// Include your gif here
+![Video of website](https://media.giphy.com/media/vtfc7wNMyrNRQ5dWe0/giphy.gif)
 
 ### Application Features
 
 #### Core Features
 
-- [ ] Displays the following sections: header, banner, search, product grid, about, contact, and footer.
-- [ ] On initial page load, display the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store).
-- [ ] User can click on the categories (Clothing, food, etc) to filter the product grid by type.
-- [ ] User can search for products.
-- [ ] User can click on a product in the grid to view additional product details. Navigation is via a React Router.
+- [x] Displays the following sections: header, banner, search, product grid, about, contact, and footer.
+- [x] On initial page load, display the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store).
+- [x] User can click on the categories (Clothing, food, etc) to filter the product grid by type.
+- [x] User can search for products.
+- [x] User can click on a product in the grid to view additional product details. Navigation is via a React Router.
 - [ ] User can click to expand the shopping cart in the left navigation.
 - [ ] User can click the '+' button on a product cart to increment that product in the shopping cart.
 - [ ] User can click the '-' button on a product cart to increment that product in the shopping cart.
@@ -285,15 +285,17 @@ The following specifications were met on the Express backend and the React front
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+The lab definitely helped me with the project, I do not think I would have had anything on my screen if it weren't for the labs.
+
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Add your response here
+If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
+I would have liked to add a cool hover effect over each item if I could, and I would also maybe do my CSS styling a bit differently.
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+Putting the sidebar on the right side of the screen was a cool component and I think I would like to try that.
 
 ### Open-source libraries used
 
@@ -302,3 +304,7 @@ Add your response here
 ### Shout out
 
 Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+
+Shout out to pod 12! I wouldn't have gotten this far without them.
+
+GIF
