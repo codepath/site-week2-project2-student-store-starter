@@ -4,9 +4,13 @@
 
 Selling merchandise in the modern era requires digital solutions. For this project, you'll be tasked with designing and constructing an online student store for the College of Codepath. The application entails a frontend user interface for potential customers to peruse the goods, and a backend API to handle data management. The API will be built with Node and Express and the UI will be built with React.
 
-// Include your gif here
+https://user-images.githubusercontent.com/65472356/175026580-ba13bfa5-cd3f-4974-98f1-f5670d57b10c.mp4
 
 ### Application Features
+
+
+
+
 
 #### Core Features
 
@@ -15,7 +19,7 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 - [X] User can click on the categories (Clothing, food, etc) to filter the product grid by type.
 - [X] User can search for products.
 - [X] User can click on a product in the grid to view additional product details. Navigation is via a React Router.
-- [ ] User can click to expand the shopping cart in the left navigation.
+- [X] User can click to expand the shopping cart in the left navigation.
 - [ ] User can click the '+' button on a product cart to increment that product in the shopping cart.
 - [ ] User can click the '-' button on a product cart to increment that product in the shopping cart.
 - [ ] Shopping cart displays a table of products, quantities, subtotal, tax, and total.
@@ -102,8 +106,8 @@ The following specifications were met on the Express backend and the React front
 
 **Logo.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `div` element with a `className` of `logo`
-  - [ ] Should use the `Link` component from `react-router-dom` to link to the home route (`/`) when clicked
+  - [X] Should render JSX that is wrapped by a `div` element with a `className` of `logo`
+  - [X] Should use the `Link` component from `react-router-dom` to link to the home route (`/`) when clicked
 
 **Home.jsx**
 
@@ -141,14 +145,14 @@ The following specifications were met on the Express backend and the React front
   - [X] When the component is mounted to the screen...
     - [X] It should make a `GET` request to the `/store/:productId` endpoint with the `axios.get` method.
     - [X] The `:productId` part of the request should be replaced with the `productId` pulled from the url.
-    - [ ] When the initial request is loading, it should render an `h1` element with the `className` of `loading` and contain the text `"Loading..."`
+    - [X] When the initial request is loading, it should render an `h1` element with the `className` of `loading` and contain the text `"Loading..."`
     - [X] It should store the `product` received by the request in state and then render the `ProductView` component.
     - [X] If no `product` is found with that `id`, it should render the `NotFound` component
 
 **ProductView.jsx**
 
   - [X] Should render JSX that is wrapped by a `div` element with a `className` of `product-view`
-  - [ ] Should accept **at least** the following props:
+  - [X] Should accept **at least** the following props:
     - `product` - the `product` object returned by the API request
     - `productId` - the id of the product extracted from the url
     - `quantity` - the quantity for this product found in the `shoppingCart`
