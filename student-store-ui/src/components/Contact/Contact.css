@@ -1,0 +1,37 @@
+.contact {
+    background: rgb(63, 42, 68);
+    color: white;
+    padding: 2em;
+    font-size: 2em;
+    font-size: 1.2em;
+    width: 100%;
+}
+
+.contact > li {
+    list-style: none;
+    margin-bottom: 0.1em;
+}
+
+.content-label {
+    width: 5em;
+}
+
+.group {
+    display: flex;
+    flex-direction: row;
+}
+
+.content {
+    font-weight: 300;
+}
+
+.contact .header {
+    font-size: 1.8em;
+    color: white;
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}

@@ -1,0 +1,33 @@
+/* :root {
+    --bright-green: #00c385;
+} */
+
+.hero {
+    background: rgb(63, 42, 68);
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 350px;
+    padding: 4em;
+}
+
+.hero-img {
+    width: 10em;
+}
+
+h1, h2 {
+    color: white;
+}
+
+h1 {
+    font-size: 4em;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: 300;
+}

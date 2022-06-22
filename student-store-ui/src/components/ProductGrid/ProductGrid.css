@@ -1,0 +1,23 @@
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    justify-items: center;
+    gap: 30px;
+    padding: 3em;
+    width: 100%;
+}
+
+.header {
+    font-size: 2.2em;
+    color: rgb(63, 42, 68);
+    font-weight: 600;
+}
+
+.products-container {
+    background-color: rgb(238, 238, 238);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
