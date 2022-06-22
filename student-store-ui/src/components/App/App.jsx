@@ -16,10 +16,20 @@ export default function App() {
   const [isFetching, setIsFetching] = useState(false);
   const [error, setError] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
+
   const [shoppingCart, setShoppingCart] = useState([]);
-  const [checkoutForm, setCheckoutForm] = useState({});
+  const [checkoutForm, setCheckoutForm] = useState({
+    email:'',
+    name:''
+  });
 
   const API_URL = "https://codepath-store-api.herokuapp.com/store"
+
+  // Handlers
+
+  const handleOnToggle = () => {
+    setIsOpen((prev) => !prev);
+  }
 
   // Fetching
 
@@ -53,7 +63,9 @@ export default function App() {
         <main>
           {/* YOUR CODE HERE! */}
           <Navbar />
-          <Sidebar />
+          <Sidebar 
+            handleOnToggle={handleOnToggle}
+            />
           <Routes>
             <Route
               path="/"
