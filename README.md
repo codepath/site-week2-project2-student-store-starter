@@ -37,7 +37,7 @@ The following specifications were met on the Express backend and the React front
 
 **App.jsx**
 
-  - [ ] The core App component that contains the routes for the app and does the initial data fetching
+  - [ x ] The core App component that contains the routes for the app and does the initial data fetching
   - [ x ] Renders a `BrowserRouter` component that contains a `Routes` component with the following routes:
     - [ x ] `/` - Should render the `Home.jsx` component
     - [ x ] `/products/:productId` - should render the `ProductDetail` component
