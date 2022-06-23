@@ -4,7 +4,7 @@ import ProductCard from '../ProductCard/ProductCard';
 import './ProductView.css';
 
 export default function ProductView({
-  product, productId, quantity, handleAddItemToCart, handleRemoveItemFromCart,
+  product, productId, shoppingCart, handleAddItemToCart, handleRemoveItemFromCart,
 }) {
   return (
     <div className="product-view">
@@ -16,7 +16,8 @@ export default function ProductView({
         key={productId}
         product={product}
         productId={productId}
-        quantity={quantity}
+        shoppingCart={shoppingCart}
+        showDescription
         handleAddItemToCart={handleAddItemToCart}
         handleRemoveItemFromCart={handleRemoveItemFromCart}
       />

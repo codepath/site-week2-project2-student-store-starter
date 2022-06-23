@@ -84,7 +84,6 @@ export default function App() {
       shoppingCart[productIndex].quantity += 1;
       setShoppingCart([...shoppingCart]);
     }
-    console.log('added item #', productId);
   };
 
   const handleRemoveItemFromCart = (productId) => {
@@ -101,7 +100,6 @@ export default function App() {
         setShoppingCart([...shoppingCart]);
       }
     }
-    console.log('removed item #', productId);
   };
 
   const handleOnCheckoutFormChange = (name, value) => {
@@ -130,6 +128,9 @@ export default function App() {
         <Navbar />
         <Sidebar
           isOpen={isOpen}
+          products={products}
+          shoppingCart={shoppingCart}
+          checkoutForm={checkoutForm}
           handleOnToggle={handleOnToggle}
           handleOnCheckoutFormChange={handleOnCheckoutFormChange}
           handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}

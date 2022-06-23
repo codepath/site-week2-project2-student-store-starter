@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable react/prop-types */
 import * as React from 'react';
 import axios from 'axios';
@@ -10,13 +11,6 @@ import NotFound from '../NotFound/NotFound';
 // helper function; determines if product ID is valid
 function productIDisValid(productId) {
   return productId > 0 && productId <= 16;
-}
-
-// helper function; get quantity of specific product in cart
-function getProductQuantity(shoppingCart, productId) {
-  const productIndex = shoppingCart.findIndex((product) => product.id === productId);
-  if (productIndex !== -1) return shoppingCart[productIndex].quantity;
-  return 0;
 }
 
 export default function ProductDetail({
@@ -74,14 +68,17 @@ export default function ProductDetail({
   // PAGE RENDERING
   // **********************************************************************
 
+  if (isFetching) {
+    return (<h1>Loading...</h1>);
+  }
   return (
     <div className="product-detail">
       {error === '' && productIDisValid(productId) ? (
         <ProductView
           key={productId}
           product={product}
-          productId={productId}
-          quantity={getProductQuantity(shoppingCart, productId)}
+          productId={parseInt(productId, 10)}
+          shoppingCart={shoppingCart}
           showDescription
           handleAddItemToCart={handleAddItemToCart}
           handleRemoveItemFromCart={handleRemoveItemFromCart}

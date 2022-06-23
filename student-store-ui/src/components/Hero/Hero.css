@@ -9,8 +9,10 @@
 }
 
 .hero-img {
-  width: 80%;
-  margin-left: 10%;
-  margin-right: auto;
+  position: relative;
+  width: 3000px;
+  height: 200px;
+  margin-left:50%;
+  left:-1500px;
 }
   
