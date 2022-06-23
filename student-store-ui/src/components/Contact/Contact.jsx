@@ -3,6 +3,8 @@ import "./Contact.css"
 
 export default function Contact(props) {
     return (
-        <h1>Contact</h1>
+        <div className="contact" id="contact-us">
+            <h1>Contact us</h1>
+        </div>
     )
 }

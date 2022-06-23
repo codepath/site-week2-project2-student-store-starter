@@ -1,15 +1,14 @@
 import * as React from "react"
-import { Link } from "react-router-dom"
 import "./Navbar.css"
 
 export default function Navbar() {
   return (
     <nav className="navbar">
       <ul>
-        <Link to="#home">Home</Link>
-        <Link to="#about-us">About Us</Link>
-        <Link to="#contact-us">Contact Us</Link>
-        <Link to="#buy-now">Buy now</Link>
+        <a href="#home">Home</a>
+        <a href="#about-us">About Us</a>
+        <a href="#contact-us">Contact Us</a>
+        <a href="#buy-now">Buy now</a>
       </ul>
     </nav>
   )

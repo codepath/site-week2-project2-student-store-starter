@@ -10,7 +10,7 @@ import "./Home.css"
 
 export default function Home({ products }) {
   return (
-    <div className="home">
+    <div className="home" id="home">
       <Hero />
       <SearchBar />
       <ProductGrid products={ products } />
