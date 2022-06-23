@@ -1,0 +1,127 @@
+.sidebar {
+  transition: var(--transition);
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  z-index: 10001;
+  background-color: var(--pure-white);
+}
+
+.sidebar.open {
+  transform: translateX(0);
+  box-shadow: var(--shadow);
+}
+
+.sidebar h2 {
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+.shopping-cart table {
+  border-collapse: collapse;
+  border-radius: 5px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.shopping-cart thead {
+  background-color: var(--dark-blue);
+  color: var(--pure-white);
+}
+
+.shopping-cart th:first-child {
+  border-radius: 5px 0 0 0;
+}
+
+.shopping-cart th:last-child {
+  border-radius: 0 5px 0 0;
+}
+
+.shopping-cart tr:last-child td:first-child {
+  border-radius: 0 0 0 5px;
+}
+
+.shopping-cart tr:last-child td:last-child {
+  border-radius: 0 0 5px 0;
+}
+
+.shopping-cart th, td {
+  padding: 10px 15px;
+}
+
+.shopping-cart tfoot th {
+  text-align: left;
+}
+
+.payment-info {
+  padding: 30px 0;
+}
+
+.payment-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment-form input[type=text], input[type=email] {
+  padding: 10px;
+  font-family: var(--font);
+  font-size: 16px;
+  border: none;
+  margin: 5px 0;
+  background-color: var(--grey-bg);
+  border-radius: 3px;
+}
+
+.payment-form a {
+  color: var(--bright-green);
+}
+
+.terms-and-conditions {
+  padding: 10px 0;
+}
+
+.terms-and-conditions input {
+  margin-right: 10px;
+}
+
+.payment-form input[type=submit] {
+  border: none;
+  background-color: var(--bright-green);
+  padding: 10px;
+  border-radius: 3px;
+  font-family: var(--font);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.payment-form input[type=submit]:hover {
+  background-color: var(--muted-green);
+}
+
+.toggle-open {
+  background-color: var(--pure-white);
+  color: var(--font-dark);
+  position: absolute;
+  left: calc(100% - 1px);
+  bottom: 20px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 0 50px 50px 0;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  clip-path: inset(-7px -7px -7px 0);
+}
+
+.toggle-open .chevron {
+  transition: var(--transition);
+}
+
+.sidebar.open .toggle-open .chevron {
+  transform: rotate(180deg) translateX(3px);
+}
