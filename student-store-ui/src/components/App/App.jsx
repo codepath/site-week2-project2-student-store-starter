@@ -27,26 +27,50 @@ export default function App() {
  
 
 
+  function handleOnToggle() {
+  }
+
+
+  function handleAddItemToCart(productId) {
+
+    shoppingCart.forEach((item) => {
+      if (productId in item) {
+        item[productId] += 1
+      }
+      else {
+        
+
+      }
+    })
+
+
+  }
+
+
+
+
+  const getProducts = async () => {
+    setIsFetching(true)
+    try {
+      const response = await axios.get("http://localhost:3001/store")
+      if (response?.data?.allProducts) {
+        setProducts(response.data.allProducts)
+      } else {
+        setError("Error getting products list from store.")
+      }
+    } catch (error) {
+      console.log(error)
+    } finally {
+      setIsFetching(false)
+    }
+  }
+
 
   useEffect(() => {
-    const getProducts = async () => {
-      setIsFetching(true)
-      try {
-        const response = await axios.get("https://codepath-store-api.herokuapp.com/store")
-        if (response.data.products) {
-          setProducts(response.data.products)
-        } else {
-          setError("Error getting products list from store.")
-        }
-      } catch (error) {
-        console.log(error)
-      } finally {
-        setIsFetching(false)
-      }
-    }
+    
     getProducts()
   }, [])
-  console.log(products)
+
 
 
 
@@ -57,7 +81,7 @@ export default function App() {
       <BrowserRouter>
       <main>
         <Navbar />
-        <Sidebar /> 
+        <Sidebar isOpen = {isOpen} setIsOpen = {setIsOpen} products = {products} shoppingCart = {shoppingCart} setShoppingCart = {setShoppingCart} checkoutForm ={checkoutForm} setCheckoutForm = {setCheckoutForm}/> 
         <Routes>
           <Route path = "/" element = {<Home products = {products} selectedCategory = {selectedCategory} setSelectedCategory = {setSelectedCategory}/>}  />
           <Route path = "/products/:productId" element = {<ProductDetail products = {products} isFetching = {isFetching} setIsFetching = {setIsFetching} error = {error} setError = {setError}/>} /> 

@@ -11,7 +11,7 @@ export default function ProductDetail(props) {
   const [currentProduct, setCurrentProduct] = useState(null)  
   const productId = useParams();
 
-  let apiUrl = "https://codepath-store-api.herokuapp.com/store/" + productId.productId
+  let apiUrl = "http://localhost:3001/store/" + productId.productId
   console.log(productId.productId)
   console.log(apiUrl)
 

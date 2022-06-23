@@ -9,6 +9,8 @@ nav {
     border-bottom: 1px solid var(--nav-border);
     display: flex;
 
+
+
   }
   .navbar-container {
     max-width: 1260px;

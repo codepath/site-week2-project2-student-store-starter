@@ -1,18 +1,31 @@
-.sidebar {
-    height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: 3%; /* Set the width of the sidebar */
+.sidebar.closed{
+    height: 100vh; /* Full-height: remove this if you want "auto" height */
+    width: 80px; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    display: flex;
     z-index: 0; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
     background: rgb(44, 64, 71);
     overflow: auto; /* Disable horizontal scroll */
     padding-top: 20px;
-
   }
 
+
+  .sidebar.open{
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 400px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 100; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background: rgb(44, 64, 71);
+    overflow: auto; /* Disable horizontal scroll */
+    padding-top: 20px;
+  } 
+
   .sidebar-container {
-    margin-top: 100%;
+    margin-top: 15%;
     display: inline-block;
     justify-content: center;
 
@@ -27,10 +40,21 @@
     margin: 5px;
     margin-left: 10px;
 
+
   }
 
   .right-arrow-icon{
     margin-bottom: 100%;
   }
 
+  .arrow-btn {
+    margin-left: 30px;
+    margin-bottom: 200px;
+    margin: 0;
+    background: rgb(44, 64, 71);
+    border: 0;
+    cursor: pointer;
+
+
+}
 

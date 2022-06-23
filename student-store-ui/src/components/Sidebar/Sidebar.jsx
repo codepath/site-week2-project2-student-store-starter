@@ -1,15 +1,32 @@
 import * as React from "react"
 import "./Sidebar.css"
+import ShoppingCart from "../ShoppingCart/ShoppingCart"
 
-export default function Sidebar() {
+export default function Sidebar(props) {
+
+
+
+
+  let sidebarClassName = "";
+  let sidebarKey = "";
+
+  if (props.isOpen == false) {
+    sidebarClassName = "sidebar closed"
+    sidebarKey = true
+    
+  }
+  else {
+    sidebarClassName = "sidebar open"
+    sidebarKey = false
+  }
+
+
   return (
-    <section className="sidebar">
+    <section className={sidebarClassName}>
       <div className="sidebar-container">
       
-        <RightArrowIcon/>
-        <CoinIcon/>
-        <ShopCartIcon/>
-        <FormIcon/>
+        <button className = "arrow-btn" onClick = {() => props.setIsOpen(sidebarKey)}><RightArrowIcon/></button>
+        {!props.isOpen ? <div> <ShopCartIcon/> <CoinIcon/> <FormIcon/> </div> : <ShoppingCart isOpen ={props.isOpen} products = {props.products} shoppingCart = {props.shoppingCart} setShoppingCart = {props.setShoppingCart} checkoutForm = {props.checkoutForm} setCheckoutForm ={props.setCheckoutForm}/>}
 
 
       </div>
@@ -47,7 +64,7 @@ export function ShopCartIcon() {
 export function FormIcon() {
   return (
     <div className="form-icon">
-        <i class="fa-solid fa-clipboard-list fa-2x"></i>
+        <i className="fa-solid fa-clipboard-list fa-2x"></i>
     </div>
   )
 }

@@ -3,10 +3,10 @@ import "./ProductCard.css"
 import {BrowserRouter as Router, Link} from 'react-router-dom';
 
 export default function ProductCard(props) {
-    console.log(222,props.name)
+
     let linkAddress = "/products/" + props.productId
     let price = props.price.toFixed(2)
-    console.log(linkAddress)
+
   return (
 
     <div className = "product-card">
