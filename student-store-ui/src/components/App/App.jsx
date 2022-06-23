@@ -7,7 +7,10 @@ import ProductGrid from "../ProductGrid/ProductGrid";
 import About from "../About/About";
 import Footer from "../Footer/Footer";
 import Contact from "../Contact/Contact";
+import Menu from "../Menu/Menu";
+
 import "./App.css"
+
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
@@ -37,7 +40,7 @@ export default function App() {
   function handleOnToggle(){
     setOpenStat(!isOpen);
   };
-  function handleItemToCart(productId){
+  function handleAddItemsToCart(productId){
     // TODO: It should add that product to the shoppingCart if 
     // it doesn't exist, and set its quantity to 1.
     //  It should add the price of the product to the total 
@@ -61,7 +64,8 @@ export default function App() {
           <Navbar />
           <Sidebar />
           <Home />
-          <ProductGrid products={products} handleAddItemsToCart ={handleItemToCart} handleRemoveItemToCart= {handleRemoveItemToCart}/>
+          {/* <Menu /> */}
+          <ProductGrid products={products} handleAddItemsToCart ={handleAddItemsToCart} handleRemoveItemToCart= {handleRemoveItemToCart}/>
           <About />
           <Contact />
           <Footer />

@@ -6,16 +6,18 @@
     flex-direction: row;
     align-items: center;
 }
-a{
+.pages{
     font-size: 18px;
     font-family: Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
     text-decoration: none;
     color: white;
     padding-left: 10px;
 }
-a:hover{
+.pages:hover{
     /* background-color: #c18f9c; */
     color: black;
+    text-decoration: underline;
+    padding-bottom: 10px;
     border-bottom-color: black;
 }
 span, div, p, h1, h2, h3, h4, h5, h6, ul, ol {
@@ -84,7 +86,7 @@ img{
 .logo-pic.instagram {
     width: 5%;
 }
-
+.icons
 /* @media screen and (max-width: 1000px)
 :root {
     --content-width: 800px;
