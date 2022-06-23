@@ -20,7 +20,7 @@ export function NavLinks() {
       <HashLink to={"/#"} className="nav-link">Home</HashLink>
       <HashLink to={"/#about"} className="nav-link">About Us</HashLink>
       <HashLink to={"/#contact-us"} className="nav-link">Contact Us</HashLink>
-      <HashLink to={"/#buy"} className="nav-link">Buy Now</HashLink>
+      <HashLink to={"/#buy"} className="nav-link">Shop</HashLink>
     </nav>
   )
 }

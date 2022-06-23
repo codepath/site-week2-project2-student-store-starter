@@ -2,11 +2,11 @@
     background-color: var(--codepath-dark-grey);
     position: fixed;
     height: 100%;
-    max-width: 500px;
     z-index: 9999999999999999999;
     transition: width 0.5s;
     transition-timing-function: ease-in-out;
     color: white;
+    width: 400px;
 
     /* background-color: white;
     border-right: var(--border-style);

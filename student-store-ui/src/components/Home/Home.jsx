@@ -11,6 +11,7 @@ export default function Home(props) {
 
   return (
     <div className="home">
+      
       <Hero />
       <div className="main-content">
         <div className="product-area" id="buy">

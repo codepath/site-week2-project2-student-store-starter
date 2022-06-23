@@ -1,17 +1,19 @@
 .navbar {
     top: 0;
     left: 0;
-    width: 100%;
+    width: calc(100% - var(--sidebar-width));
+    position: relative;
+    left: var(--sidebar-width);
     height: var(--navbar-height);
     z-index: 99999;
     background: var(--bg-light-grey);
     display: flex;
-    align-items: center;
+    align-items: center;;
   }
 
   .navbar-contents {
-    width: 80%;
-    max-width: calc(100vw - 250px);
+    max-width: 1300px;
+    width: calc(100vw - 250px);
     margin: auto;
     color: var(--font-primary);
     display: flex;

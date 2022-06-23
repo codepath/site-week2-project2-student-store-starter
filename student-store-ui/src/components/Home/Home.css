@@ -4,8 +4,9 @@
 }
 
 .home {
-  top: var(--navbar-height);
-  width: 100%;
+  width: calc(100% - var(--sidebar-width));
+  position: relative;
+  left: var(--sidebar-width);
   max-width: 100vw;
   min-height: 100vh;
   gap: 100px;
@@ -13,14 +14,18 @@
 }
 
 .main-content {
-  width: 80%;
-  max-width: calc(100vw - 250px);
+  max-width: 1300px;
+  width: calc(100vw - 250px);
   margin: 0 auto;
-  gap: 100px;
+  gap: 20px;
 }
 
 .product-area {
   gap: 40px;
+}
+
+.product-area > * {
+  margin: 20px 0px;
 }
 
 .is-active {

@@ -1,6 +1,8 @@
 .footer {
-    width: 100%;
     height: 300px;
+    width: calc(100% - var(--sidebar-width));
+    position: relative;
+    left: var(--sidebar-width);
     background-color: white;
     border-top: var(--border-style);
     margin-top: 100px;

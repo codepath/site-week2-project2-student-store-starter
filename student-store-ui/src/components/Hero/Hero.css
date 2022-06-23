@@ -1,7 +1,7 @@
 .hero {
   height: 350px;
-  width: 80%;;
-  max-width: calc(100vw - 250px);
+  max-width: 1300px;
+  width: calc(100vw - 250px);
   margin: 0 auto;
   background-color: rgb(240, 242, 242);
   border-radius: 10px;
