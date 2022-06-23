@@ -1,7 +1,9 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import "./App.css";
 import { useEffect, useState } from "react";
-import axios from "axios"
+import { API_URL } from "../../../utils/constants";
+import { fetcher } from "../../../utils/fetcher";
+import axios from "axios";
 
 // Components
 import Navbar from "../Navbar/Navbar"
@@ -12,14 +14,139 @@ import NotFound from "../NotFound/NotFound";
 
 export default function App() {
 
-  const [product, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
+  const [isFetchingCheckoutForm, setIsFetchingCheckoutForm] = useState(false);
   const [error, setError] = useState(null);
+  const [successMsg, setSuccessMsg] = useState("")
   const [isOpen, setIsOpen] = useState(false);
-  const [shoppingCart, setShoppingCart] = useState([]);
-  const [checkoutForm, setCheckoutForm] = useState({});
 
-  const API_URL = "https://codepath-store-api.herokuapp.com/store"
+  const [shoppingCart, setShoppingCart] = useState([]);
+  const [checkoutForm, setCheckoutForm] = useState({
+    email:'',
+    name:''
+  });
+
+  // Handlers
+
+  const handleOnToggle = () => {
+    setIsOpen((prev) => !prev);
+  }
+
+  const handleAddItemToCart = (productId) => {
+
+    // Usar un objeto de shopping cart, dentro otro objetos de cada producto, comparamos si el is del objeto existe y si existe agregamos una cantidad de uno
+
+    const auxArray = [];
+    let wasAdded = false;
+
+    if(shoppingCart.length > 0) {
+      shoppingCart.map((item) => {
+        if (item.itemId != productId) {
+          auxArray.push(item);
+        } else {
+          auxArray.push({
+            itemId: productId,
+            quantity: item.quantity + 1,
+          });
+          wasAdded=true
+        }
+  
+        console.log(productId)
+        
+        if (!wasAdded) {
+          auxArray.push( {
+            itemId: productId,
+            quantity: 1
+          } )
+        }
+      })
+    } else {
+      auxArray.push( {
+        itemId: productId,
+        quantity: 1
+      })
+    }
+    
+
+    setShoppingCart(auxArray);
+
+  }
+
+  const handleRemoveItemFromCart = (productId) => {
+    const auxArray = [];
+    shoppingCart.map((item) => {
+      if (item.itemId != productId) {
+        auxArray.push(item);
+      } else {
+        if (item.quantity - 1 > 0) {
+          auxArray.push({
+            itemId: productId,
+            quantity: item.quantity - 1,
+          });
+        }
+      }
+    })
+
+    setShoppingCart(auxArray)
+  }
+
+  const handleCheckoutFormChange = (name, value) => {
+    const prev = checkoutForm;
+    const _new = {
+      ...prev,
+      [name]: value,
+    };
+
+    setCheckoutForm(_new);
+  }
+
+  const handleOnSubmitCheckoutForm = async () => {
+
+    // TODO (not working)
+
+    setIsFetchingCheckoutForm(true);
+
+    try {
+      if(checkoutForm.email == "" || checkoutForm.name == "") {
+        setError("You need to complete the information");
+        setIsFetchingCheckoutForm(false);
+        return;
+      }
+      if(shoppingCart.length == 0) {
+        setError("You need to select at least one item");
+        setIsFetchingCheckoutForm(false);
+        return;
+      }
+
+      const response = await axios.post (
+        `${API_URL}/store`,
+        {
+          user: checkoutForm,
+          shoppingCart
+        }
+      );
+      setIsFetchingCheckoutForm(false);
+      if (response.statusText != "Created") {
+        setError("Server error");
+        setSuccessMsg("");
+        return;
+      }
+      setError("");
+      setSuccessMsg("Success");
+      
+      // Empty shopping cart
+      setShoppingCart([]);
+
+      // Reset checkoutForm
+      setCheckoutForm({
+        email: "",
+        name: ""
+      });
+    } catch (error) {
+      setError("Server error");
+    }
+  };
 
   // Fetching
 
@@ -33,17 +160,17 @@ export default function App() {
     try{
 
       const response = await axios.get (
-        API_URL
-      )
+        `${API_URL}/store` 
+      );
       
-      setProducts(response.data);
-
-      setIsFetching(false);
+      setProducts(response.data.products);
 
     } catch (error) {
-      console.log('Server error')
+      console.error('Server error')
       setError("Server error");
     }
+
+    setIsFetching(false);
 
   }
 
@@ -53,18 +180,37 @@ export default function App() {
         <main>
           {/* YOUR CODE HERE! */}
           <Navbar />
-          <Sidebar />
+          <Sidebar 
+            isOpen={isOpen}
+            shoppingCart={shoppingCart}
+            products={products}
+            checkoutForm={checkoutForm}
+            error={error}
+            isFetching={isFetching}
+            successMsg={successMsg}
+            handleOnToggle={handleOnToggle}
+            handleCheckoutFormChange={handleCheckoutFormChange}
+            handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
+            />
           <Routes>
             <Route
               path="/"
               element={
-                <Home />
+                <Home 
+                  products={products}
+                  shoppingCart={shoppingCart}
+                  handleAddItemToCart={handleAddItemToCart}
+                  handleRemoveItemFromCart={handleRemoveItemFromCart}
+                  />
               }
             />
             <Route
               path="/product/:productsId"
               element={
-                <ProductDetail />
+                <ProductDetail 
+                  products={products}
+                  shoppingCart={shoppingCart}
+                  />
               }
             />
             <Route 
