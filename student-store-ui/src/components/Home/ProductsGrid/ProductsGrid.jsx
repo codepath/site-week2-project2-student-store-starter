@@ -1,13 +1,10 @@
 import "./ProductsGrid.css"
 import * as React from "react"
+import ProductCard from "./ProductCard/ProductCard"
 
-export default function ProductsGrid({products, handleAddItemToCart, handleRemoveItemFromCart}) {
-    {products.map((product) => {
-        return(
-            <ProductCard showDescription = {false}/>
-        )
-    })}
-
+export default function ProductsGrid({products, handleAddItemToCart, handleRemoveItemFromCart, shoppingCart}) {
+    console.log('handleAddItemToCart: ', handleAddItemToCart);
+    
     return (
         <div className="product-grid">
             <form action="" className="productsGrid">
@@ -23,6 +20,18 @@ export default function ProductsGrid({products, handleAddItemToCart, handleRemov
                     <li><a href="">Tech</a></li>
                 </ul>
             </nav>
+            {products.map((product) => {
+                for (let j = 0; j < shoppingCart.length; j++){
+                    if (shoppingCart[j].itemId = product.id){
+                        const quantity = shoppingCart[j].quantity}
+                }
+        
+                return(
+                    //add quantity
+                    <ProductCard product = {product} productId ={product.id} handleAddItemToCart = {handleAddItemToCart} handleRemoveItemFromCart = {handleRemoveItemFromCart} 
+                    showDescription = {false}/>
+                )
+            })}
         </div>
     )
 }

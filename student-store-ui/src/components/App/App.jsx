@@ -21,37 +21,23 @@ export default function App() {
   const [checkoutForm, setCheckoutForm] = useState([])
   const URL = 'https://codepath-store-api.herokuapp.com/store'
 
-  // const axios = require('axios'); 
-
   useEffect(() => {
-    console.log("test1")
-
+    const getData = async() => {
+      setIsFetching(true)
+      try{
+        const {data} = await axios.get(URL);
+        setProducts(data.products)
+      }
+      catch(err){
+        setError(err)
+      }
+      if (products.length == 0){
+        setError("no products")
+      }
+    }
     getData();
-    console.log("test")
-
+    setIsFetching(false)
   }, []);
-
-  const getData = async() => {
-    console.log("test")
-    setIsFetching(true)
-    console.log("test")
-    const {res} = await axios.get(URL);
-    console.log('res: ', res);
-
-    let data = res.data
-    console.log('data: ', data);
-    
-    // axios.get(URL)
-    // .then(resp => { setProducts(resp.data.products) })
-    // .catch(function (error) {
-    //   setError(error)
-    // })
-    // if (products.length == 0){
-    //   setError("length of products is 0")
-    // }
-  }
-
-  console.log('products: ', products);
 
   useEffect(() => {
     if (products) {
@@ -69,22 +55,24 @@ export default function App() {
   }
 
   function handleAddItemToCart(productId) {
-    for (i = 0; i<shoppingCart.length; i++){
-      if (shoppingCart[i].itemId = productId.itemId){
+    for (let i = 0; i<shoppingCart.length; i++){
+      if (shoppingCart[i].itemId == productId){
         shoppingCart[i].quantity += 1;
         setShoppingCart([...shoppingCart]);
         return;
       }
     }
-    productId.quantity = 1
-    setShoppingCart([...shoppingCart, productId])
+    const newItem = {
+      itemId: productId,
+      quantity: 1
+    }
+    setShoppingCart([...shoppingCart, newItem])
   }
 
-
   function handleRemoveItemFromCart(productId) {
-    if (shoppingCart.isArray(productId) == true){
-      for (i = 0; i<shoppingCart.length; i++){
-        if (shoppingCart[i].itemId = productId.itemId){
+    // if (shoppingCart.isArray(productId) == true){
+      for (let i = 0; i<shoppingCart.length; i++){
+        if (shoppingCart[i].itemId == productId){
           if (shoppingCart[i].quantity -1 == 0){
             shoppingCart.splice(i)
             setShoppingCart([...shoppingCart])
@@ -94,7 +82,7 @@ export default function App() {
             setShoppingCart([...shoppingCart])
           }
         }
-      }
+      // }
     }
   }
 
@@ -112,9 +100,9 @@ export default function App() {
     axios.post(URL, { userOrder
     })
     .then((response) => {
-      console.log(response);
+      
     }, (error) => {
-      console.log(error);
+      
     });
 
   }
@@ -133,7 +121,7 @@ export default function App() {
               </div>
               <div className="home">
               <Routes>
-                <Route path="/" element={<Home products handleOnToggle handleAddItemToCart handleRemoveItemFromCart/>} />
+                <Route path="/" element={<Home products = {products} handleOnToggle = {handleOnToggle} handleAddItemToCart = {handleAddItemToCart} handleRemoveItemFromCart = {handleRemoveItemFromCart} shoppingCart = {shoppingCart}/>} />
                 <Route path="/products/:productId" element={<ProductDetail />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
