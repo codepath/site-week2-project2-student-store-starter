@@ -1,0 +1,30 @@
+.header {
+    background-color: #ADF4FF;
+    height: 500px;
+}
+
+.headerTitle {
+    margin-left: 200px;
+    margin-top: 100px;
+    font-size: 40px;
+}
+
+.headerTitle h1 {
+    margin-bottom: 10px;
+}
+
+.header hr {
+    width: 180px;
+    height: 5px;
+    background-color: #292929;
+    border: none;
+}
+
+.headerTitle span {
+    color: #307580;
+}
+
+.headerTitle p{
+    width: 800px;
+    font-size: 18px;
+}
