@@ -22,26 +22,36 @@ export default function App() {
   const URL = 'https://codepath-store-api.herokuapp.com/store'
 
   // const axios = require('axios'); 
-  async function getData(){
-    setIsFetching(true)
-    axios.get(URL).then((resp) => { setProducts(resp.data.products) })
-    .catch(function (error) {
-      setError(error)
-    })
-    if (products.length == 0){
-      setError("length of products is 0")
-    }
-  }
-  console.log('resp.data.products: ', resp.data.products);
-  console.log('resp.data.products: ', resp.data);
-  console.log('products: ', products);
 
   useEffect(() => {
-    const start = async () => {
-      await getData();
-    };
-    start();
+    console.log("test1")
+
+    getData();
+    console.log("test")
+
   }, []);
+
+  const getData = async() => {
+    console.log("test")
+    setIsFetching(true)
+    console.log("test")
+    const {res} = await axios.get(URL);
+    console.log('res: ', res);
+
+    let data = res.data
+    console.log('data: ', data);
+    
+    // axios.get(URL)
+    // .then(resp => { setProducts(resp.data.products) })
+    // .catch(function (error) {
+    //   setError(error)
+    // })
+    // if (products.length == 0){
+    //   setError("length of products is 0")
+    // }
+  }
+
+  console.log('products: ', products);
 
   useEffect(() => {
     if (products) {
