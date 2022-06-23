@@ -4,11 +4,11 @@ import HeroBanner from "./HeroBanner/HeroBanner"
 import Footer from "../Footer/Footer"
 import "./Home.css"
 
-export default function Home() {
+export default function Home({products, handleAddItemToCart, handleRemoveItemFromCart}) {
   return (
     <section>
       <HeroBanner/>
-      <ProductsGrid />
+      <ProductsGrid products={products}/>
     </section>
     
     // <div className="home">

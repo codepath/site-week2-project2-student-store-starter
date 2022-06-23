@@ -1,4 +1,25 @@
-.HeroBanner{
-    background-color: yellow;
+.hero{
+    /* background-color: yellow; */
     margin-top: 0px;
+}
+
+h1{
+    padding: 0px;
+    margin: 10px 10px;
+    font-size: 30px;
+}
+
+p{
+    margin: 10px 10px;
+}
+
+.hero-img{
+    width: 150px;
+    text-align: right;
+    margin: 10px 10px;
+
+}
+
+.herowrapper{
+    display: flex;
 }

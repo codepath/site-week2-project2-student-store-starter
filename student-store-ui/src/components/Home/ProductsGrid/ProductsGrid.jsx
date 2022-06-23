@@ -1,12 +1,15 @@
 import "./ProductsGrid.css"
 import * as React from "react"
 
-export default function ProductsGrid() {
-    
+export default function ProductsGrid({products, handleAddItemToCart, handleRemoveItemFromCart}) {
+    {products.map((product) => {
+        return(
+            <ProductCard showDescription = {false}/>
+        )
+    })}
 
     return (
-        <section className = "productsgrid">
-            <p>products grid</p>
+        <div className="product-grid">
             <form action="" className="productsGrid">
                 <input type="text" />
                 <button type="submit">Search!</button>
@@ -20,6 +23,6 @@ export default function ProductsGrid() {
                     <li><a href="">Tech</a></li>
                 </ul>
             </nav>
-        </section>
+        </div>
     )
 }
