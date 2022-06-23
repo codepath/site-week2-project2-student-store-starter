@@ -2,7 +2,7 @@ import "./ProductCard.css"
 import * as React from "react"
 import { Link } from "react-router-dom";
 
-export default function ProductCard({product, productId, handleAddItemToCart, handleRemoveItemFromCart, showDescription}) {
+export default function ProductCard({product, quantity, productId, handleAddItemToCart, handleRemoveItemFromCart, showDescription}) {
     
     
 
