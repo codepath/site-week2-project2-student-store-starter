@@ -20,7 +20,7 @@ export default function ProductGrid({products ,handleAddItemsToCart, handleRemov
     console.log(searched);
   };
   return (
-    <section className="products">diltddvucjrjeguuctivibbregdctlrh
+    <section className="products">
       <div id="cover">
       <form method="get" onChange={(event) => handleSearched(event)}>
         <div className="tb">
@@ -54,32 +54,28 @@ export default function ProductGrid({products ,handleAddItemsToCart, handleRemov
                 <button className="menu-btn" onClick={() => handleClick("tech")}>Tech</button>
             </li>
         </ul>
-        {/* <ProductGrid products={products} handleAddItemsToCart ={handleItemToCart} handleRemoveItemToCart= {handleRemoveItemToCart} category={category}/> */}
     </div>
       <div className="products-grid">
-        {/* {clickedCategory == ""{
-
-        } */}
         { searched != "" && clickedCategory != ""
         ? currSearch
           .filter((products, idx) => products.category == clickedCategory)
           .map((product, idx) => (
             <ProductCard  product={product} productId={product.id} 
-            quantity={product.quantity} handleAddItemsToCart ={handleAddItemsToCart} handleRemoveItemToCart={handleRemoveItemToCart} key={idx}/>
+            quantity={product.quantity} handleAddItemsToCart ={handleAddItemsToCart} handleRemoveItemToCart={handleRemoveItemToCart} showDescription={false} key={idx}/>
           ))
         : searched == "" && clickedCategory == ""
         ? products.map((product, idx) => (
             <ProductCard  product={product} productId={product.id} 
-            quantity={product.quantity} handleAddItemsToCart ={handleAddItemsToCart} handleRemoveItemToCart={handleRemoveItemToCart} key={idx}/>
+            quantity={product.quantity} handleAddItemsToCart ={handleAddItemsToCart} handleRemoveItemToCart={handleRemoveItemToCart} showDescription={false} key={idx}/>
           ))
         : searched == ""
         ? currProds.map((product, idx) => (
           <ProductCard  product={product} productId={product.id} 
-            quantity={product.quantity} handleAddItemsToCart ={handleAddItemsToCart} handleRemoveItemToCart={handleRemoveItemToCart} key={idx}/>
+            quantity={product.quantity} handleAddItemsToCart ={handleAddItemsToCart} handleRemoveItemToCart={handleRemoveItemToCart} showDescription={false} key={idx}/>
         ))
         : currSearch.map((product, idx) =>(
           <ProductCard  product={product} productId={product.id} 
-            quantity={product.quantity} handleAddItemsToCart ={handleAddItemsToCart} handleRemoveItemToCart={handleRemoveItemToCart} key={idx}/>
+            quantity={product.quantity} handleAddItemsToCart ={handleAddItemsToCart} handleRemoveItemToCart={handleRemoveItemToCart} showDescription={false} key={idx}/>
         ))
         }
       </div>

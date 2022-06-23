@@ -5,6 +5,9 @@ import {
     Link
   } from "react-router-dom";
 export default function ProductCard({product, productId, quantity, handleAddItemToCart, handleRemoveItemToCart, showDescription}) {
+  // const handleExpansion(product) => {
+    
+  // };
   return (
     <section className="product-card">
       <div class="product-card">
@@ -27,6 +30,10 @@ export default function ProductCard({product, productId, quantity, handleAddItem
         <div className="product-quantity">
             <h3>Left: {product.quantity}</h3>
         </div>
+        {showDescription == true
+          ? <div className="product-description"><p>{product.description}</p></div>
+          :<div></div>
+        }
       </div> 
     </section>
   )
