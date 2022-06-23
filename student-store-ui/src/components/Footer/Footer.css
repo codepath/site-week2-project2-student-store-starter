@@ -1,31 +1,43 @@
-/* element.style {
-}  */
-/* .sidebar.closed {
-    width: 60px;
-}
-.sidebar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+.footer {
     width: 100%;
-    flex: 1;
-    transition: all .2s cubic-bezier(.215,.61,.355,1);
-    position: fixed;
-    z-index: 100;
-    top: 0px;
-    height: 100vh;
-    padding: 0;
-    overflow-y: scroll;
-    padding-bottom: 2rem;
-    background: var(--dark-blue);
-    border-right: solid 1px white;
+    max-width: 100vw;
+    height: 350px;
+    background: #b37d8b;
 }
 * {
     box-sizing: border-box;
 }
-user agent stylesheet
-section {
+
+footer {
     display: block;
+}
+.footer .content .top {
+    flex: 1;
+    padding-top: 40px;
+}
+
+.link-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.link-column {
+    float: left;
+    width: 20%;
+  }
+  
+  /* Clear floats after the columns */
+.links:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
 }
 a, span, div, p, h1, h2, h3, h4, h5, h6, ul, ol {
     margin: 0;
@@ -33,12 +45,20 @@ a, span, div, p, h1, h2, h3, h4, h5, h6, ul, ol {
     font-family: Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
     color: var(--font-dark);
 }
+
+
+* {
+    box-sizing: border-box;
+}
+div {
+    display: block;
+}
 body {
     margin: 0;
     font-family: Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: var(--grey-bg);
+    background: #b37d8b;
 }
 :root {
     --side-padding: 40px;
@@ -55,4 +75,12 @@ body {
     --border-color: #e4e4e4;
     --star-color-filled: #f9c46b;
     --star-color-empty: #cbd4e6;
+}
+/* @media screen and (max-width: 1000px)
+:root {
+    --content-width: 800px;
+}
+@media screen and (max-width: 1100px)
+:root {
+    --content-width: 900px;
 } */
