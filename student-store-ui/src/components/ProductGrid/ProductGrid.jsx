@@ -14,13 +14,15 @@ export default function ProductGrid({products ,handleAddItemsToCart, handleRemov
     setClickedCategory(category);
     console.log("clicked: ", clickedCategory);
   }
-  const handleSearched = (searched) => {
+  const handleSearched = (event) => {
+    const searched = event.target.value
     setSearched(searched);
+    console.log(searched);
   };
   return (
-    <section className="products">
+    <section className="products">diltddvucjrjeguuctivibbregdctlrh
       <div id="cover">
-      <form method="get" onChange={(event) => handleSearched(e)} action="">
+      <form method="get" onChange={(event) => handleSearched(event)}>
         <div className="tb">
           <div className="td">
               <input type="text" required/>
