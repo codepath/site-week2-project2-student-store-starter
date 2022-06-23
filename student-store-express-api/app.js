@@ -1,13 +1,24 @@
 const express = require("express");
 const morgan = require("morgan");
-const storeRouter = require("./routes/store.js");
-const { NotFoundError } = require("./utils/errors.js");
-
+const storeRouter = require("./routes/store");
+const bodyParser = require("body-parser")
+const { NotFoundError } = require("./utils/errors");
+const cors = require("cors");
 const app = express();
 
-app.use(morgan('tiny'));
-app.use(express.json());
-app.use("/store",storeRouter);
+
+
+app.use(morgan("tiny"));
+app.use(bodyParser.json());
+app.use(cors())
+app.use("/store",storeRouter)
+
+app.get("/", (req, res) => {
+    res.json({
+        ping: "pong"
+    });
+    res.sendStatus(200);
+})
 
 // 404 errors that do not match any endpoints
 app.use((req,res,next) => {
@@ -22,6 +33,5 @@ app.use((error, req, res, next) => {
         error: {message,status}
     })
 })
-
 
 module.exports = app;
