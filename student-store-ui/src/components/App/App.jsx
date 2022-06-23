@@ -1,8 +1,7 @@
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import { useEffect, useState } from "react";
 import { API_URL } from "../../../utils/constants";
-import { fetcher } from "../../../utils/fetcher";
 import axios from "axios";
 
 // Components
@@ -14,7 +13,7 @@ import NotFound from "../NotFound/NotFound";
 
 export default function App() {
 
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([{}]);
   const [isFetching, setIsFetching] = useState(false);
   const [isFetchingCheckoutForm, setIsFetchingCheckoutForm] = useState(false);
   const [error, setError] = useState(null);
@@ -23,8 +22,8 @@ export default function App() {
 
   const [shoppingCart, setShoppingCart] = useState([]);
   const [checkoutForm, setCheckoutForm] = useState({
-    email:'',
-    name:''
+    email: '',
+    name: ''
   });
 
   // Handlers
@@ -40,7 +39,7 @@ export default function App() {
     const auxArray = [];
     let wasAdded = false;
 
-    if(shoppingCart.length > 0) {
+    if (shoppingCart.length > 0) {
       shoppingCart.map((item) => {
         if (item.itemId != productId) {
           auxArray.push(item);
@@ -49,25 +48,25 @@ export default function App() {
             itemId: productId,
             quantity: item.quantity + 1,
           });
-          wasAdded=true
+          wasAdded = true
         }
-  
+
         console.log(productId)
-        
+
         if (!wasAdded) {
-          auxArray.push( {
+          auxArray.push({
             itemId: productId,
             quantity: 1
-          } )
+          })
         }
       })
     } else {
-      auxArray.push( {
+      auxArray.push({
         itemId: productId,
         quantity: 1
       })
     }
-    
+
 
     setShoppingCart(auxArray);
 
@@ -108,18 +107,18 @@ export default function App() {
     setIsFetchingCheckoutForm(true);
 
     try {
-      if(checkoutForm.email == "" || checkoutForm.name == "") {
+      if (checkoutForm.email == "" || checkoutForm.name == "") {
         setError("You need to complete the information");
         setIsFetchingCheckoutForm(false);
         return;
       }
-      if(shoppingCart.length == 0) {
+      if (shoppingCart.length == 0) {
         setError("You need to select at least one item");
         setIsFetchingCheckoutForm(false);
         return;
       }
 
-      const response = await axios.post (
+      const response = await axios.post(
         `${API_URL}/store`,
         {
           user: checkoutForm,
@@ -134,7 +133,7 @@ export default function App() {
       }
       setError("");
       setSuccessMsg("Success");
-      
+
       // Empty shopping cart
       setShoppingCart([]);
 
@@ -150,19 +149,19 @@ export default function App() {
 
   // Fetching
 
-  useEffect(() => {  
+  useEffect(() => {
     loadData();
   }, [])
-  
+
   const loadData = async () => {
     setIsFetching(true);
 
-    try{
+    try {
 
-      const response = await axios.get (
-        `${API_URL}/store` 
+      const response = await axios.get(
+        API_URL+"/store"
       );
-      
+
       setProducts(response.data.products);
 
     } catch (error) {
@@ -180,7 +179,7 @@ export default function App() {
         <main>
           {/* YOUR CODE HERE! */}
           <Navbar />
-          <Sidebar 
+          <Sidebar
             isOpen={isOpen}
             shoppingCart={shoppingCart}
             products={products}
@@ -191,35 +190,38 @@ export default function App() {
             handleOnToggle={handleOnToggle}
             handleCheckoutFormChange={handleCheckoutFormChange}
             handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
-            />
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <Home 
-                  products={products}
-                  shoppingCart={shoppingCart}
-                  handleAddItemToCart={handleAddItemToCart}
-                  handleRemoveItemFromCart={handleRemoveItemFromCart}
+          />
+          {!isFetching && (
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <Home
+                    products={products}
+                    shoppingCart={shoppingCart}
+                    handleAddItemToCart={handleAddItemToCart}
+                    handleRemoveItemFromCart={handleRemoveItemFromCart}
                   />
-              }
-            />
-            <Route
-              path="/product/:productsId"
-              element={
-                <ProductDetail 
-                  products={products}
-                  shoppingCart={shoppingCart}
+                }
+              />
+              <Route
+                path="/product/:productsId"
+                element={
+                  <ProductDetail
+                    products={products}
+                    shoppingCart={shoppingCart}
                   />
-              }
-            />
-            <Route 
-              path="*"
-              element={
-                <NotFound />
-              }
-            />
-          </Routes>
+                }
+              />
+              <Route
+                path="*"
+                element={
+                  <NotFound />
+                }
+              />
+            </Routes>
+          )}
+
         </main>
       </BrowserRouter>
     </div>

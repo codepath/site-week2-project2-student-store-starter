@@ -1,5 +1,6 @@
 .searchbar {
     margin-top: 50px;
+    margin-bottom: 50px;
     margin-left: 200px;
     margin-right: 200px;
     display: flex;
@@ -29,4 +30,5 @@
 
 .searchbar #cart {
     width: 150px;
+    height: 45px;
 }

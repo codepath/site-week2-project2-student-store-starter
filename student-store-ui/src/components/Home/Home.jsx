@@ -9,7 +9,11 @@ export default function Home({products, shoppingCart, handleAddItemToCart, handl
     <div className="home">
       <Hero />
       <SearchBar />
-      <ProductGrid />
+      <ProductGrid 
+        products={products}
+        handdleAddItemToCart={handleAddItemToCart}
+        handleRemoveItemFromCart={handleRemoveItemFromCart}
+        />
     </div>
   )
 }
