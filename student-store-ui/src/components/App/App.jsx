@@ -77,13 +77,13 @@ export default function App() {
 
   async function handleOnSubmitCheckoutForm() {
     // check if shopping cart is full and user has inputted the fields
-    if (!shoppingCart) {
-      setCheckoutMessage("Your shopping cart is empty!")
-      return null;
-    } else if (!checkoutForm.name || !checkoutForm.email) {
-      setCheckoutMessage("Missing name or email. Please enter to continue checking out.")
-      return null;
-    }
+    // if (!shoppingCart) {
+    //   setCheckoutMessage("Your shopping cart is empty!")
+    //   return null;
+    // } else if (!checkoutForm.name || !checkoutForm.email) {
+    //   setCheckoutMessage("Missing name or email. Please enter to continue checking out.")
+    //   return null;
+    // }
 
     // if everything is there, attempt to make the API call
     setIsFetching(true)

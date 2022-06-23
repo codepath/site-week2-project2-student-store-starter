@@ -1,4 +1,5 @@
 const { storage } = require("../data/storage")
+const { BadRequestError } = require("../utils/errors")
 
 class Store {
 
@@ -24,9 +25,11 @@ class Store {
   }
 
   // create a new purchase order
-  static async recordPurchase(user, shoppingCart) {
-    if ((!user) || (!shoppingCart)) {
-      throw new Error("Request requires both user fields and a non-empty shopping cart")
+  static async recordPurchase(user=null, shoppingCart=null) {
+
+    const isInvalidCheckoutForm = (!user) || (!shoppingCart) || Object.keys(user).length === 0 || shoppingCart.length === 0
+    if (isInvalidCheckoutForm) {
+      throw new BadRequestError("Request requires both user fields and a non-empty shopping cart")
     }
 
     // initialize a receipt array
@@ -34,17 +37,24 @@ class Store {
 
     // get subtotal for the order
     let subtotal = 0
+    let idTracker = []
     for (let i = 0; i < shoppingCart.length; i++) {
       // check if shopping cart array has valid items
       let item = shoppingCart[i]
       if ("quantity" in item && "itemId" in item) {
         // get corresponding product item to get price
         const targetItem = await this.fetchProductById(item.itemId)
+        // check if there is a duplicate itemId, throw an error
+        if (item.itemId in idTracker) {
+          throw new BadRequestError("There are duplicate items in the cart")
+        }
+        // if not, add the item Id to the tracking array and continue
+        idTracker = [...idTracker, item.itemId]
         let itemCost = parseFloat((targetItem.price * item.quantity).toFixed(2))
         subtotal += itemCost
         receiptList = [...receiptList, `${item.quantity} ${targetItem.name} purchased at a cost of $${targetItem.price.toFixed(2)} for a total cost of $${itemCost.toFixed(2)}`]
       } else {
-        throw new Error("Request requires all shopping cart items to specify both item ID and quantity")
+        throw new BadRequestError("All shopping cart items should specify both item ID and quantity")
       }
     }
     

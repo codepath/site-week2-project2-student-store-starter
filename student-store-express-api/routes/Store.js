@@ -18,7 +18,7 @@ router.get("/", async (req, res, next) => {
       const productId = req.params.productId
       const product = await Store.fetchProductById(productId)
       if (!product) {
-        throw new Error("smth went wrong with getting the product")
+        throw new Error("Did not receive a product object")
       }
       res.status(200).json({ product })
     } catch (err) {
@@ -32,8 +32,8 @@ router.get("/", async (req, res, next) => {
     try {
         const user = req.body.user
         const shoppingCart = req.body.shoppingCart
-        const newPurchase = await Store.recordPurchase(user, shoppingCart)
-        res.status(201).json( { purchase: newPurchase } )
+        const purchase = await Store.recordPurchase(user, shoppingCart)
+        res.status(201).json( { purchase: purchase } )
     } catch (err) {
         next(err)
     }
