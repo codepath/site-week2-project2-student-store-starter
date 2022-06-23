@@ -1,6 +1,6 @@
 import axios from 'axios'
 
 export default axios.create({
-    baseURL:"https://codepath-store-api.herokuapp.com/store"
+    baseURL:"http://localhost:3001/store/"
 
 })
