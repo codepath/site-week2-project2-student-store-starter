@@ -19,7 +19,12 @@ export default function Sidebar(props) {
           products={props.products}
           shoppingCart={props.shoppingCart}/>
         <h3>Checkout</h3>
-        <CheckoutForm />
+        <CheckoutForm
+          isOpen={props.isOpen}
+          shoppingCart={props.shoppingCart}
+          checkoutForm={props.checkoutForm}
+          handleOnCheckoutFormChange={props.handleOnCheckoutFormChange}
+          handleOnSubmitCheckoutForm={props.handleOnSubmitCheckoutForm}/>
       </div>
     </section>
   )

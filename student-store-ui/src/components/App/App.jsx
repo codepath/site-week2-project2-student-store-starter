@@ -17,7 +17,7 @@ export default function App() {
   const [error, setError] = React.useState("")
   const [isOpen, setIsOpen] = React.useState(false)
   const [shoppingCart, setShoppingCart] = React.useState([])
-  const [checkoutForm, setCheckoutForm] = React.useState()
+  const [checkoutForm, setCheckoutForm] = React.useState({email:"", name:""})
 
   // remove console.logs later
 
@@ -73,7 +73,11 @@ export default function App() {
   }
 
   function handleOnCheckoutFormChange(name, value) {
-    setCheckoutForm([name, value])
+    setCheckoutForm({...checkoutForm, [name]: value })
+  }
+
+  function handleOnSubmitCheckoutForm() {
+
   }
 
   return (
@@ -87,6 +91,7 @@ export default function App() {
           products={products}
           checkoutForm={checkoutForm}
           handleOnCheckoutFormChange={handleOnCheckoutFormChange}
+          handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
           handleOnToggle={handleOnToggle} />
         <Routes>
           <Route path="/" element={
