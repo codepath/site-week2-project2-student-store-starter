@@ -9,10 +9,26 @@ import Home from "../Home/Home"
 import "./App.css"
 
 const API_URL = "https://codepath-store-api.herokuapp.com/store"
-const response = await axios.get(API_URL)
-const products = response.data.products
 
 export default function App() {
+  // an array of product objects that is initially empty.
+  const [products, setProducts] = React.useState([])
+  // a boolean value representing whether or not the App is currently fetching the products from the API.
+  const [isFetching, setIsFetching] = React.useState(false)
+  // a variable used to display a message when something goes wrong with the API requests.
+  const [error, setError] = React.useState("")
+  // a boolean value representing whether or not the Sidebar.jsx is in the open or closed state.
+  const [isOpen, setIsOpen] = React.useState(false)
+  // should store state for the active user's shopping cart (items they want to purchase and the quantity of each item).
+  const [shoppingCart, setShoppingCart] = React.useState([])
+  // the user's information that will be sent to the API when they checkout.
+  const [checkoutForm, setCheckoutForm] = React.useState()
+
+  React.useEffect(async () => {
+    const response = await axios.get(API_URL)
+    setProducts(response.data.products)
+  })
+
   return (
     <div className="app">
       <BrowserRouter>
