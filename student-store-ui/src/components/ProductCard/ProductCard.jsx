@@ -16,69 +16,38 @@ export default function ProductCard({
   product, productId, shoppingCart, showDescription, handleAddItemToCart, handleRemoveItemFromCart,
 }) {
   const quantity = getProductQuantity(shoppingCart, productId);
-  // if on homepage (not product detail)
-  if (!showDescription) {
-    return (
-      <div className="product-card-wrapper">
-        <span className={quantity === 0 ? 'amt-in-cart hidden' : 'amt-in-cart'}>
-          {quantity}
-        </span>
-        <div className="product-card">
-          <Link to={`products/${productId}`} className="media">
-            <img
-              className="product-img"
-              src={product.image}
-              alt={product.name}
-            />
-          </Link>
-          <p className="product-name">{product.name}</p>
-          <p className="product-price">{formatPrice(product.price)}</p>
-          {showDescription ? <p className="product-description">{product.description}</p> : null}
-          <button
-            onClick={() => handleAddItemToCart(productId)}
-            className="add-item"
-            type="button"
-          >
-            Add Item
-          </button>
-          <button
-            onClick={() => handleRemoveItemFromCart(productId)}
-            className="remove-item"
-            type="button"
-          >
-            Remove Item
-          </button>
-        </div>
-      </div>
-    );
-  }
-  // if on product detail view
+  const productImg = (
+    <img
+      className={`product-img ${showDescription ? 'detail' : ''}`}
+      src={product.image}
+      alt={product.name}
+    />
+  );
+
   return (
-    <div className="product-card-wrapper detail">
-      <span className={quantity === 0 ? 'amt-in-cart hidden detail' : 'amt-in-cart detail'}>
-        In cart:
-        {' '}
-        {quantity}
+    <div className={`product-card-wrapper ${showDescription ? 'detail' : ''}`}>
+      <span className={`amt-in-cart ${quantity === 0 ? 'hidden' : ''} ${showDescription ? 'detail' : ''}`}>
+        {showDescription ? `In cart: ${quantity}` : `${quantity}`}
       </span>
-      <div className="product-card detail">
-        <img
-          className="product-img detail"
-          src={product.image}
-          alt={product.name}
-        />
-        <p className="product-name detail">{product.name}</p>
-        <p className="product-price detail">{formatPrice(product.price)}</p>
+      <div className={`product-card ${showDescription ? 'detail' : ''}`}>
+        {showDescription ? productImg : (
+          <Link to={`products/${productId}`} className="media">
+            {productImg}
+          </Link>
+        )}
+        <p className={`product-name ${showDescription ? 'detail' : ''}`}>{product.name}</p>
+        <p className={`product-price ${showDescription ? 'detail' : ''}`}>{formatPrice(product.price)}</p>
         {showDescription ? <p className="product-description">{product.description}</p> : null}
         <button
-          onClick={() => handleAddItemToCart(productId, 10)}
-          className="add-item detail"
+          onClick={() => handleAddItemToCart(productId)}
+          className={`add-item card' ${showDescription ? 'detail' : ''}`}
           type="button"
         >
           Add Item
         </button>
         <button
-          onClick={() => handleRemoveItemFromCart(productId, 10)}
-          className="remove-item detail"
+          onClick={() => handleRemoveItemFromCart(productId)}
+          className={`remove-item card ${showDescription ? 'detail' : ''}`}
           type="button"
         >
           Remove Item

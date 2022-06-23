@@ -8,6 +8,8 @@ export default function ProductView({
 }) {
   return (
     <div className="product-view">
+      <br />
+      <br />
       <h1 className="product-id">
         Product #
         {productId}

@@ -40,19 +40,22 @@ export default function ProductDetail({
   // **********************************************************************
 
   async function fetchProduct(id) {
-    if (productIDisValid(id)) {
-      setIsFetching(true);
-      try {
+    setIsFetching(true);
+    try {
+      if (productIDisValid(id)) {
         const { data } = await axios(`${URL}/${id}`);
         console.log('Product ', data);
         setProduct(data.product);
         setError('');
-      } catch (err) {
-        console.error(err);
-        setError(err);
-      } finally {
-        setIsFetching(false);
+      } else {
+        setProduct({});
+        setError('Invalid ID');
       }
+    } catch (err) {
+      console.error(err);
+      setError(err);
+    } finally {
+      setIsFetching(false);
     }
   }
 
@@ -68,22 +71,25 @@ export default function ProductDetail({
   // PAGE RENDERING
   // **********************************************************************
 
+  // loading screen
   if (isFetching) {
-    return (<h1>Loading...</h1>);
+    return (<h1 className="loading">Loading...</h1>);
+  }
+  // if product search does/will not succeed
+  if (error !== '' || !productIDisValid(productId)) {
+    return (<NotFound />);
   }
   return (
     <div className="product-detail">
-      {error === '' && productIDisValid(productId) ? (
-        <ProductView
-          key={productId}
-          product={product}
-          productId={parseInt(productId, 10)}
-          shoppingCart={shoppingCart}
-          showDescription
-          handleAddItemToCart={handleAddItemToCart}
-          handleRemoveItemFromCart={handleRemoveItemFromCart}
-        />
-      ) : <NotFound />}
+      <ProductView
+        key={productId}
+        product={product}
+        productId={parseInt(productId, 10)}
+        shoppingCart={shoppingCart}
+        showDescription
+        handleAddItemToCart={handleAddItemToCart}
+        handleRemoveItemFromCart={handleRemoveItemFromCart}
+      />
     </div>
   );
 }

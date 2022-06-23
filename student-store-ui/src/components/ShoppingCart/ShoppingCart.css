@@ -1,4 +1,40 @@
 .shoppingCart {
     width: 100%;
   }
+
+.notification {
+  color:white;
+}
+
+.cart-breakdown {
+  color: white;
+  border-collapse: collapse;
+}
+
+.header {
+  font-size: larger;
+}
+
+.header-cell {
+  padding: 10px;
+  text-align: center;
+}
+
+.item-cell {
+  padding: 10px;
+  text-align: center;
+  border-top:3px solid #ffffff;
+}
+
+.cart-product-name {
+  font-weight: bold;
+}
   
+.receipt {
+  color: white;
+}
+
+.total {
+  font-weight: bold;
+  font-size: larger;
+}

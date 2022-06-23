@@ -5,11 +5,10 @@
   display: grid;
   gap: 0px;
   position: relative;
-  margin-left:50%;
-  left: -150px;
+  margin-left:calc(40% - 100px);
 }
 
-@media (min-width: 562px) {
+@media (min-width: 650px) {
   .product-grid { 
     margin: 0 auto;
     grid-template-columns: auto auto; 
@@ -18,7 +17,7 @@
   }
 }
 
-@media (min-width: 840px) {
+@media (min-width: 940px) {
   .product-grid { 
     margin: 0 auto;
     grid-template-columns: auto auto auto; 
@@ -27,7 +26,7 @@
   }
 }
 
-@media (min-width: 1130px) {
+@media (min-width: 1220px) {
   .product-grid { 
     margin: 0 auto;
     grid-template-columns: auto auto auto auto;
@@ -36,7 +35,7 @@
   }
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1480px) {
   .product-grid { 
     margin: 0 auto;
     grid-template-columns: auto auto auto auto auto; 

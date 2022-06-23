@@ -15,15 +15,16 @@ function getProductFromProducts(productId, products) {
 // helper function; calculates total price of shopping cart
 function calculateTotal(shoppingCart, products) {
   let sum = 0;
+  let totalItems = 0;
   shoppingCart.forEach((item) => {
-    console.log('shopping cart', shoppingCart);
-    console.log('item', item);
     const itemPrice = getProductFromProducts(item.itemId, products).price;
     const itemQuantity = item.quantity;
     sum += itemPrice * itemQuantity;
+    totalItems += 1;
   });
   const tax = sum * taxRate;
   return {
+    itemCount: totalItems,
     subtotal: formatPrice(sum),
     tax: formatPrice(tax),
     total: formatPrice(sum + tax),
@@ -44,33 +45,37 @@ export default function ShoppingCart({ isOpen, products, shoppingCart }) {
     return (
       <div className="shopping-cart">
         <table className="cart-breakdown">
-          <th className="cart-product-name header">Name</th>
-          <th className="cart-product-quantity header">Quantity</th>
-          <th className="cart-product-unit-pric header">Unit Price</th>
-          <th className="cart-product-price header">Cost</th>
-          {shoppingCart.map((item) => {
-            const product = getProductFromProducts(item.itemId, products);
-            return (
-              <tr key={item.itemId} className="item-row">
-                <td className="cart-product-name">{product.name}</td>
-                <td className="cart-product-quantity">{item.quantity}</td>
-                <td className="cart-product-unit-price">{formatPrice(product.price)}</td>
-                <td className="cart-product-price">{formatPrice(product.price * item.quantity)}</td>
-              </tr>
-            );
-          })}
+          <thead>
+            <th className="cart-product-name header header-cell">Name</th>
+            <th className="cart-product-quantity header header-cell">Quantity</th>
+            <th className="cart-product-unit-price header header-cell">Unit Price</th>
+            <th className="cart-product-price header header-cell">Cost</th>
+          </thead>
+          <tbody>
+            {shoppingCart.map((item) => {
+              const product = getProductFromProducts(item.itemId, products);
+              return (
+                <tr key={item.itemId} className="item-row">
+                  <td className="cart-product-name item-cell">{product.name}</td>
+                  <td className="cart-product-quantity item-cell">{item.quantity}</td>
+                  <td className="cart-product-unit-price item-cell">{formatPrice(product.price)}</td>
+                  <td className="cart-product-price item-cell">{formatPrice(product.price * item.quantity)}</td>
+                </tr>
+              );
+            })}
+          </tbody>
         </table>
-        <p className="subtotal">
+        <p className="subtotal receipt">
           Subtotal:
           {' '}
           {priceInfo.subtotal}
         </p>
-        <p className="tax">
+        <p className="tax receipt">
           Taxes and fees:
           {' '}
           {priceInfo.tax}
         </p>
-        <p className="total">
+        <p className="total receipt">
           Total:
           {' '}
           {priceInfo.total}

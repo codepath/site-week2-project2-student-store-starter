@@ -1,6 +1,9 @@
 .logo {
     display: flex;
     flex-direction: column;
+    height: 100px;
+    width: 100px;
+    float: left;
   }
 
 .logo-img {

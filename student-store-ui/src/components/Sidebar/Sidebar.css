@@ -1,0 +1,40 @@
+.sidebar {
+    background: rgb(5, 68, 104);
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    height: 100%;
+    transition: all 0.5s ease;
+    z-index: 2;
+}
+
+.sidebar.closed {
+    width: 100px;
+}
+
+.sidebar.open {
+    width: 600px;
+}
+
+.expander {
+    height: 50px;
+    width: 50px;
+}
+
+.expander.button {
+    padding: 0;
+}
+
+.collapser {
+    height: 50px;
+    width: 50px;
+}
+
+.collapser.button {
+    transform: scaleX(-1);
+}
+
+.collapser.button {
+    padding: 0;
+}

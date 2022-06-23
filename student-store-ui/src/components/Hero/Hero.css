@@ -1,17 +1,19 @@
 .hero {
     width: 100%;
-    padding: 50px;
+    background-color: rgb(245, 181, 102);
+    height: 230px;
   }
 
 .intro {
-  font-size: 50px;
+  font-size: 70px;
+  margin: 0px;
   text-align:center;
 }
 
 .hero-img {
   position: relative;
   width: 3000px;
-  height: 200px;
+  height: 150px;
   margin-left:50%;
   left:-1500px;
 }

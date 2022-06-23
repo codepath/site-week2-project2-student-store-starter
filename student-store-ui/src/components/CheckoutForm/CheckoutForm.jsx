@@ -3,8 +3,12 @@ import './CheckoutForm.css';
 
 export default function CheckoutForm() {
   return (
-    <div className="checkoutForm">
-      <p>CheckoutForm</p>
+    <div className="checkout-form">
+      <form>
+        <input type="input" label="name" />
+        <br />
+        <input type="input" label="email" />
+      </form>
     </div>
   );
 }

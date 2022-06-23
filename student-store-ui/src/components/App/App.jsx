@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable no-console */
 import * as React from 'react';
 import axios from 'axios';
@@ -125,7 +127,6 @@ export default function App() {
   return (
     <div className="app">
       <main>
-        <Navbar />
         <Sidebar
           isOpen={isOpen}
           products={products}
@@ -134,6 +135,11 @@ export default function App() {
           handleOnToggle={handleOnToggle}
           handleOnCheckoutFormChange={handleOnCheckoutFormChange}
           handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
+        />
+        <Navbar />
+        <div
+          className={!isOpen ? 'screen-content' : 'screen-content deactivated'}
+          onClick={handleOnToggle}
         />
         <Routes>
           <Route
