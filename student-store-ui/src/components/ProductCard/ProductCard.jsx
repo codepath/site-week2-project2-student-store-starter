@@ -1,23 +1,10 @@
 import * as React from "react"
-import { useState} from "react";
-import "./ProductCard.css"
 import { Link } from "react-router-dom";
+import "./ProductCard.css"
+
 
 export default function ProductCard(props) {
-
-  //console.log(props)
-
-  const [modal, setModal] = useState(false);
-
-  const toggleModal = () => {
-    setModal(!modal);
-  };
-
-  if(modal) {
-    document.body.classList.add('active-modal')
-  } else {
-    document.body.classList.remove('active-modal')
-  }
+  console.log(props)
 
     return (
       <div>
@@ -32,13 +19,17 @@ export default function ProductCard(props) {
         </div>
       </div>
             <div className="buttons">
-              <button className="add" >
+              <button className="add" onClick={() => props.handleAddItemToCart(props.product.id)}>
                 <i className="material-icons">add</i>
               </button>
-              <button className="remove">
-              <i className="material-icons">remove</i>
+              <button className="remove" disabled={props.quantity === 0 ? true : false} onClick={() => props.handleRemoveItemFromCart(props.product.id)}>
+                <i className="material-icons">remove</i>
               </button>
+              <span className="quantity">
+                        {props.quantity === 0 ? <span className="amt hide">{props.quantity}</span> : <span className="amt">{props.quantity}</span>}
+              </span>
             </div>
+
       </div>
       </div>
 

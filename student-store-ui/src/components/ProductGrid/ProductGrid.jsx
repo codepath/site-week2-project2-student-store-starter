@@ -7,8 +7,9 @@ export default function ProductGrid(props) {
 
     return (
       <div className="grid">
-        {props.products.map((product, index) => <ProductCard key={`${product} - ${index} `} product={product} 
-        addToCart={props.addToCart}/>)}
+        {!props.products.length ? "No products avilable" : props.products.map((product) => {
+            return <ProductCard showDescription={false} product={product} productId={product.id} quantity={props.shoppingCart[product.id] || 0} handleAddItemToCart={props.handleAddItemToCart} handleRemoveItemFromCart={props.handleRemoveItemFromCart} key={product.id}/>
+        })}
       </div>
     )
   }
