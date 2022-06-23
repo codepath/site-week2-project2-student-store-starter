@@ -6,7 +6,7 @@ import Home from "../Home/Home"
 import ProductDetail from "../ProductDetail/ProductDetail"
 import Footer from "../Footer/Footer"
 import NotFound from "../NotFound/NotFound"
-import axios from 'axios'
+import axios from "axios"
 import "./App.css"
 
 export default function App() {
@@ -76,9 +76,35 @@ export default function App() {
     setCheckoutForm({...checkoutForm, [name]: value })
   }
 
-  function handleOnSubmitCheckoutForm() {
-
+  async function handleOnSubmitCheckoutForm() {
+    setIsFetching(true)
+    axios.post("http://localhost:3001/store", { checkoutForm: {user: checkoutForm, shoppingCart: shoppingCart} })
+      .then((res) => {console.log(res)})
+      .catch((err) => {
+        setError(err)
+      })
+      .finally(() => {
+        setIsFetching(false)
+      })
   }
+  
+  async function handleOnCreateTransaction() {
+    props.setIsCreating(true)
+    
+    axios.post(API_BASE_URL + "/bank/transactions", {transaction: props.newTransactionForm})
+      .then((res) => {
+        props.setTransactions(pastTransactions => [...pastTransactions, res.data.transaction])
+      })
+      .catch((error) => {
+        props.setError(error)
+        setIsCreating(false)
+      })
+      .finally(() => {
+        props.setNewTransactionForm({category: "", description: "", amount: 0})
+        props.setIsCreating(false)
+      })
+  }
+
 
   return (
     <div className="app">
