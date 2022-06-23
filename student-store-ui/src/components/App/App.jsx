@@ -46,7 +46,7 @@ export default function App() {
           <Sidebar shoppingCart={shoppingCart}/>
           <Routes>
             <Route path="/" element={<Home isFetching={isFetching} products={products} setShoppingCart={setShoppingCart} shoppingCart={shoppingCart} />} />
-            <Route path="/products/:productId" element={<ProductDetail products={products} setShoppingCart={setShoppingCart} shoppingCart={shoppingCart} />} />
+            <Route path="/store/:productId" element={<ProductDetail products={products} setShoppingCart={setShoppingCart} shoppingCart={shoppingCart} />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer></Footer>
