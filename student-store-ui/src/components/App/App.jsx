@@ -1,8 +1,8 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import "./App.css";
 import { useEffect, useState } from "react";
-import axios from "axios"
 import { API_URL } from "../../../utils/constants";
+import { fetcher } from "../../../utils/fetcher";
 
 // Components
 import Navbar from "../Navbar/Navbar"
@@ -15,7 +15,9 @@ export default function App() {
 
   const [products, setProducts] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
+  const [isFetchingCheckoutForm, setIsFetchingCheckoutForm] = useState(false);
   const [error, setError] = useState(null);
+  const [successMsg, setSuccessMsg] = useState("")
   const [isOpen, setIsOpen] = useState(false);
 
   const [shoppingCart, setShoppingCart] = useState([]);
@@ -87,6 +89,52 @@ export default function App() {
     setCheckoutForm(_new);
   }
 
+  const handleOnSubmitCheckoutForm = async () => {
+    setIsFetchingCheckoutForm(true);
+
+    try {
+      if(checkoutForm.email == "" || checkoutForm.name == "") {
+        setError("You need to complete the information");
+        setIsFetchingCheckoutForm(false);
+        return;
+      }
+      if(shoppingCart.length == 0) {
+        setError("You need to select at least one item");
+        setIsFetchingCheckoutForm(false);
+        return;
+      }
+
+      const response = await fetcher(
+        `${API_URL}/store`,
+        "post",
+        {},
+        {
+          user: checkoutForm,
+          shoppingCart
+        }
+      );
+      setIsFetchingCheckoutForm(false);
+      if (response.statusText != "Created") {
+        setError("Server error");
+        setSuccessMsg("");
+        return;
+      }
+      setError("");
+      setSuccessMsg("Success");
+      
+      // Empty shopping cart
+      setShoppingCart([]);
+
+      // Reset checkoutForm
+      setCheckoutForm({
+        email: "",
+        name: ""
+      });
+    } catch (error) {
+      setError("Server error");
+    }
+  };
+
   // Fetching
 
   useEffect(() => {  
@@ -98,9 +146,9 @@ export default function App() {
 
     try{
 
-      const response = await axios.get (
+      const response = await fetcher (
         `${API_URL}/store` 
-      )
+      );
       
       setProducts(response.data.products);
 

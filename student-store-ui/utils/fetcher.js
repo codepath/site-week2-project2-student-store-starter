@@ -11,6 +11,6 @@ export const fetcher = async (
         headers
     };
 
-    const data = await axios[method](url, config);
-    return data;
+    const response = await axios[method](url, config);
+    return response;
 };
