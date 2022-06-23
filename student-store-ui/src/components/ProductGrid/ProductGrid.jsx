@@ -1,4 +1,6 @@
 import React from 'react'
+import ProductCard from '../Product Card/ProductCard'
+import "./ProductGrid.css"
 
 const ProductGrid = ({products, handdleAddItemToCart}) => {
   return (
@@ -9,8 +11,9 @@ const ProductGrid = ({products, handdleAddItemToCart}) => {
       <div className='product-grid-container'>
         {products.map((product, index) => (
           <React.Fragment key={index}>
-            {console.log(product.name)}
-            <h2>{product.name}</h2>
+            <ProductCard 
+              product={product}
+              />
           </React.Fragment>
         ))}
       </div>
