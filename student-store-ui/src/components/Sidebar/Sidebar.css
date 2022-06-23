@@ -10,6 +10,7 @@
   height: 100%;
    transform: translate(00%);
 
+
   width: 70px;
 }
 .side-container{
@@ -18,9 +19,11 @@
     flex-direction: row;
     position: absolute;
     
+    
 }
 .wrapper{
     height: 100%;
+       overflow:auto;
 }
 .sidebar-icons{
     display: flex;

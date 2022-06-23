@@ -1,16 +1,14 @@
 .shhopping-cart-active {
-  width: 500px;
+  width: 600px;
   position: fixed;
   background-color: #363746;
   height: 100%;
   color: white;
   transform: translateX(0%);
   transition: all 0.4s;
+  overflow-y: scroll;
 }
 .open .back {
-
-  margin: auto;
-  margin-top: 30px;
   width: 10%;
   margin-left: 200px;
   padding: 5px;
@@ -19,7 +17,7 @@
 }
 
 .shhopping-cart {
-  width: 500px;
+  width: 800px;
   position: fixed;
   background-color: #363746;
   height: 100%;
@@ -30,7 +28,7 @@
 
 .checkout-form-input {
   width: 95%;
-  height: 40px;
+  height: 50px;
   border-radius: 10px;
 }
 
@@ -41,7 +39,7 @@
 }
 .shop_writing {
   margin: auto;
-  margin-top: 80px;
+  margin-top: 10px;
   width: 50%;
   padding: 10px;
 }

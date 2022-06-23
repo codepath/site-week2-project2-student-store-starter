@@ -1,6 +1,4 @@
-const storage = require('../data/db.json')
-
-
+const { storage } = require('../data/storage')
 
 class Store {
   static async createProduct(product) {
@@ -12,18 +10,13 @@ class Store {
     return newPost
   }
   static async listProducts() {
-   // const posts = await storage.get("products").orderBy("id", "desc")
-    
-    const posts = {"ping":"pong"}
-
-
-    console.log(posts)
+    const posts = storage.get("products").orderBy("id","desc")
     return posts
   }
-  static Pulldata()
-  {
-    return storage
+  static async fetchProductById(id) {
+    const product =  storage.get("products").find({id:Number(id)}).value()
+    return product
+
   }
-  static fetchProductById(productId) {}
 }
 module.exports = Store

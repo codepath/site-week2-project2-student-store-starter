@@ -84,7 +84,7 @@ export default function App() {
 
   React.useEffect(() => {
     axios
-      .get('https://codepath-store-api.herokuapp.com/store/')
+      .get('http://localhost:3001/store/')
       .then(function (response) {
         setProducts(response.data.products)
         setisFetching(false)

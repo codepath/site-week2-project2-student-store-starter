@@ -2,7 +2,7 @@
 const express = require("express");
 const { NotFoundError } = require("./utils/errors");
 const app = express();
-const products = require("./routes/store")
+ const products = require("./routes/products_store")
 const morgan = require("morgan");
 app.use(morgan("tiny"));
 app.use(express.json());
@@ -18,11 +18,17 @@ app.get("/", async (req, res, next) => {
 //   return next(new NotFoundError());
 // });
 
-const storeRoute = require("./routes/store")
-app.use(storeRoute)
+const cors=require("cors");
+const corsOptions ={
+   origin:'*', 
+   credentials:true,            //access-control-allow-credentials:true
+   optionSuccessStatus:200,
+}
+
+app.use(cors(corsOptions))
 
 
-//app.use("/store",products)
+app.use("/store",products)
  
 //Generic erroror handle
 
