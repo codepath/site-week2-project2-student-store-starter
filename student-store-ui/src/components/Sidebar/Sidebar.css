@@ -1,0 +1,21 @@
+.sidebar{
+    background-color: #64C5DE;
+    color: black;
+    padding: 4px;
+    position: fixed;
+    height: 100%;
+    z-index: 9;
+}
+.arrow {
+    font-size: 40px;
+    background-color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.icon {
+    font-size: 40px;
+    margin-top: 40px;
+}
+.icon-box {
+    margin-top: 30px;
+}

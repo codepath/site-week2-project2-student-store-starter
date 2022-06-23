@@ -1,0 +1,66 @@
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48;
+  background-color: var(--light-blue);
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search-container {
+    margin-top: 10px;
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+.search-bar{
+    border-radius: 5px;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    overflow: hidden;
+}
+.search-input{
+    width: 95%;
+    height: 30px;
+    border-radius: 0px;
+    border: 1px solid var(--gray);
+    font-size: 16px;
+}
+.filters{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.filters > h4{
+    cursor: pointer;
+    padding: 8px
+}
+.active {
+    border-bottom: 2px solid var(--light-blue);
+    background-color: var(--light-gray);
+    border-radius: 5px;
+}
+.search-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.cart{
+    background-color: var(--light-blue);
+    height: 36px;
+    align-items: center;
+    display: flex;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}

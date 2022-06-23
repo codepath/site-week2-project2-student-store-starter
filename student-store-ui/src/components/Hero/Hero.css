@@ -1,0 +1,19 @@
+.intro {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  
+.hero-img {
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+  
+.intro-text {
+    padding: 25px;
+    position:inherit;
+}
