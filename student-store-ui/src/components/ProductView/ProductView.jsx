@@ -6,10 +6,12 @@ import { Hero } from '../Hero/Hero'
 export const ProductView = ({
   product, 
   productId, 
-  quantity, 
+  quantity,
+  shoppingCart,
   handleAddItemToCart, 
   handleRemoveItemToCart
 }) => {
+  console.log(shoppingCart)
   return (
     <div className='product-view'>
       <Hero />
@@ -17,6 +19,7 @@ export const ProductView = ({
       <ProductCard 
         product={product} 
         productId={productId} 
+        shoppingCart={shoppingCart}
         quantity={quantity} 
         handleAddItemToCart={handleAddItemToCart} 
         handleRemoveItemToCart={handleRemoveItemToCart} 

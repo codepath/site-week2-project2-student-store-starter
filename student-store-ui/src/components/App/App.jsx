@@ -18,7 +18,7 @@ export default function App() {
   const[error, setError] = useState('')
   const[isOpen, setIsOpen] = useState(false)
   const[shoppingCart, setShoppingCart] = useState([])
-  const[checkoutForm, setCheckoutForm] = useState({})
+  const[checkoutForm, setCheckoutForm] = useState({name: '', email: ''})
   const[subtotalPrice, setSubtotalPrice] = useState(0)
   const[taxPrice, setTaxPrice] = useState(0)
   const[totalPrice, setTotalPrice] = useState(0)
@@ -89,7 +89,14 @@ export default function App() {
   }
 
   const handleOnSubmitCheckoutForm = () => {
-    
+    axios.post('https://codepath-store-api.herokuapp.com/store', {
+      user: {
+        name: checkoutForm.name,
+        email: checkoutForm.email
+      },
+      shoppingCart: shoppingCart
+    }).then(res => console.log(res))
+    .catch(err => console.log(err))
   }
 
   return (
@@ -108,6 +115,7 @@ export default function App() {
             isOpen={isOpen} 
             handleOnToggle={handleOnToggle} 
             handleOnCheckoutFormChange={handleOnCheckoutFormChange}
+            handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
           />
           <Routes>
             <Route path="/" 
@@ -119,11 +127,13 @@ export default function App() {
                 setSearch={setSearch} 
                 setType={setType} 
                 type={type}
+                shoppingCart={shoppingCart}
               />}
             />
             <Route path="/products/:productId" 
               element={
-              <ProductDetail 
+              <ProductDetail
+                shoppingCart={shoppingCart}
                 handleAddItemToCart={handleAddItemToCart} 
                 handleRemoveItemToCart={handleRemoveItemFromCart}
               />}

@@ -10,7 +10,8 @@ export default function Home({
   handleRemoveItemToCart, 
   setSearch, 
   setType, 
-  type
+  type,
+  shoppingCart
 }) {
   return (
     <div className="home">
@@ -21,7 +22,8 @@ export default function Home({
         type={type}
       />
       <ProductGrid 
-        products={products} 
+        products={products}
+        shoppingCart={shoppingCart} 
         handleAddItemToCart={handleAddItemToCart} 
         handleRemoveItemToCart={handleRemoveItemToCart}
       />

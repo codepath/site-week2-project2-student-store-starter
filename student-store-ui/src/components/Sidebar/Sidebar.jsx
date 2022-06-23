@@ -32,6 +32,7 @@ export default function Sidebar({
         <CheckoutForm 
           checkoutForm={checkoutForm} 
           handleOnCheckoutFormChange={handleOnCheckoutFormChange}
+          handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
         />
       </> : null}
     </section>

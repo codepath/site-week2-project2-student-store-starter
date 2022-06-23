@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 export const ProductDetail = ({
+  shoppingCart,
   handleAddItemToCart, 
   handleRemoveItemToCart
 }) => {
@@ -26,6 +27,7 @@ export const ProductDetail = ({
       <ProductView 
         product={product} 
         productId={productId}
+        shoppingCart={shoppingCart}
         handleAddItemToCart={handleAddItemToCart} 
         handleRemoveItemToCart={handleRemoveItemToCart}
       /> : null}
