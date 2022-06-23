@@ -3,6 +3,7 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import { API_URL } from "../../../utils/constants";
 import { fetcher } from "../../../utils/fetcher";
+import axios from "axios";
 
 // Components
 import Navbar from "../Navbar/Navbar"
@@ -90,7 +91,7 @@ export default function App() {
     setShoppingCart(auxArray)
   }
 
-  const handleOnCheckoutFormChange = (name, value) => {
+  const handleCheckoutFormChange = (name, value) => {
     const prev = checkoutForm;
     const _new = {
       ...prev,
@@ -101,6 +102,9 @@ export default function App() {
   }
 
   const handleOnSubmitCheckoutForm = async () => {
+
+    // TODO (not working)
+
     setIsFetchingCheckoutForm(true);
 
     try {
@@ -115,10 +119,8 @@ export default function App() {
         return;
       }
 
-      const response = await fetcher(
+      const response = await axios.post (
         `${API_URL}/store`,
-        "post",
-        {},
         {
           user: checkoutForm,
           shoppingCart
@@ -157,18 +159,18 @@ export default function App() {
 
     try{
 
-      const response = await fetcher (
+      const response = await axios.get (
         `${API_URL}/store` 
       );
       
       setProducts(response.data.products);
 
-      setIsFetching(false);
-
     } catch (error) {
       console.error('Server error')
       setError("Server error");
     }
+
+    setIsFetching(false);
 
   }
 
@@ -183,8 +185,12 @@ export default function App() {
             shoppingCart={shoppingCart}
             products={products}
             checkoutForm={checkoutForm}
+            error={error}
+            isFetching={isFetching}
+            successMsg={successMsg}
             handleOnToggle={handleOnToggle}
-            handleOnCheckoutFormChange={handleOnCheckoutFormChange}
+            handleCheckoutFormChange={handleCheckoutFormChange}
+            handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
             />
           <Routes>
             <Route
