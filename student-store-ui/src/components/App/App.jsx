@@ -19,11 +19,45 @@ export default function App() {
   const [products, setProducts] = useState([])
   const [errors, setError] = useState("")
   const [searchTerm, setSearchTerm] = useState("")
+  const [isOpen, setIsOpen] = useState(false)
+  const [shoppingCart, setShoppingCart] = useState([])
+  let handleOnToggle = () => {
+    console.log("shopping cart has been pressed")
+    setIsOpen(true)
+    console.log(isOpen)
+  }
+  
+  // console.log("These are the products" + products)
+  // products.map((item) => {
+  //   ({item-id: item.id, quantity: 0})
+  //   console.log({"item id": item.id, "quantity": 0})
+    
+  // })
+  // console.log("This is the shopping cart")
+  // console.log(shoppingCart.length)
+
+  let handleAddItemToCart = (id) => {
+    let cartCopy = [...shoppingCart]
+    for (let i = 0; i < shoppingCart.length; i++) {
+        if (id == item-id) {
+          console.log("hey")
+
+        }
+    }
+    //loop over copy, if == update item, if it doesn't exist add new item
+    //update clone, set shopping clone
+    //shoppingCart
+    
+  }
+  let handleRemoveItemFromCart = (id) => {
+    
+  }
+   
 
   React.useEffect(() => {
     async function getProducts() {
       try {
-        const response = await axios.get('https://codepath-store-api.herokuapp.com/store');
+        const response = await axios.get('http://localhost:3001/store');
         const data = response.data.products
         setProducts(data)
       } catch (error) {
@@ -43,7 +77,8 @@ export default function App() {
         <main>
           {/* YOUR CODE HERE! */}
           <Navbar />
-          <Sidebar />
+          <img className="cart"alt="image of shopping cart" src="https://www.freepnglogos.com/uploads/shopping-cart-png/shopping-cart-png-image-download-pngm-2.png" onClick={handleOnToggle}/>
+          <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} products={products} handleOnToggle={handleOnToggle}/>
           
           
           <div className="welcome">

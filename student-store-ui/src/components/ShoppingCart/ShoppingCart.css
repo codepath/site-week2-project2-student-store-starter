@@ -1,0 +1,19 @@
+
+
+.cartList {
+    border-style: solid;
+    border-color: black;
+    border-radius: 8px;
+    border-width: 2px;
+    background-color: white;
+    padding: 50px;
+}
+
+.totals{
+    border-style: solid;
+    border-color: black;
+    border-radius: 8px;
+    border-width: 2px;
+    background-color: white;
+    padding: 50px;
+}

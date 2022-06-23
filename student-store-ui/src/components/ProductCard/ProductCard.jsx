@@ -8,6 +8,12 @@ export default function ProductCard(props) {
             <p>{props.name} </p>
             <p>Price: ${(Math.round(props.price * 100) / 100).toFixed(2)}</p>
             <img className="productPhoto"  src={props.image} />
+            <br/>
+          
+              <button className="add cartBtn" /*onClick={props.handleAddItemToCart(props.key)}*/>+</button>
+              <button className="remove cartBtn" /*onClick={props.handleRemoveItemFromCart(props.key)}*/>-</button>
+          
+            
          </div>
     </div>
   )

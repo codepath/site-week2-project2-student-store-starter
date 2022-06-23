@@ -54,6 +54,15 @@ h1 {
   margin-right: 100px;
 ;
 }
+.cart {
+  width: 4%;
+  
+  margin-left:0%;
+  position: sticky;
+  top:65px;
+  left: 0px;
+  position: fixed;
+}
 
 .welcome {
   background-color: #af8d86;

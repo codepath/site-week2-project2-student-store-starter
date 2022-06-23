@@ -1,4 +1,4 @@
-button {
+.category {
 	/*box-shadow: 3px 4px 0px 0px #af8d86;*/
 	background:linear-gradient(to bottom, #af8d86 5%, #edbfc6 100%);
 	background-color:#af8d86;
@@ -14,11 +14,11 @@ button {
 	text-shadow:0px 1px 0px #af8d86;
     margin: 20px;
 }
-button:hover {
+.category:hover {
 	background:linear-gradient(to bottom, #432e36 5%, #af8d86 100%);;
 	background-color:#edbfc6;
 }
-button {
+.category {
 	position:relative;
 	top:1px;
 }
