@@ -14,16 +14,15 @@ export default function ShoppingCart( {isOpen=false, products=[], shoppingCart=[
     )
   }
 
-  // return (
-  //   <div className="shopping-cart">
-  //     {shoppingCart.map(item => 
-  //       <div className="cart-row" key={item.itemId}>
-  //         <div className="cart-product-name">Product name here</div>
-  //         <div className="cart-product-quantity">{item.quantity}</div>
-  //       </div>
-  //     )}
-  //   </div>
-  // )
+  let subtotal = 0
+  for (let i = 0; i < shoppingCart.length; i++) {
+    let item = products.find(item => item.id === shoppingCart[i].itemId)
+    subtotal += shoppingCart[i].quantity * item.price
+  }
+  
+  let tax = subtotal * 0.0875
+  let total = subtotal + tax
+
 
   return (
     <div className="shopping-cart">
@@ -37,10 +36,23 @@ export default function ShoppingCart( {isOpen=false, products=[], shoppingCart=[
           <tr className="cart-row" key={item.itemId}>
             <td className="cart-product-name">{(products.find(product => product.id === item.itemId)).name}</td>
             <td className="cart-product-quantity">{item.quantity}</td>
-            <td className="cart-product-cost">{(products.find(product => product.id === item.itemId)).price * item.quantity}</td>
+            <td className="cart-product-cost">{"$"+((products.find(product => product.id === item.itemId)).price * item.quantity).toFixed(2)}</td>
           </tr>
         )}
-        
+      </table>
+      <table className="total-table">
+        <tr className="total-table-row">
+          <td className="total-table-label">Subtotal</td>
+          <td className="total-table-value">{"$"+subtotal.toFixed(2)}</td>
+        </tr>
+        <tr className="total-table-row">
+          <td className="total-table-label">Taxes and Fees</td>
+          <td className="total-table-value">{"$"+tax.toFixed(2)}</td>
+        </tr>
+        <tr className="total-table-row">
+          <td className="total-table-label">Total</td>
+          <td className="total-table-value">{"$"+total.toFixed(2)}</td>
+        </tr>
       </table>
     </div>
   )
