@@ -26,4 +26,17 @@ router.get("/", async (req, res, next) => {
     }
   })
 
+  // create a new purchase order
+  router.post("/", async (req, res, next) => {
+    console.log("obj sent in api call", req)
+    try {
+        const user = req.body.user
+        const shoppingCart = req.body.shoppingCart
+        const newPurchase = await Store.recordPurchase(user, shoppingCart)
+        res.status(201).json( { purchase: newPurchase } )
+    } catch (err) {
+        next(err)
+    }
+  })
+
   module.exports = router

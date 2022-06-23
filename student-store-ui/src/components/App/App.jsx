@@ -20,8 +20,6 @@ export default function App() {
   const [checkoutForm, setCheckoutForm] = React.useState({email:"", name:""})
   const [checkoutMessage, setCheckoutMessage] = React.useState("")
 
-  // remove console.logs later
-
   const getData = async () => {
     setIsFetching(true)
     try {
@@ -41,11 +39,10 @@ export default function App() {
     getData();
   }, []);
 
-  // handler functions
+  // HANDLER FUNCTIONS
 
   function handleOnToggle() {
     setIsOpen(!(isOpen));
-    // toggled the open/closed state of the sidebar
   }
 
   function handleAddItemToCart(productId) {
@@ -79,28 +76,35 @@ export default function App() {
   }
 
   async function handleOnSubmitCheckoutForm() {
+    // check if shopping cart is full and user has inputted the fields
+    if (!shoppingCart) {
+      setCheckoutMessage("Your shopping cart is empty!")
+      return null;
+    } else if (!checkoutForm.name || !checkoutForm.email) {
+      setCheckoutMessage("Missing name or email. Please enter to continue checking out.")
+      return null;
+    }
 
-    // if (!shoppingCart) {
-    //   setCheckoutMessage("Your shopping cart is empty!")
-    //   return null;
-    // } else if (!checkoutForm.name || !checkoutForm.email) {
-    //   setCheckoutMessage("Missing name or email. Please enter to continue.")
-    //   return null;
-    // }
+    // if everything is there, attempt to make the API call
+    setIsFetching(true)
 
-    // setIsFetching(true)
-    // axios.post("https://codepath-store-api.herokuapp.com/store", { checkoutForm: {user: checkoutForm, shoppingCart: shoppingCart} })
-    //   .then((res) => {
-    //     console.log(res)
-    //     setCheckoutMessage("Success!")
-    //   })
-    //   .catch((err) => {
-    //     setError(err)
-    //   })
-    //   .finally(() => {
-    //     setIsFetching(false)
-    //     setShoppingCart([])
-    //   })
+    console.log("before api call:", JSON.stringify({user: checkoutForm, shoppingCart: shoppingCart}))
+
+    axios.post("http://localhost:3001/store", {user: checkoutForm, shoppingCart: shoppingCart} )
+      .then((res) => {
+        // figure out what to do here LOL
+        console.log(111, res)
+        setCheckoutMessage("Success!")
+      })
+      .catch((err) => {
+        console.log(err)
+        setError(err)
+      })
+      .finally(() => {
+        setIsFetching(false)
+        setCheckoutForm({email:"", name:""})
+        setShoppingCart([])
+      })
   }
   
   return (
