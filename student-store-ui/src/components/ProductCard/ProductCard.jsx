@@ -72,7 +72,7 @@ export default function ProductCard(props) {
       className={props.class}>
 
       {(props.class == 'product-card') ?
-        <Link className="product-link" to={"products/" + props.product.id}>
+        <Link className="product-link" to={"store/" + props.product.id}>
           <img className="product-image" src={props.product.image} />
         </Link>
         :
