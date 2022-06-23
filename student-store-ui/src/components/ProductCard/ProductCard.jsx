@@ -64,21 +64,6 @@ export default function ProductCard(props) {
         </div>
       </div>
     )
-
-    // } else {
-    //   return (
-    //     <div className="product-card-footer">
-
-
-    //       <div className="section">
-    //         {/* <Link to={"products/" + props.product.id}><button className="btn see-more">See More!</button></Link> */}
-    //       </div>
-    //       <div className="section">
-    //         <p>${(props.product.price).toFixed(2)}</p>
-    //       </div>
-    //     </div>
-    //   )
-    // }
   }
 
   return (
