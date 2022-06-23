@@ -1,5 +1,5 @@
 import * as React from "react" 
-import store from "/Users/duynguyen/Desktop/codepath/tdd-student-store-starter/student-store-ui/src/assets/student_store_icon.18e5d61a.svg"
+import store from "/Users/duynguyen/Desktop/codepath/student-store/student-store-ui/src/assets/student_store_icon.18e5d61a.svg"
 import "./Hero.css"
 export default function Hero() {
     return (
