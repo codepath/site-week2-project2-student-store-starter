@@ -1,0 +1,19 @@
+.navbar {
+    background-color: #292929;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.buttonContainer {
+    display: flex;
+    margin-right: 50px;
+    gap: 20px;
+}
+
+.navbutton {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
