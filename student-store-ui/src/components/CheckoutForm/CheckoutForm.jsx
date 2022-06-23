@@ -1,6 +1,11 @@
 import "./CheckOutForm.css"
 
 export default function CheckOutForm(props) {
+
+    const handleOnchange = () => {
+        // TODO
+    }
+
     return (
         <div className={"check-out"}>
             <h1>Log in</h1>
@@ -15,8 +20,8 @@ export default function CheckOutForm(props) {
 
                 <label htmlFor="check-out-form">Password</label>
                 <input
-                    name="username"
-                    type="password"
+                    name="email"
+                    type="text"
                 // value={props.searchQuery}
                 // onChange={(e) => props.setSearchQuery(e.target.value)}
                 />
