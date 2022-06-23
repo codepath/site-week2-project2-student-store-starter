@@ -13,7 +13,7 @@ export default function Home(props) {
     <div className="home">
       <Hero />
       <div className="main-content">
-        <div className="product-area">
+        <div className="product-area" id="buy">
           <Searchbar 
             setSearchQuery={setSearchQuery}/>
           <CategoryFilterBar
@@ -81,7 +81,7 @@ export function CategoryFilter(props) {
 
 export function AboutUs() {
   return (
-    <div className="about">
+    <div className="about" id="about">
       <h2 className="section-header">About</h2>
       <div className="about-body">
         <div className="about-text">
@@ -98,7 +98,7 @@ export function AboutUs() {
 
 export function ContactUs() {
   return (
-    <div className="contact-us">
+    <div className="contact-us" id="contact-us">
       <h2 className="section-header">Contact Us</h2>
       <div className="contact-us-body">
         <div className="contact-us-grid">
