@@ -47,8 +47,13 @@
     color: white;
 }
 
-.checkout-error{
+.error{
     color: rgb(206, 53, 53);
+    font-weight: bold;
+    font-size: 18px;
+}
+.success{
+    color: rgb(32, 147, 80);
     font-weight: bold;
     font-size: 18px;
 }

@@ -3,12 +3,12 @@ import { Link } from "react-router-dom"
 import "./CheckoutForm.css"
 
 export default function CheckoutForm(props) {
-    var err = <p className="checkout-error"></p>;
+    var err = <p className="error"></p>;
     if (props.checkoutError === "item") {
-        err = <p className="checkout-error">No cart or items in cart found to checkout.</p>
+        err = <p className="error">No cart or items in cart found to checkout.</p>
     }
     if (props.checkoutError === "field") {
-        err = <p className="checkout-error">User info must include an email and name.</p>
+        err = <p className="error">User info must include an email and name.</p>
     }
 
     return (
@@ -36,7 +36,7 @@ export default function CheckoutForm(props) {
                     </label>
                 </div>
             </div>
-            {err}
+            {props.postStatus ? <p className="success">Success!</p> : err}
             <div className="field">
                 <div className="control">
                     <button className="button checkout-button" onClick={props.handleOnSubmit}>Checkout</button>

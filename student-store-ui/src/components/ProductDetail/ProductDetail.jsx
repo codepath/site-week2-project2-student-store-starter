@@ -8,12 +8,13 @@ import axios from "axios"
 export default function ProductDetail(props) {
     const [product, setProduct] = React.useState(null)
     let args = useParams()
+    console.log(args)
     React.useEffect(() => {        
         const getProduct = async () => {
             props.setIsFetching(true)
         try {
             // const res = await axios.get("http://localhost:3001/store")
-            const res = await axios.get(`https://codepath-store-api.herokuapp.com/store/${args.productId}`)
+            const res = await axios.get(`http://localhost:3001/store/${args?.productId}`)
             const data = res.data //maybe need to add question mark
             if (data) {
             setProduct(data.product)

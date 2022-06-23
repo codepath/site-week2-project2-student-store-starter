@@ -19,12 +19,18 @@ router.post("/", async (req, res, next) => {
         const user = req.body.user
         const lines = [`Showing receipt for ${user.name} available at ${user.email}:`]
         let total = 0
+        let totalQuantity = 0
+        let itemPrices = []
+        let itemNames = []
         if (shoppingCart && user) {
             shoppingCart.forEach(async (item) => {
                 if ("quantity" in item && "itemId" in item) {
                     const product = await Store.getProductById(item.itemId)
                     let itemTotal = (item.quantity * product.price).toFixed(2)
+                    totalQuantity += item.quantity
                     total += parseFloat(itemTotal)
+                    itemPrices.push(product.price)
+                    itemNames.push(product.name)
                     lines.push(`${item.quantity} total ${product.name} purchased at a cost of $${product.price} for a total cost of $${itemTotal}.`)
                 } else {
                     throw new BadRequestError("each item in the shopping cart should have itemId and quantity field")
@@ -43,10 +49,15 @@ router.post("/", async (req, res, next) => {
             name: user.name,
             email: user.email,
             order: shoppingCart,
-            total: (total * 1.0875).toFixed(2),
+            subtotal: Number(total.toFixed(2)),
+            total: Number((total * 1.0875).toFixed(2)),
             createdAt: new Date().toISOString(),
-            receipt: { lines: lines }
+            receipt: { lines: lines },
+            totalQuantity: totalQuantity,
+            itemPrices: itemPrices,
+            itemNames: itemNames
         }
+        Store.addPurchase(purchase)
         return res.status(201).json({ "purchase": purchase })
     }
     catch (err) {

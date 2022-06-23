@@ -1,0 +1,57 @@
+.order-detail{
+    padding-top: 8rem;
+}
+
+.order-header, .order-row{
+    display: flex;
+    flex-direction: row;
+    margin: 0
+}
+
+.order-detail h1{
+    padding-left: 2.4rem;
+}
+
+.order-header li, .order-row li{
+    list-style-type: none;
+    border: solid 1px #5b5b5b;
+    min-width: 50%;
+    padding-left: 1rem;
+    font-size: 18px;
+    font-weight: bold;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.order-header li:first-child{
+    border-right: none;
+}
+.order-row li:first-child{
+    border-right: none;
+}
+
+.order-header li, .order-row li {
+    border-top: 0;
+}
+
+.order-header .first-row{
+    border-top: solid 1px #5b5b5b;
+}
+
+.order-row li{
+    font-weight: normal;
+}
+
+.order-row a{
+    color:#0000EE ;
+    font-weight: normal;
+    padding: 0;
+    font-size: 16px;
+}
+
+.shopmore-btn{
+    margin-left: 2.4rem;
+    margin-top: 2rem;
+    width: 140px;
+}

@@ -3,7 +3,9 @@ import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
 import NotFound from "../NotFound/NotFound"
+import Orders from "../Orders/Orders"
 import ProductDetail from "../ProductDetail/ProductDetail"
+import OrderDetail from "../OrderDetail/OrderDetail"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import axios from "axios"
 import "./App.css"
@@ -18,6 +20,7 @@ export default function App() {
   const [checkoutError, setCheckoutError] = React.useState("")
   const [getReceipt, setGetReceipt] = React.useState(false)
   const [order, setOrder] = React.useState({})
+  const [postStatus, setPostStatus] = React.useState(false)
   const [shoppingCart, setShoppingCart] = React.useState({}) //objects need itemId and quantity
   const [checkoutForm, setCheckoutForm] = React.useState({
     name: "",
@@ -28,6 +31,7 @@ export default function App() {
     const offsetTop = document.getElementById("shop").offsetTop;
     setGetReceipt(false);
     setIsOpen(false);
+    setPostStatus(false);
     window.scrollTo(0, offsetTop);
   }
 
@@ -66,7 +70,7 @@ export default function App() {
     setCheckoutError("")
   }
 
-  const handleOnSubmitCheckoutForm = () => {
+  const handleOnSubmitCheckoutForm = () => {  
     // axios POST request
     if (Object.keys(shoppingCart).length === 0) {
       setCheckoutError("item")
@@ -81,7 +85,7 @@ export default function App() {
     for (const item in shoppingCart){
       cartArray.push({itemId: item, quantity: shoppingCart[item]})
     }
-    axios.post("https://codepath-store-api.herokuapp.com/store", 
+    axios.post("http://localhost:3001/store", 
     { 
       user:
       {
@@ -94,22 +98,23 @@ export default function App() {
       setShoppingCart({})
       setCheckoutForm({name:"", email:""})
       setGetReceipt(true)
+      setPostStatus(true)
       setOrder(res.data.purchase)
     })
-}
+  }
   React.useEffect(() => {
     const getProducts = async () => {
       setIsFetching(true)
       try {
-        // const res = await axios.get("http://localhost:3001/store")
-        const res = await axios.get("https://codepath-store-api.herokuapp.com/store")
+        const res = await axios.get("http://localhost:3001/store")
+        // const res = await axios.get("https://codepath-store-api.herokuapp.com/store")
         const data = res.data //maybe need to add question mark
         if (data) {
           setProducts(data.products)
           return;
         }
         else {
-          setError("Cannot fetch products.")
+          setError(new Error("Cannot fetch products."))
         }
       } catch(err) {
         setError(err)
@@ -126,10 +131,12 @@ export default function App() {
       <BrowserRouter>
         <main>
           <Navbar />
-          <Sidebar setIsOpen={setIsOpen}shopMore={shopMore} order={order} getReceipt={getReceipt} setGetReceipt={setGetReceipt}isOpen={isOpen} handleOnToggle={handleOnToggle} shoppingCart={shoppingCart} products={products} checkoutForm={checkoutForm} handleOnCheckoutFormChange={handleOnCheckoutFormChange} handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm} checkoutError={checkoutError}/>
+          <Sidebar postStatus={postStatus} setPostStatus={setPostStatus} setIsOpen={setIsOpen}shopMore={shopMore} order={order} getReceipt={getReceipt} setGetReceipt={setGetReceipt}isOpen={isOpen} handleOnToggle={handleOnToggle} shoppingCart={shoppingCart} products={products} checkoutForm={checkoutForm} handleOnCheckoutFormChange={handleOnCheckoutFormChange} handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm} checkoutError={checkoutError}/>
           <Routes>
             <Route exact path="/" element={ <Home setIsOpen={setIsOpen}products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} shoppingCart={shoppingCart} searchInput={searchInput} handleOnSearch={handleOnSearch} activeCategory={activeCategory} setActiveCategory={setActiveCategory} />}/>
             <Route path="/products/:productId" element={<ProductDetail isFetching={isFetching} setIsFetching={setIsFetching} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} setError={setError} shoppingCart={shoppingCart}/>}/>
+            <Route path="/orders" element={<Orders />} />
+            <Route path="/orders/:purchaseId" element={<OrderDetail isFetching={isFetching} setIsFetching={setIsFetching} setError={setError}/>}/>
             <Route path="*" element={<NotFound />}/>
           </Routes>
         </main>

@@ -32,7 +32,7 @@ export default function ProductCard(props) {
                         <button className="add" onClick={() => props.handleAddItemToCart(product.id)}><i className="material-icons">add</i></button>
                     </div>
                     <span className="quantity">
-                        {props.quantity === 0 ? <span className="amt hide">{props.quantity}</span> : <span className="amt">{props.quantity}</span>}
+                        {props.quantity === 0 ? <span className="product-quantity hide">{props.quantity}</span> : <span className="product-quantity">{props.quantity}</span>}
                     </span>
                 </div>    
             </div>    

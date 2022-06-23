@@ -11,8 +11,8 @@ export default function ShoppingCart(props) {
                     No items added to cart yet. Start shoppping now!
                 </div> : <CartTable products={props.products} shoppingCart={props.shoppingCart}/>}
                 
-                <CheckoutForm checkoutError={props.checkoutError} checkoutForm={props.checkoutForm} handleOnCheckoutFormChange={props.handleOnCheckoutFormChange} handleOnSubmit={props.handleOnSubmit}/>
-                <CheckoutInfo setIsOpen={props.setIsOpen} shopMore={props.shopMore} order={props.order} getReceipt={props.getReceipt} setGetReceipt={props.setGetReceipt} shoppingCart={props.shoppingCart}/>
+                <CheckoutForm postStatus={props.postStatus} isOpen={props.isOpen} checkoutError={props.checkoutError} checkoutForm={props.checkoutForm} handleOnCheckoutFormChange={props.handleOnCheckoutFormChange} handleOnSubmit={props.handleOnSubmit}/>
+                <CheckoutInfo setPostStatus={props.setPostStatus}setIsOpen={props.setIsOpen} shopMore={props.shopMore} order={props.order} getReceipt={props.getReceipt} setGetReceipt={props.setGetReceipt} shoppingCart={props.shoppingCart}/>
             </div> : <span className="cart-icons">
                 <i className="fa-solid fa-cart-plus side-icon"></i>
                 <i className="fa-solid fa-sack-dollar side-icon"></i>
@@ -50,11 +50,11 @@ export function CartTable(props){
                 }
             </div>
             <div className="totals">
-                <div className="subtotal">
+                <div className="subtotal-wrapper">
                     <span className="label">Subtotal</span>
                     <span></span>
                     <span></span>
-                    <span className="center subtotal-price">
+                    <span className="center subtotal">
                         {"$" + subtotal.toFixed(2)}
                     </span>
                 </div>
@@ -82,7 +82,6 @@ export function CartTable(props){
 export function CheckoutInfo(props) {
     const order = props?.order
     const receipt = order.receipt?.lines
-    console.log(props)
     if(!props.getReceipt) {
         return (
             <div className="checkout-success">
@@ -117,7 +116,7 @@ export function CheckoutInfo(props) {
                     </section>
                     <footer className="card-foot">
                         <button className="button" onClick={() => props.shopMore()}>Shop More</button>
-                        <button className="button" onClick={() => {props.setGetReceipt(false); props.setIsOpen(false)}} >Exit</button>
+                        <button className="button" onClick={() => {props.setGetReceipt(false); props.setIsOpen(false); props.setPostStatus(false)}} >Exit</button>
                     </footer>
                 </div>
             </div>

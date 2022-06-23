@@ -124,7 +124,7 @@ button:disabled .remove-btn{
     padding: 5px;
 }
 
-.product-card .amt{
+.product-card .product-quantity{
     background: #ff9017;
     color: white;
     width: 20px;
@@ -134,6 +134,6 @@ button:disabled .remove-btn{
     align-items: center;
     justify-content: center;
 }
-.product-card .amt.hide{
+.product-card .product-quantity.hide{
     display: none;
 }

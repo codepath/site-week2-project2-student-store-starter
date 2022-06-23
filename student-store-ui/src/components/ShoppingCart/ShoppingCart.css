@@ -97,7 +97,7 @@
     flex: 1 1 0%;
 }
 
-.totals .subtotal, .taxes, .total{
+.totals .subtotal-wrapper, .taxes, .total{
     display: flex;
     align-items: center;
     justify-content: space-between;
