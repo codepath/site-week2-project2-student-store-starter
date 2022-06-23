@@ -14,7 +14,7 @@ export default function App() {
   // an array of product objects that is initially empty.
   const [products, setProducts] = React.useState([])
   // a boolean value representing whether or not the App is currently fetching the products from the API.
-  const [isFetching, setIsFetching] = React.useState(false)
+  const [isFetching, setIsFetching] = React.useState(true)
   // a variable used to display a message when something goes wrong with the API requests.
   const [error, setError] = React.useState("")
   // a boolean value representing whether or not the Sidebar.jsx is in the open or closed state.
@@ -22,18 +22,30 @@ export default function App() {
   // should store state for the active user's shopping cart (items they want to purchase and the quantity of each item).
   const [shoppingCart, setShoppingCart] = React.useState([])
   // the user's information that will be sent to the API when they checkout.
-  const [checkoutForm, setCheckoutForm] = React.useState()
+  const [checkoutForm, setCheckoutForm] = React.useState(false)
 
-  React.useEffect(async () => {
-    const response = await axios.get(API_URL)
-    setProducts(response.data.products)
-  })
+  React.useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(API_URL)
+        if (isFetching) {
+          setProducts(response.data.products)
+        }
+        setIsFetching(false)
+      } catch(e) {
+        setError(e)
+      }
+    }
+
+    fetchData()
+  }, [])
+
 
   return (
     <div className="app">
       <BrowserRouter>
       <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home products={ products } />} />
             <Route path="/products/:productId" element={<ProductDetail />} />
             <Route path="*" element={<NotFound />} />
       </Routes>
@@ -41,7 +53,6 @@ export default function App() {
           {/* YOUR CODE HERE! */}
           <Navbar />
           <Sidebar />
-          <Home />
         </main>
       </BrowserRouter>
     </div>
