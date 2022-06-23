@@ -23,7 +23,7 @@ export default function Home(props) {
       ? props.products.filter((product) => product.name.includes(query)) : sortByCategory 
 
 
-  console.log("sortByCategory",sortByCategory)
+
   return (
     <div className="home">
       <div className="hero-container">
@@ -44,7 +44,7 @@ export default function Home(props) {
 
       <span className = "category-list">
         
-        <span className = "category-menu"><i class="fa-solid fa-bars"></i></span>
+        <span className = "category-menu"><i className="fa-solid fa-bars"></i></span>
         <span className = "category" onClick= {() => props.setSelectedCategory("All Categories")}>All Categories</span>
         <span className = "category" onClick= {() => props.setSelectedCategory("Clothing")}>Clothing</span>
         <span className = "category" onClick= {() => props.setSelectedCategory("Food")}>Food</span>
@@ -54,8 +54,7 @@ export default function Home(props) {
       
 
       <div className = "grid">
-         <ProductGrid products = {sortBySearch}/> 
-
+         <ProductGrid products = {sortBySearch} handleAddItemToCart = {props.handleAddItemToCart}/> 
       </div>
 
 

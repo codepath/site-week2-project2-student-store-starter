@@ -27,28 +27,54 @@ export default function App() {
  
 
 
+  function handleOnToggle() {
+  }
+
+
+  function handleAddItemToCart(productId) {
+    console.log("shoppingCart before:", shoppingCart)
+    var value = shoppingCart.find((object) => {
+      if (object.itemId === productId){
+        return true
+      }
+    })
+    if (value === undefined) {
+      shoppingCart.push({ itemId: productId, quantity: 1})
+    }
+    else{
+      shoppingCart.map((object) => {
+        if (object.itemId === productId) {
+          object.quantity += 1
+        }
+      })
+    }
+    console.log("shoppingCart after:", shoppingCart)
+  }
+
+
+  function
+
+
+  const getProducts = async () => {
+    setIsFetching(true)
+    try {
+      const response = await axios.get("http://localhost:3001/store")
+      if (response?.data?.allProducts) {
+        setProducts(response.data.allProducts)
+      } else {
+        setError("Error getting products list from store.")
+      }
+    } catch (error) {
+      console.log(error)
+    } finally {
+      setIsFetching(false)
+    }
+  }
 
   useEffect(() => {
-    const getProducts = async () => {
-      setIsFetching(true)
-      try {
-        const response = await axios.get("https://codepath-store-api.herokuapp.com/store")
-        if (response.data.products) {
-          setProducts(response.data.products)
-        } else {
-          setError("Error getting products list from store.")
-        }
-      } catch (error) {
-        console.log(error)
-      } finally {
-        setIsFetching(false)
-      }
-    }
+    
     getProducts()
   }, [])
-  console.log(products)
-
-
 
 
 
@@ -57,9 +83,9 @@ export default function App() {
       <BrowserRouter>
       <main>
         <Navbar />
-        <Sidebar /> 
+        <Sidebar isOpen = {isOpen} setIsOpen = {setIsOpen} products = {products} shoppingCart = {shoppingCart} setShoppingCart = {setShoppingCart} checkoutForm ={checkoutForm} setCheckoutForm = {setCheckoutForm}/> 
         <Routes>
-          <Route path = "/" element = {<Home products = {products} selectedCategory = {selectedCategory} setSelectedCategory = {setSelectedCategory}/>}  />
+          <Route path = "/" element = {<Home products = {products} selectedCategory = {selectedCategory} setSelectedCategory = {setSelectedCategory} handleAddItemToCart = {handleAddItemToCart}/>}  />
           <Route path = "/products/:productId" element = {<ProductDetail products = {products} isFetching = {isFetching} setIsFetching = {setIsFetching} error = {error} setError = {setError}/>} /> 
           <Route path = "*" element = {<NotFound />}/> 
         </Routes> 

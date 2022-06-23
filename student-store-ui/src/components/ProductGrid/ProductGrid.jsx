@@ -4,7 +4,7 @@ import "./ProductGrid.css"
 
 export default function ProductGrid(props) {
   
-    console.log(11,props.products);
+
     return (
         
     <div className = "product-grid">
@@ -12,7 +12,7 @@ export default function ProductGrid(props) {
         
      
         {props.products.map((product) => 
-            <ProductCard key = {product.id} productId = {product.id} showDescription = {false} name = {product.name} price = {product.price} image = {product.image} product = {product}/>
+            <ProductCard key = {product.id} productId = {product.id} showDescription = {false} name = {product.name} price = {product.price} image = {product.image} product = {product} handleAddItemToCart = {props.handleAddItemToCart}/>
         )}
         
     </div>
