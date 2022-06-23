@@ -13,7 +13,8 @@ export default function ProductDetail(props) {
   const getProductData = async () => {
     props.setIsFetching(true)
     try {
-      const response = await axios.get(`https://codepath-store-api.herokuapp.com/store/${productId}`);
+      // const response = await axios.get(`https://codepath-store-api.herokuapp.com/store/${productId}`);
+      const response = await axios.get(`http://localhost:3001/store/${productId}`);
       setProduct(response.data.product);
       console.log("received this product data:", response.data.product);
     } catch (error) {

@@ -12,4 +12,18 @@ router.get("/", async (req, res, next) => {
     }
   })
 
+  // get single product for product details page
+  router.get("/:productId", async (req, res, next) => {
+    try {
+      const productId = req.params.productId
+      const product = await Store.fetchProductById(productId)
+      if (!product) {
+        throw new Error("smth went wrong with getting the product")
+      }
+      res.status(200).json({ product })
+    } catch (err) {
+      next(err)
+    }
+  })
+
   module.exports = router
