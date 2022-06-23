@@ -18,13 +18,15 @@ export default function App() {
   const [isOpen, setIsOpen] = React.useState(false)
   const [shoppingCart, setShoppingCart] = React.useState([])
   const [checkoutForm, setCheckoutForm] = React.useState({email:"", name:""})
+  const [checkoutMessage, setCheckoutMessage] = React.useState("")
 
   // remove console.logs later
 
   const getData = async () => {
     setIsFetching(true)
     try {
-      const response = await axios.get("https://codepath-store-api.herokuapp.com/store");
+      // const response = await axios.get("https://codepath-store-api.herokuapp.com/store");
+      const response = await axios.get("http://localhost:3001/store");
       setProducts(response.data.products);
       console.log("received this data:", response.data.products);
     } catch (error) {
@@ -77,35 +79,30 @@ export default function App() {
   }
 
   async function handleOnSubmitCheckoutForm() {
-    setIsFetching(true)
-    axios.post("http://localhost:3001/store", { checkoutForm: {user: checkoutForm, shoppingCart: shoppingCart} })
-      .then((res) => {console.log(res)})
-      .catch((err) => {
-        setError(err)
-      })
-      .finally(() => {
-        setIsFetching(false)
-      })
+
+    // if (!shoppingCart) {
+    //   setCheckoutMessage("Your shopping cart is empty!")
+    //   return null;
+    // } else if (!checkoutForm.name || !checkoutForm.email) {
+    //   setCheckoutMessage("Missing name or email. Please enter to continue.")
+    //   return null;
+    // }
+
+    // setIsFetching(true)
+    // axios.post("https://codepath-store-api.herokuapp.com/store", { checkoutForm: {user: checkoutForm, shoppingCart: shoppingCart} })
+    //   .then((res) => {
+    //     console.log(res)
+    //     setCheckoutMessage("Success!")
+    //   })
+    //   .catch((err) => {
+    //     setError(err)
+    //   })
+    //   .finally(() => {
+    //     setIsFetching(false)
+    //     setShoppingCart([])
+    //   })
   }
   
-  async function handleOnCreateTransaction() {
-    props.setIsCreating(true)
-    
-    axios.post(API_BASE_URL + "/bank/transactions", {transaction: props.newTransactionForm})
-      .then((res) => {
-        props.setTransactions(pastTransactions => [...pastTransactions, res.data.transaction])
-      })
-      .catch((error) => {
-        props.setError(error)
-        setIsCreating(false)
-      })
-      .finally(() => {
-        props.setNewTransactionForm({category: "", description: "", amount: 0})
-        props.setIsCreating(false)
-      })
-  }
-
-
   return (
     <div className="app">
       <BrowserRouter>
