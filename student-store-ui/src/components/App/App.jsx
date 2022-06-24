@@ -25,6 +25,11 @@ export default function App() {
     try {
       // const response = await axios.get("https://codepath-store-api.herokuapp.com/store");
       const response = await axios.get("http://localhost:3001/store");
+      
+      // check if there are products in the response
+      if ((!response.data.products) || response?.data?.products.length == 0 ) {
+        throw new Error("No products found")
+      }
       setProducts(response.data.products);
       console.log("received this data:", response.data.products);
     } catch (error) {
@@ -77,13 +82,13 @@ export default function App() {
 
   async function handleOnSubmitCheckoutForm() {
     // check if shopping cart is full and user has inputted the fields
-    // if (!shoppingCart) {
-    //   setCheckoutMessage("Your shopping cart is empty!")
-    //   return null;
-    // } else if (!checkoutForm.name || !checkoutForm.email) {
-    //   setCheckoutMessage("Missing name or email. Please enter to continue checking out.")
-    //   return null;
-    // }
+    if (!shoppingCart) {
+      setCheckoutMessage("Your shopping cart is empty!")
+      return null;
+    } else if (!checkoutForm.name || !checkoutForm.email) {
+      setCheckoutMessage("Missing name or email. Please enter to continue checking out.")
+      return null;
+    }
 
     // if everything is there, attempt to make the API call
     setIsFetching(true)
