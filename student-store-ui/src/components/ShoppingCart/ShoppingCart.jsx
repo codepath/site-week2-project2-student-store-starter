@@ -19,14 +19,16 @@ const ShoppingCart = ({isOpen, products, shoppingCart}) => {
                             <p className='cart-product-quantity'>{product.quantity}</p>
                         </React.Fragment>
                     ))}
-                    <p className='subtotal'>{`Subtotal:  ${subtotal}`}</p>
-                </div>
+                    <p className='subtotal'>{`Subtotal:  $${subtotal}`}</p>
+                    <p className="total-heading">Total (8.75% TAX):</p>${(subtotal * 1.0875).toFixed(2)}</div>
             }
         </>
     )
 
     const close = (
-        <></>
+        <>
+            <p className='notification'>No items added to cart yet. Start shopping now!</p>
+        </>
     )
 
   return (
