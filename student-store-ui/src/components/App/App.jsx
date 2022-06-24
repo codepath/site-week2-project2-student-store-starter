@@ -1,6 +1,8 @@
 import * as React from "react"
 import axios from 'axios';
 
+import {API_BASE_URL} from "../../constants"
+
 import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
@@ -11,15 +13,21 @@ import "./App.css"
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 export default function App() {
+  const checkoutFormInitState = {
+    name: "",
+    email: ""
+  }
+
   const [products, setProducts] = React.useState([]);
   const [isFetching, setFetching] = React.useState(false);
   const [shoppingCart, setShoppingCart] = React.useState([]);
+  const [checkoutForm, setCheckoutForm] = React.useState(checkoutFormInitState);
 
   React.useEffect(() => {
     const getProducts = async () => {
       setFetching(true);
       try {
-        const response = await axios.get("https://codepath-store-api.herokuapp.com/store");
+        const response = await axios.get(`${API_BASE_URL}/store/`);
         if (response?.data?.products) {
           // set data if response is not undefined
           setProducts(response?.data?.products);
@@ -34,6 +42,19 @@ export default function App() {
     getProducts();
   }, []);
 
+  const handleOnCheckoutFormChange = (change) => {
+    console.log(change);
+    setCheckoutForm((prevForm) => ({ 
+      ...prevForm,
+       [change.target.name]: change.target.value
+      }))
+  console.log(checkoutForm)
+      
+  }
+  const handleOnSubmitCheckoutForm = () => {
+
+  }
+
   if (isFetching) {
     return <h1>Loading...</h1>
   }
@@ -43,7 +64,11 @@ export default function App() {
       <BrowserRouter>
         <main>
           <Navbar />
-          <Sidebar shoppingCart={shoppingCart}/>
+          <Sidebar 
+            shoppingCart={shoppingCart} 
+            checkoutForm={checkoutForm} 
+            handleOnCheckoutFormChange={handleOnCheckoutFormChange} 
+            handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}/>
           <Routes>
             <Route path="/" element={<Home isFetching={isFetching} products={products} setShoppingCart={setShoppingCart} shoppingCart={shoppingCart} />} />
             <Route path="/products/:productId" element={<ProductDetail products={products} setShoppingCart={setShoppingCart} shoppingCart={shoppingCart} />} />

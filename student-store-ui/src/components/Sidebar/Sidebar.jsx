@@ -34,9 +34,13 @@ export default function Sidebar(props) {
       </div>
 
       <div className={"sidebar-container " + isHidden}>
-        <CheckOutForm />
-        
-        {props.shoppingCart.length > 0 ? <CartTable getShoppingCartItems={getShoppingCartItems}/> : null}
+        <CheckOutForm 
+          isOpen={isHidden} 
+          shoppingCart={props.shoppingCart} 
+          checkoutForm={props.checkoutForm} 
+          handleOnCheckoutFormChange={props.handleOnCheckoutFormChange} 
+          handleOnSubmitCheckoutForm={props.handleOnSubmitCheckoutForm}/>
+        {props.shoppingCart.length >= 1 ? <CartTable getShoppingCartItems={getShoppingCartItems}/> : <h1>hello world</h1>}
         
       </div>
     </section>

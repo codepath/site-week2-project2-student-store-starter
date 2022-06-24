@@ -2,32 +2,34 @@ import "./CheckOutForm.css"
 
 export default function CheckOutForm(props) {
 
-    const handleOnchange = () => {
-        // TODO
-    }
-
     return (
         <div className={"check-out"}>
-            <h1>Log in</h1>
-            <form>
+            <h1>Check Out</h1>
+            
                 <label htmlFor="check-out-form">Username</label>
                 <input
-                    name="username"
+                    name="name"
                     type="text"
-                // value={props.searchQuery}
-                // onChange={(e) => props.setSearchQuery(e.target.value)}
+                    value={props.checkoutForm?.username || ""}
+                    onChange={props.handleOnCheckoutFormChange}
                 />
 
-                <label htmlFor="check-out-form">Password</label>
+                <label htmlFor="check-out-form">Email</label>
                 <input
                     name="email"
-                    type="text"
-                // value={props.searchQuery}
-                // onChange={(e) => props.setSearchQuery(e.target.value)}
+                    type="email"
+                    value={props.checkoutForm?.email || ""}
+                    onChange={props.handleOnCheckoutFormChange}
                 />
-                
-                <input type="submit" value="Log In"></input>
-            </form>
+                <div className="terms">
+                    <input required type="checkbox" name="terms" />
+                    <label htmlFor="check-out-form">I have read the <a style={{color:"green"}}>terms of service</a></label>
+                </div>
+                <input 
+                    type="submit" 
+                    value="Check Out"
+                    onClick={props.handleOnSubmitCheckoutForm}></input>
+            
         </div>
     )
 }
