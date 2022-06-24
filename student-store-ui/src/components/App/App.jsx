@@ -19,6 +19,7 @@ export default function App() {
   const [shoppingCart, setShoppingCart] = React.useState([])
   const [checkoutForm, setCheckoutForm] = React.useState({email:"", name:""})
   const [checkoutMessage, setCheckoutMessage] = React.useState("")
+  const [purchaseOrder, setPurchaseOrder] = React.useState(null)
 
   const getData = async () => {
     setIsFetching(true)
@@ -82,10 +83,10 @@ export default function App() {
 
   async function handleOnSubmitCheckoutForm() {
     // check if shopping cart is full and user has inputted the fields
-    if (!shoppingCart) {
+    if (!shoppingCart || shoppingCart.length === 0) {
       setCheckoutMessage("Your shopping cart is empty!")
       return null;
-    } else if (!checkoutForm.name || !checkoutForm.email) {
+    } else if (!checkoutForm || !checkoutForm.name || !checkoutForm.email) {
       setCheckoutMessage("Missing name or email. Please enter to continue checking out.")
       return null;
     }
@@ -97,9 +98,11 @@ export default function App() {
 
     axios.post("http://localhost:3001/store", {user: checkoutForm, shoppingCart: shoppingCart} )
       .then((res) => {
-        // figure out what to do here LOL
-        console.log(111, res)
+        console.log(111, res.data.purchase)
         setCheckoutMessage("Success!")
+        setPurchaseOrder(res.data.purchase)
+        setShoppingCart([])
+        setCheckoutForm({email:"", name:""})
       })
       .catch((err) => {
         console.log(err)
@@ -107,8 +110,6 @@ export default function App() {
       })
       .finally(() => {
         setIsFetching(false)
-        setCheckoutForm({email:"", name:""})
-        setShoppingCart([])
       })
   }
   
@@ -124,7 +125,10 @@ export default function App() {
           checkoutForm={checkoutForm}
           handleOnCheckoutFormChange={handleOnCheckoutFormChange}
           handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
-          handleOnToggle={handleOnToggle} />
+          handleOnToggle={handleOnToggle}
+          checkoutMessage={checkoutMessage}
+          purchaseOrder={purchaseOrder}
+          setPurchaseOrder={setPurchaseOrder} />
         <Routes>
           <Route path="/" element={
             <Home

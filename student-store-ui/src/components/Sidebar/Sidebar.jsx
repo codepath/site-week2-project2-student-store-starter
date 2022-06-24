@@ -24,7 +24,10 @@ export default function Sidebar(props) {
           shoppingCart={props.shoppingCart}
           checkoutForm={props.checkoutForm}
           handleOnCheckoutFormChange={props.handleOnCheckoutFormChange}
-          handleOnSubmitCheckoutForm={props.handleOnSubmitCheckoutForm}/>
+          handleOnSubmitCheckoutForm={props.handleOnSubmitCheckoutForm}
+          checkoutMessage={props.checkoutMessage}
+          purchaseOrder={props.purchaseOrder}
+          setPurchaseOrder={props.setPurchaseOrder}/>
       </div>
     </section>
   )

@@ -15,12 +15,11 @@ export default function ShoppingCart( {isOpen=false, products=[], shoppingCart=[
   let subtotal = 0
   for (let i = 0; i < shoppingCart.length; i++) {
     let item = products.find(item => item.id === shoppingCart[i].itemId)
-    subtotal += shoppingCart[i].quantity * item.price
+    subtotal += parseFloat((shoppingCart[i].quantity * item.price).toFixed(2))
   }
   
-  let tax = subtotal * 0.0875
+  let tax = parseFloat((subtotal * 0.0875).toFixed(2))
   let total = subtotal + tax
-
 
   return (
     <div className="shopping-cart">

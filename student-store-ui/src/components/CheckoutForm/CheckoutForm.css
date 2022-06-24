@@ -1,0 +1,7 @@
+.checkout-form.hidden {
+    display: none;
+}
+
+.error {
+    color: red;
+}
