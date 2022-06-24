@@ -49,6 +49,8 @@ export default function App() {
       price: product.price,
     };
 
+    product.quantity = 1;
+
     setShoppingCart((shoppingCart) => [...shoppingCart, newObject]);
   };
 
@@ -98,7 +100,6 @@ export default function App() {
         shoppingCart,
       });
       setIsFetchingCheckoutForm(false);
-      console.log(response);
       if (response.statusText != "Created") {
         setError("Server error");
         setSuccessMsg("");
@@ -133,7 +134,6 @@ export default function App() {
       const response = await axios.get(API_URL + "/store");
 
       setProducts(response.data.products);
-      console.log("response: ", response);
     } catch (error) {
       console.error("Server error");
       setError("Server error");
