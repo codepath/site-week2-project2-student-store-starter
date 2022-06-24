@@ -4,10 +4,20 @@
   position: relative;
 }
 
+.product-card.expanded {
+  width: 400px;
+}
+
 .media img {
   height: 250px;
   width: 240px;
   object-fit: cover;
+  border-radius: calc(var(--border-radius-style) - 2px);
+}
+
+.product-card.expanded > .media img {
+  height: 420px;
+  width: 400px;
 }
 
 .product-name h1 {

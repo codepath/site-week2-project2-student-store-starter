@@ -4,7 +4,8 @@
   width: calc(100vw - 250px);
   margin: 0 auto;
   background-color: rgb(240, 242, 242);
-  border-radius: 10px;
+  background-color: rgb(232, 240, 238);
+  border-radius: var(--border-radius-style);
   padding: 30px;
   display: flex;
   flex-flow: row nowrap;

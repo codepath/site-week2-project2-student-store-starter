@@ -12,8 +12,11 @@ export default function ProductCard(props) {
   //   productQuantity = targetProduct.quantity
   // }
 
+
+  const productCardClassName = props.showDescription ? "product-card expanded" : "product-card"
+
   return (
-    <div className="product-card">
+    <div className={productCardClassName}>
       <div className="media">
         <Link to={"/products/" + props.productId}>
           <img src={props.product.image} alt={`Image of ${props.product.name}`} />
@@ -36,7 +39,6 @@ export default function ProductCard(props) {
       <div className="product-quantity">
         <p>{props.quantity > 0 ? props.quantity : ""}</p>
       </div>
-
     </div>
   )
 }

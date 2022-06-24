@@ -11,8 +11,33 @@ body {
   box-sizing: border-box;
 }
 
+input {
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: var(--border-radius-style);
+  border: none;
+  background-color: rgb(234, 234, 234);
+  color: var(--secondary-font);
+  font-family: 'Be Vietnam Pro', sans-serif; 
+}
+
+input:focus {
+  width: 100%;
+  background-color: rgb(223, 223, 223);
+  border: none;
+  outline: none;
+}
+
+button {
+  font-family: 'Be Vietnam Pro', sans-serif; 
+  border-radius: var(--border-radius-style);
+  border: none;
+  outline: none;
+}
+
 :root {
   --bg-light-grey: rgb(251, 251, 251);
+  --bg-sidebar: white;
   --accent-light-grey: rgb(211, 211, 211);
   --accent-mid-grey: rgb(150,150,150);
   --codepath-dark-grey: rgb(44,64,71);
@@ -22,4 +47,5 @@ body {
   --navbar-height: 90px;
   --sidebar-width: 75px;
   --border-style: 1px solid var(--accent-light-grey);
+  --border-radius-style: 10px;
 }

@@ -1,8 +1,31 @@
+.shopping-cart {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.notification {
+  color: rgb(165, 165, 165)
+}
+
 table {
     width: 100%;
     text-align: left;
   }
 
-table, thead, th, tr, td {
+thead, th, tr, td {
     border: var(--border-style);
+    padding: 5px;
+}
+
+.cart-product-cost {
+  text-align: right;
+}
+
+.total-table-label {
+  font-weight: 700;
+}
+
+.total-table-value {
+  text-align: right;
 }

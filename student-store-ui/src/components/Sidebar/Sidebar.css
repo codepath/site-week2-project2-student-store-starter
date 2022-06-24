@@ -3,14 +3,15 @@
     position: fixed;
     height: 100%;
     z-index: 9999999999999999999;
-    transition: width 0.5s;
+    transition: width 0.3s;
     transition-timing-function: ease-in-out;
     color: white;
-    width: 400px;
+    width: 500px;
+    overflow-y: auto;
 
-    /* background-color: white;
+    background-color: white;
     border-right: var(--border-style);
-    color: var(--font-primary); */
+    color: var(--font-primary);
 }
 
 .hidden {
@@ -25,4 +26,26 @@
     /* white-space: nowrap;
     overflow: hidden; */
     margin: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }
+
+/* width */
+.sidebar::-webkit-scrollbar {
+    width: 20px;
+  }
+  
+  /* Track */
+.sidebar::-webkit-scrollbar-track {
+    border-radius: 10px;
+    width: 10px;
+  }
+  
+  /* Handle */
+.sidebar::-webkit-scrollbar-thumb {
+    background: rgba(198, 198, 198, 0.5);
+    border-radius: 10px;
+    width: 3px;
+    border: 6px solid var(--bg-sidebar);
+  }
