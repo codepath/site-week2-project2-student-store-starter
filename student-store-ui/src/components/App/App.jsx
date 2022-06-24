@@ -56,7 +56,7 @@ export default function App() {
     console.log(checkoutForm)
   }
 
-  
+
   //handle on checkout form button for POST request
   const handleOnSubmitCheckoutForm = async (isTermsRead) => {
     if ((shoppingCart.length > 0)) {
@@ -65,8 +65,10 @@ export default function App() {
       console.log("shopping cart: ", shoppingCart); // debug
       console.log("user info: ", checkoutForm);
 
-      await axios.post(`${API_BASE_URL}/store/`, { user: checkoutForm,
-        shoppingCart: shoppingCart })
+      await axios.post(`${API_BASE_URL}/store/`, {
+        user: checkoutForm,
+        shoppingCart: shoppingCart
+      })
         .then((res) => {
           console.log("purchase order created succesfully! ", res);
           // state for Receipt component
@@ -77,7 +79,7 @@ export default function App() {
 
 
       setIsCreating(false);
-      
+
       // reset states 
       setCheckoutForm(checkoutFormInitState);
       setShoppingCart([]);
@@ -117,7 +119,7 @@ export default function App() {
 
       //append to state array
       setShoppingCart([...shoppingCartNew, newProduct]);
-      
+
     }
     console.log(`item:${newProduct.itemId} incremented ${newProduct.quantity}`); // debug
   }
@@ -130,7 +132,7 @@ export default function App() {
     };
 
     newProduct.itemId = product.id;
-    
+
     //find if product exists 
     let findProduct = shoppingCart.find((cartProduct) => cartProduct.itemId === product.id);
     if (findProduct) {
@@ -140,12 +142,12 @@ export default function App() {
         let shoppingCartNew = shoppingCart.filter((e) => {
           return e.itemId !== newProduct.itemId;
         })
-        
+
         // update
         setShoppingCart(shoppingCartNew);
 
         console.log(`item: ${newProduct.itemId} removed from cart`);
-      } else if ((findProduct.quantity-1) > 0) {
+      } else if ((findProduct.quantity - 1) > 0) {
         newProduct.quantity = findProduct.quantity - 1;
 
         //get all the elements except new
@@ -156,7 +158,7 @@ export default function App() {
         setShoppingCart([...shoppingCartNew, newProduct])
         console.log(`item: ${newProduct.itemId} decremented ${newProduct.quantity}`);
       }
-    } 
+    }
   }
 
   //check if fetching to prevent undefined errors
@@ -176,8 +178,22 @@ export default function App() {
             handleOnCheckoutFormChange={handleOnCheckoutFormChange}
             handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm} />
           <Routes>
-            <Route path="/" element={<Home isFetching={isFetching} products={products} setShoppingCart={setShoppingCart} shoppingCart={shoppingCart} />} />
-            <Route path="/products/:productId" element={<ProductDetail products={products} setShoppingCart={setShoppingCart} shoppingCart={shoppingCart} />} />
+            <Route path="/"
+              element={<Home
+                isFetching={isFetching}
+                products={products}
+                setShoppingCart={setShoppingCart}
+                shoppingCart={shoppingCart}
+                handleAddItemToCart={handleAddItemToCart}
+                handleRemoveItemFromCart={handleRemoveItemFromCart} />} />
+            <Route path="/products/:productId"
+              element={<ProductDetail
+                products={products}
+                setShoppingCart={setShoppingCart}
+                shoppingCart={shoppingCart}
+                handleAddItemToCart={handleAddItemToCart}
+                handleRemoveItemFromCart={handleRemoveItemFromCart} />
+              } />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer></Footer>
