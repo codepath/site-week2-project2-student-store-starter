@@ -56,22 +56,22 @@ export function CategoryFilterBar(props) {
   return (
     <div className="category-filter-bar">
       <h2>Shop</h2>
-      <div className="filter-buttons">
-        <h3>Filter by</h3>
-        <CategoryFilter
-          label={"All Categories"}
-          onClick = {() => props.setActiveCategory(null)}
-          isActive={!(props.activeCategory)} />
-
-        {categories.map(category => (
+        <div className="filter-buttons">
+          <h3>Filter by</h3>
           <CategoryFilter
-            key={category}
-            label={category.charAt(0).toUpperCase() + category.slice(1)}
-            onClick = {() => props.setActiveCategory(category)}
-            isActive={category == props.activeCategory}
-          />
-        ))}
-      </div>
+            label={"All Categories"}
+            onClick = {() => props.setActiveCategory(null)}
+            isActive={!(props.activeCategory)} />
+
+          {categories.map(category => (
+            <CategoryFilter
+              key={category}
+              label={category.charAt(0).toUpperCase() + category.slice(1)}
+              onClick = {() => props.setActiveCategory(category)}
+              isActive={category == props.activeCategory}
+            />
+          ))}
+        </div>
     </div>
     )
 }

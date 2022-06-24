@@ -53,7 +53,7 @@ export default function ShoppingCart( {isOpen=false, products=[], shoppingCart=[
           </tr>
           <tr className="total-table-row">
             <td className="total-table-label">Total</td>
-            <td className="total-table-value">{"$"+total.toFixed(2)}</td>
+            <td className="total-table-value total">{"$"+total.toFixed(2)}</td>
           </tr>
         </tbody>
       </table>

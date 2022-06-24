@@ -22,7 +22,7 @@ thead, th, tr, td {
   text-align: right;
 }
 
-.total-table-label {
+.total-table-label, .total {
   font-weight: 700;
 }
 
