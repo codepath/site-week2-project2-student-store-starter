@@ -1,7 +1,5 @@
-/* .product-detail{
-    height: 350px;
-    width: 250px;
+.product-detail {
     display: flex;
-    flex-direction: column;
-    border: solid 1px #b5b5b5;
-} */
+    justify-content: center;
+    margin-top: 140px;
+}

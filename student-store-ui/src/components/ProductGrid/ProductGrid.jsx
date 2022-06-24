@@ -4,10 +4,18 @@ import "./ProductGrid.css"
 
 export default function ProductGrid(props) {
 
+//   const getQuantity = () =>{
+//     {props.products.map((product) => {
+//         quantity = quantity ? quantity.quantity : 0
+//     })
+//     }
+//     getQuantity=quantity
+// }
+
   let displayProducts ={};
 
-  console.log(props.products)
-  console.log(props.isCategory)
+  //console.log(props.products)
+  //console.log(props.isCategory)
     if(props.isCategory == "all" ){
       displayProducts = props.products;
     }else{
@@ -22,14 +30,15 @@ export default function ProductGrid(props) {
       })
     }
 
-    console.log(displayProducts)
+    console.log("ProductGRid", props)
     return (
     <div className="product-grid">
       <div className="content">
       <div className="grid">
         {displayProducts.map((product) => (
         // <p key={index}>{product.name}</p>
-        <ProductCard key={product.id} showDescription={false} product={product} productId={product.id} quantity={props.quantity} handleAddItemToCart={props.handleAddItemToCart} handleRemoveItemFromCart={props.handleRemoveItemFromCart} />
+        
+        <ProductCard  key={product.id} showDescription={false} product={product} productId={product.id} quantity={props.quantity} handleAddItemToCart={props.handleAddItemToCart} handleRemoveItemFromCart={props.handleRemoveItemFromCart} shoppingCart={props.shoppingCart} />
         
       ))}
       {/* </div> */}

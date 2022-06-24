@@ -2,9 +2,13 @@ import * as React from "react"
 import { Link } from "react-router-dom"
 import "./ProductCard.css"
 
-export default function ProductCard(props) {
-    const product = props.product
-    //console.log(product)
+
+export default function ProductCard({product, handleAddItemToCart, productId}) {
+   
+    //const product = props.product
+    
+    
+    
     return (
         <div className="product-card">
             <div className="media">
@@ -13,9 +17,25 @@ export default function ProductCard(props) {
                 </Link>     
             </div>
             <div className="product-info">
-                <div className="details">
+                <div className="info">
                     <p className="product-name">{product.name}</p>
                     <p className="product-price">${product.price}</p>
+                </div>
+                <div className="actions">
+                    <div className="buttons">
+                        <button id="material-icons" onClick={() => handleAddItemToCart(productId)}>
+                            <i className="material-icons" >
+                            add
+                            </i>
+                        </button>
+                        <button id= "material-icons" >
+                            <i className="material-icons" >
+                            remove
+                            </i>
+                        </button>
+                    </div>
+
+                    {product.quantity ? <span className="quantity"><span className="amt">{props.quantity}</span></span> : null}
                 </div>
             </div>    
         </div>

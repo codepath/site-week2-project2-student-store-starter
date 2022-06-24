@@ -1,15 +1,104 @@
 .product-card {
-    height: 350px;
+    /* height: 350px;
     background: white;
     display: flex;
     flex-direction: column;
+    width: 250px; */
+    height: 350px;
     width: 250px;
+    background: var(--pure-white);
+    display: flex;
+    flex-direction: column;
+    border: solid 1px var(--border-color);
 }
 
-.media img {
-    width: 100%;
+.product-card .media img {
+    /* width: 100%;
     max-width: 500px;
     height: 250px;
     display: flex;
-    justify-content: center;
+    justify-content: center; */
+    height: 250px;
+    width: 248px;
 }
+
+.product-card .media{
+    height: 250px;
+    width: 100%;
+}
+
+.product-info{
+    flex: 1;
+    display: flex;
+    border-top: solid 1px var(--border-color);
+}
+
+.product-card .product-info{
+    flex: 1;
+    display: flex;
+    border-top: solid 1px var(--border-color);
+}
+
+.product-card .info{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 12px;
+}
+
+.product-card .info .product-name{ 
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.product-card .info .product-price {
+    font-size: 14px;
+}
+
+.product-card .actions {
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .product-card.actions .quantity {
+    width: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 5px;
+  }
+
+  .product-card .actions .quantity .amt {
+    background: var(--accent-orange);
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .product-card .actions .buttons {
+    width: 80px;
+    height: 100%;
+  
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+
+  .product-card .actions .buttons i {
+    width: 20px;
+    height: 20px;
+    border: solid 1px var(--bright-green);
+    color: var(--bright-green);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    margin: 10px 5px;
+  }

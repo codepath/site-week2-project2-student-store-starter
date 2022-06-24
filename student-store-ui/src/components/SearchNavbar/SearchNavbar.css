@@ -1,6 +1,8 @@
 .product-categories{
     display: flex;
-    padding-right: 2rem;
-    min-width: 65%;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-around;
+    height: 40px; 
 }
+
