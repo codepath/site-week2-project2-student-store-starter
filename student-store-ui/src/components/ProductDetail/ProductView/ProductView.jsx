@@ -9,7 +9,6 @@ export default function ProductView({product, productId, handleAddItemToCart, ha
             <h1 className="product-id">Product # {productId}</h1>
             <ProductCard product = {product} productId = {productId} handleAddItemToCart = {handleAddItemToCart} 
             handleRemoveItemFromCart = {handleRemoveItemFromCart} quantity = {quantity} showDescription = {true}/>
-            
         </div>
     )
 }

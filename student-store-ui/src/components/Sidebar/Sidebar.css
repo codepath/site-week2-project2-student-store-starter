@@ -33,3 +33,17 @@
     display: block;
     transition: all ease-out 300ms;
   }
+
+  .toggle-button{
+    border: none;
+    margin-top: 30%;
+    background-color: darkolivegreen;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+
+.open{
+    width: 350px;
+    display: block;
+}

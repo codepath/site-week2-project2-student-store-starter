@@ -1,0 +1,47 @@
+.product-price {
+    font-size: 20px;
+    margin: 0px;
+    text-align: center;
+}
+
+.product-name{
+    font-size: 25px;
+    margin: 0px;
+    text-align: center;
+}
+
+.product-card{
+    border: solid black 1px;
+    border-radius: 5px;
+    margin: 10px 10px;
+    width: 30%;
+    background-color: bisque;
+    box-shadow: 5px 5px 3px #999;
+    padding-left: 10px;
+}
+
+.product-image{
+    width: 150px;
+    text-align: center;
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+}
+
+.add, .remove{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.product-quantity{
+    text-align: center;
+}
+
+.buttonsAndQuantity{
+    display: inline;
+}
