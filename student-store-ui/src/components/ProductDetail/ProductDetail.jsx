@@ -31,7 +31,6 @@ export default function ProductDetail( handleAddItemsToCart, handleRemoveItemToC
         axios 
         .get(`https://codepath-store-api.herokuapp.com/store/${productId}`)
         .then(function(response) {
-        console.log("data: ", response.data.product)
         setCurrProd(response.data.product)
         setLoading(false)
         // console.log("products: ", data.products)
@@ -40,7 +39,7 @@ export default function ProductDetail( handleAddItemsToCart, handleRemoveItemToC
             console.log("error: ", error)
             setLoading(true)
         })
-      })
+      }, [])
   return (
         <div className="product-detail">
             {/* {loading != true && currProduct != null

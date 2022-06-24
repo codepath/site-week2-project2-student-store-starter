@@ -24,15 +24,7 @@ export default function App() {
   const [checkoutForm, setCheckoutForm] = useState([]);
   const [error, setErrorStat] = useState("");
   const URL = "https://codepath-store-api.herokuapp.com/store";
-  // useEffect( async() => {
-  //   const productsRes = await axios
-  //   .get(`https://codepath-store-api.herokuapp.com/store`)
-  //   .then((res) => {
-  //     setProductStat(res.data);
-  //     console.log(products);
-  //   })
-  //   .catch((err) => console.error(err));
-  // });
+
   useEffect(async()  => {
     const {data} = await axios(URL)
     .catch(function(error){
@@ -41,7 +33,7 @@ export default function App() {
   })
     setProductStat(data.products)
     // console.log("products: ", data.products)
-  })
+  },[])
   // fetchProducts();
 
   function handleOnToggle(){
@@ -52,16 +44,55 @@ export default function App() {
     // it doesn't exist, and set its quantity to 1.
     //  It should add the price of the product to the total 
     // price of the shoppingCart.
+    console.log("cart: ", shoppingCart)
+    let temp = [...shoppingCart];
+    let inCart = false;
+
+    temp = temp.map((item) =>
+    {
+      if(item.itemId === productId){
+        inCart = true;
+        return{...item, quantity: item.quantity + 1};
+      }
+      else{
+        return item;
+      }
+
+    }
+    );
+    if(!inCart){
+      temp = [...temp, {itemId: productId, quantity: 1}];
+    }
+    setShoppingCartStat(temp)
     
   };
   function handleRemoveItemToCart(productId){
-    //TODO
+    console.log("cart: ", shoppingCart)
+    let temp = [...shoppingCart];
+    let inCart = false;
+
+    temp = temp.map((item) =>
+    {
+      if(item.itemId === productId){
+        inCart = true;
+        return{...item, quantity: item.quantity - 1};
+      }
+      else{
+        return item;
+      }
+
+    }
+    );
+    if(!inCart){
+      temp = [...temp, {itemId: productId, quantity: 0}];
+    }
+    setShoppingCartStat(temp)
   };
   function handleOnCheckoutFormChange(name, value){
     //TODO: It should update the checkoutForm object 
     // with the new value from the correct input(s)
   };
-  function handleOnSubmitCheckoutForm(){
+  function handleOnSubmitCheckoutForm(name, value){
 
   };
 
