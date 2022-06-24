@@ -16,7 +16,7 @@ class Store {
 
     static async getProducts() {
         //get all products
-        const products = storage.get("products").orderBy("id", "desc");
+        const products = storage.get("products").orderBy("id", "asc");
         return products;
     }
 
@@ -27,11 +27,12 @@ class Store {
     }
 
     static async getPurchases() {
-
+        const purchases = storage.get("purchases").orderBy("purchasedAt","desc");
+        return purchases
     }
 
     static async fetchPurchase() {
-
+        //TODO: implement this
     }
 }
 
