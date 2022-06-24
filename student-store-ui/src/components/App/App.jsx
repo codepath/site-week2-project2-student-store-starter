@@ -34,6 +34,7 @@ export default function App() {
   const handleAddItemToCart = (product) => {
     for (let i = 0; i < shoppingCart.length; i++) {
       if (shoppingCart[i].itemId === product.id) {
+        product.quantity += 1;
         shoppingCart[i].quantity += 1;
 
         setShoppingCart((shoppingCart) => [...shoppingCart]);
