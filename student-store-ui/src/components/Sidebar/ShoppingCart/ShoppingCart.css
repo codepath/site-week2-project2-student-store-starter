@@ -1,7 +1,15 @@
 .cartResults{
-    display: inline;
+    display: flex;
+    vertical-align: center;
 }
 
 .cartResults h3{
-    margin-left: 30px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+.subtotal, .total-price, .cart-product-quantity{
+    font-weight: normal;
+    font-size: 20px;
 }

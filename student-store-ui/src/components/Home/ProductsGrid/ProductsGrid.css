@@ -41,7 +41,7 @@ input{
     font-size: 16px;
 }
 
-.submitButton{
+.search-button{
     border: solid darkslategray 2px;
     border-radius: 5px;
     height: 28.5px;

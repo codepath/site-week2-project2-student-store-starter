@@ -6,7 +6,7 @@ export default function ProductCard({product, quantity, productId, handleAddItem
     return (
         <div className="product-card">
             <h1 className="product-name">{product.name}</h1>
-            <h1 className="product-price">${product.price}</h1>
+            <h1 className="product-price">${Number(product.price).toFixed(2)}</h1>
             {showDescription ? <p className = "product-description">{product.description}</p>: null}
             <div className="media">
                 <Link to = {`/products/${productId}`} ><img src={product.image} className = "product-image" alt="picture of {product}" /></Link>

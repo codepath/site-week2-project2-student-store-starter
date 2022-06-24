@@ -46,7 +46,7 @@ export default function ShoppingCart({isOpen, products, shoppingCart}){
                     )
                 })}
                 <h3 className="subtotal">Subtotal: ${sumPrices(shoppingCart)}</h3>
-                <h3 className="total-price">Total: ${(sumPrices(shoppingCart) * 1.0875).toFixed(2)}</h3>
+                <h3 className="total-price">Total including tax: ${(sumPrices(shoppingCart) * 1.0875).toFixed(2)}</h3>
             
             </div>
             }
