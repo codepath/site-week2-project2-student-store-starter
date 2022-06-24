@@ -8,7 +8,7 @@ export default function ProductsGrid({getQuantity, products, handleAddItemToCart
         <div className="product-grid">
             <form action="" className="productsGrid"> 
                 <input type="text" className="search-bar" onChange={event => setQuery(event.target.value)}/>
-                <button type="submit" className="search-button" onClick = {() => handleOnSearch}>Search!</button>
+                <button type="button" className="search-button" onClick = {() => handleOnSearch}>Search!</button>
             </form>
 
             <nav className="categoriesNav">

@@ -1,81 +1,78 @@
-import * as React from "react"
-import Navbar from "../Navbar/Navbar"
-import Sidebar from "../Sidebar/Sidebar"
-import Home from "../Home/Home"
-import {BrowserRouter, Routes, Route} from "react-router-dom"
-import "./App.css"
-import HeroBanner from "../Home/HeroBanner/HeroBanner"
-import Footer from "../Footer/Footer"
-import About from "../About/About"
-import ProductDetail from "../ProductDetail/ProductDetail"
-import NotFound from "../NotFound/NotFound"
-import { useState, useEffect } from "react"
-import axios from "axios"
+import * as React from "react";
+import Navbar from "../Navbar/Navbar";
+import Sidebar from "../Sidebar/Sidebar";
+import Home from "../Home/Home";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+import HeroBanner from "../Home/HeroBanner/HeroBanner";
+import Footer from "../Footer/Footer";
+import About from "../About/About";
+import ProductDetail from "../ProductDetail/ProductDetail";
+import NotFound from "../NotFound/NotFound";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 export default function App() {
-  let user = {name: "", email: ""}
-  const [products, setProducts] = useState([])
-  const [isFetching, setIsFetching] = useState(false)
-  const [error, setError] = useState()
-  
-  const [isOpen, setIsOpen] = useState(false)
-  const [shoppingCart, setShoppingCart] = useState([])
-  const [checkoutForm, setCheckoutForm] = useState({})
-  const [query, setQuery] = useState("")
-  const [category, setCategory] = useState("all")
-  const URL = 'https://codepath-store-api.herokuapp.com/store'
+  let user = { name: "", email: "" };
+  const [products, setProducts] = useState([]);
+  const [isFetching, setIsFetching] = useState(false);
+  const [error, setError] = useState();
 
-  const getData = async() => {
-    setIsFetching(true)
-    let filteredItems = []
-    try{
-      const {data} = await axios.get(URL);
-      console.log('data: ', data);
-      console.log('query: ', query);
-      console.log('category: ', category);
+  const [isOpen, setIsOpen] = useState(false);
+  const [shoppingCart, setShoppingCart] = useState([]);
+  const [checkoutForm, setCheckoutForm] = useState({});
+  const [query, setQuery] = useState("");
+  const [category, setCategory] = useState("all");
+  const URL = "https://codepath-store-api.herokuapp.com/store";
 
-      if (data.products.length == 0){
-        setError("no products")
+  const getData = async () => {
+    setIsFetching(true);
+    let filteredItems = [];
+    try {
+      const { data } = await axios.get(URL);
+
+      if (data.products.length == 0) {
+        setError("no products");
       }
-      if (query == "" && category == "all"){
-        setProducts(data.products)
-        console.log('products: ', products);
-      }
-      else if (query == ""){
-        {data.products.forEach((product) => 
-          {product.category == category ? 
-            filteredItems.push(product) :
-            null
-          })
+      if (query == "" && category == "all") {
+        setProducts(data.products);
+      } else if (query == "") {
+        {
+          data.products.forEach((product) => {
+            product.category == category ? filteredItems.push(product) : null;
+          });
         }
-        setProducts(filteredItems)
-      }
-      else if (category == "all"){
-        (data.products).forEach((product) => {
-          if (product.name.substring(0, query.length).toLowerCase() === search.toLowerCase()) {
-            filteredItems.push(product)
+        setProducts(filteredItems);
+      } else if (category == "all") {
+        data.products.forEach((product) => {
+          if (
+            product.name.substring(0, query.length).toLowerCase() ===
+            query.toLowerCase()
+          ) {
+            filteredItems.push(product);
           }
-        })
-        setProducts(filteredItems)
-        
-      }
-      else{
-        (data.products).forEach((product) => {
-          if (product.name.substring(0, query.length).toLowerCase() === search.toLowerCase() && product.category == category) {
-            filteredItems.push(product)
+        });
+        setProducts(filteredItems);
+      } else {
+        data.products.forEach((product) => {
+          if (
+            product.name.substring(0, query.length).toLowerCase() ===
+            query.toLowerCase() &&
+            product.category == category
+          ) {
+            filteredItems.push(product);
           }
-        })
-        setProducts(filteredItems)
+        });
+        setProducts(filteredItems);
       }
+    } catch (err) {
+      setError(err);
     }
-    catch(err){
-      setError(err)
-    }
-  }
-    
+  };
+
   useEffect(() => {
     getData();
-    setIsFetching(false)
+    setIsFetching(false);
   }, [query, category]);
 
   // useEffect(() => {
@@ -86,25 +83,24 @@ export default function App() {
 
   function handleOnToggle() {
     if (isOpen) {
-      setIsOpen(false)
-    }
-    else{
-      setIsOpen(true)
+      setIsOpen(false);
+    } else {
+      setIsOpen(true);
     }
   }
 
-  function getQuantity(product){
-    for (let j = 0; j < shoppingCart.length; j++){
-        if (shoppingCart[j].itemId == product.id){
-            return shoppingCart[j].quantity}
+  function getQuantity(product) {
+    for (let j = 0; j < shoppingCart.length; j++) {
+      if (shoppingCart[j].itemId == product.id) {
+        return shoppingCart[j].quantity;
+      }
     }
-    return 0
+    return 0;
   }
 
   function handleAddItemToCart(productId) {
-    for (let i = 0; i<shoppingCart.length; i++){
-      if (shoppingCart[i].itemId == productId){
-        
+    for (let i = 0; i < shoppingCart.length; i++) {
+      if (shoppingCart[i].itemId == productId) {
         shoppingCart[i].quantity += 1;
         setShoppingCart([...shoppingCart]);
         return;
@@ -114,27 +110,26 @@ export default function App() {
       itemId: productId,
       quantity: 1,
       key: productId,
-    }
-    setShoppingCart([...shoppingCart, newItem])
+    };
+    setShoppingCart([...shoppingCart, newItem]);
   }
 
   function handleRemoveItemFromCart(productId) {
-      for (let i = 0; i<shoppingCart.length; i++){
-        if (shoppingCart[i].itemId == productId){
-          if (shoppingCart[i].quantity -1 == 0){
-            shoppingCart.splice(i,1)
-            setShoppingCart([...shoppingCart])
-          }
-          else{
-            shoppingCart[i].quantity -=1 
-            setShoppingCart([...shoppingCart])
-          }
+    for (let i = 0; i < shoppingCart.length; i++) {
+      if (shoppingCart[i].itemId == productId) {
+        if (shoppingCart[i].quantity - 1 == 0) {
+          shoppingCart.splice(i, 1);
+          setShoppingCart([...shoppingCart]);
+        } else {
+          shoppingCart[i].quantity -= 1;
+          setShoppingCart([...shoppingCart]);
         }
+      }
       // }
     }
   }
 
-  function handleOnCheckoutFormChange(name, value){
+  function handleOnCheckoutFormChange(name, value) {
     // var key = event.target.name
     // var val = event.target.value
 
@@ -147,126 +142,128 @@ export default function App() {
     // setCheckoutForm(newForm)
 
     if (name === "email") {
-      setCheckoutForm((checkoutForm) =>
-        ({ name: checkoutForm.name, 
-          email: value })
-    )}
-
-    else if (name === "name") {
-      setCheckoutForm((checkoutForm) =>
-        ({ name: value, 
-          email: checkoutForm.email })
-          
-    )}
+      setCheckoutForm((checkoutForm) => ({
+        name: checkoutForm.name,
+        email: value,
+      }));
+    } else if (name === "name") {
+      setCheckoutForm((checkoutForm) => ({
+        name: value,
+        email: checkoutForm.email,
+      }));
+    }
   }
 
-  function handleOnSubmitCheckOutForm(checkoutForm, shoppingCart){
+  function handleOnSubmitCheckOutForm(checkoutForm, shoppingCart) {
     let user = {
       name: checkoutForm.name,
-      email: checkoutForm.email
-    }
-    
+      email: checkoutForm.email,
+    };
+
     let userOrder = {
       user: user,
-      shoppingCart: shoppingCart
+      shoppingCart: shoppingCart,
+    };
+    if (userOrder.shoppingCart.length == 0) {
+      setError("please add items to cart");
     }
-    if (userOrder.shoppingCart.length == 0){
-      setError("please add items to cart")
-    }
-    
 
-    axios.post(URL, { userOrder
-    })
-    .then((response) => {
-      setError("success")
-      
-    }, (error) => {
-      setError("problem fetching data") 
-    });
+    axios.post(URL, { userOrder }).then(
+      (response) => {
+        setError("success");
+      },
+      (error) => {
+        setError("problem fetching data");
+      }
+    );
 
     if (checkoutForm.name.length == 0 || checkoutForm.email.length == 0) {
-      setError("User info must include an email and name.")
+      setError("User info must include an email and name.");
     }
 
-    setCheckoutForm({name:"", email: ""})
-    setShoppingCart([])
+    setCheckoutForm({ name: "", email: "" });
+    setShoppingCart([]);
   }
 
-  function handleOnSearch(products, query){
-    console.log("i calll search func")
-    console.log('products: ', products);
-    console.log('query: ', query);
-
+  function handleOnSearch(products, query) {
+    
     let searchResults = [];
-    console.log('searchResults: ', searchResults);
+
     products.forEach((product) => {
-      if (product.name.toLowerCase().includes(query)){
-        searchResults.push(product)
+      if (product.name.toLowerCase().includes(query)) {
+        searchResults.push(product);
       }
-    })
-    setProducts(searchResults)
-    console.log('searchResults: ', searchResults);
-    console.log('products: ', products);
+    });
+    setProducts(searchResults);
   }
-  
+
   return (
     <div className="app">
       <BrowserRouter>
-        
         <main>
           {/* YOUR CODE HERE! */}
           <div className="container">
-            <Sidebar 
-            isOpen = {isOpen} 
-            shoppingCart ={shoppingCart} 
-            products={products} 
-            checkoutForm={checkoutForm} 
-            handleOnCheckoutFormChange ={handleOnCheckoutFormChange} handleOnSubmitCheckoutForm = {handleOnSubmitCheckOutForm} 
-            handleOnToggle = {handleOnToggle} 
-            error = {error}/>
+            <Sidebar
+              isOpen={isOpen}
+              shoppingCart={shoppingCart}
+              products={products}
+              checkoutForm={checkoutForm}
+              handleOnCheckoutFormChange={handleOnCheckoutFormChange}
+              handleOnSubmitCheckoutForm={handleOnSubmitCheckOutForm}
+              handleOnToggle={handleOnToggle}
+              error={error}
+            />
 
             <div className="wrapper">
               <div className="navwrapper">
                 <Navbar />
               </div>
               <div className="home">
-              <Routes>
-                <Route exact path="/#about" component={About}/>
-                <Route exact path="/#contact" component={Footer}/>
-                <Route path="/" element={<Home 
-                products = {products} 
-                handleOnToggle = {handleOnToggle} 
-                handleAddItemToCart = {handleAddItemToCart} 
-                handleRemoveItemFromCart = {handleRemoveItemFromCart} 
-                shoppingCart = {shoppingCart}
-                query = {query}
-                setQuery = {setQuery}
-                handleOnSearch = {handleOnSearch}
-                getQuantity = {getQuantity}
-                setCategory = {setCategory}
-                />} 
-                />
+                <Routes>
+                  <Route exact path="/#about" component={About} />
+                  <Route exact path="/#contact" component={Footer} />
+                  <Route
+                    path="/"
+                    element={
+                      <Home
+                        products={products}
+                        handleOnToggle={handleOnToggle}
+                        handleAddItemToCart={handleAddItemToCart}
+                        handleRemoveItemFromCart={handleRemoveItemFromCart}
+                        shoppingCart={shoppingCart}
+                        query={query}
+                        setQuery={setQuery}
+                        handleOnSearch={handleOnSearch}
+                        getQuantity={getQuantity}
+                        setCategory={setCategory}
+                      />
+                    }
+                  />
 
-                <Route path="/products/:productId" element={<ProductDetail 
-                setError={setError} 
-                products ={products}
-                handleAddItemToCart = {handleAddItemToCart}
-                handleRemoveItemFromCart = {handleRemoveItemFromCart}
-                getQuantity = {getQuantity} />} />
+                  <Route
+                    path="/products/:productId"
+                    element={
+                      <ProductDetail
+                        setError={setError}
+                        products={products}
+                        handleAddItemToCart={handleAddItemToCart}
+                        handleRemoveItemFromCart={handleRemoveItemFromCart}
+                        getQuantity={getQuantity}
+                      />
+                    }
+                  />
 
-                <Route path="*" element={<NotFound />} />
-              </Routes>
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
               </div>
               <About />
               <Footer />
             </div>
           </div>
-          
-          
+
           {/* <HeroBanner/> */}
         </main>
-        
       </BrowserRouter>
     </div>
-  )
+  );
 }
