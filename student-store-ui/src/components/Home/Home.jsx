@@ -54,7 +54,7 @@ export default function Home(props) {
       
 
       <div className = "grid">
-         <ProductGrid products = {sortBySearch} handleAddItemToCart = {props.handleAddItemToCart}/> 
+         <ProductGrid products = {sortBySearch} handleAddItemToCart = {props.handleAddItemToCart} handleRemoveItemFromCart = {props.handleRemoveItemFromCart} shoppingCart = {props.shoppingCart}/> 
       </div>
 
 

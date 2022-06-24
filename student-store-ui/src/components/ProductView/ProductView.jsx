@@ -6,6 +6,17 @@ export default function ProductView(props) {
   
     console.log(11,props.product);
     let price = props.product.price.toFixed(2)
+
+
+    
+
+
+
+ 
+
+
+
+
     return (
         
 

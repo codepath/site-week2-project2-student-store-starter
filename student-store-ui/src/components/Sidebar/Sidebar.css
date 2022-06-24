@@ -1,5 +1,5 @@
 .sidebar.closed{
-    height: 100vh; /* Full-height: remove this if you want "auto" height */
+    height: 100%; /* Full-height: remove this if you want "auto" height */
     width: 80px; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     display: flex;
@@ -22,10 +22,12 @@
     background: rgb(44, 64, 71);
     overflow: auto; /* Disable horizontal scroll */
     padding-top: 20px;
+
   } 
 
   .sidebar-container {
-    margin-top: 15%;
+    margin-top: 70px;
+    margin-left: 2%;
     display: inline-block;
     justify-content: center;
 
@@ -45,10 +47,12 @@
 
   .right-arrow-icon{
     margin-bottom: 100%;
+    color:white;
   }
 
   .arrow-btn {
-    margin-left: 30px;
+
+    margin-left: 150px;
     margin-bottom: 200px;
     margin: 0;
     background: rgb(44, 64, 71);

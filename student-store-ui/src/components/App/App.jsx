@@ -30,29 +30,61 @@ export default function App() {
   function handleOnToggle() {
   }
 
-
+  //handler logic to add item to cart
   function handleAddItemToCart(productId) {
-    console.log("shoppingCart before:", shoppingCart)
-    var value = shoppingCart.find((object) => {
-      if (object.itemId === productId){
-        return true
-      }
-    })
-    if (value === undefined) {
-      shoppingCart.push({ itemId: productId, quantity: 1})
+    // console.log("shoppingCart before ADD:", shoppingCart)
+    let value = shoppingCart.find((object) => object.itemId === productId)
+    console.log("value is",value)
+    if (value == undefined) {
+      setShoppingCart((currentCart) => [
+        ...currentCart, {itemId: productId, quantity: 1}
+      ])
     }
     else{
-      shoppingCart.map((object) => {
-        if (object.itemId === productId) {
-          object.quantity += 1
-        }
-      })
+      let cartCopy = shoppingCart.filter((object) => {
+        return (object.itemId !== productId)
+        })
+        value.quantity += 1
+        setShoppingCart(() => [
+          ...cartCopy, {itemId: value.itemId, quantity: value.quantity}
+        ])
     }
-    console.log("shoppingCart after:", shoppingCart)
+    // console.log("shoppingCart after ADD:", shoppingCart)
   }
 
 
-  function
+  //handler logic to remove item from cart
+  function handleRemoveItemFromCart(productId){
+    // console.log("shoppingCart before DELETE:", shoppingCart)
+    let value = shoppingCart.find((object) => object.itemId === productId)
+
+    if (value != undefined) {
+      shoppingCart.map((object) => {
+        if (object.itemId === productId) {
+          if(object.quantity <= 1){
+            let cartCopy = shoppingCart.filter((object) => {
+              return (object.itemId !== productId)
+              })
+              setShoppingCart(() => [
+                ...cartCopy
+              ])
+          }
+          else if (object.quantity > 1){
+            let value = shoppingCart.find((object) => object.itemId === productId)
+            value.quantity -= 1
+            let cartCopy = shoppingCart.filter((object) => {
+              return (object.itemId !== productId)
+              })
+              setShoppingCart(() => [
+                ...cartCopy, {itemId: value.itemId, quantity: value.quantity}
+              ])
+          }
+        }
+      })
+      // console.log("shoppingCart after DELETE:", shoppingCart)
+    }
+
+  }
 
 
   const getProducts = async () => {
@@ -85,7 +117,7 @@ export default function App() {
         <Navbar />
         <Sidebar isOpen = {isOpen} setIsOpen = {setIsOpen} products = {products} shoppingCart = {shoppingCart} setShoppingCart = {setShoppingCart} checkoutForm ={checkoutForm} setCheckoutForm = {setCheckoutForm}/> 
         <Routes>
-          <Route path = "/" element = {<Home products = {products} selectedCategory = {selectedCategory} setSelectedCategory = {setSelectedCategory} handleAddItemToCart = {handleAddItemToCart}/>}  />
+          <Route path = "/" element = {<Home products = {products} selectedCategory = {selectedCategory} setSelectedCategory = {setSelectedCategory} handleAddItemToCart = {handleAddItemToCart} handleRemoveItemFromCart = {handleRemoveItemFromCart} shoppingCart = {shoppingCart}/>}  />
           <Route path = "/products/:productId" element = {<ProductDetail products = {products} isFetching = {isFetching} setIsFetching = {setIsFetching} error = {error} setError = {setError}/>} /> 
           <Route path = "*" element = {<NotFound />}/> 
         </Routes> 

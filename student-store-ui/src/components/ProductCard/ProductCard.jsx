@@ -4,8 +4,16 @@ import {BrowserRouter as Router, Link} from 'react-router-dom';
 
 export default function ProductCard(props) {
 
-    let linkAddress = "/products/" + props.productId
-    let price = props.price.toFixed(2)
+    let linkAddress = "/products/" + props.productId;
+    let price = props.price.toFixed(2);
+    let quantity;
+    
+    props.shoppingCart.map((item) => {
+      if (item.itemId === props.productId) {
+        quantity = item.quantity
+      }
+    })
+
 
   return (
 
@@ -14,8 +22,9 @@ export default function ProductCard(props) {
         <div className = "product-details">
             <h5 className = "product-name">{props.name}</h5>
             <button className = "add" onClick = { () => props.handleAddItemToCart(props.productId)}><i class="fa-solid fa-cart-plus"></i></button>
-            <button className = "remove"><i class="fa-solid fa-trash-can"></i></button>
+            <button className = "remove" onClick = { () => props.handleRemoveItemFromCart(props.productId)}><i class="fa-solid fa-trash-can"></i></button>
             <p className = "product-price"><i class="fa-solid fa-coins"></i>  ${price}</p>
+            {quantity ? <p className = "product-quantity">{quantity}</p> : ""}
         </div>
 
 

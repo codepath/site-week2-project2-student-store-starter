@@ -12,7 +12,7 @@ export default function ProductGrid(props) {
         
      
         {props.products.map((product) => 
-            <ProductCard key = {product.id} productId = {product.id} showDescription = {false} name = {product.name} price = {product.price} image = {product.image} product = {product} handleAddItemToCart = {props.handleAddItemToCart}/>
+            <ProductCard key = {product.id} productId = {product.id} showDescription = {false} name = {product.name} price = {product.price} image = {product.image} product = {product} handleAddItemToCart = {props.handleAddItemToCart} handleRemoveItemFromCart = {props.handleRemoveItemFromCart} shoppingCart = {props.shoppingCart}/>
         )}
         
     </div>
