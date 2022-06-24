@@ -307,4 +307,4 @@ Everything went as planned on my demo, I made sure everything works and intended
 ### Shout out
 
 Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
-I would like to give shoutout to one of my pod mate during the last 3 days of the week, Kian, though he didn't actually help me with the technical stuff but I was able to notice some of the minor features or naming that I tend to miss when skimming through the spec of the project, which is really helpful. 
+* I would like to give shoutout to one of my pod mate during the last 3 days of the week, Kian, though he didn't actually help me with the technical stuff but I was able to notice some of the minor features or naming that I tend to miss when skimming through the spec of the project, which is really helpful. 
