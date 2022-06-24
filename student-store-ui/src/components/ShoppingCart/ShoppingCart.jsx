@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Checkout from "../Checkout/Checkout";
 import Receipt from "../Receipt/Receipt";
 import "./ShoppingCart.css";
@@ -8,53 +8,70 @@ export default function ShoppingCart({
   shoppingCart,
   setshoppingCart,
   products,
+  handleOnSubmitCheckoutForm,
+  handleOnCheckOutFormChange,
+  lastReceipt,
+  checkoutForm
 }) {
   var classNames = `shhopping-cart${isOpen ? "-active" : ""}`;
+  
 
-  var purchase = [];
+  const purchase = [];
 
   const [clicked, setClicked] = useState(false);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+ 
+ 
   const [show, setShow] = useState(false);
+  const [warning, setWarning] = useState("")
+  const [noProduct, setNoProduct] = useState("")
+  const [submit,setsubmit]= useState(false)
 
-  const [checked, SetChecked] = useState(false);
 
-  const handleChange = (event) => {
-    if (event.target.checked) {
-      SetChecked(true);
-    }
-    else {
-      SetChecked(false)
-    }
-  };
+  
+      console.log("HI",checkoutForm)
+  
 
+  // const handleChange = (event) => {
+  //   if (event.target.checked) {
+  //     SetChecked(true);
+  //   }
+  //   else {
+  //     SetChecked(false)
+  //   }
+  // };
   function handleOnclicked() {
-    setClicked(!clicked);
-    if (clicked == true && (name.length < 1 || email.length < 1)) {
-      setShow(false);
-    } else if (clicked == true && (name.length > 0 || email.length > 0)) {
-      setShow(true);
+
+    if (checkoutForm.name.length > 1 && checkoutForm.email.length > 1)
+    {
+      console.log("Working")
+      handleOnSubmitCheckoutForm()
+     
     }
-  }
-  function handleclicked() {
-    return clicked;
+    
+
+    
   }
 
-  for (var i = 0; i < shoppingCart.length; i++) {
+  if (purchase.length > 1)
+  {
+    setNoProduct("")
+    console.log(warning)
+  }
+   var newShoppingCart =[...shoppingCart]
+  for (var i = 0; i < newShoppingCart.length; i++) {
     products.map((element) => {
-      if (element.id == shoppingCart[i].itemId) {
+      if (element.id == newShoppingCart[i].itemId) {
         purchase.push({
           name: element.name,
           price: element.price,
-          quantity: shoppingCart[i].quantity,
+          quantity: newShoppingCart[i].quantity,
         });
       }
     });
   }
 
-  console.log(purchase);
-
+  console.log("New",lastReceipt)
+ 
   return (
     <div className={classNames}>
       <div className="open">
@@ -72,13 +89,13 @@ export default function ShoppingCart({
             <i className="material-icons md-48">add_shopping_cart</i>
           </span>
         </h3>
-        {shoppingCart.length <= 0 ? (
+        {newShoppingCart.length <= 0 ? (
           <div className="notification">
-            No items added to cart yet. Start shopping now!
+            No items added to cart yet. Start shopping now! Hhs
           </div>
         ) : (
           <div>
-            <Receipt purchase={purchase} shoppingCart={shoppingCart} />
+              <Receipt  purchase={purchase} shoppingCart={newShoppingCart} clicked={clicked} submit={submit} />
           </div>
         )}
 
@@ -97,8 +114,9 @@ export default function ShoppingCart({
                 name="name"
                 className="checkout-form-input"
                 type="text"
+                value={checkoutForm?.name}
                 placeholder="Student Name"
-                onChange={(e) => setName(e.target.value)}
+                onChange={(e) =>  handleOnCheckOutFormChange(e)}
               />
             </div>
           </div>
@@ -107,9 +125,10 @@ export default function ShoppingCart({
             <div className="control">
               <input
                 name="email"
+                value={checkoutForm?.email}
                 className="checkout-form-input"
                 type="email"
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => handleOnCheckOutFormChange(e)}
                 placeholder="student@codepath.org"
               />
             </div>
@@ -120,7 +139,8 @@ export default function ShoppingCart({
                 <input
                   name="termsAndConditions"
                   type="checkbox"
-                  onChange={handleChange}
+
+               //   onChange={handleChange}
                 />
                 <span className="label">
                   I agree to the{" "}
@@ -137,9 +157,12 @@ export default function ShoppingCart({
                 onClick={handleOnclicked}
               >
                 Checkout
-              </button>
+              </button> 
             </div>
+           
           </div>
+           <h3 className="warning">{warning} </h3>
+              <h3 className="warning">{noProduct}</h3>
         </div>
         <div className="checkout-success">
           <h3 className="check-info">
@@ -148,20 +171,23 @@ export default function ShoppingCart({
               <i className="material-icons md-48">fact_check</i>
             </span>
           </h3>
-
-          {clicked ? (
+          {lastReceipt.order?
             <Checkout
-              name={name}
-              email={email}
+             
+             
+           
               purchase={purchase}
-              shoppingCart={shoppingCart}
+              newShoppingCart={newShoppingCart}
               isOpen={isOpen}
-              checked={checked}
-            />
-          ) : (
-            ""
-          )}
-          {setShow ? "" : <h3>Please Fill forms first</h3>}
+              setshoppingCart={setshoppingCart}
+              clicked={clicked}
+              lastReceipt={lastReceipt}
+              
+            /> : ""
+          }
+          
+          
+        
 
           <div className="content">
             <p>

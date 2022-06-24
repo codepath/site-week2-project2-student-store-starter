@@ -1,7 +1,7 @@
 import './Receipt.css'
 
-export default function Receipt({ purchase }) {
-    console.log(purchase)
+export default function Receipt({ clicked, purchase,setshoppingCart ,submit}) {
+    console.log("Receipt" ,purchase)
     var subtotal=0
 
     for (var i = 0; i < purchase.length; i++)
@@ -10,8 +10,7 @@ export default function Receipt({ purchase }) {
     }
     var tax = ((8.75) / 100) * subtotal
     
-    var total = subtotal+tax
-
+  var total = subtotal + tax
 
   return (
     <div className="CartTable">

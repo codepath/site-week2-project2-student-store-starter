@@ -2,23 +2,27 @@ const express = require("express");
 const router = express.Router();
 
 const Products = require("../models/products_store");
-const {BadRequestError,NotFoundError} = require("../utils/errors")
+const { BadRequestError, NotFoundError } = require("../utils/errors")
+ 
 
 router.post("/", async (req, res, next) => {
   try {
-    const newPost = req.body.product
-    if (!newPost)
+    const user = req.body.user
+
+    const shoppingCart= req.body.shoppingCart
+
+    if (!user && !shoppingCart)
     {
       return next(new BadRequestError("No post found in request") )
     }
-    const post = await Products.createProduct(newPost)
-    res.status(201).json({ post })
-    
-  }
-  catch (err)
-  {
-    next(err)
-  }
+    const order = await Products.createOrder(user,shoppingCart)
+    res.status(201).json({"purchase": order})
+
+	} catch (error) {
+		next(new BadRequestError(error));
+	}
+
+  
   
 })
 

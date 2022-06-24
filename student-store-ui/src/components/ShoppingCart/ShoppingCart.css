@@ -8,6 +8,10 @@
   transition: all 0.4s;
   overflow-y: scroll;
 }
+.warning{
+  color: red;
+  margin-left: 10px;
+}
 .open .back {
   width: 10%;
   margin-left: 200px;

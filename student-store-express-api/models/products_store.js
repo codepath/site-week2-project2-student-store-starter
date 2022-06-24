@@ -1,13 +1,14 @@
 const { storage } = require('../data/storage')
 
 class Store {
-  static async createProduct(product) {
-    const postedAt = new Date().toISOString()
-    const newPost = { ...product, postedAt }
+  static async createOrder(user, shoppingCart) {
+    
+    const purchasedAt = new Date().toISOString()
+    const newOrder = { user, shoppingCart,purchasedAt }
 
-    storage.get("products").push(newPost).write()
+    storage.get("purchases").push(newOrder).write()
 
-    return newPost
+    return newOrder
   }
   static async listProducts() {
     const posts = storage.get("products").orderBy("id","desc")

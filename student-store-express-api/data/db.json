@@ -145,5 +145,271 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "id": 1,
+      "name": "Abrofo",
+      "purchasedAt": "2022-06-24T14:53:39.030Z"
+    },
+    {
+      "id": 20,
+      "name": "Ahofama",
+      "purchasedAt": "2022-06-24T14:54:00.532Z"
+    },
+    {
+      "id": 20,
+      "name": "Ahofama",
+      "purchasedAt": "2022-06-24T19:14:37.404Z"
+    },
+    {
+      "id": 20,
+      "name": "Ahofama",
+      "purchasedAt": "2022-06-24T19:14:38.654Z"
+    },
+    {
+      "id": 20,
+      "name": "Ahofama",
+      "purchasedAt": "2022-06-24T19:15:33.254Z"
+    },
+    {
+      "user": {
+        "name": "test",
+        "email": "test@test.com"
+      },
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "purchasedAt": "2022-06-24T19:17:29.111Z"
+    },
+    {
+      "user": {
+        "name": "test",
+        "email": "test@test.com"
+      },
+      "purchasedAt": "2022-06-24T19:29:23.234Z"
+    },
+    {
+      "shoppingCart": [
+        {
+          "itemId": 12,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-24T19:29:52.096Z"
+    },
+    {
+      "user": {
+        "name": "test",
+        "email": "test@test.com"
+      },
+      "purchasedAt": "2022-06-24T19:36:21.687Z"
+    },
+    {
+      "shoppingCart": [
+        {
+          "itemId": 16,
+          "quantity": 2
+        },
+        {
+          "itemId": 15,
+          "quantity": 2
+        }
+      ],
+      "purchasedAt": "2022-06-24T19:42:14.417Z"
+    },
+    {
+      "shoppingCart": [],
+      "purchasedAt": "2022-06-24T19:45:14.151Z"
+    },
+    {
+      "shoppingCart": [],
+      "purchasedAt": "2022-06-24T19:45:27.047Z"
+    },
+    {
+      "shoppingCart": [],
+      "purchasedAt": "2022-06-24T19:45:33.893Z"
+    },
+    {
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 1
+        },
+        {
+          "itemId": 16,
+          "quantity": 1
+        }
+      ],
+      "purchasedAt": "2022-06-24T19:46:43.576Z"
+    },
+    {
+      "shoppingCart": [],
+      "purchasedAt": "2022-06-24T19:47:58.119Z"
+    },
+    {
+      "shoppingCart": [],
+      "purchasedAt": "2022-06-24T19:49:49.041Z"
+    },
+    {
+      "shoppingCart": [],
+      "purchasedAt": "2022-06-24T19:49:49.505Z"
+    },
+    {
+      "shoppingCart": [
+        {
+          "itemId": 16,
+          "quantity": 1
+        }
+      ],
+      "purchasedAt": "2022-06-24T19:53:47.381Z"
+    },
+    {
+      "shoppingCart": [],
+      "purchasedAt": "2022-06-24T19:54:21.325Z"
+    },
+    {
+      "shoppingCart": [],
+      "purchasedAt": "2022-06-24T19:56:09.636Z"
+    },
+    {
+      "shoppingCart": [
+        {
+          "itemId": 5,
+          "quantity": 2
+        }
+      ],
+      "purchasedAt": "2022-06-24T19:59:51.707Z"
+    },
+    {
+      "shoppingCart": [],
+      "purchasedAt": "2022-06-24T20:01:07.306Z"
+    },
+    {
+      "shoppingCart": [],
+      "purchasedAt": "2022-06-24T20:03:02.838Z"
+    },
+    {
+      "shoppingCart": [
+        {
+          "itemId": 16,
+          "quantity": 1
+        }
+      ],
+      "purchasedAt": "2022-06-24T20:11:45.848Z"
+    },
+    {
+      "shoppingCart": [],
+      "purchasedAt": "2022-06-24T20:12:08.989Z"
+    },
+    {
+      "shoppingCart": [],
+      "purchasedAt": "2022-06-24T20:12:09.402Z"
+    },
+    {
+      "shoppingCart": [],
+      "purchasedAt": "2022-06-24T20:12:10.078Z"
+    },
+    {
+      "shoppingCart": [],
+      "purchasedAt": "2022-06-24T20:12:10.853Z"
+    },
+    {
+      "shoppingCart": [],
+      "purchasedAt": "2022-06-24T20:13:07.646Z"
+    },
+    {
+      "shoppingCart": [
+        {
+          "itemId": 16,
+          "quantity": 2
+        }
+      ],
+      "purchasedAt": "2022-06-24T20:25:31.656Z"
+    },
+    {
+      "shoppingCart": [
+        {
+          "itemId": 16,
+          "quantity": 1
+        },
+        {
+          "itemId": 12,
+          "quantity": 1
+        }
+      ],
+      "purchasedAt": "2022-06-24T20:26:39.705Z"
+    },
+    {
+      "shoppingCart": [],
+      "purchasedAt": "2022-06-24T20:41:49.491Z"
+    },
+    {
+      "shoppingCart": [
+        {
+          "itemId": 16,
+          "quantity": 2
+        },
+        {
+          "itemId": 12,
+          "quantity": 2
+        }
+      ],
+      "purchasedAt": "2022-06-24T20:42:33.696Z"
+    },
+    {
+      "shoppingCart": [
+        {
+          "itemId": 14,
+          "quantity": 2
+        },
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-24T20:45:27.341Z"
+    },
+    {
+      "shoppingCart": [
+        {
+          "itemId": 16,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-24T20:46:51.336Z"
+    },
+    {
+      "shoppingCart": [
+        {
+          "itemId": 12,
+          "quantity": 2
+        }
+      ],
+      "purchasedAt": "2022-06-24T20:47:55.624Z"
+    },
+    {
+      "shoppingCart": [],
+      "purchasedAt": "2022-06-24T20:50:48.130Z"
+    },
+    {
+      "shoppingCart": [],
+      "purchasedAt": "2022-06-24T20:50:49.505Z"
+    },
+    {
+      "shoppingCart": [
+        {
+          "itemId": 12,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-24T20:53:41.629Z"
+    },
+    {
+      "shoppingCart": [],
+      "purchasedAt": "2022-06-24T20:58:11.998Z"
+    }
+  ]
 }

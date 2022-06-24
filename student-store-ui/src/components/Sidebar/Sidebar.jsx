@@ -3,7 +3,7 @@ import "./Sidebar.css";
 import arrow from "../assets/arrow.png";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
 
-export default function Sidebar({ isOpen, products, handleOnToggle, setisOpen,shoppingCart,setshoppingCart}) {
+export default function Sidebar({lastReceipt, isOpen, checkoutForm, products, setEmail,  handleOnCheckOutFormChange,  handleOnSubmitCheckoutForm, handleOnToggle, setisOpen,shoppingCart,setshoppingCart}) {
   
     var classNames = `sidebar${!isOpen ? '-active' : ''}`
 
@@ -34,7 +34,7 @@ export default function Sidebar({ isOpen, products, handleOnToggle, setisOpen,sh
         </div>
         
       </section>
-      <ShoppingCart products={products} shoppingCart={shoppingCart} setshoppingCart={setshoppingCart} isOpen={isOpen} setisOpen={setisOpen} />
+      <ShoppingCart lastReceipt={lastReceipt} checkoutForm={checkoutForm} handleOnCheckOutFormChange={handleOnCheckOutFormChange}  setEmail={setEmail}   handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm} products={products} shoppingCart={shoppingCart} setshoppingCart={setshoppingCart} isOpen={isOpen} setisOpen={setisOpen} />
 
     </div>
   );
