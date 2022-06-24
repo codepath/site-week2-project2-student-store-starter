@@ -1,0 +1,13 @@
+.shopping-cart {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.shopping-cart-title {
+    font-size: 20px;
+}
+
+.shopping-cart p {
+    font-weight: 500;
+    font-size: 15px;
+}

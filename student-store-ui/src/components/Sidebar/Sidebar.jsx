@@ -10,7 +10,9 @@ export default function Sidebar({isOpen, shoppingCart, products, checkoutForm, e
         <button onClick={handleOnToggle}>Toggle</button>
 
         <ShoppingCart 
-          isOpen={isOpen}/>
+          isOpen={isOpen}
+          products={products}
+          shoppingCart={shoppingCart}/>
 
         <CheckoutForm
                 isOpen={isOpen}
