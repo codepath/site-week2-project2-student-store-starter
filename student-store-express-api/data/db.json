@@ -145,5 +145,34 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "asdasdasd@hotmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        }
+      ],
+      "purchasedAt": "2022-06-24T03:47:05.018Z"
+    },
+    {
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "asdasdasd@hotmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        }
+      ],
+      "purchasedAt": "2022-06-24T03:47:48.355Z"
+    }
+  ],
+  "shoppingCart": [],
+  "receipts": []
 }

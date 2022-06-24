@@ -6,8 +6,8 @@ const Storage = require("../data/storage");
 
 router.get("/", async (req, res, next) => {
 	try {
-		const posts = await Store.getProducts();
-		res.status(200).json({posts});
+		const products = await Store.getProducts();
+		res.status(200).json({products});
 	} catch(error)  {
 		next(error);
 	}
@@ -30,12 +30,15 @@ router.get("/:productId", async(req,res,next) => {
 });
 
 
-// router.post("/", async (req, res, next) => {
-// 	try {
-
-// 	} catch (err) {
-// 		next(new BadRequestError(err));
-// 	}
-// })
+router.post("/", async (req, res, next) => {
+	try {
+		const purchase = req.body;
+		console.log(req.body);
+		const newPurchase = await Store.createPurchase(purchase);
+		res.status(201).json({"purchase": newPurchase});
+	} catch (err) {
+		next(err);
+	}
+})
 
 module.exports = router;

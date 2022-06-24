@@ -1,18 +1,17 @@
-const {
-    BadRequestError
-} = require("../utils/errors");
-const {
-    storage
-} = require("../data/storage");
+const { BadRequestError } = require("../utils/errors");
+const { storage } = require("../data/storage");
 class Store {
     static async createPurchase(purchase) {
+        //get timestamp and append to object
         const purchasedAt = new Date().toISOString()
         const newPurchase = {
             ...purchase,
             purchasedAt
         };
-
+        //write to db.json
         storage.get("purchases").push(newPurchase).write();
+        //return object
+        return newPurchase;
     }
 
     static async getProducts() {
@@ -24,7 +23,6 @@ class Store {
     static async fetchProduct(productId) {
         //get single product by ID
         const product = storage.get("products").find({id: Number(productId)}).value();
-        
         return product
     }
 

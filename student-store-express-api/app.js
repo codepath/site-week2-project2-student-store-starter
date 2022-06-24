@@ -6,8 +6,6 @@ const { NotFoundError } = require("./utils/errors");
 const cors = require("cors");
 const app = express();
 
-
-
 app.use(morgan("tiny"));
 app.use(bodyParser.json());
 app.use(cors())
