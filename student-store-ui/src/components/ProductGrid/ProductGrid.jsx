@@ -4,10 +4,10 @@ import './ProductGrid.css';
 import ProductCard from '../ProductCard/ProductCard';
 
 export default function ProductGrid({
-  products, activeQuery, category, handleAddItemToCart, handleRemoveItemFromCart, shoppingCart,
+  products, query, category, handleAddItemToCart, handleRemoveItemFromCart, shoppingCart,
 }) {
   const activeProducts = products.filter((product) => (
-    product.name.toLowerCase().includes(activeQuery.toLowerCase())
+    product.name.toLowerCase().includes(query.toLowerCase())
     && (product.category === category || category === 'all')
   ));
 

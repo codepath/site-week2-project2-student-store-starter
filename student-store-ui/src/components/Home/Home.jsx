@@ -5,8 +5,8 @@ import Hero from '../Hero/Hero';
 import ProductGrid from '../ProductGrid/ProductGrid';
 
 export default function Home({
-  products, shoppingCart, activeQuery, category, handleAddItemToCart,
-  handleRemoveItemFromCart, handleSearch,
+  products, shoppingCart, query, category, handleAddItemToCart,
+  handleRemoveItemFromCart, handleQueryChange, handleSearch,
 }) {
   return (
     <div className="home">
@@ -16,11 +16,10 @@ export default function Home({
         type="input"
         name="query"
         placeholder="Search for products"
-        onKeyDown={(e) => {
-          if (e.key === 'Enter') { handleSearch(e.target.value); }
-        }}
+        onChange={(e) => handleQueryChange(e.target.value)}
+        value={query}
       />
-      <button className="search-button" type="button">
+      <button className="search-button" onClick={handleSearch} type="button">
         <img
           className="search-icon"
           src="https://i.imgur.com/Q0cXzWQ.png"
@@ -29,7 +28,7 @@ export default function Home({
       </button>
       <ProductGrid
         products={products}
-        activeQuery={activeQuery}
+        query={query}
         category={category}
         handleAddItemToCart={handleAddItemToCart}
         handleRemoveItemFromCart={handleRemoveItemFromCart}

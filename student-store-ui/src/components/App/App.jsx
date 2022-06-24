@@ -30,7 +30,7 @@ export default function App() {
   const [shoppingCart, setShoppingCart] = useState([]);
   const [checkoutForm, setCheckoutForm] = useState({ name: '', email: '' });
   const [category, setCategory] = useState('all');
-  const [activeQuery, setActiveQuery] = useState('');
+  const [query, setQuery] = useState('');
   const [purchaseCompleted, setPurchaseCompleted] = useState(false);
 
   // **********************************************************************
@@ -147,8 +147,8 @@ export default function App() {
     return 200;
   };
 
-  const handleSearch = (queryString) => {
-    setActiveQuery(queryString.toLowerCase());
+  const handleQueryChange = (queryString) => {
+    setQuery(queryString);
   };
 
   const handleCategoryChange = (categoryString) => {
@@ -191,12 +191,12 @@ export default function App() {
             element={(
               <Home
                 products={products}
-                activeQuery={activeQuery}
+                query={query}
                 category={category}
                 shoppingCart={shoppingCart}
                 handleAddItemToCart={handleAddItemToCart}
                 handleRemoveItemFromCart={handleRemoveItemFromCart}
-                handleSearch={handleSearch}
+                handleQueryChange={handleQueryChange}
                 handleCategoryChange={handleCategoryChange}
               />
 )}
