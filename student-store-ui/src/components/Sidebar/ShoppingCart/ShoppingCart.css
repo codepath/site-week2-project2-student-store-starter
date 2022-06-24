@@ -1,5 +1,5 @@
 .cartResults{
-    display: flex;
+    display: block;
     vertical-align: center;
 }
 
@@ -9,7 +9,7 @@
     padding-bottom: 5px;
 }
 
-.subtotal, .total-price, .cart-product-quantity{
+.cart-product-quantity, .cart-product-price{
     font-weight: normal;
     font-size: 20px;
 }

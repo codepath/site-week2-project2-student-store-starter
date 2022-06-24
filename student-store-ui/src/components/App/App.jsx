@@ -129,32 +129,20 @@ export default function App() {
     }
   }
 
-  function handleOnCheckoutFormChange(name, value) {
-    // var key = event.target.name
-    // var val = event.target.value
-
-    // let newForm = {
-    //   name: checkoutForm.name,
-    //   email: checkoutForm.email
-    // }
-
-    // newForm[key] = val
-    // setCheckoutForm(newForm)
-
-    if (name === "email") {
-      setCheckoutForm((checkoutForm) => ({
-        name: checkoutForm.name,
-        email: value,
-      }));
-    } else if (name === "name") {
-      setCheckoutForm((checkoutForm) => ({
-        name: value,
-        email: checkoutForm.email,
-      }));
+  function handleOnCheckoutFormChange(key, val) {
+    let newForm = {
+      name: checkoutForm.name,
+      email: checkoutForm.email
     }
+    newForm[key] = val
+    setCheckoutForm(newForm)
+
+    console.log('checkoutForm: ', checkoutForm);
+    // }
   }
 
   function handleOnSubmitCheckOutForm(checkoutForm, shoppingCart) {
+    console.log('checkoutForm2: ', checkoutForm);
     let user = {
       name: checkoutForm.name,
       email: checkoutForm.email,
@@ -169,15 +157,14 @@ export default function App() {
     }
 
     axios.post(URL, { userOrder }).then(
-      (response) => {
+      function (response) {
         setError("success");
-      },
-      (error) => {
+      }).catch (function (error) {
         setError("problem fetching data");
       }
     );
 
-    if (checkoutForm.name.length == 0 || checkoutForm.email.length == 0) {
+    if (user.name.length == 0 || user.email.length == 0) {
       setError("User info must include an email and name.");
     }
 
@@ -186,7 +173,7 @@ export default function App() {
   }
 
   function handleOnSearch(products, query) {
-    
+
     let searchResults = [];
 
     products.forEach((product) => {
