@@ -4,11 +4,16 @@ import './ProductGrid.css';
 import ProductCard from '../ProductCard/ProductCard';
 
 export default function ProductGrid({
-  products, handleAddItemToCart, handleRemoveItemFromCart, shoppingCart,
+  products, activeQuery, category, handleAddItemToCart, handleRemoveItemFromCart, shoppingCart,
 }) {
+  const activeProducts = products.filter((product) => (
+    product.name.toLowerCase().includes(activeQuery.toLowerCase())
+    && (product.category === category || category === 'all')
+  ));
+
   return (
     <div className="product-grid">
-      {products.map((product) => (
+      {activeProducts.map((product) => (
         <ProductCard
           key={product.id}
           product={product}

@@ -10,7 +10,6 @@ import Sidebar from '../Sidebar/Sidebar';
 import Home from '../Home/Home';
 import ProductDetail from '../ProductDetail/ProductDetail';
 import NotFound from '../NotFound/NotFound';
-import { sampleBody } from '../../constants';
 import './App.css';
 
 export default function App() {
@@ -29,7 +28,10 @@ export default function App() {
   const [error, setError] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const [shoppingCart, setShoppingCart] = useState([]);
-  const [checkoutForm, setCheckoutForm] = useState({ name: '', value: '' });
+  const [checkoutForm, setCheckoutForm] = useState({ name: '', email: '' });
+  const [category, setCategory] = useState('all');
+  const [activeQuery, setActiveQuery] = useState('');
+  const [purchaseCompleted, setPurchaseCompleted] = useState(false);
 
   // **********************************************************************
   // AXIOS GET AND POST FUNCTIONS
@@ -70,6 +72,9 @@ export default function App() {
 
   // toggles sidebar
   const handleOnToggle = () => {
+    if (purchaseCompleted && !isOpen) {
+      setPurchaseCompleted(false);
+    }
     setIsOpen(!isOpen);
   };
 
@@ -105,12 +110,49 @@ export default function App() {
   };
 
   const handleOnCheckoutFormChange = (name, value) => {
-    checkoutForm[name] = value;
-    setCheckoutForm(checkoutForm);
+    const newCheckoutForm = { ...checkoutForm };
+    newCheckoutForm[name] = value;
+    setError('');
+    setCheckoutForm(newCheckoutForm);
   };
 
   const handleOnSubmitCheckoutForm = () => {
-    sendPostRequest(sampleBody);
+    if (shoppingCart.length === 0) {
+      setError('empty cart');
+      return 400;
+    }
+    if (checkoutForm.email === '') {
+      setError('empty email');
+      return 400;
+    }
+    if (checkoutForm.name === '') {
+      setError('empty name');
+      return 400;
+    }
+
+    try {
+      const checkoutRequestObj = {
+        user: checkoutForm,
+        shoppingCart,
+      };
+      sendPostRequest(checkoutRequestObj);
+    } catch (err) {
+      console.error(err);
+      setError(err);
+    } finally {
+      setShoppingCart([]);
+      setCheckoutForm({ name: '', email: '' });
+      setPurchaseCompleted(true);
+    }
+    return 200;
+  };
+
+  const handleSearch = (queryString) => {
+    setActiveQuery(queryString.toLowerCase());
+  };
+
+  const handleCategoryChange = (categoryString) => {
+    setCategory(categoryString);
   };
 
   // **********************************************************************
@@ -132,6 +174,8 @@ export default function App() {
           products={products}
           shoppingCart={shoppingCart}
           checkoutForm={checkoutForm}
+          error={error}
+          purchaseCompleted={purchaseCompleted}
           handleOnToggle={handleOnToggle}
           handleOnCheckoutFormChange={handleOnCheckoutFormChange}
           handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
@@ -147,9 +191,13 @@ export default function App() {
             element={(
               <Home
                 products={products}
+                activeQuery={activeQuery}
+                category={category}
                 shoppingCart={shoppingCart}
                 handleAddItemToCart={handleAddItemToCart}
                 handleRemoveItemFromCart={handleRemoveItemFromCart}
+                handleSearch={handleSearch}
+                handleCategoryChange={handleCategoryChange}
               />
 )}
           />

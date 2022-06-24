@@ -11,10 +11,12 @@
 
 .sidebar.closed {
     width: 100px;
+    overflow: hidden;
 }
 
 .sidebar.open {
     width: 600px;
+    overflow-y: scroll;
 }
 
 .expander {

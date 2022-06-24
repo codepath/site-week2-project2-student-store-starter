@@ -31,9 +31,16 @@ function calculateTotal(shoppingCart, products) {
   };
 }
 
-export default function ShoppingCart({ isOpen, products, shoppingCart }) {
+export default function ShoppingCart({
+  isOpen, products, shoppingCart, purchaseCompleted,
+}) {
   // if sidebar is open
   if (isOpen) {
+    // if a purchase was recently completed
+    if (purchaseCompleted) {
+      return null;
+    }
+
     // if no items in shopping cart
     if (shoppingCart.length === 0) {
       return (

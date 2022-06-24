@@ -2,4 +2,11 @@
     width: 100%;
     color: white;
   }
+
+.form-title {
+  text-align: center;
+}
   
+.checkout-complete {
+  color: white;
+}
