@@ -26,7 +26,14 @@ export default function ProductGrid(props) {
 					<h1>Loading...</h1>
 					:
 					productsToShow.map((e, i) => {
-						return <ProductCard key={e.name} class="product-card" product={e} shoppingCart={props.shoppingCart} setShoppingCart={props.setShoppingCart} />
+						return <ProductCard 
+									key={e.name} 
+									class="product-card" 
+									product={e} 
+									shoppingCart={props.shoppingCart} 
+									setShoppingCart={props.setShoppingCart}
+									handleAddItemToCart={props.handleAddItemToCart}
+									handleRemoveItemFromCart={props.handleRemoveItemFromCart} />
 					})}
 			</div>
 		</div>)

@@ -147,30 +147,1124 @@
   ],
   "purchases": [
     {
+      "id": null,
       "user": {
         "name": "asdasdasdasd",
-        "email": "asdasdasd@hotmail.com"
+        "email": "enzofalone@mail.com"
       },
-      "shoppingCart": [
+      "order": [
         {
           "itemId": 10,
           "quantity": 10
+        },
+        {
+          "itemId": 11,
+          "quantity": 10
         }
       ],
-      "purchasedAt": "2022-06-24T03:47:05.018Z"
+      "total": 255.551625,
+      "createdAt": "2022-06-24T17:09:25.984Z",
+      "message": {
+        "title": "Order #NaN",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $255.55"
+      }
+    },
+    {
+      "id": null,
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 11,
+          "quantity": 10
+        }
+      ],
+      "total": 255.551625,
+      "createdAt": "2022-06-24T17:09:36.485Z",
+      "message": {
+        "title": "Order #NaN",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $255.55"
+      }
+    },
+    {
+      "id": null,
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 11,
+          "quantity": 10
+        }
+      ],
+      "total": 255.551625,
+      "createdAt": "2022-06-24T17:09:59.666Z",
+      "message": {
+        "title": "Order #NaN",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $255.55"
+      }
+    },
+    {
+      "id": null,
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 11,
+          "quantity": 10
+        }
+      ],
+      "total": 255.551625,
+      "createdAt": "2022-06-24T17:10:06.735Z",
+      "message": {
+        "title": "Order #NaN",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $255.55"
+      }
+    },
+    {
+      "id": null,
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 11,
+          "quantity": 10
+        }
+      ],
+      "total": 255.551625,
+      "createdAt": "2022-06-24T17:10:51.275Z",
+      "message": {
+        "title": "Order #NaN",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $255.55"
+      }
+    },
+    {
+      "id": null,
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 11,
+          "quantity": 10
+        }
+      ],
+      "total": 255.551625,
+      "createdAt": "2022-06-24T17:11:59.645Z",
+      "message": {
+        "title": "Order #NaN",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $255.55"
+      }
+    },
+    {
+      "id": 17,
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 11,
+          "quantity": 10
+        }
+      ],
+      "total": 255.551625,
+      "createdAt": "2022-06-24T17:12:33.717Z",
+      "message": {
+        "title": "Order #17",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $255.55"
+      }
+    },
+    {
+      "id": 17,
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 11,
+          "quantity": 10
+        }
+      ],
+      "total": 255.551625,
+      "createdAt": "2022-06-24T17:12:37.886Z",
+      "message": {
+        "title": "Order #17",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $255.55"
+      }
+    },
+    {
+      "id": 17,
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 11,
+          "quantity": 10
+        }
+      ],
+      "total": 255.551625,
+      "createdAt": "2022-06-24T17:12:41.983Z",
+      "message": {
+        "title": "Order #17",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $255.55"
+      }
+    },
+    {
+      "id": null,
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 11,
+          "quantity": 10
+        }
+      ],
+      "total": 255.551625,
+      "createdAt": "2022-06-24T17:12:48.522Z",
+      "message": {
+        "title": "Order #NaN",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $255.55"
+      }
+    },
+    {
+      "id": null,
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 11,
+          "quantity": 10
+        }
+      ],
+      "total": 255.551625,
+      "createdAt": "2022-06-24T17:13:02.577Z",
+      "message": {
+        "title": "Order #NaN",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $255.55"
+      }
     },
     {
       "user": {
         "name": "asdasdasdasd",
-        "email": "asdasdasd@hotmail.com"
+        "email": "enzofalone@mail.com"
       },
-      "shoppingCart": [
+      "order": [
         {
           "itemId": 10,
           "quantity": 10
+        },
+        {
+          "itemId": 11,
+          "quantity": 10
         }
       ],
-      "purchasedAt": "2022-06-24T03:47:48.355Z"
+      "total": 0,
+      "createdAt": "2022-06-24T17:23:05.471Z",
+      "message": {
+        "title": "Order #undefined",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $0.00"
+      }
+    },
+    {
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 11,
+          "quantity": 10
+        }
+      ],
+      "total": 0,
+      "createdAt": "2022-06-24T17:24:15.027Z",
+      "message": {
+        "title": "Order #undefined",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $0.00"
+      }
+    },
+    {
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 11,
+          "quantity": 10
+        }
+      ],
+      "total": 0,
+      "createdAt": "2022-06-24T17:24:26.533Z",
+      "message": {
+        "title": "Order #undefined",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $0.00"
+      }
+    },
+    {
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 11,
+          "quantity": 10
+        }
+      ],
+      "total": 0,
+      "createdAt": "2022-06-24T17:25:05.728Z",
+      "message": {
+        "title": "Order #undefined",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $0.00"
+      }
+    },
+    {
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 11,
+          "quantity": 10
+        }
+      ],
+      "total": 0,
+      "createdAt": "2022-06-24T17:25:27.676Z",
+      "message": {
+        "title": "Order #undefined",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $0.00"
+      }
+    },
+    {
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 11,
+          "quantity": 10
+        }
+      ],
+      "total": 0,
+      "createdAt": "2022-06-24T17:25:56.360Z",
+      "message": {
+        "title": "Order #undefined",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $0.00"
+      }
+    },
+    {
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 11,
+          "quantity": 10
+        }
+      ],
+      "total": 0,
+      "createdAt": "2022-06-24T17:26:14.826Z",
+      "message": {
+        "title": "Order #undefined",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $0.00"
+      }
+    },
+    {
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 11,
+          "quantity": 10
+        }
+      ],
+      "total": 0,
+      "createdAt": "2022-06-24T17:26:58.302Z",
+      "message": {
+        "title": "Order #undefined",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $0.00"
+      }
+    },
+    {
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 11,
+          "quantity": 10
+        }
+      ],
+      "total": 0,
+      "createdAt": "2022-06-24T17:27:15.931Z",
+      "message": {
+        "title": "Order #undefined",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $0.00"
+      }
+    },
+    {
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 11,
+          "quantity": 10
+        }
+      ],
+      "total": 0,
+      "createdAt": "2022-06-24T17:28:19.710Z",
+      "message": {
+        "title": "Order #undefined",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $0.00"
+      }
+    },
+    {
+      "id": null,
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 11,
+          "quantity": 10
+        }
+      ],
+      "total": 255.551625,
+      "createdAt": "2022-06-24T17:32:32.230Z",
+      "message": {
+        "title": "Order #NaN",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $255.55"
+      }
+    },
+    {
+      "id": 17,
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 11,
+          "quantity": 10
+        }
+      ],
+      "total": 255.551625,
+      "createdAt": "2022-06-24T17:32:57.745Z",
+      "message": {
+        "title": "Order #17",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $255.55"
+      }
+    },
+    {
+      "id": 17,
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 11,
+          "quantity": 10
+        }
+      ],
+      "total": 255.551625,
+      "createdAt": "2022-06-24T17:33:01.254Z",
+      "message": {
+        "title": "Order #17",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $255.55"
+      }
+    },
+    {
+      "id": 17,
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 11,
+          "quantity": 10
+        }
+      ],
+      "total": 255.551625,
+      "createdAt": "2022-06-24T17:33:01.689Z",
+      "message": {
+        "title": "Order #17",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $255.55"
+      }
+    },
+    {
+      "id": 17,
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 11,
+          "quantity": 10
+        }
+      ],
+      "total": 255.551625,
+      "createdAt": "2022-06-24T17:33:01.887Z",
+      "message": {
+        "title": "Order #17",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $255.55"
+      }
+    },
+    {
+      "id": 27,
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 11,
+          "quantity": 10
+        }
+      ],
+      "total": 255.551625,
+      "createdAt": "2022-06-24T17:34:37.045Z",
+      "message": {
+        "title": "Order #27",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $255.55"
+      }
+    },
+    {
+      "id": 28,
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 11,
+          "quantity": 10
+        }
+      ],
+      "total": 255.551625,
+      "createdAt": "2022-06-24T17:34:38.569Z",
+      "message": {
+        "title": "Order #28",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $255.55"
+      }
+    },
+    {
+      "id": 29,
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 11,
+          "quantity": 10
+        }
+      ],
+      "total": 255.551625,
+      "createdAt": "2022-06-24T17:34:39.083Z",
+      "message": {
+        "title": "Order #29",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $255.55"
+      }
+    },
+    {
+      "id": 30,
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 11,
+          "quantity": 10
+        }
+      ],
+      "total": 255.551625,
+      "createdAt": "2022-06-24T17:34:39.509Z",
+      "message": {
+        "title": "Order #30",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $255.55"
+      }
+    },
+    {
+      "id": 31,
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 11,
+          "quantity": 10
+        }
+      ],
+      "total": 255.551625,
+      "createdAt": "2022-06-24T17:34:39.972Z",
+      "message": {
+        "title": "Order #31",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $255.55"
+      }
+    },
+    {
+      "id": 32,
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 15,
+          "quantity": 10
+        }
+      ],
+      "total": 59.779875,
+      "createdAt": "2022-06-24T17:35:37.223Z",
+      "message": {
+        "title": "Order #32",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $59.78"
+      }
+    },
+    {
+      "id": 33,
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 13,
+          "quantity": 10
+        }
+      ],
+      "total": 114.176625,
+      "createdAt": "2022-06-24T17:35:44.660Z",
+      "message": {
+        "title": "Order #33",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $114.18"
+      }
+    },
+    {
+      "id": 34,
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 13,
+          "quantity": 13
+        }
+      ],
+      "total": 114.176625,
+      "createdAt": "2022-06-24T17:35:47.248Z",
+      "message": {
+        "title": "Order #34",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $114.18"
+      }
+    },
+    {
+      "id": 35,
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 13,
+          "quantity": 14
+        }
+      ],
+      "total": 114.176625,
+      "createdAt": "2022-06-24T17:35:50.296Z",
+      "message": {
+        "title": "Order #35",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $114.18"
+      }
+    },
+    {
+      "id": 36,
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 13,
+          "quantity": 15
+        }
+      ],
+      "total": 114.176625,
+      "createdAt": "2022-06-24T17:35:52.250Z",
+      "message": {
+        "title": "Order #36",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $114.18"
+      }
+    },
+    {
+      "id": 37,
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 13,
+          "quantity": 15
+        }
+      ],
+      "total": 1522.3912500000001,
+      "createdAt": "2022-06-24T17:36:32.843Z",
+      "message": {
+        "title": "Order #37",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $1522.39"
+      }
+    },
+    {
+      "id": 38,
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 13,
+          "quantity": 14
+        }
+      ],
+      "total": 1446.2662500000001,
+      "createdAt": "2022-06-24T17:36:35.567Z",
+      "message": {
+        "title": "Order #38",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $1446.27"
+      }
+    },
+    {
+      "id": 39,
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 13,
+          "quantity": 13
+        }
+      ],
+      "total": 1370.1412500000001,
+      "createdAt": "2022-06-24T17:36:37.479Z",
+      "message": {
+        "title": "Order #39",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $1370.14"
+      }
+    },
+    {
+      "id": 40,
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 13,
+          "quantity": 1
+        }
+      ],
+      "total": 456.64125,
+      "createdAt": "2022-06-24T17:36:39.329Z",
+      "message": {
+        "title": "Order #40",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $456.64"
+      }
+    },
+    {
+      "id": 41,
+      "user": {
+        "name": "asdasdasdasd",
+        "email": "enzofalone@mail.com"
+      },
+      "order": [
+        {
+          "itemId": 10,
+          "quantity": 10
+        },
+        {
+          "itemId": 13,
+          "quantity": 2
+        }
+      ],
+      "total": 532.76625,
+      "createdAt": "2022-06-24T17:36:41.174Z",
+      "message": {
+        "title": "Order #41",
+        "body": "Receipt for asdasdasdasd available at enzofalone@mail.com for a total of $532.77"
+      }
+    },
+    {
+      "id": 42,
+      "user": {
+        "name": "enzo",
+        "email": "enzofalone123@gmail.com"
+      },
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 14
+        },
+        {
+          "itemId": 10,
+          "quantity": 1
+        }
+      ],
+      "total": 83.57437499999999,
+      "createdAt": "2022-06-24T17:44:03.223Z",
+      "message": {
+        "title": "Order #42",
+        "body": "Receipt for enzo available at enzofalone123@gmail.com for a total of $83.57"
+      }
+    },
+    {
+      "id": 43,
+      "user": {
+        "name": "enzo",
+        "email": "enzofalone123@gmail.com"
+      },
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        },
+        {
+          "itemId": 4,
+          "quantity": 2
+        }
+      ],
+      "total": 13.572000000000001,
+      "createdAt": "2022-06-24T18:27:06.122Z",
+      "message": {
+        "title": "Order #43",
+        "body": "Receipt for enzo available at enzofalone123@gmail.com for a total of $13.57"
+      }
+    },
+    {
+      "id": 44,
+      "user": {
+        "name": "asdasd",
+        "email": "asdasd"
+      },
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": 6.50325,
+      "createdAt": "2022-06-24T18:43:34.919Z",
+      "message": {
+        "title": "Order #44",
+        "body": "Receipt for asdasd available at asdasd for a total of $6.50"
+      }
+    },
+    {
+      "id": 45,
+      "user": {
+        "name": "asd",
+        "email": "asd@email.com"
+      },
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 1
+        },
+        {
+          "itemId": 4,
+          "quantity": 1
+        }
+      ],
+      "total": 6.7860000000000005,
+      "createdAt": "2022-06-24T18:45:33.700Z",
+      "message": {
+        "title": "Order #45",
+        "body": "Receipt for asd available at asd@email.com for a total of $6.79"
+      }
+    },
+    {
+      "id": 46,
+      "user": {
+        "name": "test",
+        "email": "test@test.com"
+      },
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": 6.50325,
+      "createdAt": "2022-06-24T19:04:31.765Z",
+      "message": {
+        "title": "Order #46",
+        "body": "Receipt for test available at test@test.com for a total of $6.50"
+      }
+    },
+    {
+      "id": 47,
+      "user": {
+        "name": "enzo ",
+        "email": "enzofalone123@gmail.com"
+      },
+      "order": [
+        {
+          "itemId": 4,
+          "quantity": 5
+        }
+      ],
+      "total": 17.671875,
+      "createdAt": "2022-06-24T19:30:41.699Z",
+      "message": {
+        "title": "Order #47",
+        "body": "Receipt for enzo  available at enzofalone123@gmail.com for a total of $17.67"
+      }
+    },
+    {
+      "id": 48,
+      "user": {
+        "name": "asdasdasd",
+        "email": "enzofalone123@gmail.com"
+      },
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 3
+        },
+        {
+          "itemId": 3,
+          "quantity": 3
+        }
+      ],
+      "total": 14.648625000000001,
+      "createdAt": "2022-06-24T19:32:47.425Z",
+      "message": {
+        "title": "Order #48",
+        "body": "Receipt for asdasdasd available at enzofalone123@gmail.com for a total of $14.65"
+      }
+    },
+    {
+      "id": 49,
+      "user": {
+        "name": "eaeae",
+        "email": "enzofalone123@gmail.com"
+      },
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 4
+        }
+      ],
+      "total": 6.525,
+      "createdAt": "2022-06-24T20:15:38.148Z",
+      "message": {
+        "title": "Order #49",
+        "body": "Receipt for eaeae available at enzofalone123@gmail.com for a total of $6.53"
+      }
+    },
+    {
+      "id": 50,
+      "user": {
+        "name": "eqweqwe",
+        "email": "qweqew@email.com"
+      },
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 9
+        }
+      ],
+      "total": 9.689625,
+      "createdAt": "2022-06-24T20:27:56.286Z",
+      "message": {
+        "title": "Order #50",
+        "body": "Receipt for eqweqwe available at qweqew@email.com for a total of $9.69"
+      }
     }
   ],
   "shoppingCart": [],
