@@ -22,6 +22,7 @@ router.post("/", async (req, res, next) => {
         let totalQuantity = 0
         let itemPrices = []
         let itemNames = []
+
         if (shoppingCart && user) {
             shoppingCart.forEach(async (item) => {
                 if ("quantity" in item && "itemId" in item) {
@@ -30,7 +31,11 @@ router.post("/", async (req, res, next) => {
                     totalQuantity += item.quantity
                     total += parseFloat(itemTotal)
                     itemPrices.push(product.price)
-                    itemNames.push(product.name)
+                    if (!itemNames.includes(product.name)){
+                        itemNames.push(product.name)
+                    } else {
+                    throw new BadRequestError("duplicate items inside shopping cart")
+                    }
                     lines.push(`${item.quantity} total ${product.name} purchased at a cost of $${product.price} for a total cost of $${itemTotal}.`)
                 } else {
                     throw new BadRequestError("each item in the shopping cart should have itemId and quantity field")

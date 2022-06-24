@@ -354,6 +354,128 @@
       "itemNames": [
         "Smart Glasses"
       ]
+    },
+    {
+      "id": 7,
+      "name": "asdf",
+      "email": "asdf",
+      "order": [
+        {
+          "itemId": "2",
+          "quantity": 1
+        },
+        {
+          "itemId": "3",
+          "quantity": 1
+        }
+      ],
+      "subtotal": 4.49,
+      "total": 4.88,
+      "createdAt": "2022-06-23T23:03:29.764Z",
+      "receipt": {
+        "lines": [
+          "Showing receipt for asdf available at asdf:",
+          "1 total Flamin Hot Cheetos purchased at a cost of $1.5 for a total cost of $1.50.",
+          "1 total Cinnamon Rolls purchased at a cost of $2.99 for a total cost of $2.99.",
+          "Before taxes, the subtotal was $4.49",
+          "After taxes and fees were applied, the total comes out to $4.88"
+        ]
+      },
+      "totalQuantity": 2,
+      "itemPrices": [
+        1.5,
+        2.99
+      ],
+      "itemNames": [
+        "Flamin Hot Cheetos",
+        "Cinnamon Rolls"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "test",
+      "email": "test",
+      "order": [
+        {
+          "itemId": "13",
+          "quantity": 5
+        }
+      ],
+      "subtotal": 350,
+      "total": 380.62,
+      "createdAt": "2022-06-23T23:09:52.507Z",
+      "receipt": {
+        "lines": [
+          "Showing receipt for test available at test:",
+          "5 total Copper Bracelet purchased at a cost of $70 for a total cost of $350.00.",
+          "Before taxes, the subtotal was $350.00",
+          "After taxes and fees were applied, the total comes out to $380.62"
+        ]
+      },
+      "totalQuantity": 5,
+      "itemPrices": [
+        70
+      ],
+      "itemNames": [
+        "Copper Bracelet"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "new day",
+      "email": "new day",
+      "order": [
+        {
+          "itemId": "9",
+          "quantity": 1
+        },
+        {
+          "itemId": "10",
+          "quantity": 1
+        },
+        {
+          "itemId": "11",
+          "quantity": 1
+        },
+        {
+          "itemId": "14",
+          "quantity": 1
+        },
+        {
+          "itemId": "15",
+          "quantity": 1
+        }
+      ],
+      "subtotal": 369.96,
+      "total": 402.33,
+      "createdAt": "2022-06-24T15:34:17.030Z",
+      "receipt": {
+        "lines": [
+          "Showing receipt for new day available at new day:",
+          "1 total Pullover Sweater purchased at a cost of $4.99 for a total cost of $4.99.",
+          "1 total Alpaca Wool Scarf purchased at a cost of $34.99 for a total cost of $34.99.",
+          "1 total Matching Rings purchased at a cost of $200 for a total cost of $200.00.",
+          "1 total Keyboard purchased at a cost of $110 for a total cost of $110.00.",
+          "1 total Mouse from 1998 purchased at a cost of $19.98 for a total cost of $19.98.",
+          "Before taxes, the subtotal was $369.96",
+          "After taxes and fees were applied, the total comes out to $402.33"
+        ]
+      },
+      "totalQuantity": 5,
+      "itemPrices": [
+        4.99,
+        34.99,
+        200,
+        110,
+        19.98
+      ],
+      "itemNames": [
+        "Pullover Sweater",
+        "Alpaca Wool Scarf",
+        "Matching Rings",
+        "Keyboard",
+        "Mouse from 1998"
+      ]
     }
   ]
 }
