@@ -1,0 +1,19 @@
+.receipt {
+    background-color: var(--darkBlue);
+
+    margin-top: 30px;
+
+    padding: 10px 20px;
+}
+
+.receipt>h1{
+    margin: 0;
+}
+
+.receipt>h3 {
+    
+}
+
+.receipt>ul>li{
+    text-align: left;
+}
