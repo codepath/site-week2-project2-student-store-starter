@@ -1,5 +1,13 @@
 .sidebar {
     background-color: #292929;
-    width: 450px;
     padding: 15px;
+    color: white;
+}
+
+.open {
+    width: 450px;
+}
+
+.closed {
+    width: 60px;
 }
