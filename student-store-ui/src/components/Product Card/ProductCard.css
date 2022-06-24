@@ -1,8 +1,13 @@
 .product-card {
     width: 256px;
-    height: 400px;
+    height: max-content;
     background-color: white;
     border-radius: 5px;
+    transition: all .2s ease-in-out;
+}
+
+.product-card:hover {
+    transform: scale(1.1);
 }
 
 .product-card img {
@@ -33,4 +38,10 @@
 .product-quantity {
     color: rgb(87, 147, 27);
     text-align: center;
+}
+
+.product-description {
+    font-weight: 400;
+    width: 80%;
+    margin: 10px auto;
 }
