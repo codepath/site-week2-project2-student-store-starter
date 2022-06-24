@@ -293,7 +293,7 @@ I would have added some more stretch features and changed some styling of the im
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+I thought my project demo went well!
 
 ### Open-source libraries used
 
@@ -303,4 +303,4 @@ Add your response here
 
 Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
 
-I worked well with Arisa and Roberto on this project!!
+I worked well with Arisa and Roberto on this project!! The TAs and course staff were also very helpful. I'd also like to thank my manager David for his help as well.

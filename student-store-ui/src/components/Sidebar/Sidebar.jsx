@@ -5,11 +5,6 @@ import "./Sidebar.css"
 
 export default function Sidebar({isOpen, shoppingCart, products, checkoutForm, handleOnCheckoutFormChange, handleOnSubmitCheckoutForm, handleOnToggle, error}) {
   return (
-    // <section className="sidebar">
-    //   {/* change to imgs later */}
-
-      
-    // </section>
     <aside className= {isOpen? "sidebar open" : "sidebar"} >
       {isOpen?
       <div className="open">

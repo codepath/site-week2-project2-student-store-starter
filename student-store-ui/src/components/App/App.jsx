@@ -75,12 +75,6 @@ export default function App() {
     setIsFetching(false);
   }, [query, category]);
 
-  // useEffect(() => {
-  //   if (products) {
-  //     setIsFetching(false);
-  //   }
-  // }, [products]);
-
   function handleOnToggle() {
     if (isOpen) {
       setIsOpen(false);
@@ -136,8 +130,6 @@ export default function App() {
     };
     newForm[key] = val;
     setCheckoutForm(newForm);
-
-    // }
   }
 
   function handleOnSubmitCheckOutForm(checkoutForm, shoppingCart) {
@@ -186,7 +178,6 @@ export default function App() {
     <div className="app">
       <BrowserRouter>
         <main>
-          {/* YOUR CODE HERE! */}
           <div className="container">
             <Sidebar
               isOpen={isOpen}

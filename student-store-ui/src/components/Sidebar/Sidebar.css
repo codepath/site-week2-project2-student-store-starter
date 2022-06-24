@@ -1,51 +1,47 @@
 .sidebar {
-    position: fixed;
-    width: 150px;
-    height: 100vh;
-    background: rgb(73, 83, 55);
-    font-size: 0.85em;
-    margin-right: 15px;
-  }
-  
-  .nav {
-    position: relative;
-    text-align: left;
-    top: 30%;
-    transform: translateY(-50%);
-  }
-  
-  .nav ul {
-    list-style: none;
-    margin-top: 50%;
-    
-  }
+  position: fixed;
+  width: 150px;
+  height: 100vh;
+  background: rgb(73, 83, 55);
+  font-size: 0.85em;
+  margin-right: 15px;
+}
 
-  .nav li{
-    position: relative;
-    margin: 3.2em 0;
-    line-height: 3em;
-    text-transform: uppercase;
-    text-decoration: none;
-    letter-spacing: 0.2em;
-    color: #e0e9cd;
-    display: block;
-    transition: all ease-out 300ms;
+.nav {
+  position: relative;
+  text-align: left;
+  top: 30%;
+  transform: translateY(-50%);
+}
 
-  }
+.nav ul {
+  list-style: none;
+  margin-top: 50%;
+}
 
+.nav li {
+  position: relative;
+  margin: 3.2em 0;
+  line-height: 3em;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.2em;
+  color: #e0e9cd;
+  display: block;
+  transition: all ease-out 300ms;
+}
 
+.toggle-button {
+  border: none;
+  margin-top: 30%;
+  background-color: rgb(73, 83, 55);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
 
-  .toggle-button{
-    border: none;
-    margin-top: 30%;
-    background-color: rgb(73, 83, 55);
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-  }
-
-.open{
-    width: 350px;
-    display: block;
-    padding-left: 20px;
+.open {
+  width: 350px;
+  display: block;
+  padding-left: 20px;
 }

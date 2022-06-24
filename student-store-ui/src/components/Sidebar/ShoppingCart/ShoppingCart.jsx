@@ -1,5 +1,4 @@
 import "./ShoppingCart.css"
-// import Link from "react"
 import { Link } from "react-router-dom"
 
 export default function ShoppingCart({isOpen, products, shoppingCart}){
@@ -49,7 +48,6 @@ export default function ShoppingCart({isOpen, products, shoppingCart}){
                 {shoppingCart.map(cart => {
                     return(
                         <div className="cartResults">
-                            {/* <h3 className="cart-product-name">{getName(cart.itemId)}:</h3> */}
                             <h3 className="cart-product-price">${getPrice(cart.itemId)} per {getName(cart.itemId)}</h3>
                             <h4 className="cart-product-quantity">{cart.quantity} items</h4>
                         </div>

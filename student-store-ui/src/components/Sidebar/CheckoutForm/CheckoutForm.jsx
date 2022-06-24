@@ -1,5 +1,4 @@
 import "./CheckoutForm.css"
-// import Link from "react"
 import { Link } from "react-router-dom"
 
 export default function CheckoutForm({isOpen, checkoutForm, shoppingCart, handleOnCheckoutFormChange, handleOnSubmitCheckoutForm, error}){

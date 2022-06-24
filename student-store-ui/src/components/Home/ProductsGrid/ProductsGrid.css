@@ -26,9 +26,7 @@
 }
 
 .categoriesNav button:hover{
-    /* background-color: rgb(181, 190, 166); */
     border-bottom: 3px solid rgb(181, 190, 166);
-
 }
 
 p{
