@@ -1,0 +1,14 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    /* background: white; */
+    background-color: transparent;
+    width: fit-content;
+    height: 100vh;
+}
+
+.sidebar img {
+    transform: rotate(90deg);
+}

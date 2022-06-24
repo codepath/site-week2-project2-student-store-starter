@@ -10,8 +10,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    height: 350px;
-    padding: 4em;
+    padding: 3em;
 }
 
 .hero-img {

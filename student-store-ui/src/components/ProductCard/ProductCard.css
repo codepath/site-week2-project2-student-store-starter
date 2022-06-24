@@ -1,6 +1,8 @@
 .product-card {
-    width: 330px;
+    display: flex;
+    flex-direction: column;
     height: fit-content;
+    justify-content: space-between;
     background-color: white;
     border-radius: 1em;
 }
@@ -21,6 +23,11 @@ button {
     width: 30px;
 }
 
+button:hover {
+    background-color: rgb(237, 255, 237);
+    cursor: pointer;
+}
+
 .header {
     display: flex;
     flex-direction: row;
@@ -34,9 +41,9 @@ button {
     flex-direction: row;
 }
 
-.button-container > * {
+/* .button-container > * {
     margin-right: 10px;
-}
+} */
 
 .text-container {
     display: flex;
@@ -46,4 +53,8 @@ button {
 
 h3 {
     margin-bottom: -10px;
+}
+
+.product-quantity {
+    color: black;
 }
