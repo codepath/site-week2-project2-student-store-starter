@@ -76,9 +76,34 @@ h3, p, .confirmation-text, .email-label, .name-label, .terms-label {
     justify-content: space-around;
 }
 
-.product-row-name, .product-row-quantity, .product-row-unit, .product-row-cost {
+.product-row-name, .product-row-quantity, .product-row-unit, .product-row-cost, .subtotal-text {
     font-family: Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
     -webkit-font-smoothing: antialiased;
     color: white;
 
 }
+
+
+.subtotal-header {
+    font-family: Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.totals-container {
+    margin-top: 5%;
+}
+
+.subtotal-text {
+    display: flex;
+    justify-content: center;
+    margin-left: 10%;
+}
+
+.subtotal-header-text{
+
+}
+

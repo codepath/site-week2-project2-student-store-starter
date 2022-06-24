@@ -27,7 +27,9 @@ export default function Sidebar(props) {
           
         <button className = "arrow-btn" onClick = {() => props.setIsOpen(sidebarKey)}><RightArrowIcon/></button>
         {!props.isOpen ? <div> <ShopCartIcon/> <CoinIcon/> <FormIcon/> </div> : <ShoppingCart isOpen ={props.isOpen} products = {props.products} shoppingCart = {props.shoppingCart} setShoppingCart = {props.setShoppingCart} 
-                                                                                checkoutForm = {props.checkoutForm} setCheckoutForm ={props.setCheckoutForm} handleOnCheckoutFormChange = {props.handleOnCheckoutFormChange} handleOnSubmitCheckoutForm = {props.handleOnSubmitCheckoutForm}/>}
+                                                                                checkoutForm = {props.checkoutForm} setCheckoutForm ={props.setCheckoutForm} handleOnCheckoutFormChange = {props.handleOnCheckoutFormChange} 
+                                                                                handleOnSubmitCheckoutForm = {props.handleOnSubmitCheckoutForm} showReceipt = {props.showReceipt} setShowReceipt ={props.setShowReceipt} receipt = {props.receipt} 
+                                                                                checkoutSuccess = {props.checkoutSuccess} setCheckoutSuccess ={props.setCheckoutSuccess}/>}
 
 
       </div>

@@ -145,5 +145,1082 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": 6.50325
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": 6.50325
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": "6.50"
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": 6.50325
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": 6.50325
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": 6.50325
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": 6.50325
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": 6.50325
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": 6.50325
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 5,
+          "quantity": 2
+        }
+      ],
+      "total": 16.3125
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 5,
+          "quantity": 2
+        }
+      ],
+      "total": 16.3125
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 5,
+          "quantity": 2
+        }
+      ],
+      "total": 16.3125
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 5,
+          "quantity": 2
+        }
+      ],
+      "total": 16.3125
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 5,
+          "quantity": 2
+        }
+      ],
+      "total": 16.3125
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 5,
+          "quantity": 2
+        }
+      ],
+      "total": 16.3125
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 5,
+          "quantity": 2
+        }
+      ],
+      "total": 16.3125
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 5,
+          "quantity": 2
+        }
+      ],
+      "total": 16.3125
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 5,
+          "quantity": 2
+        }
+      ],
+      "total": 16.3125
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 5,
+          "quantity": 2
+        }
+      ],
+      "total": 16.3125
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 5,
+          "quantity": 2
+        }
+      ],
+      "total": 16.3125
+    },
+    {
+      "id": 1,
+      "name": "aba",
+      "email": "ba",
+      "order": [
+        {
+          "itemId": 15,
+          "quantity": 1
+        }
+      ],
+      "total": 21.72825
+    },
+    {
+      "id": 1,
+      "name": "abba",
+      "email": "baba",
+      "order": [
+        {
+          "itemId": 15,
+          "quantity": 5
+        }
+      ],
+      "total": 108.64125
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "travis.navarro.site@codepath.org",
+      "order": [
+        {
+          "itemId": 15,
+          "quantity": 2
+        },
+        {
+          "itemId": 14,
+          "quantity": 1
+        }
+      ],
+      "total": 163.0815
+    },
+    {
+      "id": 1,
+      "name": "a",
+      "email": "b",
+      "order": [
+        {
+          "itemId": 15,
+          "quantity": 1
+        },
+        {
+          "itemId": 14,
+          "quantity": 1
+        }
+      ],
+      "total": 141.35325
+    },
+    {
+      "id": 1,
+      "name": "a",
+      "email": "b",
+      "order": [
+        {
+          "itemId": 15,
+          "quantity": 2
+        }
+      ],
+      "total": 43.4565
+    },
+    {
+      "id": 1,
+      "name": "adasa",
+      "email": "a",
+      "order": [
+        {
+          "itemId": 15,
+          "quantity": 4
+        }
+      ],
+      "total": 86.913
+    },
+    {
+      "id": 1,
+      "name": "aba",
+      "email": "bab",
+      "order": [
+        {
+          "itemId": 15,
+          "quantity": 2
+        }
+      ],
+      "total": 43.4565
+    },
+    {
+      "id": 1,
+      "name": "ababa",
+      "email": "ababa",
+      "order": [
+        {
+          "itemId": 15,
+          "quantity": 7
+        }
+      ],
+      "total": 152.09775000000002
+    },
+    {
+      "id": 1,
+      "name": "ababa",
+      "email": "ababa",
+      "order": [
+        {
+          "itemId": 15,
+          "quantity": 5
+        }
+      ],
+      "total": 108.64125
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 5,
+          "quantity": 2
+        }
+      ],
+      "total": 16.3125
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 5
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 5
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 5
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "asdas",
+      "email": "asda",
+      "order": [
+        {
+          "itemId": 15,
+          "quantity": 1
+        },
+        {
+          "itemId": 14,
+          "quantity": 1
+        }
+      ],
+      "total": 141.35325
+    },
+    {
+      "id": 1,
+      "name": "aba",
+      "email": "aba",
+      "order": [
+        {
+          "itemId": 15,
+          "quantity": 2
+        }
+      ],
+      "total": 43.4565
+    },
+    {
+      "id": 1,
+      "name": "ababca",
+      "email": "acbac",
+      "order": [
+        {
+          "itemId": 15,
+          "quantity": 10
+        }
+      ],
+      "total": 217.2825
+    },
+    {
+      "id": 1,
+      "name": "ababca",
+      "email": "acbac",
+      "order": [
+        {
+          "itemId": 15,
+          "quantity": 8
+        }
+      ],
+      "total": 173.826
+    },
+    {
+      "id": 1,
+      "name": "ababca",
+      "email": "acbac",
+      "order": [
+        {
+          "itemId": 15,
+          "quantity": 9
+        }
+      ],
+      "total": 195.55425
+    },
+    {
+      "id": 1,
+      "name": "aba",
+      "email": "aba",
+      "order": [
+        {
+          "itemId": 15,
+          "quantity": 6
+        }
+      ],
+      "total": 130.3695
+    },
+    {
+      "id": 1,
+      "name": "abac",
+      "email": "abca",
+      "order": [
+        {
+          "itemId": 15,
+          "quantity": 9
+        }
+      ],
+      "total": 195.55425
+    },
+    {
+      "id": 1,
+      "name": "a",
+      "email": "a",
+      "order": [
+        {
+          "itemId": 14,
+          "quantity": 4
+        }
+      ],
+      "total": 478.5
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "support@codepath.org",
+      "order": [
+        {
+          "itemId": 5
+        }
+      ],
+      "total": null
+    },
+    {
+      "id": 1,
+      "name": "abca",
+      "email": "aca",
+      "order": [
+        {
+          "itemId": 15,
+          "quantity": 5
+        }
+      ],
+      "total": 108.64125
+    },
+    {
+      "id": 1,
+      "name": "abac",
+      "email": "acab",
+      "order": [
+        {
+          "itemId": 15,
+          "quantity": 1
+        }
+      ],
+      "total": 21.72825
+    },
+    {
+      "id": 1,
+      "name": "ab",
+      "email": "aba",
+      "order": [
+        {
+          "itemId": 15,
+          "quantity": 2
+        }
+      ],
+      "total": 43.4565
+    },
+    {
+      "id": 1,
+      "name": "a",
+      "email": "a",
+      "order": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "total": 65.18475
+    },
+    {
+      "id": 1,
+      "name": "a",
+      "email": "a",
+      "order": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "total": 65.18475
+    },
+    {
+      "id": 1,
+      "name": "a",
+      "email": "a",
+      "order": [
+        {
+          "itemId": 16,
+          "quantity": 3
+        }
+      ],
+      "total": 3262.467375
+    },
+    {
+      "id": 1,
+      "name": "aba",
+      "email": "aba",
+      "order": [
+        {
+          "itemId": 15,
+          "quantity": 5
+        }
+      ],
+      "total": 108.64125
+    },
+    {
+      "id": 1,
+      "name": "a",
+      "email": "a",
+      "order": [
+        {
+          "itemId": 15,
+          "quantity": 4
+        }
+      ],
+      "total": 86.913
+    },
+    {
+      "id": 1,
+      "name": "a",
+      "email": "a",
+      "order": [
+        {
+          "itemId": 15,
+          "quantity": 4
+        }
+      ],
+      "total": 86.913
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "travisnavarro15@gmail.com",
+      "order": [
+        {
+          "itemId": 15,
+          "quantity": 4
+        }
+      ],
+      "total": 86.913
+    },
+    {
+      "id": 1,
+      "name": "abca",
+      "email": "acbaca",
+      "order": [
+        {
+          "itemId": 15,
+          "quantity": 1
+        }
+      ],
+      "total": 21.72825
+    },
+    {
+      "id": 1,
+      "name": "abca",
+      "email": "abcaca",
+      "order": [
+        {
+          "itemId": 15,
+          "quantity": 4
+        }
+      ],
+      "total": 86.913
+    },
+    {
+      "id": 1,
+      "name": "Travis Navarro",
+      "email": "travisnavarro15@gmail.com",
+      "order": [
+        {
+          "itemId": 12,
+          "quantity": 2
+        },
+        {
+          "itemId": 13,
+          "quantity": 1
+        },
+        {
+          "itemId": 15,
+          "quantity": 1
+        },
+        {
+          "itemId": 16,
+          "quantity": 1
+        }
+      ],
+      "total": 2055.320625
+    }
+  ]
 }

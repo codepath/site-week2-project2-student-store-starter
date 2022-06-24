@@ -24,7 +24,7 @@ export default function ProductCard(props) {
             <button className = "add" onClick = { () => props.handleAddItemToCart(props.productId)}><i class="fa-solid fa-cart-plus"></i></button>
             <button className = "remove" onClick = { () => props.handleRemoveItemFromCart(props.productId)}><i class="fa-solid fa-trash-can"></i></button>
             <p className = "product-price"><i class="fa-solid fa-coins"></i>  ${price}</p>
-            {quantity ? <p className = "product-quantity">{quantity}</p> : ""}
+            {quantity ? <p className = "product-quantity">{quantity} in cart</p> : ""}
         </div>
 
 

@@ -23,7 +23,7 @@ export default function CheckoutForm(props) {
         <button className ="checkout-button" onClick = {props.handleOnSubmitCheckoutForm}>Checkout</button>
 
         <h3 className = "checkout-info-title">Checkout Info <span><FormIcon/></span></h3>
-        <p className = "confirmation-text">A confirmation email will be sent to you so that you can confirm this order. Once you have confirmed the order, it will be delivered to your dorm room.</p>
+        
 
         
     </div>

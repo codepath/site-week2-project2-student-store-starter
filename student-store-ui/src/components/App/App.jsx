@@ -30,6 +30,11 @@ export default function App() {
   const [shoppingCart, setShoppingCart] = useState([]); 
   const [checkoutForm, setCheckoutForm] = useState([initialForm])
   const [selectedCategory, setSelectedCategory] = useState("All Categories")
+  const [showReceipt, setShowReceipt] = useState(false)
+  const [receipt, setReceipt] = useState([])
+  const [checkoutSuccess, setCheckoutSuccess] = useState(false)
+  
+  
  
 
 
@@ -108,14 +113,43 @@ export default function App() {
     else if (name === "email" && !checkoutForm.name == ""){
       setCheckoutForm({name: "", email: value})
     }
-    console.log("checkoutForm: ",checkoutForm)
+
   }
 
 
 
-  function handleOnSubmitCheckoutForm(){
+  async function  handleOnSubmitCheckoutForm(){
+    console.log("HANDLER RECEIVES:", checkoutForm)
+    if (shoppingCart.length === 0 ){ //empty cart
+      alert("No cart or items in cart found to checkout")
+    }
 
-    
+    else if (!checkoutForm.name || !checkoutForm.email){ // missing user info
+      alert("User info must include an email and name")
+    }
+
+    else{
+        try {
+          const response = await axios.post("http://localhost:3001/store", {user: checkoutForm, shoppingCart: shoppingCart})
+          if (response.data) {
+            console.log("response data is:", response.data)
+            setReceipt(response.data)
+            setCheckoutSuccess(true)
+          } else {
+            setError("Error posting")
+            setCheckoutSuccess(false)
+          }
+        } catch (error) {
+          console.log(error)
+        } 
+      
+
+
+      setShowReceipt(true)
+      setShoppingCart([])
+      setCheckoutForm(initialForm)
+    }
+
 
   }
 
@@ -144,14 +178,15 @@ export default function App() {
   }, [])
 
 
-
+ 
   return (
     <div className="app">
       <BrowserRouter>
       <main>
         <Navbar />
         <Sidebar isOpen = {isOpen} setIsOpen = {setIsOpen} products = {products} shoppingCart = {shoppingCart} setShoppingCart = {setShoppingCart} checkoutForm ={checkoutForm} setCheckoutForm = {setCheckoutForm} 
-                  handleOnCheckoutFormChange = {handleOnCheckoutFormChange} handleOnSubmitCheckoutForm = {handleOnSubmitCheckoutForm}/> 
+                  handleOnCheckoutFormChange = {handleOnCheckoutFormChange} handleOnSubmitCheckoutForm = {handleOnSubmitCheckoutForm} showReceipt = {showReceipt} setShowReceipt = {setShowReceipt} receipt = {receipt} 
+                  checkoutSuccess = {checkoutSuccess} setCheckoutSuccess ={setCheckoutSuccess}/> 
         <Routes>
           <Route path = "/" element = {<Home products = {products} selectedCategory = {selectedCategory} setSelectedCategory = {setSelectedCategory} handleAddItemToCart = {handleAddItemToCart} handleRemoveItemFromCart = {handleRemoveItemFromCart} shoppingCart = {shoppingCart}/>}  />
           <Route path = "/products/:productId" element = {<ProductDetail products = {products} isFetching = {isFetching} setIsFetching = {setIsFetching} error = {error} setError = {setError}/>} /> 

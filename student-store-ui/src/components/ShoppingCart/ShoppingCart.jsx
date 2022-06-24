@@ -1,17 +1,17 @@
 import * as React from "react"
 import "./ShoppingCart.css"
 import CheckoutForm from "../CheckoutForm/CheckoutForm"
-
-// importing hooks
-import { useState, useEffect } from "react"
+import Receipt from "../Receipt/Receipt"
 
 
 
 export default function ShoppingCart(props) {
 
-    const [subtotal, setSubtotal] = useState(0)
 
-
+    //intializing price variables
+    let subtotal = 0
+    let taxes = 0
+    let total = 0
 
 
     return (
@@ -21,14 +21,62 @@ export default function ShoppingCart(props) {
     <div className = "shopping-cart">
         <h3 className = "shopping-cart-title">Shopping Cart <span><ShopCartIcon/></span></h3>
         
-        {props.shoppingCart.length <= 0 ? (<div className = "warning-message">No items added to cart yet. Start shopping now!</div>) : <CheckoutTable shoppingCart = {props.shoppingCart} products = {props.products} subtotal = {subtotal} setSubtotal = {setSubtotal}/> }
-        <TotalBox/>
-        <CheckoutForm isOpen = {props.isOpen} shoppingCart = {props.shoppingCart} checkoutForm ={props.checkoutForm} handleOnCheckoutFormChange = {props.handleOnCheckoutFormChange} handleOnSubmitCheckoutForm = {props.handleOnSubmitCheckoutForm}/>
+        {/* conditionally rendering checkout table & totals as long as shopping cart isn't empty */}
+        {props.shoppingCart.length <= 0 ? (<div className = "warning-message">No items added to cart yet. Start shopping now!</div>) : 
+            <div className = "checkout-table">
+                <div className = "checkout-table-header">
+                <span className = "checkout-table-name">Name</span>
+                <span className = "checkout-table-quantity">Quantity</span>
+                <span className = "checkout-table-unit">Unit Price</span>
+                <span className = "checkout-table-cost">Cost</span>
+            </div>
+
+        {/* looping through shopping cart to get product details and price */}
+        {props.shoppingCart.map((object) => { 
+                let matchingProduct = props.products.find((product) => product.id === object.itemId)
+                let cost = matchingProduct.price*object.quantity
+                subtotal += cost
+                taxes = subtotal * 0.0875
+                total = subtotal + taxes
+                return(
+                         
+                        <div className = "product-row">
+                            <span className ="product-row-name">{matchingProduct.name}</span>
+                            <span className ="product-row-quantity">{object.quantity}</span>
+                            <span className ="product-row-unit">{matchingProduct.price}</span>
+                            <span className ="product-row-cost">{cost.toFixed(2)}</span>
+                        </div>)
+
+            })}
+        </div> }
 
 
 
 
+        {/* conditionally rendering the shopping cart totals, won't display if empty cart */}
+        {props.shoppingCart.length <= 0 ? null : 
+            <div className="totals-container">
+                <div className = "subtotal-header">
+                    <span className = "subtotal-header-text">Subtotal</span>
+                    <span className = "subtotal-text">{subtotal.toFixed(2)}</span>
+                </div>
+                <div className = "subtotal-header">
+                    <span className = "subtotal-header-text">Taxes and Fees</span>
+                    <span className = "subtotal-text">{taxes.toFixed(2)}</span>
+                </div>
+                <div className = "subtotal-header">
+                    <span className = "subtotal-header-text">Total</span>
+                    <span className = "subtotal-text">{total.toFixed(2)}</span>
+                </div>
+            </div>
+            }
+   
 
+        <CheckoutForm isOpen = {props.isOpen} shoppingCart = {props.shoppingCart} checkoutForm ={props.checkoutForm} handleOnCheckoutFormChange = {props.handleOnCheckoutFormChange} handleOnSubmitCheckoutForm = {props.handleOnSubmitCheckoutForm}/> 
+        {/* conditionally rendering to show default checkout form text or user's recent for last order */}
+        {props.showReceipt && props.checkoutSuccess  ? <Receipt setShowReceipt = {props.setShowReceipt} checkoutForm = {props.checkoutForm} shoppingCart = {props.shoppingCart} products = {props.products} receipt = {props.receipt} 
+        checkoutSuccess = {props.checkoutSuccess} setCheckoutSuccess ={props.setCheckoutSuccess}/>
+         :  <p className = "confirmation-text">A confirmation email will be sent to you so that you can confirm this order. Once you have confirmed the order, it will be delivered to your dorm room.</p>}
 
     </div>
 
@@ -37,74 +85,6 @@ export default function ShoppingCart(props) {
 
 
 
-
-
-
-
-export function CheckoutTable(props) {
-
-
-    
-    return (
-        <div className = "checkout-table">
-            <div className = "checkout-table-header">
-                <span className = "checkout-table-name">Name</span>
-                <span className = "checkout-table-quantity">Quantity</span>
-                <span className = "checkout-table-unit">Unit Price</span>
-                <span className = "checkout-table-cost">Cost</span>
-            </div>
-            {props.shoppingCart.map((object) => { 
-                return <CheckoutTableRows key = {object.itemId} itemId = {object.itemId} quantity = {object.quantity} products = {props.products} subtotal = {props.subtotal} setSubtotal = {props.setSubtotal}/>
-            })}
-        </div>
-    )
-}
-
-
-export function CheckoutTableRows(props) {
-    console.log("subtotal:", props.subtotal)
-
-    //parsing through to grab rest of table details
-    let matchingProduct = props.products.find((product) => product.id === props.itemId)
-    let cost = matchingProduct.price*props.quantity
-    console.log("props.quantity", props.quantity)
-
-
-    //updating subtotal
-    const calculateSubtotal = () => {
-        props.setSubtotal((currentSubtotal) => currentSubtotal + (cost))
-    }
-
-    // need to fix, quantity isn't changing, only stays at 1, refreshes when sidebar is opened and closed...
-    useEffect(() => {
-
-        calculateSubtotal();
-    }, []);
-    
-
-
-    return (
-            <div className = "product-row">
-                <span className ="product-row-name">{matchingProduct.name}</span>
-                <span className ="product-row-quantity">{props.quantity}</span>
-                
-                <span className ="product-row-unit">{matchingProduct.price}</span>
-                <span className ="product-row-cost">{cost}</span>
-            </div>
-    )
-}
-
-
-
-export function TotalBox() {
-
-
-    return (
-      <div className="totals-container">
-
-      </div>
-    )
-  }
 
   export function ShopCartIcon() {
     return (
