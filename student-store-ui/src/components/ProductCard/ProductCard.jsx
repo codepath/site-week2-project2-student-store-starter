@@ -6,7 +6,7 @@ import {
   } from "react-router-dom";
 export default function ProductCard({product, productId, quantity, handleAddItemToCart, handleRemoveItemToCart, showDescription}) {
   // const handleExpansion(product) => {
-    
+  
   // };
   return (
     <section className="product-card">
@@ -14,7 +14,7 @@ export default function ProductCard({product, productId, quantity, handleAddItem
       <div className="product-name"><h1>{product.name}</h1></div>
         {/* <div className="product-price">${price}</div> */}
         {/* TODO: FIX according sto specifications */}
-        <Link to="/products/"> 
+        <Link to={"/products/" + product.id}> 
         {/* TODO: Get it to navigate to description page when clicked */}
             <img className="product-img" src={product.image}></img>
         </Link>

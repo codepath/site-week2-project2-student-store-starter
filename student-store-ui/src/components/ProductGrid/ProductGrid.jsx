@@ -5,10 +5,11 @@ import { useState } from "react";
 export default function ProductGrid({products ,handleAddItemsToCart, handleRemoveItemToCart}) {
   // const [loadedProd, setLoadedProd] = useState(null);
   // const currentLoaded = products.
+  console.log('this:', products)
   const [searched, setSearched] = useState("");
   const regexp = new RegExp(searched, "i")
   const [clickedCategory, setClickedCategory] = useState("");
-  let currSearch = products.filter((products) => regexp.test(products.name))
+  let currSearch =  products.filter((products) => regexp.test(products.name))
   let currProds = products.filter((product, idx) => product.category == clickedCategory);
   const handleClick = (category) => {
     setClickedCategory(category);
@@ -21,6 +22,7 @@ export default function ProductGrid({products ,handleAddItemsToCart, handleRemov
   };
   return (
     <section className="products">
+      
       <div id="cover">
       <form method="get" onChange={(event) => handleSearched(event)}>
         <div className="tb">

@@ -3,7 +3,8 @@
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    background-color: white;
+    overflow: hidden;
+    grid-gap: 30px;
     /* #ffd9e3(166, 224, 255); */
 }
 @media screen and (max-width: 1800px) {
