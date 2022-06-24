@@ -1,7 +1,7 @@
 import * as React from "react"
 import axios from 'axios';
 
-import {API_BASE_URL} from "../../constants"
+import { API_BASE_URL } from "../../../../constants"
 
 import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
@@ -14,8 +14,8 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 export default function App() {
   const checkoutFormInitState = {
-    name: "",
-    email: ""
+    'name': '',
+    'email': ''
   }
 
   const [products, setProducts] = React.useState([]);
@@ -23,7 +23,10 @@ export default function App() {
   const [isCreating, setIsCreating] = React.useState(false);
   const [shoppingCart, setShoppingCart] = React.useState([]);
   const [checkoutForm, setCheckoutForm] = React.useState(checkoutFormInitState);
+  const [lastReceipt, setLastReceipt] = React.useState({});
 
+
+  // initialize application with a GET request retrieving all products that will be displayed
   React.useEffect(() => {
     const getProducts = async () => {
       setFetching(true);
@@ -43,35 +46,120 @@ export default function App() {
     getProducts();
   }, []);
 
+  // handle form values
   const handleOnCheckoutFormChange = (change) => {
     console.log(change);
-    setCheckoutForm((prevForm) => ({ 
+    setCheckoutForm((prevForm) => ({
       ...prevForm,
-       [change.target.name]: change.target.value
-      }))
-  console.log(checkoutForm)
-      
+      [change.target.name]: change.target.value
+    }))
+    console.log(checkoutForm)
   }
-  const handleOnSubmitCheckoutForm = async() => {
-    setIsCreating(true);
-    console.log("shopping cart: ", shoppingCart);
-    console.log("user info: ", checkoutForm);
 
-    const purchaseObject = {
-      user: checkoutForm,
-      shoppingCart: shoppingCart
+  
+  //handle on checkout form button for POST request
+  const handleOnSubmitCheckoutForm = async (isTermsRead) => {
+    if ((shoppingCart.length > 0)) {
+      setIsCreating(true);
+
+      console.log("shopping cart: ", shoppingCart); // debug
+      console.log("user info: ", checkoutForm);
+
+      await axios.post(`${API_BASE_URL}/store/`, { user: checkoutForm,
+        shoppingCart: shoppingCart })
+        .then((res) => {
+          console.log("purchase order created succesfully! ", res);
+          // state for Receipt component
+          setLastReceipt(res.data.purchase);
+        }).catch((error) => {
+          console.error("CREATING PURCHASE ORDER ERROR: ", error);
+        })
+
+
+      setIsCreating(false);
+      
+      // reset states 
+      setCheckoutForm(checkoutFormInitState);
+      setShoppingCart([]);
+
+    } else {
+      console.log("shopping cart is empty! can't submit")
     }
+  }
 
-    await axios.post(`${API_BASE_URL}/store/`, {purchase:purchaseObject})
-      .then((res) => {
-        console.log("purchase order: ",res);
-      }).catch((error) => {
-        console.log("CREATING PURCHASE ORDER ERROR: ", error);
+  /**
+   * handleAddItemToCart / handleRemoveItemToCart are in charge 
+   * of adding/removing objects into the shopping cart array. 
+   * @param {Object} product 
+   */
+  // shopping cart handlers 
+  const handleAddItemToCart = (product) => {
+    let newProduct = {
+      'itemId': 0,
+      'quantity': 0
+    };
+    newProduct.itemId = product.id;
+
+    //if it did not exist set quantity to one and add to state array
+    if ((!shoppingCart.find((cartProduct) => cartProduct.itemId === product.id))) {
+      newProduct.quantity = 1;
+      setShoppingCart((prevCart) => [...prevCart, newProduct]);
+    } else {
+      //if cart product exists:
+      //find cart product and get previous count
+      let existingProduct = shoppingCart.find((cartProduct) => cartProduct.itemId === product.id);
+      newProduct.quantity = existingProduct.quantity + 1;
+
+      //get all the elements except new
+      let shoppingCartNew = shoppingCart.filter((e) => {
+        return e.itemId !== newProduct.itemId;
       })
 
-    setIsCreating(false);
+      //append to state array
+      setShoppingCart([...shoppingCartNew, newProduct]);
+      
+    }
+    console.log(`item:${newProduct.itemId} incremented ${newProduct.quantity}`); // debug
   }
 
+  const handleRemoveItemFromCart = (product) => {
+    //product we will want to add
+    let newProduct = {
+      itemId: 0,
+      quantity: 0
+    };
+
+    newProduct.itemId = product.id;
+    
+    //find if product exists 
+    let findProduct = shoppingCart.find((cartProduct) => cartProduct.itemId === product.id);
+    if (findProduct) {
+      //if the count is not 0, decrease by one
+      if ((findProduct.quantity - 1) === 0) {
+        // get shopping cart without the item so we can "delete" it by filtering
+        let shoppingCartNew = shoppingCart.filter((e) => {
+          return e.itemId !== newProduct.itemId;
+        })
+        
+        // update
+        setShoppingCart(shoppingCartNew);
+
+        console.log(`item: ${newProduct.itemId} removed from cart`);
+      } else if ((findProduct.quantity-1) > 0) {
+        newProduct.quantity = findProduct.quantity - 1;
+
+        //get all the elements except new
+        let shoppingCartNew = shoppingCart.filter((e) => {
+          return e.itemId !== newProduct.itemId;
+        })
+        // append again
+        setShoppingCart([...shoppingCartNew, newProduct])
+        console.log(`item: ${newProduct.itemId} decremented ${newProduct.quantity}`);
+      }
+    } 
+  }
+
+  //check if fetching to prevent undefined errors
   if (isFetching) {
     return <h1>Loading...</h1>
   }
@@ -81,12 +169,12 @@ export default function App() {
       <BrowserRouter>
         <main>
           <Navbar />
-          <Sidebar 
+          <Sidebar
             products={products}
-            shoppingCart={shoppingCart} 
-            checkoutForm={checkoutForm} 
-            handleOnCheckoutFormChange={handleOnCheckoutFormChange} 
-            handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}/>
+            shoppingCart={shoppingCart}
+            checkoutForm={checkoutForm}
+            handleOnCheckoutFormChange={handleOnCheckoutFormChange}
+            handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm} />
           <Routes>
             <Route path="/" element={<Home isFetching={isFetching} products={products} setShoppingCart={setShoppingCart} shoppingCart={shoppingCart} />} />
             <Route path="/products/:productId" element={<ProductDetail products={products} setShoppingCart={setShoppingCart} shoppingCart={shoppingCart} />} />
