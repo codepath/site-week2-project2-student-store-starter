@@ -27,29 +27,36 @@ class Store {
   // create a new purchase order
   static async recordPurchase(user=null, shoppingCart=null) {
 
-    const isInvalidCheckoutForm = (!user) || (!shoppingCart) || Object.keys(user).length === 0 || shoppingCart.length === 0
-    if (isInvalidCheckoutForm) {
+    // throw error if user or shoppingCart are missing
+    const isInvalidCheckoutForm = (!user) || Object.keys(user).length != 2 || (!user.email) || (!user.name)
+    const isMissingShoppingCart = (!shoppingCart) || shoppingCart.length === 0
+    if (isInvalidCheckoutForm || isMissingShoppingCart) {
       throw new BadRequestError("Request requires both user fields and a non-empty shopping cart")
     }
 
+    // throw error if there are any duplicate items in the shopping cart
+    const itemIds = shoppingCart.map(item => {
+      return item.itemId;
+    });
+    const uniqueItemIds = [...new Set(itemIds)]
+
+    if (uniqueItemIds.length != shoppingCart.length) {
+      throw new BadRequestError("There are duplicate items in the shopping cart")
+    }
+
+    // Start iterating over the shopping cart to make receipt and check for valid fields
+    
     // initialize a receipt array
     let receiptList = []
 
     // get subtotal for the order
     let subtotal = 0
-    let idTracker = []
     for (let i = 0; i < shoppingCart.length; i++) {
       // check if shopping cart array has valid items
       let item = shoppingCart[i]
       if ("quantity" in item && "itemId" in item) {
         // get corresponding product item to get price
         const targetItem = await this.fetchProductById(item.itemId)
-        // check if there is a duplicate itemId, throw an error
-        if (item.itemId in idTracker) {
-          throw new BadRequestError("There are duplicate items in the cart")
-        }
-        // if not, add the item Id to the tracking array and continue
-        idTracker = [...idTracker, item.itemId]
         let itemCost = parseFloat((targetItem.price * item.quantity).toFixed(2))
         subtotal += itemCost
         receiptList = [...receiptList, `${item.quantity} ${targetItem.name} purchased at a cost of $${targetItem.price.toFixed(2)} for a total cost of $${itemCost.toFixed(2)}`]
@@ -58,7 +65,7 @@ class Store {
       }
     }
     
-    const tax = parseFloat(subtotal * 0.0875.toFixed(2))
+    const tax = parseFloat((subtotal * 0.0875).toFixed(2))
     const total = subtotal + tax
 
     // update receiptList

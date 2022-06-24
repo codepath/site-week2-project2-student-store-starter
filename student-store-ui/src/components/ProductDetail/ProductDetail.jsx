@@ -43,8 +43,6 @@ export default function ProductDetail(props) {
         <ProductView
           product={product}
           productId={productId}
-          // need to figure out shopping cart obj to get quantity
-          //quantity={0}
           quantity={productQuantity}
           handleAddItemToCart={props.handleAddItemToCart}
           handleRemoveItemFromCart={props.handleRemoveItemFromCart}
