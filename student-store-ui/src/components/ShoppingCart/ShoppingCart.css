@@ -23,9 +23,6 @@ tr:nth-child(even) {
     background-color: var(--tableElementEven);
 }
 
-.cart-table-column {
-    /* display:grid; */
-    /* grid-template-rows: 1fr 1fr; */
-    /* justify-content: space-between; */
-    /* flex-direction: row; */
+.cart-table-row {
+    margin: auto;
 }

@@ -4,8 +4,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 0;
-
+    margin: 25px;
+    font-size: 20px;
 }
 
 .check-out .hidden {
@@ -27,11 +27,12 @@
 }
 
 input[type=submit] {
+    width:50%;
     font-size: 20px;
     border: none;
     padding: 10px;
     transition: all 100ms linear;
-    margin:10px;
+    margin:20px auto 0 auto;
 }
 
 input[type=submit]:hover {

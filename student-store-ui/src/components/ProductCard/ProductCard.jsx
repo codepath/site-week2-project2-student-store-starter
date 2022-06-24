@@ -4,6 +4,12 @@ import './ProductCard.css'
 
 export default function ProductCard(props) {
   const [isSelected, setSelected] = React.useState(false);
+  
+  const getProductCount = () => {
+    return props.shoppingCart.find((item, i) => {
+      return item.itemId === props.product.id;
+    })
+  }
 
   const handleAddItemToCart = (product) => {
     let newProduct = {
@@ -13,13 +19,11 @@ export default function ProductCard(props) {
     newProduct.itemId = product.id;
 
     if ((!props.shoppingCart.find((cartProduct) => cartProduct.itemId === product.id))) {
-      console.log("didnt exist")
       newProduct.quantity = 1;
       props.setShoppingCart((prevCart) => [...prevCart, newProduct]);
 
       console.log(`item:${newProduct.name} incremented ${newProduct.count}`);
     } else {
-      console.log("did exist")
       //if cart product exists:
       //find cart product and get previous count
       let existingProduct = props.shoppingCart.find((cartProduct) => cartProduct.itemId === product.id);
@@ -32,8 +36,6 @@ export default function ProductCard(props) {
       props.setShoppingCart([...shoppingCartNew, newProduct]);
       console.log(`item:${newProduct.itemId} incremented ${newProduct.quantity}`);
     }
-    console.log(111, `${newProduct}`);
-    console.log(222, props.shoppingCart);
   }
   //TODO: fix spaghetti code
   const handleRemoveItemFromCart = (product) => {
@@ -83,7 +85,6 @@ export default function ProductCard(props) {
           <div className="section">
             <button onClick={(e) => handleRemoveItemFromCart(props.product)} className="btn right">-</button>
             <button onClick={(e) => handleAddItemToCart(props.product)} className="btn right">+</button>
-            {/* <p className="shopping-cart-count">{props.product.count || 0}</p> */}
           </div>
         </div>
 
@@ -92,7 +93,7 @@ export default function ProductCard(props) {
           <span className="product-description">{props.product.description}</span> : null}
 
       </div>
-      <CardFooter amount={props.product.amount} count={props.product.count} price={props.product.price} />
+      <CardFooter amount={props.product.amount} getProductCount={getProductCount} price={props.product.price} />
     </div>)
 }
 
@@ -101,8 +102,7 @@ export function CardFooter(props) {
     <div className="product-card-footer">
 
       <div className="section">
-        {(props.count > 0 && props.count) ? <span className="amount">{props.count}</span> : null}
-
+        { ((props.getProductCount() != null) && (props.getProductCount().quantity > 0)) ? <span className="amount">{props.getProductCount().quantity}</span>:""}
       </div>
 
       <div className="section right">

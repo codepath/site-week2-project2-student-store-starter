@@ -3,14 +3,14 @@ import "./CheckOutForm.css"
 export default function CheckOutForm(props) {
 
     return (
-        <div className={"check-out"}>
+        <div className="check-out">
             <h1>Check Out</h1>
             
                 <label htmlFor="check-out-form">Username</label>
                 <input
                     name="name"
                     type="text"
-                    value={props.checkoutForm?.username || ""}
+                    value={props.checkoutForm?.name || ""}
                     onChange={props.handleOnCheckoutFormChange}
                 />
 

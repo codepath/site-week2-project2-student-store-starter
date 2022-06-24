@@ -20,6 +20,7 @@ export default function App() {
 
   const [products, setProducts] = React.useState([]);
   const [isFetching, setFetching] = React.useState(false);
+  const [isCreating, setIsCreating] = React.useState(false);
   const [shoppingCart, setShoppingCart] = React.useState([]);
   const [checkoutForm, setCheckoutForm] = React.useState(checkoutFormInitState);
 
@@ -51,8 +52,24 @@ export default function App() {
   console.log(checkoutForm)
       
   }
-  const handleOnSubmitCheckoutForm = () => {
+  const handleOnSubmitCheckoutForm = async() => {
+    setIsCreating(true);
+    console.log("shopping cart: ", shoppingCart);
+    console.log("user info: ", checkoutForm);
 
+    const purchaseObject = {
+      user: checkoutForm,
+      shoppingCart: shoppingCart
+    }
+
+    await axios.post(`${API_BASE_URL}/store/`, {purchase:purchaseObject})
+      .then((res) => {
+        console.log("purchase order: ",res);
+      }).catch((error) => {
+        console.log("CREATING PURCHASE ORDER ERROR: ", error);
+      })
+
+    setIsCreating(false);
   }
 
   if (isFetching) {
@@ -65,6 +82,7 @@ export default function App() {
         <main>
           <Navbar />
           <Sidebar 
+            products={products}
             shoppingCart={shoppingCart} 
             checkoutForm={checkoutForm} 
             handleOnCheckoutFormChange={handleOnCheckoutFormChange} 

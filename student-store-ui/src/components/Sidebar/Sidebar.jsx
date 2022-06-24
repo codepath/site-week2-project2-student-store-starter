@@ -1,9 +1,8 @@
 import * as React from "react"
 import "./Sidebar.css"
 
-import ShoppingCartItem from "../ShoppingCartItem/ShoppingCartItem";
 import CheckOutForm from "../CheckoutForm/CheckOutForm"
-import CartTable from "../CartTable/CartTable";
+import CartTable from "../ShoppingCart/ShoppingCart";
 
 export default function Sidebar(props) {
   const [isHidden, setHidden] = React.useState("hidden");
@@ -16,16 +15,6 @@ export default function Sidebar(props) {
     }
   }
 
-  const getShoppingCartItems = () => {
-    return (
-      props.shoppingCart.map((e) => {
-        if (e.count > 0) {
-          return <ShoppingCartItem key={e.name} item={e} />
-        }
-      })
-    )
-  }
-
   return (
     <section className={"sidebar " + isHidden}>
       <span className="material-icons" onClick={() => { toggleisHidden() }} >shopping_cart</span>
@@ -34,13 +23,14 @@ export default function Sidebar(props) {
       </div>
 
       <div className={"sidebar-container " + isHidden}>
+        <CartTable products={props.products} isOpen={isHidden} shoppingCart={props.shoppingCart} />
         <CheckOutForm 
           isOpen={isHidden} 
           shoppingCart={props.shoppingCart} 
           checkoutForm={props.checkoutForm} 
           handleOnCheckoutFormChange={props.handleOnCheckoutFormChange} 
           handleOnSubmitCheckoutForm={props.handleOnSubmitCheckoutForm}/>
-        {props.shoppingCart.length >= 1 ? <CartTable getShoppingCartItems={getShoppingCartItems}/> : <h1>hello world</h1>}
+        
         
       </div>
     </section>
