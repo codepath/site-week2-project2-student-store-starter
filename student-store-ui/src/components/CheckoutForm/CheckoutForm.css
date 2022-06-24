@@ -1,0 +1,47 @@
+.checkout-form {
+    display:flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.checkout-form .closed {
+    display: none;
+}
+
+.checkout-form h3 {
+    color: white;
+    display: flex;
+    justify-content: center; 
+    font-weight: 50px; 
+    margin: 0;
+    margin-top: 30px;
+}
+
+.input-field {
+    color: white;
+}
+
+input {
+    width: 90%;
+    line-height: 28px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 1em;
+}
+
+.button-container {
+    display:flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+.checkout-button {
+    background-color: #2c4047;
+    color: white;
+    width: 50%;
+    height: 50px;
+    border-radius: 1em;
+}
+.input-field .label {
+    display: block;
+    margin-left: 5%;
+}

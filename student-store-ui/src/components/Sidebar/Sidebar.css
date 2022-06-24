@@ -1,4 +1,4 @@
-.sidebar {
+/* .sidebar {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,16 +8,30 @@
     overflow-y: scroll;
     border-right: solid 1px white;
     padding: 0;
-
+} */
+.sidebar {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    height: calc(100vh - 70px);
+    z-index: 90;
+    background-color: #4082AD;
 }
+
 .sidebar .closed {
     width: 60px;
 }
 
-.sidebar .open { 
-    width: 575px;
+.sidebar .open {
+    width: 550px;
 }
 
 .sidebar .toggle-button.open {
     transform: rotateY(180deg);
+}
+
+.wrapper {
+    display: flex;
+    /*left and right*/
+    justify-content: end;
 }

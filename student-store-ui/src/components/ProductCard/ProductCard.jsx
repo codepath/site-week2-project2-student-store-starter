@@ -2,12 +2,13 @@ import "./ProductCard.css"
 import { Link } from "react-router-dom"
 
 export default function ProductCard({ shoppingCart, product, handleAddItemToCart, handleRemoveItemFromCart, showDescription}) {
+    //
     
     const quantityOfItem = shoppingCart.find((prod) => {
         return prod.itemId == product.id
     })?.quantity;
 
-    console.log(showDescription);
+    
     const showDesc  = showDescription ? "active" : "hidden";
 
     return (
