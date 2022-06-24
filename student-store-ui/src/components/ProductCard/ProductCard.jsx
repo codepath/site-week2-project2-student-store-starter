@@ -4,62 +4,11 @@ import './ProductCard.css'
 
 export default function ProductCard(props) {
   const [isSelected, setSelected] = React.useState(false);
-  
+
   const getProductCount = () => {
     return props.shoppingCart.find((item, i) => {
       return item.itemId === props.product.id;
     })
-  }
-
-  const handleAddItemToCart = (product) => {
-    let newProduct = {
-      itemId: 0,
-      quantity: 0
-    };
-    newProduct.itemId = product.id;
-
-    if ((!props.shoppingCart.find((cartProduct) => cartProduct.itemId === product.id))) {
-      newProduct.quantity = 1;
-      props.setShoppingCart((prevCart) => [...prevCart, newProduct]);
-
-      console.log(`item:${newProduct.name} incremented ${newProduct.count}`);
-    } else {
-      //if cart product exists:
-      //find cart product and get previous count
-      let existingProduct = props.shoppingCart.find((cartProduct) => cartProduct.itemId === product.id);
-      newProduct.quantity = existingProduct.quantity + 1;
-      //get all the elements except new
-      let shoppingCartNew = props.shoppingCart.filter((e) => {
-        return e.itemId !== newProduct.itemId;
-      })
-
-      props.setShoppingCart([...shoppingCartNew, newProduct]);
-      console.log(`item:${newProduct.itemId} incremented ${newProduct.quantity}`);
-    }
-  }
-  //TODO: fix spaghetti code
-  const handleRemoveItemFromCart = (product) => {
-    let newProduct = {
-      itemId: 0,
-      quantity: 0
-    };
-    newProduct.itemId = product.id;
-
-    let findProduct = props.shoppingCart.find((cartProduct) => cartProduct.itemId === product.id);
-    // check if product exists
-    if (findProduct) {
-      //if the count is greater than one, decrease by one
-      if (findProduct.quantity > 0) {
-        newProduct.quantity = findProduct.quantity - 1;
-      }
-      //get all the elements except new
-      let shoppingCartNew = props.shoppingCart.filter((e) => {
-        return e.itemId !== newProduct.itemId;
-      })
-
-      props.setShoppingCart([...shoppingCartNew, newProduct])
-      console.log(`item:${newProduct.itemId} decremented ${newProduct.quantity}`);
-    }
   }
 
   return (
@@ -83,8 +32,8 @@ export default function ProductCard(props) {
             <h1 className="title">{props.product.name}</h1>
           </div>
           <div className="section">
-            <button onClick={(e) => handleRemoveItemFromCart(props.product)} className="btn right">-</button>
-            <button onClick={(e) => handleAddItemToCart(props.product)} className="btn right">+</button>
+            <button onClick={(e) => props.handleRemoveItemFromCart(props.product)} className="btn right">-</button>
+            <button onClick={(e) => props.handleAddItemToCart(props.product)} className="btn right">+</button>
           </div>
         </div>
 
@@ -102,7 +51,7 @@ export function CardFooter(props) {
     <div className="product-card-footer">
 
       <div className="section">
-        { ((props.getProductCount() != null) && (props.getProductCount().quantity > 0)) ? <span className="amount">{props.getProductCount().quantity}</span>:""}
+        {((props.getProductCount() != null) && (props.getProductCount().quantity > 0)) ? <span className="amount">{props.getProductCount().quantity}</span> : ""}
       </div>
 
       <div className="section right">
