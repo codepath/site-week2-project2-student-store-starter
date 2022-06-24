@@ -6,13 +6,14 @@ import About from "./About";
 import Contact from "./Contact";
 import Footer from "./Footer";
 import ProductGrid from "../ProductGrid/ProductGrid"
+
 import "./Home.css"
 
 export default function Home(props) {
 
   let products = props.products
 
-  // Filter
+  // Filter Feature
   function handleCategoryChange(event) {
     props.setCategory(event.target.value);
   }
@@ -24,24 +25,23 @@ export default function Home(props) {
     return products.filter((product) => product.category === props.activeCategory);
   }
 
-let filteredList = useMemo(getFilteredList, [props.activeCategory, products]);
+  let filteredList = useMemo(getFilteredList, [props.activeCategory, products]);
 
-// Search
-function handleSearchChange(event) {
-  props.setSearch(event.target.value);
-}
+  // Search Feature
+  function handleSearchChange(event) {
+    props.setSearch(event.target.value);
+  }
 
-if (props.search.length > 0) {
-  filteredList = filteredList.filter((i) => {
-    return i.name.toLowerCase().match(props.search.toLowerCase())
-  });
-}
+  if (props.search.length > 0) {
+    filteredList = filteredList.filter((i) => {
+      return i.name.toLowerCase().match(props.search.toLowerCase())
+    });
+  }
 
   return (
     <div className="home">
       <Hero />
-
-      <input id="search-input" placeholder="Search For a Product" onChange={handleSearchChange} type="text"></input>
+      <input id="search-input" placeholder="Search For Products" onChange={handleSearchChange} type="text"></input>
       <div className="sub-navbar">
         <select
           name="category-list"
@@ -55,7 +55,11 @@ if (props.search.length > 0) {
           <option value="tech">Tech</option>
         </select>
       </div>
-      <ProductGrid products={filteredList} handleAddItemToCart={props.handleAddItemToCart} handleRemoveItemFromCart={props.handleRemoveItemFromCart} shoppingCart={props.shoppingCart}/>
+      <ProductGrid 
+      products={filteredList} 
+      handleAddItemToCart={props.handleAddItemToCart} 
+      handleRemoveItemFromCart={props.handleRemoveItemFromCart} 
+      shoppingCart={props.shoppingCart} />
       <About />
       <Contact />
       <Footer />

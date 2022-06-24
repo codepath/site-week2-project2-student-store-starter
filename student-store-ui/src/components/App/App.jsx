@@ -69,18 +69,11 @@ export default function App() {
   const handleOnSubmitCheckoutForm = () => {
 
     if (Object.keys(shoppingCart).length == 0) {
-      setCheckoutError("No items in shopping cart")
+      setCheckoutError("no item")
       return;
     }
-
-    if (checkoutForm.name == "" && checkoutForm.email == "") {
-      setCheckoutError("No name and email")
-      return;
-    } else if (checkoutForm.name == "") {
-      setCheckoutError("No name")
-      return;
-    } else if (checkoutForm.email == "") {
-      setCheckoutError("No email")
+    if (checkoutForm.name == "" || checkoutForm.email == "") {
+      setCheckoutError("field")
       return;
     }
 
@@ -112,7 +105,7 @@ export default function App() {
     setIsFetching(true)
     
       try {
-        const response = await axios.get('https://codepath-store-api.herokuapp.com/store');
+        const response = await axios.get('http://localhost:3001/store');
         setProducts(response.data?.products)
       } catch (error) {
         setError("Cannot fetch products.")
@@ -162,7 +155,7 @@ export default function App() {
         element={
         <div>
           <Navbar />
-          <ProductDetail products={products}/>
+          <ProductDetail isFetching={isFetching} setIsFetching={setIsFetching} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} setError={setError} shoppingCart={shoppingCart}/>
           <Sidebar 
           setIsOpen={setIsOpen}
           order={order} 

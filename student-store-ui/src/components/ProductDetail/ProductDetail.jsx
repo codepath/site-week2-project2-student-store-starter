@@ -24,6 +24,7 @@ import { useParams } from "react-router-dom"
 import axios from "axios"
 
 export default function ProductDetail(props) {
+    console.log(props)
     const [product, setProduct] = React.useState(null)
     let args = useParams()
     React.useEffect(() => {        
