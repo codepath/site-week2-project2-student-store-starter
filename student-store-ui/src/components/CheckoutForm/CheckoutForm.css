@@ -19,6 +19,8 @@
 
 .input-field {
     color: white;
+    font-weight: bolder;
+    font-size:larger;
 }
 
 input {
@@ -27,6 +29,7 @@ input {
     display: block;
     margin: 0 auto;
     border-radius: 1em;
+    order: none;
 }
 
 .button-container {
@@ -35,11 +38,14 @@ input {
     padding-top: 20px;
 }
 .checkout-button {
-    background-color: #2c4047;
-    color: white;
+    background-color: #F2C7AE;
+    color: #8C5F4F;
     width: 50%;
     height: 50px;
     border-radius: 1em;
+    border: none;
+    font-weight: bolder;
+    font-size: large;
 }
 .input-field .label {
     display: block;

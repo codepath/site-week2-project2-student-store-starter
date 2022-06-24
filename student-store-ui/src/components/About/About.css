@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+
 .about {
     width: 100%;
     display: flex;
@@ -12,6 +14,7 @@
 .text {
     align-items: flex-start;
     background: white;
+    font-family: 'Poppins';
 }
 
 .aboutImage {
@@ -19,4 +22,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.aboutImage img {
+    height: 350px;
 }

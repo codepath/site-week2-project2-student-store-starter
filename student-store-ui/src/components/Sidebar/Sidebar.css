@@ -13,9 +13,14 @@
     position: fixed;
     top: 70px;
     left: 0;
-    height: calc(100vh - 70px);
+    /* height: calc(100vh - 70px); */
+    height: 100vh;
     z-index: 90;
-    background-color: #4082AD;
+    background-color: #D9756C;
+}
+
+.wrapper .toggle-button {
+    color: #8C5F4F;
 }
 
 .sidebar .closed {

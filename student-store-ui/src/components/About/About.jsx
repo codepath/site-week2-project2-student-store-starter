@@ -13,7 +13,7 @@ export default function About() {
                 </div>
 
                 <div className="aboutImage">
-                    <img src="/images/home.svg" alt="aboutImage"></img>
+                    <img src="/images/about.svg" alt="aboutImage"></img>
                 </div>
             </div>
         </div>

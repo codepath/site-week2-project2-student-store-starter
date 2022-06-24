@@ -14,4 +14,5 @@
   flex-direction: column;
   position: relative;
   overflow-x: hidden;
+  background-color: #F0F2F0;
 }

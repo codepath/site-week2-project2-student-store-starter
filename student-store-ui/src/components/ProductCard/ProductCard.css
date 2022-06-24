@@ -1,10 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+
 .ProductCard {
     height: 350px;
     width: 250px;
-    background: var(--pure-white);
+    background:#F2C7AE;
     display: flex;
     flex-direction: column;
-    border: solid 1px var(--border-color);
+    border: solid 1px #F2C7AE;
+    border-radius: 1em;
+    box-shadow: 10px 5px 5px #F2E0D5;
 }
 
 .ProductCard .media {
@@ -15,12 +19,14 @@
 .ProductCard .media img {
     height: 250px;
     width: 248px;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
 }
 
 .ProductCard .product-info {
     flex: 1;
     display: flex;
-    border-top: solid 1px var(--border-color);
+    border-top: solid 1px #F2C7AE;
 }
 
 .ProductCard .info {
@@ -28,6 +34,7 @@
     display: flex;
     flex-direction: column;
     padding: 8px 12px;
+    font-family: 'Poppins';
 }
 
 .ProductCard .info .product-name {
@@ -47,13 +54,13 @@
 }
 
 .ProductCard .quantity .amt {
-    background: #ff9017;
+    background: #D9756C;
     color: #fff;
     width: 20px;
     height: 20px;
     border-radius: 4px;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
 }
 

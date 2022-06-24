@@ -21,7 +21,7 @@ export default function ProductCard({ shoppingCart, product, handleAddItemToCart
             <div className="product-info">
                 <div className="info">
                     <p className="product-name">{product.name}</p>
-                    <p className="product-price">{product.price}</p>
+                    <p className="product-price">{`$${product.price}`}</p>
                     <div className={`desc ${showDesc}`}>
                         <p className="product-description">{product.description}</p>
                     </div>
