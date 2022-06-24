@@ -476,6 +476,70 @@
         "Keyboard",
         "Mouse from 1998"
       ]
+    },
+    {
+      "id": 10,
+      "name": "new order",
+      "email": "new order",
+      "order": [
+        {
+          "itemId": "2",
+          "quantity": 1
+        },
+        {
+          "itemId": "3",
+          "quantity": 1
+        },
+        {
+          "itemId": "4",
+          "quantity": 1
+        },
+        {
+          "itemId": "6",
+          "quantity": 1
+        },
+        {
+          "itemId": "8",
+          "quantity": 1
+        },
+        {
+          "itemId": "11",
+          "quantity": 1
+        }
+      ],
+      "subtotal": 247.72,
+      "total": 269.4,
+      "createdAt": "2022-06-24T15:59:18.560Z",
+      "receipt": {
+        "lines": [
+          "Showing receipt for new order available at new order:",
+          "1 total Flamin Hot Cheetos purchased at a cost of $1.5 for a total cost of $1.50.",
+          "1 total Cinnamon Rolls purchased at a cost of $2.99 for a total cost of $2.99.",
+          "1 total Coconut Water purchased at a cost of $3.25 for a total cost of $3.25.",
+          "1 total Bar Code Shirts purchased at a cost of $19.99 for a total cost of $19.99.",
+          "1 total Knitted Beanie purchased at a cost of $19.99 for a total cost of $19.99.",
+          "1 total Matching Rings purchased at a cost of $200 for a total cost of $200.00.",
+          "Before taxes, the subtotal was $247.72",
+          "After taxes and fees were applied, the total comes out to $269.40"
+        ]
+      },
+      "totalQuantity": 6,
+      "itemPrices": [
+        1.5,
+        2.99,
+        3.25,
+        19.99,
+        19.99,
+        200
+      ],
+      "itemNames": [
+        "Flamin Hot Cheetos",
+        "Cinnamon Rolls",
+        "Coconut Water",
+        "Bar Code Shirts",
+        "Knitted Beanie",
+        "Matching Rings"
+      ]
     }
   ]
 }

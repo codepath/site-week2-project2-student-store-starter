@@ -53,6 +53,10 @@ export default function ProductDetail(props) {
                     <li>${order?.subtotal}</li>
                 </ul>
                 <ul className="order-header">
+                    <li>Taxes and Fees</li>
+                    <li>${(order?.subtotal * 0.0875).toFixed(2)}</li>
+                </ul>
+                <ul className="order-header">
                     <li>Total</li>
                     <li>${order?.total}</li>
                 </ul>
