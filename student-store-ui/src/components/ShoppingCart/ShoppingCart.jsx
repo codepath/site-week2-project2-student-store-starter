@@ -1,5 +1,6 @@
 import * as React from "react"
 import "./ShoppingCart.css"
+import CheckoutForm from "../CheckoutForm/CheckoutForm"
 
 // importing hooks
 import { useState, useEffect } from "react"
@@ -22,23 +23,8 @@ export default function ShoppingCart(props) {
         
         {props.shoppingCart.length <= 0 ? (<div className = "warning-message">No items added to cart yet. Start shopping now!</div>) : <CheckoutTable shoppingCart = {props.shoppingCart} products = {props.products} subtotal = {subtotal} setSubtotal = {setSubtotal}/> }
         <TotalBox/>
-        <h3 className = "shopping-cart-title">Payment Info <span><CoinIcon/></span></h3>
-        <div className ="name-input">
-            <p className ="name-label">Name</p>
-            <input name = "name" className ="checkout-form-name" type="text" placeholder ="Student Name"/>
-        </div>
-        <div className ="email-input">
-            <p className ="email-label">Email</p>
-            <input name = "email" className ="checkout-form-email" type="text" placeholder ="student@codepath.org"/>
-        </div>
-        <div className ="terms">
-            <input name ="terms-and-conditions"type="checkbox" />
-            <span className = "terms-label">I agree to the terms and conditions</span>
-        </div>
-        <button className ="checkout-btn">Checkout</button>
+        <CheckoutForm isOpen = {props.isOpen} shoppingCart = {props.shoppingCart} checkoutForm ={props.checkoutForm} handleOnCheckoutFormChange = {props.handleOnCheckoutFormChange} handleOnSubmitCheckoutForm = {props.handleOnSubmitCheckoutForm}/>
 
-        <h3 className = "checkout-info-title">Checkout Info <span><FormIcon/></span></h3>
-        <p className = "confirmation-text">A confirmation email will be sent to you so that you can confirm this order. Once you have confirmed the order, it will be delivered to your dorm room.</p>
 
 
 
@@ -81,32 +67,20 @@ export function CheckoutTableRows(props) {
     //parsing through to grab rest of table details
     let matchingProduct = props.products.find((product) => product.id === props.itemId)
     let cost = matchingProduct.price*props.quantity
+    console.log("props.quantity", props.quantity)
 
 
     //updating subtotal
-
     const calculateSubtotal = () => {
-        props.setSubtotal((currentSubtotal) => currentSubtotal + (cost * props.quantity))
+        props.setSubtotal((currentSubtotal) => currentSubtotal + (cost))
     }
 
-
+    // need to fix, quantity isn't changing, only stays at 1, refreshes when sidebar is opened and closed...
     useEffect(() => {
 
         calculateSubtotal();
     }, []);
-    console.log("props.quantity",props.quantity)
-
-
-    // useEffect(() => {
-    //     const calculateSubtotal = () => {
-    //         props.setSubtotal((currentSubtotal) => currentSubtotal + (cost * props.quantity))
-    //     }
-    //     calculateSubtotal();
-    // }, []);
-
-
-
- 
+    
 
 
     return (
@@ -132,28 +106,10 @@ export function TotalBox() {
     )
   }
 
-export function ShopCartIcon() {
+  export function ShopCartIcon() {
     return (
       <div className="shop-cart-icon">
           <i className="fa-solid fa-cart-shopping fa-2x"></i>
-      </div>
-    )
-  }
-
-
-  export function CoinIcon() {
-    return (
-      <div className="coin-icon">
-          <i className="fa-solid fa-coins fa-2x"></i>
-      </div>
-    )
-  }
-  
-  
-  export function FormIcon() {
-    return (
-      <div className="form-icon">
-          <i className="fa-solid fa-clipboard-list fa-2x"></i>
       </div>
     )
   }

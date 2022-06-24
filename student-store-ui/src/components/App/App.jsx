@@ -13,7 +13,13 @@ import ProductDetail from "../ProductDetail/ProductDetail"
 
 import axios from "axios"
 
+
 export default function App() {
+
+
+
+  //global var
+  let initialForm = {name: "", email: ""}
 
 
   // creating state variables
@@ -22,7 +28,7 @@ export default function App() {
   const [error, setError] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [shoppingCart, setShoppingCart] = useState([]); 
-  const [checkoutForm, setCheckoutForm] = useState("")
+  const [checkoutForm, setCheckoutForm] = useState([initialForm])
   const [selectedCategory, setSelectedCategory] = useState("All Categories")
  
 
@@ -58,7 +64,8 @@ export default function App() {
     // console.log("shoppingCart before DELETE:", shoppingCart)
     let value = shoppingCart.find((object) => object.itemId === productId)
 
-    if (value != undefined) {
+    
+    if (value != undefined) { // item not in shopping cart
       shoppingCart.map((object) => {
         if (object.itemId === productId) {
           if(object.quantity <= 1){
@@ -69,7 +76,7 @@ export default function App() {
                 ...cartCopy
               ])
           }
-          else if (object.quantity > 1){
+          else if (object.quantity > 1){ // item already in cart
             let value = shoppingCart.find((object) => object.itemId === productId)
             value.quantity -= 1
             let cartCopy = shoppingCart.filter((object) => {
@@ -83,8 +90,36 @@ export default function App() {
       })
       // console.log("shoppingCart after DELETE:", shoppingCart)
     }
+  }
+  
+
+  function handleOnCheckoutFormChange(name, value){
+    if (name === "name" && checkoutForm.email != "") { //checkoutForm email is empty, no past information to reserve
+      let oldFormEmail = checkoutForm.email
+      setCheckoutForm({name: value, email: oldFormEmail})
+    }
+    else if (name === "name" && checkoutForm.email == ""){
+      setCheckoutForm({name: value, email: ""})
+    }
+    else if (name === "email" && checkoutForm.name != ""){
+      let oldFormName = checkoutForm.name
+      setCheckoutForm({name: oldFormName, email: value})
+    }
+    else if (name === "email" && !checkoutForm.name == ""){
+      setCheckoutForm({name: "", email: value})
+    }
+    console.log("checkoutForm: ",checkoutForm)
+  }
+
+
+
+  function handleOnSubmitCheckoutForm(){
+
+    
 
   }
+
+
 
 
   const getProducts = async () => {
@@ -115,7 +150,8 @@ export default function App() {
       <BrowserRouter>
       <main>
         <Navbar />
-        <Sidebar isOpen = {isOpen} setIsOpen = {setIsOpen} products = {products} shoppingCart = {shoppingCart} setShoppingCart = {setShoppingCart} checkoutForm ={checkoutForm} setCheckoutForm = {setCheckoutForm}/> 
+        <Sidebar isOpen = {isOpen} setIsOpen = {setIsOpen} products = {products} shoppingCart = {shoppingCart} setShoppingCart = {setShoppingCart} checkoutForm ={checkoutForm} setCheckoutForm = {setCheckoutForm} 
+                  handleOnCheckoutFormChange = {handleOnCheckoutFormChange} handleOnSubmitCheckoutForm = {handleOnSubmitCheckoutForm}/> 
         <Routes>
           <Route path = "/" element = {<Home products = {products} selectedCategory = {selectedCategory} setSelectedCategory = {setSelectedCategory} handleAddItemToCart = {handleAddItemToCart} handleRemoveItemFromCart = {handleRemoveItemFromCart} shoppingCart = {shoppingCart}/>}  />
           <Route path = "/products/:productId" element = {<ProductDetail products = {products} isFetching = {isFetching} setIsFetching = {setIsFetching} error = {error} setError = {setError}/>} /> 

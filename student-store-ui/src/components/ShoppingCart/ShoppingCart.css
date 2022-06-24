@@ -45,12 +45,12 @@ h3, p, .confirmation-text, .email-label, .name-label, .terms-label {
     margin: 0;
 
 }
-.checkout-btn {
+.checkout-button {
     margin-top: 5%;
     justify-content: center;
 }
 
-.email-input, .name-input, .terms, .checkout-btn {
+.email-input, .name-input, .terms, .checkout-button {
     margin-left: 3%;
 }
 
