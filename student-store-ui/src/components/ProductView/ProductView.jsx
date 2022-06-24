@@ -11,8 +11,7 @@ export default function ProductView(props) {
         <ProductCard
           product={props.product}
           productId={props.product.id}
-          // would need to get info from shopping cart, not defined yet
-          // quantity={props.quantity}
+          quantity={props.quantity}
           shoppingCart = {props.shoppingCart}
           handleAddItemToCart={props.handleAddItemToCart}
           handleRemoveItemFromCart={props.handleRemoveItemFromCart}

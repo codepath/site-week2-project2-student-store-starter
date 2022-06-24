@@ -5,12 +5,12 @@ import "./ProductCard.css"
 export default function ProductCard(props) {
 
   // calculate quantity of the product
-  let productQuantity = 0
-  console.log("shopping cart", props.shoppingCart)
-  const  targetProduct = props.shoppingCart.find((productObj) => productObj.itemId == props.product.id)
-  if (targetProduct) {
-    productQuantity = targetProduct.quantity
-  }
+  // let productQuantity = 0
+  // console.log("shopping cart", props.shoppingCart)
+  // const  targetProduct = props.shoppingCart.find((productObj) => productObj.itemId == props.product.id)
+  // if (targetProduct) {
+  //   productQuantity = targetProduct.quantity
+  // }
 
   return (
     <div className="product-card">
@@ -34,7 +34,7 @@ export default function ProductCard(props) {
       <button className="add" onClick={() => props.handleAddItemToCart(props.productId)}>+</button>
       
       <div className="product-quantity">
-        <p>{productQuantity > 0 ? productQuantity : ""}</p>
+        <p>{props.quantity > 0 ? props.quantity : ""}</p>
       </div>
 
     </div>

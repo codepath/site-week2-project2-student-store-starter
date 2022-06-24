@@ -21,17 +21,23 @@ export default function ProductGrid(props) {
 
   return (
     <div className="product-grid">
-    {productsToRender.map(product =>
+    {productsToRender.map(product => {
+      let productQuantity = 0
+      const  targetProduct = props.shoppingCart.find((productObj) => productObj.itemId == product.id)
+      if (targetProduct) {
+        productQuantity = targetProduct.quantity
+      }
+      return (
       <ProductCard
         key={product.id}
         product={product}
         productId={product.id}
-        // would need to get info from shopping cart, not defined yet
-        quantity={9}
+        quantity={productQuantity}
         handleAddItemToCart={props.handleAddItemToCart}
         handleRemoveItemFromCart={props.handleRemoveItemFromCart}
         shoppingCart={props.shoppingCart}
-        showDescription={false}/>
+        showDescription={false}/> )
+    }
     )}
     </div>
   )
