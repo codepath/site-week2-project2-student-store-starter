@@ -1,0 +1,21 @@
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.checkout-form-input {
+    width: 100%;
+}
+
+.checkout-form-title {
+    font-size: 20px;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: aquamarine;
+}
