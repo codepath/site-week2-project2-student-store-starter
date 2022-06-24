@@ -1,0 +1,37 @@
+.hero {
+    background-color: #ADF4FF;
+    height: 500px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.intro {
+    margin-left: 200px;
+    margin-top: 50px;
+    font-size: 40px;
+}
+
+.intro h1 {
+    margin-bottom: 10px;
+}
+
+.hero hr {
+    width: 180px;
+    height: 5px;
+    background-color: #292929;
+    border: none;
+}
+
+.intro span {
+    color: #307580;
+}
+
+.intro p{
+    width: 800px;
+    font-size: 18px;
+}
+
+.hero-img {
+    width: 150px;
+    margin-right: 50px;
+}

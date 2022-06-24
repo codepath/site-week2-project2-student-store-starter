@@ -1,0 +1,18 @@
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    margin: 0 auto;
+}
+
+.product-detail button{
+    width: 40px;
+    height: 30px;
+    border: 0;
+    border-radius: 10px;
+    background-color: #4EBBCC;
+}
+
+.product-detail button:hover {
+    cursor: pointer;
+} 
