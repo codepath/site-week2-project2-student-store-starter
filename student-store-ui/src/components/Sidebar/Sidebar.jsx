@@ -1,12 +1,20 @@
+/**
+ * Sidebar.jsx is in charge of displaying a left bar that opens/closes by a trigger button,
+ * displaying the current shopping cart items, checkout information, and receipt from purchases
+ * made by the user
+ */
+
 import * as React from "react"
 import "./Sidebar.css"
 
 import CheckOutForm from "../CheckoutForm/CheckOutForm"
 import CartTable from "../ShoppingCart/ShoppingCart";
+import Receipt from "../Receipt/Receipt";
 
 export default function Sidebar(props) {
   const [isHidden, setHidden] = React.useState("hidden");
 
+  //sidebar open/closed handler for display
   const toggleisHidden = () => {
     if (isHidden === "unhidden") {
       setHidden("hidden");
@@ -31,6 +39,7 @@ export default function Sidebar(props) {
           handleOnCheckoutFormChange={props.handleOnCheckoutFormChange} 
           handleOnSubmitCheckoutForm={props.handleOnSubmitCheckoutForm}/>
         
+        <Receipt products={props.products} lastReceipt={props.lastReceipt}/>
         
       </div>
     </section>
