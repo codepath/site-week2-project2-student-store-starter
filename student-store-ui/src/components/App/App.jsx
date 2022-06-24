@@ -57,7 +57,7 @@ export default function App() {
         data.products.forEach((product) => {
           if (
             product.name.substring(0, query.length).toLowerCase() ===
-            query.toLowerCase() &&
+              query.toLowerCase() &&
             product.category == category
           ) {
             filteredItems.push(product);
@@ -132,37 +132,36 @@ export default function App() {
   function handleOnCheckoutFormChange(key, val) {
     let newForm = {
       name: checkoutForm.name,
-      email: checkoutForm.email
-    }
-    newForm[key] = val
-    setCheckoutForm(newForm)
+      email: checkoutForm.email,
+    };
+    newForm[key] = val;
+    setCheckoutForm(newForm);
 
-    console.log('checkoutForm: ', checkoutForm);
     // }
   }
 
   function handleOnSubmitCheckOutForm(checkoutForm, shoppingCart) {
-    console.log('checkoutForm2: ', checkoutForm);
-    let user = {
-      name: checkoutForm.name,
-      email: checkoutForm.email,
-    };
 
     let userOrder = {
-      user: user,
+      user: checkoutForm,
       shoppingCart: shoppingCart,
     };
-    if (userOrder.shoppingCart.length == 0) {
-      setError("please add items to cart");
-    }
+    
 
-    axios.post(URL, { userOrder }).then(
-      function (response) {
+    axios
+      .post(URL,  userOrder )
+      .then(function (response) {
+        console.log(response)
+        
         setError("success");
-      }).catch (function (error) {
+      })
+      .catch(function (error) {
+        console.log(error)
         setError("problem fetching data");
-      }
-    );
+        if (userOrder.shoppingCart.length == 0) {
+          setError("please add items to cart");
+        }
+      });
 
     if (user.name.length == 0 || user.email.length == 0) {
       setError("User info must include an email and name.");
@@ -173,7 +172,6 @@ export default function App() {
   }
 
   function handleOnSearch(products, query) {
-
     let searchResults = [];
 
     products.forEach((product) => {
@@ -247,8 +245,6 @@ export default function App() {
               <Footer />
             </div>
           </div>
-
-          {/* <HeroBanner/> */}
         </main>
       </BrowserRouter>
     </div>

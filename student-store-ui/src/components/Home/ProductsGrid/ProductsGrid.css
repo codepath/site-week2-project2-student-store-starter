@@ -20,8 +20,15 @@
     font-size: 20px;
     margin-left: 5px;
     margin-right: 5px;
+    padding: 1px 3px;
     border: none;
     background-color: blanchedalmond;
+}
+
+.categoriesNav button:hover{
+    /* background-color: rgb(181, 190, 166); */
+    border-bottom: 3px solid rgb(181, 190, 166);
+
 }
 
 p{

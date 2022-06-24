@@ -22,4 +22,27 @@ p{
 
 .herowrapper{
     display: flex;
+    background-color: rgb(181, 190, 166);
+    margin: 15px;
+    border-radius: 10px;
+}
+
+.intro{
+    font-size: 35px;
+    margin: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 0.3ch;
+    line-height: 1.1;
+}
+
+.merch{
+    font-size: 25px;
+    margin: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 250;
+    letter-spacing: 0.3ch;
+    line-height: 1.1;
 }

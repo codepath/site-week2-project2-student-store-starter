@@ -1,5 +1,5 @@
 .navbar {
-    background-color: olive;
+    background-color: rgb(120, 120, 63);
     text-align: right;
     padding: 20px 10px;
     width: 100%;
@@ -14,4 +14,8 @@
     display: inline;
     transition: all ease-out 300ms;
     margin: 10px;
+}
+
+.navLink:hover{
+    color: #fefae0;
 }

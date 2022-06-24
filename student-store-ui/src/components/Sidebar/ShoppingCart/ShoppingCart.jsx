@@ -44,7 +44,7 @@ export default function ShoppingCart({isOpen, products, shoppingCart}){
             <h3 className="notification">"No items added to cart yet. Start shopping now!"</h3>
             :
             <div>
-                <h1>Items in Cart</h1>
+                <h1 className="item">Items in Cart</h1>
 
                 {shoppingCart.map(cart => {
                     return(

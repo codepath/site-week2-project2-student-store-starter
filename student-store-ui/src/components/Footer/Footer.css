@@ -1,5 +1,6 @@
 .footer{
-    background-color: olive;
+    background-color: rgb(50, 56, 37);
     margin-left: 150px;
-    padding: 10px
+    padding: 10px;
+    color: #fefae0;
 }
