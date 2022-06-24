@@ -4,6 +4,9 @@
 
 Selling merchandise in the modern era requires digital solutions. For this project, you'll be tasked with designing and constructing an online student store for the College of Codepath. The application entails a frontend user interface for potential customers to peruse the goods, and a backend API to handle data management. The API will be built with Node and Express and the UI will be built with React.
 
+
+#### WEEK 2 Frontend Previews
+
 Displays the header, banner, search, product grid, about, contact, and footer sections.
 ![](https://i.imgur.com/LPO7UW1.gif)
 
@@ -12,6 +15,16 @@ User can sort by clicking the cateogories and can search for products
 
 User can click on a product in the grid to view additional product details with a React Router. User can click the logo in the navigation bar to return to the home page
 ![](https://i.imgur.com/GdvQFfa.gif)
+
+#### WEEK 3 Backend Previews
+
+Core features: Displays sections, can filter by category and search, can add and remove items from shopping cart, sidebar toggles and shows shopping cart and checkout form, shows error messages and succes messages, user can checkout and view receipt.
+Stretch features: Has top bar navigation, shows "Not found" page, shows message in product grid when no items are found.
+![](https://i.imgur.com/tMgmDe4.gif)
+
+API Get requests work
+![](https://i.imgur.com/L6ydNmg.gif)
+
 
 ### Application Features
 
@@ -26,7 +39,7 @@ User can click on a product in the grid to view additional product details with 
 - [X] User can click the '+' button on a product cart to increment that product in the shopping cart.
 - [X] User can click the '-' button on a product cart to increment that product in the shopping cart.
 - [X] Shopping cart displays a table of products, quantities, subtotal, tax, and total.
-- [ ] User can check out, and can view receipt upon completion.
+- [X] User can check out, and can view receipt upon completion.
 
 #### Stretch Features
 
@@ -291,15 +304,22 @@ The following specifications were met on the Express backend and the React front
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Initially, I felt most unprepared to complete the routing with BrowserRouter, Routes, and Links. Although it ended up being more straightforward than I had anticipated, it still felt intimidating since we weren't able to cover it during the labs. The API call with axios was another instance of this since I didn't really practice using useEffect hooks before the project. Overall, though, I felt like the labs did cover the major parts of the assignment such as incorporating controlled text inputs, filtering objects, and passing props between components. One thing of note is that this project had a lot more components than the labs with a lot more props being passed between them. So, I definitely still felt this was a step up from the labs as I had to take extra care in making sure that all the necessary props were passed properly.
+Week2: Initially, I felt most unprepared to complete the routing with BrowserRouter, Routes, and Links. Although it ended up being more straightforward than I had anticipated, it still felt intimidating since we weren't able to cover it during the labs. The API call with axios was another instance of this since I didn't really practice using useEffect hooks before the project. Overall, though, I felt like the labs did cover the major parts of the assignment such as incorporating controlled text inputs, filtering objects, and passing props between components. One thing of note is that this project had a lot more components than the labs with a lot more props being passed between them. So, I definitely still felt this was a step up from the labs as I had to take extra care in making sure that all the necessary props were passed properly.
+
+Week 3: For week 3, I ended up referencing the labs a lot, especially the bank of CodePath lab because it provided a really good "standard" for my project on writing get and post requests. I would say that I felt most confused when I was writing the model functions for the project, but looking at week 3's labs helped clarify what functions I should be writing and how I should go about writing them (e.g, what built-ins to use, how to access local databases). Another aspect that I found a little daunting was accessing and using POST request responses. We mostly practiced making GET requests to retrieve data, so doing the POST request and receiving data back was a little strange at first. 
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Currently, I have yet to properly implement some parts of the shopping cart and the checkout form components, so that would be the first thing I would be working on as I start on Week 3. In terms of additional features, I hope to add the top bar navigation links and create the "Not Found" display. The UI is currently not great in terms of spacing and interaction, so that is also definitely something I want to continue to improve over the course of Week 3 before I submit the final project. In terms of specific functionalities, one thing I would like to change is to make my category filtering be more reusable by changing how the "All categories" button works. Lastly, my site is not very robust and is heavily reliant on all the data getting passed to its props being formatted in a very specific way, so it probably would not handle errors very well. So, to improve my site, I will have to go back in and make sure that the components will still render without errors even with "incorrect" or missing props through adding default values for my components. 
+Week 2: Currently, I have yet to properly implement some parts of the shopping cart and the checkout form components, so that would be the first thing I would be working on as I start on Week 3. In terms of additional features, I hope to add the top bar navigation links and create the "Not Found" display. The UI is currently not great in terms of spacing and interaction, so that is also definitely something I want to continue to improve over the course of Week 3 before I submit the final project. In terms of specific functionalities, one thing I would like to change is to make my category filtering be more reusable by changing how the "All categories" button works. Lastly, my site is not very robust and is heavily reliant on all the data getting passed to its props being formatted in a very specific way, so it probably would not handle errors very well. So, to improve my site, I will have to go back in and make sure that the components will still render without errors even with "incorrect" or missing props through adding default values for my components.
+
+Week 3: At this point, I've been able to accomplish some of the features that I mentioned in my week 2 reflection (shopping cart, checkout form, top bar navigation, "not found" display, UI changes), which is really great! However, the other changes mentioned in last week's reflection still stand. I think I've gotten better at making components more error-resistant since I've been more intentional about it. So, I think the components I worked on this week are OK, but I would still need to go back and edit all my other components. Another thing I would do is clean up the function I wrote to update the database to include new purchases. It requred a lot of logic that got kind of confusing since there were so many things to consider, so I think I would want to spend some time working to optimize it. Additionally, at this point, there are still 2 more stretch features I can do: creating a list of past purchases, and searching them by email. Hopefully, this is something I can get done over the weekend.
+
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-One thing that I did not anticipate is how long it would take to do the styling for the website. Although it was not necessarily difficult, it definitely takes some time to get things in the right places, and I ended up spending a lot of my work time on the CSS and I did not make as much progress as I had hoped. Another obstacle I faced with this project was with working with state variables. When I was working on the shopping cart, I had a lot of trouble updating the cart because it would change a step late. I was able to fiture out my issue, but I realized that I did not understand how state variables updated with the rest of the page as well as I had thought, and I had to do some more research on this in order to get my project going. Lastly, when thinking about some of the features my peers incorporated in their projects, I feel that most of the demos I saw generally just followed the same functionalities listed in the requirements. But, I noticed that people really customized their UI, so I would like to incorporate some of the design decisions I saw, such as a sidebar for the category filters.
+Week 2: One thing that I did not anticipate is how long it would take to do the styling for the website. Although it was not necessarily difficult, it definitely takes some time to get things in the right places, and I ended up spending a lot of my work time on the CSS and I did not make as much progress as I had hoped. Another obstacle I faced with this project was with working with state variables. When I was working on the shopping cart, I had a lot of trouble updating the cart because it would change a step late. I was able to fiture out my issue, but I realized that I did not understand how state variables updated with the rest of the page as well as I had thought, and I had to do some more research on this in order to get my project going. Lastly, when thinking about some of the features my peers incorporated in their projects, I feel that most of the demos I saw generally just followed the same functionalities listed in the requirements. But, I noticed that people really customized their UI, so I would like to incorporate some of the design decisions I saw, such as a sidebar for the category filters.
+
+Week 3: A major point of frustration was setting up the backend server. I forgot that we had to restart the server, and I struggled for a while because I thought my backend wasn't working at all when in reality, I just needed to restart the server. I ended up wasting a lot of time because of this, which was really frustrating. Luckily, the rest of the backend was not TOO difficult to implement minus the function to update the database for the POST request. One thing I saw during demos that I thought was really neat was creating a drop-down filter for the past orders. Although I did not implement the associated stretch feature, I think a drop-down filter would be a good addition for the product grid and is something I could do for that stretch feature if I'm able to get to it.
 
 ### Open-source libraries used
 
