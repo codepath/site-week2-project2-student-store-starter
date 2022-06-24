@@ -1,8 +1,7 @@
 const { storage } = require('../data/storage')
 
 class Store {
-  static async createOrder(user, shoppingCart) {
-    
+  static async createOrder(user,shoppingCart) {
     const purchasedAt = new Date().toISOString()
     const newOrder = { user, shoppingCart,purchasedAt }
 

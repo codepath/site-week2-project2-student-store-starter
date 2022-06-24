@@ -171,7 +171,7 @@ export default function ShoppingCart({
               <i className="material-icons md-48">fact_check</i>
             </span>
           </h3>
-          {lastReceipt.order?
+          {lastReceipt.purchase?
             <Checkout
              
              

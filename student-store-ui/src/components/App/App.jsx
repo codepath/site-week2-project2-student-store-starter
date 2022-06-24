@@ -110,7 +110,7 @@ const [lastReceipt,setLastReceipt] = React.useState({})
   async function PostServer() {
     try {
       
-      let response = await axios.post("http://localhost:3001/store", { checkoutForm, shoppingCart })
+      let response = await axios.post("http://localhost:3001/store", {user: checkoutForm, shoppingCart })
 
       setLastReceipt(response.data)
       

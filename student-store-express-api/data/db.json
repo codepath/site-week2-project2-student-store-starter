@@ -410,6 +410,166 @@
     {
       "shoppingCart": [],
       "purchasedAt": "2022-06-24T20:58:11.998Z"
+    },
+    {
+      "user": {
+        "name": "Evabs",
+        "email": "Evaskdns"
+      },
+      "purchasedAt": "2022-06-24T22:32:48.310Z"
+    },
+    {
+      "shoppingCart": [
+        {
+          "itemId": 16,
+          "quantity": 1
+        }
+      ],
+      "purchasedAt": "2022-06-24T22:39:42.694Z"
+    },
+    {
+      "user": {
+        "name": "THe mask",
+        "email": "easuboah@stetson.edu"
+      },
+      "purchasedAt": "2022-06-24T22:43:44.537Z"
+    },
+    {
+      "user": {
+        "name": "Evans Kwasi Asuboah",
+        "email": "easuboah@stetson.edu"
+      },
+      "purchasedAt": "2022-06-24T22:46:15.269Z"
+    },
+    {
+      "user": {
+        "name": "Evans Kwasi Asuboah",
+        "email": "easuboah@stetson.edu"
+      },
+      "purchasedAt": "2022-06-24T22:49:07.675Z"
+    },
+    {
+      "user": {
+        "name": "Evans Kwasi Asuboah",
+        "email": "evansasuboahcapp@gmail.com"
+      },
+      "purchasedAt": "2022-06-24T22:54:17.801Z"
+    },
+    {
+      "purchasedAt": "2022-06-24T22:55:17.560Z"
+    },
+    {
+      "purchasedAt": "2022-06-24T22:55:20.735Z"
+    },
+    {
+      "purchasedAt": "2022-06-24T22:55:44.385Z"
+    },
+    {
+      "purchasedAt": "2022-06-24T22:56:03.521Z"
+    },
+    {
+      "purchasedAt": "2022-06-24T22:57:33.631Z"
+    },
+    {
+      "purchasedAt": "2022-06-24T22:59:53.092Z"
+    },
+    {
+      "purchasedAt": "2022-06-24T23:21:55.481Z"
+    },
+    {
+      "purchasedAt": "2022-06-24T23:22:00.360Z"
+    },
+    {
+      "user": {
+        "name": "test",
+        "email": "test@test.com"
+      },
+      "purchasedAt": "2022-06-24T23:24:34.502Z"
+    },
+    {
+      "user": {
+        "name": "Evans Kwasi Asuboah",
+        "email": "evansasuboahcapp@gmail.com"
+      },
+      "shoppingCart": [],
+      "purchasedAt": "2022-06-24T23:26:12.707Z"
+    },
+    {
+      "user": {
+        "name": "Mask",
+        "email": "studentsbfb@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 16,
+          "quantity": 1
+        },
+        {
+          "itemId": 12,
+          "quantity": 1
+        }
+      ],
+      "purchasedAt": "2022-06-24T23:29:09.273Z"
+    },
+    {
+      "user": {
+        "name": "Mask",
+        "email": "studentsbfb@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 10,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-24T23:37:08.627Z"
+    },
+    {
+      "user": {
+        "name": "Sweatshirt",
+        "email": "studentsbfb@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 12,
+          "quantity": 1
+        },
+        {
+          "itemId": 8,
+          "quantity": 1
+        }
+      ],
+      "purchasedAt": "2022-06-24T23:39:57.087Z"
+    },
+    {
+      "user": {
+        "name": "Untitled",
+        "email": "easuboah@stetson.edu"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 4,
+          "quantity": 1
+        },
+        {
+          "itemId": 12,
+          "quantity": 1
+        }
+      ],
+      "purchasedAt": "2022-06-24T23:42:46.734Z"
+    },
+    {
+      "user": {
+        "name": "Evans Kwasi Asuboah",
+        "email": "evansasuboahcapp@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 9,
+          "quantity": 1
+        }
+      ],
+      "purchasedAt": "2022-06-24T23:44:24.285Z"
     }
   ]
 }

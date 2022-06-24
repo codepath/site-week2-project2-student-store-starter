@@ -1,16 +1,8 @@
 export default function Checkout({ lastReceipt, setShoppingCart, purchase, name,email,isOpen ,clicked,submit}) {
   //{ name, email, purchase, subtotal,taxes}
 
-    console.log(lastReceipt)
+    console.log("lastReceipt",lastReceipt)
 
-
-
-    var purchases = [...purchase]
-
-
-
-    
-    
     
     
 
@@ -25,13 +17,10 @@ export default function Checkout({ lastReceipt, setShoppingCart, purchase, name,
                     </div>
 
                     <div className="title-name">
-                        Showing Receipt for 
+                        Showing Receipt for {lastReceipt.purchase.user.name}
                 </div>
-                 <ul>
-                    {lastReceipt.order.shoppingCart.map(element => {
-                            
-                            <li>{element} </li>
-                        })}
+                <ul>
+                    
                 </ul>
                 
                     <div>
