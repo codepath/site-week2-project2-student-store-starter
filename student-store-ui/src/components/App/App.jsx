@@ -26,7 +26,7 @@ export default function App() {
       // const response = await axios.get("https://codepath-store-api.herokuapp.com/store");
       const response = await axios.get("http://localhost:3001/store");
       
-      // check if there are products in the response
+      // throw error if there are no products found in the response
       if ((!response.data.products) || response?.data?.products.length == 0 ) {
         throw new Error("No products found")
       }

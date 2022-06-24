@@ -3,9 +3,9 @@ import "./NotFound.css"
 
 export default function NotFound() {
     return (
-      <div>
-        <p>NotFound</p>
-        <h1>NotFound</h1>
+      <div className="not-found">
+        <h1>Oops!</h1>
+        <p>That page can't be found.</p>
       </div>
     )
   }
