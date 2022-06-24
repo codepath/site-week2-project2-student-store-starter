@@ -2,7 +2,7 @@ import React from 'react'
 import ProductCard from '../Product Card/ProductCard'
 import "./ProductGrid.css"
 
-const ProductGrid = ({products, shoppingCart, handleAddItemToCart, handleRemoveItemFromCart}) => {
+const ProductGrid = ({products, handleAddItemToCart, handleRemoveItemFromCart}) => {
   return (
     <div className='product-grid' id='Buy'>
       <div className='product-grid-title'>
@@ -15,7 +15,6 @@ const ProductGrid = ({products, shoppingCart, handleAddItemToCart, handleRemoveI
                 product={product}
                 productId={product.id}
                 quantity={product.quantity}
-                shoppingCart={shoppingCart}
                 showDescription={false}
                 handleAddItemToCart={handleAddItemToCart}
                 handleRemoveItemFromCart={handleRemoveItemFromCart}

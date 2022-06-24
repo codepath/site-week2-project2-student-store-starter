@@ -1,7 +1,7 @@
 import React from 'react'
 import "./ProductDetail.css"
 
-const ProductDetail = ({product, shoppingCart, handleAddItemToCart, handleRemoveItemFromCart}) => {
+const ProductDetail = ({product, handleAddItemToCart, handleRemoveItemFromCart}) => {
   return (
     <div className='product-detail'>
 
