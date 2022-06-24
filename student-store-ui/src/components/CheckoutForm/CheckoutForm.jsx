@@ -1,8 +1,6 @@
-import React from "react"
 import "./CheckOutForm.css"
 
 export default function CheckOutForm(props) {
-    const [isTermsRead, setIsTermsRead] = React.useState(false);
 
     return (
         <div className="check-out">
@@ -24,13 +22,13 @@ export default function CheckOutForm(props) {
                     onChange={props.handleOnCheckoutFormChange}
                 />
                 <div className="terms">
-                    <input onClick={(e) => {setIsTermsRead((read) => !read)}} required type="checkbox" name="terms" />
+                    <input required type="checkbox" name="terms" />
                     <label htmlFor="check-out-form">I have read the <a style={{color:"green"}}>terms of service</a></label>
                 </div>
                 <input 
                     type="submit" 
                     value="Check Out"
-                    onClick={(e) => {props.handleOnSubmitCheckoutForm(isTermsRead)}}></input>
+                    onClick={props.handleOnSubmitCheckoutForm}></input>
             
         </div>
     )

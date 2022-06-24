@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 const Store = require("../models/store");
 const {BadRequestError, NotFoundError} = require("../utils/errors.js");
+const Storage = require("../data/storage"); 
 
-//get all products
 router.get("/", async (req, res, next) => {
 	try {
 		const products = await Store.getProducts();
@@ -13,21 +13,6 @@ router.get("/", async (req, res, next) => {
 	}
 });
 
-//purchase GET request
-router.get("/purchases/", async(req,res,next) => {
-	try {
-		// get ID
-		const purchase = await Store.getPurchases();
-		if(!purchase) {
-			throw new NotFoundError("No purchases found");
-		}
-		res.status(200).json({purchase});
-
-	} catch (error) {
-		next(new BadRequestError(error));
-	}
-});
-//get product by ID
 router.get("/:productId", async(req,res,next) => {
 	try {
 		//get ID
@@ -40,24 +25,20 @@ router.get("/:productId", async(req,res,next) => {
 		res.status(200).json({product});
 
 	} catch (error) {
-		next(new BadRequestError(error));
+
 	}
 });
 
-//purchase POST request
+
 router.post("/", async (req, res, next) => {
 	try {
-		const user = req.body.user;
-		const shoppingCart = req.body.shoppingCart;
-		
-		const newPurchase = await Store.createPurchase(user,shoppingCart);
+		const purchase = req.body;
+		console.log(req.body);
+		const newPurchase = await Store.createPurchase(purchase);
 		res.status(201).json({"purchase": newPurchase});
-	} catch (error) {
-		next(new BadRequestError(error));
+	} catch (err) {
+		next(err);
 	}
 })
-
-
-
 
 module.exports = router;

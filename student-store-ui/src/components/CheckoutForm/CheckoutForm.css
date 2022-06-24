@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 25px;
     font-size: 20px;
 }
 
@@ -12,9 +13,7 @@
 }
 
 .check-out>h1 {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color: var(--darkBlue);
+    margin-top: 0;
 }
 
 .check-out>form {
@@ -25,10 +24,6 @@
     font-size: 20px;
     margin: 0 auto 30px auto;
 
-}
-
-.check-out>input[type=text], .check-out>input[type=email] {
-    margin: 20px 20%;
 }
 
 input[type=submit] {

@@ -1,6 +1,6 @@
 import "./ShoppingCart.css"
 import ShoppingCartItem from "../ShoppingCartItem/ShoppingCartItem";
-import { TAX_PERCENTAGE } from "../../../constants"
+import { TAX_PERCENTAGE } from "../../constants"
 export default function ShoppingCart(props) {
   let subtotal;
   let tax;
@@ -17,6 +17,7 @@ export default function ShoppingCart(props) {
   }
   //each time shopping cart re-renders, we should update the subtotal
   calculateTotals();
+  
 
   const getShoppingCartItems = () => {
     return (
@@ -48,13 +49,13 @@ export default function ShoppingCart(props) {
             <th className="cart-table-row">Grand Total</th>
           </tr>
           <tr className="cart-table-column">
-            <td className="cart-table-row"></td>
-            <td className="cart-table-row">${subtotal?.toFixed(2)}</td>
-            <td className="cart-table-row">${tax?.toFixed(2)}</td>
-            <td className="cart-table-row">${grandTotal?.toFixed(2)}</td>
+          <th className="cart-table-row"></th>
+            <th className="cart-table-row">${subtotal}</th>
+            <th className="cart-table-row">${tax.toFixed(2)}</th>
+            <th className="cart-table-row">${grandTotal.toFixed(2)}</th>
           </tr>
         </table>
-      </div>
+      </div >
     )
   } else {
     return <h1>Start shopping now!</h1>
