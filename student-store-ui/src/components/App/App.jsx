@@ -22,31 +22,67 @@ export default function App() {
   const [shoppingCart, setShoppingCart] = useState([])
   const [checkoutForm, setCheckoutForm] = useState({})
   const [query, setQuery] = useState("")
+  const [category, setCategory] = useState("all")
   const URL = 'https://codepath-store-api.herokuapp.com/store'
 
-  useEffect(() => {
-    const getData = async() => {
-      setIsFetching(true)
-      try{
-        const {data} = await axios.get(URL);
-        setProducts(data.products)
-        if (data.products.length == 0){
-          setError("no products")
-        }
+  const getData = async() => {
+    setIsFetching(true)
+    let filteredItems = []
+    try{
+      const {data} = await axios.get(URL);
+      console.log('data: ', data);
+      console.log('query: ', query);
+      console.log('category: ', category);
+
+      if (data.products.length == 0){
+        setError("no products")
       }
-      catch(err){
-        setError(err)
+      if (query == "" && category == "all"){
+        setProducts(data.products)
+        console.log('products: ', products);
+      }
+      else if (query == ""){
+        {data.products.forEach((product) => 
+          {product.category == category ? 
+            filteredItems.push(product) :
+            null
+          })
+        }
+        setProducts(filteredItems)
+      }
+      else if (category == "all"){
+        (data.products).forEach((product) => {
+          if (product.name.substring(0, query.length).toLowerCase() === search.toLowerCase()) {
+            filteredItems.push(product)
+          }
+        })
+        setProducts(filteredItems)
+        
+      }
+      else{
+        (data.products).forEach((product) => {
+          if (product.name.substring(0, query.length).toLowerCase() === search.toLowerCase() && product.category == category) {
+            filteredItems.push(product)
+          }
+        })
+        setProducts(filteredItems)
       }
     }
+    catch(err){
+      setError(err)
+    }
+  }
+    
+  useEffect(() => {
     getData();
     setIsFetching(false)
-  }, []);
+  }, [query, category]);
 
-  useEffect(() => {
-    if (products) {
-      setIsFetching(false);
-    }
-  }, [products]);
+  // useEffect(() => {
+  //   if (products) {
+  //     setIsFetching(false);
+  //   }
+  // }, [products]);
 
   function handleOnToggle() {
     if (isOpen) {
@@ -57,8 +93,15 @@ export default function App() {
     }
   }
 
-  function handleAddItemToCart(productId) {
+  function getQuantity(product){
+    for (let j = 0; j < shoppingCart.length; j++){
+        if (shoppingCart[j].itemId == product.id){
+            return shoppingCart[j].quantity}
+    }
+    return 0
+  }
 
+  function handleAddItemToCart(productId) {
     for (let i = 0; i<shoppingCart.length; i++){
       if (shoppingCart[i].itemId == productId){
         
@@ -150,6 +193,7 @@ export default function App() {
   }
 
   function handleOnSearch(products, query){
+    console.log("i calll search func")
     console.log('products: ', products);
     console.log('query: ', query);
 
@@ -161,6 +205,7 @@ export default function App() {
       }
     })
     setProducts(searchResults)
+    console.log('searchResults: ', searchResults);
     console.log('products: ', products);
   }
   
@@ -197,12 +242,17 @@ export default function App() {
                 query = {query}
                 setQuery = {setQuery}
                 handleOnSearch = {handleOnSearch}
+                getQuantity = {getQuantity}
+                setCategory = {setCategory}
                 />} 
                 />
 
                 <Route path="/products/:productId" element={<ProductDetail 
                 setError={setError} 
-                products ={products} />} />
+                products ={products}
+                handleAddItemToCart = {handleAddItemToCart}
+                handleRemoveItemFromCart = {handleRemoveItemFromCart}
+                getQuantity = {getQuantity} />} />
 
                 <Route path="*" element={<NotFound />} />
               </Routes>

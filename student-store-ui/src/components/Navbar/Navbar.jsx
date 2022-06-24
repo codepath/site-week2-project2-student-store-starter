@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <Link to = "/" className="navLink">Home</Link>
-      <Link to = "/#about" className="navLink">About Us</Link>
+      <Link to = "/" className="navLink">About Us</Link>
       <Link to = "/#contact" className="navLink">Contact Us</Link>
       <Logo />
     </nav>
