@@ -148,49 +148,51 @@ export default function App() {
         <main>
           {/* YOUR CODE HERE! */}
           <Navbar />
-          <Sidebar
-            isOpen={isOpen}
-            shoppingCart={shoppingCart}
-            products={products}
-            checkoutForm={checkoutForm}
-            error={error}
-            isFetching={isFetching}
-            successMsg={successMsg}
-            handleOnToggle={handleOnToggle}
-            handleCheckoutFormChange={handleCheckoutFormChange}
-            handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
-          />
-          {!isFetching && (
-            <Routes>
-              <Route
-                path="/"
-                element={
-                  <Home
-                    products={products}
-                    shoppingCart={shoppingCart}
-                    handleAddItemToCart={handleAddItemToCart}
-                    handleRemoveItemFromCart={handleRemoveItemFromCart}
-                    handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
-                  />
-                }
-              />
-              <Route
-                path="/product/:productsId"
-                element={
-                  <ProductDetail
-                    products={products}
-                    shoppingCart={shoppingCart}
-                  />
-                }
-              />
-              <Route
-                path="*"
-                element={
-                  <NotFound />
-                }
-              />
-            </Routes>
-          )}
+          <div className="main">
+            <Sidebar
+              isOpen={isOpen}
+              shoppingCart={shoppingCart}
+              products={products}
+              checkoutForm={checkoutForm}
+              error={error}
+              isFetching={isFetching}
+              successMsg={successMsg}
+              handleOnToggle={handleOnToggle}
+              handleCheckoutFormChange={handleCheckoutFormChange}
+              handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
+            />
+            {!isFetching && (
+              <Routes>
+                <Route
+                  path="/"
+                  element={
+                    <Home
+                      products={products}
+                      shoppingCart={shoppingCart}
+                      handleAddItemToCart={handleAddItemToCart}
+                      handleRemoveItemFromCart={handleRemoveItemFromCart}
+                      handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
+                    />
+                  }
+                />
+                <Route
+                  path="/product/:productsId"
+                  element={
+                    <ProductDetail
+                      products={products}
+                      shoppingCart={shoppingCart}
+                    />
+                  }
+                />
+                <Route
+                  path="*"
+                  element={
+                    <NotFound />
+                  }
+                />
+              </Routes>
+            )}
+          </div>
 
         </main>
       </BrowserRouter>
