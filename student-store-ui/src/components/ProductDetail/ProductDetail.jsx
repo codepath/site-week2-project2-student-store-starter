@@ -33,14 +33,6 @@ export default function ProductDetail(props) {
     getProductData();
   }, []);
 
-  // get quantity of the product
-  let productQuantity=0
-  let  targetProduct = props.shoppingCart.find(productObj => productObj.itemId == product.id)
-  if (targetProduct) {
-    productQuantity = targetProduct.quantity
-  }
-  //let productQuantity = targetProduct.quantity
-
   if (props.isFetching) {
     return (
       <h1 className="loading">Loading...</h1>
@@ -54,7 +46,7 @@ export default function ProductDetail(props) {
         : <ProductView
             product={product}
             productId={productId}
-            quantity={productQuantity}
+            // quantity={productQuantity}
             handleAddItemToCart={props.handleAddItemToCart}
             handleRemoveItemFromCart={props.handleRemoveItemFromCart}
             shoppingCart={props.shoppingCart}

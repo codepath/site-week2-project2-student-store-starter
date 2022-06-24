@@ -11,6 +11,14 @@ export default function ProductGrid(props) {
     productsToRender = productsToRender.filter(product => product.name.toLowerCase().includes(props.searchQuery))
   }
 
+  if (productsToRender.length === 0) {
+    return (
+      <div className="product-grid">
+        <p className="notification">No products available</p>
+      </div>
+    )
+  }
+
   return (
     <div className="product-grid">
     {productsToRender.map(product =>
@@ -22,6 +30,7 @@ export default function ProductGrid(props) {
         quantity={9}
         handleAddItemToCart={props.handleAddItemToCart}
         handleRemoveItemFromCart={props.handleRemoveItemFromCart}
+        shoppingCart={props.shoppingCart}
         showDescription={false}/>
     )}
     </div>
