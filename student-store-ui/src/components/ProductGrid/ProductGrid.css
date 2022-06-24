@@ -1,15 +1,14 @@
-.product-grid {
+.product-grid h2{
     margin-left: 200px;
+    margin-top: 0;
+    margin-bottom: 50px;
 }
 
 .product-grid-container {
+    margin: 0 auto;
     width: 80%;
     display: grid;
     grid-template-columns: repeat(auto-fill, 260px);
     justify-content: center;
     gap: 30px;
-}
-
-.product-quantity {
-    color: red;
 }

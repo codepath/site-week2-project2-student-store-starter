@@ -7,6 +7,9 @@ const ProductCard = ({product, shoppingCart, quantity, handleAddItemToCart, hand
         <div className='product-card'>
             <img src={product.image} alt={product.name} />
             <h3>{product.name}</h3>
+            <hr />
+            <p>{`$ ${product.price}`}</p>
+            <hr />
             <ProductDetail 
                 product={product}
                 shoppingCart={shoppingCart}
@@ -18,7 +21,7 @@ const ProductCard = ({product, shoppingCart, quantity, handleAddItemToCart, hand
                 title={`You have ${quantity} ${product.name} in your shopping cart!`}
                 className="product-quantity"
                 >
-                {quantity}
+                {`- ${quantity} -`}
                 </div>
             )}
         </div>

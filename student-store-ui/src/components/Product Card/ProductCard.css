@@ -15,4 +15,22 @@
 .product-card h3 {
     font-size: 15px;
     text-align: center;
+    margin-bottom: 5px;
+}
+
+.product-card p {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.product-card hr {
+    width: 25%;
+    margin: 5px auto 5px auto;
+}
+
+.product-quantity {
+    color: rgb(87, 147, 27);
+    text-align: center;
 }
