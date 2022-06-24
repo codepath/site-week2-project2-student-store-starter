@@ -1,7 +1,7 @@
 import * as React from "react"
 import axios from 'axios';
 
-import { API_BASE_URL } from "../../../../constants"
+import { API_BASE_URL } from "../../../constants"
 
 import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
@@ -9,6 +9,7 @@ import Home from "../Home/Home"
 import ProductDetail from "../ProductDetail/ProductDetail"
 import Footer from "../Footer/Footer"
 import NotFound from "../NotFound/NotFound";
+import Purchases from "../Purchases/Purchases"
 import "./App.css"
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
@@ -24,7 +25,30 @@ export default function App() {
   const [shoppingCart, setShoppingCart] = React.useState([]);
   const [checkoutForm, setCheckoutForm] = React.useState(checkoutFormInitState);
   const [lastReceipt, setLastReceipt] = React.useState({});
+  const [purchases, setPurchases] = React.useState([]);
 
+  // fetch when mounted
+  React.useEffect(() => {
+    setFetching(true);
+    const fetchPurchases = async () => {
+
+      try {
+        const response = await axios.get(`${API_BASE_URL}/store/purchases`);
+        console.log(response);
+        if (response?.data?.purchase) {
+          // set data if response is not undefined
+          setPurchases(response?.data?.purchase);
+        }
+      } catch (error) {
+        console.log("fetch error: ", error);
+      } finally {
+        //set useState false after doing request
+
+      }
+      setFetching(false);
+    }
+    fetchPurchases();
+  }, []);
 
   // initialize application with a GET request retrieving all products that will be displayed
   React.useEffect(() => {
@@ -48,12 +72,10 @@ export default function App() {
 
   // handle form values
   const handleOnCheckoutFormChange = (change) => {
-    console.log(change);
     setCheckoutForm((prevForm) => ({
       ...prevForm,
       [change.target.name]: change.target.value
     }))
-    console.log(checkoutForm)
   }
 
 
@@ -61,9 +83,6 @@ export default function App() {
   const handleOnSubmitCheckoutForm = async (isTermsRead) => {
     if ((shoppingCart.length > 0)) {
       setIsCreating(true);
-
-      console.log("shopping cart: ", shoppingCart); // debug
-      console.log("user info: ", checkoutForm);
 
       await axios.post(`${API_BASE_URL}/store/`, {
         user: checkoutForm,
@@ -80,7 +99,7 @@ export default function App() {
 
       setIsCreating(false);
 
-      // reset states 
+      // reset states
       setCheckoutForm(checkoutFormInitState);
       setShoppingCart([]);
 
@@ -123,7 +142,11 @@ export default function App() {
     }
     console.log(`item:${newProduct.itemId} incremented ${newProduct.quantity}`); // debug
   }
-
+  /**
+   * handleAddItemToCart / handleRemoveItemToCart are in charge 
+   * of adding/removing objects into the shopping cart array. 
+   * @param {Object} product 
+   */
   const handleRemoveItemFromCart = (product) => {
     //product we will want to add
     let newProduct = {
@@ -143,7 +166,7 @@ export default function App() {
           return e.itemId !== newProduct.itemId;
         })
 
-        // update
+        // update cart
         setShoppingCart(shoppingCartNew);
 
         console.log(`item: ${newProduct.itemId} removed from cart`);
@@ -176,8 +199,10 @@ export default function App() {
             shoppingCart={shoppingCart}
             checkoutForm={checkoutForm}
             handleOnCheckoutFormChange={handleOnCheckoutFormChange}
-            handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm} />
+            handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
+            lastReceipt={lastReceipt} />
           <Routes>
+            <Route path="/purchases/" element={<Purchases isFetching={isFetching} purchases={purchases} />} />
             <Route path="/"
               element={<Home
                 isFetching={isFetching}
@@ -194,6 +219,7 @@ export default function App() {
                 handleAddItemToCart={handleAddItemToCart}
                 handleRemoveItemFromCart={handleRemoveItemFromCart} />
               } />
+
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer></Footer>
