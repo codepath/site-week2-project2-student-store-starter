@@ -84,7 +84,7 @@ export default function App() {
         <main>
           {/* YOUR CODE HERE! */}
           <Navbar />
-          <Sidebar />
+          <Sidebar shoppingCart={ shoppingCart } allProducts={ allProducts } />
         </main>
       </BrowserRouter>
     </div>
