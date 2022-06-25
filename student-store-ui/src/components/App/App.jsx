@@ -44,13 +44,25 @@ export default function App() {
     fetchData()
   }, [])
 
+  function onAddClickHandler(productId) {
+    let product = shoppingCart.find((product) => product['id'] === productId)
+    if (product) {
+      let newItemCount = product['count'] + 1
+      let restShoppingCart = shoppingCart.filter((product) => product.id != productId)
+      setShoppingCart([].concat(restShoppingCart, [{'id': productId, 'count': newItemCount}]))
+    } else {
+      setShoppingCart([].concat(shoppingCart, [{'id': productId, 'count': 1}]))
+    }
+  }
+
   return (
     <div className="app">
       <BrowserRouter>
       <Routes>
             <Route path="/" element=
               {
-              <Home products={ products } categories={ categories } setProducts={ setProducts } allProducts = { allProducts }/>
+              <Home products={ products } categories={ categories } setProducts={ setProducts } allProducts = { allProducts }
+               onAddClickHandler={ onAddClickHandler }/>
               } 
             />
             <Route path="products/:productId" element={<ProductDetail allProducts={ allProducts } />} />

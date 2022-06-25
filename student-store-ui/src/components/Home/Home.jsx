@@ -9,7 +9,7 @@ import Footer from "../Footer/Footer"
 
 import "./Home.css"
 
-export default function Home({ products, categories, setProducts, allProducts }) {
+export default function Home({ products, categories, setProducts, allProducts, onAddClickHandler }) {
   return (
     <div className="home" id="home">
       <Hero />
@@ -18,7 +18,7 @@ export default function Home({ products, categories, setProducts, allProducts })
         { categories.map((category, idx) => <Category name={ category } key={`category${idx}`} setProducts={ setProducts }
         allProducts = { allProducts } />) }
       </div>
-      <ProductGrid products={ products } />
+      <ProductGrid products={ products } onAddClickHandler={ onAddClickHandler } />
       <About />
       <Contact />
       <Footer />
