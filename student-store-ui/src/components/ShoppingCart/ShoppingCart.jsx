@@ -174,7 +174,7 @@ export default function ShoppingCart({
           {lastReceipt.purchase?
             <Checkout
              
-             
+             products={products}
            
               purchase={purchase}
               newShoppingCart={newShoppingCart}

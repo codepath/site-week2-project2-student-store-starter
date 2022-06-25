@@ -147,387 +147,26 @@
   ],
   "purchases": [
     {
-      "id": 1,
-      "name": "Abrofo",
-      "purchasedAt": "2022-06-24T14:53:39.030Z"
-    },
-    {
-      "id": 20,
-      "name": "Ahofama",
-      "purchasedAt": "2022-06-24T14:54:00.532Z"
-    },
-    {
-      "id": 20,
-      "name": "Ahofama",
-      "purchasedAt": "2022-06-24T19:14:37.404Z"
-    },
-    {
-      "id": 20,
-      "name": "Ahofama",
-      "purchasedAt": "2022-06-24T19:14:38.654Z"
-    },
-    {
-      "id": 20,
-      "name": "Ahofama",
-      "purchasedAt": "2022-06-24T19:15:33.254Z"
-    },
-    {
       "user": {
-        "name": "test",
-        "email": "test@test.com"
-      },
-      "order": [
-        {
-          "itemId": 3,
-          "quantity": 2
-        }
-      ],
-      "purchasedAt": "2022-06-24T19:17:29.111Z"
-    },
-    {
-      "user": {
-        "name": "test",
-        "email": "test@test.com"
-      },
-      "purchasedAt": "2022-06-24T19:29:23.234Z"
-    },
-    {
-      "shoppingCart": [
-        {
-          "itemId": 12,
-          "quantity": 3
-        }
-      ],
-      "purchasedAt": "2022-06-24T19:29:52.096Z"
-    },
-    {
-      "user": {
-        "name": "test",
-        "email": "test@test.com"
-      },
-      "purchasedAt": "2022-06-24T19:36:21.687Z"
-    },
-    {
-      "shoppingCart": [
-        {
-          "itemId": 16,
-          "quantity": 2
-        },
-        {
-          "itemId": 15,
-          "quantity": 2
-        }
-      ],
-      "purchasedAt": "2022-06-24T19:42:14.417Z"
-    },
-    {
-      "shoppingCart": [],
-      "purchasedAt": "2022-06-24T19:45:14.151Z"
-    },
-    {
-      "shoppingCart": [],
-      "purchasedAt": "2022-06-24T19:45:27.047Z"
-    },
-    {
-      "shoppingCart": [],
-      "purchasedAt": "2022-06-24T19:45:33.893Z"
-    },
-    {
-      "shoppingCart": [
-        {
-          "itemId": 15,
-          "quantity": 1
-        },
-        {
-          "itemId": 16,
-          "quantity": 1
-        }
-      ],
-      "purchasedAt": "2022-06-24T19:46:43.576Z"
-    },
-    {
-      "shoppingCart": [],
-      "purchasedAt": "2022-06-24T19:47:58.119Z"
-    },
-    {
-      "shoppingCart": [],
-      "purchasedAt": "2022-06-24T19:49:49.041Z"
-    },
-    {
-      "shoppingCart": [],
-      "purchasedAt": "2022-06-24T19:49:49.505Z"
-    },
-    {
-      "shoppingCart": [
-        {
-          "itemId": 16,
-          "quantity": 1
-        }
-      ],
-      "purchasedAt": "2022-06-24T19:53:47.381Z"
-    },
-    {
-      "shoppingCart": [],
-      "purchasedAt": "2022-06-24T19:54:21.325Z"
-    },
-    {
-      "shoppingCart": [],
-      "purchasedAt": "2022-06-24T19:56:09.636Z"
-    },
-    {
-      "shoppingCart": [
-        {
-          "itemId": 5,
-          "quantity": 2
-        }
-      ],
-      "purchasedAt": "2022-06-24T19:59:51.707Z"
-    },
-    {
-      "shoppingCart": [],
-      "purchasedAt": "2022-06-24T20:01:07.306Z"
-    },
-    {
-      "shoppingCart": [],
-      "purchasedAt": "2022-06-24T20:03:02.838Z"
-    },
-    {
-      "shoppingCart": [
-        {
-          "itemId": 16,
-          "quantity": 1
-        }
-      ],
-      "purchasedAt": "2022-06-24T20:11:45.848Z"
-    },
-    {
-      "shoppingCart": [],
-      "purchasedAt": "2022-06-24T20:12:08.989Z"
-    },
-    {
-      "shoppingCart": [],
-      "purchasedAt": "2022-06-24T20:12:09.402Z"
-    },
-    {
-      "shoppingCart": [],
-      "purchasedAt": "2022-06-24T20:12:10.078Z"
-    },
-    {
-      "shoppingCart": [],
-      "purchasedAt": "2022-06-24T20:12:10.853Z"
-    },
-    {
-      "shoppingCart": [],
-      "purchasedAt": "2022-06-24T20:13:07.646Z"
-    },
-    {
-      "shoppingCart": [
-        {
-          "itemId": 16,
-          "quantity": 2
-        }
-      ],
-      "purchasedAt": "2022-06-24T20:25:31.656Z"
-    },
-    {
-      "shoppingCart": [
-        {
-          "itemId": 16,
-          "quantity": 1
-        },
-        {
-          "itemId": 12,
-          "quantity": 1
-        }
-      ],
-      "purchasedAt": "2022-06-24T20:26:39.705Z"
-    },
-    {
-      "shoppingCart": [],
-      "purchasedAt": "2022-06-24T20:41:49.491Z"
-    },
-    {
-      "shoppingCart": [
-        {
-          "itemId": 16,
-          "quantity": 2
-        },
-        {
-          "itemId": 12,
-          "quantity": 2
-        }
-      ],
-      "purchasedAt": "2022-06-24T20:42:33.696Z"
-    },
-    {
-      "shoppingCart": [
-        {
-          "itemId": 14,
-          "quantity": 2
-        },
-        {
-          "itemId": 15,
-          "quantity": 3
-        }
-      ],
-      "purchasedAt": "2022-06-24T20:45:27.341Z"
-    },
-    {
-      "shoppingCart": [
-        {
-          "itemId": 16,
-          "quantity": 3
-        }
-      ],
-      "purchasedAt": "2022-06-24T20:46:51.336Z"
-    },
-    {
-      "shoppingCart": [
-        {
-          "itemId": 12,
-          "quantity": 2
-        }
-      ],
-      "purchasedAt": "2022-06-24T20:47:55.624Z"
-    },
-    {
-      "shoppingCart": [],
-      "purchasedAt": "2022-06-24T20:50:48.130Z"
-    },
-    {
-      "shoppingCart": [],
-      "purchasedAt": "2022-06-24T20:50:49.505Z"
-    },
-    {
-      "shoppingCart": [
-        {
-          "itemId": 12,
-          "quantity": 3
-        }
-      ],
-      "purchasedAt": "2022-06-24T20:53:41.629Z"
-    },
-    {
-      "shoppingCart": [],
-      "purchasedAt": "2022-06-24T20:58:11.998Z"
-    },
-    {
-      "user": {
-        "name": "Evabs",
-        "email": "Evaskdns"
-      },
-      "purchasedAt": "2022-06-24T22:32:48.310Z"
-    },
-    {
-      "shoppingCart": [
-        {
-          "itemId": 16,
-          "quantity": 1
-        }
-      ],
-      "purchasedAt": "2022-06-24T22:39:42.694Z"
-    },
-    {
-      "user": {
-        "name": "THe mask",
+        "name": "Dark sunglasses",
         "email": "easuboah@stetson.edu"
       },
-      "purchasedAt": "2022-06-24T22:43:44.537Z"
+      "shoppingCart": [
+        {
+          "itemId": 8,
+          "quantity": 2
+        },
+        {
+          "itemId": 4,
+          "quantity": 2
+        }
+      ],
+      "purchasedAt": "2022-06-25T08:22:36.453Z"
     },
     {
       "user": {
         "name": "Evans Kwasi Asuboah",
         "email": "easuboah@stetson.edu"
-      },
-      "purchasedAt": "2022-06-24T22:46:15.269Z"
-    },
-    {
-      "user": {
-        "name": "Evans Kwasi Asuboah",
-        "email": "easuboah@stetson.edu"
-      },
-      "purchasedAt": "2022-06-24T22:49:07.675Z"
-    },
-    {
-      "user": {
-        "name": "Evans Kwasi Asuboah",
-        "email": "evansasuboahcapp@gmail.com"
-      },
-      "purchasedAt": "2022-06-24T22:54:17.801Z"
-    },
-    {
-      "purchasedAt": "2022-06-24T22:55:17.560Z"
-    },
-    {
-      "purchasedAt": "2022-06-24T22:55:20.735Z"
-    },
-    {
-      "purchasedAt": "2022-06-24T22:55:44.385Z"
-    },
-    {
-      "purchasedAt": "2022-06-24T22:56:03.521Z"
-    },
-    {
-      "purchasedAt": "2022-06-24T22:57:33.631Z"
-    },
-    {
-      "purchasedAt": "2022-06-24T22:59:53.092Z"
-    },
-    {
-      "purchasedAt": "2022-06-24T23:21:55.481Z"
-    },
-    {
-      "purchasedAt": "2022-06-24T23:22:00.360Z"
-    },
-    {
-      "user": {
-        "name": "test",
-        "email": "test@test.com"
-      },
-      "purchasedAt": "2022-06-24T23:24:34.502Z"
-    },
-    {
-      "user": {
-        "name": "Evans Kwasi Asuboah",
-        "email": "evansasuboahcapp@gmail.com"
-      },
-      "shoppingCart": [],
-      "purchasedAt": "2022-06-24T23:26:12.707Z"
-    },
-    {
-      "user": {
-        "name": "Mask",
-        "email": "studentsbfb@gmail.com"
-      },
-      "shoppingCart": [
-        {
-          "itemId": 16,
-          "quantity": 1
-        },
-        {
-          "itemId": 12,
-          "quantity": 1
-        }
-      ],
-      "purchasedAt": "2022-06-24T23:29:09.273Z"
-    },
-    {
-      "user": {
-        "name": "Mask",
-        "email": "studentsbfb@gmail.com"
-      },
-      "shoppingCart": [
-        {
-          "itemId": 10,
-          "quantity": 3
-        }
-      ],
-      "purchasedAt": "2022-06-24T23:37:08.627Z"
-    },
-    {
-      "user": {
-        "name": "Sweatshirt",
-        "email": "studentsbfb@gmail.com"
       },
       "shoppingCart": [
         {
@@ -539,24 +178,28 @@
           "quantity": 1
         }
       ],
-      "purchasedAt": "2022-06-24T23:39:57.087Z"
+      "purchasedAt": "2022-06-25T08:23:29.997Z"
     },
     {
       "user": {
-        "name": "Untitled",
-        "email": "easuboah@stetson.edu"
+        "name": "Evans Asuboah",
+        "email": "studentsbfb@gmail.com"
       },
       "shoppingCart": [
         {
-          "itemId": 4,
+          "itemId": 16,
           "quantity": 1
         },
         {
           "itemId": 12,
           "quantity": 1
+        },
+        {
+          "itemId": 8,
+          "quantity": 1
         }
       ],
-      "purchasedAt": "2022-06-24T23:42:46.734Z"
+      "purchasedAt": "2022-06-25T08:24:38.315Z"
     },
     {
       "user": {
@@ -565,11 +208,74 @@
       },
       "shoppingCart": [
         {
-          "itemId": 9,
+          "itemId": 14,
+          "quantity": 3
+        },
+        {
+          "itemId": 16,
+          "quantity": 2
+        }
+      ],
+      "purchasedAt": "2022-06-25T08:50:10.814Z"
+    },
+    {
+      "user": {
+        "name": "Untitled",
+        "email": "Studentsbfb@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 16,
+          "quantity": 2
+        },
+        {
+          "itemId": 12,
+          "quantity": 1
+        },
+        {
+          "itemId": 8,
           "quantity": 1
         }
       ],
-      "purchasedAt": "2022-06-24T23:44:24.285Z"
+      "purchasedAt": "2022-06-25T08:52:07.705Z"
+    },
+    {
+      "user": {
+        "name": "Evans Kwasi Asuboah",
+        "email": "studentsbfb@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 16,
+          "quantity": 3
+        },
+        {
+          "itemId": 15,
+          "quantity": 3
+        },
+        {
+          "itemId": 14,
+          "quantity": 2
+        }
+      ],
+      "purchasedAt": "2022-06-25T08:57:29.894Z"
+    },
+    {
+      "user": {
+        "name": "Evans Kwasi Asuboah",
+        "email": "evansasuboahcapp@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 16,
+          "quantity": 2
+        },
+        {
+          "itemId": 15,
+          "quantity": 1
+        }
+      ],
+      "purchasedAt": "2022-06-25T09:35:04.227Z"
     }
   ]
 }
