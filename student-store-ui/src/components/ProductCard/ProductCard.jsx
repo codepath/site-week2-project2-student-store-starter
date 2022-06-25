@@ -18,7 +18,7 @@ export default function ProductCard(props) {
   return (
 
     <div className = "product-card">
-        <Link to = {linkAddress}><img className = "product-image" src={props.image} alt="product image" /></Link>
+        <Link to = {linkAddress}><img className = "media" src={props.image} alt="product image" /></Link>
         <div className = "product-details">
             <h5 className = "product-name">{props.name}</h5>
             <button className = "add" onClick = { () => props.handleAddItemToCart(props.productId)}><i class="fa-solid fa-cart-plus"></i></button>

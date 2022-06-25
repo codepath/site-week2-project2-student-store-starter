@@ -41,8 +41,8 @@ export default function ShoppingCart(props) {
                 return(
                          
                         <div className = "product-row">
-                            <span className ="product-row-name">{matchingProduct.name}</span>
-                            <span className ="product-row-quantity">{object.quantity}</span>
+                            <span className ="cart-product-name">{matchingProduct.name}</span>
+                            <span className ="cart-product-quantity">{object.quantity}</span>
                             <span className ="product-row-unit">{matchingProduct.price}</span>
                             <span className ="product-row-cost">{cost.toFixed(2)}</span>
                         </div>)

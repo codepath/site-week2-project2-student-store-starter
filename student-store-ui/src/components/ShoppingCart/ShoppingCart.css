@@ -76,7 +76,7 @@ h3, p, .confirmation-text, .email-label, .name-label, .terms-label {
     justify-content: space-around;
 }
 
-.product-row-name, .product-row-quantity, .product-row-unit, .product-row-cost, .subtotal-text {
+.cart-product-name, .cart-product-quantity, .product-row-unit, .product-row-cost, .subtotal-text {
     font-family: Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
     -webkit-font-smoothing: antialiased;
     color: white;
@@ -103,7 +103,4 @@ h3, p, .confirmation-text, .email-label, .name-label, .terms-label {
     margin-left: 10%;
 }
 
-.subtotal-header-text{
-
-}
 
