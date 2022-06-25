@@ -2,7 +2,7 @@ import * as React from "react"
 import { Link } from "react-router-dom"
 import "./ProductCard.css"
 
-export default function ProductCard({ product, onAddClickHandler }) {
+export default function ProductCard({ product, onAddClickHandler, onSubtractClickHandler }) {
       
     return (
         <div className="product">
@@ -10,7 +10,7 @@ export default function ProductCard({ product, onAddClickHandler }) {
             <p>{ product.name }</p>
             <p>${ product.price }</p>
             <button onClick={ () => onAddClickHandler(product.id) }>+</button>
-            <button>-</button>
+            <button onClick={ () => onSubtractClickHandler(product.id) }>-</button>
         </div>
     )
 }

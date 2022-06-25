@@ -55,6 +55,18 @@ export default function App() {
     }
   }
 
+  function onSubtractClickHandler(productId) {
+    let product = shoppingCart.find((product) => product['id'] === productId)
+    if (product) {
+      let restShoppingCart = shoppingCart.filter((product) => product.id != productId)
+      if (product['count'] === 1) {
+        setShoppingCart(restShoppingCart)
+      } else if (product['count'] > 1) {
+        setShoppingCart([].concat(restShoppingCart, [{'id':productId, 'count':product['count']-1}]))
+      }
+    }
+  }
+
   return (
     <div className="app">
       <BrowserRouter>
@@ -62,7 +74,7 @@ export default function App() {
             <Route path="/" element=
               {
               <Home products={ products } categories={ categories } setProducts={ setProducts } allProducts = { allProducts }
-               onAddClickHandler={ onAddClickHandler }/>
+               onAddClickHandler={ onAddClickHandler } onSubtractClickHandler={ onSubtractClickHandler }/>
               } 
             />
             <Route path="products/:productId" element={<ProductDetail allProducts={ allProducts } />} />
