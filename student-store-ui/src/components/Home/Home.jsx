@@ -16,8 +16,7 @@ export default function Home({ products, categories, setActiveCategory, activeCa
       <SearchBar />
       <div className="categories">
         { categories.map((category, idx) => <Category name={ category } key={`category${idx}`} setActiveCategory={ setActiveCategory }
-        activeCategory={ activeCategory } setProducts={ setProducts } products={ products } 
-        allProducts = { allProducts } />) }
+        activeCategory={ activeCategory } setProducts={ setProducts } allProducts = { allProducts } />) }
       </div>
       <ProductGrid products={ products } />
       <About />

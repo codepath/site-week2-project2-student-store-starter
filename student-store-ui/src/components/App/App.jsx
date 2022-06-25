@@ -46,27 +46,6 @@ export default function App() {
     fetchData()
   }, [])
 
-  function handleOnToggle() {
-    setIsOpen(!isOpen)
-  }
-  
-  function handleAddItemToCart(productId) {
-    if (productId in shoppingCart) {
-      let new_count = shoppingCart[productId] + 1
-      shoppingCart[productId] = new_count
-
-    } else {
-      setShoppingCart(shoppingCart + [{productId: 1}])
-    }
-  }
-
-  function onClickCategory(e) {
-    e.preventDefault()
-    set
-    setProducts(products.filter((product) => {}))
-  }
-
-
   return (
     <div className="app">
       <BrowserRouter>
