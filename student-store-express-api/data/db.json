@@ -145,5 +145,97 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "id": 0,
+      "name": "Tom",
+      "email": "tom@gmail.com",
+      "order": [
+        {
+          "id": 4,
+          "quantity": 5
+        }
+      ],
+      "total": 17.671875,
+      "createdAt": "2022-06-24T18:48:40.892Z"
+    },
+    {
+      "id": 0,
+      "name": "Tom",
+      "email": "tom@gmail.com",
+      "order": [
+        {
+          "id": 4,
+          "quantity": 5
+        }
+      ],
+      "total": 17.671875,
+      "createdAt": "2022-06-24T18:48:47.083Z"
+    },
+    {
+      "id": 0,
+      "name": "Tom",
+      "email": "tom@gmail.com",
+      "order": [
+        {
+          "id": 4,
+          "quantity": 5
+        }
+      ],
+      "total": 17.671875,
+      "createdAt": "2022-06-24T18:50:10.692Z"
+    },
+    {
+      "id": 1,
+      "name": "Tom",
+      "email": "tom@gmail.com",
+      "order": [
+        {
+          "id": 4,
+          "quantity": 5
+        }
+      ],
+      "total": 17.671875,
+      "createdAt": "2022-06-24T18:50:11.730Z"
+    },
+    {
+      "id": 2,
+      "name": "Tom",
+      "email": "tom@gmail.com",
+      "order": [
+        {
+          "id": 4,
+          "quantity": 5
+        }
+      ],
+      "total": 17.671875,
+      "createdAt": "2022-06-24T18:50:15.213Z"
+    },
+    {
+      "id": 0,
+      "name": "Billy",
+      "email": "billy@gmail.com",
+      "order": [
+        {
+          "id": 2,
+          "quantity": 3
+        }
+      ],
+      "total": 4.89375,
+      "createdAt": "2022-06-24T19:58:37.602Z"
+    },
+    {
+      "id": 1,
+      "name": "Billy",
+      "email": "billy@gmail.com",
+      "order": [
+        {
+          "id": 2,
+          "quantity": 3
+        }
+      ],
+      "total": 4.89375,
+      "createdAt": "2022-06-24T19:58:42.841Z"
+    }
+  ]
 }

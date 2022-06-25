@@ -1,42 +1,10 @@
 import * as React from "react"
-import "./Sidebar.css"
+import "./ShoppingCart.css"
 import { useEffect } from "react";
 
-export default function Sidebar(props) {
- function handleSidebarClick() {
-  
-  props.handleOnToggle();
- }
+export default function ShoppingCart(props) {
 
- function handleNameFormChange(evt) {
-  props.setNameFormContent(evt.target.value)
- }
-
- function handleEmailFormChange(evt) {
-  props.setEmailFormContent(evt.target.value)
- }
-
- console.log(props.shoppingCart)
-// 2 divs in sidebar, a variable called open. In apps jsx we have sidebar component. 
-// Inside siedbar component, in button tag call handle on togge. In that if statement. If open, have div with classname sidebar isopen. If closed then have another div with sidebar closed
-// In css
-let lastSubTotal;
-if (props.subTotal > 0) {
-  lastSubTotal = props.SubTotal;
-}
-
-
-  return (
-
-   props.isOpen ?     
-  
-  <section className="sidebar open">
-   <div className="wrapper" >
-       <button className="toggle-button button open" onClick={props.handleOnToggle()}>
-         <i className="material-icons md-48 back-arrow">arrow_backward</i>
-       </button>
-
-     <div className="shopping-cart">
+<div className="shopping-cart">
         <div className="open">
           <h3>Shopping Cart
             <span className="button">
@@ -154,42 +122,5 @@ if (props.subTotal > 0) {
 
 
         </div>
-      </div>
-
     </div>
-
- </section>
-   
-   :
-    <section className="sidebar closed">
-      <div className="wrapper">
-          <button className="toggle-button button closed" onClick={props.handleOnToggle()}>
-            <i className="material-icons md-48">arrow_forward</i>
-          </button>
-
-        <div className="shopping-cart">
-
-          <div className="cart-icons">
-            <span className="cart-icon icon button">
-              <i className="material-icons md-48">add_shopping_cart</i>
-            </span>
-            <span className="cart-icon icon button">
-              <i className="material-icons md-48">monetization_on</i>
-            </span>
-            <span className="cart-icon icon button">
-              <i className="material-icons md-48">fact_check</i>
-            </span>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    
-      
-      
-
-  )
 }

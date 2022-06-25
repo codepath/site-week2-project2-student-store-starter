@@ -7,6 +7,11 @@ export default function ProductGrid(props) {
 
   let isTrue = true; // test
 
+  //let index = props.shoppingCart.findIndex(el => el.id == productId)
+  //props.shoppingCart[index].quantity 
+
+  
+
   return (
     <section className="product-grid">
         <div className="content">
@@ -14,19 +19,19 @@ export default function ProductGrid(props) {
             <h1>Top Selling Products</h1>
             <div className="grid">
                 {props.products.map((product) => (
-                  
+                    
                    ( product.name.toLowerCase().includes(props.searchFormContent.toLowerCase()) ) && (props.selectedCategory == "all" || product.category == props.selectedCategory)  ? <ProductCard 
                     key={product.id} 
                     product={product} 
                     productId={product.id} 
                     productName={product.name}
                     category={product.category}
-                    quantity={0}
                     handleAddItemToCart={props.handleAddItemToCart}
                     handleRemoveItemFromCart={props.handleRemoveItemFromCart}
                     selectedProductId={props.selectedProductId}
                     setSelectedProductId={props.setSelectedProductId}
-                    showDescription={false} /> : <></> 
+                    showDescription={false} 
+                    shoppingCart={props.shoppingCart} /> : <></> 
                   
 
                 ))}

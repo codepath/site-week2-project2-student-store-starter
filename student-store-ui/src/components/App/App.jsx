@@ -60,6 +60,22 @@ const [selectedCategory, setSelectedCategory] = useState("all")
 
 const [selectedProductId, setSelectedProductId] = useState(0)
 
+const [subTotal, setSubTotal] = useState(0)
+
+const [nameFormContent, setNameFormContent] = useState("");
+
+const [emailFormContent, setEmailFormContent] = useState("");
+
+const [checkedOut, setCheckedOut] = useState(false)
+
+const [checkoutProducts, setCheckoutProducts] = useState([])
+
+const [checkoutSubtotal, setCheckoutSubtotal] = useState(0)
+
+const [checkoutName, setCheckoutName] = useState("")
+
+const [checkoutEmail, setCheckoutEmail] = useState("")
+
 
 
 // API Call
@@ -85,33 +101,118 @@ useEffect(() => {
 // Toggle the open/closed state of the sidebar
 function handleOnToggle() {
   if (isOpen == false) {
+    console.log("Sidebar open")
     setIsOpen(true);
   }
   else {
+    console.log("Sidebar closed")
     setIsOpen(false);
   }
 }
 
 function handleAddItemToCart(productId) {
   // If shoppingcart contains the element with the given id
-  if (shoppingCart.filter(item => item.id === {productId}).length > 0) {
+  if (shoppingCart.findIndex(el => el.id == productId) !== -1) {
+  //if (shoppingCart.filter(item => item.id === {productId}).length > 0) {
     // setShoppingCart(...) Use the ... to add it without deleting everything prior
+    // Made copy of old shopping cart. Found index where item id = product id. In copy of original cart,
+    // increamented the quantity and set to copy
+    // setShoppingCart(...{})
+    let copyCart = shoppingCart
+    let index = shoppingCart.findIndex(el => el.id == productId)
+
+    let itemQuantity = copyCart[index].quantity
+    //copyCart[index].quantity += 1;
+
+    itemQuantity += 1;
+    copyCart[index].quantity = itemQuantity
+
+    setShoppingCart(copyCart)
+    
+
   }
+  else {
+    //setState((prevState) ...prevState, newObj)
+
+    // Gathers the actual product item based on the productID
+    const product = products.find(product => {
+      return product.id == productId;
+    });
+
+    setShoppingCart(state => [...state, {id: productId, quantity: 1, name: product.name, price: product.price,}]) // (If you want to have only id and quantity, u can access the other 2 pieces of info elsewhere using the following:) props.products[item.itemId - 1].name
+
+
+
+    //setShoppingCart(...{id: productId, quantity: 1})
+   
+  }
+
+  const product = products.find(product => {
+    return product.id == productId;
+  });
+  setSubTotal(subTotal + product.price)
+
+  console.log(shoppingCart)
 }
 
 function handleRemoveItemFromCart(productId) {
   // If shoppingcart contains the element with the given id
-  if (shoppingCart.filter(item => item.id === {productId}).length > 0) {
+  if (shoppingCart.findIndex(el => el.id == productId) !== -1) {
+  //if (shoppingCart.filter(item => item.id === {productId}).length > 0) {
+    let copyCart = shoppingCart
+    let index = shoppingCart.findIndex(el => el.id == productId)
+    copyCart[index].quantity -= 1;
+    if (copyCart[index].quantity <= 0) {
+      console.log("Remove product")
+      //copyCart = copyCart.filter((_, idx)=>idx !== index)
+      //copyCart = copyCart.splice(index, 1);
+      //copyCart = copyCart.filter(product => product.id == productId)
+      setShoppingCart(shoppingCart.filter((_, idx)=>idx !== index))
+      
+    }
+    else {
+      setShoppingCart(copyCart)
+    }
     
   }
+
+  const product = products.find(product => {
+    return product.id == productId;
+  });
+  setSubTotal(subTotal - product.price)
+
+  console.log(shoppingCart)
 }
 
-function handleOnCheckoutFormchange(name, value) {
+function handleOnCheckoutFormChange(name, value) {
 
 }
 
 function handleOnSubmitCheckoutForm() {
+  if (nameFormContent.length > 0 && emailFormContent.length > 0) {
+    setCheckoutProducts(shoppingCart)
+    setCheckoutSubtotal(subTotal)
+    setCheckoutName(nameFormContent)
+    setCheckoutEmail(emailFormContent)
+    setNameFormContent("")
+    setEmailFormContent("")
+    setShoppingCart([])
+    setCheckedOut(true)
 
+    /*
+    axios.post("http://localhost:3001/store/", {user:checkoutForm, shoppingCart:shoppingCart})
+    .then((res) => {
+      setReceipt(res.data.purchase.receipt)
+    })
+    .catch((err) => {
+      setError(err)
+      setSuccess(false)
+    }) */
+    console.log("Checkout successful!")
+  }
+  else {
+    console.log("Checkout Unsuccessful")
+  }
 }
 
 
@@ -125,7 +226,26 @@ function handleOnSubmitCheckoutForm() {
            
           </Navbar>
             
-          <Sidebar handleOnToggle={() => handleOnToggle}> {/* All routes */}
+          <Sidebar 
+          subTotal={subTotal} 
+          shoppingCart={shoppingCart} 
+          setShoppingCart={setShoppingCart} 
+          isOpen={isOpen} 
+          handleOnToggle={() => handleOnToggle}
+          nameFormContent={nameFormContent}
+          setNameFormContent={setNameFormContent}
+          emailFormContent={emailFormContent}
+          setEmailFormContent={setEmailFormContent}
+          handleOnSubmitCheckoutForm={() => handleOnSubmitCheckoutForm}
+          checkoutProducts={checkoutProducts}
+          setCheckoutProducts={setCheckoutProducts}
+          checkoutSubtotal={checkoutSubtotal}
+          setCheckoutSubtotal={setCheckoutSubtotal}
+          checkoutName={checkoutName}
+          checkoutEmail={checkoutEmail}
+          checkedOut={checkedOut}
+          setCheckedOut={setCheckedOut}
+          > {/* All routes */}
   
           </Sidebar>
 
@@ -146,6 +266,7 @@ function handleOnSubmitCheckoutForm() {
               setSelectedCategory={setSelectedCategory}
               selectedProductId={selectedProductId}
               setSelectedProductId={setSelectedProductId}
+              shoppingCart={shoppingCart}
               />}
             ></Route>
 

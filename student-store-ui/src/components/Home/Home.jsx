@@ -25,13 +25,15 @@ export default function Home(props) {
       products={props.products}
       setProducts={props.setProducts}
       handleAddItemToCart={props.handleAddItemToCart} 
-      handleRemoveItemFromCart={props.handleRemoveItemToCart}
+      handleRemoveItemFromCart={props.handleRemoveItemFromCart}
       searchFormContent={props.searchFormContent}
       setSearchFormContent={props.setSearchFormContent}
       selectedCategory={props.selectedCategory}
       setSelectedCategory={props.setSelectedCategory}
       selectedProductId={props.selectedProductId}
-      setSelectedProductId={props.setSelectedProductId}></ProductGrid>
+      setSelectedProductId={props.setSelectedProductId}
+      shoppingCart={props.shoppingCart}
+      ></ProductGrid>
 
 
       <div className="about">

@@ -3,9 +3,15 @@ import {Link} from 'react-router-dom';
 import "./ProductCard.css"
 
 
-// Props = product, productId, quantity, handleAddItemToCart, handleRemoveItemToCart, showDescription (T/F), selectedProduct, setSelectedProduct
+// Props = product, productId, shoppingCart, handleAddItemToCart, handleRemoveItemToCart, showDescription (T/F), selectedProduct, setSelectedProduct
 export default function ProductCard(props) {
 console.log("Selected product is " + props.selectedProductId)
+
+
+const found = props.shoppingCart.find(obj => {
+  return obj.id === props.product.id;
+});
+
 
 
   return (
@@ -25,18 +31,24 @@ console.log("Selected product is " + props.selectedProductId)
       
             </div>
 
-            <p className="product-price">${props.product.price}</p> {/* The price should formatted so that it starts with a $, and has at least one integer digit, along with exactly two decimal digits. */}
+            <p className="product-price">${props.product.price.toFixed(2)}</p> {/* The price should formatted so that it starts with a $, and has at least one integer digit, along with exactly two decimal digits. */}
           </div>
 
           <div className="actions">
             <div className="buttons">
-              <button className="add">
+              <button className="add" onClick={() => props.handleAddItemToCart(props.productId)}>
                 <i class="material-icons">add</i>  
               </button> {/* Add functionality to the buttons*/}
-              <button className="remove">
+              <button className="remove" onClick={() => props.handleRemoveItemFromCart(props.productId)}>
                 <i class="material-icons">remove</i>
               </button>
             </div>
+            {found ? 
+            <span class="quantity">
+            <span class="amt">{found.quantity}</span>
+          </span> : <></>
+          }
+            
           </div>
         </div>
 
