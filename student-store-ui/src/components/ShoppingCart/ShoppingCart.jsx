@@ -27,7 +27,7 @@ export default function ShoppingCart({isOpen, products, shoppingCart}) {
     const calculateSubTotal =(shoppingCart) =>{
         let total = 0;
         for (let i = 0; i < shoppingCart.length; i++) {
-            total += findProduct(shoppingCart[i])?.price
+            total += findProduct(shoppingCart[i])?.price * shoppingCart[i].quantity
           }
         return total;
 

@@ -13,8 +13,5 @@
   height: 100%;
   min-height: 100vh;
   display: flex;
-  padding-left: 160px;
-  padding-right: 160px;
-  padding-bottom: 20px;
   flex-direction: column;
 }

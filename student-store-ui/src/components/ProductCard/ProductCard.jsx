@@ -18,20 +18,22 @@ export default function ProductCard({product, productId, quantity, handleAddItem
         {/* TODO: Get it to navigate to description page when clicked */}
             <img className="product-img" src={product.image}></img>
         </Link>
+        <div className="container">
         <button className="add" onClick={() => handleAddItemsToCart(productId)}>
             <h3>+</h3>
         </button>
         <button className="remove" onClick={() => handleRemoveItemToCart(productId)}>
             <h3>-</h3>
         </button>
+        </div>
         <div className="product-price">
-            <h3>Price: ${product.price}</h3>
+            <p className="price">Price: ${product.price}</p>
         </div>
         <div className="product-quantity">
-            <h3>Left: {product.quantity}</h3>
+            <p className="quantity" >Left: {product.quantity}</p>
         </div>
         {showDescription == true
-          ? <div className="product-description"><p>{product.description}</p></div>
+          ? <div className="product-description"><p className="description">{product.description}</p></div>
           :<div></div>
         }
       </div> 

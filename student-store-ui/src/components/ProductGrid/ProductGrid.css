@@ -82,7 +82,7 @@ li {
     vertical-align: middle;
   }
   
-  input{
+.search-text{
     color: #b37d8b;
   }
   .search {
@@ -208,6 +208,9 @@ li {
     right: -6px;
     width: 40px;
     background-color: #b37d8b;
+  }
+  .toggle-menu{
+    background-color: #fbe3ea;
   }
 /* .movie-poster{
     border-radius: 30px;

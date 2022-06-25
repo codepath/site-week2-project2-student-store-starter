@@ -5,12 +5,15 @@ import { useState } from "react";
 export default function ProductGrid({products ,handleAddItemsToCart, handleRemoveItemToCart}) {
   // const [loadedProd, setLoadedProd] = useState(null);
   // const currentLoaded = products.
-
+  const [showMenu, setShowMenu] = useState(true);
   const [searched, setSearched] = useState("");
   const regexp = new RegExp(searched, "i")
   const [clickedCategory, setClickedCategory] = useState("");
   let currSearch =  products.filter((products) => regexp.test(products.name))
   let currProds = products.filter((product, idx) => product.category == clickedCategory);
+  const handleShowMenu = () =>{
+    setShowMenu(!showMenu)
+  }
   const handleClick = (category) => {
     setClickedCategory(category);
   }
@@ -25,7 +28,7 @@ export default function ProductGrid({products ,handleAddItemsToCart, handleRemov
       <form method="get" onChange={(event) => handleSearched(event)}>
         <div className="tb">
           <div className="td">
-              <input type="text" required/>
+              <input className="search-text" type="text" required/>
           </div>
           <div className="td" id="s-cover">
             <button className="search" type="submit">
@@ -36,25 +39,34 @@ export default function ProductGrid({products ,handleAddItemsToCart, handleRemov
         </div>
       </form>
     </div>
-       <div className="menu">
-        <ul className="category-menu open">
-            <li>
-                <button className="menu-btn" onClick={() => handleClick("")}>All Categories</button>
-            </li>
-            <li>
-                <button className="menu-btn" onClick={() => handleClick("clothing")}>Clothing</button>
-            </li>
-            <li>
-                <button className="menu-btn" onClick={() => handleClick("food")}>Food</button>
-            </li>
-            <li>
-                <button className="menu-btn" onClick={() => handleClick("accessories")}>Accessories</button>
-            </li>
-            <li>
-                <button className="menu-btn" onClick={() => handleClick("tech")}>Tech</button>
-            </li>
-        </ul>
-    </div>
+    {showMenu == true
+      ?<div className="menu">
+      <ul className="category-menu open">
+      <button class="toggle-menu" onClick={() => handleShowMenu()}>
+        <i className="material-icons">menu</i>
+      </button>
+          <li>
+              <button className="menu-btn" onClick={() => handleClick("")}>All Categories</button>
+          </li>
+          <li>
+              <button className="menu-btn" onClick={() => handleClick("clothing")}>Clothing</button>
+          </li>
+          <li>
+              <button className="menu-btn" onClick={() => handleClick("food")}>Food</button>
+          </li>
+          <li>
+              <button className="menu-btn" onClick={() => handleClick("accessories")}>Accessories</button>
+          </li>
+          <li>
+              <button className="menu-btn" onClick={() => handleClick("tech")}>Tech</button>
+          </li>
+      </ul>
+  </div>
+  : <button class="toggle-menu" onClick={() => handleShowMenu()}>
+        <i className="material-icons">menu</i>
+      </button>
+    }
+       
       <div className="products-grid">
         { searched != "" && clickedCategory != ""
         ? currSearch

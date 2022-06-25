@@ -104,14 +104,6 @@ export default function App() {
           {/* YOUR CODE HERE! */}
           <Navbar />
           <Sidebar isOpen={isOpen} shoppingCart={shoppingCart} products={products} checkoutForm={checkoutForm} handleCheckoutForm={handleOnCheckoutFormChange} handleSubmitCheckoutForm={handleOnSubmitCheckoutForm} handleToggle={handleOnToggle}/>
-          {/* <Home /> */}
-          {/* <Menu /> */}
-          {/* <ProductGrid products={products} handleAddItemsToCart ={handleAddItemsToCart} handleRemoveItemToCart= {handleRemoveItemToCart}/> */}
-          {/* <About />
-          <Contact />
-          <Footer />
-          <Navbar />
-          <Sidebar /> */}
           <Routes>
             <Route path="/" element={<Home products={products} handleAddItemsToCart={handleAddItemsToCart} handleRemoveItemToCart={handleRemoveItemToCart}/>} />
             <Route path="/products/:productId" element={<ProductDetail  handleAddItemsToCart={handleAddItemsToCart} handleRemoveItemToCart={handleRemoveItemToCart}/>} />
