@@ -24,8 +24,6 @@ export default function App() {
   const [shoppingCart, setShoppingCart] = React.useState([])
   // the user's information that will be sent to the API when they checkout.
   const [checkoutForm, setCheckoutForm] = React.useState(false)
-  // set active category
-  const [activeCategory, setActiveCategory] = React.useState('All categories')
 
   const categories = ['All categories', 'Clothing', 'Food', 'Accessories', 'Tech']
 
@@ -52,9 +50,7 @@ export default function App() {
       <Routes>
             <Route path="/" element=
               {
-              <Home products={ products } categories={ categories } setActiveCategory={ setActiveCategory }
-              activeCategory={ activeCategory } setProducts={ setProducts } 
-              allProducts = { allProducts }/>
+              <Home products={ products } categories={ categories } setProducts={ setProducts } allProducts = { allProducts }/>
               } 
             />
             <Route path="/products/:productId" element={<ProductDetail />} />

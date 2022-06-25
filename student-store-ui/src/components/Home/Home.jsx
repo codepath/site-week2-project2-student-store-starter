@@ -9,14 +9,14 @@ import Footer from "../Footer/Footer"
 
 import "./Home.css"
 
-export default function Home({ products, categories, setActiveCategory, activeCategory, setProducts, allProducts }) {
+export default function Home({ products, categories, setProducts, allProducts }) {
   return (
     <div className="home" id="home">
       <Hero />
       <SearchBar />
       <div className="categories">
-        { categories.map((category, idx) => <Category name={ category } key={`category${idx}`} setActiveCategory={ setActiveCategory }
-        activeCategory={ activeCategory } setProducts={ setProducts } allProducts = { allProducts } />) }
+        { categories.map((category, idx) => <Category name={ category } key={`category${idx}`} setProducts={ setProducts }
+        allProducts = { allProducts } />) }
       </div>
       <ProductGrid products={ products } />
       <About />

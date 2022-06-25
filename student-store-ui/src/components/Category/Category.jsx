@@ -1,12 +1,11 @@
 import * as React from 'react'
 import './Category.css'
 
-export default function Category({ name, setActiveCategory, activeCategory, setProducts, allProducts }) {
+export default function Category({ name, setProducts, allProducts }) {
     return (
         <a onClick={() => {
-            setActiveCategory(name)
-            if (activeCategory != 'All categories') {
-                setProducts(allProducts.filter((product) => product.category === activeCategory.toLowerCase()))
+            if (name != 'All categories') {
+                setProducts(allProducts.filter((product) => product.category === name.toLowerCase()))
             } else {
                 setProducts(allProducts)
             }
