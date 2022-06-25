@@ -27,9 +27,11 @@ export default function Sidebar(props) {
           shoppingCart={props.shoppingCart} 
           checkoutForm={props.checkoutForm} 
           handleOnCheckoutFormChange={props.handleOnCheckoutFormChange} 
-          handleOnSubmitCheckoutForm={props.handleOnSubmitCheckoutForm}/>
+          handleOnSubmitCheckoutForm={props.handleOnSubmitCheckoutForm}
+          lastReceipt={props.lastReceipt}
+          success={props.success}/>
         
-        <Receipt products={props.products} lastReceipt={props.lastReceipt}/>
+        <Receipt success={props.success} products={props.products} lastReceipt={props.lastReceipt}/>
         
       </div>
     </section>

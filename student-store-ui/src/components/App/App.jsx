@@ -27,6 +27,7 @@ export default function App() {
   const [lastReceipt, setLastReceipt] = React.useState({});
   const [purchases, setPurchases] = React.useState([]);
   const [isOpen, setIsOpen] = React.useState("closed");
+  const [success, setSuccess] = React.useState();
 
   // fetch when mounted
   React.useEffect(() => {
@@ -81,7 +82,7 @@ export default function App() {
 
 
   //handle on checkout form button for POST request
-  const handleOnSubmitCheckoutForm = async (isTermsRead) => {
+  const handleOnSubmitCheckoutForm = async () => {
     if ((shoppingCart.length > 0)) {
       setIsCreating(true);
 
@@ -93,12 +94,14 @@ export default function App() {
           console.log("purchase order created succesfully! ", res);
           // state for Receipt component
           setLastReceipt(res.data.purchase);
+          setSuccess(true);
         }).catch((error) => {
           console.error("CREATING PURCHASE ORDER ERROR: ", error);
+          setSuccess(false);
         })
-      setIsCreating(false);
 
       // reset states
+      setIsCreating(false);
       setCheckoutForm(checkoutFormInitState);
       setShoppingCart([]);
 
@@ -107,8 +110,8 @@ export default function App() {
     }
   }
 
-   //sidebar open/closed handler for display
-   const handleOnToggle = () => {
+  //sidebar open/closed handler for display
+  const handleOnToggle = () => {
     if (isOpen === "open") {
       setIsOpen("closed");
     } else {
@@ -207,9 +210,10 @@ export default function App() {
             checkoutForm={checkoutForm}
             handleOnCheckoutFormChange={handleOnCheckoutFormChange}
             handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
-            lastReceipt={lastReceipt} 
+            lastReceipt={lastReceipt}
             isOpen={isOpen}
-            handleOnToggle={handleOnToggle}/>
+            handleOnToggle={handleOnToggle}
+            success={success} />
           <Routes>
             <Route path="/purchases/" element={<Purchases isFetching={isFetching} purchases={purchases} />} />
             <Route path="/"

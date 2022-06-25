@@ -2,8 +2,7 @@ import React from "react"
 import "./CheckOutForm.css"
 
 export default function CheckOutForm(props) {
-    // const [isTermsRead, setIsTermsRead] = React.useState(false);
-
+    
     return (
         <div className="check-out">
             <h1>Check Out</h1>
@@ -35,8 +34,8 @@ export default function CheckOutForm(props) {
                 className="checkout-button"
                     type="submit" 
                     value="Check Out"
-                    onClick={(e) => {props.handleOnSubmitCheckoutForm(isTermsRead)}}></input>
-            
+                    onClick={(e) => {props.handleOnCheckoutFormChange()}}></input>
         </div>
+
     )
 }
