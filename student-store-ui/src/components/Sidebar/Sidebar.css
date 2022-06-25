@@ -1,5 +1,7 @@
 .sidebar.closed{
+
     height: 100%; /* Full-height: remove this if you want "auto" height */
+
     width: 80px; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     display: flex;
@@ -22,6 +24,7 @@
     background: rgb(44, 64, 71);
     overflow: auto; /* Disable horizontal scroll */
     padding-top: 20px;
+
 
   } 
 
@@ -52,7 +55,9 @@
 
   .arrow-btn {
 
+
     margin-left: 150px;
+
     margin-bottom: 200px;
     margin: 0;
     background: rgb(44, 64, 71);

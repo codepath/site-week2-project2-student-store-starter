@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Link} from 'react-router-dom';
 
 export default function ProductCard(props) {
 
+
     let linkAddress = "/products/" + props.productId;
     let price = props.price.toFixed(2);
     let quantity;
@@ -13,6 +14,7 @@ export default function ProductCard(props) {
         quantity = item.quantity
       }
     })
+
 
 
   return (

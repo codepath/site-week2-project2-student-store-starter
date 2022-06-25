@@ -1,5 +1,7 @@
 const {storage} = require("../data/storage")
+
 const {BadRequestError, NotFoundError} = require("../utils/errors")
+
 
 
 class Store { 
@@ -16,6 +18,7 @@ class Store {
         const matchingProduct = storage.get("products").find({id: Number(productId)}).value();
         return matchingProduct
     }
+
 
     static async createPurchaseOrder(user, shoppingCart) {
         if (!user.name || !user.email || !shoppingCart) {
@@ -63,6 +66,10 @@ class Store {
 
     }
 
+
+
+
+    
 
 
 }

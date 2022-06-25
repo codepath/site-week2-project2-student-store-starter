@@ -1,5 +1,6 @@
 import * as React from "react"
 import "./ShoppingCart.css"
+
 import CheckoutForm from "../CheckoutForm/CheckoutForm"
 import Receipt from "../Receipt/Receipt"
 
@@ -14,8 +15,12 @@ export default function ShoppingCart(props) {
     let total = 0
 
 
+
+
+
     return (
         
+
 
 
     <div className = "shopping-cart">
@@ -78,6 +83,7 @@ export default function ShoppingCart(props) {
         checkoutSuccess = {props.checkoutSuccess} setCheckoutSuccess ={props.setCheckoutSuccess}/>
          :  <p className = "confirmation-text">A confirmation email will be sent to you so that you can confirm this order. Once you have confirmed the order, it will be delivered to your dorm room.</p>}
 
+
     </div>
 
   )
@@ -86,10 +92,18 @@ export default function ShoppingCart(props) {
 
 
 
+
   export function ShopCartIcon() {
+
     return (
       <div className="shop-cart-icon">
           <i className="fa-solid fa-cart-shopping fa-2x"></i>
       </div>
     )
   }
+
+
+
+
+
+

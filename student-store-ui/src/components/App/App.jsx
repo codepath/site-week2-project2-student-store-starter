@@ -41,6 +41,7 @@ export default function App() {
   function handleOnToggle() {
   }
 
+
   //handler logic to add item to cart
   function handleAddItemToCart(productId) {
     // console.log("shoppingCart before ADD:", shoppingCart)
@@ -114,6 +115,49 @@ export default function App() {
       setCheckoutForm({name: "", email: value})
     }
 
+
+  function handleAddItemToCart(productId) {
+
+    shoppingCart.forEach((item) => {
+      if (productId in item) {
+        item[productId] += 1
+      }
+      else {
+        
+
+      }
+    })
+
+
+  }
+
+
+
+
+  const getProducts = async () => {
+    setIsFetching(true)
+    try {
+      const response = await axios.get("http://localhost:3001/store")
+      if (response?.data?.allProducts) {
+        setProducts(response.data.allProducts)
+      } else {
+        setError("Error getting products list from store.")
+      }
+    } catch (error) {
+      console.log(error)
+    } finally {
+      setIsFetching(false)
+    }
+  }
+
+
+  useEffect(() => {
+    
+    getProducts()
+  }, [])
+
+
+
   }
 
 
@@ -184,9 +228,13 @@ export default function App() {
       <BrowserRouter>
       <main>
         <Navbar />
+
         <Sidebar isOpen = {isOpen} setIsOpen = {setIsOpen} products = {products} shoppingCart = {shoppingCart} setShoppingCart = {setShoppingCart} checkoutForm ={checkoutForm} setCheckoutForm = {setCheckoutForm} 
                   handleOnCheckoutFormChange = {handleOnCheckoutFormChange} handleOnSubmitCheckoutForm = {handleOnSubmitCheckoutForm} showReceipt = {showReceipt} setShowReceipt = {setShowReceipt} receipt = {receipt} 
                   checkoutSuccess = {checkoutSuccess} setCheckoutSuccess ={setCheckoutSuccess}/> 
+
+        
+
         <Routes>
           <Route path = "/" element = {<Home products = {products} selectedCategory = {selectedCategory} setSelectedCategory = {setSelectedCategory} handleAddItemToCart = {handleAddItemToCart} handleRemoveItemFromCart = {handleRemoveItemFromCart} shoppingCart = {shoppingCart}/>}  />
           <Route path = "/products/:productId" element = {<ProductDetail products = {products} isFetching = {isFetching} setIsFetching = {setIsFetching} error = {error} setError = {setError}/>} /> 
