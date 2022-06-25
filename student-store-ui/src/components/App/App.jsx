@@ -74,7 +74,8 @@ export default function App() {
             <Route path="/" element=
               {
               <Home products={ products } categories={ categories } setProducts={ setProducts } allProducts = { allProducts }
-               onAddClickHandler={ onAddClickHandler } onSubtractClickHandler={ onSubtractClickHandler }/>
+               onAddClickHandler={ onAddClickHandler } onSubtractClickHandler={ onSubtractClickHandler }
+               shoppingCart={ shoppingCart }/>
               } 
             />
             <Route path="products/:productId" element={<ProductDetail allProducts={ allProducts } />} />
