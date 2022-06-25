@@ -17,8 +17,8 @@ export default function Receipt({ clicked, purchase,setshoppingCart ,submit}) {
       <table>
         <tr>
           <th>Name</th>
-          <th>Quantity</th>
           <th>Unit Price</th>
+          <th>Quantity</th>
           <th>Cost</th>
         </tr>
         {purchase.map((val, key) => {

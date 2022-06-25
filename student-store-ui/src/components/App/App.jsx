@@ -5,7 +5,6 @@ import Home from "../Home/Home";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-
 import api from "../api/api";
 import ProductDetail from "../ProductDetail/ProductDetail";
 import axios from "axios";
@@ -18,10 +17,12 @@ export default function App() {
 
   const [isOpen, setisOpen] = React.useState(false);
 
-  
-const [lastReceipt,setLastReceipt] = React.useState({})
+  const [lastReceipt, setLastReceipt] = React.useState({});
   const [shoppingCart, setshoppingCart] = React.useState([]);
-  const [checkoutForm, setCheckoutForm] = React.useState({name: "",email: ""});
+  const [checkoutForm, setCheckoutForm] = React.useState({
+    name: "",
+    email: "",
+  });
 
   const handleRemoveItemFromCart = (productID) => {
     var value = shoppingCart.find((element) => {
@@ -30,17 +31,23 @@ const [lastReceipt,setLastReceipt] = React.useState({})
       }
     });
     if (value != undefined) {
-      console.log("hey");
-      shoppingCart.map((element) => {
-        if (element.itemId == productID) {
-          if (element["quantity"] > 0) {
-            element["quantity"] = element["quantity"] - 1;
+      const newItems = shoppingCart.map((element) => {
+        console.log(element.itemId);
+        if (element["quantity"] > 1) {
+          if (element.itemId == productID) {
+            return { ...element, quantity: element["quantity"] - 1 };
           }
-          if (element["quantity"] <= 0) {
-            shoppingCart.pop(element);
-          }
+     
         }
+        else {
+           return shoppingCart.filter((e) => e.itemId !== productID);
+        }
+
+  
+        return element;
       });
+      setshoppingCart(newItems);
+      console.log("hey");
     } else {
       console.log("massa");
     }
@@ -92,7 +99,7 @@ const [lastReceipt,setLastReceipt] = React.useState({})
 
   const handleOnSubmitCheckoutForm = () => {
     console.log("Hello Button");
-    console.log(checkoutForm)
+    console.log(checkoutForm);
     PostServer();
 
     setshoppingCart([]);
@@ -109,16 +116,16 @@ const [lastReceipt,setLastReceipt] = React.useState({})
 
   async function PostServer() {
     try {
-      
-      let response = await axios.post("http://localhost:3001/store", {user: checkoutForm, shoppingCart })
+      let response = await axios.post("http://localhost:3001/store", {
+        user: checkoutForm,
+        shoppingCart,
+      });
 
-      setLastReceipt(response.data)
-      
-      console.log( response.data)
-    }
-    catch (err)
-    {
-          console.log(err)
+      setLastReceipt(response.data);
+
+      console.log(response.data);
+    } catch (err) {
+      console.log(err);
     }
   }
 
