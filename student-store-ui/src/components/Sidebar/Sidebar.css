@@ -14,11 +14,11 @@
     z-index: 999;
 }
 
-.sidebar.hidden {
+.sidebar.closed {
     width: 50px;
 }
 
-.sidebar-header.hidden, .sidebar-container.hidden {
+.sidebar-header.closed, .sidebar-container.closed {
     display:none;
 }
 

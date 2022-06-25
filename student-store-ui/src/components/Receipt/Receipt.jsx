@@ -16,8 +16,6 @@ export default function Receipt(props) {
             })
         )
     }
-    console.log(props.lastReceipt);
-
     // render based on if a receipt exists
     if (props?.lastReceipt != undefined) {
         return (

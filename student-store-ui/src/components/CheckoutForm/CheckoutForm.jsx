@@ -2,7 +2,7 @@ import React from "react"
 import "./CheckOutForm.css"
 
 export default function CheckOutForm(props) {
-    const [isTermsRead, setIsTermsRead] = React.useState(false);
+    // const [isTermsRead, setIsTermsRead] = React.useState(false);
 
     return (
         <div className="check-out">
@@ -12,6 +12,7 @@ export default function CheckOutForm(props) {
                 <input
                     name="name"
                     type="text"
+                    placeholder="Student Name"
                     value={props.checkoutForm?.name || ""}
                     onChange={props.handleOnCheckoutFormChange}
                 />
@@ -20,11 +21,12 @@ export default function CheckOutForm(props) {
                 <input
                     name="email"
                     type="email"
+                    placeholder="student@codepath.org"
                     value={props.checkoutForm?.email || ""}
                     onChange={props.handleOnCheckoutFormChange}
                 />
                 <div className="terms">
-                    <input onClick={(e) => {setIsTermsRead((read) => !read)}} required type="checkbox" name="terms" />
+                    <input required type="checkbox" name="terms" />
                     <label htmlFor="check-out-form">I have read the <a style={{color:"green"}}>terms of service</a></label>
                 </div>
                 <input 

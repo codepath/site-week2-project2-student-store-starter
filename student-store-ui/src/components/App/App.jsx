@@ -26,6 +26,7 @@ export default function App() {
   const [checkoutForm, setCheckoutForm] = React.useState(checkoutFormInitState);
   const [lastReceipt, setLastReceipt] = React.useState({});
   const [purchases, setPurchases] = React.useState([]);
+  const [isOpen, setIsOpen] = React.useState("closed");
 
   // fetch when mounted
   React.useEffect(() => {
@@ -95,8 +96,6 @@ export default function App() {
         }).catch((error) => {
           console.error("CREATING PURCHASE ORDER ERROR: ", error);
         })
-
-
       setIsCreating(false);
 
       // reset states
@@ -108,6 +107,14 @@ export default function App() {
     }
   }
 
+   //sidebar open/closed handler for display
+   const handleOnToggle = () => {
+    if (isOpen === "open") {
+      setIsOpen("closed");
+    } else {
+      setIsOpen("open");
+    }
+  }
   /**
    * handleAddItemToCart / handleRemoveItemToCart are in charge 
    * of adding/removing objects into the shopping cart array. 
@@ -200,7 +207,9 @@ export default function App() {
             checkoutForm={checkoutForm}
             handleOnCheckoutFormChange={handleOnCheckoutFormChange}
             handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
-            lastReceipt={lastReceipt} />
+            lastReceipt={lastReceipt} 
+            isOpen={isOpen}
+            handleOnToggle={handleOnToggle}/>
           <Routes>
             <Route path="/purchases/" element={<Purchases isFetching={isFetching} purchases={purchases} />} />
             <Route path="/"
