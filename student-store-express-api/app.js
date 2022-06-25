@@ -1,4 +1,24 @@
 // YOUR CODE HERE
+const express = require("express")
+const app = express()
+const cors = require("cors")
+const morgan = require('morgan')
+const data = require("./data/db.json")
+const filterRouter = require("./routes/store.jsx")
+//var bodyParser = require('body-parser')
+
+
+app.use(morgan("tiny"))
+app.use(express.json())
+app.use(cors())
+app.use("/store", filterRouter)
+
+
+app.get("/store", async (req, res, next) => {
+    res.status(200).json(data)
+  })
+
+  module.exports = app
 //const {storage} = require("./data/storage")
 
 //class Store {

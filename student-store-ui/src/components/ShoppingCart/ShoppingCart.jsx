@@ -1,44 +1,74 @@
-import * as React from "react"
-import "./ShoppingCart.css"
+import React from 'react'
+import { useEffect } from 'react'
+import './ShoppingCart.css'
+import { BsFillArrowRightCircleFill, BsFillCartPlusFill, BsFillArrowLeftCircleFill, BsFillInfoCircleFill } from "react-icons/bs"
+import { MdPayment } from "react-icons/md"
 
-export default function ShoppingCart() {
+export default function ShoppingCart(props) {
+
+  useEffect(() => {
+    let tempSum = 0
+    props.shoppingCart.map((item) => {
+      let price = props.products[item.itemId - 1].price
+      let quantity = item.quantity
+      tempSum += (price * quantity)
+    })
+    console.log(`This is the subtotal: ${tempSum}`)
+    document.getElementById("subtotal").replaceWith(tempSum.toFixed(2))
+    document.getElementById("taxes").replaceWith((tempSum * 0.0875).toFixed(2))
+    document.getElementById("total").replaceWith((tempSum + (tempSum * 0.0875)).toFixed(2))
+  }, [props.shoppingCart])
+
   return (
-    <div className="shopping-cart">
-      <div className ="open">
-        <h3 className="shopping-cart-title">Shopping Cart 
-        <span className="button"><i className="shopping-cart-material-icons"></i></span></h3>
-        <div className="notification">No items added to cart yet. Start shopping now!</div>
-        <div className="checkout-form">
-        <h3 className="">Payment Info <span className="button">
-        <i className="material-icons md-48">monetization_on</i>
-        </span></h3>
-        <div className="input-field">
-        <label className="label">Name</label>
-        <div className="control ">
-        <input id="name" className="checkout-form-input" type="text" placeholder="Student Name" value=""/>
-        </div>
-        </div>
-        <div className="input-field">
-        <label className="label">Email</label>
-        <div className="control">
-        <input id="email" className="checkout-form-input" type="email" placeholder="student@codepath.org" value=""/>
-        </div>
-        </div>
-        <div className="field">
-        <div className="control">
-        <label className="checkbox">
-        <input id="termsAndConditions" type="checkbox"/>
-        <span className="label">I agree to the <a href="#terms-and-conditions">terms and conditions</a></span>
-        </label>
-        </div>
-        </div>
-        <p className="is-danger">
-        </p><div className="field">
-        <div className="control">
-        <button className="button checkout-button">Checkout</button>
-        </div>
-        </div>
-        </div>
+    <div className='shoppingcart'>
+      <span>
+        <b>Shopping Cart</b>
+        < BsFillCartPlusFill />
+      </span>
+      <div className='cart-table'>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Quantity</th>
+              <th>Unit Price</th>
+              <th>Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            {!props.shoppingCart ? console.log("Empty Shopping Cart") :
+              props.shoppingCart.map((item, index) => {
+                let product = props.products[item.itemId - 1]
+                console.log(999, product)
+                return (
+                  <tr key={index}>
+                    <td>{product.name}</td>
+                    <td>{item.quantity}</td>
+                    <td>{product.price}</td>
+                    <td>{item.quantity * product.price}</td>
+                  </tr>)
+              })
+            }
+          </tbody>
+        </table>
+      </div>
+      <div className='cart-invoice'>
+        <table>
+          <tbody>
+            <tr>
+              <td>Subtotal </td>
+              <td id="subtotal">0</td>
+            </tr>
+            <tr>
+              <td>Taxes and Fees </td>
+              <td id="taxes">0</td>
+            </tr>
+            <tr>
+              <td>Total </td>
+              <td id="total">0</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   )

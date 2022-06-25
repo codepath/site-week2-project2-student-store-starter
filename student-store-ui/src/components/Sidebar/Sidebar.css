@@ -10,13 +10,13 @@
     top: 0px;
     height: 100vh;
     padding: 0;
-    overflow-y: scroll;
+    overflow-y: hidden;
     padding-bottom: 2rem;
     background: #2c4047;
     border-right: solid 1px white;
 }
 
-.sidebar-wrapper {
+.wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,12 +31,12 @@
     border: none;
 }
 
-.sidebar-shopping-cart {
+.shopping-cart {
     width: 100%;
     color: #fff;
 }
 
-.sidebar-cart-icon {
+.cart-icons {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,7 +45,7 @@
     padding-left: .5rem;
 }
 
-.sidebar-cart-icon {
+.cart-icon {
     margin-bottom: 16px;
 }
 
@@ -53,8 +53,11 @@
     width: 60px;
 }
 
-.sidebar.open{
+.sidebar.open {
     width: 600px;
+    align-items: left;
+    justify-content: left;
+    margin-right: 70%;
 }
 
 i,
@@ -62,12 +65,37 @@ button {
     font-size: 16px;
 }
 
-.sidebar-material-icons {
+.material-icons {
     font-size: 40px;
 }
 
 .sidebar i {
     margin-right: 10px;
     cursor: pointer;
+    color: #fff;
+}
+
+input[type="checkbox" i] {
+    background-color: initial;
+    cursor: default;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 3px 3px 3px 4px;
+    padding: initial;
+    border: initial;
+}
+
+.checkbox{
+    margin-left: 15px;
+}
+
+.checkout-button {
+    margin-top: 10px;
+    margin-left: 15px;
+    padding: 12px 18px;
+    font-size: 18px;
+    cursor: pointer;
+    background: transparent;
+    border: solid 1px white;
     color: #fff;
 }

@@ -25,16 +25,16 @@ h1{
 }
 
 .productGrid .productCard {
-    height: 350px;
+    height: 375px;
     width: 250px;
     background: var(--pure-white);
     display: flex;
     flex-direction: column;
-    border: solid 1px var(--border-color);
+    border: solid 1px #969696;
 }
 
 .product-grid .product-card .media {
-    height: 250px;
+    height: 200px;
     width: 100%;
 }
 
@@ -49,4 +49,10 @@ h1{
 .search-input .textbox{
     padding: 10px 300px 10px 5px;
     border-radius: 10px;
+}
+
+.active-btn{
+        margin: 7px;
+        margin-top: 1%;
+        justify-content: center;
 }

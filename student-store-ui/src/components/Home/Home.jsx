@@ -7,12 +7,13 @@ import Footer from "../Footer/Footer"
 import About from "../About/About"
 
 export default function Home(props) {
+  //console.log(props)
   return (
     <div className="home">
       <Hero />
       {/* <Searchbar /> */}
       <ProductGrid products={props.products} handleAddItemToCart={props.handleAddItemToCart} 
-      handleRemoveItemFromCart={props.handleRemoveItemFromCart} />
+      handleRemoveItemFromCart={props.handleRemoveItemFromCart} setShoppingCart={props.setShoppingCart}/>
       <About />
       <Contact />
       <Footer />
