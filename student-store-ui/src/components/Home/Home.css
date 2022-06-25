@@ -6,3 +6,21 @@
   display: flex;
   flex-direction: column;
 }
+
+.product-grid {
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: start;
+}
+
+.product-card {
+  margin: 3px;
+  width: 150px;
+}
+
+.product-price {
+  font-size: medium;
+}
+.product-description{
+  font-size: small;
+}

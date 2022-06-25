@@ -1,0 +1,18 @@
+.sidebar{
+    background-color: #66caaa;
+}
+
+.sidebar-open{
+    width: 350px;
+}
+
+.sidebar-closed{
+    width: 150px;
+}
+
+.shopping-cart{
+    color: antiquewhite;
+}
+.checkout-form{
+    color: antiquewhite;
+}
