@@ -10,6 +10,7 @@ export default function CheckOutForm(props) {
             
                 <label htmlFor="check-out-form">Username</label>
                 <input
+                    className="checkout-form-input"
                     name="name"
                     type="text"
                     placeholder="Student Name"
@@ -19,6 +20,7 @@ export default function CheckOutForm(props) {
 
                 <label htmlFor="check-out-form">Email</label>
                 <input
+                    className="checkout-form-input"
                     name="email"
                     type="email"
                     placeholder="student@codepath.org"
@@ -30,6 +32,7 @@ export default function CheckOutForm(props) {
                     <label htmlFor="check-out-form">I have read the <a style={{color:"green"}}>terms of service</a></label>
                 </div>
                 <input 
+                className="checkout-button"
                     type="submit" 
                     value="Check Out"
                     onClick={(e) => {props.handleOnSubmitCheckoutForm(isTermsRead)}}></input>

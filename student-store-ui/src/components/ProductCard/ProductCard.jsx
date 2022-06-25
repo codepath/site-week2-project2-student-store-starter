@@ -51,7 +51,7 @@ export function CardFooter(props) {
     <div className="product-card-footer">
 
       <div className="section">
-        {((props.getProductCount() != null) && (props.getProductCount().quantity > 0)) ? <span className="amount">{props.getProductCount().quantity}</span> : ""}
+        {((props.getProductCount() != null) && (props.getProductCount().quantity > 0)) ? <span className="amount product-quantity">{props.getProductCount().quantity}</span> : ""}
       </div>
 
       <div className="section right">
