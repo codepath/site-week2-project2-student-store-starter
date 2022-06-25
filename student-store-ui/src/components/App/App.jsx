@@ -53,7 +53,7 @@ export default function App() {
               <Home products={ products } categories={ categories } setProducts={ setProducts } allProducts = { allProducts }/>
               } 
             />
-            <Route path="/products/:productId" element={<ProductDetail />} />
+            <Route path="products/:productId" element={<ProductDetail allProducts={ allProducts } />} />
             <Route path="*" element={<NotFound />} />
       </Routes>
         <main>
