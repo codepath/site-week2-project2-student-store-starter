@@ -8,7 +8,7 @@ import { useState} from "react"
 export default function Home(props) {
   const [isCategory, setCategory]=useState('all');
   const [search, setSearch]=useState('');
-
+//console.log("HOME", props.handleRemoveItemToCart)
   return (
     <div className="home" id="header">
       <Hero/>
@@ -22,6 +22,7 @@ export default function Home(props) {
       products={props.products} 
       search={search} 
       handleAddItemToCart={props.handleAddItemToCart}
+      handleRemoveItemToCart={props.handleRemoveItemToCart}
       />
       <About/>
       <Contact/>

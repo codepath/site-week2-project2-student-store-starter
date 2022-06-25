@@ -3,12 +3,12 @@ import { Link } from "react-router-dom"
 import "./ProductCard.css"
 
 
-export default function ProductCard({product, handleAddItemToCart, productId}) {
+export default function ProductCard({product, handleAddItemToCart, productId, handleRemoveItemToCart}) {
    
     //const product = props.product
     
     
-    
+    console.log("product CARD", handleRemoveItemToCart)
     return (
         <div className="product-card">
             <div className="media">
@@ -28,7 +28,7 @@ export default function ProductCard({product, handleAddItemToCart, productId}) {
                             add
                             </i>
                         </button>
-                        <button id= "material-icons" >
+                        <button id= "material-icons" onClick={() => handleRemoveItemToCart(productId)} >
                             <i className="material-icons" >
                             remove
                             </i>

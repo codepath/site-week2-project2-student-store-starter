@@ -1,0 +1,17 @@
+.shopping-cart
+{
+    border-collapse: collapse;
+    width: 90%;
+}
+
+.shopping-cart th
+{
+    border: 1px solid #FFFFFF;
+    padding: 8px;
+}
+
+.shopping-cart td
+{
+    border: 1px solid #000000;
+    padding: 8px
+} 

@@ -25,11 +25,21 @@ const [isOpen, setIsOpen] = React.useState(false)
 
 const [checkoutForm, setCheckoutForm] = useState({email: null, name: null});
 
+const [receipt, setReceipt] = useState({});
+
+const handleCheckoutFormChange = (event) => {
+  const { name, value } = event.target;
+  setCheckoutForm((current) => ({
+    ...current,
+    [name]: value,
+  }));
+};
+
 function handleOnToggle(){
   setIsOpen(!isOpen)
 }
 
-console.log(handleAddItemToCart)
+//console.log(handleAddItemToCart)
 function handleAddItemToCart(productId) {
   
   if(shoppingCart.some(item => item.id === productId)) {
@@ -46,6 +56,26 @@ function handleAddItemToCart(productId) {
   }
   
 }
+
+function handleRemoveItemToCart(productId) {
+  
+  if(shoppingCart.some(item => item.id === productId)) {
+
+    const index = shoppingCart.findIndex(items => items.id === productId);
+    let item = shoppingCart[index];
+    item.quantity--;
+    if(item.quantity === 0){
+      setShoppingCart([...shoppingCart.slice(0, index), ...shoppingCart.slice(index+1, shoppingCart.length)]);
+    } else {
+    setShoppingCart([...shoppingCart.slice(0, index), item, ...shoppingCart.slice(index+1, shoppingCart.length)]);
+    }
+  } else {
+    return;
+  }
+    
+}
+  
+
 
 React.useEffect(() => {
   const getProducts = async () => {
@@ -74,7 +104,7 @@ React.useEffect(() => {
       <BrowserRouter>
         <main>
           <Navbar />
-          <Sidebar handleOnToggle={handleOnToggle} isOpen={isOpen} setIsOpen={setIsOpen} shoppingCart={shoppingCart} products={products}/>
+          <Sidebar handleOnToggle={handleOnToggle} isOpen={isOpen} setIsOpen={setIsOpen} shoppingCart={shoppingCart} products={products} checkoutForm={checkoutForm} handleCheckoutFormChange={handleCheckoutFormChange}/>
           <Routes> 
             <Route
               path="/"
@@ -82,11 +112,12 @@ React.useEffect(() => {
                 <Home
                   products={products}
                   handleAddItemToCart={handleAddItemToCart}
+                  handleRemoveItemToCart={handleRemoveItemToCart} 
                   shoppingCart={shoppingCart}
                 />
               }
             />
-            <Route path="/products/:productId" element={<ProductDetail products={products} handleAddItemToCart={handleAddItemToCart}/>}/>
+            <Route path="/products/:productId" element={<ProductDetail products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemToCart}/>}/>
           </Routes>
         </main>
       </BrowserRouter>

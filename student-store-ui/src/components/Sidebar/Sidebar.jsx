@@ -16,10 +16,11 @@ export default function Sidebar(props) {
           <i className="material-icons md-48">arrow_forward</i>
         </button>
 
-        <button className={props.isOpen ? "toggle-button open" : "toggle-button button"} onClick={props.handleOnToggle}>
+        <button className="toggle" onClick={props.handleOnToggle}>
+          
           <i className="material-icons">add_shopping_cart</i>
         </button>
-        <ShoppingCart shoppingCart={props.shoppingCart} products={props.products} />
+        {props.isOpen ? <ShoppingCart shoppingCart={props.shoppingCart} products={props.products} checkoutForm={props.checkoutForm} handleCheckoutFormChange={props.handleCheckoutFormChange}/> : null}
       </div>
     </section>
   );

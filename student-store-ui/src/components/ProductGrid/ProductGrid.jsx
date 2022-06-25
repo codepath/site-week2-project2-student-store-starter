@@ -30,7 +30,7 @@ export default function ProductGrid(props) {
       })
     }
 
-    console.log("ProductGRid", props)
+   console.log("ProductGRid", props.handleRemoveItemtoCart)
     return (
     <div className="product-grid">
       <div className="content">
@@ -38,7 +38,7 @@ export default function ProductGrid(props) {
         {displayProducts.map((product) => (
         // <p key={index}>{product.name}</p>
         
-        <ProductCard  key={product.id} showDescription={false} product={product} productId={product.id} quantity={props.quantity} handleAddItemToCart={props.handleAddItemToCart} handleRemoveItemFromCart={props.handleRemoveItemFromCart} shoppingCart={props.shoppingCart} />
+        <ProductCard  key={product.id} showDescription={false} product={product} productId={product.id} quantity={props.quantity} handleAddItemToCart={props.handleAddItemToCart} handleRemoveItemToCart={props.handleRemoveItemToCart} shoppingCart={props.shoppingCart} />
         
       ))}
       {/* </div> */}
