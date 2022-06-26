@@ -8,9 +8,9 @@ export default function Navbar() {
       <TwitterIcon />
       <InstaGramIcon />
       <FacebookIcon />
-      <CustomLink page="Home" />
-      <CustomLink page="About Us" />
-      <CustomLink page="Contact Us" />
+      <CustomLink page="Home"  />
+      <CustomLink page="About Us" scrollto={0} scrollFrom={2200} />
+      <CustomLink scrollto={0} scrollFrom={2500} page="Contact Us" />
       <CustomLink page="Buy Now"/>
     </nav>
   );
@@ -47,10 +47,10 @@ export function FacebookIcon() {
   );
 }
 
-export function CustomLink({ link, page }) {
+export function CustomLink({ scrollTo,scrollFrom, page }) {
   return (
     <div className="page-icon">
-      <div className={page}>{page}</div>
+      <div onClick={() => window.scrollTo(scrollTo,scrollFrom)} className={page}>{page}</div>
     </div>
   );
 }

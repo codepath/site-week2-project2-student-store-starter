@@ -27,6 +27,7 @@ nav {
   align-items: center;  
   background-color: #363746;
   margin: 20px;
+  cursor: pointer;
 
 }
 .codepath-icon{

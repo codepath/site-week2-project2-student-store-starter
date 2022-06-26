@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import api from "../api/api";
 import ProductDetail from "../ProductDetail/ProductDetail";
 import axios from "axios";
+import NotFound from "../NotFound/NotFound";
 export default function App() {
   const [products, setProducts] = React.useState([]);
 
@@ -153,6 +154,7 @@ export default function App() {
             {isFetching ? (
               ""
             ) : (
+                
               <Route
                 path="/"
                 element={
@@ -177,7 +179,8 @@ export default function App() {
                 />
               }
             />
-            '
+            <Route path="*" element={<NotFound/>} />
+            
           </Routes>
         </main>
       </BrowserRouter>

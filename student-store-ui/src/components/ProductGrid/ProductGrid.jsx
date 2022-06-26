@@ -1,15 +1,16 @@
 import ProductCard from "../ProductCard/ProductCard";
 import './ProductGrid.css'
 import * as React from 'react'
+import NotFound from "../NotFound/NotFound";
 
 
-export default function ProductGrid({ products,handleRemoveItemFromCart, handleAddItemToCart, shoppingCart,setshoppingCart ,quantity,setQuantity}) {
+export default function ProductGrid({ products, handleRemoveItemFromCart, handleAddItemToCart, shoppingCart, setshoppingCart, quantity, setQuantity }) {
 
-  
+  console.log("Product-Grid", products)
   
   
   function showproducts() {
-    if (products != null) {
+    if (products.length>0) {
       {
         return products.map((product) => (
           
@@ -27,7 +28,21 @@ export default function ProductGrid({ products,handleRemoveItemFromCart, handleA
           />
         ));
       }
+     
     }
   }
-  return <div className="product-grid">{showproducts()}</div>;
+  
+  return (
+    <div>
+      {products.length > 0 ?
+        < div className="product-grid" > {showproducts()}</ div> :
+        
+        <NotFound />
+
+      }
+    
+    </div>
+   
+    
+    ) 
 }
