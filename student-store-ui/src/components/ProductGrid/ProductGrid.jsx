@@ -5,7 +5,7 @@ import "./ProductGrid.css"
 export default function ProductGrid({ products, onAddClickHandler, onSubtractClickHandler, shoppingCart }) {
     return (
         <div className="product-grid container" id="buy-now">
-            <h1>Best Selling Products</h1>
+            <h2 className="grid-title">Best Selling Products</h2><hr/>
             <div className="row">
             { 
                 products.map((product) => <ProductCard product={ product } onAddClickHandler={ onAddClickHandler }
