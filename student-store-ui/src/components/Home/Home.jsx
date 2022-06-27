@@ -5,7 +5,7 @@ import ProductGrid from "./ProductGrid"
 import Hero from "./Hero"
 import { useState } from "react"
 
-export default function Home({products, handleAddItemToCart, handleRemoveItemFromCart, shoppingCart}) {
+export default function Home({products, handleAddItemToCart, handleRemoveItemFromCart, shoppingCart, error}) {
   const [searchedProducts, updateSearchedProducts] = useState([])
   const [selectedCategory, updateSelectedCategory] = useState("all")
 
@@ -53,17 +53,19 @@ export default function Home({products, handleAddItemToCart, handleRemoveItemFro
           handleAddItemToCart={handleAddItemToCart} 
           handleRemoveItemFromCart={handleRemoveItemFromCart}
           shoppingCart={shoppingCart}
+          error = {error}
         /> 
         
       </div>
       <div className="about-us">
-        About us
+        <h3>About Us</h3>
+        We are a online student store.
       </div>
       <div className="contact-us">
-        Contact us
+        Contact us: benjm@fb.com
       </div>
       <div className="footer">
-        Foot!
+        Footer
       </div>
     </div>
 

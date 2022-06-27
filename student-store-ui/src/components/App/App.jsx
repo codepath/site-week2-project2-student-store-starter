@@ -28,7 +28,8 @@ export default function App() {
   const [error, updateError] = useState("")
   const [isOpen, updateIsOpen] = useState(false)
   const [shoppingCart, updateShoppingCart] = useState([])
-  const [checkoutForm, updateCheckoutForm] = useState(false)
+  const [checkoutForm, updateCheckoutForm] = useState({email:"", name:""})
+  const [checkoutFormIsSubmitted, updateCheckoutFormIsSubmitted] = useState(false)
 
   useEffect(() => {
 
@@ -37,12 +38,13 @@ export default function App() {
       await axios(URL).then(function({data}){
         if(data.products){
           updateProducts(data.products)
+          updateError("")
         }else{
           updateError("Failed to get data: Products is empty")
         }
       })
       .catch(function(error){
-        updateError(error)
+        updateError(error.message)
       })
     }
     fetchData();
@@ -91,20 +93,25 @@ export default function App() {
   }
 
   const handleOnCheckoutFormChange = (name, value) =>{
-    updateCheckoutForm(value)
+    updateCheckoutForm({...checkoutForm, [name] : value})
+
   }
 
   const handleOnSubmitCheckoutForm = (user, shoppingCart) =>{
-    axios.post(URL, {}).then((response) => {
+    axios.post(URL, {user, shoppingCart}).then((response) => {
       if(!response) {
         updateError("Failed to submit checkout")
+        
       } else{
         updateShoppingCart([])
-        updateCheckoutForm(false)
+        updateCheckoutForm({email:"", name:""})
+        updateError("")
+        console.log("didnt fail")
       }
+    }).catch(function(error){
+      updateError(error.message)
     })
   }
-
   return (
     <div className="app">
       <BrowserRouter>
@@ -113,12 +120,14 @@ export default function App() {
           <div className="container">
             <Sidebar 
               isOpen = {isOpen} 
-              shoppingcart = {shoppingCart} 
+              shoppingCart = {shoppingCart} 
               products = {products} 
-              checkoutForm 
-              handleOnCheckoutFormChange 
-              handleOnSubmitCheckoutForm 
+              checkoutForm = {checkoutForm}
+              handleOnCheckoutFormChange = {handleOnCheckoutFormChange}
+              handleOnSubmitCheckoutForm = {handleOnSubmitCheckoutForm}
               handleOnToggle = {handleOnToggle}
+              error = {error}
+              checkoutFormIsSubmitted={checkoutFormIsSubmitted}
             />
             <div className="wrapper">
               <Navbar />
@@ -126,8 +135,10 @@ export default function App() {
                 <Route path = "/" element = {<Home products = {products} 
                   handleAddItemToCart={handleAddItemToCart}
                   handleRemoveItemFromCart={handleRemoveItemFromCart} 
-                  shoppingCart={shoppingCart}/>} />
-                <Route path = "/product/:productId" element = {<ProductDetail handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart = { handleRemoveItemFromCart } shoppingCart={shoppingCart}/>} />
+                  shoppingCart={shoppingCart}
+                  error = {error}
+                  />} />
+                <Route path = "/product/:productId" element = {<ProductDetail handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart = { handleRemoveItemFromCart } shoppingCart={shoppingCart} />} />
                 <Route path = "*" element = {<NotFound />} />
               </Routes>
             </div>

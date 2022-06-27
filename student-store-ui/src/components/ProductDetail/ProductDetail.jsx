@@ -34,11 +34,11 @@ export default function ProductDetail({handleAddItemToCart, handleRemoveItemFrom
         if(data.product){
           updateProduct(data.product)
         }else{
-          updateError("Failed to get data: Products is empty")
+          //updateError("Failed to get data: Products is empty")
         }
       })
       .catch(function(error){
-        updateError(error)
+        //updateError(error)
       })
     updateIsLoading(false)
     }
