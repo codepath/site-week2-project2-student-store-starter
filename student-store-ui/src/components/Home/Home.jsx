@@ -5,7 +5,7 @@ import ProductGrid from "./ProductGrid"
 import Hero from "./Hero"
 import { useState } from "react"
 
-export default function Home({products, handleAddItemToCart, handleRemoveItemFromCart, shoppingCart, error}) {
+export default function Home({products, handleAddItemToCart, handleRemoveItemFromCart, shoppingCart, error, findQuantity}) {
   const [searchedProducts, updateSearchedProducts] = useState([])
   const [selectedCategory, updateSelectedCategory] = useState("all")
 
@@ -54,6 +54,7 @@ export default function Home({products, handleAddItemToCart, handleRemoveItemFro
           handleRemoveItemFromCart={handleRemoveItemFromCart}
           shoppingCart={shoppingCart}
           error = {error}
+          findQuantity = {findQuantity}
         /> 
         
       </div>

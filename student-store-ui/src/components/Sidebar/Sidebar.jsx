@@ -1,14 +1,14 @@
 import * as React from "react"
 import "./Sidebar.css"
 
-export default function Sidebar({isOpen, shoppingCart, products, checkoutForm, handleOnCheckoutFormChange, handleOnSubmitCheckoutForm, handleOnToggle, error, checkoutFormIsSubmitted}) {
+export default function Sidebar({isOpen, shoppingCart, products, checkoutForm, handleOnCheckoutFormChange, handleOnSubmitCheckoutForm, handleOnToggle, error, checkoutFormIsSubmitted, findQuantity}) {
   var sidebarClassName = isOpen ? "sidebar sidebar-open" : "sidebar sidebar-closed"
   var buttonText = !isOpen? "Open Sidebar" : "Close Sidebar"
   return (
     <section className={sidebarClassName}>
       <button className="button is-dark is-outlined toggle-button" onClick={handleOnToggle}>{buttonText}</button>
       {isOpen ? <div> 
-        <ShoppingCart isOpen={isOpen} products={products} shoppingCart={shoppingCart}/> 
+        <ShoppingCart isOpen={isOpen} products={products} shoppingCart={shoppingCart} findQuantity={findQuantity}/> 
 
         <CheckoutForm isOpen={isOpen} shoppingCart={shoppingCart} checkoutForm={checkoutForm} handleOnCheckoutFormChange = {handleOnCheckoutFormChange} handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm} error={error} checkoutFormIsSubmitted={checkoutFormIsSubmitted}/> 
       </div> : null}
@@ -17,19 +17,10 @@ export default function Sidebar({isOpen, shoppingCart, products, checkoutForm, h
   )
 }
 
-function ShoppingCart({isOpen, products, shoppingCart}){
+function ShoppingCart({isOpen, products, shoppingCart, findQuantity}){
 
-  function findQuantity(product){
-    let quantity = 0
-        for(let productInCart of shoppingCart){
-          if(productInCart.productId === product.id){
-            quantity = productInCart.quantity 
-            break
-          }
-        }
-    return quantity
-    
-  }
+
+  
   //Calculate Prices
   var subtotal = 0
   products.map((product) => {

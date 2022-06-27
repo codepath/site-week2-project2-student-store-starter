@@ -112,6 +112,20 @@ export default function App() {
       updateError(error.message)
     })
   }
+
+
+  //Helper to pass in to components - sidebar, shoppingcart, productdetail, home, productcard
+  const findQuantity = (product) => {
+    let quantity = 0
+        for(let productInCart of shoppingCart){
+          if(productInCart.productId === product.id){
+            quantity = productInCart.quantity 
+            break
+          }
+        }
+    return quantity
+    
+  }
   return (
     <div className="app">
       <BrowserRouter>
@@ -128,6 +142,7 @@ export default function App() {
               handleOnToggle = {handleOnToggle}
               error = {error}
               checkoutFormIsSubmitted={checkoutFormIsSubmitted}
+              findQuantity={findQuantity}
             />
             <div className="wrapper">
               <Navbar />
@@ -137,8 +152,14 @@ export default function App() {
                   handleRemoveItemFromCart={handleRemoveItemFromCart} 
                   shoppingCart={shoppingCart}
                   error = {error}
+                  findQuantity={findQuantity}
                   />} />
-                <Route path = "/product/:productId" element = {<ProductDetail handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart = { handleRemoveItemFromCart } shoppingCart={shoppingCart} />} />
+                <Route path = "/product/:productId" element = {<ProductDetail 
+                  handleAddItemToCart={handleAddItemToCart} 
+                  handleRemoveItemFromCart = { handleRemoveItemFromCart } 
+                  shoppingCart={shoppingCart} 
+                  findQuantity={findQuantity}
+                />} />
                 <Route path = "*" element = {<NotFound />} />
               </Routes>
             </div>

@@ -7,7 +7,7 @@ import NotFound from "../NotFound/NotFound"
 import ProductView from "./ProductView"
 
 
-export default function ProductDetail({handleAddItemToCart, handleRemoveItemFromCart, shoppingCart}) {
+export default function ProductDetail({handleAddItemToCart, handleRemoveItemFromCart, shoppingCart, findQuantity}) {
 
   const [product, updateProduct] = useState({})
   const [isLoading, updateIsLoading] = useState(false)
@@ -15,16 +15,7 @@ export default function ProductDetail({handleAddItemToCart, handleRemoveItemFrom
   const {productId} = useParams()
   const URL = 'https://codepath-store-api.herokuapp.com/store/'
 
-  function findQuantity(){
-    let quantity = 0
-        for(let productInCart of shoppingCart){
-          if(productInCart.productId === product.id){
-            quantity = productInCart.quantity 
-            break
-          }
-        }
-        return quantity
-      }
+
   useEffect(() => {
 
     async function fetchData() {
@@ -48,7 +39,7 @@ export default function ProductDetail({handleAddItemToCart, handleRemoveItemFrom
   }, [name])
 
 
-  let quantity = findQuantity()
+  let quantity = findQuantity(product)
   return (
     <div className="product-detail">
     {isLoading              ? <p>Loading...</p> : 

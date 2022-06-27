@@ -2,18 +2,8 @@ import * as React from "react"
 import "./Home.css"
 import ProductCard from "./ProductCard"
 
-export default function ProductGrid({products, handleAddItemToCart, handleRemoveItemFromCart, shoppingCart, error}) {
-  function findQuantity(product){
-    let quantity = 0
-        for(let productInCart of shoppingCart){
-          if(productInCart.productId === product.id){
-            quantity = productInCart.quantity 
-            break
-          }
-        }
-    return quantity
-    
-  }
+export default function ProductGrid({products, handleAddItemToCart, handleRemoveItemFromCart, shoppingCart, error, findQuantity}) {
+
   return (
     <div className="product-grid">
       {products.length == 0 ? 
@@ -22,13 +12,7 @@ export default function ProductGrid({products, handleAddItemToCart, handleRemove
       {products.map((product) => {
         let quantity = findQuantity(product)
 
-        {/* let productInCart = shoppingCart.findIndex(
-          
-          cartProduct => {cartProduct.productId === product.id
-          }
-        )
-        let quantity = productInCart === undefined ? 0 : productInCart.quantity
-         */}
+
         
         return(
         <ProductCard 
