@@ -13,7 +13,7 @@ export default function Home({ products, categories, setProducts, allProducts, o
     <div className="home" id="home">
       <Hero />
       <SearchBar allProducts={ allProducts } setProducts={ setProducts } />
-      <div className="categories">
+      <div className="categories container mb-4 mt-4">
         { categories.map((category, idx) => <Category name={ category } key={`category${idx}`} setProducts={ setProducts }
         allProducts = { allProducts } />) }
       </div>

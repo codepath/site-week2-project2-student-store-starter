@@ -1,0 +1,12 @@
+.category {
+    font-size: 1.5em;
+    margin-right: 2em;
+    text-decoration: none;
+    color: #000;
+    border-bottom: 3px solid transparent;
+}
+
+.category:hover, .category:active {
+    color: #000;
+    border-bottom: 3px solid #56b8e6;
+}
