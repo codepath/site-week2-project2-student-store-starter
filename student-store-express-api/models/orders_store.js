@@ -4,11 +4,11 @@ class Orders {
   {
     const orders = storage.get("purchases")
     return orders
-  }
+  } 
 
   static async fetchOrdersById(id)
   {
-    const order = storage.get("purchases").find({ id: Number(id) }).value()
+    const order = storage.get("purchases"["shoppingCart"]).find({ id: Number(id) }).value()
     return order
   }
 }

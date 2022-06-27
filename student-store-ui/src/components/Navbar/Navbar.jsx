@@ -1,18 +1,28 @@
 import * as React from "react";
 import "./Navbar.css";
 import { Link, animateScroll as scroll } from "react-scroll";
+import { useNavigate } from "react-router-dom";
+export default function Navbar({ orders, handleOrderClick }) {
+  const navigate = useNavigate()
 
-export default function Navbar() {
+  const handleeOnclick= () => {
+
+    navigate("/orders")
+  }
+  console.log("navbar",orders);
   return (
     <nav className="navbar">
       <CodePathIcon />
       <TwitterIcon />
       <InstaGramIcon />
       <FacebookIcon />
-      <CustomLink page="Home" id="home"  />
+      <CustomLink page="Home" id="home" />
       <CustomLink page="About Us" id="about-us" />
-      <CustomLink id= "contact-us" page="Contact Us" />
-      <CustomLink id= "buy" page="Buy Now"/>
+      <CustomLink id="contact-us" page="Contact Us" />
+      <CustomLink id="buy" page="Buy Now" />
+      <div className="page-icon">
+        <Link onClick={handleeOnclick} to="/orders" orders={orders}>Orders</Link>
+        </div>
     </nav>
   );
 }
@@ -48,16 +58,20 @@ export function FacebookIcon() {
   );
 }
 
-export function CustomLink({  page,id }) {
+export function CustomLink({ page, id }) {
   return (
     <div className="page-icon">
-    <Link   activeClass="active"
-    to={id}
-    spy={true}
-    smooth={true}
-    offset={-70}
-    duration={500}
-    className={page}>{page}</Link>
+      <Link
+        activeClass="active"
+        to={id}
+        spy={true}
+        smooth={true}
+        offset={-70}
+        duration={500}
+        className={page}
+      >
+        {page}
+      </Link>
     </div>
   );
 }

@@ -4,6 +4,7 @@ import Sidebar from "../Sidebar/Sidebar";
 import Home from "../Home/Home";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Orders from "../Orders/Orders"
 
 import api from "../api/api";
 import ProductDetail from "../ProductDetail/ProductDetail";
@@ -19,6 +20,7 @@ export default function App() {
   const [isOpen, setisOpen] = React.useState(false);
 
   const [lastReceipt, setLastReceipt] = React.useState({});
+   const [orders, setOrders] = React.useState({});
   const [shoppingCart, setshoppingCart] = React.useState([]);
   const [checkoutForm, setCheckoutForm] = React.useState({
     name: "",
@@ -95,6 +97,12 @@ export default function App() {
     setisFetching(false);
   };
 
+  const handleOrderClick = () => {
+    getOrders()
+  }
+
+
+
   const handleOnSubmitCheckoutForm = () => {
     console.log("Hello Button");
     console.log(checkoutForm);
@@ -126,6 +134,19 @@ export default function App() {
       console.log(err);
     }
   }
+  async function getOrders()
+  {
+    try {
+      let response = await axios.get("http://localhost:3001/orders")
+
+      setOrders(response.data)
+
+    }
+    catch (err)
+    {
+      seterror(err)
+    }
+  }
 
   //   setShoppingCart([])
 
@@ -134,7 +155,7 @@ export default function App() {
       <BrowserRouter>
         <main>
           {/* YOUR CODE HERE! */}
-          <Navbar />
+          <Navbar orders={orders} setOrders={setOrders} handleOrderClick={handleOrderClick}  />
           <Sidebar
             lastReceipt={lastReceipt}
             handleOnCheckOutFormChange={handleOnCheckOutFormChange}
@@ -175,7 +196,8 @@ export default function App() {
                 />
               }
             />
-              <Route path="*" element={<NotFound />} />
+            <Route path="*" element={<NotFound />} /> 
+            <Route path="/orders" element={<Orders orders={orders} setOrders={setOrders} handleOrderClick={handleOrderClick} />}  />
           </Routes>
         </main>
       </BrowserRouter>

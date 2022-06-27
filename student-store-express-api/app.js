@@ -8,6 +8,8 @@ app.use(morgan("tiny"));
 app.use(express.json());
 // app.use('/gift-exchange', gift)
 
+const orders = require("./routes/orders_store")
+
 
 
 app.get("/", async (req, res, next) => {
@@ -30,7 +32,8 @@ app.use(cors(corsOptions))
 app.use(cors(corsOptions))
 
 
-app.use("/store",products)
+app.use("/store", products)
+app.use("/orders",orders)
  
 //Generic erroror handle
 
