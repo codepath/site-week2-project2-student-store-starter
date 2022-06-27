@@ -7,7 +7,7 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.category:hover, .category:active {
+.category:hover, .category:active, .active {
     color: #000;
     border-bottom: 3px solid #56b8e6;
 }
