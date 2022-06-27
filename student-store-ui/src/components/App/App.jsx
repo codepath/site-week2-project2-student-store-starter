@@ -3,12 +3,8 @@ import * as React from "react"
 import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
-import ProductGrid from "../ProductGrid/ProductGrid";
-import About from "../About/About";
-import Footer from "../Footer/Footer";
-import Contact from "../Contact/Contact";
-import Menu from "../Menu/Menu";
 import ProductDetail from "../ProductDetail/ProductDetail";
+import NotFound from "../NotFound/NotFound"
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 import "./App.css"
@@ -107,6 +103,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home products={products} handleAddItemsToCart={handleAddItemsToCart} handleRemoveItemToCart={handleRemoveItemToCart}/>} />
             <Route path="/products/:productId" element={<ProductDetail  handleAddItemsToCart={handleAddItemsToCart} handleRemoveItemToCart={handleRemoveItemToCart}/>} />
+            <Route path="*" element={<NotFound />}/>
           </Routes> 
           {/* <Menu /> */}
 

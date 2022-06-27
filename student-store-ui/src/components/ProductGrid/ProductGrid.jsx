@@ -67,7 +67,7 @@ export default function ProductGrid({products ,handleAddItemsToCart, handleRemov
       </button>
     }
        
-      <div className="products-grid">
+      <div className="products-grid" id="Buy">
         { searched != "" && clickedCategory != ""
         ? currSearch
           .filter((products, idx) => products.category == clickedCategory)

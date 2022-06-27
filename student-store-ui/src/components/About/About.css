@@ -12,6 +12,16 @@ h3 {
     margin-inline-end: 0px;
     font-weight: bold;
 }
+.text{
+    background-color: white;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 20px;
+    justify-content: center;
+    height: 330px;
+}
 .description-column {
     display: flex;
     flex-direction: column;
@@ -20,25 +30,16 @@ h3 {
 }
 .description-column {
     float: center;
-    width: 60%;
+    width: 50%;
   }
-/* .image-column{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-} */
+
 p{
     margin: 0;
     padding: 0;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     
 }
-.image-column {
-    float: left;
-    width: 40%;
-  }
-  .summary{
+.summary{
     display: flex;
     flex-direction: row;
     background: #eff7fe;
@@ -51,7 +52,19 @@ p{
     display: table;
     clear: both;
   }
-
+.image-column {
+    background-color: #eff7fe;
+    float: left;
+    width: 50%;
+  }
+.about-media{
+    height: 100%;
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+}
 @media screen and (max-width: 1000px)
 {
     summary{

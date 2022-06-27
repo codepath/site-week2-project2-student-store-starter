@@ -11,14 +11,14 @@ export default function ProductCard({product, productId, quantity, handleAddItem
   return (
     <section className="product-card">
       <div class="product-card">
-      <div className="product-name"><h1>{product.name}</h1></div>
+      <h1 className="product-name">{product.name}</h1>
         {/* <div className="product-price">${price}</div> */}
         {/* TODO: FIX according sto specifications */}
         <Link to={"/products/" + product.id}> 
         {/* TODO: Get it to navigate to description page when clicked */}
             <img className="product-img" src={product.image}></img>
         </Link>
-        <div className="container">
+        <div className="product-container">
         <button className="add" onClick={() => handleAddItemsToCart(productId)}>
             <h3>+</h3>
         </button>
@@ -28,9 +28,6 @@ export default function ProductCard({product, productId, quantity, handleAddItem
         </div>
         <div className="product-price">
             <p className="price">Price: ${product.price}</p>
-        </div>
-        <div className="product-quantity">
-            <p className="quantity" >Left: {product.quantity}</p>
         </div>
         {showDescription == true
           ? <div className="product-description"><p className="description">{product.description}</p></div>

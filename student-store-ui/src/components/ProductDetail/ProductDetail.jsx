@@ -6,7 +6,7 @@ import { useState } from "react"
 import { useEffect } from "react"
 import { Routes, Route, useParams } from 'react-router-dom';
 import axios from "axios";
-export default function ProductDetail( handleAddItemsToCart, handleRemoveItemToCart) {
+export default function ProductDetail({handleAddItemsToCart, handleRemoveItemToCart}) {
     const [currProduct, setCurrProd] = useState("");
     const [loading, setLoading] = useState(true);
     const quantity = 1;
@@ -42,17 +42,15 @@ export default function ProductDetail( handleAddItemsToCart, handleRemoveItemToC
       }, [])
   return (
         <div className="product-detail">
-            {/* {loading != true && currProduct != null
-                ? <ProductCard product={product} productId={product.id} 
-                quantity={product.quantity} handleAddItemsToCart ={handleAddItemsToCart} handleRemoveItemToCart={handleRemoveItemToCart} showDescription={true}/>
+            {loading != true && currProduct != null
+                ? <ProductView product={currProduct} productId={currProduct.id} quantity={quantity} handleAddItemsToCart={handleAddItemsToCart} handleRemoveItemToCart={handleRemoveItemToCart}/>
 
                 :<div className="loading">
                     <h1> Loading ...</h1>
                 </div>
                 
-            } */}
-            <ProductCard product={currProduct} productId={currProduct.id} 
-                quantity={currProduct.quantity} handleAddItemsToCart ={handleAddItemsToCart} handleRemoveItemToCart={handleRemoveItemToCart} showDescription={true}/>
+            }
+            
             
         </div>
   )}

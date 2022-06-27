@@ -5,7 +5,7 @@ export default function Logo() {
   return (
         <div className="logo">
           <a href="">
-            <img src="./assets/imgs/logo1.png" width= "70" height="70"></img>
+            <img className="logo-img" src="https://media3.giphy.com/media/3o7bu9i039LhWBXH1u/giphy.gif" width= "50" height="70"></img>
           </a>
         </div>
   )}

@@ -15,8 +15,11 @@ export default function Home({products, handleAddItemsToCart, handleRemoveItemTo
         </div>
       </div>  */}
       <Hero />
+      <h2>Best Selling Products</h2>
       <ProductGrid products={products} handleAddItemsToCart ={handleAddItemsToCart} handleRemoveItemToCart= {handleRemoveItemToCart}/>
+      <h2>About</h2>
       <About />
+      <h2>Contact Us</h2>
       <Contact />
       <Footer />
       {/* <Hero />
