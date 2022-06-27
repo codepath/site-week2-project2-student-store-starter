@@ -1,0 +1,23 @@
+.about .content h3 {
+    font-weight: 700;
+    font-size: 36px;
+    font-family: Raleway, sans-serif;
+    color: #1b2f45;
+  }
+  
+  .about .content p {
+    margin: 20px 0;
+    color: #29486a;
+  }
+  
+  .about .content {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .about .content {
+    padding: 0 0 15px 26px;
+    position: relative;
+    font-size: 15px;
+    font-weight: 600;
+  }
