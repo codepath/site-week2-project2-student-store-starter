@@ -1,0 +1,14 @@
+.hero {
+    background: linear-gradient(160deg, rgba(27, 47, 69, .52), rgba(117, 19, 93, 0.53)), url("hero.jpeg");
+    background-size: 100vw 100vh;
+    background-position: center;
+}
+
+.start-buying {
+    background-color: #56b8e6;
+    color: white;
+}
+
+.start-buying:hover {
+    background-color: #1b2f45;
+}
