@@ -10,7 +10,7 @@ import "./Home.css"
 
 export default function Home({ products, categories, setProducts, allProducts, onAddClickHandler, onSubtractClickHandler, shoppingCart }) {
   return (
-    <div className="home" id="home">
+    <div className="home container" id="home">
       <Hero />
       <SearchBar allProducts={ allProducts } setProducts={ setProducts } />
       <div className="categories container mb-4 mt-4">
