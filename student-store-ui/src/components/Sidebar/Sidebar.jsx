@@ -4,7 +4,6 @@ import "./Sidebar.css"
 export default function Sidebar({ shoppingCart, allProducts }) {
   return (
     <section className="sidebar">
-      <p>Sidebar</p>
       <div className="shopping-cart">
         <ShoppingCart shoppingCart={ shoppingCart } allProducts={ allProducts }/>
       </div>
