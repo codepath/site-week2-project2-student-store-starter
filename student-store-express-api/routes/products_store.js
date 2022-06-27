@@ -54,5 +54,9 @@ router.get("/:id", async (req, res, next) => {
     next(err)
   }
 })
+router.get('*', async (req, res, next) => {
+  res.status(404)
+  res.send('Not Found')
+})
 
 module.exports = router;

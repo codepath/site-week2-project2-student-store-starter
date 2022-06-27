@@ -1,5 +1,6 @@
 import * as React from "react";
 import "./Navbar.css";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 export default function Navbar() {
   return (
@@ -8,10 +9,10 @@ export default function Navbar() {
       <TwitterIcon />
       <InstaGramIcon />
       <FacebookIcon />
-      <CustomLink page="Home"  />
-      <CustomLink page="About Us" scrollto={0} scrollFrom={2200} />
-      <CustomLink scrollto={0} scrollFrom={2500} page="Contact Us" />
-      <CustomLink page="Buy Now"/>
+      <CustomLink page="Home" id="home"  />
+      <CustomLink page="About Us" id="about-us" />
+      <CustomLink id= "contact-us" page="Contact Us" />
+      <CustomLink id= "buy" page="Buy Now"/>
     </nav>
   );
 }
@@ -47,10 +48,16 @@ export function FacebookIcon() {
   );
 }
 
-export function CustomLink({ scrollTo,scrollFrom, page }) {
+export function CustomLink({  page,id }) {
   return (
     <div className="page-icon">
-      <div onClick={() => window.scrollTo(scrollTo,scrollFrom)} className={page}>{page}</div>
+    <Link   activeClass="active"
+    to={id}
+    spy={true}
+    smooth={true}
+    offset={-70}
+    duration={500}
+    className={page}>{page}</Link>
     </div>
   );
 }

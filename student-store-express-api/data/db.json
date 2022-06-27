@@ -149,24 +149,36 @@
     {
       "user": {
         "name": "Evans Kwasi Asuboah",
+        "email": "evansasuboahcapp@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 11,
+          "quantity": 2
+        },
+        {
+          "itemId": 12,
+          "quantity": 2
+        }
+      ],
+      "purchasedAt": "2022-06-26T19:06:44.051Z"
+    },
+    {
+      "user": {
+        "name": "easuboah@stetson.edu",
         "email": "Studentsbfb@gmail.com"
       },
       "shoppingCart": [
-        [],
         {
-          "itemId": 13,
-          "quantity": 3
+          "itemId": 16,
+          "quantity": 4
         },
         {
-          "itemId": 14,
-          "quantity": 1
-        },
-        {
-          "itemId": 10,
-          "quantity": 1
+          "itemId": 15,
+          "quantity": 2
         }
       ],
-      "purchasedAt": "2022-06-25T18:36:09.588Z"
+      "purchasedAt": "2022-06-27T01:08:40.002Z"
     }
   ]
 }

@@ -35,7 +35,7 @@ export default function ProductGrid({ products, handleRemoveItemFromCart, handle
   return (
     <div>
       {products.length > 0 ?
-        < div className="product-grid" > {showproducts()}</ div> :
+        < div id="buy" className="product-grid" > {showproducts()}</ div> :
         
         <NotFound />
 

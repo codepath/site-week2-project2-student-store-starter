@@ -3,7 +3,7 @@ import happy from '../assets/happy.png'
 export default function Contact() {
   return (
     <div>
-      <div className="contactUs">Contact Us</div>
+      <div id="contact-us" className="contactUs">Contact Us</div>
       <div className="contact-container">
         <div className="form">
           <div className="label">

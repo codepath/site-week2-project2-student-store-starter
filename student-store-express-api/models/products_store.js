@@ -18,5 +18,6 @@ class Store {
     return product
 
   }
+
 }
 module.exports = Store

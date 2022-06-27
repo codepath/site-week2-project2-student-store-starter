@@ -93,7 +93,7 @@ export default function Home({ products,handleAddItemToCart,shoppingCart,handleR
             </ul>
           </div>
         </div>
-        <ProductGrid products={products_array} handleRemoveItemFromCart={handleRemoveItemFromCart} handleAddItemToCart={handleAddItemToCart} shoppingCart={shoppingCart} setshoppingCart={setshoppingCart}  />
+        <ProductGrid   products={products_array} handleRemoveItemFromCart={handleRemoveItemFromCart} handleAddItemToCart={handleAddItemToCart} shoppingCart={shoppingCart} setshoppingCart={setshoppingCart}  />
         <About />
         <Contact />
         <Footer/>

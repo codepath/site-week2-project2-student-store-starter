@@ -38,13 +38,10 @@ export default function App() {
           if (element.itemId == productID) {
             return { ...element, quantity: element["quantity"] - 1 };
           }
-     
-        }
-        else {
-           return shoppingCart.filter((e) => e.itemId !== productID);
+        } else {
+          return shoppingCart.filter((e) => e.itemId !== productID);
         }
 
-  
         return element;
       });
       setshoppingCart(newItems);
@@ -154,7 +151,6 @@ export default function App() {
             {isFetching ? (
               ""
             ) : (
-                
               <Route
                 path="/"
                 element={
@@ -179,8 +175,7 @@ export default function App() {
                 />
               }
             />
-            <Route path="*" element={<NotFound/>} />
-            
+              <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
       </BrowserRouter>
