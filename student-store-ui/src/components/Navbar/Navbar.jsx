@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 export default function Navbar() {
@@ -54,9 +55,9 @@ export default function Navbar() {
 
 export function Logo() {
     return (
-        <a className="navbar-brand logo" href="/">
+        <Link to="/" className="navbar-brand logo">
                 <i className="bi-cart4"> </i>
                 Student store
-        </a>
+        </Link>
     )
 }
