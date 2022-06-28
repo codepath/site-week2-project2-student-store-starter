@@ -1,113 +1,32 @@
-import * as React from "react";
-
-
 export default function CheckoutForm(props) {
-  
-  console.log(props.receipt);
+  console.log(props.handleOnSubmitCheckoutForm)
   return (
     <div className="checkout-form">
-      <div className="input-field">
-        <label className="label">Name</label>
-        <div className="control ">
-          <input
-             className="checkout-form-input"
-             type="text"
-             name="name"
-             placeholder="name"
-             value={props.CheckoutForm}
-             onChange={props.handleCheckoutFormChange}
-          />
-        </div>
-      </div>
-      <div className="input-field">
-        <label className="label">Email</label>
-        <div className="control">
-          <input
-            className="checkout-form-input"
-            type="email"
-            name="email"
-            placeholder="student@codepath.org"
-            value={props.CheckoutForm}
-            onChange={props.handleCheckoutFormChange}
-          />
-        </div>
-      </div>
-      <div className="field">
-        <div className="control">
-          <button
-            className="button checkout-button"
-            onClick={props.handleOnSubmit}
-          >
-            Checkout
-          </button>
-        </div>
-      </div>
+        <input className="checkout-form-input" type="email" name="email" placeholder="student@codepath.org" value={props.checkoutForm.email} onChange={event => props.handleCheckoutFormChange(event.target.name, event.target.value)}></input>
 
-      <div className="checkout-success">
-        <div className="content">
-          {props.success ? (
-            <div className="card">
-              <header className="card-head">
-                <h4 className="card-title">Receipt</h4>
-              </header>
-              {
-                <section className="card-body">
-                  <p className="header">
-                    Showing receipt for{" "}
-                    {props.receipt[props.receipt.length - 1].name} available at{" "}
-                    {props.receipt[props.receipt.length - 1].email}
-                  </p>
-                  <ul className="purchase">
-                    {props.receipt[props.receipt.length - 1].order.map(
-                      (product, idx) => {
-                        return (
-                          <li key={idx}>
-                            {product.quantity} total{" "}
-                            {props.products[product.itemId - 1].name} purchased
-                            at a cost of $
-                            {props.products[product.itemId - 1].price} for a
-                            total cost of $
-                            {(
-                              product.quantity *
-                              props.products[product.itemId - 1].price
-                            ).toFixed(2)}
-                          </li>
-                        );
-                      }
-                    )}
-                    <li>
-                      After taxes and fees were applied, the total comes out to{" "}
-                      {props.receipt[props.receipt.length - 1].total}
-                    </li>
-                  </ul>
-                </section>
-              }
-              <footer className="card-foot">
-                <button
-                  className="button is-success"
-                  onClick={() => {
-                    props.setSuccess(false);
-                  }}
-                >
-                  Shop More
-                </button>
-                <button
-                  className="button"
-                  onClick={() => {
-                    props.setSuccess(false);
-                  }}
-                >
-                  Exit
-                </button>
-              </footer>
-            </div>
-          ) : (
-            <p>
-             .
-            </p>
-          )}
+        <input className="checkout-form-input" type="text" name="name" placeholder="Student Name" value={props.checkoutForm.name} onChange={event => props.handleCheckoutFormChange(event.target.name, event.target.value)}></input>
+
+        <button className="checkout-button" onClick={props.handleOnSubmitCheckoutForm}>Checkout</button>
+
+        <div className="checkout-info">
+          <h3>Checkout Info</h3>
+          {props.orderSent? 
+          <>
+            <p className="success">Success!</p>
+            <p className="receipt-line" id="receipt-first-line">{props.receipt.lines[0]}</p>
+            <ul className="receipt">
+              {props.receipt.lines.map((line, idx) => {
+                return (
+                idx===0?
+                ""
+                :<li className="receipt-line" key={idx}>{line}</li>)
+              })}
+            </ul>
+            
+          </>
+          :<p>Add items to your shopping cart!</p>
+          } 
         </div>
-      </div>
     </div>
-  );
+  )
 }

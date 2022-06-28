@@ -16,6 +16,7 @@ export default function Home(props) {
         setCategory={setCategory}
         search={search}
         setSearch={setSearch}
+        handleOnSubmit={props.handleOnSubmit}
       />
       <ProductGrid 
       isCategory={isCategory}

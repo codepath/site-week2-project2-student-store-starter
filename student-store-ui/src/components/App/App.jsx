@@ -29,61 +29,51 @@ const [receipt, setReceipt] = useState({});
 
 const [success, setSuccess] = useState(false);
 
-const [sent, setSent] = useState(true);
+const [orderSent, setOrderSent] = useState(false);
 
-// const handleCheckoutFormChange = (event) => {
-//   const { name, value } = event.target;
-//   setCheckoutForm((current) => ({
-//     ...current,
-//     [name]: value,
-//   }));
-// };
+const [search, setSearch] = useState(null);
+
+const [shoppingExists, setShoppingExists] = useState(true);
 
 function handleCheckoutFormChange(name, value) {
-  console.log("checkout form change", name, value);
-  setCheckoutForm({...checkoutForm, [name]: value});
+  console.log('checkout form called');
+
+  if (name === "email") {
+    checkoutForm.email = value;
+  } else {
+    checkoutForm.name = value;
+  }
+
+  setCheckoutForm({...checkoutForm});
+  
 }
 
-
 const handleOnSubmitCheckoutForm = async () => {
-  if (checkoutForm.name == "" || checkoutForm.email == "") {
-    setSent(false);
-    return;
-  } else {
-    setSent(true);
-  }
-
-  if (shoppingCart.length == 0) {
-    setShoppingExists(false);
-    return;
-  } else {
-    setShoppingExists(true);
-  }
-
-  try {
-    const message = await axios.post("http://localhost:3001/store/", {
-      user: checkoutForm,
-      shoppingCart: shoppingCart,
-    });
-
-    const response = await axios.get("http://localhost:3001/store/purchases");
-    setCheckoutForm({
-      name: "",
-      email: "",
-    });
+  console.log("submit called")
+  axios.post("http://localhost:3001/store/", {user:checkoutForm, shoppingCart:shoppingCart})
+  .then(function (response) {
+    console.log(response);
+    const receiptData = response.data.purchase.receipt;
+    setReceipt(receiptData);
+    setCheckoutForm({name:"", email:""});
     setShoppingCart([]);
-    setReceipt(response.data.purchases);
-    setSuccess(true);
-    console.log("hello");
-  } catch (error) {
-    setError(error);
-  }
-};
+    
+    setOrderSent(true);
+  })
+  .catch(function (error) {
+    
+  })
+
+}
 
 
 function handleOnToggle(){
   setIsOpen(!isOpen)
 }
+
+const handleOnSubmit = (event) => {
+  setSearch(event.target.value);
+};
 
 //console.log(handleAddItemToCart)
 function handleAddItemToCart(productId) {
@@ -150,7 +140,7 @@ React.useEffect(() => {
       <BrowserRouter>
         <main>
           <Navbar />
-          <Sidebar sent={sent} success={success} setSuccess={setSuccess} handleOnToggle={handleOnToggle} isOpen={isOpen} setIsOpen={setIsOpen} shoppingCart={shoppingCart} products={products} checkoutForm={checkoutForm} handleCheckoutFormChange={handleCheckoutFormChange} handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm} receipt={receipt}/>
+          <Sidebar orderSent={orderSent} setOrderSent={setOrderSent} handleOnSubmit={handleOnSubmit} success={success} setSuccess={setSuccess} handleOnToggle={handleOnToggle} isOpen={isOpen} setIsOpen={setIsOpen} shoppingCart={shoppingCart} products={products} checkoutForm={checkoutForm} handleCheckoutFormChange={handleCheckoutFormChange} handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm} receipt={receipt}/>
           <Routes> 
             <Route
               path="/"
@@ -160,6 +150,7 @@ React.useEffect(() => {
                   handleAddItemToCart={handleAddItemToCart}
                   handleRemoveItemToCart={handleRemoveItemToCart} 
                   shoppingCart={shoppingCart}
+                  handleOnSubmit={handleOnSubmit}
                 />
               }
             />

@@ -43,7 +43,7 @@ export default function ShoppingCart({products, shoppingCart}) {
                     )})}
 
                 </div>
-                <ul className="reciept">
+                <ul className="receipt">
                     <span>Subtotal:     ${totalCost.toFixed(2)}</span><br></br>
                     <span>Taxes and Fees:    ${taxes}</span><br></br>
                     <span>Total$:     {finalCost.toFixed(2)}</span>

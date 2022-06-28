@@ -22,27 +22,68 @@ class store {
     return purchases
   }
 
-  static async createPurchase(user, shoppingCart) {
-    if(!shoppingCart || !user.name || !user.email){
-        throw new BadRequestError("Invalid request, user or shoppingCart missing")
+  static purchaseOrder(purchase) {
+    console.log("purchase", purchase);
+
+    if (!purchase) {
+        throw new Error("No purchase sent");
     }
+
+    let subTotal = 0;
     let total = 0;
-    const products = await Store.listProducts();
-    const purchases = await Store.listPurchases();
+    let user = purchase.user;
+    let shoppingCart = purchase.shoppingCart;
+    const requiredFields = ["user", "shoppingCart"];
+    const requiredFields2ElectricBoogaloo = ["name", "email"];
+    const requiredFields3TheSqueakquel = ["itemId", "quantity"];
+
+    requiredFields.forEach((field) => {
+        if (!purchase[field] && purchase[field] !== 0) {
+            throw new BadRequestError(
+                "Field: " + { field } + " is required in purchase"
+            );
+        }
+    });
+
+    requiredFields2ElectricBoogaloo.forEach((field) => {
+        if (!user[field] && user[field] == "") {
+            throw new BadRequestError(
+                "User field: " + field + " is required in purchase"
+            );
+        }
+    });
+
+    for (let i = 0; i < shoppingCart.length; i++) {
+        requiredFields3TheSqueakquel.forEach((field) => {
+            if (!shoppingCart[i][field] && shoppingCart[i][field] !== 0) {
+                throw new BadRequestError(
+                    "Shopping Cart field: " + { field } + " is required in purchase"
+                );
+            }
+        });
+
+        let unitPrice = store.singleProductPrice(shoppingCart[i].itemId);
+        let subPrice = unitPrice * shoppingCart[i].quantity;
+        subTotal += subPrice;
+    }
+
+    total = subTotal + subTotal * 0.0875;
+
+    const purchases = store.listPurchases();
     const purchaseId = purchases.length + 1;
     const createdAt = new Date().toISOString();
-    shoppingCart.forEach((item) => {
-        if(!item.id || !item.quantity){
-            throw new BadRequestError("Invalid request, item id or quantity missing")
-        }
-        const productDetails = products.find(product => product.id === item.id);
-        total += productDetails.price * item.quantity
-    })
-    //calculate total cost, add tax, create new purchase object
-    total += total*0.0875;
-    let newPurchase = {id: purchaseId, name: user.name, email: user.email, order: shoppingCart, total: total, createdAt: createdAt};
-    storage.get("purchases").push(newPurchase);
-    return newPurchase;
+
+    const newPurchase = {
+        id: purchaseId,
+        createdAt: createdAt,
+        name: user.name,
+        email: user.email,
+        total: total.toFixed(2),
+        order: purchase.shoppingCart,
+    };
+
+    storage.get("purchases").push(newPurchase).write();
+    shoppingCart = [];
 }
 
 }
