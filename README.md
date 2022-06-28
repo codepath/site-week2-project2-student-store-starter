@@ -13,13 +13,13 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 
 - [X] Displays the following sections: header, banner, search, product grid, about, contact, and footer.
 - [X] On initial page load, display the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store).
-- [ ] User can click on the categories (Clothing, food, etc) to filter the product grid by type.
+- [X] User can click on the categories (Clothing, food, etc) to filter the product grid by type.
 - [X] User can search for products.
-- [ ] User can click on a product in the grid to view additional product details. Navigation is via a React Router.
-- [ ] User can click to expand the shopping cart in the left navigation.
-- [ ] User can click the '+' button on a product cart to increment that product in the shopping cart.
-- [ ] User can click the '-' button on a product cart to increment that product in the shopping cart.
-- [ ] Shopping cart displays a table of products, quantities, subtotal, tax, and total.
+- [X] User can click on a product in the grid to view additional product details. Navigation is via a React Router.
+- [X] User can click to expand the shopping cart in the left navigation.
+- [X] User can click the '+' button on a product cart to increment that product in the shopping cart.
+- [X] User can click the '-' button on a product cart to increment that product in the shopping cart.
+- [X] Shopping cart displays a table of products, quantities, subtotal, tax, and total.
 - [ ] User can check out, and can view receipt upon completion.
 
 #### Stretch Features
@@ -281,13 +281,30 @@ The following specifications were met on the Express backend and the React front
       - [ ] It should then send a JSON response back to the client with the new purchase like so: `{ "purchase": purchase }`. The response should have a `201` status code for a resource created action.
 
 
-Reflection:
-  The topics discussed in the labs did not prepare me for the completion of this assignmnent. I felt unprepared to complete all of the features described in here
+=======
+---
+
+### Reflection
+
+* Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
+
+The topics discussed in the labs did not prepare me for the completion of this assignmnent. I felt unprepared to complete all of the features described in here
+
+* If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-  If I had more time I would spend it on figuring out what I'm doing and how to do it, I feel extremely lost on what I am trying to do with most of the features.
-  
-  At least I had something to show visually on my demo, that went well. However I didnt plan for showing functionality of my project, since their is virtually none. I noticed my peers were able to show more of what they have in a better way despite not being fully done themselves, next time I will focus on more functionality than the css.
+If I had more time I would spend it on figuring out what I'm doing and how to do it, I feel extremely lost on what I am trying to do with most of the features.
+
+* Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
+
+At least I had something to show visually on my demo, that went well. However I didnt plan for showing functionality of my project, since their is virtually none. I noticed my peers were able to show more of what they have in a better way despite not being fully done themselves, next time I will focus on more functionality than the css.
 
 
+### Open-source libraries used
 
+- Add any links to open-source libraries used in your project.
+
+### Shout out
+
+Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+Shout out to all my pod mates who collabed with me and shared their way of doing things it really helped me catch up from last week
 
