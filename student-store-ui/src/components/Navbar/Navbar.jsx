@@ -4,10 +4,7 @@ import "./Navbar.css";
 export default function Navbar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light">
-            <a className="navbar-brand logo" href="#">
-                <i className="bi-cart4"> </i>
-                Student store
-            </a>
+            <Logo />
             <button
                 className="navbar-toggler"
                 type="button"
@@ -53,4 +50,13 @@ export default function Navbar() {
             </div>
         </nav>
     );
+}
+
+export function Logo() {
+    return (
+        <a className="navbar-brand logo" href="/">
+                <i className="bi-cart4"> </i>
+                Student store
+        </a>
+    )
 }
