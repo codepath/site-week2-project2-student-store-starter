@@ -19,7 +19,7 @@ class Storage {
   }
 
   get(key) {
-    return this.db.get(key)
+    return this.db.get(key).value()
   }
 }
 
