@@ -8,6 +8,7 @@
     "dev": "node server.js"
   },
   "dependencies": {
+    "body-parser": "^2.0.0-beta.1",
     "cors": "^2.8.5",
     "express": "^5.0.0-beta.1",
     "lowdb": "^1.0.0",
