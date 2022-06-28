@@ -1,0 +1,70 @@
+.shhopping-cart-active {
+  width: 600px;
+  position: fixed;
+  background-color: #363746;
+  height: 100%;
+  color: white;
+  transform: translateX(0%);
+  transition: all 0.4s;
+  overflow-y: scroll;
+}
+.warning{
+  color: red;
+  margin-left: 10px;
+}
+.open .back {
+  width: 10%;
+  margin-left: 200px;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.shhopping-cart {
+  width: 800px;
+  position: fixed;
+  background-color: #363746;
+  height: 100%;
+  color: white;
+  transform: translateX(-100%);
+  transition: all 0.4s;
+}
+
+.checkout-form-input {
+  width: 95%;
+  height: 50px;
+  border-radius: 10px;
+}
+
+.check-info {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+.shop_writing {
+  margin: auto;
+  margin-top: 10px;
+  width: 50%;
+  padding: 10px;
+}
+.checkout-success {
+  margin-left: 10px;
+  margin-right: 15px;
+}
+.field {
+  margin-left: 10px;
+}
+.input-field {
+  margin-left: 10px;
+}
+.payment_info {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.notification {
+  margin: auto;
+  width: 80%;
+  padding: 10px;
+}

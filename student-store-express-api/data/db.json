@@ -145,5 +145,40 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "user": {
+        "name": "Evans Kwasi Asuboah",
+        "email": "evansasuboahcapp@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 11,
+          "quantity": 2
+        },
+        {
+          "itemId": 12,
+          "quantity": 2
+        }
+      ],
+      "purchasedAt": "2022-06-26T19:06:44.051Z"
+    },
+    {
+      "user": {
+        "name": "easuboah@stetson.edu",
+        "email": "Studentsbfb@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 16,
+          "quantity": 4
+        },
+        {
+          "itemId": 15,
+          "quantity": 2
+        }
+      ],
+      "purchasedAt": "2022-06-27T01:08:40.002Z"
+    }
+  ]
 }

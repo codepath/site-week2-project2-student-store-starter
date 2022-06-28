@@ -1,0 +1,38 @@
+.footer{
+    margin-left: 50px;
+}
+.footer-content{
+     margin-left: 20px;
+     display: flex;
+     flex-direction: column;
+     background-color: white;
+     margin-bottom: 10px;
+     height: 300px;
+}
+.links{
+    display: flex;
+    flex-direction: row;
+    
+}
+.link-column{
+    width: 150px;
+    margin-right: 30px;
+    margin-top: 10px;
+}
+.h4{
+    margin-left: 20px;
+ 
+}
+.lists{
+    margin-top: 10px;
+}
+.link-column{
+  
+}
+.ul{
+    list-style: none;
+}
+.bottom{
+    float: left;
+
+}

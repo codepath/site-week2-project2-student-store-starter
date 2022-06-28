@@ -1,0 +1,56 @@
+.sidebar-active{
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #363746; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+ 
+  height: 100%;
+   transform: translate(00%);
+
+
+  width: 70px;
+}
+.side-container{
+    display: flex;
+    width: 500px;
+    flex-direction: row;
+    position: absolute;
+    
+    
+}
+.wrapper{
+    height: 100%;
+       overflow:auto;
+}
+.sidebar-icons{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-top: 50px;
+    justify-items: center;
+ 
+     
+}
+
+.shopping-cart{
+
+   height: 300px;
+
+   width: 40px;
+   
+   
+  
+}
+.shopping-cart .cart-icon{
+    margin-top: 50px;
+    border: none;
+
+    height: 35px;
+    background-color: white;
+    border: 0px;
+    align-items: center;
+    justify-content: center;
+}

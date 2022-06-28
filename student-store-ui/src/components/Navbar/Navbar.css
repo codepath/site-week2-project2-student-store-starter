@@ -1,0 +1,42 @@
+nav {
+  top: 0;
+  left: 0;
+  right: 0;
+
+  width: 100%;
+  background: #363746;
+  height: 70px;
+  border-bottom: 1px solid var(--nav-border);
+  display: flex;
+  margin-left: 60px;
+  margin-right: 50px;
+  color: white;
+}
+.twitter-icon {
+  font-size: 15px;
+  transform: translateX(100px);
+  display: flex;
+  align-items: center;  
+  margin-left: 30px;
+  
+}
+.page-icon{
+  font-size: 15px;
+  transform: translateX(500px);
+  display: flex;
+  align-items: center;  
+  background-color: #363746;
+  margin: 20px;
+  cursor: pointer;
+
+}
+.codepath-icon{
+  font-size: 15px;
+  transform: translateX(50px);
+  display: flex;
+  align-items: center;  
+  background-color: #363746;
+}
+.twitter-icon i {
+  color: var(--twitter-blue);
+}

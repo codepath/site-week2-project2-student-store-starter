@@ -1,0 +1,49 @@
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: top ease 0.5s;
+  width: 250px;
+  background-color: white;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  margin-top: -5px;
+  cursor: pointer;
+}
+
+.container {
+  padding: 2px 16px;
+}
+.product-image {
+  width: 250px;
+  height: 250px;
+}
+.pro-add {
+  width: 40px;
+  margin-left: 5px;
+  align-items: center;
+  height: 30px;
+  justify-content: center;
+ 
+}
+
+.pro-remove {
+  width: 40px;
+  height: 30px;
+  margin-left: 5px;
+  align-items: center;
+  justify-content: center;
+  
+}
+.pro-buttons {
+  font-size: 2px;
+  margin-left: auto;
+  order: 2;
+
+}
+.product-name {
+  display: flex;
+  flex-direction: row;
+}
