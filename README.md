@@ -285,7 +285,7 @@ The following specifications were met on the Express backend and the React front
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+The 
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
@@ -297,7 +297,7 @@ Add your response here
 
 ### Open-source libraries used
 
-- Add any links to open-source libraries used in your project.
+- Twitter Bootstrap.
 
 ### Shout out
 
