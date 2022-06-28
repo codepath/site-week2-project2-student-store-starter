@@ -22,10 +22,10 @@ export function ShoppingCart({ shoppingCart, allProducts }) {
     let subTotal = 0
     let cartProducts = []
     shoppingCart.forEach(cartItem => {
-      let product = allProducts.find((prod) => prod.id === cartItem['id'])
-      product['count'] = cartItem['count']
+      let product = allProducts.find((prod) => prod.id === cartItem['itemId'])
+      product['quantity'] = cartItem['quantity']
       cartProducts.push(product)
-      subTotal += product.price * cartItem['count']
+      subTotal += product.price * cartItem['quantity']
     });
     subTotal = subTotal.toFixed(2)
     let taxes = (subTotal / 10).toFixed(2)
@@ -46,9 +46,9 @@ export function ShoppingCart({ shoppingCart, allProducts }) {
             { cartProducts.map((cartProd, idx) => (
               <tr key={"cart-item" + idx}>
                 <td>{ cartProd.name }</td>
-                <td>{ cartProd.count }</td>
+                <td>{ cartProd.quantity }</td>
                 <td>${ cartProd.price }</td>
-                <td>${ (cartProd.price * cartProd.count).toFixed(2) }</td>
+                <td>${ (cartProd.price * cartProd.quantity).toFixed(2) }</td>
               </tr>
             )) }
           </tbody>

@@ -52,39 +52,39 @@ export default function App() {
 
     function onAddClickHandler(productId) {
         let product = shoppingCart.find(
-            (product) => product["id"] === productId
+            (product) => product["itemId"] === productId
         );
         if (product) {
-            let newItemCount = product["count"] + 1;
+            let newItemCount = product["quantity"] + 1;
             let restShoppingCart = shoppingCart.filter(
-                (product) => product.id != productId
+                (product) => product.itemId != productId
             );
             setShoppingCart(
                 [].concat(restShoppingCart, [
-                    { id: productId, count: newItemCount },
+                    { itemId: productId, quantity: newItemCount },
                 ])
             );
         } else {
             setShoppingCart(
-                [].concat(shoppingCart, [{ id: productId, count: 1 }])
+                [].concat(shoppingCart, [{ itemId: productId, quantity: 1 }])
             );
         }
     }
 
     function onSubtractClickHandler(productId) {
         let product = shoppingCart.find(
-            (product) => product["id"] === productId
+            (product) => product["itemId"] === productId
         );
         if (product) {
             let restShoppingCart = shoppingCart.filter(
-                (product) => product.id != productId
+                (product) => product.itemId != productId
             );
-            if (product["count"] === 1) {
+            if (product["quantity"] === 1) {
                 setShoppingCart(restShoppingCart);
-            } else if (product["count"] > 1) {
+            } else if (product["quantity"] > 1) {
                 setShoppingCart(
                     [].concat(restShoppingCart, [
-                        { id: productId, count: product["count"] - 1 },
+                        { itemId: productId, quantity: product["quantity"] - 1 },
                     ])
                 );
             }

@@ -27,9 +27,9 @@ export default function ProductCard({ product, onAddClickHandler, onSubtractClic
 }
 
 export function ProductCartCount({ shoppingCart, product }) {
-    let prod = shoppingCart.find((prod) => prod['id'] === product.id)
+    let prod = shoppingCart.find((prod) => prod['itemId'] === product.id)
     if (prod) {
-        return <span className="cart-count">{ prod['count'] }</span>
+        return <span className="cart-count">{ prod['quantity'] }</span>
     } else {
         return null
     }
