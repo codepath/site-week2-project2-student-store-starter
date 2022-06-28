@@ -1,9 +1,12 @@
 import * as React from "react";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
+import CheckoutForm from "../CheckoutForm/CheckoutForm";
 
 import "./Sidebar.css";
 
+
 export default function Sidebar(props) {
+  console.log("test", props.handleOnSubmitCheckoutForm)
   return (
     <section className={props.isOpen ? "sidebar open" : "sidebar closed"}>
       <div className="wrapper">
@@ -20,7 +23,7 @@ export default function Sidebar(props) {
           
           <i className="material-icons">add_shopping_cart</i>
         </button>
-        {props.isOpen ? <ShoppingCart shoppingCart={props.shoppingCart} products={props.products} checkoutForm={props.checkoutForm} handleCheckoutFormChange={props.handleCheckoutFormChange}/> : null}
+        {props.isOpen ? <div> <ShoppingCart shoppingCart={props.shoppingCart} products={props.products} handleCheckoutFormChange={props.handleCheckoutFormChange}/> <CheckoutForm isOpen={props.isOpen} shoppingCart={props.shoppingCart} checkoutForm={props.checkoutForm} handleCheckoutFormChange={props.handleCheckoutFormChange} handleOnSubmitCheckoutForm={props.handleOnSubmitCheckoutForm} reciept={props.reciept}/> </div> : null}
       </div>
     </section>
   );

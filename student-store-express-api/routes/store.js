@@ -30,6 +30,19 @@ router.get("/:productsId", async (req, res, next) => {
     }
 });
 
+router.post("/", async (req, res, next) => {
+    try {
+
+        const shoppingCart = req.body.shoppingCart;
+        const user = req.body.user;
+        const newPurchaseOrder = await store.createPurchaseOrder(shoppingCart, user);
+        res.status(201).json({purchase:newPurchaseOrder});
+    } catch (error) {
+        next(error);
+    }
+})
+
+
 
 
 module.exports=router

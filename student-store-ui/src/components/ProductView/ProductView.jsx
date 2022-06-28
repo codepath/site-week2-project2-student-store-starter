@@ -6,6 +6,6 @@ export default function ProductView({product, productId, handleAddItemToCart, ha
     
     return (<div className="product-view">
         <h1 className="product-id"> Product #{productId}</h1>
-        <ProductCard product={product} showDescription={true} handleAddItemToCart={handleAddItemToCart}  handleRemoveItemToCart={handleRemoveItemToCart} ></ProductCard>
+        <ProductCard product={product} showDescription={true} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemToCart} ></ProductCard>
     </div>);
 }

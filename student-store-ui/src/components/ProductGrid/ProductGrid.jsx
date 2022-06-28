@@ -30,7 +30,7 @@ export default function ProductGrid(props) {
       })
     }
 
-   console.log("ProductGRid", props.handleRemoveItemtoCart)
+   //console.log("ProductGRid", props.handleRemoveItemtoCart)
     return (
     <div className="product-grid">
       <div className="content">

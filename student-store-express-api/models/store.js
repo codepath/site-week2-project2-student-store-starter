@@ -22,7 +22,28 @@ class store {
     return purchases
   }
 
-
+  static async createPurchase(user, shoppingCart) {
+    if(!shoppingCart || !user.name || !user.email){
+        throw new BadRequestError("Invalid request, user or shoppingCart missing")
+    }
+    let total = 0;
+    const products = await Store.listProducts();
+    const purchases = await Store.listPurchases();
+    const purchaseId = purchases.length + 1;
+    const createdAt = new Date().toISOString();
+    shoppingCart.forEach((item) => {
+        if(!item.id || !item.quantity){
+            throw new BadRequestError("Invalid request, item id or quantity missing")
+        }
+        const productDetails = products.find(product => product.id === item.id);
+        total += productDetails.price * item.quantity
+    })
+    //calculate total cost, add tax, create new purchase object
+    total += total*0.0875;
+    let newPurchase = {id: purchaseId, name: user.name, email: user.email, order: shoppingCart, total: total, createdAt: createdAt};
+    storage.get("purchases").push(newPurchase);
+    return newPurchase;
+}
 
 }
 

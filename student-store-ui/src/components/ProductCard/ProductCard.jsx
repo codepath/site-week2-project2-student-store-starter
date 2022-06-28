@@ -8,7 +8,7 @@ export default function ProductCard({product, handleAddItemToCart, productId, ha
     //const product = props.product
     
     
-    console.log("product CARD", handleRemoveItemToCart)
+    //console.log("product CARD", handleRemoveItemToCart)
     return (
         <div className="product-card">
             <div className="media">
