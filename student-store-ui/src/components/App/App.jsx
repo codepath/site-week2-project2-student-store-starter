@@ -20,6 +20,7 @@ export default function App() {
   const [shoppingCart, setShoppingCart] = React.useState([]);
   const [checkoutForm, submitCheckoutForm] = React.useState({email: "", name: ""});
   var [quantity, setQuantity] = React.useState(0);
+  const [receipt, setReceipt] = useState({});
   useEffect(() => {
     // Update the document title using the browser API
 
@@ -32,7 +33,6 @@ export default function App() {
         console.log(products)
         //console.log(startingProducts.data.products)
       } catch (error) {
-        console.log(error)
         setError(error)
       }
       finally{
@@ -40,7 +40,7 @@ export default function App() {
       }
     }
     fetchProducts()
-  },[])
+  },[receipt])
 
   const handleOnToggle = () => {
     if(isOpen == false){
@@ -96,15 +96,18 @@ export default function App() {
     submitCheckoutForm({...checkoutForm, [name]: value});
   }
   const handleOnSubmitCheckoutForm = () => {
-    axios.post("https://codepath-store-api.herokuapp.com/store",{
-      //axios.post("http://localhost:3001/store",{
-      user:{name: checkoutForm.name, email: checkoutForm.value}, shoppingCart
-    })
-    .then(function(response){
-      console.log(response);
+    axios.post("http://localhost:3001/store", {user: checkoutForm, shoppingCart})
+    .then(
+      function(response) {
+        console.log(response.data.purchase.receipt)
+        setReceipt(response.data.purchase.receipt);
+        setShoppingCart([]);
+        setCheckoutForm({email: "", name: ""});
+        setError();
+        console.log("checkout completed")
     })
     .catch(function(error){
-      console.log(error);
+      setError(error.message);
     })
   }
 
@@ -126,6 +129,7 @@ export default function App() {
                    shoppingCart={shoppingCart} setShoppingCart={setShoppingCart}
                     checkoutForm={checkoutForm} submitCheckoutForm={submitCheckoutForm}
                     handleOnCheckoutFormChange={handleOnCheckoutFormChange}
+                    receipt={receipt} error={error} handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
                    />
                 </>
               )}   
@@ -142,6 +146,8 @@ export default function App() {
                    shoppingCart={shoppingCart} setShoppingCart={setShoppingCart}
                    checkoutForm={checkoutForm} submitCheckoutForm={submitCheckoutForm}
                    handleOnCheckoutFormChange={handleOnCheckoutFormChange}
+                   receipt={receipt} error={error}
+                   handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
                   />
                 </>
               )}   

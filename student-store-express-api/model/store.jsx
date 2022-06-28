@@ -10,6 +10,14 @@ class filterFunctions {
         const product = storage.get("products").find({ id: Number(productId) }).value()
         return product;
     }
+    static async createOrder(user,shoppingCart) {
+        const purchasedAt = new Date().toISOString()
+        const newOrder = { user, shoppingCart, purchasedAt }
+    
+        storage.get("purchases").push(newOrder).write()
+    
+        return newOrder
+      }
 
 }
 

@@ -42,9 +42,29 @@ export default function Sidebar(props) {
         checkoutForm={props.checkoutForm}  submitCheckoutForm={props.submitCheckoutForm}
         handleOnCheckoutFormChange={props.handleOnCheckoutFormChange} 
         handleOnSubmitCheckoutForm={props.handleOnSubmitCheckoutForm} />
+        {props.error ?<h4 className="error">{props.error}: Missing Cart Information</h4>
+        : props.shoppingCart.length == 0 ? 
+        <div><Receipt receipt={props.receipt}/></div> : null}
         
         </div>
       
     </section>
   )
+  
 }
+
+function Receipt(props) {
+  console.log("reciept made")
+  return(
+    <div className="receipt">
+      <p>Showing receipt for {props.receipt.user.name} available at {props.receipt.user.email}:</p>
+      <ul>
+        {props.receipt.items.map((item)=> {
+          return(
+            <li key={item.name}>{item.quantity} total {item.name} at a cost of ${item.price} for a total cost of ${item.totalPrice}</li>
+          )
+        })}
+      </ul>
+    </div>
+  )
+      }
