@@ -1,0 +1,24 @@
+.cart-count {
+    background-color: #56b8e6;
+    padding: .5em;
+    color: #fff;
+    border-radius: 5px;
+}
+
+button {
+    color: #1b2f45;
+    border-color: #1b2f45;
+    background-color: #fff;
+    padding: .25em .5em;
+    margin: 2px;
+}
+
+.product-card {
+    border-color: transparent;
+}
+
+.card-img-top {
+    border-radius: 0px;
+    height: 320px;
+    width: 100vw;
+}

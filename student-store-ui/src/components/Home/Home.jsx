@@ -4,24 +4,31 @@ import SearchBar from "../SearchBar/SearchBar"
 import Category from "../Category/Category"
 import ProductGrid from "../ProductGrid/ProductGrid"
 import About from "../About/About"
-import Contact from "../Contact/Contact"
 import Footer from "../Footer/Footer"
 
 import "./Home.css"
 
-export default function Home({ products, categories, setActiveCategory, activeCategory, setProducts, allProducts }) {
+export default function Home({ products, categories, setProducts, allProducts, handleAddItemToCart, handleRemoveItemToCart, shoppingCart }) {
+  const [activeCategory, setActiveCategory] = React.useState('All categories')
   return (
-    <div className="home" id="home">
+    <div className="home container" id="home">
       <Hero />
-      <SearchBar />
-      <div className="categories">
-        { categories.map((category, idx) => <Category name={ category } key={`category${idx}`} setActiveCategory={ setActiveCategory }
-        activeCategory={ activeCategory } setProducts={ setProducts } products={ products } 
-        allProducts = { allProducts } />) }
+      <SearchBar onChange={(searchText) => {
+         setProducts(
+          allProducts.filter((product) =>
+              product.name
+                  .toLowerCase()
+                  .includes(searchText)
+          )
+      );
+      }} />
+      <div className="categories container mb-4 mt-4">
+        { categories.map((category, idx) => <Category name={ category } key={`category${idx}`} setProducts={ setProducts }
+        allProducts = { allProducts } activeCategory={ activeCategory } setActiveCategory={ setActiveCategory } />) }
       </div>
-      <ProductGrid products={ products } />
+      <ProductGrid products={ products } handleAddItemToCart={ handleAddItemToCart } handleRemoveItemToCart={ handleRemoveItemToCart }
+      shoppingCart={ shoppingCart } />
       <About />
-      <Contact />
       <Footer />
     </div>
   )

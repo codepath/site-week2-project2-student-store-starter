@@ -1,0 +1,125 @@
+.footer {
+    font-size: 14px;
+  }
+  
+  .footer .footer-content {
+    background-color: #f7f9fc;
+    background-size: contain;
+    padding: 60px 0 30px 0;
+  }
+  
+  .footer .footer-content .footer-info {
+    margin-bottom: 30px;
+  }
+  
+  .footer .footer-content .footer-info .logo {
+    line-height: 0;
+    margin-bottom: 25px;
+    text-decoration: none;
+  }
+  
+  .footer .footer-content .footer-info .logo img {
+    max-height: 40px;
+    margin-right: 6px;
+  }
+  
+  .footer .footer-content .footer-info .logo span {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #56b8e6;
+    font-family: Raleway, sans-serif;
+    margin-top: 3px;
+  }
+  
+  .footer .footer-content .footer-info p {
+    font-size: 15px;
+    margin-bottom: 0;
+    font-family: Montserrat, sans-serif;
+    color: #1b2f45;
+  }
+  
+  .footer .footer-content .social-links a {
+    font-size: 14px;
+    line-height: 0;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    color: rgba(27, 47, 69, 0.5);
+    margin-right: 10px;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #56b8e6;
+    color: #fff;
+    border-radius: 50px;
+  }
+  
+  .footer .footer-content .social-links a:hover {
+    background-color: #38618e;
+  }
+  
+  .footer .footer-content h4 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #29486a;
+    position: relative;
+    padding-bottom: 12px;
+  }
+  
+  .footer .footer-content .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer .footer-content .footer-links ul i {
+    margin-right: 2px;
+    color: #56b8e6;
+    font-size: 16px;
+    line-height: 0;
+  }
+  
+  .footer .footer-content .footer-links ul li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer .footer-content .footer-links ul li:first-child {
+    padding-top: 0;
+  }
+  
+  .footer .footer-content .footer-links ul a {
+    color: #31547c;
+    transition: 0.3s;
+    display: inline-block;
+    line-height: 1;
+  }
+  
+  .footer .footer-content .footer-links ul a:hover {
+    color: #56b8e6;
+  }
+  
+  .footer .footer-content .footer-contact p {
+    line-height: 26px;
+    color: #1b2f45;
+  }
+  
+  .footer {
+    background: #fff;
+    padding-top: 30px;
+  }
+  
+  .footer .copyright {
+    text-align: center;
+    color: #1b2f45;
+  }
+  
+  .footer .credits {
+    padding-top: 4px;
+    text-align: center;
+    font-size: 13px;
+    color: #1b2f45;
+  }

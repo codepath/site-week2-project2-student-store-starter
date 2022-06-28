@@ -1,0 +1,13 @@
+.product-title {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.card {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-color: transparent;
+}
+
+.card-body {
+    font-size: 1.3em;
+}

@@ -1,8 +1,10 @@
 import * as React from "react"
 import "./ShoppingCart.css"
 
-export default function ShoppingCart(props) {
+export default function ShoppingCart({isOpen, products, shoppingCart}) {
     return (
-        <h1>Shopping Cart</h1>
+        <div className="shopping-cart">
+
+        </div>
     )
 }
