@@ -1,7 +1,8 @@
 import * as React from "react"
 import "./Sidebar.css"
 
-export default function Sidebar({ shoppingCart, allProducts }) {
+export default function Sidebar({ isOpen, shoppingCart, products, allProducts, checkoutForm, 
+  handleOnCheckoutFormChange, handleOnSubmitCheckoutForm, handleOnToggle }) {
   return (
     <section className="sidebar">
       <div className="shopping-cart">
@@ -28,7 +29,7 @@ export function ShoppingCart({ shoppingCart, allProducts }) {
       subTotal += product.price * cartItem['quantity']
     });
     subTotal = subTotal.toFixed(2)
-    let taxes = (subTotal / 10).toFixed(2)
+    let taxes = (subTotal * 0.0875).toFixed(2)
     let total = parseFloat(subTotal + taxes).toFixed(2)
 
     return (
@@ -45,8 +46,8 @@ export function ShoppingCart({ shoppingCart, allProducts }) {
           <tbody>
             { cartProducts.map((cartProd, idx) => (
               <tr key={"cart-item" + idx}>
-                <td>{ cartProd.name }</td>
-                <td>{ cartProd.quantity }</td>
+                <td className="card-product-name">{ cartProd.name }</td>
+                <td className="cart-product-quantity">{ cartProd.quantity }</td>
                 <td>${ cartProd.price }</td>
                 <td>${ (cartProd.price * cartProd.quantity).toFixed(2) }</td>
               </tr>
@@ -57,7 +58,7 @@ export function ShoppingCart({ shoppingCart, allProducts }) {
               <td><strong>Subtotal</strong></td>
               <td></td>
               <td></td>
-              <td>${ subTotal }</td>
+              <td className="subtotal">${ subTotal }</td>
             </tr>
             <tr>
               <td><strong>Taxes and Fees</strong></td>
@@ -69,7 +70,7 @@ export function ShoppingCart({ shoppingCart, allProducts }) {
               <td><strong>Total</strong></td>
               <td></td>
               <td></td>
-              <td>${ total }</td>
+              <td className="total-price">${ total }</td>
             </tr>
           </tfoot>
         </table>
