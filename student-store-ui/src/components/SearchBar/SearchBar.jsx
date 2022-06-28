@@ -1,7 +1,7 @@
 import * as React from "react";
 import "./SearchBar.css";
 
-export default function SearchBar({ allProducts, setProducts }) {
+export default function SearchBar(props) {
     return (
         <form method="get" className="container">
             <div className="col-auto">
@@ -13,13 +13,7 @@ export default function SearchBar({ allProducts, setProducts }) {
                         placeholder="find an item here..."
                         onKeyUp={(e) => {
                             e.preventDefault();
-                            setProducts(
-                                allProducts.filter((product) =>
-                                    product.name
-                                        .toLowerCase()
-                                        .includes(e.target.value.toLowerCase())
-                                )
-                            );
+                            props.onChange(e.target.value.toLowerCase());
                         }}
                     />
                     <div className="input-group-text">
