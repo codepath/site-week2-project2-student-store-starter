@@ -7,12 +7,16 @@ export default function ProductDetail({ allProducts }) {
     const product = allProducts.find((product) => product.id === parseInt(productId))
 
     return (
-        <div className="product-detail">
-            <h1>Product #{ productId }</h1>
-            <img src={ product.image } alt={ product.name } />
-            <p>{ product.name }</p>
-            <p>${ product.price }</p>
-            <p>{ product.description }</p>
+        <div className="product-detail container">
+            <div className="card">
+                <h1 className="product-title">Product #{ productId }</h1>
+                <img src={ product.image } alt={ product.name } />
+                <div className="card-body">
+                    <strong>{ product.name }</strong><br/>
+                    <strong>${ product.price }</strong>
+                    <p>{ product.description }</p>
+                </div>
+            </div>
         </div>
     )
 }
