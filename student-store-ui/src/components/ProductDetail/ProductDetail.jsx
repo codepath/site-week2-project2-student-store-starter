@@ -2,7 +2,7 @@ import * as React from "react"
 import { useParams } from "react-router-dom"
 import "./ProductDetail.css"
 
-export default function ProductDetail({ allProducts }) {
+export default function ProductDetail({ allProducts, handleAddItemToCart, handleRemoveItemToCart }) {
     const { productId } = useParams();
     const product = allProducts.find((product) => product.id === parseInt(productId))
 

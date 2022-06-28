@@ -9,7 +9,7 @@ export default function ProductGrid({ products, handleAddItemToCart, handleRemov
             <div className="row">
             { 
                 products.map((product) => <ProductCard product={ product } handleAddItemToCart={ handleAddItemToCart }
-                handleRemoveItemToCart={ handleRemoveItemToCart } shoppingCart={ shoppingCart } key={`product`+product.id } />)
+                handleRemoveItemToCart={ handleRemoveItemToCart } shoppingCart={ shoppingCart } showDescription={ false } key={`product`+product.id } />)
             }
             </div>
         </div>
