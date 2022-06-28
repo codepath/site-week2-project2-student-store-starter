@@ -109,8 +109,8 @@ export default function App() {
                                     categories={categories}
                                     setProducts={setProducts}
                                     allProducts={allProducts}
-                                    onAddClickHandler={handleAddItemToCart}
-                                    onSubtractClickHandler={
+                                    handleAddItemToCart={handleAddItemToCart}
+                                    handleRemoveItemToCart={
                                         handleRemoveItemFromCart
                                     }
                                     shoppingCart={shoppingCart}
