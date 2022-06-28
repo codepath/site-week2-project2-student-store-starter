@@ -52,30 +52,30 @@ The following specifications were met on the Express backend and the React front
     - [x] `shoppingCart` - should store state for the active user's shopping cart (items they want to purchase and the quantity of each item).
       - [x] Use whatever data type works best here, but make sure the format the `shoppingCart` as an array before passing it to other components.
       - [x] When passed down to other components as a prop, it should formatted as an array of objects.
-      - [ ] Each object in the array should have two fields:
+      - [x] Each object in the array should have two fields:
         - [x] The `itemId` field should store the `id` of the item being purchased.
         - [x] The `quantity` field should store a number representing how many of that item the user is purchasing.
     - [x] `checkoutForm` - the user's information that will be sent to the API when they checkout.
-  - [ ] Leverage the `useEffect` hook to ensure that when the `App.jsx` component is mounted to the screen...
-    - [ ] It should make a `GET` request to the API's `/store` endpoint with the `axios.get` method.
-    - [ ] When the request completes successfully, it should store the `products` returned by the response in state.
-    - [ ] If the request does not complete successfully, or there are no `products` found in the response,
+  - [x] Leverage the `useEffect` hook to ensure that when the `App.jsx` component is mounted to the screen...
+    - [x] It should make a `GET` request to the API's `/store` endpoint with the `axios.get` method.
+    - [x] When the request completes successfully, it should store the `products` returned by the response in state.
+    - [x] If the request does not complete successfully, or there are no `products` found in the response,
             it should create an error message and store it in the `error` state variable.
-  - [ ] The `App.jsx` component should define handler functions to be passed as props to the `Home` and `ProductDetail` components.
-    - [ ] Define as many as are needed.
+  - [x] The `App.jsx` component should define handler functions to be passed as props to the `Home` and `ProductDetail` components.
+    - [x] Define as many as are needed.
     - [ ] At minimum, **create these five handlers**:
       - [ ] The **`handleOnToggle`** function. When called...
         - [ ] It should toggle the open/closed state of the `Sidebar`.
-      - [ ] The **`handleAddItemToCart`** function. When called...
-        - [ ] It should accept a single argument - `productId`
-        - [ ] It should add that product to the `shoppingCart` if it doesn't exist, and set its quantity to `1`.
-        - [ ] If it does exist, it should increase the quantity by `1`.
-        - [ ] It should add the price of the product to the total price of the `shoppingCart`.
-      - [ ] The **`handleRemoveItemFromCart`** function. When called...
-        - [ ] It should accept a single argument - `productId`
-        - [ ] It should decrease the quantity of the item in the `shoppingCart` by `1`, but only if it already exists.
-        - [ ] If it doesn't exist, the function should do nothing.
-        - [ ] If the new quantity is `0`, it should remove the item from the `shoppingCart`
+      - [x] The **`handleAddItemToCart`** function. When called...
+        - [x] It should accept a single argument - `productId`
+        - [x] It should add that product to the `shoppingCart` if it doesn't exist, and set its quantity to `1`.
+        - [x] If it does exist, it should increase the quantity by `1`.
+        - [x] It should add the price of the product to the total price of the `shoppingCart`.
+      - [x] The **`handleRemoveItemFromCart`** function. When called...
+        - [x] It should accept a single argument - `productId`
+        - [x] It should decrease the quantity of the item in the `shoppingCart` by `1`, but only if it already exists.
+        - [x] If it doesn't exist, the function should do nothing.
+        - [x] If the new quantity is `0`, it should remove the item from the `shoppingCart`
       - [ ] The **`handleOnCheckoutFormChange`** function. When called...
         - [ ] It should receive two arguments:
           - [ ] `name` - the `name` attribute of the input being updated
@@ -97,7 +97,7 @@ The following specifications were met on the Express backend and the React front
 
 **Navbar.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `nav` element with a `className` of `navbar`
+  - [x] Should render JSX that is wrapped by a `nav` element with a `className` of `navbar`
   - [ ] Should render the `Logo` component that links to the `/` route when clicked
 
 **Logo.jsx**

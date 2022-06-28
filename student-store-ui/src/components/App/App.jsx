@@ -50,7 +50,7 @@ export default function App() {
         fetchData();
     }, []);
 
-    function onAddClickHandler(productId) {
+    function handleAddItemToCart(productId) {
         let product = shoppingCart.find(
             (product) => product["itemId"] === productId
         );
@@ -71,7 +71,7 @@ export default function App() {
         }
     }
 
-    function onSubtractClickHandler(productId) {
+    function handleRemoveItemFromCart(productId) {
         let product = shoppingCart.find(
             (product) => product["itemId"] === productId
         );
@@ -109,9 +109,9 @@ export default function App() {
                                     categories={categories}
                                     setProducts={setProducts}
                                     allProducts={allProducts}
-                                    onAddClickHandler={onAddClickHandler}
+                                    onAddClickHandler={handleAddItemToCart}
                                     onSubtractClickHandler={
-                                        onSubtractClickHandler
+                                        handleRemoveItemFromCart
                                     }
                                     shoppingCart={shoppingCart}
                                 />
