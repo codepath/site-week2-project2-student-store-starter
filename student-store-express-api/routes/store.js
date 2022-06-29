@@ -62,11 +62,13 @@ router.get("/:productId", function (req, res, next) {
 })
 
 // It should allow POST requests to the /store endpoint:
-router.post("/store", async function (req, res, next) {
+router.post("/products", async function (req, res, next) {
     // next parameter???
     try {
-        const orders = await storeModel.purchaseProducts(req.body);
-        res.status(200).json(orders);
+        const shoppingCart = req.body.shoppingCart;
+        const user = req.body.user;
+        const purchase = storeModel.purchaseProducts(shoppingCart, user)
+        res.status(201).send({ "purchase": purchase });
     } catch (err) {
         next(err);
     }

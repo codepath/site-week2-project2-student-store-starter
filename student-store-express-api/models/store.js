@@ -1,11 +1,5 @@
-const express = require("express");
-// const bodyParser = require('body-parser')
-// const app = express()
-// const router = express.Router();
-// const { store } = require("../data/db.json");
-const { storage } = require("../data/storage")
-const { uuid } = require('uuidv4')
-const error = require("../utils/errors");
+const { storage } = require("../data/storage.js")
+const { BadRequestError } = require("../utils/errors");
 // List all products currently in the db.json file
 
 // Fetch a single product by its id
@@ -16,23 +10,32 @@ function findProductsById(products, id) {
         return products.find((product) => product.id === id);
     }
 }
-const formatPrice = (amont) => `$${formatter.format(amount)}`
+var formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+
+    // These options are needed to round to whole numbers if that's what you want.
+    minimumFractionDigits: 2, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+    maximumFractionDigits: 2, // (causes 2500.99 to be printed as $2,501)
+});
+
 class Store {
-    static calculateSubTotal = (cart, products) => {
+    static calcSubTotal(cart) {
         let total = 0;
         for (let i = 0; i < cart.length; i++) {
             total += findProductsById(cart[i])?.price * cart[i].quantity
         }
-        return formatPrice(total);
+        return total;
 
     }
-    static calculateTaxes = (subtotal) => {
-        let taxes = subtotal * 0.875;
-        return formatPrice(taxes);
+    static calculateTaxes(subtotal) {
+        let taxes = subtotal * 0.0875;
+        return taxes;
     }
-    static totalWithTax = (subtotal, taxes) => {
-        let total = subtotal + taxes;
-        return formatPrice(total);
+    static totalWithTax(subtotal) {
+        let total = subtotal + (subtotal * 0.0875);
+        console.log("total = ", total)
+        return total;
     }
     static listProducts() {
         return storage.get("products");
@@ -52,24 +55,29 @@ class Store {
             throw new BadRequestError('No user info to checkout with');
 
         }
-        const toFindDuplicates = arry => arry.filter((item, index) => arr.indexOf(item) !== index);
-        if (toFindDuplicates(cart) != null) {
-            throw new BadRequestError('Duplicate items in the cart');
-        }
-        const products = storage.get('products').value();
-        const subtotal = Store.calculateSubtotal(cart, products);
-        const total = Store.totalWithTax(subtotal);
-        const receipt = Store.createReceipt({
-            cart, subtotal, total, products, userInfo
-        })
+        // const toFindDuplicates = arry => arry.filter((item, index) => arry.indexOf(item) !== index);
+        // if (toFindDuplicates(cart) != null) {
+        //     throw new BadRequestError('Duplicate items in the cart');
+        // }
+        const products = storage.get('products');
+        const subtotal = this.calcSubTotal(cart);
+        console.log("subtotal")
+        const total = this.totalWithTax(subtotal);
+        // const receipt = this.createReceipt({
+        //     cart, subtotal, total, products, userInfo
+        // })
+        const currentDate = new Date()
         const purchase = {
-            id: uuidv4(),
+            id: products.length,
             name: userInfo.name,
             email: userInfo.email,
-            total,
-            receipt,
+            order: cart,
+            total: total,
+            createdAt: currentDate.toString()
+            // receipt,
         };
-        storage.get('purchases').push(purchase).write();
+        storage.add('products', purchase)
+        return purchase;
     }
 }
 
