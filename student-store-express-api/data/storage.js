@@ -4,36 +4,36 @@ const low = require('lowdb');
 const FileSync = require('lowdb/adapters/FileSync');
 
 class Storage {
-  constructor() {
-    this.path = path.resolve(__dirname, 'db.json'); // path to json with data
-    this.setup();
-  }
+	constructor() {
+		this.path = path.resolve(__dirname, 'db.json'); // path to json with data
+		this.setup();
+	}
 
-  async setup() {
-    // tell lowdb to use file at the provided path as database
-    const adapter = new FileSync(this.path);
-    this.db = low(adapter);
-    // tell lowdb the json structure it should expect
-    this.db.defaults({purchases: [], products: []}).write();
-  }
+	async setup() {
+		// tell lowdb to use file at the provided path as database
+		const adapter = new FileSync(this.path);
+		this.db = low(adapter);
+		// tell lowdb the json structure it should expect
+		this.db.defaults({purchases: [], products: []}).write();
+	}
 
-  set(key, value) {
-    return this.db.set(key, value);
-  }
+	set(key, value) {
+		return this.db.set(key, value);
+	}
 
-  get(key) {
-    return this.db.get(key);
-  }
+	get(key) {
+		return this.db.get(key);
+	}
 
-  get_purchases() {
-    return this.get('purchases').value();
-  }
+	get_purchases() {
+		return this.get('purchases').value();
+	}
 
-  get_products() {
-    return this.get('products').value();
-  }
+	get_products() {
+		return this.get('products').value();
+	}
 }
 
 module.exports = {
-  storage: new Storage(),
+	storage: new Storage(),
 };
