@@ -20,7 +20,9 @@ export default function App() {
   const [shoppingCart, setShoppingCart] = React.useState([]);
   const [checkoutForm, submitCheckoutForm] = React.useState({email: "", name: ""});
   var [quantity, setQuantity] = React.useState(0);
-  const [receipt, setReceipt] = useState({});
+  const[email, setEmail] = React.useState("");
+  const [receipt, setReceipt] = React.useState(false);
+  const [success, setSuccess] = useState(false);
   useEffect(() => {
     // Update the document title using the browser API
 
@@ -40,7 +42,7 @@ export default function App() {
       }
     }
     fetchProducts()
-  },[receipt])
+  },[])
 
   const handleOnToggle = () => {
     if(isOpen == false){
@@ -92,24 +94,34 @@ export default function App() {
         })
       }
     }
-  const handleOnCheckoutFormChange = (name, value) => {
-    submitCheckoutForm({...checkoutForm, [name]: value});
-  }
-  const handleOnSubmitCheckoutForm = () => {
-    axios.post("http://localhost:3001/store", {user: checkoutForm, shoppingCart})
-    .then(
-      function(response) {
-        console.log(response.data.purchase.receipt)
-        setReceipt(response.data.purchase.receipt);
+    function handleOnCheckoutFormChange(change) {
+      const { name, value} = change.target
+      submitCheckoutForm((prevForm) => ({
+        ...prevForm,
+        [name]: value
+      }))
+    }
+
+    // const getData = async () => {
+    //   let response = await axios.get("http://localhost:3001/store/");
+    //   setProducts(response.data.products);
+    //   setisFetching(false);
+    // };
+    function handleOnSubmitCheckoutForm() {
+      //backend
+      axios.post("http://localhost:3001/store", 
+      {user: checkoutForm, shoppingCart: shoppingCart})
+      .then(function(response) {
+        setReceipt(true);
         setShoppingCart([]);
-        setCheckoutForm({email: "", name: ""});
+        submitCheckoutForm({email: "", name: ""});
+        setSuccess(true);
         setError();
-        console.log("checkout completed")
-    })
-    .catch(function(error){
-      setError(error.message);
-    })
-  }
+      }).catch(function(error) {
+        setError(error.message);
+        console.log(error);
+      })
+    }
 
   return (
     <div className="app">
@@ -130,6 +142,7 @@ export default function App() {
                     checkoutForm={checkoutForm} submitCheckoutForm={submitCheckoutForm}
                     handleOnCheckoutFormChange={handleOnCheckoutFormChange}
                     receipt={receipt} error={error} handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
+                    setEmail={setEmail} setIsOpen={setIsOpen} success={success}
                    />
                 </>
               )}   
@@ -148,6 +161,7 @@ export default function App() {
                    handleOnCheckoutFormChange={handleOnCheckoutFormChange}
                    receipt={receipt} error={error}
                    handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
+                   setEmail={setEmail} success={success}
                   />
                 </>
               )}   

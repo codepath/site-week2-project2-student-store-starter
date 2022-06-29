@@ -145,5 +145,1137 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:39:48.427Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:39:48.789Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:39:55.048Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:39:55.450Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:39:55.650Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:39:55.828Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:39:56.993Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:39:58.354Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:39:58.783Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:39:59.007Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:39:59.194Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:39:59.357Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:39:59.513Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:39:59.747Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:40:00.002Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:40:00.199Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:40:00.392Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:41:02.840Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:43:48.106Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:43:49.375Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:43:49.575Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:43:49.700Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:44:07.879Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:44:10.344Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:44:57.404Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:45:28.513Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 16,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:46:13.506Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 16,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:52:14.679Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 16,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:52:24.894Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 16,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:56:14.845Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 16,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:56:19.471Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 16,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:56:19.708Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 16,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:56:19.876Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 16,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:56:20.056Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 16,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:56:20.211Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 16,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:56:20.399Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 16,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:57:56.847Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 16,
+          "quantity": 3
+        },
+        {
+          "itemId": 10,
+          "quantity": 2
+        }
+      ],
+      "purchasedAt": "2022-06-29T06:58:16.270Z"
+    },
+    {
+      "user": {
+        "name": "MrValerio19",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [],
+      "purchasedAt": "2022-06-29T07:00:46.469Z"
+    },
+    {
+      "user": {
+        "name": "MrValerio19",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 14,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T07:00:55.290Z"
+    },
+    {
+      "user": {
+        "name": "MrValerio19",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 14,
+          "quantity": 3
+        },
+        {
+          "itemId": 16,
+          "quantity": 2
+        }
+      ],
+      "purchasedAt": "2022-06-29T07:07:05.351Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 14,
+          "quantity": 2
+        }
+      ],
+      "purchasedAt": "2022-06-29T07:07:42.244Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T07:11:52.022Z"
+    },
+    {
+      "user": {
+        "name": "Andrew Valerio",
+        "email": "andrewvalerio1396@gmail.com"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T07:12:50.842Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 1
+        }
+      ],
+      "purchasedAt": "2022-06-29T07:17:40.569Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 1
+        }
+      ],
+      "purchasedAt": "2022-06-29T07:22:46.911Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 14,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T07:28:04.566Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 16,
+          "quantity": 4
+        }
+      ],
+      "purchasedAt": "2022-06-29T07:28:27.570Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 14,
+          "quantity": 4
+        }
+      ],
+      "purchasedAt": "2022-06-29T07:44:55.367Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 14,
+          "quantity": 4
+        }
+      ],
+      "purchasedAt": "2022-06-29T07:45:27.891Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 14,
+          "quantity": 4
+        }
+      ],
+      "purchasedAt": "2022-06-29T07:45:28.713Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 14,
+          "quantity": 7
+        }
+      ],
+      "purchasedAt": "2022-06-29T07:45:36.541Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 14,
+          "quantity": 7
+        }
+      ],
+      "purchasedAt": "2022-06-29T07:45:41.617Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        },
+        {
+          "itemId": 14,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T07:45:55.195Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T07:46:59.246Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T07:47:03.583Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 5
+        }
+      ],
+      "purchasedAt": "2022-06-29T07:48:24.144Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [],
+      "purchasedAt": "2022-06-29T08:10:54.105Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [],
+      "purchasedAt": "2022-06-29T08:26:09.247Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [],
+      "purchasedAt": "2022-06-29T08:32:37.580Z"
+    },
+    {
+      "user": {
+        "email": "",
+        "name": ""
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 1
+        }
+      ],
+      "purchasedAt": "2022-06-29T08:51:37.308Z"
+    },
+    {
+      "user": {
+        "email": "",
+        "name": ""
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 1
+        },
+        {
+          "itemId": 14,
+          "quantity": 2
+        }
+      ],
+      "purchasedAt": "2022-06-29T08:51:43.284Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 1
+        },
+        {
+          "itemId": 14,
+          "quantity": 2
+        }
+      ],
+      "purchasedAt": "2022-06-29T08:51:50.497Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 1
+        }
+      ],
+      "purchasedAt": "2022-06-29T09:08:33.304Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T09:17:27.871Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T09:19:30.254Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T09:19:30.678Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T09:19:58.063Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T09:20:35.345Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T09:20:36.098Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T09:20:36.278Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T09:20:36.430Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T09:20:56.932Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T09:20:57.386Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T09:20:57.555Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 2
+        }
+      ],
+      "purchasedAt": "2022-06-29T09:21:04.038Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 2
+        }
+      ],
+      "purchasedAt": "2022-06-29T09:22:35.868Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 2
+        }
+      ],
+      "purchasedAt": "2022-06-29T09:23:00.737Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T09:26:01.799Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 2
+        }
+      ],
+      "purchasedAt": "2022-06-29T09:26:09.508Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 14,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T09:31:46.320Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T09:32:49.322Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 3
+        }
+      ],
+      "purchasedAt": "2022-06-29T09:34:06.061Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 14,
+          "quantity": 4
+        }
+      ],
+      "purchasedAt": "2022-06-29T09:40:31.797Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 2
+        }
+      ],
+      "purchasedAt": "2022-06-29T09:41:01.368Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 4
+        }
+      ],
+      "purchasedAt": "2022-06-29T09:41:31.339Z"
+    },
+    {
+      "user": {
+        "email": "andrewvalerio1396@gmail.com",
+        "name": "Andrew Valerio"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 15,
+          "quantity": 2
+        }
+      ],
+      "purchasedAt": "2022-06-29T09:44:38.774Z"
+    }
+  ]
 }
