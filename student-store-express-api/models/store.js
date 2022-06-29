@@ -57,7 +57,7 @@ class Store {
         }
         // const toFindDuplicates = arry => arry.filter((item, index) => arry.indexOf(item) !== index);
         // if (toFindDuplicates(cart) != null) {
-        //     throw new BadRequestError('Duplicate items in the cart');
+        //     throw new BadRequestError('Duplicate items in the cart');git
         // }
         const products = storage.get('products');
         const subtotal = this.calcSubTotal(cart);
