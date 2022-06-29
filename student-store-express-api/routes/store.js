@@ -61,10 +61,11 @@ router.post('/', (req, res) => {
 		email: user.email,
 		order: shoppingCart,
 		total: total + tax,
-		createdAt: new Date().toLocaleString('en-US', {'timeZone': 'UTC'})
+		createdAt: new Date().toLocaleString('en-US', {'timeZone': 'UTC'}),
+		receipt: '',
 	};
 
-	res.status(200).send(purchase);
+	res.status(201).send({'purchase': purchase});
 });
 
 module.exports = router;
