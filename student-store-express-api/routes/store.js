@@ -64,7 +64,7 @@ router.post('/', (req, res) => {
 	};
 
 	// persist purchase in db
-
+	Store.add_purchase(purchase);
 
 	res.status(201).send({'purchase': purchase});
 });

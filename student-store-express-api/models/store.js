@@ -18,7 +18,7 @@ class Store {
 	}
 
 	static add_purchase(purchase) {
-		storage.get('purchases').push(purchase);
+		storage.get('purchases').push(purchase).write();
 	}
 }
 
