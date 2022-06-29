@@ -1,0 +1,61 @@
+.footer {
+
+  background-color: rgb(255, 255, 255);
+  color: white;
+  text-align: center;
+  margin: 0;
+  bottom: 0;
+
+}
+
+.footer-container {
+  color: rgb(0, 0, 0);
+  display: inline-block;
+
+
+}
+.footer-header {
+  font-weight: 500;
+  font-style: italic;
+}
+
+.footer-body, .footer-header {
+  font-family: Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+  color:rgb(0, 0, 0);
+
+}
+.footer-body{
+  font-size: 14px;
+  margin: 0;
+  font-weight: 400;
+}
+.section {
+  display: inline-block;
+  font-size: 20px;
+  width: 100px;
+  vertical-align: text-top;
+  margin-left: 85px;
+  background-color: white;
+  margin-bottom: 0;
+}
+
+
+.payment-logos {
+bottom: 0;
+color: black;
+
+
+}
+
+.payment-list {
+list-style-type: none;
+display: flex;
+flex-direction: row;
+justify-content:center;
+margin-top: 2%;
+}
+
+.pay-logo {
+margin-right: 2%;
+
+}

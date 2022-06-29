@@ -1,0 +1,101 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+    transition: all .2s cubic-bezier(.215, .61, .355, 1);
+    position: fixed;
+    z-index: 100;
+    top: 0px;
+    height: 100vh;
+    padding: 0;
+    overflow-y: hidden;
+    padding-bottom: 2rem;
+    background: #2c4047;
+    border-right: solid 1px white;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.toggle-button {
+    margin-top: 20px;
+    transition: all .2s cubic-bezier(.075, .82, .165, 1);
+    background: transparent;
+    color: #fff;
+    border: none;
+}
+
+.shopping-cart {
+    width: 100%;
+    color: #fff;
+}
+
+.cart-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    width: 100%;
+    padding-left: .5rem;
+}
+
+.cart-icon {
+    margin-bottom: 16px;
+}
+
+.sidebar.closed {
+    width: 60px;
+}
+
+.sidebar.open {
+    width: 600px;
+    align-items: left;
+    justify-content: left;
+    margin-right: 70%;
+}
+
+i,
+button {
+    font-size: 16px;
+}
+
+.material-icons {
+    font-size: 40px;
+}
+
+.sidebar i {
+    margin-right: 10px;
+    cursor: pointer;
+    color: #fff;
+}
+
+input[type="checkbox" i] {
+    background-color: initial;
+    cursor: default;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 3px 3px 3px 4px;
+    padding: initial;
+    border: initial;
+}
+
+.checkbox{
+    margin-left: 15px;
+}
+
+.checkout-button {
+    margin-top: 10px;
+    margin-left: 15px;
+    padding: 12px 18px;
+    font-size: 18px;
+    cursor: pointer;
+    background: transparent;
+    border: solid 1px white;
+    color: #fff;
+}
