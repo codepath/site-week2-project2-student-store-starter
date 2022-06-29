@@ -24,14 +24,6 @@ class Storage {
 	get(key) {
 		return this.db.get(key);
 	}
-
-	get_purchases() {
-		return this.get('purchases').value();
-	}
-
-	get_products() {
-		return this.get('products').value();
-	}
 }
 
 module.exports = {
