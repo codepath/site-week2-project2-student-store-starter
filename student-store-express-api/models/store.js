@@ -1,7 +1,7 @@
-const { storage } = require('../data/storage')
+const {storage} = require('../data/storage');
 
 class Store {
-    static listProducts() {
-        
-    }
+  static listProducts() {
+
+  }
 }
