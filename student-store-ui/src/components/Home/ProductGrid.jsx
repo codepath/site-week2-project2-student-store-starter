@@ -8,22 +8,30 @@ export default function ProductGrid({
   return (
     <div className="product-grid">
       {products.length === 0
-        ? <div className="error">{error}</div> : null}
-      {products.map((product) => {
-        const quantity = findQuantity(product);
+        ? (
+          <div className="error">
+            {error}
+            Nothing found
+          </div>
+        ) : null}
 
-        return (
-          <ProductCard
-            product={product}
-            key={product.id}
-            productId={product.id}
-            handleAddItemToCart={handleAddItemToCart}
-            handleRemoveItemFromCart={handleRemoveItemFromCart}
-            showDescription={false}
-            quantity={quantity}
-          />
-        );
-      })}
+      {
+        products.map((product) => {
+          const quantity = findQuantity(product);
+
+          return (
+            <ProductCard
+              product={product}
+              key={product.id}
+              productId={product.id}
+              handleAddItemToCart={handleAddItemToCart}
+              handleRemoveItemFromCart={handleRemoveItemFromCart}
+              showDescription={false}
+              quantity={quantity}
+            />
+          );
+        })
+}
 
     </div>
 

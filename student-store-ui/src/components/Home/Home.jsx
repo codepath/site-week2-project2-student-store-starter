@@ -8,12 +8,27 @@ import Hero from './Hero';
 export default function Home({
   products, handleAddItemToCart, handleRemoveItemFromCart, shoppingCart, error, findQuantity,
 }) {
-  const [searchedProducts, updateSearchedProducts] = useState([]);
+  const [searchedProducts, updateSearchedProducts] = useState([-1]);
   const [selectedCategory, updateSelectedCategory] = useState('all');
 
+  // Updates displayed products based on search query
+  // 3 Cases:
+  //  1. Empty search query
+  //  2. Query is in list of all products
+  //  3. Query is not in list of all products
   const handleSearchItem = (e) => {
     const query = e.target.value.toLowerCase();
+    // Case 1:
+    //  Searched products has Not found value
+    if (query.length === 0) {
+      updateSearchedProducts([-1]);
+      return;
+    }
 
+    // Case 2 & 3:
+    //  Searched products contains
+    //  either list of products or remains empty
+    //  Case 3 Empty case is handled in ProductGrid.jsx
     const results = [];
     // eslint-disable-next-line no-restricted-syntax
     for (const product of products) {
@@ -35,7 +50,7 @@ export default function Home({
       <p>Home</p>
       <Hero />
       <label htmlFor="search">
-        Search Products:
+        Search Products: 
         <input onChange={handleSearchItem} placeholder="Search here" name="search" />
       </label>
       <div className="filter-categories">
@@ -47,7 +62,8 @@ export default function Home({
       </div>
       <div className="home-body">
         <ProductGrid
-          products={searchedProducts.length > 0
+        // if no search query, default to filter by category
+          products={searchedProducts[0] !== -1
             ? searchedProducts
             : products.filter((product) => (product.category === selectedCategory)
                                                || (selectedCategory === 'all'))}
@@ -57,8 +73,8 @@ export default function Home({
           error={error}
           findQuantity={findQuantity}
         />
-
       </div>
+
       <div className="about-us">
         <h3>About Us</h3>
         We are a online student store.
