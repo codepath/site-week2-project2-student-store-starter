@@ -1,20 +1,18 @@
 const express = require('express');
 const router = express.Router();
 
-const { storage } = require('../data/storage');
-
-const products = storage.get_products();
+const Store = require('../models/store');
 
 // errors
 const { badRequestError } = require('../utils/errors');
 
 router.get('/', (req, res) => {
-	res.status(200).send({'products': products});
+	res.status(200).send({'products': Store.get_products()});
 });
 
 router.get('/:productId', (req, res) => {
 	const productId = req.params.productId;
-	const product = products[productId];
+	const product = Store.get_product(productId);
 
 	res.status(200).send({'product': product});
 });
@@ -46,7 +44,7 @@ router.post('/', (req, res) => {
 	// calculate total cost for items in shoppingCart
 	let total = 0;
 	for (let cartItem of shoppingCart) {
-		const product = products.find((prod) => prod.id === cartItem.itemId);
+		const product = Store.get_product(cartItem.itemId);
 		total += product.price * cartItem.quantity;
 	}
     
@@ -54,7 +52,7 @@ router.post('/', (req, res) => {
 	const tax = total * 0.0875;
 
 	// create a new purchase object
-	const currentPurchasesNo = storage.get_purchases().length;
+	const currentPurchasesNo = Store.get_purchases().length;
 	const purchase = {
 		id: currentPurchasesNo + 1,
 		name: user.name,
@@ -64,6 +62,9 @@ router.post('/', (req, res) => {
 		createdAt: new Date().toLocaleString('en-US', {'timeZone': 'UTC'}),
 		receipt: '',
 	};
+
+	// persist purchase in db
+
 
 	res.status(201).send({'purchase': purchase});
 });
