@@ -18,8 +18,12 @@ class Storage {
     return this.db.set(key, value)
   }
 
+  add(key, value) {
+    this.db.get(key).push(value).write();
+  }
+
   get(key) {
-    return this.db.get(key)
+    return this.db.get(key);
   }
 }
 

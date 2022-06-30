@@ -145,5 +145,563 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "id": null,
+      "name": "ben",
+      "email": "benjm@fb.com",
+      "order": [
+        {
+          "id": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-06-30T17:47:59.983Z"
+    },
+    {
+      "id": null,
+      "name": "ben",
+      "email": "benjm@fb.com",
+      "order": [
+        {
+          "id": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-06-30T17:55:00.022Z"
+    },
+    {
+      "id": 3,
+      "name": "ben",
+      "email": "benjm@fb.com",
+      "order": [
+        {
+          "id": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-06-30T17:58:58.807Z"
+    },
+    {
+      "id": 4,
+      "name": "ben",
+      "email": "benjm@fb.com",
+      "order": [
+        {
+          "id": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-06-30T18:01:11.151Z"
+    },
+    {
+      "id": 5,
+      "name": "ben",
+      "email": "benjm@fb.com",
+      "order": [
+        {
+          "id": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-06-30T18:02:49.789Z"
+    },
+    {
+      "id": 6,
+      "name": "ben",
+      "email": "benjm@fb.com",
+      "order": [
+        {
+          "id": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-06-30T18:03:28.238Z"
+    },
+    {
+      "id": 7,
+      "name": "ben",
+      "email": "benjm@fb.com",
+      "order": [
+        {
+          "id": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-06-30T18:06:17.091Z"
+    },
+    {
+      "id": 8,
+      "name": "ben",
+      "email": "benjm@fb.com",
+      "order": [
+        {
+          "id": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-06-30T18:43:23.474Z"
+    },
+    {
+      "id": 9,
+      "name": "ben",
+      "email": "benjm@fb.com",
+      "order": [
+        {
+          "id": 3,
+          "quantity": 2
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-06-30T20:49:24.693Z"
+    },
+    {
+      "id": 10,
+      "name": "ben",
+      "email": "benjm@fb.com",
+      "order": [
+        {
+          "id": 3,
+          "quantity": 2
+        }
+      ],
+      "total": 0,
+      "createdAt": "2022-06-30T20:52:55.016Z"
+    },
+    {
+      "id": 11,
+      "name": "ben",
+      "email": "benjm@fb.com",
+      "order": [
+        {
+          "id": 3,
+          "quantity": 2
+        }
+      ],
+      "total": 0,
+      "createdAt": "2022-06-30T20:53:06.805Z"
+    },
+    {
+      "id": 12,
+      "name": "ben",
+      "email": "benjm@fb.com",
+      "order": [
+        {
+          "id": 3,
+          "quantity": 2
+        }
+      ],
+      "total": 0,
+      "createdAt": "2022-06-30T21:12:12.055Z",
+      "receipt": ""
+    },
+    {
+      "id": 13,
+      "name": "ben",
+      "email": "benjm@fb.com",
+      "order": [
+        {
+          "id": 3,
+          "quantity": 2
+        }
+      ],
+      "total": 0,
+      "createdAt": "2022-06-30T21:12:41.558Z",
+      "receipt": ""
+    },
+    {
+      "id": 14,
+      "name": "ben",
+      "email": "benjm@fb.com",
+      "order": [
+        {
+          "id": 3,
+          "quantity": 2
+        }
+      ],
+      "total": 0,
+      "createdAt": "2022-06-30T21:13:07.031Z",
+      "receipt": ""
+    },
+    {
+      "id": 15,
+      "name": "ben",
+      "email": "benjm@fb.com",
+      "order": [
+        {
+          "id": 3,
+          "quantity": 2
+        }
+      ],
+      "total": 0,
+      "createdAt": "2022-06-30T21:13:33.022Z",
+      "receipt": ""
+    },
+    {
+      "id": 16,
+      "name": "ben",
+      "email": "benjm@fb.com",
+      "order": [
+        {
+          "id": 3,
+          "quantity": 2
+        }
+      ],
+      "total": 0,
+      "createdAt": "2022-06-30T21:13:45.803Z",
+      "receipt": ""
+    },
+    {
+      "id": 17,
+      "name": "ben",
+      "email": "benjm@fb.com",
+      "order": [
+        {
+          "id": 3,
+          "quantity": 2
+        }
+      ],
+      "total": 0,
+      "createdAt": "2022-06-30T21:14:44.578Z",
+      "receipt": ""
+    },
+    {
+      "id": 18,
+      "name": "ben",
+      "email": "benjm@fb.com",
+      "order": [
+        {
+          "id": 3,
+          "quantity": 2
+        }
+      ],
+      "total": 0,
+      "createdAt": "2022-06-30T21:16:00.872Z",
+      "receipt": ""
+    },
+    {
+      "id": 19,
+      "name": "ben",
+      "email": "benjm@fb.com",
+      "order": [
+        {
+          "id": 3,
+          "quantity": 2
+        }
+      ],
+      "total": 0,
+      "createdAt": "2022-06-30T21:23:08.974Z",
+      "receipt": ""
+    },
+    {
+      "id": 20,
+      "name": "ben",
+      "email": "benjm@fb.com",
+      "order": [
+        {
+          "id": 3,
+          "quantity": 2
+        }
+      ],
+      "total": 0,
+      "createdAt": "2022-06-30T21:23:21.275Z",
+      "receipt": ""
+    },
+    {
+      "id": 21,
+      "name": "ben",
+      "email": "benjm@fb.com",
+      "order": [
+        {
+          "id": 3,
+          "quantity": 2
+        }
+      ],
+      "total": 0,
+      "createdAt": "2022-06-30T21:23:40.880Z",
+      "receipt": ""
+    },
+    {
+      "id": 22,
+      "name": "ben",
+      "email": "benjm@fb.com",
+      "order": [
+        {
+          "id": 3,
+          "quantity": 2
+        }
+      ],
+      "total": {},
+      "createdAt": "2022-06-30T21:27:28.382Z",
+      "receipt": ""
+    },
+    {
+      "id": 23,
+      "name": "ben",
+      "email": "benjm@fb.com",
+      "order": [
+        {
+          "id": 3,
+          "quantity": 2
+        }
+      ],
+      "total": 6.5032499999999995,
+      "createdAt": "2022-06-30T21:28:36.081Z",
+      "receipt": ""
+    },
+    {
+      "id": 24,
+      "name": "ben",
+      "email": "benjm@fb.com",
+      "order": [
+        {
+          "id": 3,
+          "quantity": 2
+        }
+      ],
+      "total": 6.5032499999999995,
+      "createdAt": "2022-06-30T21:31:09.912Z",
+      "receipt": ""
+    },
+    {
+      "id": 25,
+      "name": "ben",
+      "email": "benjm@fb.com",
+      "order": [
+        {
+          "id": 3,
+          "quantity": 2
+        }
+      ],
+      "total": "6.50",
+      "createdAt": "2022-06-30T21:31:40.308Z",
+      "receipt": ""
+    },
+    {
+      "id": 26,
+      "name": "ben",
+      "email": "benjm@fb.com",
+      "order": [
+        {
+          "id": 3,
+          "quantity": 2
+        }
+      ],
+      "total": "6.50",
+      "createdAt": "2022-06-30T21:33:48.096Z",
+      "receipt": ""
+    },
+    {
+      "id": 27,
+      "name": "ben",
+      "email": "benjm@fb.com",
+      "order": [
+        {
+          "id": 3,
+          "quantity": 2
+        }
+      ],
+      "total": "6.50",
+      "createdAt": "2022-06-30T21:34:01.877Z",
+      "receipt": ""
+    },
+    {
+      "id": 28,
+      "name": "ben",
+      "email": "benjm@fb.com",
+      "order": [
+        {
+          "id": 3,
+          "quantity": 2
+        }
+      ],
+      "total": "6.50",
+      "createdAt": "2022-06-30T21:47:44.545Z",
+      "receipt": ""
+    },
+    {
+      "id": 29,
+      "name": "ben",
+      "email": "works@",
+      "order": [],
+      "total": "0.00",
+      "createdAt": "2022-06-30T22:21:52.703Z",
+      "receipt": ""
+    },
+    {
+      "id": 30,
+      "name": "a",
+      "email": "d",
+      "order": [],
+      "total": "0.00",
+      "createdAt": "2022-06-30T23:15:35.622Z",
+      "receipt": ""
+    },
+    {
+      "id": 31,
+      "name": "f",
+      "email": "a",
+      "order": [],
+      "total": "0.00",
+      "createdAt": "2022-06-30T23:16:41.245Z",
+      "receipt": ""
+    },
+    {
+      "id": 32,
+      "name": "f",
+      "email": "a",
+      "order": [],
+      "total": "0.00",
+      "createdAt": "2022-06-30T23:18:10.153Z",
+      "receipt": ""
+    },
+    {
+      "id": 33,
+      "name": "d",
+      "email": "a",
+      "order": [],
+      "total": "0.00",
+      "createdAt": "2022-06-30T23:18:39.472Z",
+      "receipt": ""
+    },
+    {
+      "id": 34,
+      "name": "a",
+      "email": "benjm",
+      "order": [],
+      "total": "0.00",
+      "createdAt": "2022-06-30T23:20:06.719Z",
+      "receipt": ""
+    },
+    {
+      "id": 35,
+      "name": "k",
+      "email": "jpio",
+      "order": [],
+      "total": "0.00",
+      "createdAt": "2022-06-30T23:27:59.354Z",
+      "receipt": ""
+    },
+    {
+      "id": 36,
+      "name": "k",
+      "email": "benjm@fb.com",
+      "order": [
+        {
+          "productId": 1,
+          "quantity": 1
+        },
+        {
+          "productId": 2,
+          "quantity": 2
+        }
+      ],
+      "total": "4.34",
+      "createdAt": "2022-06-30T23:30:58.522Z",
+      "receipt": ""
+    },
+    {
+      "id": 37,
+      "name": "jiop",
+      "email": "benjm@fb.com",
+      "order": [
+        {
+          "productId": 2,
+          "quantity": 1
+        },
+        {
+          "productId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": "8.13",
+      "createdAt": "2022-06-30T23:31:18.724Z",
+      "receipt": ""
+    },
+    {
+      "id": 38,
+      "name": "ajf",
+      "email": "benjm@fb.com",
+      "order": [
+        {
+          "productId": 1,
+          "quantity": 1
+        },
+        {
+          "productId": 2,
+          "quantity": 1
+        }
+      ],
+      "total": "2.71",
+      "createdAt": "2022-06-30T23:47:18.596Z",
+      "receipt": ""
+    },
+    {
+      "id": 39,
+      "name": "ds",
+      "email": "af",
+      "order": [
+        {
+          "productId": 2,
+          "quantity": 1
+        },
+        {
+          "productId": 1,
+          "quantity": 1
+        }
+      ],
+      "total": "2.71",
+      "createdAt": "2022-06-30T23:47:50.896Z",
+      "receipt": ""
+    },
+    {
+      "id": 40,
+      "name": "f",
+      "email": "a",
+      "order": [
+        {
+          "productId": 2,
+          "quantity": 1
+        },
+        {
+          "productId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": "8.13",
+      "createdAt": "2022-06-30T23:49:26.551Z",
+      "receipt": ""
+    },
+    {
+      "id": 41,
+      "name": "",
+      "email": "",
+      "order": [],
+      "total": "0.00",
+      "createdAt": "2022-06-30T23:50:23.951Z",
+      "receipt": ""
+    },
+    {
+      "id": 42,
+      "name": "fdas",
+      "email": "af",
+      "order": [
+        {
+          "productId": 2,
+          "quantity": 1
+        }
+      ],
+      "total": "1.63",
+      "createdAt": "2022-06-30T23:53:08.925Z",
+      "receipt": ""
+    }
+  ]
 }
