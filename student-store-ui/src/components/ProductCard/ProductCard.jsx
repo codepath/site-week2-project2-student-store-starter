@@ -3,10 +3,9 @@ import { Link } from "react-router-dom"
 import "./ProductCard.css"
 
 
-export default function ProductCard({product, handleAddItemToCart, productId, handleRemoveItemToCart}) {
+export default function ProductCard({product, handleAddItemToCart, productId, handleRemoveItemToCart, shoppingCart}) {
    
     //const product = props.product
-    
     
     //console.log("product CARD", handleRemoveItemToCart)
     return (

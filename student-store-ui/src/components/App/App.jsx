@@ -23,7 +23,7 @@ const [checkout, isCheckout] = useState([]);
 
 const [isOpen, setIsOpen] = React.useState(false)
 
-const [checkoutForm, setCheckoutForm] = useState({email: null, name: null});
+const [checkoutForm, setCheckoutForm] = useState({email: "", name: ""});
 
 const [receipt, setReceipt] = useState({});
 
@@ -36,33 +36,21 @@ const [search, setSearch] = useState(null);
 const [shoppingExists, setShoppingExists] = useState(true);
 
 function handleCheckoutFormChange(name, value) {
-  console.log('checkout form called');
-
-  if (name === "email") {
-    checkoutForm.email = value;
-  } else {
-    checkoutForm.name = value;
+  if(name == "name") {
+    setCheckoutForm(state => ({...state, [name]: value }))
   }
-
-  setCheckoutForm({...checkoutForm});
-  
+  if(name == "email") {
+    setCheckoutForm(state => ({...state, [name]: value }))
+  }
 }
 
-const handleOnSubmitCheckoutForm = async () => {
-  console.log("submit called")
-  axios.post("http://localhost:3001/store/", {user:checkoutForm, shoppingCart:shoppingCart})
-  .then(function (response) {
-    console.log(response);
-    const receiptData = response.data.purchase.receipt;
-    setReceipt(receiptData);
-    setCheckoutForm({name:"", email:""});
-    setShoppingCart([]);
+async function handleOnSubmitCheckoutForm() {
+
+    console.log("ok")
+    setShoppingCart([])
+    setCheckoutForm({name: "", email: ""})
+    setSuccess(true)
     
-    setOrderSent(true);
-  })
-  .catch(function (error) {
-    
-  })
 
 }
 

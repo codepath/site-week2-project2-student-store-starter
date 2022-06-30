@@ -145,5 +145,469 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "id": 1,
+      "name": "smasdad",
+      "email": "smasdasdd@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 6
+        }
+      ],
+      "total": "6.46",
+      "createdAt": "2022-06-30T01:34:16.042Z",
+      "receipt": [
+        "Showing receipt for smasdad available at smasdasdd@gmail.com:",
+        "6 total Rice Krispies purchased at a cost of $0.99 for a total cost of $5.94.",
+        "Before taxes, the subtotal was $5.94",
+        "After taxes and fees were applied, the total comes out to $6.46"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "smasdad",
+      "email": "smasdasdd@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 6
+        }
+      ],
+      "total": "6.46",
+      "createdAt": "2022-06-30T01:36:07.543Z",
+      "receipt": [
+        "Showing receipt for smasdad available at smasdasdd@gmail.com:",
+        "6 total Rice Krispies purchased at a cost of $0.99 for a total cost of $5.94.",
+        "Before taxes, the subtotal was $5.94",
+        "After taxes and fees were applied, the total comes out to $6.46"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "smasdad",
+      "email": "smasdasdd@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 6
+        }
+      ],
+      "total": "6.46",
+      "createdAt": "2022-06-30T01:36:08.160Z",
+      "receipt": [
+        "Showing receipt for smasdad available at smasdasdd@gmail.com:",
+        "6 total Rice Krispies purchased at a cost of $0.99 for a total cost of $5.94.",
+        "Before taxes, the subtotal was $5.94",
+        "After taxes and fees were applied, the total comes out to $6.46"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "smasdad",
+      "email": "smasdasdd@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 6
+        }
+      ],
+      "total": "6.46",
+      "createdAt": "2022-06-30T01:36:09.407Z",
+      "receipt": [
+        "Showing receipt for smasdad available at smasdasdd@gmail.com:",
+        "6 total Rice Krispies purchased at a cost of $0.99 for a total cost of $5.94.",
+        "Before taxes, the subtotal was $5.94",
+        "After taxes and fees were applied, the total comes out to $6.46"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "smasdad",
+      "email": "smasdasdd@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 6
+        }
+      ],
+      "total": "6.46",
+      "createdAt": "2022-06-30T01:36:09.584Z",
+      "receipt": [
+        "Showing receipt for smasdad available at smasdasdd@gmail.com:",
+        "6 total Rice Krispies purchased at a cost of $0.99 for a total cost of $5.94.",
+        "Before taxes, the subtotal was $5.94",
+        "After taxes and fees were applied, the total comes out to $6.46"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "smasdad",
+      "email": "smasdasdd@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 6
+        }
+      ],
+      "total": "6.46",
+      "createdAt": "2022-06-30T01:36:09.784Z",
+      "receipt": [
+        "Showing receipt for smasdad available at smasdasdd@gmail.com:",
+        "6 total Rice Krispies purchased at a cost of $0.99 for a total cost of $5.94.",
+        "Before taxes, the subtotal was $5.94",
+        "After taxes and fees were applied, the total comes out to $6.46"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "smasdad",
+      "email": "smasdasdd@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 6
+        }
+      ],
+      "total": "6.46",
+      "createdAt": "2022-06-30T01:36:09.979Z",
+      "receipt": [
+        "Showing receipt for smasdad available at smasdasdd@gmail.com:",
+        "6 total Rice Krispies purchased at a cost of $0.99 for a total cost of $5.94.",
+        "Before taxes, the subtotal was $5.94",
+        "After taxes and fees were applied, the total comes out to $6.46"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "smasdad",
+      "email": "smasdasdd@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 6
+        }
+      ],
+      "total": "6.46",
+      "createdAt": "2022-06-30T01:36:10.168Z",
+      "receipt": [
+        "Showing receipt for smasdad available at smasdasdd@gmail.com:",
+        "6 total Rice Krispies purchased at a cost of $0.99 for a total cost of $5.94.",
+        "Before taxes, the subtotal was $5.94",
+        "After taxes and fees were applied, the total comes out to $6.46"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "smasdad",
+      "email": "smasdasdd@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 6
+        }
+      ],
+      "total": "6.46",
+      "createdAt": "2022-06-30T01:36:10.361Z",
+      "receipt": [
+        "Showing receipt for smasdad available at smasdasdd@gmail.com:",
+        "6 total Rice Krispies purchased at a cost of $0.99 for a total cost of $5.94.",
+        "Before taxes, the subtotal was $5.94",
+        "After taxes and fees were applied, the total comes out to $6.46"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "smasdad",
+      "email": "smasdasdd@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 6
+        }
+      ],
+      "total": "6.46",
+      "createdAt": "2022-06-30T01:36:10.542Z",
+      "receipt": [
+        "Showing receipt for smasdad available at smasdasdd@gmail.com:",
+        "6 total Rice Krispies purchased at a cost of $0.99 for a total cost of $5.94.",
+        "Before taxes, the subtotal was $5.94",
+        "After taxes and fees were applied, the total comes out to $6.46"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "smasdad",
+      "email": "smasdasdd@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 6
+        }
+      ],
+      "total": "6.46",
+      "createdAt": "2022-06-30T01:36:10.740Z",
+      "receipt": [
+        "Showing receipt for smasdad available at smasdasdd@gmail.com:",
+        "6 total Rice Krispies purchased at a cost of $0.99 for a total cost of $5.94.",
+        "Before taxes, the subtotal was $5.94",
+        "After taxes and fees were applied, the total comes out to $6.46"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "smasdad",
+      "email": "smasdasdd@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 6
+        }
+      ],
+      "total": "6.46",
+      "createdAt": "2022-06-30T01:36:10.940Z",
+      "receipt": [
+        "Showing receipt for smasdad available at smasdasdd@gmail.com:",
+        "6 total Rice Krispies purchased at a cost of $0.99 for a total cost of $5.94.",
+        "Before taxes, the subtotal was $5.94",
+        "After taxes and fees were applied, the total comes out to $6.46"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "smasdad",
+      "email": "smasdasdd@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 6
+        }
+      ],
+      "total": "6.46",
+      "createdAt": "2022-06-30T01:36:11.138Z",
+      "receipt": [
+        "Showing receipt for smasdad available at smasdasdd@gmail.com:",
+        "6 total Rice Krispies purchased at a cost of $0.99 for a total cost of $5.94.",
+        "Before taxes, the subtotal was $5.94",
+        "After taxes and fees were applied, the total comes out to $6.46"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "smasdad",
+      "email": "smasdasdd@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 6
+        }
+      ],
+      "total": "6.46",
+      "createdAt": "2022-06-30T01:36:11.337Z",
+      "receipt": [
+        "Showing receipt for smasdad available at smasdasdd@gmail.com:",
+        "6 total Rice Krispies purchased at a cost of $0.99 for a total cost of $5.94.",
+        "Before taxes, the subtotal was $5.94",
+        "After taxes and fees were applied, the total comes out to $6.46"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "smasdad",
+      "email": "smasdasdd@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 6
+        }
+      ],
+      "total": "6.46",
+      "createdAt": "2022-06-30T01:36:11.533Z",
+      "receipt": [
+        "Showing receipt for smasdad available at smasdasdd@gmail.com:",
+        "6 total Rice Krispies purchased at a cost of $0.99 for a total cost of $5.94.",
+        "Before taxes, the subtotal was $5.94",
+        "After taxes and fees were applied, the total comes out to $6.46"
+      ]
+    },
+    {
+      "id": 16,
+      "name": "smasdad",
+      "email": "smasdasdd@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 6
+        }
+      ],
+      "total": "6.46",
+      "createdAt": "2022-06-30T01:36:11.729Z",
+      "receipt": [
+        "Showing receipt for smasdad available at smasdasdd@gmail.com:",
+        "6 total Rice Krispies purchased at a cost of $0.99 for a total cost of $5.94.",
+        "Before taxes, the subtotal was $5.94",
+        "After taxes and fees were applied, the total comes out to $6.46"
+      ]
+    },
+    {
+      "id": 17,
+      "name": "smasdad",
+      "email": "smasdasdd@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 6
+        }
+      ],
+      "total": "6.46",
+      "createdAt": "2022-06-30T01:36:11.923Z",
+      "receipt": [
+        "Showing receipt for smasdad available at smasdasdd@gmail.com:",
+        "6 total Rice Krispies purchased at a cost of $0.99 for a total cost of $5.94.",
+        "Before taxes, the subtotal was $5.94",
+        "After taxes and fees were applied, the total comes out to $6.46"
+      ]
+    },
+    {
+      "id": 18,
+      "name": "smasdad",
+      "email": "smasdasdd@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 6
+        }
+      ],
+      "total": "6.46",
+      "createdAt": "2022-06-30T01:36:35.724Z",
+      "receipt": [
+        "Showing receipt for smasdad available at smasdasdd@gmail.com:",
+        "6 total Rice Krispies purchased at a cost of $0.99 for a total cost of $5.94.",
+        "Before taxes, the subtotal was $5.94",
+        "After taxes and fees were applied, the total comes out to $6.46"
+      ]
+    },
+    {
+      "id": 19,
+      "name": "smasdad",
+      "email": "smasdasdd@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 6
+        }
+      ],
+      "total": "6.46",
+      "createdAt": "2022-06-30T01:36:36.404Z",
+      "receipt": [
+        "Showing receipt for smasdad available at smasdasdd@gmail.com:",
+        "6 total Rice Krispies purchased at a cost of $0.99 for a total cost of $5.94.",
+        "Before taxes, the subtotal was $5.94",
+        "After taxes and fees were applied, the total comes out to $6.46"
+      ]
+    },
+    {
+      "id": 20,
+      "name": "smasdad",
+      "email": "smasdasdd@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 6
+        }
+      ],
+      "total": "6.46",
+      "createdAt": "2022-06-30T01:36:37.222Z",
+      "receipt": [
+        "Showing receipt for smasdad available at smasdasdd@gmail.com:",
+        "6 total Rice Krispies purchased at a cost of $0.99 for a total cost of $5.94.",
+        "Before taxes, the subtotal was $5.94",
+        "After taxes and fees were applied, the total comes out to $6.46"
+      ]
+    },
+    {
+      "id": 21,
+      "name": "smasdad",
+      "email": "smasdasdd@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 6
+        }
+      ],
+      "total": "6.46",
+      "createdAt": "2022-06-30T01:40:16.822Z",
+      "receipt": [
+        "Showing receipt for smasdad available at smasdasdd@gmail.com:",
+        "6 total Rice Krispies purchased at0.99 total cost 5.94.",
+        "Before taxes5.94",
+        "After taxes6.46"
+      ]
+    },
+    {
+      "id": 22,
+      "name": "smasdad",
+      "email": "smasdasasdasdasddd@gmail.com",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 8
+        }
+      ],
+      "total": "13.05",
+      "createdAt": "2022-06-30T01:40:34.933Z",
+      "receipt": [
+        "Showing receipt for smasdad available at smasdasasdasdasddd@gmail.com:",
+        "8 total Flamin Hot Cheetos purchased at1.5 total cost 12.00.",
+        "Before taxes12.00",
+        "After taxes13.05"
+      ]
+    },
+    {
+      "id": 23,
+      "name": "smasdad",
+      "email": "smasdasasdasdasddd@gmail.com",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 8
+        }
+      ],
+      "total": "13.05",
+      "createdAt": "2022-06-30T01:52:31.550Z",
+      "receipt": [
+        "Showing receipt for smasdad available at smasdasasdasdasddd@gmail.com:",
+        "8 total Flamin Hot Cheetos purchased at1.5 total cost 12.00.",
+        "Before taxes12.00",
+        "After taxes13.05"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "week3",
+      "email": "likashmi.deosaran.site@codepath.orgsdfsdfsd",
+      "order": [
+        {
+          "id": 1,
+          "quantity": 3
+        }
+      ],
+      "total": "0.00",
+      "createdAt": "2022-06-30T02:40:56.528Z"
+    },
+    {
+      "id": 1,
+      "name": "week3",
+      "email": "likashmi.deosaran.site@codepath.org",
+      "order": [
+        {
+          "id": 1,
+          "quantity": 3
+        }
+      ],
+      "total": "0.00",
+      "createdAt": "2022-06-30T02:56:50.568Z"
+    }
+  ]
 }
