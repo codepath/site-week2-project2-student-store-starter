@@ -7,8 +7,15 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 <a href="https://www.loom.com/share/5066a3f9031649f9b3030345b579adc7">
     <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/5066a3f9031649f9b3030345b579adc7-with-play.gif">
   </a>
+  
+API Core Features
 <a href="https://www.loom.com/share/6a97c7149e474a89ae111cff0e000b66">
     <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/6a97c7149e474a89ae111cff0e000b66-with-play.gif">
+  </a>
+  
+UI Stretch Features
+<a href="https://www.loom.com/share/9529ba46c9b84b93ab5e10d13c63f46a">
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/9529ba46c9b84b93ab5e10d13c63f46a-with-play.gif">
   </a>
 
 ### Application Features
