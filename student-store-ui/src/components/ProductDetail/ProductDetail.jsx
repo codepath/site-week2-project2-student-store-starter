@@ -13,7 +13,7 @@ export default function ProductDetail({
   const [isLoading, updateIsLoading] = useState(false);
   console.log(useParams());
   const { productId } = useParams();
-  const URL = 'https://codepath-store-api.herokuapp.com/store/';
+  const URL = 'http://localhost:3001/store/';
 
   useEffect(() => {
     async function fetchData() {

@@ -12,7 +12,7 @@ import './App.css';
 import NotFound from '../NotFound/NotFound';
 import ProductDetail from '../ProductDetail/ProductDetail';
 
-const URL = 'https://codepath-store-api.herokuapp.com/store';
+const URL = 'http://localhost:3001/store';
 /* example API request give us
 {"id":1,
 "name":"Rice Krispies",
@@ -31,6 +31,8 @@ export default function App() {
   const [shoppingCart, updateShoppingCart] = useState([]);
   const [checkoutForm, updateCheckoutForm] = useState({ email: '', name: '' });
   const [checkoutFormIsSubmitted, updateCheckoutFormIsSubmitted] = useState(false);
+  const [lastCheckedOutUser, updateLastCheckedOutUser] = useState({ email: '', name: '' });
+  const [lastShoppingCart, updateLastShoppingCart] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -98,10 +100,11 @@ export default function App() {
         updateError('Failed to submit checkout');
       } else {
         updateShoppingCart([]);
+        updateLastShoppingCart(shoppingCart);
+        updateLastCheckedOutUser(checkoutForm);
         updateCheckoutForm({ email: '', name: '' });
         updateError('');
         updateCheckoutFormIsSubmitted(true);
-        console.log('didnt fail');
       }
     }).catch((error) => {
       updateError(error.message);
@@ -124,7 +127,7 @@ export default function App() {
       <BrowserRouter>
         <main>
           {/* YOUR CODE HERE! */}
-          <div className="container">
+          <div className="containers">
             <Sidebar
               isOpen={isOpen}
               shoppingCart={shoppingCart}
@@ -136,6 +139,8 @@ export default function App() {
               error={error}
               checkoutFormIsSubmitted={checkoutFormIsSubmitted}
               findQuantity={findQuantity}
+              lastCheckedOutUser={lastCheckedOutUser}
+              lastShoppingCart={lastShoppingCart}
             />
             <div className="wrapper">
               <Navbar />
@@ -150,6 +155,7 @@ export default function App() {
                       shoppingCart={shoppingCart}
                       error={error}
                       findQuantity={findQuantity}
+                      isFetching={isFetching}
                     />
 )}
                 />

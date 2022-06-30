@@ -6,7 +6,7 @@ import ProductGrid from './ProductGrid';
 import Hero from './Hero';
 
 export default function Home({
-  products, handleAddItemToCart, handleRemoveItemFromCart, shoppingCart, error, findQuantity,
+  products, handleAddItemToCart, handleRemoveItemFromCart, shoppingCart, error, findQuantity, isFetching,
 }) {
   const [searchedProducts, updateSearchedProducts] = useState([-1]);
   const [selectedCategory, updateSelectedCategory] = useState('all');
@@ -50,7 +50,7 @@ export default function Home({
       <p>Home</p>
       <Hero />
       <label htmlFor="search">
-        Search Products: 
+        Search Products:
         <input onChange={handleSearchItem} placeholder="Search here" name="search" />
       </label>
       <div className="filter-categories">
@@ -61,23 +61,25 @@ export default function Home({
         <button type="button" id="tech" onClick={handleCategories}>Tech</button>
       </div>
       <div className="home-body">
-        <ProductGrid
+        {isFetching ? <p>Fetching products...</p> : (
+          <ProductGrid
         // if no search query, default to filter by category
-          products={searchedProducts[0] !== -1
-            ? searchedProducts
-            : products.filter((product) => (product.category === selectedCategory)
+            products={searchedProducts[0] !== -1
+              ? searchedProducts
+              : products.filter((product) => (product.category === selectedCategory)
                                                || (selectedCategory === 'all'))}
-          handleAddItemToCart={handleAddItemToCart}
-          handleRemoveItemFromCart={handleRemoveItemFromCart}
-          shoppingCart={shoppingCart}
-          error={error}
-          findQuantity={findQuantity}
-        />
+            handleAddItemToCart={handleAddItemToCart}
+            handleRemoveItemFromCart={handleRemoveItemFromCart}
+            shoppingCart={shoppingCart}
+            error={error}
+            findQuantity={findQuantity}
+          />
+        )}
       </div>
 
       <div className="about-us">
         <h3>About Us</h3>
-        We are a online student store.
+        We are an online student store.
       </div>
       <div className="contact-us">
         Contact us: benjm@fb.com
