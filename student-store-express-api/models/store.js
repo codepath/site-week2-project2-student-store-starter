@@ -10,32 +10,32 @@ function findProductsById(products, id) {
         return products.find((product) => product.id === id);
     }
 }
-var formatter = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-
-    // These options are needed to round to whole numbers if that's what you want.
-    minimumFractionDigits: 2, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
-    maximumFractionDigits: 2, // (causes 2500.99 to be printed as $2,501)
-});
 
 class Store {
     static calcSubTotal(cart) {
-        let total = 0;
+        let subtotal = 0;
+        let shoppingCartSoFar = new Set();
         for (let i = 0; i < cart.length; i++) {
-            total += findProductsById(cart[i])?.price * cart[i].quantity
+            // if (!cart[i].hasOwnProperty("itemId") && !cart.hasOwnProperty("quantity")) {
+            //     throw new BadRequestError("Missing item id or item quantity")
+            // }
+            if (shoppingCartSoFar.has(cart[i].itemId)) {
+                throw new BadRequestError("Duplicate items in cart")
+            }
+            subtotal += Store.fetchProductById(cart[i].itemId)["price"] * cart[i].quantity
+            shoppingCartSoFar.add(cart[i].itemId);
         }
-        return total;
+        return subtotal.toFixed(2);
 
     }
     static calculateTaxes(subtotal) {
         let taxes = subtotal * 0.0875;
-        return taxes;
+        return taxes.toFixed(2);
     }
     static totalWithTax(subtotal) {
-        let total = subtotal + (subtotal * 0.0875);
+        let total = subtotal * 1.0875;
         console.log("total = ", total)
-        return total;
+        return total.toFixed(2);
     }
     static listProducts() {
         return storage.get("products");
@@ -46,7 +46,15 @@ class Store {
         return prods[productId - 1];
     }
     // static createReceipt()
-
+    static getUserReciept(name, email, cart) {
+        let userReceipt = []
+        userReceipt.push(`Hi ${name}, your receipt has been mailed to this address ${email}! Thanks for shopping with us`)
+        cart.forEach(item => {
+            let prod = this.fetchProductById(item.itemId)
+            userReceipt.push(`There were a total of ${item.quantity} ${prod.name} bought for $${prod.price.toFixed(2)}each for a total of ${(prod.price * item.quantity).toFixed(2)}`)
+        })
+        return userReceipt
+    }
     static purchaseProducts(cart, userInfo) {
         if (!cart || !Object.keys(cart).length) {
             throw new BadRequestError('No cart or items in cart found to checkout');
@@ -55,12 +63,12 @@ class Store {
             throw new BadRequestError('No user info to checkout with');
 
         }
-        // const toFindDuplicates = arry => arry.filter((item, index) => arry.indexOf(item) !== index);
-        // if (toFindDuplicates(cart) != null) {
-        //     throw new BadRequestError('Duplicate items in the cart');git
-        // }
+        if (!userInfo.hasOwnProperty('name') || !userInfo.hasOwnProperty('email')) {
+            throw new BadRequestError('Missing name or email');
+        }
         const products = storage.get('products');
         const subtotal = this.calcSubTotal(cart);
+        const taxes = this.calculateTaxes(subtotal)
         console.log("subtotal")
         const total = this.totalWithTax(subtotal);
         // const receipt = this.createReceipt({
@@ -72,9 +80,11 @@ class Store {
             name: userInfo.name,
             email: userInfo.email,
             order: cart,
+            subtotal: subtotal,
+            taxes: taxes,
             total: total,
+            receipt: Store.getUserReciept(userInfo.name, userInfo.email, cart),
             createdAt: currentDate.toString()
-            // receipt,
         };
         storage.add('products', purchase)
         return purchase;

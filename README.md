@@ -7,7 +7,7 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 <a href="https://www.loom.com/share/5066a3f9031649f9b3030345b579adc7">
     <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/5066a3f9031649f9b3030345b579adc7-with-play.gif">
   </a>
-  
+
 
 ### Application Features
 
@@ -258,7 +258,6 @@ The following specifications were met on the Express backend and the React front
 
 **Routes** - The API should contain a route mounted at the `/store` endpoint
 
-<<<<<<< HEAD
 - [x] It should respond to `GET` requests to `/store` with an array of all products in the store in this format: `{ "products": products }`
 - [x] It should respond to `GET` requests to `/store/:productId` with a single product based on the product's id using this JSON format: `{ "product": product }`
 - [x] It should allow `POST` requests to the `/store` endpoint:
@@ -267,16 +266,6 @@ The following specifications were met on the Express backend and the React front
     - [x] The `shoppingCart` field should contain the user's order.
       - [x] This should be an array of objects.
       - [x] Each object in the array should have two fields:
-=======
-- [X] It should respond to `GET` requests to `/store` with an array of all products in the store in this format: `{ "products": products }`
-- [X] It should respond to `GET` requests to `/store/:productId` with a single product based on the product's id using this JSON format: `{ "product": product }`
-- [ ] It should allow `POST` requests to the `/store` endpoint:
-  - [ ] The endpoint should create purchase orders for users and save them to the `db.json` file
-  - [ ] The endpoint should accept a request body that contains `shoppingCart` and `user` fields.
-    - [ ] The `shoppingCart` field should contain the user's order.
-      - [ ] This should be an array of objects.
-      - [ ] Each object in the array should have two fields:
->>>>>>> 7e2014cd41bb2b20dca70026d851cceedb34217e
         <!-- - [ ] The `item` field should store an object of the item being purchased -->
         - [x] The `itemId` field should store the `id` of the item being purchased
         - [x] The `quantity` field should store a number representing how many of that item the user is purchasing.

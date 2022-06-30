@@ -6,7 +6,6 @@ import Home from "../Home/Home"
 import ProductDetail from "../ProductDetail/ProductDetail";
 import NotFound from "../NotFound/NotFound"
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-
 import "./App.css"
 
 import { useState } from "react";
@@ -19,9 +18,9 @@ export default function App() {
   const [shoppingCart, setShoppingCartStat] = useState([]);
   const [checkoutForm, setCheckoutForm] = useState({ "name": "", "email": "" });
   const [checkoutFormStat, setCheckoutFormStat] = useState(null);
+  const [receipt, setReceipt] = useState(null);
   const [error, setErrorStat] = useState("");
   const URL = "https://codepath-store-api.herokuapp.com/store";
-
   useEffect(async () => {
     const { data } = await axios(URL)
       .catch(function (error) {
@@ -63,12 +62,12 @@ export default function App() {
     let inCart = false;
 
     temp = temp.map((item) => {
-      if (item.itemId === productId) {
+      if (item.quantity != undefined && item.itemId === productId) {
         inCart = true;
         return { ...item, quantity: item.quantity - 1 };
       }
       else {
-        return item;
+        return;
       }
 
     }
@@ -87,20 +86,22 @@ export default function App() {
     newCheckout[name] = value
     setCheckoutForm(newCheckout)
   };
-  async function handleOnSubmitCheckoutForm(checkoutForm, shoppingCart) {
+  function handleOnSubmitCheckoutForm(checkoutForm, shoppingCart) {
     console.log("handleOnSubmitCheckoutForm")
     if (shoppingCart.length == 0) {
       setErrorStat("Error: Empty Cart")
       setCheckoutFormStat(false)
     }
     else {
-      await axios.post(URL, { user: checkoutForm, shoppingCart: shoppingCart }
+      axios.post(URL, { user: checkoutForm, shoppingCart: shoppingCart }
       )
         .catch((err) => {
           setErrorStat(err.message)
           setCheckoutFormStat(false)
         })
         .then((value) => {
+          console.log(value)
+          setReceipt(value.data.purchase.receipt.lines);
           setCheckoutFormStat(true)
           setShoppingCartStat([])
           setCheckoutForm({ "name": "", "email": "" })
@@ -116,7 +117,7 @@ export default function App() {
         <main>
           {/* YOUR CODE HERE! */}
           <Navbar />
-          <Sidebar isOpen={isOpen} shoppingCart={shoppingCart} products={products} checkoutForm={checkoutForm} handleCheckoutForm={handleOnCheckoutFormChange} handleSubmitCheckoutForm={handleOnSubmitCheckoutForm} handleToggle={handleOnToggle} stat={checkoutFormStat} />
+          <Sidebar isOpen={isOpen} shoppingCart={shoppingCart} products={products} checkoutForm={checkoutForm} handleCheckoutForm={handleOnCheckoutFormChange} handleSubmitCheckoutForm={handleOnSubmitCheckoutForm} handleToggle={handleOnToggle} stat={checkoutFormStat} receiptVal={receipt} />
           <Routes>
             <Route path="/" element={<Home products={products} handleAddItemsToCart={handleAddItemsToCart} handleRemoveItemToCart={handleRemoveItemToCart} />} />
             <Route path="/products/:productId" element={<ProductDetail handleAddItemsToCart={handleAddItemsToCart} handleRemoveItemToCart={handleRemoveItemToCart} />} />

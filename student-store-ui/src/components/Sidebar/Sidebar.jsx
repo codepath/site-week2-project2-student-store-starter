@@ -2,7 +2,8 @@ import * as React from "react"
 import "./Sidebar.css"
 import ShoppingCart from "../ShoppingCart/ShoppingCart"
 import CheckoutForm from "../CheckoutForm/Checkout"
-export default function Sidebar({ isOpen, shoppingCart, products, checkoutForm, handleCheckoutForm, handleSubmitCheckoutForm, handleToggle, stat }) {
+import Receipt from "../Receipt/receipt"
+export default function Sidebar({ isOpen, shoppingCart, products, checkoutForm, handleCheckoutForm, handleSubmitCheckoutForm, handleToggle, stat, receiptVal }) {
 
   return (
     <section className="sidebar">
@@ -23,6 +24,7 @@ export default function Sidebar({ isOpen, shoppingCart, products, checkoutForm, 
             <span className="cart-icons icon button">
               <i className="material-icons md-48">fact_check</i>
             </span>
+            <Receipt receipt={receiptVal} />
           </div>
         </div>
         : <div className="close">
