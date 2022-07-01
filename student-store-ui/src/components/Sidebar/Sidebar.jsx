@@ -179,7 +179,7 @@ function Receipt({
       })}
        Before taxes, the subtotal was $
       {totalBeforeTax}.
-       After taxes and fees were applied, the total comes out to $
+       After a sales tax rate of 8.75% was applied, the total comes out to $
       {totalAfterTax}.
     </div>
   );

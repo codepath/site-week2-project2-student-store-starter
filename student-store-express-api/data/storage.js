@@ -1,21 +1,21 @@
-const path = require("path")
-const low = require("lowdb")
-const FileSync = require("lowdb/adapters/FileSync")
+const path = require('path');
+const low = require('lowdb');
+const FileSync = require('lowdb/adapters/FileSync');
 
 class Storage {
   constructor() {
-    this.path = path.resolve(__dirname, "db.json")
-    this.setup()
+    this.path = path.resolve(__dirname, 'db.json');
+    this.setup();
   }
 
   async setup() {
-    const adapter = new FileSync(this.path)
-    this.db = low(adapter)
-    this.db.defaults({ purchases: [], products: [] }).write()
+    const adapter = new FileSync(this.path);
+    this.db = low(adapter);
+    this.db.defaults({ purchases: [], products: [] }).write();
   }
 
   set(key, value) {
-    return this.db.set(key, value)
+    return this.db.set(key, value);
   }
 
   add(key, value) {
@@ -29,4 +29,4 @@ class Storage {
 
 module.exports = {
   storage: new Storage(),
-}
+};
