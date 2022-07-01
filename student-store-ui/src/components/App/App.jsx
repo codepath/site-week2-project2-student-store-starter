@@ -13,6 +13,7 @@ import NotFound from '../NotFound/NotFound';
 import ProductDetail from '../ProductDetail/ProductDetail';
 
 import PurchaseGrid from '../Purchases/PurchaseGrid';
+import PurchaseDetail from '../Purchases/PurchaseDetail';
 
 const URL = 'http://localhost:3001/store';
 const URL_PURCHASES = 'http://localhost:3001/purchases';
@@ -184,6 +185,12 @@ export default function App() {
                       updatePurchases={updatePurchases}
                     />
 )}
+                />
+                <Route
+                  path="/purchases/:purchaseId"
+                  element={(
+                    <PurchaseDetail products={products} />
+                    )}
                 />
                 <Route path="*" element={<NotFound />} />
               </Routes>

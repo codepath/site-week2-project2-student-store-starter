@@ -1,5 +1,6 @@
 import * as React from 'react';
 import './Purchases.css';
+import { Link } from 'react-router-dom';
 
 export default function PurchaseCard({
   purchase,
@@ -12,11 +13,14 @@ export default function PurchaseCard({
 
       <div className="card-content">
 
-        <div className="purchase-id">
-          Order ID:
-          {' '}
-          {purchase.id}
-        </div>
+        <Link to={`/purchases/${purchase.id}`}>
+
+          <div className="purchase-id">
+            Order ID:
+            {' '}
+            {purchase.id}
+          </div>
+        </Link>
 
         <div className="purchase-name">
           Name:

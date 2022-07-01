@@ -159,6 +159,24 @@
       "total": "1.63",
       "createdAt": "2022-07-01T19:58:06.515Z",
       "receipt": ""
+    },
+    {
+      "id": 2,
+      "name": "Jerry",
+      "email": "Jerry@fb.com",
+      "order": [
+        {
+          "productId": 1,
+          "quantity": 1
+        },
+        {
+          "productId": 2,
+          "quantity": 1
+        }
+      ],
+      "total": "2.71",
+      "createdAt": "2022-07-01T21:59:23.701Z",
+      "receipt": ""
     }
   ]
 }

@@ -85,7 +85,7 @@ export default function Home({
         Contact us: benjm@fb.com
       </div>
       <div className="footer">
-        Footer
+        Have a good day!
       </div>
     </div>
 
