@@ -2,6 +2,7 @@
     background-color: aquamarine;
     display: flex;
     justify-content: start;
+    padding: 1px;
 }
 
 .logo{

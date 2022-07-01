@@ -4,7 +4,7 @@
 
 Selling merchandise in the modern era requires digital solutions. For this project, you'll be tasked with designing and constructing an online student store for the College of Codepath. The application entails a frontend user interface for potential customers to peruse the goods, and a backend API to handle data management. The API will be built with Node and Express and the UI will be built with React.
 
-![Gif demo of store](https://github.com/ben-martinez/tdd-student-store-starter/blob/main/student-store-ui/images/demo_store.gif?raw=true  "Store Demo")
+![Gif demo of store](https://github.com/ben-martinez/tdd-student-store-starter/blob/main/student-store-ui/images/demo_store_finished.gif?raw=true  "Store Demo")
 
 ### Application Features
 
@@ -24,7 +24,7 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 #### Stretch Features
 
 - [ ] User can click in the top navigation bar to scroll to the relevant section.
-- [ ] User sees a "not found" display when searching for a nonexistent product.
+- [x] User sees a "not found" display when searching for a nonexistent product.
 - [ ] Create an endpoint for fetching all orders in the database, and an endpoint for serving an individual order based on its id.
 - [ ] Build a page in the UI that displays the list of all past orders and lets the user click on any individual order to take them to a more detailed page of the transaction.
 - [ ] Allow users to use an input to filter orders by the email of the person who placed the order.
@@ -285,20 +285,22 @@ The following specifications were met on the Express backend and the React front
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Yes the topics in the labs were helpful since they were fundamental to react specifically event handling and using hooks. 
+Yes the topics in the labs were helpful since they were fundamental to react specifically event handling and using hooks. I felt unprepared at first to handle the backend store model and general API but the example in lab 2 helped with this.
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Add your response here
+If I had more time I would do the stretch features, clean up the UI with a CSS framework. I would want to make the app scalable as well by adding more filters and sorting features of the products. I would also like to add user authentication so that we don't have to ask for email every order. I would also have liked to have a place to feature popular products.
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+I think building the API went well once my understanding of it clicked. What didn't go well was the CSS and UI design. Also for submitting the order I could make it less complicated than it is with more time.
 
 ### Open-source libraries used
 
-- I started to uses bulma for my CSS framework
+- I started to use bulma for my CSS framework.
 
 ### Shout out
 
-Shout out to Josh and Chris for talking through some ideas with me!
+Shout out to Josh, Chris, and Isa for talking through some ideas with me and helping me with a few bugs!
+
+Thank you to Phineas and Yilika for a great class and for always being attentive!

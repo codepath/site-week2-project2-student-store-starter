@@ -8,7 +8,7 @@ export default function Navbar() {
     <nav className="navbar">
       <Logo />
       <Link to="/">Home</Link>
-      <Link to="/product/101">Product example</Link>
+      <Link to="/product/101"> Page not found example</Link>
     </nav>
 
   );
