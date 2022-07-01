@@ -12,7 +12,10 @@ import './App.css';
 import NotFound from '../NotFound/NotFound';
 import ProductDetail from '../ProductDetail/ProductDetail';
 
+import PurchaseGrid from '../Purchases/PurchaseGrid';
+
 const URL = 'http://localhost:3001/store';
+const URL_PURCHASES = 'http://localhost:3001/purchases';
 /* example API request give us
 {"id":1,
 "name":"Rice Krispies",
@@ -33,6 +36,7 @@ export default function App() {
   const [checkoutFormIsSubmitted, updateCheckoutFormIsSubmitted] = useState(false);
   const [lastCheckedOutUser, updateLastCheckedOutUser] = useState({ email: '', name: '' });
   const [lastShoppingCart, updateLastShoppingCart] = useState([]);
+  const [purchases, updatePurchases] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -50,6 +54,7 @@ export default function App() {
         });
       updateIsFetching(false);
     }
+
     fetchData();
   }, [name]);
 
@@ -126,7 +131,6 @@ export default function App() {
     <div className="app">
       <BrowserRouter>
         <main>
-          {/* YOUR CODE HERE! */}
           <div className="containers">
             <Sidebar
               isOpen={isOpen}
@@ -167,6 +171,17 @@ export default function App() {
                       handleRemoveItemFromCart={handleRemoveItemFromCart}
                       shoppingCart={shoppingCart}
                       findQuantity={findQuantity}
+                    />
+)}
+                />
+                <Route
+                  path="/purchases/"
+                  element={(
+                    <PurchaseGrid
+                      purchases={purchases}
+                      isFetching={isFetching}
+                      error={error}
+                      updatePurchases={updatePurchases}
                     />
 )}
                 />

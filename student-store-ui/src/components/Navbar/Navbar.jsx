@@ -9,6 +9,7 @@ export default function Navbar() {
       <Logo />
       <Link to="/">Home</Link>
       <Link to="/product/101"> Page not found example</Link>
+      <Link to="/purchases/">See all purchase orders</Link>
     </nav>
 
   );
