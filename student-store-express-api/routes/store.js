@@ -17,10 +17,7 @@ router.get("/store", async (req, res, next) => {
 router.get("/store/:productId", async (req, res, next) => {
     try {
         const productId = (req.params.productId);
-        //console.log('productId: ', typeof productId);
-        
         const product = Store.fetchProductById(productId);
-        //console.log("reached here")
         res.status(200).json({ "product": product });
     } catch (error) {
         next(error);
@@ -43,6 +40,28 @@ router.post("/store", async (req, res, next) => {
 
         res.status(201).json({ "purchase": newPurchase})
 
+    } catch (error) {
+        next(error);
+    }
+})
+
+
+// get all purchases
+router.get("/purchases", async (req, res, next) => {
+    try {
+        const purchases = Store.listPurchases();
+        res.status(200).json({ "purchases": purchases });
+    } catch (error) {
+        next(error);
+    }
+})
+
+// get a single purchase
+router.get("/purchases/:purchaseId", async (req, res, next) => {
+    try {
+        const purchaseId = (req.params.productId);
+        const purchase = Store.fetchProductById(purchaseId);
+        res.status(200).json({ "purchase": purchase });
     } catch (error) {
         next(error);
     }

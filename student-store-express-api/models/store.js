@@ -8,21 +8,39 @@ class Store {
     }
 
     // GET REQUESTS
+
+    // products requests
     static listProducts(){
         // list all products
         const products = storage.get("products").value();
         return products;
     }
-    static  fetchProductById(productId){
+    static fetchProductById(productId){
         // fetch a Product
         const product = storage
             .get("products")
             .find({ id: Number(productId)})
             .value()
         
-        return product
+        if(product) return product;
 
         throw new NotFoundError("No product found with this ID.")
+    }
+    // purchases requests
+    static listPurchases() {
+        // list all purchases
+        const purchases = storage.get("purchases").value();
+        return purchases;
+    }
+    static fetchPurchaseById(purchaseId){
+        // fetch a Purchase
+        const purchase = storage
+            .get("purchases")
+            .find({ id: Number(purchaseId)})
+            .value()
+        if(purchase) return purchase;
+
+        throw new NotFoundError("No purchase found with this ID.")
     }
 
     
