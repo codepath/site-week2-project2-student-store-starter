@@ -31,13 +31,13 @@ UI Stretch Features
 - [x] User can click the '+' button on a product cart to increment that product in the shopping cart.
 - [x] User can click the '-' button on a product cart to increment that product in the shopping cart.
 - [x] Shopping cart displays a table of products, quantities, subtotal, tax, and total.
-- [ ] User can check out, and can view receipt upon completion.
+- [x] User can check out, and can view receipt upon completion.
 
 #### Stretch Features
 
 - [x] User can click in the top navigation bar to scroll to the relevant section.
 - [x] User sees a "not found" display when searching for a nonexistent product.
-- [ ] Create an endpoint for fetching all orders in the database, and an endpoint for serving an individual order based on its id.
+- [x] Create an endpoint for fetching all orders in the database, and an endpoint for serving an individual order based on its id.
 - [ ] Build a page in the UI that displays the list of all past orders and lets the user click on any individual order to take them to a more detailed page of the transaction.
 - [ ] Allow users to use an input to filter orders by the email of the person who placed the order.
 
