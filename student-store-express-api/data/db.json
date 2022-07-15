@@ -145,5 +145,68 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "id": 1,
+      "name": "Hayley",
+      "email": "hay@me.com",
+      "order": [
+        {
+          "id": 12,
+          "quantity": 1
+        },
+        {
+          "id": 16,
+          "quantity": 1
+        },
+        {
+          "id": 3,
+          "quantity": 5
+        }
+      ],
+      "total": 1427.31,
+      "createdAt": "2022-07-15T22:58:22.491Z",
+      "receipt": [
+        "~ Purchase Details ~",
+        "Name: Hayley ~ Email: hay@me.com",
+        "Apple Watch ~ X1",
+        "Smart Glasses ~ X1",
+        "Cinnamon Rolls ~ X5",
+        "Subtotal: $1414.93",
+        "Tax amount: $12.38",
+        "~ Total: $1427.31 ~"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Hayley",
+      "email": "hay@me.com",
+      "order": [
+        {
+          "id": 10,
+          "quantity": 2
+        },
+        {
+          "id": 16,
+          "quantity": 1
+        },
+        {
+          "id": 3,
+          "quantity": 5
+        }
+      ],
+      "total": 1094.41,
+      "createdAt": "2022-07-15T22:59:10.155Z",
+      "receipt": [
+        "~ Purchase Details ~",
+        "Name: Hayley ~ Email: hay@me.com",
+        "Alpaca Wool Scarf ~ X2",
+        "Smart Glasses ~ X1",
+        "Cinnamon Rolls ~ X5",
+        "Subtotal: $1084.92",
+        "Tax amount: $9.49",
+        "~ Total: $1094.41 ~"
+      ]
+    }
+  ]
 }
