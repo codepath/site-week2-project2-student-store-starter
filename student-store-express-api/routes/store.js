@@ -28,7 +28,7 @@ router.get("/purchases", async (req, res, next) => {
 
 
 //  GETS a single product
-router.get("/store/:productId", async(req, res, next) => {
+router.get("/store/:productId", async (req, res, next) => {
     try {
         const productId = req.params.productId
         const product = await Store.fetchProductById(productId)
@@ -51,6 +51,7 @@ router.get("/purchases/:purchaseId", async (req, res, next) => {
             throw new NotFoundError("Purchase not found.")
         }
         res.status(200).json({purchase})
+
     } catch(err) {
         next(err)
     }
