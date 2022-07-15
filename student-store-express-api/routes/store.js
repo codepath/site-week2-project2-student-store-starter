@@ -8,8 +8,8 @@ const {NotFoundError, BadRequestError} = require("../utils/errors")
 //  GETS array of all products
 router.get("/store", async(req, res, next) => {
     try {
-        const productList = await Store.listProducts()
-        res.status(200).json({productList})
+        const products = await Store.listProducts()
+        res.status(200).json({products})
     } catch(err) {
       next(err)
     }
@@ -19,8 +19,8 @@ router.get("/store", async(req, res, next) => {
 //  GETS array of all purchases
 router.get("/purchases", async (req, res, next) => {
     try {
-        const purchaseList = await Store.listPurchases()
-        res.status(200).json({purchaseList})
+        const purchases = await Store.listPurchases()
+        res.status(200).json({purchases})
     } catch(err) {
         next(err)
     }
