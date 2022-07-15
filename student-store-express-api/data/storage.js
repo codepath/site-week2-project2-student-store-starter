@@ -8,10 +8,11 @@ class Storage {
     this.setup()
   }
 
+
   async setup() {
     const adapter = new FileSync(this.path)
     this.db = low(adapter)
-    this.db.defaults({ purchases: [], products: [] }).write()
+    this.db.defaults({purchases: [], products: []}).write()
   }
 
   set(key, value) {
@@ -23,6 +24,7 @@ class Storage {
   }
 }
 
+
 module.exports = {
-  storage: new Storage(),
+  storage: new Storage()
 }
