@@ -1,0 +1,11 @@
+.navbar {
+    width: 100%;
+    max-width: 100vw;
+    background: var(--dark-blue);
+    color: var(--pure-white);
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 var(--side-padding);
+}

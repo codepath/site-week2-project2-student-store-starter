@@ -5,4 +5,26 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-left: 90px;
+}
+
+.product-grid {
+  width: 100%;
+  max-width: 100vw;
+  margin: 40px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+.product{
+  height: 350px;
+  width: 250px;
+  background: var(--pure-white);
+  display: flex;
+  flex-direction: column;
+  border: solid 1px var(--border-color);
 }
