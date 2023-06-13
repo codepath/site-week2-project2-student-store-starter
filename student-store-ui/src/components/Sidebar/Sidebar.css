@@ -5,24 +5,17 @@
     height: 100%;
     width: 15vw;
     transition: left 0.3s ease-in-out;
-    background-color: #ACAD94;
+    background-color: #BC6C25;
   }
   .sidebar-toggle {
     position: absolute;
-    top: -5%;
+    top: 0%;
     right: -60px;
     height: 60px;
     width: 60px;
     z-index: 1;
-  }
-  .content {
-    position: absolute;
-    top: 60px;
-    left: 0;
-    right: 0;
-    height: 100%;
-    transition: left 0.3s ease-in-out;
-    background-color: #ACAD94;
+    background: none;
+    border: none;
   }
   .sidebar.open {
     left: 0;

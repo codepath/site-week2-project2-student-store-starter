@@ -5,7 +5,7 @@
 }
 
 .hero .herocontent {
-  background: lightseagreen;
+  background: #DDA15E;
   max-width: var(--content-width);
   width: 100%;
   margin: 0 auto;

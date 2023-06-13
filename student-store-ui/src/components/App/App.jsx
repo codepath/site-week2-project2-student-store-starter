@@ -13,23 +13,24 @@ export default function App() {
   const handleSidebarToggle = () => {
     setSidebarOpen(!sidebarOpen);
   };
-
+  const [products, setProducts] = React.useState();
 
   const url = 'https://codepath-store-api.herokuapp.com/store'
-  axios.get(url)
-  .then((products) => {
-    products.generateCards()
-  })
+  React.useEffect(() => {
+    axios.get(url).then((response) => {
+      setProducts(response.data.products)
+  });
+}, []);
+  
 
   return (
     <div className="app">
       <BrowserRouter>
         <main>
         <Sidebar isOpen={sidebarOpen} toggleSidebar={handleSidebarToggle} />
-          {/* <Navbar /> */}
-          {/* <Home /> */}
+          <Navbar />
           <Hero />
-          <ProductGrid />
+          <Home products={products}/>
         </main>
       </BrowserRouter>
     </div>
