@@ -5,8 +5,8 @@ import Sidebar from "../Sidebar/Sidebar";
 import Home from "../Home/Home";
 import "./App.css";
 import axios from "axios";
-import ProductGrid from "../ProductGrid/ProductGrid";
 import Hero from "../Hero/Hero";
+import About from "../About/About";
 
 export default function App() {
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
@@ -31,6 +31,7 @@ export default function App() {
           <Navbar />
           <Hero />
           <Home products={products}/>
+          <About />
         </main>
       </BrowserRouter>
     </div>
