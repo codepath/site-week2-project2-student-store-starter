@@ -58,40 +58,63 @@ export default function App() {
 
           <Navbar />
           <Sidebar />
-             {/* <SidebarHeader> */}
-                {/* <div className="closeSidebar"onClick={cartClick} /> */}
-                  {/* {cartClick ? (<FiArrowRightCircle/>):(<FiArrowLefttCircle/>)} */}
-          {/* change to google versions  */}
-              
-              {/* </SidebarHeader> */}
-              {/* <SidebarContent> */}
-                {/* <CartItem active={true} icon= {}>
-                  Home
-
-                </CartItem> */}
-          {/* </SidebarContent> */}
-            
           
       <div className = "hero">
         <div className="content">
-        <div className = "intro">
-          <h1> Welcome!!</h1>
-          <h1> Find Your Merch!!</h1>
-          <p> We have all kinds of goodies. Click on any of the items to start filling up your shopping cart. Checkout whenever you're ready.</p>
+          <div className = "intro">
+            <h1> Welcome!!</h1>
+            <h1> Find Your Merch!!</h1>
+            <p> We have all kinds of goodies. Click on any of the items to start filling up your shopping cart. Checkout whenever you're ready.</p>
+          </div>
+          <div className="media">
+            <img src={"https://codepath-student-store-demo.surge.sh/assets/student_store_icon.18e5d61a.svg"} alt="hero" className="hero_img"></img>
+          </div>
         </div>
-        <div className="media">
-          <img src={"https://codepath-student-store-demo.surge.sh/assets/student_store_icon.18e5d61a.svg"} alt="hero" className="hero_img"></img>
-
-        </div>
-
-        
       </div>
 
 
-      {/* <nav className="sub-navbar">Navigation</nav> */}
+      <nav className="sub-navbar">
+        <div className="content">
+          <div className="row">
+            <div className="search-bar">
+              <input type="text" name="search" placeholder="Search" value=""></input>
+                <i className="material-icons">search</i>
+            </div>
+            <div className="links">
+              <span className="help">
+                <i className="material-icons">help</i>
+              Help</span>
+              <div className="cart">
+                <a href="/">My Cart<i className="material-icons">shopping_cart</i></a>
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="hamburger-menu">
+              <i className="material-icons">menu</i>
+            </div>
+            <ul className="category-menu open">
+              <li className="is-active">
+                <button>All Categories</button>
+              </li>
+              <li className="">
+                <button>Clothing</button>
+              </li>
+              <li className="">
+                <button>Food</button>
+              </li>
+              <li className="">
+                <button>Accessories</button>
+              </li>
+              <li className="">
+                <button>Tech</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
 
-      </div>
 
           <Home products = {products}/>
           {/* {products?.map((product, index) => <p key={index}> {product.name}</p>)} */}

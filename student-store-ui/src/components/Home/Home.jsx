@@ -3,13 +3,15 @@ import "./Home.css"
 
 export default function Home({products}) {
   // console.log(products);
-  const num_in_cart=3;
+  const num_in_cart=0;
   return (
     <div className="home">
       {/* <p>Home</p> */}
       <div id="Buy" className = "product-grid">
         <div className="content">
+        
           <h3>Best Selling Products</h3>
+
           <div className="grid">
             {products?.map((product, index) => {
             // have to put additional return bc => has implicit return
