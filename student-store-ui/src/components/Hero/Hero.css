@@ -1,0 +1,36 @@
+.Hero {
+
+
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(7, 135, 88);
+    color: white;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    margin-right: 140px;
+    margin-left: 140px;
+    
+}
+
+h2{
+
+margin: 0;
+/* padding-left: 50px; */
+text-align: left;
+margin-left: 60px;
+
+}
+
+h6{
+
+    margin: 0;
+/* padding-left: 50px; */
+    text-align: left;
+    margin-left: 60px;
+    font-size: 16pt;
+
+
+
+}

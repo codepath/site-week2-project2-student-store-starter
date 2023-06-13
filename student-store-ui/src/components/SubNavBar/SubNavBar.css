@@ -1,0 +1,33 @@
+/* i {
+    height: 40px;
+    width: 40px;
+    background: green;
+    color: #fff;
+    fill: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.search-bar{
+
+    display: flex;
+    
+}
+
+.SubNavBar .content {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+}
+
+.SubNavBar .row{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}

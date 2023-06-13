@@ -5,4 +5,43 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  margin-top: 0;
 }
+
+.product-grid {
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: 140px;
+  margin-left: 140px;
+  justify-content: space-between;
+  
+
+
+}
+
+.home-title{
+
+  margin-right: 140px;
+  margin-left: 140px;
+
+  
+}
+
+.product-card{
+
+background-color: gainsboro;
+margin: 10px;
+/* padding: 30px; */
+width: 300px;
+border-style: solid;
+border-color: gray;
+
+}
+
+.product-card img {
+  width: 100%;
+}
+
+
