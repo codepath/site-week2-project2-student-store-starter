@@ -1,0 +1,22 @@
+.links {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    gap: 1rem;
+    text-decoration: none;
+    color: var(--text-color-light);
+}
+.logo {
+
+}
+.socials{
+
+}
+.navbar-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.navbar{
+    background-color: var(--p-color);
+}
