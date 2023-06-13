@@ -1,5 +1,6 @@
 
-#about {
+#contact {
+    padding-top: 30px;
     width: 100%;
     max-width: 100vw;
     min-height: 350px;
@@ -11,23 +12,36 @@
     padding: 20px;
   }
   
-  .about-info {
-    display: flex;
-    flex-direction: row;
-    height: 300px;
+  .contact-info {
     border-style: solid;
     border-color: #e4ddac;
     border-width: 25%;
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    align-items: center;
+  }
+
+  .info{
+    padding: 28px 36px;
+    color: var(--pure-white);
+    list-style-type: none;
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
   }
   
-  .about-text{
+  .contact-text{
     align-items: flex-end;
     padding: 28px 36px;
     font-size: 18px;
     font-weight: 500;
   }
   
-  .about-img {
+  .contact-img {
     flex: 1;
     display: flex;
     flex-direction: column;
