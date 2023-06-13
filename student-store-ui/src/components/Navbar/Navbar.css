@@ -1,0 +1,17 @@
+.navbar {
+    width: 100%;
+    max-width: 100vw;
+    background-color: teal;
+    height: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-open-button {
+    font-size: 30px;
+}
+
+.navbar-link-button {
+    font-size: 30px;
+}

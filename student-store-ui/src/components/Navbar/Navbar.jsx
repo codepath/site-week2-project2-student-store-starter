@@ -4,7 +4,12 @@ import "./Navbar.css"
 export default function Navbar() {
   return (
     <nav className="navbar">
-      <p>Navbar</p>
+      <div className ="navbar-link-button">
+        <button>Home</button>
+        <button>About Us</button>
+        <button>Contact Us</button>
+        <button>Buy Now</button>
+      </div>
     </nav>
   )
 }
