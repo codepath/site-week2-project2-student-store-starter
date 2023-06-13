@@ -5,11 +5,11 @@ import { Bars3Icon } from "@heroicons/react/24/outline"
 export default function Sidebar(props) {
   const sidebarClass = props.isOpen ? "sidebar open" : "sidebar"
   return (
-      <div className={sidebarClass}>
+      <section className={sidebarClass}>
       <div> Open sidebar </div>
       <button onClick={props.toggleSidebar} className="sidebar-toggle">
         <Bars3Icon />
       </button>
-    </div>
+    </section>
   )
 }

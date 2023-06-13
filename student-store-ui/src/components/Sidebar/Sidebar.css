@@ -1,41 +1,3 @@
-/* .sidebar{
-    position: absolute;
-    top: 60px;
-    left: -15vw;
-    height: 100%;
-    width: 15vw;
-    transition: left 0.3s ease-in-out;
-    background-color: #ACAD94;
-}
-
-.toggle-sidebar {
-    position: absolute;
-    top: 20%;
-    right: -60px;
-    height: 60px;
-    width: 60px;
-    z-index: 1;
-  }
-
-.sb.open {
-    left: 0;
-  }
-
-.content {
-position: absolute;
-top: 60px;
-left: 0;
-right: 0;
-height: 100%;
-transition: left 0.3s ease-in-out;
-background-color: #ACAD94;
-}
-
-.content.open {
-    left: 15vw;
-  }
-
-   */
   .sidebar {
     position: absolute;
     top: 60px;
@@ -47,7 +9,7 @@ background-color: #ACAD94;
   }
   .sidebar-toggle {
     position: absolute;
-    top: 20%;
+    top: -5%;
     right: -60px;
     height: 60px;
     width: 60px;

@@ -4,7 +4,9 @@ import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 import Home from "../Home/Home";
 import "./App.css";
-// import axios from "axios";
+import axios from "axios";
+import ProductGrid from "../ProductGrid/ProductGrid";
+import Hero from "../Hero/Hero";
 
 export default function App() {
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
@@ -12,15 +14,12 @@ export default function App() {
     setSidebarOpen(!sidebarOpen);
   };
 
-//   // const url = 'https://codepath-store-api.herokuapp.com/store'
 
-//   // const [products, setProducts] = React.useState()
-//   // React.useEffect(() => {
-//   //   axios.get(url).then((response) => {
-//   //     console.log(response.data.products)
-//   //     setProducts(response.data.products)
-//   //   })
-//   // }, []);
+  const url = 'https://codepath-store-api.herokuapp.com/store'
+  axios.get(url)
+  .then((products) => {
+    products.generateCards()
+  })
 
   return (
     <div className="app">
@@ -29,6 +28,8 @@ export default function App() {
         <Sidebar isOpen={sidebarOpen} toggleSidebar={handleSidebarToggle} />
           {/* <Navbar /> */}
           {/* <Home /> */}
+          <Hero />
+          <ProductGrid />
         </main>
       </BrowserRouter>
     </div>
