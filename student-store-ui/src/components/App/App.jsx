@@ -34,15 +34,15 @@ export default function App() {
 
   // useEffect(setup, dependencies)
   // if you pass in an empty dependency aray, it will run only once
-  // useEffect(() => {
-  //   axios.get(url).then((response) =>{
-  //     setProducts(response.data.products)
-  //     // console.log(response.data.products) // getting the food items
-  //     // console.log(products)
-  //   })
+  useEffect(() => {
+    axios.get(url).then((response) =>{
+      setProducts(response.data.products)
+      // console.log(response.data.products) // getting the food items
+      // console.log(products)
+    })
 
-  // }, []);
-  console.log(products);
+  }, []);
+  // console.log(products);
 
 
 
@@ -52,7 +52,6 @@ export default function App() {
         <main>
           
           {/* YOUR CODE HERE! */}
-          {products?.map((product, index) => <h1 key={index}> {product.name}</h1>)}
          
           {/* ? to see if we actually have it  */}
           {/* map returns whole new array with those changes, unlike for loop */}
@@ -89,12 +88,14 @@ export default function App() {
       </div>
 
 
-      <nav className="sub-navbar">Navigation</nav>
+      {/* <nav className="sub-navbar">Navigation</nav> */}
 
 
       </div>
 
-          <Home />
+          <Home products = {products}/>
+          {/* {products?.map((product, index) => <p key={index}> {product.name}</p>)} */}
+
         </main>
       </BrowserRouter>
     </div>

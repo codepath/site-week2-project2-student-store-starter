@@ -15,7 +15,7 @@ export default function Navbar() {
           <img src={"https://www.transparentpng.com/download/facebook-logo-png/facebook-logo-free-download-transparent-3.png"} alt="facebook logo" className="facebook-logo-img"></img>
       </section>
 
-      <ul class="links">
+      <ul className="links">
         <li><a href="/">Home</a></li>
         <li><a href="/#About">About Us</a></li>
         <li><a href="/#Contact">Contact Us</a></li>

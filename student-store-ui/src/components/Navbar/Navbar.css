@@ -7,16 +7,21 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0 var(--side-padding);
+    padding: 0 40px;
 }
 
+.navbar a{
+    color: #fff;
+    font-weight: 500;
+}
 .navbar .content {
-    max-width: var(--content-width);
+    max-width: 1100px;
     width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
     align-items: center;
+    /* color: #fff; */
 }
 
 .navbar .content .company-logo {

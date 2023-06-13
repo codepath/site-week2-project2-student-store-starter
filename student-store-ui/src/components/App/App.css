@@ -1,3 +1,11 @@
+body {
+  margin: 0;
+  font-family: Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #f7f7f7;
+}
+
 .app {
   width: 100%;
   max-width: 100vw;
@@ -19,7 +27,7 @@
 
 .hero .content{
   background: #00c385;
-  max-width: var(--content-width);
+  max-width: 1100px;
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -31,13 +39,26 @@
 }
 
 .hero .content .intro h1 {
-  color: var(--pure-white);
+  margin: 0;
+  padding: 0;
+  color: white;
   font-size: 60px;
   font-weight: 600;
+  /* padding: 0 40px; */
+}
+
+.hero .content .intro {
+  flex: 1;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 350px;
 }
 
 .hero .content .intro p {
-  color: var(--pure-white);
+  color: white;
   font-size: 20px;
   margin-top: 10px;
   font-weight: 400;
@@ -53,4 +74,9 @@
   width: 120px;
   height: 120px;
   margin: 0 105px 0 50px;
+}
+.hero {
+  width: 100%;
+  max-width: 100vw;
+  height: 350px;
 }
