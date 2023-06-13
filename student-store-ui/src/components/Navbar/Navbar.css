@@ -1,0 +1,51 @@
+.navbar{
+    background-color: var(--dark-blue);
+    display: flex;
+    align-items: center;    
+    width: 100%;
+    max-width: 100vw;
+}
+
+
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    max-width: var(--content-width);
+    width: 100%;
+}
+
+.logo{
+    margin-right: 100px;
+    margin-left: 50px;
+    width: 100px;
+}
+
+.logo img{
+    height: 6vh;
+    margin-left: 3vh;
+}
+
+.socials{
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+    gap: 1vh;
+    height: 10vh;
+}
+
+.socials img{
+    height: 2vh;
+}
+
+.links{
+    display: flex;
+    gap: 3vh;
+    margin-left: auto;
+}
+
+.links a{
+    color: white;
+    font-weight: 500;
+}
