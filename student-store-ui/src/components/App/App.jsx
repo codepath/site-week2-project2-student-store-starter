@@ -9,6 +9,7 @@ import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
 import "./App.css"
+import Hero from "../Hero/Hero"
 
 export default function App() {
 
@@ -33,6 +34,7 @@ export default function App() {
         <main>
           {/* YOUR CODE HERE! */}
           <Navbar />
+            <Hero/>
             <Sidebar isActive={sidebarState} handleClick={() => setSidebar(!sidebarState)}/>
           <Home products={products}/>
         </main>

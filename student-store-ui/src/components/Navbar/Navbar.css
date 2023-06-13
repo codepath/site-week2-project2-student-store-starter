@@ -1,11 +1,32 @@
 .navbar {
     width: 100%;
     max-width: 100vw;
-    background: var(--dark-blue);
-    color: var(--pure-white);
+    background: rgb(16, 134, 134);
     height: 70px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0 var(--side-padding);
+}
+.navbar-logo{
+    width: 100px;
+    margin-right: 50px;
+    margin-left: 60px;
+}
+.content{
+    max-width: var(--content-width);
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.links{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    list-style-type: none;
+    margin-left: auto;
+    flex: 1;
+    max-width: 650px;
 }

@@ -5,22 +5,31 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-left: 90px;
 }
 
 .product-grid {
   width: 100%;
   max-width: 100vw;
   margin: 40px 0;
+}
+
+.product-grid .content {
+  max-width: var(--content-width);
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   gap: 20px;
 }
 
+.product-grid .content .grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
 
-.product{
+.product-grid .product {
   height: 350px;
   width: 250px;
   background: var(--pure-white);
