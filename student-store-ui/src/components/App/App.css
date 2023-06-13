@@ -1,16 +1,30 @@
 .app {
-  width: 100%;
-  max-width: 100vw;
-  height: 100%;
-  min-height: 100vh;
   display: flex;
   flex-direction: row;
-}
-.app main {
   width: 100%;
   max-width: 100vw;
   height: 100%;
   min-height: 100vh;
+}
+.app main {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 100vw;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.page {
+  margin-left: 56px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background: #00c385;
+  color: #fff;
+  width: 100%;
+  height: 350px;
 }
