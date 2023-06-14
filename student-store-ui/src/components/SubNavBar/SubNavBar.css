@@ -1,33 +1,143 @@
-/* i {
-    height: 40px;
-    width: 40px;
-    background: green;
-    color: #fff;
-    fill: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
 
 .search-bar{
 
     display: flex;
+    align-items: center;
+   
     
 }
 
+#search-input {
+    display: flex;
+    padding-right: 250px;
+
+}
+
+.search-bar .material-icons {
+
+    background-color: green;
+    color: white;
+    padding: 7px;
+}
 .SubNavBar .content {
 
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    flex-wrap: nowrap;
+    margin-left: 140px;
+    margin-right: 140px;
+    justify-content: space-between;
+
+
     
 
 }
 
-.SubNavBar .row{
+.SubNavBar .content .row{
 
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    margin-top: 20px;
+    
     
 }
+
+.SubNavBar .content .search-bar input {
+    height: 40px;
+    padding: 0 15px;
+    border-radius: 8px 0 0 8px;
+    border: solid 1px #e4e4e4;
+    flex: 1;
+    font-size: 16px;
+}
+
+.SubNavBar a{
+    text-decoration: none;
+    color: black;
+    margin-left: 10px;
+    margin-right: 10px;
+
+
+
+}
+
+.SubNavBar ul {
+
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.SubNavBar .icons {
+    display: flex;
+    align-items: center;
+    
+  }
+
+  .SubNavBar .icons .cart {
+    display: flex;
+    align-items: center;
+    background-color: green;
+    padding: 7px;
+    padding-right: 12px;
+    padding-left: 12px;
+    text-align: center;
+    margin-left: 10px;
+  }
+
+  .SubNavBar .icons .cart a {
+    color: white;
+    margin-left: 5px;
+    
+
+  }
+  
+  .SubNavBar .icons .help {
+    display: flex;
+    align-items: center;
+    margin-right: 50px; 
+  }
+
+.SubNavBar .icons .help .material-icons{
+
+    color: gray;
+    margin-right: 5px;
+
+}
+
+.menu-open button{
+
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+    margin-right: 70px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+
+	
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+

@@ -10,7 +10,12 @@ export default function SubNavBar() {
 
                     <div className="search-bar">
 
-                        <input type="text" name="search" placeholder="Search" value="" />
+                        <form id="search-form">
+                            <label htmlFor="search"></label>
+                            <input id="search-input" type="text" name="search" placeholder="Search"/>
+                           
+                            
+                        </form>
                         <i className="material-icons">search</i>
                     </div>
 
@@ -24,9 +29,9 @@ export default function SubNavBar() {
                 </div>
                 <div className="row">
                     <div className="menu">
-                    <i className="material-icons">menu</i>
+                        <i className="material-icons">menu</i>
                     </div>
-                    <ul class = "menu open">
+                    <ul className="menu-open">
                         <li>
 
                             <button>All Categories</button>

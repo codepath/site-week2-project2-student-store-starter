@@ -26,7 +26,7 @@ margin: 30px;
 
 }
 
-a{
+.navbar a{
     text-decoration: none;
     color: black;
     margin-left: 10px;
@@ -36,19 +36,21 @@ a{
 
 }
 
-ul {
+.navbar ul {
 
     list-style-type: none;
     display: flex;
 }
 
-.content{
+.navbar .content{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     list-style-type: none;
-    margin-left: auto;
     flex: 1;
+    justify-content: space-between;
+    margin-left: 140px;
+    margin-right: 140px;
     
 }   

@@ -14,7 +14,7 @@
     
 }
 
-h2{
+.Hero h2{
 
 margin: 0;
 /* padding-left: 50px; */
@@ -23,7 +23,7 @@ margin-left: 60px;
 
 }
 
-h6{
+.Hero h6{
 
     margin: 0;
 /* padding-left: 50px; */

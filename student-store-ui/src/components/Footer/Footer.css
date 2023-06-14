@@ -1,0 +1,24 @@
+.footer-content{
+
+margin-right: 140px;
+margin-left: 140px;
+margin-bottom: 10px;
+}
+
+.Footer .columns-grid{
+
+
+    display: flex;
+    flex-direction: row;
+    border-style: solid;
+    border-color: gray;
+    padding: 20px;
+    justify-content: space-around;
+}
+
+.Footer ul {
+
+    list-style-type: none;
+    padding: 0;
+
+}
