@@ -12,7 +12,7 @@ import "./App.css"
 
 export default function App() {
   //Url for API
-  const url = "https:://codepath-store-api.herokuapp.com/store"
+  const url = "https://codepath-store-api.herokuapp.com/store"
   //useState
   const[products, setProducts] = useState();
   useEffect(() => {
