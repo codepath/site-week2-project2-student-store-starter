@@ -1,0 +1,24 @@
+:root{
+    --dark-Cp: #2c4047;
+    --light-cp: #00c98d;
+}
+
+.hero{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color:#00c98d;
+    width: 60%;
+    height: 350px;
+    padding: 20px;
+}
+
+img{
+    width: 150px;
+}
+
+.intro{
+    font-size:x-large;
+    color: white;
+}
