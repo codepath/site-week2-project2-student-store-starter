@@ -1,0 +1,9 @@
+.sidebar-container{
+    position: fixed;
+    width: 4rem;
+    height: 100%;
+    background-color: red;
+}
+.sidebar-container.open{
+    background-color: blue;
+}
