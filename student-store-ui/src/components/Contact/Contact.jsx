@@ -1,9 +1,13 @@
 import * as React from "react"
 import "./Contact.css"
+import Navbar from "../Navbar/Navbar"
 
 export default function Contact() {
   return (
+    <div>
+      <Navbar />
     <section id="contact" className="contact">
+      
             <h2>Contact</h2>
             <div className="contact-info">
               <div className="contact-text">
@@ -18,6 +22,6 @@ export default function Contact() {
               </div>
             </div>
           </section>
-
+    </div>
   )
 }

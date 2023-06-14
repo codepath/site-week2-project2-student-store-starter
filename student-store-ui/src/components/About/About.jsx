@@ -1,9 +1,13 @@
 import * as React from "react"
 import "./About.css"
+import Navbar from "../Navbar/Navbar"
 
 export default function About() {
   return (
+    <div>
+      <Navbar />
     <section id="about" className="about">
+      
             <h2>About</h2>
             <div className="about-info">
               <div className="about-text">
@@ -19,4 +23,5 @@ export default function About() {
               </div>
             </div>
           </section>
+          </div>
   )}
