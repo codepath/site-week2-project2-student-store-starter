@@ -2,6 +2,7 @@ import * as React from "react";
 import "./Home.css";
 
 export default function Home({ products }) {
+  console.log({products})
   return (
     <div className="home">
       <div className="productGrid">
