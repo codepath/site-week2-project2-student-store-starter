@@ -14,3 +14,6 @@
   display: flex;
   flex-direction: column;
 }
+.hero{
+  margin-top: 10%;
+}
