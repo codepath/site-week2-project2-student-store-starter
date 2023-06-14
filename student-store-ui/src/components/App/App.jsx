@@ -1,11 +1,12 @@
 import * as React from "react"
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
 import "./App.css"
 import {useEffect, useState} from "react"
 import axios from "axios"
+import About from "../About/About"
 // usually put external dependencies at the top
 
 // //import react pro sidebar components
@@ -31,9 +32,14 @@ export const appInfo ={
 const url = "https://codepath-store-api.herokuapp.com/store"
 export default function App() {
   const [products, setProducts] = useState();
-
   // useEffect(setup, dependencies)
   // if you pass in an empty dependency aray, it will run only once
+  // const createSearchUrl = (searchTerm) => `https://codepath-store-api.herokuapp.com/store/search?" + query=${searchTerm}`;
+  const[formData, setFormData] = useState();
+  const[selectedCategory, setSelectedCategory] = useState("food"); // default should be "/" ?
+
+
+  // createSearchUrl()
   useEffect(() => {
     axios.get(url).then((response) =>{
       setProducts(response.data.products)
@@ -42,44 +48,50 @@ export default function App() {
     })
 
   }, []);
-  console.log(products);
+  // console.log(products);
 
+ // Update local state with current state of input element (render each keystroke)
+ function handleInput(event) {
+    setFormData(event.target.value);
+ }
+ 
+ function changeCategory(event){
+  console.log("hi")
+  setSelectedCategory(products?.filter((product) => {
+    (product.category === selectedCategory);
+}))};
+// console.log({products})
 
-
+ console.log(formData); // this is what is generated in the search bar when you type
   return (
     <div className="app">
       <BrowserRouter>
+        <Routes>
+          {/* <Route path= "/" element={<Home products = {products}/>}> </Route> */}
+          {/* <Route path= "about" element={<About/>}> </Route> */}
+          {/* <Route path= "about" element={<About/>}> </Route> */}
+          {/* <Route path= "about" element={<About/>}> </Route> */}
+
+        </Routes>
         <main>
           
-          {/* YOUR CODE HERE! */}
-         
-          {/* ? to see if we actually have it  */}
-          {/* map returns whole new array with those changes, unlike for loop */}
+        {/* ? to see if we actually have it  */}
+        {/* map returns whole new array with those changes, unlike for loop */}
 
-          <Navbar />
-          <Sidebar />
+        <Navbar />
+        <Sidebar />
           
-      <div className = "hero">
-        <div className="content">
-          <div className = "intro">
-            <h1> Welcome!!</h1>
-            <h1> Find Your Merch!!</h1>
-            <p> We have all kinds of goodies. Click on any of the items to start filling up your shopping cart. Checkout whenever you're ready.</p>
-          </div>
-          <div className="media">
-            <img src={"https://codepath-student-store-demo.surge.sh/assets/student_store_icon.18e5d61a.svg"} alt="hero" className="hero_img"></img>
-          </div>
-        </div>
-      </div>
-
-
+        
       <nav className="sub-navbar">
         <div className="content">
           <div className="row">
-            <div className="search-bar">
-              <input type="text" name="search" placeholder="Search" value=""></input>
+            <form 
+            // onSubmit={handleSubmit} 
+            className="search-bar">
+              <input type="text" name="search" placeholder="Search" value={formData} onChange={handleInput}></input>
                 <i className="material-icons">search</i>
-            </div>
+           
+            </form>
             <div className="links">
               <span className="help">
                 <i className="material-icons">help</i>
@@ -95,10 +107,13 @@ export default function App() {
             </div>
             <ul className="category-menu open">
               <li className="is-active">
+                {/* EXCEPT CHANGECATEGORY IS A FUNCTION DECLARED IN HOME! */}
                 <button>All Categories</button>
               </li>
               <li className="">
-                <button>Clothing</button>
+                <button onClick={changeCategory}>Clothing</button> 
+
+                {/* <button>Clothing</button> */}
               </li>
               <li className="">
                 <button>Food</button>
@@ -114,10 +129,14 @@ export default function App() {
         </div>
       </nav>
 
-          <Home products = {products}/>
-          {/* {products?.map((product, index) => <p key={index}> {product.name}</p>)} */}
 
+          <Home products = {products} changeCategory={changeCategory} /> 
+        {/* need to make a usestate for the home bc changing when we type? */}
+        {/* {products?.map((product, index) => <p key={index}> {product.name}</p>)} */}
+
+        <About></About>
         </main>
+      
       </BrowserRouter>
     </div>
   )

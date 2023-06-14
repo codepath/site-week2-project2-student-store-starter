@@ -37,7 +37,7 @@
     align-items: center;
     justify-content: space-between;
     width: 50px;
-    margin-right: 50px;
+    margin-right: 90px;
 }
 
 .navbar .content .socials .twitter-logo-img{
@@ -52,6 +52,12 @@
 
 }
 .navbar .content .socials .facebook-logo-img{
+    width: 20px;
+    height: 20px;
+    margin-right:20px
+
+}
+.navbar .content .socials .linkedin-logo-img{
     width: 20px;
     height: 20px;
     margin-right:20px

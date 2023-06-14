@@ -1,23 +1,59 @@
 import * as React from "react"
 import "./Home.css"
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+// import About from "../About"
 
-export default function Home({products}) {
-  // console.log(products);
+import {useEffect, useState} from "react"
+import { Link } from 'react-router-dom'
+import About from "../About/About"
+
+export default function Home({products, changeCategory}) {
+  // pass in changecategory as a prop
+  
   const num_in_cart=0;
+  // const [formData, setFormData] = useState(""); // useState for searching
+
   return (
     <div className="home">
       {/* <p>Home</p> */}
+      <div className = "hero">
+        <div className="content">
+          <div className = "intro">
+            <h1> Welcome!!</h1>
+            <h1> Find Your Merch!!</h1>
+            <p> We have all kinds of goodies. Click on any of the items to start filling up your shopping cart. Checkout whenever you're ready.</p>
+          </div>
+          <div className="media">
+            <img src={"https://codepath-student-store-demo.surge.sh/assets/student_store_icon.18e5d61a.svg"} alt="hero" className="hero_img"></img>
+          </div>
+        </div>
+      </div>
       <div id="Buy" className = "product-grid">
         <div className="content">
         
           <h3>Best Selling Products</h3>
 
           <div className="grid">
+            {/* {selectedCategory != "All Categories" ? */}
+            {/* {products?.filter((item) => {
+              return ((selectedCategory == "All Categories") || (item.category === selectedCategory));
+            })}; */}
+
+          
+            {console.log(products)}
+        
             {products?.map((product, index) => {
             // have to put additional return bc => has implicit return
+            // const currentMenuItems = data.filter((item) => {
+            //   return item.food_category === selectedCategory && item.restaurant === selectedRestaraunt;
+            // });
+            
+            
               return <div className="product-card" key={index} >
                 <img src={product.image} ></img>
-               
+                {/* {onClick={() => selectSearchEntry(searchEntry)}} */}
+
+
                 <div className="product-info">
                   <div className="main-info">
                       <p className="product-name">{product.name}</p>
@@ -54,55 +90,8 @@ export default function Home({products}) {
           </div>
         </div>
       </div>
-      <div className="about" id="About">
-        <div className="content">
-          <h3>About</h3>
-          <div className="summary">
-            <div className="text">
-              <p>The codepath student store offers great products at great prices from a great team and for a great cause.</p><p>We've searched far and wide for items that perk the interests of even the most eccentric students and decided to offer them all here in one place.</p>
-              <p>All proceeds go towards bringing high quality CS education to college students around the country.</p>
-            </div>
-            <div className="media">
-              <img src="https://codepath-student-store-demo.surge.sh/assets/giant_codepath.6952ef57.svg" alt="codepath large"></img>
-            </div>
-          </div>
-        </div> 
-      </div>
-      <div id="Contact" className="contact">
-        <div className="content">
-          <h3>Contact Us</h3>
-          <div className="summary">
-            <ul className="info">
-              <li>
-                <span className="label">Email:</span>
-                <span>code@path.org</span>
-              </li>
-              <li>
-                <span className="label">Phone:</span>
-                <span>1-800-CODEPATH</span>
-              </li>
-              <li>
-                <span className="label">Address:</span>
-                <span>123 Fake Street, San Francisco, CA</span>
-              </li>
-              <li>
-                <span>Socials: </span> 
-                <span className="socials">
-                    <img src={"https://www.transparentpng.com/download/facebook-logo-png/facebook-logo-free-download-transparent-3.png"} alt="facebook logo" className="facebook-logo-img"></img>
-                    <img src={"https://assets.stickpng.com/images/580b57fcd9996e24bc43c521.png"} alt="insta logo" className="insta-logo-img"></img>
-                    <img src={"https://www.transparentpng.com/download/linkedin/linkedin-shiny-icon-png-0.png"} alt="linked in logo" className="linkedin-logo-img"></img>
-                    <img src={"https://assets.stickpng.com/images/580b57fcd9996e24bc43c53e.png"} alt="twitter logo" className="twitter-logo-img"></img>
-                </span>
-              </li>
-            </ul>
-            <div className="media">
-              <img src={"https://codepath-student-store-demo.surge.sh/assets/happy_person.517b658d.svg"} alt="codepath large"></img>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
+      
+      {/* <About></About> */}
       <footer className="footer">
         <div className="content">
           <div className="top">
@@ -110,7 +99,7 @@ export default function Home({products}) {
               <div className="link-column">
                 <h4>Categories</h4>
                 <ul>
-                  <li>All Categories</li>
+                  <li> All Categories</li>
                   <li>Clothing</li>
                   <li>Food</li>
                   <li>Accessories</li>
