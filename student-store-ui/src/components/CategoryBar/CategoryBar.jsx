@@ -2,15 +2,15 @@ import * as React from "react"
 import "./CategoryBar.css"
 import Chip from "../Chip/Chip"
 
-export default function CategoryBar({categories}) {
+export default function CategoryBar({ categories, category, setCategory }) {
   return (
     <nav className="category-bar">
-        {categories.categories?.map((label) => {
+        {categories?.map((label) => {
             return (
             <Chip
                 category={label}
-                isActive={categories.category === label}
-                handleClick={() => categories.setCategory(label)}
+                isActive={category === label}
+                handleClick={() => setCategory(label)}
             />)
         })}
     </nav>

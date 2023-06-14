@@ -1,12 +1,14 @@
 import * as React from "react"
 import { useEffect, useState } from "react"
-import { BrowserRouter } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import axios from "axios"
 import Sidebar from "../Sidebar/Sidebar"
 import Navbar from "../Navbar/Navbar"
 import Subnavbar from "../Subnavbar/Subnavbar"
 import Home from "../Home/Home"
 import "./App.css"
+import About from "../About/About"
+import Footer from "../Footer/Footer"
 
 const mockBackend = "https://codepath-store-api.herokuapp.com/store"
 
@@ -28,6 +30,13 @@ export default function App() {
   return (
     <div className="app">
       <BrowserRouter>
+        {/*<Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About/>} />
+  </Routes>
+  
+  <Link to="/home">  Home </Link>
+  */}
         <main>
           <Sidebar />
           <section className="page">
@@ -42,14 +51,10 @@ export default function App() {
                 setCategory={setCategory}/>
               <Home 
                 category={category}
-                products={products}
+                products={products} 
               />
             </div>
-            <section className="footer">
-              <div className="footer-category">
-                footer categories and such
-              </div>
-            </section>
+            <Footer />
           </section>
         </main>
       </BrowserRouter>

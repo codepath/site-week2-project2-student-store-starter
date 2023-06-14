@@ -3,7 +3,7 @@ import "./Subnavbar.css"
 import CategoryBar from "../CategoryBar/CategoryBar"
 import SearchBar from "../Searchbar/Searchbar"
 
-export default function Subnavbar(categories, category, setCategory) {
+export default function Subnavbar({ categories, category, setCategory }) {
   return (
     <div className="subnav-wrap">
       <section className="subnavbar">
@@ -13,7 +13,7 @@ export default function Subnavbar(categories, category, setCategory) {
         <CategoryBar
           categories={categories}
           category={category}
-          setCategory={setCategory}/>
+          setCategory={setCategory} />
       </section>
     </div>
   )

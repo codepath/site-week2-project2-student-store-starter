@@ -1,0 +1,22 @@
+.about {
+    margin-top: 70px;
+}
+
+.about-box {
+    display: flex;
+    justify-content: left;
+    flex: 2;
+    background: #2c4047;
+    border: solid 1px #e0e0e0
+  }
+  
+.about-text {
+    flex: 1;
+    background-color: #fff;
+    padding: 28px 36px;
+  }
+  
+  .about-logo {
+    padding-left: 5%;
+    padding-right: 5%;
+  }

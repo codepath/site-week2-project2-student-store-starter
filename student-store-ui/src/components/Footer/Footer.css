@@ -1,0 +1,25 @@
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: #fff;
+    height: 300px;
+    margin-top: 70px;
+  }
+  
+  .footer-items-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+  }
+  
+  .footer-item {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer-item div{
+    margin-bottom: 10px;
+  }
