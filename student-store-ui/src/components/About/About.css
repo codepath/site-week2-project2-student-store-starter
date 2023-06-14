@@ -1,0 +1,33 @@
+.about-content{
+
+    margin-right: 140px;
+    margin-left: 140px;
+    margin-bottom: 100px;
+  }
+  
+  .about-paragraph{
+  
+    background-color: white;
+    /* padding: 50px; */
+    padding-left: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-right: 180px;
+    font-size: 20px;
+    color: rgb(96, 95, 95);
+    border-style: solid;
+    /* flex: 1; */
+    
+  }
+  
+  .codepathLogo img {
+    height: 100%; /* Make the image the same height as the paragraph div */
+    object-fit: contain;
+  }
+  
+  .about-grid {
+  
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+  }

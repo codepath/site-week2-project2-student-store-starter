@@ -34,3 +34,25 @@ margin-left: 60px;
 
 
 }
+
+.hero-content{
+
+    display: flex;
+    flex-direction: row;
+}
+
+.hero-paragraphs{
+
+    margin-right: 90px;
+    width: 80%;
+}
+
+.hero-img{
+
+    justify-content: center;
+    margin-top: 80px;
+    width: 120px;
+    height: 120px;
+    margin-right: 40px;
+}
+

@@ -1,0 +1,40 @@
+.contact-content{
+
+    margin-right: 140px;
+    margin-left: 140px;
+    margin-bottom: 100px;
+  }
+  
+  .contact-info {
+  
+    display: flex;
+    flex-direction: column;
+    font-size: 17pt;
+    
+  
+  
+  
+    list-style-type: none;
+     
+  }
+  
+  .contact-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  
+    background-color: #2c4047;
+    padding: 20px;
+    color: white;
+    font-weight: 350;
+    
+  
+  
+  }
+  
+  
+  .label {
+  
+  margin-right: 20px;
+  
+  }

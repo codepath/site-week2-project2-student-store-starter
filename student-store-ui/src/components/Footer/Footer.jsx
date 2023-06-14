@@ -33,6 +33,15 @@ export default function Footer() {
             <li><img src="https://codepath-student-store-demo.surge.sh/assets/google_play.27aab7c8.svg" alt="google play store"/></li></ul>
             </div>
         </div>
+        <div className="bottom">
+
+        <span class="payment-options">
+            <img src="https://codepath-student-store-demo.surge.sh/assets/american_express.40f242c7.svg" alt="american express"/>
+            <img src="https://codepath-student-store-demo.surge.sh/assets/mastercard.c75b7bc4.svg" alt="mastercard"/>
+            <img src="https://codepath-student-store-demo.surge.sh/assets/paypal.6a45b239.svg" alt="paypal"/>
+            <img src="https://codepath-student-store-demo.surge.sh/assets/visa.a818ddc4.svg" alt="visa"/>
+            </span>
+        </div>
       </div>
     </div>
   )
