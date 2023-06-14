@@ -16,7 +16,7 @@ export default function App() {
 
   const [products, setProducts] = useState()
   const [category, setCategory] = useState("All Categories")
-  const [page, setPage] = useState("buy")
+  const [searchTerm, setSearchTerm] = useState("")
 
   const categories = ["All Categories", "Food", "Clothing", "Tech", "Accessories"]
 
@@ -25,7 +25,7 @@ export default function App() {
       .then(response => {
         setProducts(response.data.products)
       })
-  }, [category])
+  }, [category, searchTerm])
 
   return (
     <div className="app">
@@ -48,10 +48,13 @@ export default function App() {
               <Subnavbar 
                 categories={categories}
                 category={category}
-                setCategory={setCategory}/>
+                setCategory={setCategory}
+                searchTerm={searchTerm}
+                setSearchTerm={setSearchTerm}/>
               <Home 
                 category={category}
                 products={products} 
+                searchTerm={searchTerm}
               />
             </div>
             <Footer />

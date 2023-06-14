@@ -5,7 +5,7 @@ import Logo from "../Logo/logo"
 import About from "../About/About"
 import Contact from "../Contact/Contact"
 
-export default function Home({category, products}) {
+export default function Home({category, products, searchTerm}) {
   return (
     <div className="home">
       <section className="buy">
@@ -13,6 +13,7 @@ export default function Home({category, products}) {
           <ProductGrid 
             products={products}
             category={category}
+            searchTerm={searchTerm}
           />
       </section>
       <About />
