@@ -1,6 +1,6 @@
 import * as React from "react"
 import "./About.css"
-import logo from '../../images/code_path_logo.jpeg'
+import Logo from "../Logo/Logo";
 
 export default function About(){
     return(
@@ -11,10 +11,8 @@ export default function About(){
                     All proveeds go towards bringing high quality CS education to college students around the country.
                 </p>
             </div>
-            <div className="about-logo">
-                <img src={logo} alt="image of code path logo"/>
-            </div>
+            <Logo prop={"about-logo"} />  
+ </div>
 
-        </div>
     )
 }

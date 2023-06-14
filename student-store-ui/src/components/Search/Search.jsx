@@ -1,39 +1,34 @@
 import * as React from "react";
+import { useState } from 'react';
 import "./Search.css";
 import Home from "../Home/Home";
 
 
 export default function Search(props) {
-    console.log(props.searchValue)
-    console.log(props.products)
-    console.log(props.handleChange)
- 
-    // let filtered = props.products?.filter((product => product.name.includes(props.searchValue)))
 
-    // console.log(filtered)
+    const handleChange = (event) => {
+      props.setSearchValue(event.target.value)
+    }
+ 
+    function handleSubmit(e) {
+        e.preventDefault()
+    }
+    
   return (
     <div className="search">
       <form action="search" id="search-form">
+        <label htmlFor="search">Search for Merch! 🛍️ </label> <br />
         <input
           type="search"
+          name="search"
           defaultValue={props.searchValue}
-          onChange={props.handleChange}
+          onChange={handleChange}
           id="search-input"
-          placeholder="Search for item..."
+          placeholder="    Search for an item..."
         />
-        <button onClick={(event) => {
-            event.preventDefault()
-            // console.log(props.searchValue)
-            // console.log(props.products)
-            // console.log(props.handleChange)
-            // console.log(props.products?.filter((product) => product.name.includes(props.searchValue)));
-            const products = props.products?.filter((product) => product.name.includes(props.searchValue));
-            let productGrid = document.querySelector(".productGrid");
-            productGrid.innerHTML = '';
-            <Home products={products}/>
-        }} type="submit">🔍</button>
+        <button onClick={handleSubmit} type="submit">🔍</button>
       </form>
-
     </div>
   )
 }
+

@@ -2,7 +2,7 @@ import * as React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 import Home from "../Home/Home";
@@ -26,21 +26,24 @@ export default function App() {
     });
   }, []);
 
-  const handleSearchChange = (event) => {
-    setSearchValue(event.target.value)
-  }
+  // const handleSearchChange = (event) => {
+  //   setSearchValue(event.target.value)
+  // }
 
 
   return (
     <div className="app">
       <BrowserRouter>
+        {/* <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/about" element={<About/>}/>
+        </Routes> */}
         <main>
-          {/* YOUR CODE HERE! */}
           <Navbar />
           <Hero />
-          <Search products={products} searchValue={searchValue} handleChange={handleSearchChange}/>
+          <Search products={products} searchValue={searchValue} setSearchValue={setSearchValue}/>
           <Sidebar />
-          <Home products={products}/>
+          <Home products={products} searchValue={searchValue}/>
           <About />
         </main>
       </BrowserRouter>

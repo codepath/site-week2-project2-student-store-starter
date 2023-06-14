@@ -1,7 +1,3 @@
-:root{
-    --dark-Cp: #2c4047;
-    --light-cp: #00c98d;
-}
 
 .navbar{
     background-color: var(--dark-Cp);
@@ -9,7 +5,7 @@
     justify-content: space-around;
     height: 80px;
 }
-.nav-logo{
+.nav-logo {
     margin-left: 150px;
 }
 
@@ -18,8 +14,6 @@
     width: 500px;
     height: 80px;
     padding-top: 12px;
-
-
 }
 .codePathHandle{
     font-size: 200%;
@@ -39,7 +33,8 @@ nav ul li {
     display: inline-block;
     margin: 0 10px;
     height: 60px;
-  }
+}
+
 a {
     float: inline-end;
     color: white;

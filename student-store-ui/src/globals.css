@@ -1,3 +1,7 @@
+:root{
+  --dark-Cp: #2c4047;
+  --light-cp: #00c98d;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
