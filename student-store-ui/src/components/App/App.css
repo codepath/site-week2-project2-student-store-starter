@@ -21,7 +21,20 @@ body{
   width: 100px;
   background-color: #2f4050;
 }
-
+.navbar{
+  background-color: #2f4050;
+}
+.navbar ul{
+  list-style: none;
+  display: flex;
+  gap: 5rem;
+  margin-left: 65rem;
+  font-size: 20px;
+  font-weight: bold;
+}
+nav a{
+  color: aliceblue;
+}
 
 .sidebar2{
   transform: translateX(0);
