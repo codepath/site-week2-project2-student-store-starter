@@ -3,8 +3,6 @@ import "./Logo.css"
 
 export default function Logo() {
   return (
-    <nav className="logo">
-      Logo
-    </nav>
+      <img src="https://codepath-student-store-demo.surge.sh/assets/codepath.f1b3e41a.svg"></img>
   )
 }
