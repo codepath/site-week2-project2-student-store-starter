@@ -1,10 +1,10 @@
 import * as React from "react"
 import "./Sidebar.css"
 
-export default function Sidebar() {
+export default function Sidebar({ label }) {
   return (
     <section className="sidebar">
-      <p>Sidebar</p>
+      <p>{label}</p>
     </section>
   )
 }

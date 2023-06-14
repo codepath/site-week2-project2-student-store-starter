@@ -1,21 +1,50 @@
 import * as React from "react"
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
 import "./App.css"
+// import Subnavbar from "../Subnavbar/Subnavbar"
+import Hero from "../Hero/Hero"
+import { useEffect, useState } from "react"
+import axios from 'axios'
+
 
 export default function App() {
+const url = "https://codepath-store-api.herokuapp.com/store";
+const [products, setProducts] = useState();
+useEffect(() => {
+  axios.get(url).then((response) => {
+    setProducts(response.data.products);
+  });
+}, []);
+console.log(products);
   return (
+
     <div className="app">
       <BrowserRouter>
+      {/* <Routes>
+        <Route path="/" element ={<Home></Home>}></Route>
+        <Route path="/About" element={<About/>}></Route>
+      </Routes> */}
         <main>
-          {/* YOUR CODE HERE! */}
+          {/* {products?.map((product, index) =>
+          <h1 key={index + product.name}>{product.name}
+          </h1>
+          )} */}
           <Navbar />
-          <Sidebar />
+          <Hero />
+          {/* <Subnavbar/> */}
+          
+          {/* {products?.map((product, index)=>
+          // <Sidebar
+          // label = {product.name}
+          // />
+          )} */}
           <Home />
         </main>
       </BrowserRouter>
     </div>
   )
+  
 }
