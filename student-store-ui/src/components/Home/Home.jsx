@@ -18,19 +18,50 @@ export default function Home({ products, setProducts }) {
       return products;
     } else {
       console.log("triggering else")
-      return products.filter(
-        (product) => product.category.toLowerCase() === activeCategory.toLowerCase()
-      );
+      // return products.filter(
+      //   (product) => product.category.toLowerCase() === activeCategory.toLowerCase()
+      // );
     }
   }
 
+
+  // filter for search term
+    // see filteredSearchProducts
+  // filter for category
+    // utilize a button to set activeCat
+    // apply a filter on previously filteredSearchProducts based on matching category
+  // return double filtered product aray
+
+  // const filteredSearchProducts = products?.filter((product) => {
+  //   return product.name.toLowerCase().includes(searchResults.toLowerCase())
+  // })
+
+  function filterFunction(){
   const filteredSearchProducts = products?.filter((product) => {
     return product.name.toLowerCase().includes(searchResults.toLowerCase())
   })
   console.log("Home component filtered search", filteredSearchProducts)
-  
-  const filteredProducts = filterCategory();
 
+  let filteredByCategory = []
+  if (activeCategory === "All Categories") {
+    filteredByCategory = filteredSearchProducts
+  } else {
+
+    filteredByCategory = filteredSearchProducts?.filter((product) => {
+      return product.category.toLowerCase() === activeCategory.toLowerCase()
+    })
+  }
+    
+  console.log("filteredByCat",filteredByCategory)
+
+  return filteredByCategory
+
+}
+
+const filteredProducts = filterFunction()
+console.log(filteredProducts)
+
+  console.log("activeCat", activeCategory)
 
   return (
     <>
@@ -46,7 +77,7 @@ export default function Home({ products, setProducts }) {
       <div className="home">
         <div className="home-content" id="Buy">
           <h2 className="home-title">Best Selling Products</h2>
-          <ProductGrid products={filteredSearchProducts} />
+          <ProductGrid products={filteredProducts} />
         </div>
       </div>
       <About />
