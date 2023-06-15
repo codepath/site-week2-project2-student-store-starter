@@ -18,7 +18,7 @@ export default function SubNavbar({ items, setItems }) {
 
   function handleSubmit(event){
     event.preventDefault();
-    setItems([...items, formData])
+    setItems(formData.productName)
   }
 
   return (
@@ -27,7 +27,6 @@ export default function SubNavbar({ items, setItems }) {
         <div className="row">
           <div className="search-bar">
             <form>
-              {/* <label htmlFor="Search">search</label> */}
               <input
                 type="text"
                 name="productName"

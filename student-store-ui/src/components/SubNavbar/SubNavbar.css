@@ -101,6 +101,10 @@ form{
     transition: all .2s ease;
 }
 
+.search-bar form button{
+    border: none;
+}
+
 .sub-navbar .category-menu li button {
     cursor: pointer;
     border: none;

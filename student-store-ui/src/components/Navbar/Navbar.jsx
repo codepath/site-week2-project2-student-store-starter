@@ -1,5 +1,4 @@
 import * as React from "react"
-// import { HasLink } from 'react-router-hash-link';
 import "./Navbar.css"
 
 import logo from '../../assets/logo.png'
@@ -28,16 +27,16 @@ export default function Navbar() {
 
           <ul className="links">
             <li>
-              {/* <HasLink to="/">Home</HasLink>  */}
+              <a href="/">Home</a>
             </li>
             <li>
-              {/* <HasLink to="/#About">About Us</HasLink>  */}
+              <a href="#About"> About </a> 
             </li>
             <li>
-            {/* <Link to="/#Contact">Contact Us</Link>  */}
+              <a href="/#Contact">Contact Us</a>
             </li>
             <li>
-            {/* <Link to="/#Buy">Buy Now</Link>  */}
+              <a href="/#Buy">Buy Now</a>
             </li>
           </ul>
         </div>

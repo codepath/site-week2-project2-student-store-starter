@@ -23,37 +23,33 @@ export default function App() {
 
   useEffect(() => {
     axios.get(url).then((response) => {
-      // console.log(response.data.products);
       setProducts(response.data.products);
+
     });
-  }, []);
+  }, [items]);
 
   const [isActive, setIsActive] = useState(false);
-  
-  // console.log(items[0].productName)
-  // console.log(products)
-  // console.log(products.filter(item => item.name.includes(items[0]?.productName)))
+
+
   return (
     <div className="app">
       <BrowserRouter>
-        {/* <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/About" element={<About/>}/>
-        </Routes> */}
+
+        <Routes>
+          <Route to="/" element={<Home />} />
+          <Route to="/about" element={<About />} />
+          <Route to="/contact" element={<Contact />} />
+        </Routes>
+
         <main>
           <Navbar />
           <Sidebar
             handleClick={() => setIsActive(!isActive)}
-            isActive={isActive} // not sure what to put here
+            isActive={isActive}
           />
           <Hero />
           <SubNavbar items={items} setItems={setItems} />
-          {items.length ? 
-          products.filter(item => item.name.includes(items[0]?.productName))
-          .map((product, index) => <Home key={index} products={[{product}]}/>) :
-          <Home products={products}/>
-          
-          }
+          <Home products={ products } items={items} />          
           <About />
           <Contact />
           <Footer />
