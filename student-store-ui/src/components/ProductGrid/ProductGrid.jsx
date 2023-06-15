@@ -7,6 +7,9 @@ export default function ProductGrid({products, category, searchTerm}) {
   let selectedProducts = searchTerm === "" ? products
     : products?.filter(product => product.name.toLowerCase().includes(searchTerm.toLowerCase()))
 
+
+  console.log(selectedProducts)
+
   return (
     <section className="product-grid">
       {selectedProducts?.length === 0 ? <p>No products avalible</p> 
