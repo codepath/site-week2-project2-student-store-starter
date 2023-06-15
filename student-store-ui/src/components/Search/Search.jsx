@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ProductGrid from "../ProductGrid/ProductGrid";
+import "./Search.css"
 
 export default function Search({ handleSearch, products }) {
   const [searchTerm, setSearchTerm] = useState("");
@@ -16,18 +17,23 @@ export default function Search({ handleSearch, products }) {
   };
 
   return (
+    <div>
     <div className="search-bar">
-      <form>
         <input
           type="text"
+          className="input"
           value={searchTerm}
           onChange={handleSearchChange}
           placeholder="Search for a product"
         />
         <button type="submit">Clear</button>
-      </form>
+        <div className="selectCat">
+          
+        </div>
+        </div>
       <ProductGrid products={!filteredProducts ? products : filteredProducts} />
-    </div>
+      </div>
+      
   );
 }
 

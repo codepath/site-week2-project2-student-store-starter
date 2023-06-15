@@ -7,6 +7,7 @@ import "./App.css";
 import axios from "axios";
 import About from "../About/About";
 import Contact from "../Contact/Contact";
+import ProductDetails from "../ProductDetails/ProductDetails"
 import { useState } from "react";
 
 export default function App() {
@@ -34,7 +35,7 @@ export default function App() {
           <Route path="/" element={<Home products={products}/>} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-
+          <Route path="product/:id" element={<ProductDetails props={products}/>} />
       </Routes>
       
       <Sidebar isOpen={sidebarOpen} toggleSidebar={handleSidebarToggle} />
