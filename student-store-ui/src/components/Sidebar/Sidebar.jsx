@@ -7,7 +7,6 @@ export default function Sidebar() {
   const[sidebarOpen, setSidebarOpen] = useState(false);
   // console.log("sidebarOpen: " + `${sidebarOpen}`);
   function changeSidebar(event){
-
     setSidebarOpen(!sidebarOpen);
    
   }

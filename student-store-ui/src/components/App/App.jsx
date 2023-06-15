@@ -38,7 +38,9 @@ export default function App() {
   // if you pass in an empty dependency aray, it will run only once
   const[formData, setFormData] = useState(); // used for search
   const[selectedCategory, setSelectedCategory] = useState(""); // used for category filtering - default should be "all categ.." ?
-  
+  const [filteredSearchArray, setFilteredSearchArray] = useState([])
+  const [filteredCategoryArray, setFilteredCategoryArray] = useState([])
+
   useEffect(() => {
     axios.get(url).then((response) =>{
       setProducts(response.data.products)
@@ -52,39 +54,46 @@ export default function App() {
  function handleInput(event) {
     setFormData(event.target.value);
     
-    // console.log("search product is: " + `${formData}`);
-    filteredSearchArray = products?.filter((product) => {
-      (product.name).includes(formData);
-      console.log("product is: " + `${product.name}`)
-      console.log(products)})
-
-      setProducts(filteredSearchArray);
+    // console.log("search item before filter: " + `${event.target.value}`);
+    let filteredItems = products?.filter((product) => {
+      // console.log(product.name, event.target.value)
+      // console.log("does string include search term",product.name.toLowerCase().includes(event.target.value.toLowerCase()))
+      return product.name.toLowerCase().includes(event.target.value.toLowerCase());
+      // console.log("product is: " + `${product.name}`)
+      })
+      // console.log("filtered", filteredItems)
+      setFilteredSearchArray(filteredItems);
  }
+
+//  console.log('filteredSearchArray', filteredSearchArray)
  
- console.log("search input: " + `${formData}`);
+//  console.log("search item after filter: " + `${formData}`);
 
 
  function changeCategory(event){
-  
-  filiteredCategoryArray = setSelectedCategory(products?.filter((product) => {
-    (product.category === selectedCategory);
+  // setSelectedCategory(event.target.value);
+  let filteredItemsCategory = setSelectedCategory(products?.filter((product) => {
     console.log("SELECTED: " + `${selectedCategory}`)
     console.log("PRODUCT CATEGORY: " + `${product.category}`)
     console.log(products)
+    // setProducts(filiteredCategoryArray)
 
-    setProducts(filiteredCategoryArray)
-}))};
+    return (product.category === selectedCategory);
+    
+}))
+  setFilteredCategoryArray(filteredItemsCategory);
+};
 // console.log(products)
 console.log({products})
 
- console.log(formData); // this is what is generated in the search bar when you type
+ console.log("SEEEEE: " + `${selectedCategory}`);
   return (
     <div className="app">
       <BrowserRouter>
         <Routes>
           {/* <Route path= "/" element={<Home products = {products}/>}> </Route> */}
           {/* <Route path= "about" element={<About/>}> </Route> */}
-          {/* <Route path= "../Navbar/Navbar" element={<Navbar/>}> </Route> */}
+          {/* <Route path= "about" element={<About/>}> </Route> */}
           {/* <Route path= "about" element={<About/>}> </Route> */}
 
         </Routes>
@@ -131,13 +140,13 @@ console.log({products})
                 {/* <button>Clothing</button> */}
               </li>
               <li className="">
-                <button>Food</button>
+                <button onClick={changeCategory}>Food</button>
               </li>
               <li className="">
-                <button>Accessories</button>
+                <button onClick={changeCategory}>Accessories</button>
               </li>
               <li className="">
-                <button>Tech</button>
+                <button onClick={changeCategory}>Tech</button>
               </li>
             </ul>
           </div>
@@ -145,8 +154,9 @@ console.log({products})
       </nav>
 
 
-          <Home products = {products} /> 
+          {/* <Home products = {filteredSearchArray.length === 0 ? products : filteredSearchArray} />  */}
 
+          <Home products = {filteredSearchArray.length === 0 ? products : filteredSearchArray} /> 
         <About></About>
         </main>
       
