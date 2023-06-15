@@ -5,6 +5,7 @@ import "./Navbar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 
+console.log(fab)
 
 export default function Navbar() {
   return (

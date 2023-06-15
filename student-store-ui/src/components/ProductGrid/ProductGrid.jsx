@@ -1,10 +1,24 @@
-import * as React from "react"
-import "./ProductGrid.css"
+import * as React from "react";
+import "./ProductGrid.css";
 
-export default function ProductGrid(props){
-    const newProducts = props.products?.filter((product) =>
-    product.name.toLowerCase().includes(props.searchValue.toLowerCase())
-  );
+export default function ProductGrid(props) {
+  let newProducts;
+  if (props.catSearch === "search") {
+      newProducts = props.products?.filter((product) =>
+      product.name.toLowerCase().includes(props.searchValue.toLowerCase()));
+  } 
+  else if (props.catSearch === "category") {
+      if (props.category === "all") {
+        newProducts = props.products;
+      } 
+      else {
+        newProducts = props.products?.filter((product) =>
+        product.category.toLowerCase().includes(props.category.toLowerCase()));
+      }
+  } 
+  else {
+    newProducts = props.products;
+  }
 
   return (
     <div className="home">

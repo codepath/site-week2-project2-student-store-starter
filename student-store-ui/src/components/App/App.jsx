@@ -10,16 +10,18 @@ import Hero from "../Hero/Hero";
 import About from "../About/About";
 import Search from "../Search/Search";
 import ProductGrid from "../ProductGrid/ProductGrid";
+import Category from "../Category/Category";
 
 
 
 import "./App.css";
 
 export default function App() {
+  const [catSearch, setCatSearch] = useState('');
   const [searchValue, setSearchValue] = useState('');
-  const [category, setCategory] = useState();
+  const [category, setCategory] = useState('');
+  const [products, setProducts] = useState([]);
   const url = "https://codepath-store-api.herokuapp.com/store"
-  const [products, setProducts] = useState();
 
   useEffect(() => {
     axios.get(url).then((response) => {
@@ -36,17 +38,13 @@ export default function App() {
   return (
     <div className="app">
       <BrowserRouter>
-        {/* <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/about" element={<About/>}/>
-        </Routes> */}
         <main>
           <Navbar />
           <Hero />
-          <Search products={products} searchValue={searchValue} setSearchValue={setSearchValue} setProducts={setProducts}/>
+          <Search products={products} searchValue={searchValue} setSearchValue={setSearchValue} setCatSearch={setCatSearch}/>
+          <Category setCategory={setCategory} setCatSearch={setCatSearch} />
           <Sidebar />
-          <ProductGrid products={products} searchValue={searchValue}/>
-          {/* <Home products={products} searchValue={searchValue}/> */}
+          <ProductGrid products={products} searchValue={searchValue} category={category} catSearch={catSearch}/>
           <About />
         </main>
       </BrowserRouter>

@@ -7,6 +7,7 @@ export default function Search(props) {
   console.log(props.products)
     const handleChange = (event) => {
       props.setSearchValue(event.target.value)
+      props.setCatSearch('search')
     }
  
     function handleSubmit(e) {
@@ -28,13 +29,6 @@ export default function Search(props) {
           />
         <button onClick={handleSubmit} type="submit">🔍</button>
       </form>
-    </div>
-    <div className="category">
-      <button onClick={handleSubmit} type="submit">All Categories</button>
-      <button onClick={handleSubmit} type="submit">Clothing</button>
-      <button onClick={handleSubmit} type="submit">Food</button>
-      <button onClick={handleSubmit} type="submit">Accesories</button>
-      <button onClick={handleSubmit} type="submit">Tech</button>
     </div>
     </>
   )
