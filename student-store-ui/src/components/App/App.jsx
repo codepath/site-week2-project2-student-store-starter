@@ -14,6 +14,7 @@ import SubNavbar from "../SubNavbar/SubNavbar";
 import About from "../About/About";
 import Contact from "../Contact/Contact";
 import Footer from "../Footer/Footer";
+import ProductDetails from "../Product Details/ProductDetails";
 
 export default function App() {
   const url = "https://codepath-store-api.herokuapp.com/store";
@@ -24,23 +25,14 @@ export default function App() {
   useEffect(() => {
     axios.get(url).then((response) => {
       setProducts(response.data.products);
-
     });
   }, [items]);
 
   const [isActive, setIsActive] = useState(false);
 
-
   return (
     <div className="app">
       <BrowserRouter>
-
-        <Routes>
-          <Route to="/" element={<Home />} />
-          <Route to="/about" element={<About />} />
-          <Route to="/contact" element={<Contact />} />
-        </Routes>
-
         <main>
           <Navbar />
           <Sidebar
@@ -49,7 +41,13 @@ export default function App() {
           />
           <Hero />
           <SubNavbar items={items} setItems={setItems} />
-          <Home products={ products } items={items} />          
+          <Routes>
+            <Route
+              path="/"
+              element={<Home products={products} items={items} />}
+            />
+            <Route path="/:id" element={<ProductDetails />} />
+          </Routes>
           <About />
           <Contact />
           <Footer />
