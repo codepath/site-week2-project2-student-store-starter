@@ -1,0 +1,36 @@
+.prod-name{
+    /* font-w eight: bolder; */
+    color: black;
+    font-size: 20px;
+width: 100%
+
+    /* text-align: center; */
+    /* height: 20% */
+  }
+  
+.prod-price{
+/* font-weight: bolder; */
+color: black;
+font-size: 20px;
+width: 100%
+/* text-align: center; */
+
+/* height: 20% */
+}
+
+.product-cont{
+display:flex;
+flex-direction: column;
+justify-content: center;
+width:25%;
+/* border: 20px; */
+border-color: black;
+/* background-color: beige; */
+}
+
+.buttons{
+    display: inline
+}
+/* .prod-card{
+    margin-left: 7%;
+} */

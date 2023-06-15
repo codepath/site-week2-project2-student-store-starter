@@ -1,0 +1,17 @@
+.sidebar{
+    width: 5%;
+    height: 100vh;
+    background-color:#2c4047;
+    display: block;
+    position: fixed;
+}
+
+.material-icons{
+    display: inline-block;
+    padding:30px;
+    /* font-size: 48px; */
+}
+
+/* .m{
+    font-size: x-large;
+} */

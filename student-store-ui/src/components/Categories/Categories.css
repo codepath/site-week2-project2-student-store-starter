@@ -1,0 +1,18 @@
+.categories{
+    margin-left: 5%;
+    background-color:#f7f7f7;
+}
+
+li{
+    display: inline
+}
+
+ul{
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+.links{
+    color:black
+}   
