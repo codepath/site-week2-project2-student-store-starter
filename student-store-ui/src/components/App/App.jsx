@@ -4,7 +4,6 @@ import axios from "axios";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
-import Sidebar from "../Sidebar/Sidebar";
 // import Home from "../Home/Home";
 import Hero from "../Hero/Hero";
 import About from "../About/About";
@@ -17,6 +16,7 @@ import Category from "../Category/Category";
 import "./App.css";
 
 export default function App() {
+  const [isOpen, setIsOpen] = useState(false);
   const [catSearch, setCatSearch] = useState('');
   const [searchValue, setSearchValue] = useState('');
   const [category, setCategory] = useState('');
@@ -39,11 +39,10 @@ export default function App() {
     <div className="app">
       <BrowserRouter>
         <main>
-          <Navbar />
+          <Navbar isOpen={isOpen} setIsOpen={setIsOpen}/>
           <Hero />
           <Search products={products} searchValue={searchValue} setSearchValue={setSearchValue} setCatSearch={setCatSearch}/>
           <Category setCategory={setCategory} setCatSearch={setCatSearch} />
-          <Sidebar />
           <ProductGrid products={products} searchValue={searchValue} category={category} catSearch={catSearch}/>
           <About />
         </main>

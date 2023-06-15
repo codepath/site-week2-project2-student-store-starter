@@ -2,14 +2,18 @@ import * as React from "react";
 import Logo from "../Logo/Logo";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import Sidebar from "../Sidebar/Sidebar";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 
 console.log(fab)
 
-export default function Navbar() {
+export default function Navbar(props) {
   return (
     <nav className="navbar">
+
+    <Sidebar isOpen={props.isOpen} setIsOpen={props.setIsOpen}/>
+
 
     <Logo prop={"nav-logo"}/>
         

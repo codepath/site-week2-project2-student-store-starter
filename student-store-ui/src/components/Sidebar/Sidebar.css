@@ -1,0 +1,26 @@
+.sidebar {
+    background-color: #ffffff;
+    height: 100vh;
+    position: fixed;
+    width: 340px;
+    left: 0;
+    z-index: 2;
+    transition: all .2s;
+  }
+  .checkbtn {
+    color: white;
+    padding-top: 20px;
+    font-size: 30px;
+    z-index: 3;
+    cursor: pointer;
+  }
+  #check{
+    display: none;
+  }
+  #check:checked ~ section {
+    border: solid 5px red;
+    left: 100%;
+  }
+
+
+ 

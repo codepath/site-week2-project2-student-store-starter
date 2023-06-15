@@ -2,7 +2,7 @@
 .navbar{
     background-color: var(--dark-Cp);
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 80px;
 }
 .nav-logo {
