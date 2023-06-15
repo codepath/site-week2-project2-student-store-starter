@@ -2,10 +2,13 @@
 import React, { useState } from "react";
 import "./Home.css";
 import Hero from "../Hero/Hero";
+import ProductDetails from "../ProductDetails/ProductDetails";
 
 export default function Home({ products }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
   const categories = [
     "All Categories",
     "Clothing",
@@ -14,6 +17,7 @@ export default function Home({ products }) {
     "Tech"
   ];
 
+// for filtering
   const productFilter = products?.filter((product) => {
     const lowercaseSearchTerm = searchTerm.toLowerCase();
     const lowercaseSelectedCategory = selectedCategory.toLowerCase() === "all categories" ? "" : selectedCategory.toLowerCase();
@@ -22,6 +26,10 @@ export default function Home({ products }) {
     const matchesCategory = lowercaseSelectedCategory === "" || product.category?.toLowerCase() === lowercaseSelectedCategory;
     return matchesSearch && matchesCategory;
   });
+  // for product details
+  if (selectedProduct) {
+    return <ProductDetails product={selectedProduct} />;
+  }
 
   return (
     <div className="home">
@@ -54,11 +62,20 @@ export default function Home({ products }) {
       <div className="product-container">
         {productFilter?.map((product) => {
           return (
-            <div className="product" key={product.id}>
-              <img src={product.image} alt={product.name} />
-              <p>{product.name}</p>
-              <p>{product.price}</p>
-            </div>
+            // <div className="product" key={product.id}>
+            //   <img src={product.image} alt={product.name} />
+            //   <p>{product.name}</p>
+            //   <p>{product.price}</p>
+            // </div>
+            <div
+            className="product"
+            key={product.id}
+            onClick={() => setSelectedProduct(product)} // Set the selected product
+          >
+            <img src={product.image} alt={product.name} />
+            <p>{product.name}</p>
+            <p>{product.price}</p>
+          </div>
           );
         })}
       </div>
