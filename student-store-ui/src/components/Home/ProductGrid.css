@@ -1,0 +1,10 @@
+.product-grid{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 3rem;
+}
+.product img{
+    width: 300px;
+    height: 300px;
+}

@@ -1,5 +1,5 @@
 import * as React from "react"
-import "./Navbar.css";
+import "./Navbar.css"
 import CodePathLogo from "../../../Assets/logo.svg";
 import InstagramSVG from "../../../Assets/icons8-instagram.svg";
 import TwitterSVG from "../../../Assets/icons8-twitter.svg";

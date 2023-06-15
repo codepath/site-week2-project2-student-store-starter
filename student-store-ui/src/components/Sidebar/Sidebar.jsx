@@ -4,12 +4,15 @@ import "./Sidebar.css";
 
 export default function Sidebar() {
   function SideBarShoppingCart(){
+    // used to display user checkout items and
+    // calculate user checkout total
     return (
       <>
       </>
     )
   }
   function SideBarCheckoutForm(){
+    // form to handle user checkout credentials
     return (
       <>
       </>
