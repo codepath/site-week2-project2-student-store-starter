@@ -1,0 +1,29 @@
+.prodsite-img {
+    width: 300px;
+    height: 300px;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+  h1 {
+    display: block;
+    font-size: 60px;
+   text-align: center;
+    font-weight: bold;
+}
+
+
+h2 {
+    display: block;
+    font-size: 30px;
+   text-align: center;
+    font-weight: bold;
+}
+
+p {
+    display: block;
+    font-size: 20px;
+   text-align: center;
+    font-weight: bold;
+}

@@ -26,9 +26,8 @@ export default function Search({ handleSearch, products }) {
           onChange={handleSearchChange}
           placeholder="Search for a product"
         />
-        <button type="submit">Clear</button>
+        <i class="material-icons">search</i>
         <div className="selectCat">
-          
         </div>
         </div>
       <ProductGrid products={!filteredProducts ? products : filteredProducts} />
