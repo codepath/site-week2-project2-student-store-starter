@@ -19,8 +19,10 @@ import About from "../About/About"
 //   SidebarContent,
 // } from "react-pro-sidebar";
 
-// import 
-
+// TODO:
+// CREATE INDIVIDUAL PRODUCT PAGE
+// stretch features!!
+// put footer (in home rn) below about (make a separate file for it and adjust app)
 
 export const appInfo ={
   title: "Welcome! Find Your Merch!",
@@ -45,18 +47,18 @@ export default function App() {
     })
 
   }, []);
-  // console.log(products);
 
  // Update local state with current state of input element (render each keystroke)
  function handleInput(event) {
     setFormData(event.target.value);
     
     // console.log("search product is: " + `${formData}`);
-    products?.filter((product) => {
+    filteredSearchArray = products?.filter((product) => {
       (product.name).includes(formData);
       console.log("product is: " + `${product.name}`)
-      // console.log("PRODUCT CATEGORY: " + `${product.category}`)
       console.log(products)})
+
+      setProducts(filteredSearchArray);
  }
  
  console.log("search input: " + `${formData}`);
@@ -64,12 +66,13 @@ export default function App() {
 
  function changeCategory(event){
   
-  setSelectedCategory(products?.filter((product) => {
+  filiteredCategoryArray = setSelectedCategory(products?.filter((product) => {
     (product.category === selectedCategory);
     console.log("SELECTED: " + `${selectedCategory}`)
     console.log("PRODUCT CATEGORY: " + `${product.category}`)
     console.log(products)
-    // console.log("EVENT" + `${event.target.value}`)
+
+    setProducts(filiteredCategoryArray)
 }))};
 // console.log(products)
 console.log({products})
@@ -143,8 +146,6 @@ console.log({products})
 
 
           <Home products = {products} /> 
-        {/* need to make a usestate for the home bc changing when we type? */}
-        {/* {products?.map((product, index) => <p key={index}> {product.name}</p>)} */}
 
         <About></About>
         </main>
