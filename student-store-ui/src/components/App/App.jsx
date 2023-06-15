@@ -1,6 +1,6 @@
 import * as React from "react"
 import axios from 'axios'
-import { BrowserRouter, Route} from 'react-router-dom'
+import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
@@ -8,6 +8,7 @@ import ShoppingCart from "../ShoppingCart/ShoppingCart"
 import { useState } from "react"
 import { useEffect } from "react"
 import "./App.css"
+import Productfacts from "../Productdetails/Productdetails"
 
 
 export default function App() {
@@ -24,11 +25,14 @@ export default function App() {
   return (
     <div className="app">
       <BrowserRouter>
-        <main>
+        <Routes>
+          <Route path = "" element = {<main>
           <Navbar />
           <Sidebar />
-          <Home products = {products}/>
-        </main>
+          <Home products={products} />
+          </main>}/>
+          <Route path="products/:id" element={<Productfacts/>}/>
+        </Routes>
       </BrowserRouter>
     </div>
   )

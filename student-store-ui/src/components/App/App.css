@@ -20,10 +20,10 @@ body{
   position: fixed;
   height: 100%;
   width: 20%;
-  background-color: #2f4050;
+  background-color: #69433a;
 }
 .navbar{
-  background-color: #2f4050;
+  background-color: #69433a;
 }
 .navbar ul{
   list-style: none;
@@ -53,23 +53,49 @@ nav a{
 .content{
   width: 100%;
   height: 350px;
-  background-color: #705DC4;
+  background-color: #e2d4ba;
   display: flex;
   flex-direction:row;
-  align-items: center;
+  text-align: center;
   justify-content: space-between;
   margin-top: 50px;
   margin-bottom: 50px;
+  padding-left: 50px;
 }
+.intro{
+  margin-left: 25%;
+}
+
 .media img{
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-right: 100px;
+  padding-bottom: 50px;
   background-color: transparent;
 }
+.About-container{
+  width: 100%;
+  height: 350px;
+  text-align: center;
+  background-color: #e2d4ba;
+}
+.search-container{
+  text-align: center;
+  
+}
+.search-container button{
+  background-color: #e2d4ba;
+  color: #69433a;
+  justify-content: space-between;
+}
+.facts img{
+  width: 300px;
+  height: 300px;
+}
+
 .sidebar2{
   transform: translateX(0);
 }
