@@ -1,0 +1,50 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+    transition: all .2s cubic-bezier(.215,.61,.355,1);
+    position: fixed;
+    z-index: 100;
+    top: 0px;
+    height: 100vh;
+    padding: 0;
+    overflow-y: scroll;
+    padding-bottom: 2rem;
+    background: var(--dark-blue);
+    border-right: solid 1px white
+}
+
+.sidebar.closed {
+    width: 60px
+}
+
+.sidebar.open {
+    width: 575px
+}
+
+.sidebar .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%
+}
+
+.sidebar .toggle-button {
+    margin-top: 20px;
+    transition: all .2s cubic-bezier(.075,.82,.165,1);
+    background: transparent;
+    color: #fff;
+    border: none
+}
+
+.sidebar .toggle-button.open {
+    transform: rotateY(180deg)
+}
+
+.sidebar i {
+    margin-right: 10px;
+    cursor: pointer;
+    color: #fff
+}
