@@ -1,26 +1,33 @@
 import * as React from "react"
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 import ProductCard from "../ProductCard/ProductCard"
 import "./ProductGrid.css"
 
 export default function ProductGrid({products, category, searchTerm}) {
   let selectedProducts = searchTerm === "" ? products
-    : products?.filter(product => product.name.toLowerCase().includes(searchTerm))
+    : products?.filter(product => product.name.toLowerCase().includes(searchTerm.toLowerCase()))
 
-  console.log(selectedProducts)
   return (
     <section className="product-grid">
-      {selectedProducts?.map((product) => {
+      {selectedProducts?.length === 0 ? <p>No products avalible</p> 
+      : selectedProducts?.map((product) => {
         if (category === "All Categories") {
           return (
-            <ProductCard 
-              product={product}
-            />
+            <Link to={`/product/${product.id}`}>
+              <ProductCard 
+                product={product}
+                key={product.id}
+              />
+            </Link>
           )
         } else if (category.toLowerCase() === product.category) {
           return (
-            <ProductCard 
-              product={product}
-            />
+            <Link to={`/product/${product.id}`}>
+              <ProductCard 
+                product={product}
+                key={product.id}
+              />
+            </Link>
           )
         }
       })}

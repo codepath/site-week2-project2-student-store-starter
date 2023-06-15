@@ -11,6 +11,11 @@
     padding-right: 10%;
 }
 
+.navbar a{
+    color: #fff;
+    text-decoration: none;
+}
+
 .navbar-items {
     display: flex;
     flex-direction: row;

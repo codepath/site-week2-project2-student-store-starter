@@ -4,3 +4,8 @@
     grid-gap: 15px;
     justify-content: center;
 }
+
+.product-grid a{
+    color: black !important;
+    text-decoration: none !important;
+}

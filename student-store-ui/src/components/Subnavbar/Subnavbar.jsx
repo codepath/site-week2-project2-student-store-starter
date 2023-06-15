@@ -5,7 +5,7 @@ import SearchBar from "../Searchbar/Searchbar"
 
 export default function Subnavbar({ categories, category, setCategory, searchTerm, setSearchTerm }) {
   return (
-    <div className="subnav-wrap">
+    <div className="subnav-wrap" id="subnavbar">
       <section className="subnavbar">
         {/* search bar props="search-term"
             use .filter to create functionality*/}

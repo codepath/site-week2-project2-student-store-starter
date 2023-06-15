@@ -11,6 +11,9 @@
   }
   
 .about-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
     flex: 1;
     background-color: #fff;
     padding: 28px 36px;
@@ -18,8 +21,9 @@
   
   .about-logo {
     display: flex;
-    
-    padding: 20px 20px 20px 20px;
+    flex-direction: row;
+    height: 90%;
+    padding: 5% 0% 5% 0%;
   }
 
   .about-logo img{
