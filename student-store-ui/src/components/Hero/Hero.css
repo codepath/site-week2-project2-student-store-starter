@@ -1,0 +1,14 @@
+:root {
+    --dark-Cp: #2c4047;
+    --light-Cp: #00c98d;
+} 
+    
+.banner{
+    background-color: #00c98d;
+    color: white;
+    margin: 0 auto;    
+    width: 1100px;
+}
+
+h1, p {
+text-align: center;}

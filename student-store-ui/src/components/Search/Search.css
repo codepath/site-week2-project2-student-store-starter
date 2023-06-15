@@ -1,0 +1,26 @@
+/* input {
+    height: 40px;
+    padding: 0 15px;
+    border-radius: 8px 0 0 8px;
+    border: solid 1px #e4e4e4;
+    flex: 1;
+    font-size: 16px;
+} */
+
+/* #search-form{
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    border-radius: 30px;
+    width: 500px;
+    height: 50px;
+} */
+
+#search-form, #search-input {
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    border-radius: 30px;
+    width: 500px;
+    height: 50px;
+}

@@ -1,0 +1,31 @@
+:root {
+    --dark-Cp: #2c4047;
+    --light-Cp: #00c98d;
+}
+
+.navbar {
+padding: 10px;
+background-color: var(--dark-Cp);
+} 
+
+nav ul{
+    float: right;
+} 
+
+nav ul li{
+    display: inline-block;
+    margin: 10px;
+    height: 0px;
+}
+
+a{
+text-decoration: none;
+color: white;
+}
+
+#logo{
+    width: 60px;
+    height: 60px;
+    margin-left: 80px;
+
+}
