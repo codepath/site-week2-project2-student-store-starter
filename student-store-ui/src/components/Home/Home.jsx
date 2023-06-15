@@ -105,7 +105,7 @@ export default function Home() {
   // data fetching
   useEffect(() => {
     axios.get(URL_DB).then((response) => {
-      console.log(response.data.products);
+      console.log("fetching data...");
       setProduts(() => response.data.products);
     })
   }, []);
@@ -114,7 +114,6 @@ export default function Home() {
     // componenets
     let name = event.target.name;
     let value = event.target.value;
-    console.log(name, value);
     setQuery(() => ({
       ...query,
       [name]: value
