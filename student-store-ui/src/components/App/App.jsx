@@ -4,7 +4,7 @@ import axios from "axios"
 
 
 
-import { BrowserRouter, Router } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
@@ -13,6 +13,7 @@ import Hero from "../Hero/Hero"
 import About from "../About/About"
 import Contact from "../Contact/Contact"
 import Footer from "../Footer/Footer"
+import ProductDetails from "../ProductDetails/ProductDetails"
 
 export default function App() {
 
@@ -25,33 +26,26 @@ export default function App() {
     axios.get(URL)
     .then((response) => {
         setProducts(response.data.products);
-
       });
-    
   }, [])
-
-  // const [searchTerm, setSearchTerm] = useState("");
-
-  
-  // const productFilter = products?.filter((product) => {
-  //   const lowercaseSearchTerm = searchTerm.toLowerCase();
-  //   const lowercaseSelectedCategory = selectedCategory.toLowerCase() === "all categories" ? "" : selectedCategory.toLowerCase();
-  //   const productName = product.name.toLowerCase();
-  //   const matchesSearch = lowercaseSearchTerm === "" || productName.includes(lowercaseSearchTerm);
-  //   const matchesCategory = lowercaseSelectedCategory === "" || product.category?.toLowerCase() === lowercaseSelectedCategory;
-  //   return matchesSearch && matchesCategory;
-  // });
 
 
   return (
     <div className="app">
       <BrowserRouter>
         <main>
-          {/* YOUR CODE HERE! */}
           <Navbar />
             <Hero/>
             <Sidebar isActive={sidebarState} handleClick={() => setSidebar(!sidebarState)}/>
-          <Home products={products}/>
+          <Routes>
+            <Route  
+              path="/"
+              element={<Home products={products}/>}
+            />
+            <Route
+              path="/:id" element={<ProductDetails/>}
+              />
+          </Routes>
           <About/>
           <Contact/>
           <Footer/>
