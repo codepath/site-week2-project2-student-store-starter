@@ -12,7 +12,7 @@ import axios from "axios"
 export default function App() {
   
   const url = "https://codepath-store-api.herokuapp.com/store";
-  const [products, setProducts] = useState();
+  const [products, setProducts] = useState([]);
   const [sidebar, setSideBar] = useState(false);
   
   
@@ -20,16 +20,14 @@ export default function App() {
     
     axios.get(url).then((response) => {
 
-      // do stuff here
-
-      console.log(response.data.products);
+      // console.log(response.data.products);
       setProducts(response.data.products)
     });
 
   }, []);  
 
 
-  
+  console.log("app products", products)
   
   return (
     
@@ -40,7 +38,11 @@ export default function App() {
 
           <Navbar />
           <Sidebar isActive = {sidebar} handleOnClick = {() => setSideBar(!sidebar)}/>
-          <Home products = {products}/>
+          <Home 
+            products={products} 
+            setProducts={setProducts}
+
+            />
         </main>
       </BrowserRouter>
     </div>

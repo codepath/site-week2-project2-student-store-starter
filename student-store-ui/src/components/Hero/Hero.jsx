@@ -14,7 +14,7 @@ export default function Hero() {
         </div>
         <div className="hero-image">
 
-        <img src="https://codepath-student-store-demo.surge.sh/assets/student_store_icon.18e5d61a.svg" alt="hero" class="hero-img"/>
+        <img src="https://codepath-student-store-demo.surge.sh/assets/student_store_icon.18e5d61a.svg" alt="hero" className="hero-img"/>
         </div>
 
 

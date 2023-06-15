@@ -19,7 +19,7 @@
     color: white;
     padding: 7px;
 }
-.SubNavBar .content {
+.Subnavbar .content {
 
     display: flex;
     flex-direction: column;
@@ -35,7 +35,7 @@
 
 }
 
-.SubNavBar .content .row{
+.Subnavbar .content .row{
 
     display: flex;
     flex-direction: row;
@@ -48,7 +48,7 @@
     
 }
 
-.SubNavBar .content .search-bar input {
+.Subnavbar .content .search-bar input {
     height: 40px;
     padding: 0 15px;
     border-radius: 8px 0 0 8px;
@@ -57,7 +57,7 @@
     font-size: 16px;
 }
 
-.SubNavBar a{
+.Subnavbar a{
     text-decoration: none;
     color: black;
     margin-left: 10px;
@@ -67,7 +67,7 @@
 
 }
 
-.SubNavBar ul {
+.Subnavbar ul {
 
     list-style-type: none;
     display: flex;
@@ -75,13 +75,13 @@
     
 }
 
-.SubNavBar .icons {
+.Subnavbar .icons {
     display: flex;
     align-items: center;
     
   }
 
-  .SubNavBar .icons .cart {
+  .Subnavbar .icons .cart {
     display: flex;
     align-items: center;
     background-color: green;
@@ -92,20 +92,20 @@
     margin-left: 10px;
   }
 
-  .SubNavBar .icons .cart a {
+  .Subnavbar .icons .cart a {
     color: white;
     margin-left: 5px;
     
 
   }
   
-  .SubNavBar .icons .help {
+  .Subnavbar .icons .help {
     display: flex;
     align-items: center;
     margin-right: 50px; 
   }
 
-.SubNavBar .icons .help .material-icons{
+.Subnavbar .icons .help .material-icons{
 
     color: gray;
     margin-right: 5px;
@@ -125,11 +125,12 @@
     justify-content: space-between;
     text-align: center;
 
-	
 
+}
 
+.menu-open li:active {
 
-
+    color: green;
 }
 
 
