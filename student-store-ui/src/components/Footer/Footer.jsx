@@ -1,8 +1,8 @@
-function Footer(){
+import "./Footer.css"
+export default function Footer(){
     return (
         <>
         <p> this is a footer</p>
         </>
     )
 }
-export default Footer;

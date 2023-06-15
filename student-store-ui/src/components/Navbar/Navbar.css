@@ -22,5 +22,8 @@
     justify-content: space-around;
 }
 .navbar{
+    z-index: 101;
+    width: 100%;
+    position: fixed;
     background-color: var(--p-color);
 }
