@@ -12,5 +12,11 @@
   height: 100%;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* formarly column */
+}
+
+.container{
+  background-color : #484848;
+  /* margin-left: 55px; */
+  /* padding-left: 15px; */
 }

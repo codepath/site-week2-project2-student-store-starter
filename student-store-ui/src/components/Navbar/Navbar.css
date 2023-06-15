@@ -1,0 +1,39 @@
+.navbar{
+    padding-left: 65px; /* this is the width of the sidebar */
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    height: 7%;
+    max-height: 100px;
+    width: 100%;
+    margin: 0;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    padding-bottom: 0;
+}
+
+.menu{
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+}
+
+.nav-button{
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    height: 50px;
+    width: 50%;
+    border-radius: 25px;
+    transition: all 0.5s ease;
+}
+
+.nav-button:hover{
+    background: -webkit-linear-gradient(0deg,#be22ff 20%,#ff279c 50%,#ff981f 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}

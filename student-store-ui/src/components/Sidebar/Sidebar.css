@@ -1,0 +1,30 @@
+.sidebar {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 60px;
+    overflow: scroll;
+    align-items: center;
+    padding-top: 1%;
+    gap: 30px;
+    position: fixed;
+    z-index: 1;
+}
+
+.side-bar-button{
+    background-color: transparent;
+    height: 50px;
+    width: 50px;
+    padding: 0%;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-img{
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
