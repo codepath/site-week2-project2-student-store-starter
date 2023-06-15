@@ -1,0 +1,39 @@
+.about-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20%;
+}
+.about-title{
+    font-size: 3rem;
+    color: var(--text-color-dark);
+    padding: 1.5rem;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.body-content{
+    background-color: var(--text-color-light);
+    flex-grow: 1;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 5px 0px rgb(103, 102, 102);
+}
+.about-us-text{
+    padding: 3rem;
+    font-size: 1.75rem;
+    color: var(--text-color-dark);
+}
+.media{
+    padding: 3rem;
+    background-color: var(--p-color);
+}
+.media img{
+    --size: 15rem;
+    min-width: var(--size);
+    min-height: var(--size);
+}
