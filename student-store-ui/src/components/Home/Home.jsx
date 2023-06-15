@@ -2,7 +2,11 @@ import * as React from "react"
 import "./Home.css"
 
 export default function Home({products}) {
-  
+
+
+
+
+
   function createProduct(info, idx){
     return (
       <div className="grid">

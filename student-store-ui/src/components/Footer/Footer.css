@@ -1,0 +1,25 @@
+.footer {
+    width: 100%;
+    max-width: 100vw;
+    height: 350px;
+    background: var(--pure-white);
+}
+.footer .content {
+    max-width: var(--content-width);
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    background: var(--pure-white);
+}
+.footer .content .links {
+    margin: 0;
+    flex: 1;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+}

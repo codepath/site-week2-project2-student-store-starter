@@ -6,12 +6,6 @@ export default function Sidebar({isActive = false, handleClick} ) {
   const sideBarClassName = isActive ? "sidebar open" : "sidebar closed";
 
 
-
-
-
-
-
-
   return (
     <section className={sideBarClassName}>
       
