@@ -1,0 +1,31 @@
+.product-grid {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  min-height: 200px;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.product-poster {
+  height: 230px;
+  width: 230px;
+}
+
+.product{
+    margin: 6px;
+    border-radius: 4px;
+    border: solid 5px var(--light-cp)
+}
+
+.grid-p{
+    font-size: xx-large ;
+    border-radius: 5%;
+    background-color: var(--light-cp);
+    padding-top: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    color: white;
+}
+

@@ -4,13 +4,14 @@
 }
 
 label{
-    margin-left: 140px;
+    margin-left: 120px;
     font: bolder;
     font-size: xx-large ;
     margin-bottom: 30px;
     justify-content: center;
 }
 input{
+    padding: 14px;
     margin-top: 30px;
     justify-content: center;
     height: 4vh;
