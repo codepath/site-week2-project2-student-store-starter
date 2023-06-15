@@ -1,25 +1,9 @@
 import * as React from "react"
 import "./Navbar.css"
+import Socials from "../Socials/Socials";
 import CodePathLogo from "../../../Assets/logo.svg";
-import InstagramSVG from "../../../Assets/icons8-instagram.svg";
-import TwitterSVG from "../../../Assets/icons8-twitter.svg";
-import FacebookSVG from "../../../Assets/icons8-facebook.svg" ;
 
-function Socials() {
-  return (
-    <div className="social-logo-container">
-      <a href="/">
-        <img src={InstagramSVG} alt="instagram logo" />
-      </a>
-      <a href="/">
-        <img src={TwitterSVG} alt="twitter logo" />
-      </a>
-      <a href="/">
-        <img src={FacebookSVG} alt="facebook logo" />
-      </a>
-    </div>
-  )
-}
+
 function Links(){
   return (
     <ul className="links">
