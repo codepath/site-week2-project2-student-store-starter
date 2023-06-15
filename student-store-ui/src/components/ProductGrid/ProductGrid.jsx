@@ -10,19 +10,19 @@ export default function ProductGrid({products, category, searchTerm}) {
   return (
     <section className="product-grid">
       {selectedProducts?.length === 0 ? <p>No products avalible</p> 
-      : selectedProducts?.map((product) => {
+      : selectedProducts?.map((product, index) => {
         if (category === "All Categories") {
           return (
-            <Link to={`/product/${product.id}`}>
+            <Link key={product.id} to={`/product/${product.id}`}>
               <ProductCard 
                 product={product}
-                key={product.id}
+                key={index}
               />
             </Link>
           )
         } else if (category.toLowerCase() === product.category) {
           return (
-            <Link to={`/product/${product.id}`}>
+            <Link key={product.id} to={`/product/${product.id}`}>
               <ProductCard 
                 product={product}
                 key={product.id}

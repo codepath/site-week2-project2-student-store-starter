@@ -9,14 +9,12 @@ import ProductDetails from "../ProductDetails/ProductDetails"
 import "./App.css"
 import Footer from "../Footer/Footer"
 import Hero from "../Hero/Hero"
+import About from "../About/About"
 
 const mockBackend = "https://codepath-store-api.herokuapp.com/store"
 
 export default function App() {
   const [products, setProducts] = useState()
-  const [product, setProduct] = useState({})
-
-  const { id } = useParams()
 
   useEffect(() => {
     axios.get(mockBackend)
@@ -24,15 +22,6 @@ export default function App() {
         setProducts(response.data.products)
       })
   }, [])
-
-  // useEffect(() => {
-  //   axios.get(`mockBackend/${id}`)
-  //     .then(response => {
-  //       setProduct(response.data.product)
-  //     })
-  // }, [])
-
-  console.log(product)
 
   return (
     <BrowserRouter>
@@ -45,7 +34,8 @@ export default function App() {
               <div className="main-content">
                 <Routes>
                   <Route path="/" element={<Home products={products} product/>} />
-                  {/* <Route path="/product/:id" element={<ProductDetails product={product} />} /> */}
+                  <Route path="/#about" element={<About />} />
+                  <Route path="/product/:id" element={<ProductDetails />} />
                 </Routes>
               </div>
               <Footer />

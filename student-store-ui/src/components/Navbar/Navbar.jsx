@@ -9,13 +9,13 @@ export default function Navbar() {
       <Link to="/">
         <Logo />
       </Link>
-      <div className="navbar-items">
+      <section className="navbar-items">
         <Link to="/">
           <div>
             <b>Home</b>
           </div>
         </Link>
-        <Link to="#about">
+        <Link to="/#About">
           <div>
             <b>About Us</b>
           </div>
@@ -30,7 +30,7 @@ export default function Navbar() {
             <b>Buy Now</b>
           </div>
         </Link>
-      </div>
+      </section>
     </nav>
   )
 }
