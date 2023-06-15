@@ -38,7 +38,7 @@ export default function App() {
   // if you pass in an empty dependency aray, it will run only once
   const[formData, setFormData] = useState(); // used for search
   const[selectedCategory, setSelectedCategory] = useState(""); // used for category filtering - default should be "all categ.." ?
-
+  
   useEffect(() => {
     axios.get(url).then((response) =>{
       setProducts(response.data.products)
@@ -84,7 +84,7 @@ console.log({products})
         <Routes>
           {/* <Route path= "/" element={<Home products = {products}/>}> </Route> */}
           {/* <Route path= "about" element={<About/>}> </Route> */}
-          {/* <Route path= "about" element={<About/>}> </Route> */}
+          {/* <Route path= "../Navbar/Navbar" element={<Navbar/>}> </Route> */}
           {/* <Route path= "about" element={<About/>}> </Route> */}
 
         </Routes>

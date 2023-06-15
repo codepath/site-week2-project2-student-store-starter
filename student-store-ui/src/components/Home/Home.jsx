@@ -58,13 +58,13 @@ export default function Home({products}) {
                   <div className="main-info">
                       <p className="product-name">{product.name}</p>
                       <div className="stars">
-                        <img src={"https://assets.stickpng.com/images/580b585b2edbce24c47b2915.png"} alt="star ratings" className="star-rating"
+                        <img src={"https://assets.stickpng.com/images/580b585b2edbce24c47b2913.png"} alt="star ratings" className="star-rating"
                         style={{width: "20px", height: "20px"}}></img>
-                        <img src={"https://assets.stickpng.com/images/580b585b2edbce24c47b2915.png"} alt="star ratings" className="star-rating"
+                        <img src={"https://assets.stickpng.com/images/580b585b2edbce24c47b2913.png"} alt="star ratings" className="star-rating"
                         style={{width: "20px", height: "20px"}}></img>
-                        <img src={"https://assets.stickpng.com/images/580b585b2edbce24c47b2915.png"} alt="star ratings" className="star-rating"
+                        <img src={"https://assets.stickpng.com/images/580b585b2edbce24c47b2913.png"} alt="star ratings" className="star-rating"
                         style={{width: "20px", height: "20px"}}></img>
-                        <img src={"https://assets.stickpng.com/images/580b585b2edbce24c47b2915.png"} alt="star ratings" className="star-rating"
+                        <img src={"https://assets.stickpng.com/images/580b585b2edbce24c47b2913.png"} alt="star ratings" className="star-rating"
                         style={{width: "20px", height: "20px"}}></img>
                         {/* <img src={"https://www.pngitem.com/pimgs/m/610-6107201_transparent-half-of-a-star-hd-png-download.png"} alt="star ratings" className="star-rating"
                         style={{width: "20px", height: "20px"}}></img> HALF STAR?? */} 
