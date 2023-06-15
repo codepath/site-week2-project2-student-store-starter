@@ -8,21 +8,22 @@ import Subnavbar from "../Subnavbar/Subnavbar";
 import Hero from "../Hero/Hero";
 import About from "../About/About";
 import Contact from "../Contact/Contact";
+import Footer from "../Footer/Footer";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function App() {
-  const url = "https://codepath-store-api.herokuapp.com/store";
-  const [products, setProducts] = useState();
-  useEffect(() => {
-    axios.get(url).then((response) => {
-      setProducts(response.data.products);
-    });
-  }, []);
-  console.log(products);
+  // const url = "https://codepath-store-api.herokuapp.com/store";
+  // const [products, setProducts] = useState();
+  // useEffect(() => {
+  //   axios.get(url).then((response) => {
+  //     setProducts(response.data.products);
+  //   });
+  // }, []);
+  // console.log(products);
   return (
     <div className="app">
-      <BrowserRouter>
+      {/* <BrowserRouter> */}
         {/* <Routes>
         <Route path="/" element ={<Home></Home>}></Route>
         <Route path="/About" element={<About/>}></Route>
@@ -36,7 +37,10 @@ export default function App() {
           <Navbar />
           <Hero />
           <Subnavbar />
-
+          {/*
+          <Subnavbar items {item} setItems 
+          
+          */}
           {/* {products?.map((product, index)=>
           // <Sidebar
           // label = {product.name}
@@ -46,8 +50,9 @@ export default function App() {
 
           <About />
           <Contact />
+          <Footer />
         </main>
-      </BrowserRouter>
+      {/* </BrowserRouter> */}
     </div>
   );
 }

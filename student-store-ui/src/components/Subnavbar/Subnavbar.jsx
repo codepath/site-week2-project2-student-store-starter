@@ -35,7 +35,7 @@ export default function Subnavbar() {
               <button>All Categories</button>
             </li>
             <li className="">
-              <button>Clothing</button>
+              <button onClick={() => handleCategory()}>Clothing</button>
             </li>
             <li className="">
               <button>Food</button>
