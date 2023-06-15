@@ -6,15 +6,13 @@ import ProductGrid from "../ProductGrid/ProductGrid"
 export default function Search({products, searchedProducts, setSearchedProducts}){
 
     const handleChange = (event) => {
-        return (
-            setSearchedProducts(products.filter((product) => product.name.
-                toLowerCase()
-                .includes(event.target.value.toLowerCase())))
-        )
+        setSearchedProducts(products.filter((product) => product.name
+            .toLowerCase()
+            .includes(event.target.value.toLowerCase())))
     }
 
-    const handleSubmit = () => {
-
+    const handleSubmit = (event) => {
+        event.preventDefault()
     }
 
    return (
@@ -26,8 +24,12 @@ export default function Search({products, searchedProducts, setSearchedProducts}
             className="search-input"
             onChange={handleChange}
         />
-        <button className="search-button"><img src={searchIcon} className="search-icon"/></button>
-        {/* <ProductGrid products={searchedProducts} /> */}
+        <button
+            className="search-button"
+            onClick={handleSubmit}
+            type="submit"
+            ><img src={searchIcon} className="search-icon"/>
+        </button>
     </form>
    )
 }

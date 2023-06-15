@@ -1,10 +1,9 @@
 .product-grid{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: flex-start;
     align-content: space-around;
-    width: 93%;
-    gap: 4vw;
-    min-height: 85vh;
+    width: 95%;
+    margin-left: 55px;
 }

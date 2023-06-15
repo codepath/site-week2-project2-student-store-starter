@@ -10,16 +10,16 @@ export default function Sidebar({isOpen = false, shoppingCart = {}, products, ch
   return (
     <section className="sidebar">
       <button id="open-close-btn" className="side-bar-button">
-        <img class="btn-img" src={backButtonIcon}/>
+        <img className="btn-img" src={backButtonIcon}/>
       </button>
       <button id="shopping-cart-btn" className="side-bar-button">
-        <img class="btn-img" src={shoppingCartIcon}/>
+        <img className="btn-img" src={shoppingCartIcon}/>
       </button>
       <button id="paryment-info-btn" className="side-bar-button">
-        <img class="btn-img" src={paymentInfoIcon}/>
+        <img className="btn-img" src={paymentInfoIcon}/>
       </button>
       <button id="checkout-btn" className="side-bar-button">
-        <img class="btn-img" src={checkOutIcon}/>
+        <img className="btn-img" src={checkOutIcon}/>
       </button>
     </section>
   )

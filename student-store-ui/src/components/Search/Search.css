@@ -17,9 +17,17 @@
 }
 
 .search-input::placeholder{
-    font-size: 18px;
+    font-size: 20px;
 }
 
+.search-input:focus{
+    outline-color: #be22ff;
+    outline-style: inset;
+}
+
+.search-input[type="text"]{
+    font-size: 20px;
+}
 
 .search-button{
     width: 100px;

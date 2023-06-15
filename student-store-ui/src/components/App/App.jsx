@@ -23,24 +23,23 @@ export default function App() {
 
   return (
     <div className="app">
-      
-        <main>
+      <main>
         <BrowserRouter>
-      <Sidebar isOpen={false} shoppingCart={{}} products={products}/>
+          <Sidebar isOpen={false} shoppingCart={{}} products={products}/>
           <div className="container">
-      <Routes>
-        <Route path="/" element={<Home products={products}/>} />
-        <Route path="/about" element={<About/>} />
-      </Routes>
+            <Routes>
+              <Route path="/" element={<Home products={products}/>} />
+              <Route path="/about" element={<About/>} />
+            </Routes>
           </div>
-      <Navbar />
-          {/* todo*/}
-          
-          {/* <Link to="/">Home</Link>
-          <Link to="/products/productID">Product</Link>
-          <Link to="*">None</Link> */}
-      </BrowserRouter>
+          <Navbar />
+              {/* todo*/}
+              
+              {/* <Link to="/">Home</Link>
+              <Link to="/products/productID">Product</Link>
+              <Link to="*">None</Link> */}
+        </BrowserRouter>
         </main>
-    </div>
+      </div>
   )
 }

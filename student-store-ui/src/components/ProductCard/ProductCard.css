@@ -4,6 +4,7 @@
     color: white;
     display: flex;
     flex-direction: column;
+    margin: 2.5%;
 }
 
 .product-image{
