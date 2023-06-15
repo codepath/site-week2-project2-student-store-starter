@@ -26,7 +26,7 @@ export default function Search({ handleSearch, products }) {
         />
         <button type="submit">Clear</button>
       </form>
-      <ProductGrid products={filteredProducts} /> 
+      <ProductGrid products={!filteredProducts ? products : filteredProducts} />
     </div>
   );
 }

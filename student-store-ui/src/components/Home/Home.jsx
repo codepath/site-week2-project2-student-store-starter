@@ -19,7 +19,6 @@ export default function Home({ products, filteredProducts }) {
       <Navbar />
       <Hero />
       <Search handleSearch={handleSearch} products={ products }/>
-      <ProductGrid products={filteredProducts} />
       <Navbar />
     </div>
   );
