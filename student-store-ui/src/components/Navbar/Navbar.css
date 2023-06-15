@@ -39,7 +39,7 @@
     height: 2vh;
 }
 
-.links{
+.navbar .links{
     display: flex;
     gap: 3vh;
     margin-left: auto;

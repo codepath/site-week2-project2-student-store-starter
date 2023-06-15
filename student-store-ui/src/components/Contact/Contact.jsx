@@ -8,7 +8,7 @@ import facebook from "../../assets/facebook.svg";
 
 export default function Contact() {
   return (
-    <div className="contact-container">
+    <div className="contact-container" id="Contact">
       <h3>Contact Us</h3>
 
       <div className="contact-info">

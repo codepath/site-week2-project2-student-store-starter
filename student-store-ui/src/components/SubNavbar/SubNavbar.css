@@ -25,7 +25,11 @@
     /* flex: 1; */
 }
 
-.sub-navbar .content .search-bar input{
+form{
+    display: flex;
+}
+
+.sub-navbar .content .search-bar  input{
     padding: 0 15px;
     border-radius: 8px 0 0 8px; 
     border: solid 1px #e4e4e4;

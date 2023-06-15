@@ -5,7 +5,7 @@ import logo from "../../assets/logo.png"
 
 export default function About() {
   return (
-    <div className="about-container">
+    <div className="about-container" id="About">
         <h3>About</h3>
 
         <div className="about-information">
