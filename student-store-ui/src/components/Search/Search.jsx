@@ -1,40 +1,33 @@
 import React, { useState } from "react";
+import ProductGrid from "../ProductGrid/ProductGrid";
 
 export default function Search({ handleSearch, products }) {
   const [searchTerm, setSearchTerm] = useState("");
-  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState(products); // Initialize with all products
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
-  };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    const filteredProducts = products.filter((product) =>
-      product.name.toLowerCase().includes(searchTerm.toLowerCase())
+    // Filter products immediately as the search input changes
+    const filtered = products.filter((product) =>
+      product.name.toLowerCase().includes(event.target.value.toLowerCase())
     );
-
-    setFilteredProducts(filteredProducts);
-    handleSearch(filteredProducts); 
+    setFilteredProducts(filtered);
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="search-bar">
+      <form>
         <input
           type="text"
           value={searchTerm}
           onChange={handleSearchChange}
           placeholder="Search for a product"
         />
-        <button type="submit">Search</button>
+        <button type="submit">Clear</button>
       </form>
-      <ul>
-        {filteredProducts.map((product) => (
-          <li key={product.id}>{product.name}</li>
-        ))}
-      </ul>
+      <ProductGrid products={filteredProducts} /> 
     </div>
   );
 }
+

@@ -8,7 +8,7 @@ import axios from "axios";
 import { useState } from "react";
 
 
-export default function Home({ products }) {
+export default function Home({ products, filteredProducts }) {
   const [searchResults, setSearchResults] = useState([]);
 
   const handleSearch = (results) => {
@@ -19,7 +19,7 @@ export default function Home({ products }) {
       <Navbar />
       <Hero />
       <Search handleSearch={handleSearch} products={ products }/>
-      <ProductGrid products={products} />
+      <ProductGrid products={filteredProducts} />
       <Navbar />
     </div>
   );
