@@ -34,13 +34,6 @@ export default function Subnavbar({ activeCategory, setActiveCategory, products,
 
 
 
-
-
-
-
-
-
-
 // HANDLE CATEGORY SELECTION 
 
 function handleCategoryClick(category) {

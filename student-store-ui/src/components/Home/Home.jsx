@@ -11,11 +11,7 @@ import ProductGrid from "../ProductGrid/ProductGrid";
 
 export default function Home({ products, setProducts }) {
   const [activeCategory, setActiveCategory] = useState("All Categories");
-  // const [searchResults, setSearchResults] = useState (products);
   const [searchResults, setSearchResults] = useState ("");
-
-  // console.log("Home products", products)
-  // console.log("Home component searchResults", searchResults)
 
   function filterCategory() {
     if (activeCategory === "All Categories") {
@@ -29,14 +25,12 @@ export default function Home({ products, setProducts }) {
   }
 
   const filteredSearchProducts = products?.filter((product) => {
-    // console.log(product.name.toLowerCase() === searchResults.toLowerCase())
     return product.name.toLowerCase().includes(searchResults.toLowerCase())
   })
   console.log("Home component filtered search", filteredSearchProducts)
   
   const filteredProducts = filterCategory();
-  // console.log("Home component consolelog", products, searchResults, activeCategory)
-  // console.log("Home component searchResults",  searchResults)
+
 
   return (
     <>
