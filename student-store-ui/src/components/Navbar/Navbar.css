@@ -21,5 +21,6 @@
     flex-direction: row;
     justify-content: space-between;
     width: 50%;
+    min-width: 340px;
     align-items: center;
 }

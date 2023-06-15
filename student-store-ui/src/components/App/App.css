@@ -21,10 +21,11 @@ html {
 }
 
 .page {
-  margin-left: 56px;
+  margin-left: 80px;
 }
 
 .main-content {
   width: 80%;
+  max-width: 1450px;
   margin: auto;
 }
