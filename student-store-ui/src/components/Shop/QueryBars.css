@@ -4,6 +4,7 @@
    align-items: center;
    padding: 1rem;
    margin-top: 2rem;
+   width: 100%;
 }
 .search-input{
     position: relative;
@@ -61,5 +62,7 @@
     color: var(--text-color-light);
 }
 .products-title{
-margin-top: 6rem;
+margin-top: 3rem;
+margin-left: 1.5rem;
+align-self: flex-start;
 }

@@ -1,17 +1,43 @@
-import * as React from "react"
-import "./Navbar.css"
+import * as React from "react";
+import { Link } from "react-router-dom";
+import "./Navbar.css";
+import "../../globals.css"
 import Socials from "../Socials/Socials";
 import CodePathLogo from "../../../Assets/logo.svg";
 
+function Links() {
 
-function Links(){
   return (
     <ul className="links">
-      <li><a className="social-link" href="/">Home</a></li>
-      <li><a className="social-link" href="/#About">About Us</a></li>
-      <li><a className="social-link" href="/#Contact">Contact Us</a></li>
-      <li><a className="social-link" href="/#Buy">Buy Now</a></li>
-    </ul>
+      <li>
+        <Link to="/">
+          <div className="social-link">
+            Home
+          </div>
+        </Link>
+      </li>
+      <li>
+        <Link to="/Shop">
+          <div className="social-link">
+            Buy Now
+          </div>
+        </Link>
+      </li>
+      <li>
+        <Link to="/">
+          <div className="social-link">
+            About Us
+          </div>
+        </Link>
+      </li>
+      <li>
+        <Link to="/">
+          <div className="social-link">
+            Contact Us
+          </div>
+        </Link>
+      </li>
+    </ul >
   )
 }
 function Logo() {
@@ -27,11 +53,11 @@ function Logo() {
 export default function Navbar() {
   return (
     <nav className="navbar" name="navigation bar" >
-        <div className="navbar-content">
+      <div className="navbar-content">
         <Logo />
         <Links />
         <Socials />
-        </div>
-      </nav>
+      </div>
+    </nav>
   )
 }
