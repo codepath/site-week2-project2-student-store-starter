@@ -34,12 +34,9 @@ export default function App() {
   const [products, setProducts] = useState();
   // useEffect(setup, dependencies)
   // if you pass in an empty dependency aray, it will run only once
-  // const createSearchUrl = (searchTerm) => `https://codepath-store-api.herokuapp.com/store/search?" + query=${searchTerm}`;
-  const[formData, setFormData] = useState();
-  const[selectedCategory, setSelectedCategory] = useState("food"); // default should be "/" ?
+  const[formData, setFormData] = useState(); // used for search
+  const[selectedCategory, setSelectedCategory] = useState(""); // used for category filtering - default should be "all categ.." ?
 
-
-  // createSearchUrl()
   useEffect(() => {
     axios.get(url).then((response) =>{
       setProducts(response.data.products)
@@ -53,14 +50,29 @@ export default function App() {
  // Update local state with current state of input element (render each keystroke)
  function handleInput(event) {
     setFormData(event.target.value);
+    
+    // console.log("search product is: " + `${formData}`);
+    products?.filter((product) => {
+      (product.name).includes(formData);
+      console.log("product is: " + `${product.name}`)
+      // console.log("PRODUCT CATEGORY: " + `${product.category}`)
+      console.log(products)})
  }
  
+ console.log("search input: " + `${formData}`);
+
+
  function changeCategory(event){
-  console.log("hi")
+  
   setSelectedCategory(products?.filter((product) => {
     (product.category === selectedCategory);
+    console.log("SELECTED: " + `${selectedCategory}`)
+    console.log("PRODUCT CATEGORY: " + `${product.category}`)
+    console.log(products)
+    // console.log("EVENT" + `${event.target.value}`)
 }))};
-// console.log({products})
+// console.log(products)
+console.log({products})
 
  console.log(formData); // this is what is generated in the search bar when you type
   return (
@@ -130,7 +142,7 @@ export default function App() {
       </nav>
 
 
-          <Home products = {products} changeCategory={changeCategory} /> 
+          <Home products = {products} /> 
         {/* need to make a usestate for the home bc changing when we type? */}
         {/* {products?.map((product, index) => <p key={index}> {product.name}</p>)} */}
 

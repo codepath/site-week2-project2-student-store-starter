@@ -7,7 +7,7 @@ import {useEffect, useState} from "react"
 import { Link } from 'react-router-dom'
 import About from "../About/About"
 
-export default function Home({products, changeCategory}) {
+export default function Home({products}) {
   // pass in changecategory as a prop
   
   const num_in_cart=0;

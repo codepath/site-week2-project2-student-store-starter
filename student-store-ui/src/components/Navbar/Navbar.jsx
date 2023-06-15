@@ -22,16 +22,9 @@ export default function Navbar() {
       </section>
 
       <ul className="links">
-        {/* useRoutes([
 
-        ]) */}
         <li><a href="/">Home</a></li>
-          {/* {
-            useRoutes([{path:"/About", element: <About/>}])
-
-          } */}
-
-        {/* <Link to="/#about">   About   </Link> */}
+         
         {/* apply an id so i can jump to it on the same page for a link component */}
 
         {/* <Link to={"#Contact"}>   Contact Us   </Link> */}
