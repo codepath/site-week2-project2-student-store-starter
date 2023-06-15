@@ -1,26 +1,26 @@
-import * as React from "react"
-import "./Home.css"
+import * as React from "react";
+import "./Home.css";
 import Hero from "../Hero/Hero";
-import SearchNFilter from "../SearchNFilter/SearchNFilter";
+import Search from "../Search/Search";
 import Navbar from "../Navbar/Navbar";
 import ProductGrid from "../ProductGrid/ProductGrid";
+import axios from "axios";
+import { useState } from "react";
 
 
+export default function Home({ products }) {
+  const [searchResults, setSearchResults] = useState([]);
 
-import { BrowserRouter, Link } from "react-router-dom";
-
-
-export default function Home({products}) {
-
+  const handleSearch = (results) => {
+    setSearchResults(results);
+  };
   return (
     <div className="home">
       <Navbar />
       <Hero />
+      <Search handleSearch={handleSearch} products={ products }/>
       <ProductGrid products={products} />
-      {/* <SearchNFilter products={products}/> */}
-  <Navbar />
+      <Navbar />
     </div>
-
-  )
-  
+  );
 }

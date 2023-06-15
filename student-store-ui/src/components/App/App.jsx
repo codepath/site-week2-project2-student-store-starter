@@ -7,6 +7,7 @@ import "./App.css";
 import axios from "axios";
 import About from "../About/About";
 import Contact from "../Contact/Contact";
+import { useState } from "react";
 
 export default function App() {
   // Toggle sidebar
@@ -23,19 +24,6 @@ export default function App() {
       setProducts(response.data.products)
   });
 }, []);
-
-// const [query, setQuery] = useState("");
-// const search_parameters = Object.keys(Object.assign({}, ...info));
-
-// function search(info) {
-//     return items.filter(
-//     (item) =>
-//         search_parameters.some((parameter) =>
-//         item[parameter].toString().toLowerCase().includes(query)
-//         )
-//     );
-// }
-  
 
   return (
     <div className="app">
