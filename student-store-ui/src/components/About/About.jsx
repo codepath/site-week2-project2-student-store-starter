@@ -1,10 +1,12 @@
 import CodePathLogo from "../../../Assets/logo.svg";
 import "./About.css";
+import "../../globals.css";
+
 export default function About(){
     return (
         <section className="about-container">
             <div className="content">
-                <h1 className="about-title">About</h1>
+                <h1 className="about-title title">About</h1>
                 <div className="body-content">
                     <div className="about-us-text">
                         <p>The codepath student store offers great products at great prices from a great team and for a great cause.

@@ -1,8 +1,9 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useParams } from 'react-router-dom';
 import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 import Home from "../Home/Home";
 import About from "../About/About";
+import Contact from '../Contact/Contact';
 import "./App.css";
 import Footer from "../Footer/Footer";
 
@@ -13,7 +14,8 @@ export default function App() {
       <BrowserRouter>
       <Routes>
         {/* <Route path="/" element={<Home />} /> */}
-        <Route path="/" element={<About />} />
+        <Route path="/" element={<Contact />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
       </Routes>
         {/* <main className="app-content"> */}
           {/* <Navbar /> */}
@@ -23,5 +25,11 @@ export default function App() {
         {/* </main> */}
       </BrowserRouter>
     </div>
+  )
+}
+function ProductDetails(){
+  let productID = useParams().id;
+  return (
+    <p>product details display here</p>
   )
 }
