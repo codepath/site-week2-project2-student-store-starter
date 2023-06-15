@@ -5,8 +5,9 @@
     top: 0;
     left: 0;
     background-color: black;
+    overflow-x: hidden;
     transition: 0.5s;
-    z-index: 2;
+    padding-top: 60px;
 }
 
 #change-sidebar-btn {
