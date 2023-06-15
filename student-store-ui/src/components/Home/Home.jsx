@@ -4,10 +4,28 @@ import "./Home.css"
 export default function Home(props) {
   
   // console.log(products);
-
+  let newProducts;
     //needs to be moved to ProductGrid
-  const newProducts=props.products?.filter((product) =>
-  product.name.toLowerCase().includes(props.searchValue.toLowerCase()));  
+  if (props.searchCatValue === 'search') {
+    newProducts=props.products?.filter((product) =>
+    product.name.toLowerCase().includes(props.searchValue.toLowerCase()));  
+  }
+
+else if (props.searchCatValue === 'category') {
+    if (props.catValue === 'all') {
+      newProducts=props.products
+    }
+   else {newProducts=props.products?.filter((product) =>
+    product.category.toLowerCase().includes(props.catValue.toLowerCase()))}; 
+}
+
+else {
+  newProducts=props.products
+}
+
+
+  // newProducts=props.products?.filter((product) =>
+  // product.name.toLowerCase().includes(props.searchValue.toLowerCase()));  
   
   
   //needs to be moved to ProductGrid
@@ -29,6 +47,7 @@ export default function Home(props) {
         newProducts?.map(product => createProduct(product))
       }
       </div>
+     
     </div>
   )
 }

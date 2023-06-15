@@ -5,12 +5,15 @@
   min-height: 100vh;
 }
 
+
+
+/*need to move*/
 .productGrid{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-
+  padding: 50px;
 }
 
 img{
@@ -23,5 +26,5 @@ img{
 .product{
   padding: 10px;
   border: 1px solid black;
-
 }
+

@@ -12,6 +12,10 @@ import Hero from "../Hero/Hero"
 import About from "../About/About"
 import Search from "../Search/Search"
 import ProductGrid from "../ProductGrid/ProductGrid"
+import Contact from "../Contact/Contact"
+import Footer from "../Footer/Footer"
+import Logo from "../Logo/Logo"
+
 
 
 
@@ -20,6 +24,9 @@ export default function App() {
 const url = "https://codepath-store-api.herokuapp.com/store";
 const [products, setProducts] = useState([]);
 const [searchValue, setSearchValue] = useState('')
+const [searchCatValue, setSearchCatValue] = useState('')
+const [catValue, setCatValue] = useState('')
+
 
 
   useEffect(() => {
@@ -38,12 +45,15 @@ const [searchValue, setSearchValue] = useState('')
       </Routes> */}
         <main>
           {/* {products?.map((product,index) => (<h1 key={index + product.className}>{product.name}</h1>))} */}
-          <Navbar />
           <Sidebar />
+          <Navbar />
           <Hero />
-          <Search products={products} searchValue={searchValue} setSearchValue={setSearchValue}/>
-          <Home products={products} searchValue={searchValue}/>
+          <Search products={products} searchValue={searchValue} setSearchValue={setSearchValue} setCatValue={setCatValue} setSearchCatValue={setSearchCatValue}/>
+          <Home products={products} searchValue={searchValue} catValue={catValue} searchCatValue={searchCatValue}/>
           {/* <ProductGrid/> */}
+          <About />
+          <Contact />
+          <Footer />
         </main>
       </BrowserRouter>
     </div>

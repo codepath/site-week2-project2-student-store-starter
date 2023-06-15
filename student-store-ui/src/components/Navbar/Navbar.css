@@ -5,7 +5,7 @@
 
 .navbar {
 padding: 10px;
-background-color: var(--dark-Cp);
+background-color: #6A8EAE;
 } 
 
 nav ul{
@@ -20,7 +20,7 @@ nav ul li{
 
 a{
 text-decoration: none;
-color: white;
+color: black;
 }
 
 #logo{
