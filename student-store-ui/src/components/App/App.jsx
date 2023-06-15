@@ -10,7 +10,6 @@ import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
 import "./App.css"
 import Hero from "../Hero/Hero"
-import Subnavbar from "../Subnavbar/Subnavbar"
 import About from "../About/About"
 import Contact from "../Contact/Contact"
 import Footer from "../Footer/Footer"
@@ -29,26 +28,19 @@ export default function App() {
 
       });
     
-  })
+  }, [])
 
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("");
-  const categories = [
-    "All Categories",
-    "Clothing",
-    "Food",
-    "Accessories",
-    "Tech"
-  ];
+  // const [searchTerm, setSearchTerm] = useState("");
+
   
-  const productFilter = products?.filter((product) => {
-    const lowercaseSearchTerm = searchTerm.toLowerCase();
-    const lowercaseSelectedCategory = selectedCategory.toLowerCase() === "all categories" ? "" : selectedCategory.toLowerCase();
-    const productName = product.name.toLowerCase();
-    const matchesSearch = lowercaseSearchTerm === "" || productName.includes(lowercaseSearchTerm);
-    const matchesCategory = lowercaseSelectedCategory === "" || product.category?.toLowerCase() === lowercaseSelectedCategory;
-    return matchesSearch && matchesCategory;
-  });
+  // const productFilter = products?.filter((product) => {
+  //   const lowercaseSearchTerm = searchTerm.toLowerCase();
+  //   const lowercaseSelectedCategory = selectedCategory.toLowerCase() === "all categories" ? "" : selectedCategory.toLowerCase();
+  //   const productName = product.name.toLowerCase();
+  //   const matchesSearch = lowercaseSearchTerm === "" || productName.includes(lowercaseSearchTerm);
+  //   const matchesCategory = lowercaseSelectedCategory === "" || product.category?.toLowerCase() === lowercaseSelectedCategory;
+  //   return matchesSearch && matchesCategory;
+  // });
 
 
   return (
@@ -59,7 +51,6 @@ export default function App() {
           <Navbar />
             <Hero/>
             <Sidebar isActive={sidebarState} handleClick={() => setSidebar(!sidebarState)}/>
-            <Subnavbar category={selectedCategory} handleClick={()=> setSelectedCategory(categories)}/>
           <Home products={products}/>
           <About/>
           <Contact/>
