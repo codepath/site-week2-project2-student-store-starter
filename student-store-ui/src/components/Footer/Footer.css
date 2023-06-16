@@ -1,0 +1,22 @@
+.Footer{
+    width:100%;
+    text-align: center;
+    height: 350px;
+    padding: 50px;
+    display: flex;
+    font-size: 20px;
+}
+.Footer div{
+    text-align: center;
+}
+.Footer div h3{
+    font-weight: bold;
+    letter-spacing: 1px;
+    width: 300px;
+}
+
+.column p{
+    display:block;
+    text-decoration: none;
+    margin-bottom: 10px;
+}

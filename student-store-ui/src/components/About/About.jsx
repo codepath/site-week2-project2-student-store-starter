@@ -9,9 +9,8 @@ function About(){
                 <p>We've searched far and wide for items that perk the interests of even the most eccentric students and decided to offer them all here in one place.</p>
                 <p>All proceeds go towards bringing high quality CS education to college students around the country.</p>
             </div>
-            <div className="About-img">
-                <img src = "https://png.pngtree.com/png-vector/20220728/ourmid/pngtree-teamwork-of-creating-an-idea-png-image_6079408.png"/>
-            </div>
+            <img className="About-img"src = "https://www.deepit.com/image/about-us-vector.png"/>
+            <img className="About-img2" src = "https://png.pngtree.com/png-clipart/20210509/original/pngtree-world-graphic-day-bright-cartoon-light-bulb-png-image_6274173.png"/>
         </div>
     )
 }

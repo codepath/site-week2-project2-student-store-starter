@@ -20,10 +20,10 @@ body{
   position: fixed;
   height: 100%;
   width: 20%;
-  background-color: #69433a;
+  background-color: #035177;
 }
 .navbar{
-  background-color: #69433a;
+  background-color: #035177;
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -44,7 +44,7 @@ nav a{
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between 100px;
-  padding-left: 120px;
+  padding-left: 170px;
 }
 .product img{
   width: 80%;
@@ -56,11 +56,13 @@ nav a{
 .product {
   margin: 1%;
   width: 400px;
-  border-style:dashed;
-  border-color: #69433a;
+  border-color: #035177;
   border-radius: 20px;
   text-align: center;
-  background-color: #e2d4ba;
+  background-color: #fcefb0;
+  font-family: monospace;
+  font-size: 15px;
+  font-weight: bold;
   
 }
 .link{
@@ -73,7 +75,7 @@ nav a{
 .content{
   width: 100%;
   height: 350px;
-  background-color: #e2d4ba;
+  background-color: #fcefb0;
   display: flex;
   flex-direction:row;
   text-align: center;
@@ -84,7 +86,9 @@ nav a{
 }
 .intro{
   margin-left: 25%;
-  padding-left: 180px;
+  padding-left: 5px;
+  font-family: monospace;
+  font-size: 20px;
 }
 
 .media img{
@@ -107,35 +111,66 @@ nav a{
   text-align: center;
  
   margin-top: 50px;
-  background-color: #e2d4ba;
+  background-color: #fcefb0;
 }
+
+.About-img {
+  position: relative;
+  right: 25%;
+}
+.About-img2 {
+  position: relative;
+  width: 300px;
+  height: auto;
+  left: 20%;
+  bottom: 25%;
+}
+
 .search-container{
   text-align: center;
 }
 .search-container button{
-  background-color: #e2d4ba;
-  color: #69433a;
+  background-color: #fcefb0;
+  color: #035177;
   justify-content: space-between;
-  width: 100px;
+  width: 130px;
   height: 50px;
+  font-family: monospace;
+  font-weight: bold;
 }
 .search-container button:hover{
   scale: 1.1;
 }
-.facts img{
-  width: 400px;
-  height: 400px;
+.facts{
+  text-align: center;
 }
+
+.facts img{
+  width: 500px;
+  height: 500px;
+  margin-top: 5%;
+}
+
+.Back-button{
+  text-decoration: none;
+  font-size: 20px;
+}
+
 .Contact-container{
   width: 100%;
   height: 350px;
   text-align: center;
-  background-color: #e2d4ba;
+  background-color: #fcefb0;
 
   margin-top: 50px;
 
 }
 
-.sidebar2{
-  transform: translateX(0);
+.Side-button{
+  width: 130px;
+  height: 30px;
+  background-color: #fcefb0;
+}
+.Side-button:hover{
+  scale: 1.1;
 }

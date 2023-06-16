@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import Productgrid from "../Productcontainer/Productcontainer"
 import About from "../About/About"
+import Footer from "../Footer/Footer"
 
 export default function Home({products}) {
   const[search, setSearch] = useState("")
@@ -55,6 +56,7 @@ export default function Home({products}) {
           </div>
         </div>
       </div>
+      <Footer/>
       
     </div>
   )

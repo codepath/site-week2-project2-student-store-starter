@@ -5,8 +5,8 @@ import { useState } from "react";
 function Sidebar() {
   const [isOpen, setOpen] = useState(false);
   return (
-    <section className="sidebarContainer" style={{borderStyle:"solid", width: (isOpen ? "30%" : "7.5%"), transition: "width 150ms ease"}}>
-      <button onClick={() => {setOpen(!isOpen)}}/>
+    <section className="sidebarContainer" style={{borderStyle:"solid", width: (isOpen ? "20%" : "7.5%"), transition: "width 150ms ease"}}>
+      <button className="Side-button" onClick={() => {setOpen(!isOpen)}}>Click Me!</button>
       <div style = {{display: isOpen ? "block" : "none"}}>
         Name
         <input style = {{width: "90%"}} type = "text" />
