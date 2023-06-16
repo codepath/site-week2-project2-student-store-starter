@@ -15,7 +15,7 @@ import "./App.css";
 
 export default function App() {
   // const [product, setProduct] = useState(null);
-const [catSearch, setCatSearch] = useState("");
+  const [catSearch, setCatSearch] = useState("");
   const [searchValue, setSearchValue] = useState("");
   const [category, setCategory] = useState("");
   const [products, setProducts] = useState([]);
@@ -32,16 +32,27 @@ const [catSearch, setCatSearch] = useState("");
     <div className="app">
       <BrowserRouter>
         <main>
-        <Routes>
-          <Route exact path="/" element={<Home products={products}
-            searchValue={searchValue}
-            setSearchValue={setSearchValue}
-            setCatSearch={setCatSearch}
-            setCategory={setCategory}
-            category={category}
-            catSearch={catSearch}/>} />
-          <Route path="/products/:id" element={<ProductDetails products={products} />}/>
-        </Routes>
+          <Routes>
+            <Route
+              exact
+              path="/"
+              element={
+                <Home
+                  products={products}
+                  searchValue={searchValue}
+                  setSearchValue={setSearchValue}
+                  setCatSearch={setCatSearch}
+                  setCategory={setCategory}
+                  category={category}
+                  catSearch={catSearch}
+                />
+              }
+            />
+            <Route
+              path="/products/:id"
+              element={<ProductDetails products={products} />}
+            />
+          </Routes>
         </main>
       </BrowserRouter>
     </div>

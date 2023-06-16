@@ -1,0 +1,16 @@
+.prod-details{
+    margin: 0 auto;
+    /* background-color: purple; */
+    border-radius: 20px;
+  border: solid 5px var(--light-cp);
+    text-align: center;
+    width: 50%;
+    margin-bottom: 60px;
+}
+.pd-poster{
+    height: 500px;
+}
+#details-header{
+    margin-left: 20%;
+    font-size: xx-large;
+}

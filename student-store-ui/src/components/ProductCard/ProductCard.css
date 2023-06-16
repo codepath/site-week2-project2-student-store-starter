@@ -4,10 +4,19 @@
   border: solid 5px var(--light-cp);
 }
 
+#product-link{
+  text-decoration: none;
+}
+
 .product-poster {
   height: 245px;
   width: 245px;
   
+}
+
+.product:hover{
+  box-shadow: 3px 3px 5px var(--light-cp);
+
 }
 .product-info {
   font-weight: bold;

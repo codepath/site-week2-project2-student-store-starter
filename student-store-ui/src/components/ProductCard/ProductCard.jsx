@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function ProductCard(prop) {
   return (
-    <Link to={"products/" + prop.product.id}>
+    <Link id="product-link" to={"products/" + prop.product.id}>
       <div className="product">
         <img
           className="product-poster"
