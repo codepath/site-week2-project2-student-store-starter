@@ -21,7 +21,7 @@ export default function ProductGrid(props) {
   }
   return (
     <div className="product-gridContainer">
-      <h2>Best Selling Products</h2>
+      <h2 id="buy-now">Best Selling Products</h2>
       <div className="product-grid">
         {newProducts?.length === 0 ? (
           <p className="grid-p">No products available 🛑</p>

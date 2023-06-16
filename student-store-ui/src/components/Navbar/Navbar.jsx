@@ -42,7 +42,7 @@ export default function Navbar() {
           </a>
         </li>
         <li>
-         <a href="" className="nav-link">
+         <a href="#buy-now" className="nav-link">
           Buy Now
         </a>
         </li>
