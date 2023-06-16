@@ -40,7 +40,6 @@ const [catSearch, setCatSearch] = useState("");
             setCategory={setCategory}
             category={category}
             catSearch={catSearch}/>} />
-          <Route path="/about" element={<About/>} />
           <Route path="/products/:id" element={<ProductDetails products={products} />}/>
         </Routes>
         </main>
