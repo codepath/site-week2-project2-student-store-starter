@@ -20,13 +20,8 @@ export default function ProductDetail() {
       }, []); 
 
     return (
-    // <div className="ProductDetail">
-    //     <img src={product.image} alt={product.name + " img"} />
-    //     <p>Product Details: {product.description}</p>
-      
-    // </div>
+ 
 
-    
     <div className="ProductDetail">
         <div className="productTitle">
             <h2>Product # {product.id}</h2>
@@ -58,22 +53,3 @@ export default function ProductDetail() {
   )
 }
 
-{/* <div className="product-card">
-   <div className="media"><img src= {product.image} alt="product cover" loading="lazy"/></div>
-   <div className="product-info">
-      <div className="main-info">
-         <p className="product-name">{product.name}</p>
-         <div className="stars">
-            <svg className="stars" >
-            </svg>
-         </div>
-         <p className="product-price">{product.price}</p>
-      </div>
-      <div className="desc">
-         <p className="product-description">{product.description}</p>
-      </div>
-      <div className="actions">
-         <div className="buttons"><button className="add"><i className="material-icons">add</i></button><button className="remove"><i className="material-icons">remove</i></button></div>
-      </div>
-   </div>
-</div> */}

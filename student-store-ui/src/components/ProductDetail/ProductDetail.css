@@ -1,33 +1,4 @@
-/* .ProductDetail {
 
-    display: flex; */
-    /* flex-direction: column; */
-    /* flex-wrap: wrap;
-    margin-right: 140px;
-    margin-left: 140px;
-    justify-content: center;
-    
-  
-  
-  }
-
-.ProductDetail img{
-
-    height: 300px;
-    width: 400px;
-    border-style: solid;
-    border-color: rgb(6, 134, 35);
-    border-width: 4px;
-    margin-top: 100px;
-
-
-  
-}
-
-.ProductDetail p{
-
-    font-size: 20pt;
-} */
 
 .ProductDetail {
     background: white;
