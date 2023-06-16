@@ -10,22 +10,25 @@ import Category from "../Category/Category";
 export default function Home(props) {
   return (
     <>
-    <Navbar />
-          <Hero />
-          <Search
-            products={props.products}
-            searchValue={props.searchValue}
-            setSearchValue={props.setSearchValue}
-            setCatSearch={props.setCatSearch}
-            />
-          <Category setCategory={props.setCategory} setCatSearch={props.setCatSearch} />
-          <ProductGrid
-            products={props.products}
-            searchValue={props.searchValue}
-            category={props.category}
-            catSearch={props.catSearch}
-            />
-          <About />
-            </>
-  )
+      <Navbar />
+      <Hero />
+      <Search
+        products={props.products}
+        searchValue={props.searchValue}
+        setSearchValue={props.setSearchValue}
+        setCatSearch={props.setCatSearch}
+      />
+      <Category
+        setCategory={props.setCategory}
+        setCatSearch={props.setCatSearch}
+      />
+      <ProductGrid
+        products={props.products}
+        searchValue={props.searchValue}
+        category={props.category}
+        catSearch={props.catSearch}
+      />
+      <About />
+    </>
+  );
 }

@@ -1,24 +1,23 @@
-
-.hero{
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    background-color:var(--light-cp);
-    width: 60%;
-    height: 350px;
-    padding: 20px;
+.hero {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: var(--light-cp);
+  width: 60%;
+  height: 350px;
+  padding: 20px;
 }
 
-.hero-img{
-    width: 150px;
-    transition: all .7s;
+.hero-img {
+  width: 150px;
+  transition: all 0.7s;
 }
-.hero-img:hover{
-    transform: scale(1.6);
+.hero-img:hover {
+  transform: scale(1.6);
 }
 
-.intro{
-    font-size:x-large;
-    color: white;
+.intro {
+  font-size: x-large;
+  color: white;
 }

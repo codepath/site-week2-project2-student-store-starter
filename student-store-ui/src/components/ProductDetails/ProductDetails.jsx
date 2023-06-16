@@ -8,8 +8,6 @@ import { useParams } from "react-router-dom";
 export default function ProductDetail(props) {
   const { id } = useParams();
 
-  // when this component mounts/renders, get the product information from api with specified id
-
   const product = props.products.find((product) => product.id == parseInt(id));
 
   if (props.products.length === 0) {

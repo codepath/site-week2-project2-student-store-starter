@@ -1,24 +1,23 @@
-.category{
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 55%;
+.category {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 55%;
 }
 
-.cat-button{
-    font-size: large;
-    width: 150px;
-    height: 50px;
-    cursor: pointer;
-    background-color: var(--background);
-    border: none;
+.cat-button {
+  font-size: large;
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  background-color: var(--background);
+  border: none;
 }
 
-.cat-button:hover{
-    border: solid var(--light-cp);
+.cat-button:hover {
+  border: solid var(--light-cp);
 }
-.cat-button:active{
-    box-shadow: 3px 3px 5px var(--light-cp);
-
+.cat-button:active {
+  box-shadow: 3px 3px 5px var(--light-cp);
 }

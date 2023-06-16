@@ -1,23 +1,23 @@
-.prod-details{
-    margin: 0 auto;
-    border-radius: 20px;
+.prod-details {
+  margin: 0 auto;
+  border-radius: 20px;
   border: solid 5px var(--light-cp);
-    text-align: center;
-    width: 50%;
-    margin-bottom: 60px;
+  text-align: center;
+  width: 50%;
+  margin-bottom: 60px;
 }
-.pd-poster{
-    height: 500px;
+.pd-poster {
+  height: 500px;
 }
-#details-header{
-    margin-left: 20%;
-    font-size: xx-large;
+#details-header {
+  margin-left: 20%;
+  font-size: xx-large;
 }
 #loading {
-    margin: 0 auto;
-    font-size: xx-large;
+  margin: 0 auto;
+  font-size: xx-large;
 }
 
-#loading h1{
-padding-top: 30px;
+#loading h1 {
+  padding-top: 30px;
 }

@@ -1,17 +1,17 @@
-:root{
+:root {
   --dark-Cp: #2c4047;
   --light-cp: #00c98d;
-  --background: #f7f7f7
+  --background: #f7f7f7;
 }
-html{
+html {
   scroll-behavior: smooth;
-
 }
 body {
   background-color: var(--background);
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
-    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

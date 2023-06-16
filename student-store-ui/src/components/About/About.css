@@ -1,82 +1,81 @@
-#about{
-    margin: 0 auto;
-    background-color: white;
-    display: flex;
-    flex-direction: row;
-    height: 350px;
-    max-width: 60%;
-    border:solid #afafaf
+#about {
+  margin: 0 auto;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  height: 350px;
+  max-width: 60%;
+  border: solid #afafaf;
 }
-.contact{
-
-    margin: 0 auto;
-    background-color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 350px;
-    background-color: var(--dark-Cp);
-    width: 60%;
-    border:solid black
+.contact {
+  margin: 0 auto;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 350px;
+  background-color: var(--dark-Cp);
+  width: 60%;
+  border: solid black;
 }
-#socials{
-    color: white;
+#socials {
+  color: white;
 }
-.about-logo img{
-    width: 420px;
-    height: 347px;
+.about-logo img {
+  width: 420px;
+  height: 347px;
 }
-.about-info{
-    padding: 40px;
-    color: #504f4f;
-    font-size: larger;
-    overflow: scroll;
-}
-
-h2{
-    margin-left: 20%;
-    margin-top: 90px;
+.about-info {
+  padding: 40px;
+  color: #504f4f;
+  font-size: larger;
+  overflow: scroll;
 }
 
-#socials{
-    padding: 70px;
-    font-size: larger;
+h2 {
+  margin-left: 20%;
+  margin-top: 90px;
 }
 
-#contact-img{
-    width:600px;
+#socials {
+  padding: 70px;
+  font-size: larger;
 }
 
-.footer{
-    background-color: white;
-    margin-top: 90px;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 20% 20px 20%;
-}
-.bold{
-    font-weight: bold;
+#contact-img {
+  width: 600px;
 }
 
-.downloads{
-    width: 110px;
+.footer {
+  background-color: white;
+  margin-top: 90px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20% 20px 20%;
+}
+.bold {
+  font-weight: bold;
 }
 
-.cards{
-    margin: 0 auto;
-    width: 100%;
-    padding-left: 70%;
-    padding-bottom: 10px;
-    border-top:  solid var(--background);
-    background-color: white;
+.downloads {
+  width: 110px;
 }
 
-.payment{
-    margin: 5px;
-    width: 40px;
+.cards {
+  margin: 0 auto;
+  width: 100%;
+  padding-left: 70%;
+  padding-bottom: 10px;
+  border-top: solid var(--background);
+  background-color: white;
 }
 
-.span-contact{
-    display: inline-block;
-    max-width: 150px;
+.payment {
+  margin: 5px;
+  width: 40px;
+}
+
+.span-contact {
+  display: inline-block;
+  max-width: 150px;
 }
