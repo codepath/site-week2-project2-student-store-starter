@@ -3,7 +3,7 @@ import "./Footer.css"
 
 export default function Footer() {
 
-
+    console.log('hi')
 
   return (
         <footer className="footer">

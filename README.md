@@ -28,6 +28,13 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - [ ] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
 - [ ] Your choice! (Replace this bullet explaining what you implemented. Example: Users can leave ratings for products they have purchased.)
 
+
+## Week 2 Video Walkthrough
+
+<iframe src="https://drive.google.com/file/d/1iU5uV7w_fnLezN7Mrk52W2ej8HrT3RTt/preview" width="640" height="480"></iframe>
+
+
+
 ## *Week 3* Application Features
 
 ### Core Features

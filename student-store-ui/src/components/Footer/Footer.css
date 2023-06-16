@@ -2,7 +2,6 @@
     width: 100%;
     max-width: 100vw;
     height: 350px;
-    background: var(--pure-white);
 }
 .footer .content {
     max-width: var(--content-width);
@@ -11,7 +10,6 @@
     display: flex;
     flex-direction: column;
     height: 350px;
-    background: var(--pure-white);
 }
 .footer .content .links {
     margin: 0;
@@ -22,4 +20,5 @@
     align-items: flex-start;
     justify-content: space-between;
     width: 100%;
+    color: black;
 }

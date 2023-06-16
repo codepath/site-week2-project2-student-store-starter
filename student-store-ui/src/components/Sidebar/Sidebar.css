@@ -23,10 +23,12 @@
     background: #3066be;
     border: 0px;
     cursor: pointer;
+    color: white
 }
 .material-icons.md-48 {
     font-size: 40px;
 }
 .shopping-cart{
     text-align: center;
+    color: white;
 }

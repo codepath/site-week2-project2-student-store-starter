@@ -29,8 +29,9 @@
     margin-left: auto;
     flex: 1;
     max-width: 650px;
+    color: white;
 }
 a{
     text-decoration: none;
-    color: black;
+    color: white;
 }

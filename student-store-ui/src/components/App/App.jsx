@@ -36,6 +36,7 @@ export default function App() {
         <main>
           <Navbar />
             <Sidebar isActive={sidebarState} handleClick={() => setSidebar(!sidebarState)}/>
+          
           <Routes>
               <Route  
                 path="/"
@@ -53,6 +54,7 @@ export default function App() {
                 
             
           </Routes>
+          
           <About/>
           <Contact/>
           <Footer/>
