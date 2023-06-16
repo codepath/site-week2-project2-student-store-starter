@@ -37,9 +37,10 @@ export default function App() {
   // useEffect(setup, dependencies)
   // if you pass in an empty dependency aray, it will run only once
   const[formData, setFormData] = useState(); // used for search
-  const[selectedCategory, setSelectedCategory] = useState(""); // used for category filtering - default should be "all categ.." ?
+  // const[selectedCategory, setSelectedCategory] = useState(""); // used for category filtering - default should be "all categ.." ?
   const [filteredSearchArray, setFilteredSearchArray] = useState([])
-  const [filteredCategoryArray, setFilteredCategoryArray] = useState([])
+  // const [filteredCategoryArray, setFilteredCategoryArray] = useState([])
+  const [haveFiltered, setHaveFiltered] = useState(false);
 
   useEffect(() => {
     axios.get(url).then((response) =>{
@@ -52,41 +53,57 @@ export default function App() {
 
  // Update local state with current state of input element (render each keystroke)
  function handleInput(event) {
+  // console.log("FILTERED???? ", haveFiltered);
     setFormData(event.target.value);
-    
-    // console.log("search item before filter: " + `${event.target.value}`);
-    let filteredItems = products?.filter((product) => {
-      // console.log(product.name, event.target.value)
-      // console.log("does string include search term",product.name.toLowerCase().includes(event.target.value.toLowerCase()))
-      return product.name.toLowerCase().includes(event.target.value.toLowerCase());
-      // console.log("product is: " + `${product.name}`)
-      })
-      // console.log("filtered", filteredItems)
-      setFilteredSearchArray(filteredItems);
+    // if (haveFiltered){
+      // console.log("HAVE FILTERED, HERE IS THE FILTERED - SEARCH: " + `${filteredSearchArray}`);
+      let filteredItems = filteredSearchArray?.filter((product) => {
+        return product.name.toLowerCase().includes(event.target.value.toLowerCase());
+        })
+        setFilteredSearchArray(filteredItems);
+    // }
+    // console.log(products)
+
+  //  else {
+      // let filteredItems = products?.filter((product) => {
+      //   return product.name.toLowerCase().includes(event.target.value.toLowerCase());
+      //   })
+      //   setFilteredSearchArray(filteredItems);
+      // }
+      // setHaveFiltered(true);   
+     
  }
 
-//  console.log('filteredSearchArray', filteredSearchArray)
- 
-//  console.log("search item after filter: " + `${formData}`);
 
-
- function changeCategory(event){
-  // setSelectedCategory(event.target.value);
-  let filteredItemsCategory = setSelectedCategory(products?.filter((product) => {
-    console.log("SELECTED: " + `${selectedCategory}`)
-    console.log("PRODUCT CATEGORY: " + `${product.category}`)
-    console.log(products)
-    // setProducts(filiteredCategoryArray)
-
-    return (product.category === selectedCategory);
+ function changeCategory(category){
+  // console.log("FILTERED BEFORE ???? ", haveFiltered);
+  // if (haveFiltered){
+    // console.log("HAVE FILTERED, HERE IS THE FILTERED - CATEOGRY: ", filteredSearchArray)
+    let filteredItemsCategory = filteredSearchArray?.filter((product) => {
+      return (product.category === category);
+     
+    }) 
+    setFilteredSearchArray(filteredItemsCategory);
+  // } else {
     
-}))
-  setFilteredCategoryArray(filteredItemsCategory);
-};
-// console.log(products)
-console.log({products})
+  //   console.log("HAVE NOT FILTERED YET - CATEGORY")
+  
+  //   // setSelectedCategory(event.target.value);
+  //   let filteredItemsCategory = (products?.filter((product) => {
+  //   return (product.category === category);
+    
+  
+// }))
+//   setFilteredSearchArray(filteredItemsCategory);
 
- console.log("SEEEEE: " + `${selectedCategory}`);
+// }
+// setHaveFiltered(true);
+}; 
+// console.log("FILTERED ARRAY TO RETURN: " + `${filteredSearchArray}`)
+// console.log(products)
+// console.log("FINISHED FILTERING: ", {products})
+
+//  console.log("SEEEEE: " + `${selectedCategory}`);
   return (
     <div className="app">
       <BrowserRouter>
@@ -132,21 +149,21 @@ console.log({products})
             <ul className="category-menu open">
               <li className="is-active">
                 {/* EXCEPT CHANGECATEGORY IS A FUNCTION DECLARED IN HOME! */}
-                <button>All Categories</button>
+                <button onClick={() => changeCategory("")}>All Categories</button>
               </li>
               <li className="">
-                <button onClick={changeCategory}>Clothing</button> 
+                <button onClick={() => changeCategory("clothing")} >Clothing</button> 
 
                 {/* <button>Clothing</button> */}
               </li>
               <li className="">
-                <button onClick={changeCategory}>Food</button>
+                <button onClick={() => changeCategory("food")}>Food</button>
               </li>
               <li className="">
-                <button onClick={changeCategory}>Accessories</button>
+                <button onClick={() => changeCategory("accessories")}>Accessories</button>
               </li>
               <li className="">
-                <button onClick={changeCategory}>Tech</button>
+                <button onClick={() => changeCategory("tech")}>Tech</button>
               </li>
             </ul>
           </div>
