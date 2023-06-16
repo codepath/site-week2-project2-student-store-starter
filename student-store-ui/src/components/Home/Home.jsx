@@ -65,6 +65,7 @@ console.log(filteredProducts)
 
   return (
     <>
+    
       <Hero />
       <Subnavbar 
         activeCategory={activeCategory} 

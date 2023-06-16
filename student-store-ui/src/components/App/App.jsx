@@ -1,11 +1,12 @@
 import * as React from "react"
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
 import "./App.css"
 import { useEffect, useState } from "react"
 import axios from "axios"
+import ProductDetail from "../ProductDetail/ProductDetail"
 
 
 
@@ -38,11 +39,14 @@ export default function App() {
 
           <Navbar />
           <Sidebar isActive = {sidebar} handleOnClick = {() => setSideBar(!sidebar)}/>
-          <Home 
-            products={products} 
-            setProducts={setProducts}
+          
+          <Routes>
+            <Route path="/" element = {<Home products={products} setProducts={setProducts}/> }/>
+            <Route path="products/:id" element = {<ProductDetail />}/>
 
-            />
+          </Routes>
+          
+          
         </main>
       </BrowserRouter>
     </div>

@@ -1,0 +1,151 @@
+/* .ProductDetail {
+
+    display: flex; */
+    /* flex-direction: column; */
+    /* flex-wrap: wrap;
+    margin-right: 140px;
+    margin-left: 140px;
+    justify-content: center;
+    
+  
+  
+  }
+
+.ProductDetail img{
+
+    height: 300px;
+    width: 400px;
+    border-style: solid;
+    border-color: rgb(6, 134, 35);
+    border-width: 4px;
+    margin-top: 100px;
+
+
+  
+}
+
+.ProductDetail p{
+
+    font-size: 20pt;
+} */
+
+.ProductDetail {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    
+    border: solid 1px gainsboro;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    /* margin-left: 140px;
+    margin-right: 140px; */
+   
+}
+
+.ProductDetail .media {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: center
+}
+
+.ProductDetail .media img {
+    max-width: 800px;
+}
+
+.ProductDetail .product-info {
+    flex: 1;
+    display: flex;
+    border-top: solid 1px var(--border-color)
+}
+
+.ProductDetail .main-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 12px
+}
+
+.ProductDetail .main-info .product-name {
+    font-size: 15px;
+    font-weight: 500
+}
+
+.ProductDetail .main-info .product-price {
+    font-size: 14px
+}
+
+.ProductDetail .actions {
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around
+}
+
+.ProductDetail .quantity {
+    width: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 5px
+}
+
+.product-card .quantity .amt {
+    background: var(--accent-orange);
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.pProductDetail .buttons {
+    width: 80px;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end
+}
+
+.ProductDetail .buttons button {
+    display: flex;
+    outline: none;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    max-height: fit-content;
+    max-width: fit-content;
+    margin: 10px 5px
+}
+
+.ProductDetail .buttons i {
+    width: 20px;
+    height: 20px;
+    border: solid 1px green;
+    color: green;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px
+}
+
+.ProductDetail .desc {
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 600px;
+    width: 100%
+}
+.stars svg{
+
+    height: 20px;
+    width: 20px;
+    fill: orange;
+}
