@@ -6,7 +6,7 @@ export default function ProductCard({product}) {
       <img src={product.image}/>
       <div className="info-box">
         <b>{product.name}</b><br/>
-        ${product.price}
+        ${product.price.toFixed(2)}
       </div>
     </div>
   )

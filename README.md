@@ -2,6 +2,8 @@
 
 Selling merchandise in the modern era requires digital solutions. For this project, you'll be tasked with designing and constructing an online student store for the College of CodePath. The web app consists of a frontend user interface for potential customers to browse available goods and a backend API to handle data management. The API will be built with Node and Express, and the UI will be built with React.
 
+
+
 Check out our [deployed Student Store](https://codepath-student-store-demo.surge.sh/) for reference! Explore the exemplar by trying the following tasks:
 
 - Click on the different categories (clothing, food, etc.) to filter the list of products.
@@ -11,6 +13,8 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - Checkout and view the final receipt.
 
 ## *Week 2* Application Features
+
+https://www.loom.com/share/7c0b57da57654bda94d3cc969f7ea92b?sid=5a9dde21-415a-4b51-94f2-7e2654878ee8
 
 ### Core Features
 
