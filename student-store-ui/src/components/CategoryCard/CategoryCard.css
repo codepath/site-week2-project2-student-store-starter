@@ -1,0 +1,36 @@
+.cat-nav-bar{
+    display: flex;
+    width: 85%;
+    justify-content: space-between;
+}
+
+/* .filter */
+.filter-option{
+    font-size: 24px;
+    text-transform: capitalize;
+    color: white;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    line-height: 2;
+    transition: all 0.25s ease-in-out;
+}
+
+.filter-option:focus{
+    border-bottom: solid 2px;
+    border-bottom-color: #ff981f;
+}
+
+.filter-button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.filter-option.transition{
+    display: hidden;
+}
+
+.filter-image{
+    width:30px;
+}

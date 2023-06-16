@@ -1,0 +1,28 @@
+#contact{
+    padding: 2.5% 7.5%;
+    background-color: #b3b3b3;
+    width: 95vw;
+    position: relative;
+    bottom: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contact-info{
+    display: flex;
+    align-items: center;
+}
+
+.contact-icon{
+    width: 40px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    height: 40px;
+    margin: 1% auto;
+}
+
+.contact-text{
+    font-size: 24px;
+    width: 80%;
+}

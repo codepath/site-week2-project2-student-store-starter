@@ -1,18 +1,24 @@
 import * as React from "react"
 import "./Navbar.css"
 import Logo from "../Logo/Logo"
-import { BrowserRouter, Link, Route } from 'react-router-dom'
-
 export default function Navbar() {
   return (
     <nav className="navbar">
       <Logo></Logo>
       <div className="menu">
         {/* <Link to="/about>" */}
-        <button id="home" className="nav-button">Home</button>
-        <button id="about" className="nav-button">About Us</button>
-        <button id="contact" className="nav-button">Contact Us</button>
-        <button id="info" className="nav-button">Resources</button>
+        <a className="nav-link" href="/#home">
+          <button className="nav-button">Home</button>
+        </a>
+        <a className="nav-link" href="/#about">
+          <button className="nav-button">About Us</button>
+        </a>
+       <a className="nav-link" href="/#contact">
+          <button className="nav-button">Contact Us</button>
+        </a>
+        <a className="nav-link" href="/#footer">
+          <button className="nav-button">Resources</button>
+        </a>
       </div>
     </nav>
   )

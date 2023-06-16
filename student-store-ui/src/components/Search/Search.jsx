@@ -1,16 +1,9 @@
 import * as React from "react"
 import "./Search.css"
 import searchIcon from "../assets/search-icon.svg"
-import ProductGrid from "../ProductGrid/ProductGrid"
 
-export default function Search({products, searchedProducts, setSearchedProducts}){
-
-    const handleChange = (event) => {
-        setSearchedProducts(products.filter((product) => product.name
-            .toLowerCase()
-            .includes(event.target.value.toLowerCase())))
-    }
-
+export default function Search({filterFunction}){
+    
     const handleSubmit = (event) => {
         event.preventDefault()
     }
@@ -22,7 +15,7 @@ export default function Search({products, searchedProducts, setSearchedProducts}
             type="text" 
             placeholder="Search for items..." 
             className="search-input"
-            onChange={handleChange}
+            onChange={filterFunction}
         />
         <button
             className="search-button"

@@ -14,11 +14,11 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 
 ### Core Features
 
-- [ ] The website displays header, banner, search, product grid, about, contact, and footer section.
+- [x] The website displays header, banner, search, product grid, about, contact, and footer section.
 - [x] The website displays the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store) on initial page load.
-- [ ] Users can click on a category (clothing, food, etc.) to filter the product grid by type.
+- [x] Users can click on a category (clothing, food, etc.) to filter the product grid by type.
 - [x] Users can search for products.
-- [ ] User can click on a product in the grid to navigate to a new page containing additional product details.
+- [x] User can click on a product in the grid to navigate to a new page containing additional product details.
 
 ### Stretch Features
 
