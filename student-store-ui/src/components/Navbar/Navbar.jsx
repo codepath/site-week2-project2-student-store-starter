@@ -5,7 +5,12 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <a href="/" className="site-title">
-        CodePath Store
+        <img
+          src="codepath.f1b3e41a.svg"
+          width={60}
+          height={60}
+          alt="Codepath Logo"
+        />
       </a>
       <ul>
         <li>

@@ -6,11 +6,15 @@ import Sidebar from "../Sidebar/Sidebar";
 import Home from "../Home/Home";
 import { useEffect, useState } from "react";
 import "./App.css";
+import SubNavBar from "../SubNavBar/SubNavBar";
+import Hero from "../Hero/Hero";
+import Logo from "../Logo/Logo";
 
 export default function App() {
   const url = "https://codepath-store-api.herokuapp.com/store";
   const [products, setProducts] = useState([]);
 
+  const results = products.filter((product) => {});
   useEffect(() => {
     axios.get(url).then((response) => {
       setProducts(response.data.products);
@@ -20,33 +24,12 @@ export default function App() {
   return (
     <div className="app">
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
         <main>
-          {/* YOUR CODE HERE! */}
+          <Logo />
           <Navbar />
-          <div className="hero">
-            <div className="content">
-              <div className="intro">
-                <h1 className="h1">Welcome!</h1>
-                <h1 className="h1">Find your Merch!</h1>
-                <p>
-                  We have all kinds of goodies. Click on any of the items to
-                  start filling up your shopping cart. Checkout whenever you're
-                  ready.
-                </p>
-              </div>
-              <div className="media">
-                <img
-                  src="/assests/student_store_icon.18e5d61a.svg"
-                  alt="hero-icon"
-                  className="hero-img"
-                />
-              </div>
-            </div>
-          </div>
           <Sidebar />
+          <Hero />
+          <SubNavBar products={products} />
           <Home products={products} />
         </main>
       </BrowserRouter>

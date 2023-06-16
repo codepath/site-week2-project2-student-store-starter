@@ -15,6 +15,7 @@
     background: var(--dark-blue);
     border-right: solid 1px white;
 } */
+
 .sidebar.closed {
     width: 60px;
 }
