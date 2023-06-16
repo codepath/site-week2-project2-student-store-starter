@@ -1,6 +1,8 @@
 import * as React from "react"
 import "./Contact.css"
+
 export default function Contact(){
+  return (
     <div id="Contact" className="contact">
         <div className="content">
           <h3>Contact Us</h3>
@@ -33,5 +35,7 @@ export default function Contact(){
             </div>
           </div>
         </div>
+        {/* <Outlet /> */}
       </div>
+  )
 }

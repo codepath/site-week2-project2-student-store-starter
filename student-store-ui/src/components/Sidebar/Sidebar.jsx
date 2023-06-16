@@ -12,7 +12,7 @@ export default function Sidebar() {
   }
 
   if (sidebarOpen){
-    console.log("sidebar is now open")
+    // console.log("sidebar is now open")
     return(
     <section className="sidebar open">
           {/* <p>Sidebar</p> */}
@@ -91,7 +91,7 @@ export default function Sidebar() {
         </section>
     )
   } else {
-    console.log("sidebar is now closed");
+    // console.log("sidebar is now closed");
   return (
    
     <section className="sidebar closed">

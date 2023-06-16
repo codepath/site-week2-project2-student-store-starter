@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
+import Footer from "../Footer/Footer"
 import "./App.css"
 import {useEffect, useState} from "react"
 import axios from "axios"
@@ -22,7 +23,6 @@ import About from "../About/About"
 // TODO:
 // CREATE INDIVIDUAL PRODUCT PAGE
 // stretch features!!
-// put footer (in home rn) below about (make a separate file for it and adjust app)
 
 export const appInfo ={
   title: "Welcome! Find Your Merch!",
@@ -115,82 +115,46 @@ export default function App() {
 // setHaveFiltered(true);
 // setFilteredSearchArray(filteredItemsCategory);
 }; 
-// console.log("FILTERED ARRAY TO RETURN: " + `${filteredSearchArray}`)
-// console.log(products)
-// console.log("FINISHED FILTERING: ", {products})
 
-//  console.log("SEEEEE: " + `${selectedCategory}`);
   return (
     <div className="app">
       <BrowserRouter>
-        <Routes>
-          {/* <Route path= "/" element={<Home products = {products}/>}> </Route> */}
-          {/* <Route path= "about" element={<About/>}> </Route> */}
-          {/* <Route path= "about" element={<About/>}> </Route> */}
-          {/* <Route path= "about" element={<About/>}> </Route> */}
-
-        </Routes>
         <main>
+        {/* <About/> */}
+        <Navbar />
+        <Sidebar />
+       
+        <Routes>
+          {/* <Route path= "" element={<Navbar />} > */}
+
+          {/* <Route path= "" element={<Sidebar />}/>  */}
+            <Route 
+              path= "/" 
+              element=
+                {<Home 
+                  changeCategory = {changeCategory} 
+                  handleInput = {handleInput} 
+                  formData = {formData} 
+                  products = {filteredSearchArray.length === 0 ? products : filteredSearchArray} 
+                  />}>           
+              {/* <Route path="products/:id" element={<ProductDetail handleRoute/>} /> */}
+              
+              {/* <Route path="Contact" element={<Contact />}/> */}
+          </Route>
+          {/* <Route path = "*" element={<NotFound/>}/> */}
+          {/* <Route path="Contact" element={<Contact />}/> */}
+        </Routes>
+     
           
         {/* ? to see if we actually have it  */}
         {/* map returns whole new array with those changes, unlike for loop */}
-
-        <Navbar />
-        <Sidebar />
+      <Footer />
+      
           
         
-      <nav className="sub-navbar">
-        <div className="content">
-          <div className="row">
-            <form 
-            // onSubmit={handleSubmit} 
-            className="search-bar">
-              <input type="text" name="search" placeholder="Search" value={formData} onChange={handleInput}></input>
-                <i className="material-icons">search</i>
-           
-            </form>
-            <div className="links">
-              <span className="help">
-                <i className="material-icons">help</i>
-              Help</span>
-              <div className="cart">
-                <a href="/">My Cart<i className="material-icons">shopping_cart</i></a>
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="hamburger-menu">
-              <i className="material-icons">menu</i>
-            </div>
-            <ul className="category-menu open">
-              <li className="is-active">
-                {/* EXCEPT CHANGECATEGORY IS A FUNCTION DECLARED IN HOME! */}
-                <button onClick={() => changeCategory("")}>All Categories</button>
-              </li>
-              <li className="">
-                <button onClick={() => changeCategory("clothing")} >Clothing</button> 
-
-                {/* <button>Clothing</button> */}
-              </li>
-              <li className="">
-                <button onClick={() => changeCategory("food")}>Food</button>
-              </li>
-              <li className="">
-                <button onClick={() => changeCategory("accessories")}>Accessories</button>
-              </li>
-              <li className="">
-                <button onClick={() => changeCategory("tech")}>Tech</button>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
-
           {/* <Home products = {filteredSearchArray.length === 0 ? products : filteredSearchArray} />  */}
 
-          <Home products = {filteredSearchArray.length === 0 ? products : filteredSearchArray} /> 
-        <About></About>
+        {/* <About></About> */}
         </main>
       
       </BrowserRouter>

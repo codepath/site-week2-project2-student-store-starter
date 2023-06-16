@@ -11,8 +11,8 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="content">
       <div className="company-logo">
-        <img src={"https://codepath-student-store-demo.surge.sh/assets/codepath.f1b3e41a.svg"} alt="codepath logo" className="logo-img"></img>
-          
+        <a href="/"><img src={"https://codepath-student-store-demo.surge.sh/assets/codepath.f1b3e41a.svg"} alt="codepath logo" className="logo-img" ></img></a>
+       
       </div>
       <section className = "socials">
           <img src={"https://www.transparentpng.com/download/linkedin/linkedin-shiny-icon-png-0.png"} alt="linked in logo" className="linkedin-logo-img"></img>
@@ -30,12 +30,6 @@ export default function Navbar() {
         {/* <Link to={"#Contact"}>   Contact Us   </Link> */}
 {/* <Link to={"#Buy"}>   Buy   </Link> */}
         <li><a href="/#About">About Us</a></li>
-        {/* <Routes>
-          <Route path="..About/About" element={<About/>} ></Route>
-          <Route path="..Contact/Contact" element={<Contact/>} ></Route>
-        </Routes> */}
-
-
         <li><a href="/#Contact">Contact Us</a></li>
         <li><a href="/#Buy">Buy Now</a></li>
         </ul> 
