@@ -11,13 +11,13 @@ import Footer from "../Footer/Footer"
 import Hero from "../Hero/Hero"
 import About from "../About/About"
 
-const mockBackend = "https://codepath-store-api.herokuapp.com/store"
+const mockAPI = "https://codepath-store-api.herokuapp.com/store"
 
 export default function App() {
   const [products, setProducts] = useState()
 
   useEffect(() => {
-    axios.get(mockBackend)
+    axios.get(mockAPI)
       .then(response => {
         setProducts(response.data.products)
       })
@@ -34,7 +34,6 @@ export default function App() {
               <div className="main-content">
                 <Routes>
                   <Route path="/" element={<Home products={products} product/>} />
-                  <Route path="/#about" element={<About />} />
                   <Route path="/product/:id" element={<ProductDetails />} />
                 </Routes>
               </div>
