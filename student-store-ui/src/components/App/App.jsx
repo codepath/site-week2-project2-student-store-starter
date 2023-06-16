@@ -40,7 +40,7 @@ export default function App() {
   // const[selectedCategory, setSelectedCategory] = useState(""); // used for category filtering - default should be "all categ.." ?
   const [filteredSearchArray, setFilteredSearchArray] = useState([])
   // const [filteredCategoryArray, setFilteredCategoryArray] = useState([])
-  const [haveFiltered, setHaveFiltered] = useState(false);
+  // const [haveFiltered, setHaveFiltered] = useState(false);
 
   useEffect(() => {
     axios.get(url).then((response) =>{
@@ -55,49 +55,65 @@ export default function App() {
  function handleInput(event) {
   // console.log("FILTERED???? ", haveFiltered);
     setFormData(event.target.value);
-    // if (haveFiltered){
-      // console.log("HAVE FILTERED, HERE IS THE FILTERED - SEARCH: " + `${filteredSearchArray}`);
-      let filteredItems = filteredSearchArray?.filter((product) => {
+  //   if (haveFiltered){
+  //     // setHaveFiltered(true);
+  //     console.log("HAVE FILTERED, HERE IS THE FILTERED - SEARCH: " + `${filteredSearchArray}`);
+  //     let filteredItems = filteredSearchArray?.filter((product) => {
+  //       return product.name.toLowerCase().includes(event.target.value.toLowerCase());
+  //       })
+  //       setFilteredSearchArray(filteredItems);
+  //   }
+  //   // console.log(products)
+
+  //  else {
+    // setHaveFiltered(true);
+    // if (filteredSearchArray == products){ // have altered original array already
+      let filteredItems = products?.filter((product) => {
         return product.name.toLowerCase().includes(event.target.value.toLowerCase());
         })
         setFilteredSearchArray(filteredItems);
-    // }
-    // console.log(products)
-
-  //  else {
-      // let filteredItems = products?.filter((product) => {
+      // }
+      // setHaveFiltered(true);
+    // } 
+    // else { // haven't filtered array already
+      // let filteredItems = filteredSearchArray?.filter((product) => {
       //   return product.name.toLowerCase().includes(event.target.value.toLowerCase());
       //   })
       //   setFilteredSearchArray(filteredItems);
       // }
-      // setHaveFiltered(true);   
      
  }
 
 
  function changeCategory(category){
+  console.log(category);
   // console.log("FILTERED BEFORE ???? ", haveFiltered);
   // if (haveFiltered){
-    // console.log("HAVE FILTERED, HERE IS THE FILTERED - CATEOGRY: ", filteredSearchArray)
-    let filteredItemsCategory = filteredSearchArray?.filter((product) => {
-      return (product.category === category);
-     
-    }) 
-    setFilteredSearchArray(filteredItemsCategory);
+  //   // setHaveFiltered(true);
+  //   console.log("HAVE FILTERED, HERE IS THE FILTERED - CATEOGRY: ", filteredSearchArray)
+  //   let filteredItemsCategory = filteredSearchArray?.filter((product) => {
+    
+  //     return (product.category === category);
+  //   })
+  //   setFilteredSearchArray(filteredItemsCategory);
   // } else {
-    
-  //   console.log("HAVE NOT FILTERED YET - CATEGORY")
-  
-  //   // setSelectedCategory(event.target.value);
-  //   let filteredItemsCategory = (products?.filter((product) => {
-  //   return (product.category === category);
-    
-  
-// }))
-//   setFilteredSearchArray(filteredItemsCategory);
 
+    // console.log("HAVE NOT FILTERED YET - CATEGORY")
+  
+    // setSelectedCategory(event.target.value);
+    let filteredItemsCategory = (products?.filter((product) => {
+    // console.log("SELECTED: " + `${selectedCategory}`)
+   
+    // console.log(products)
+    // setProducts(filiteredCategoryArray)
+
+    return (product.category === category);
+  
+}))
+    setFilteredSearchArray(filteredItemsCategory);
 // }
 // setHaveFiltered(true);
+// setFilteredSearchArray(filteredItemsCategory);
 }; 
 // console.log("FILTERED ARRAY TO RETURN: " + `${filteredSearchArray}`)
 // console.log(products)
