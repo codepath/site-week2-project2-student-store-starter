@@ -24,6 +24,8 @@ body{
 }
 .navbar{
   background-color: #69433a;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .navbar ul{
   list-style: none;
@@ -35,6 +37,7 @@ body{
 }
 nav a{
   color: aliceblue;
+  text-decoration: none;
 }
 .product-container{
   display: flex;
@@ -78,11 +81,10 @@ nav a{
   margin-top: 50px;
   margin-bottom: 50px;
   padding-left: 50px;
-  margin-left: 40px;
 }
 .intro{
   margin-left: 25%;
-  padding-left: 62px;
+  padding-left: 180px;
 }
 
 .media img{
@@ -103,7 +105,7 @@ nav a{
   width: 100%;
   height: 350px;
   text-align: center;
-  margin-left: 40px;
+ 
   margin-top: 50px;
   background-color: #e2d4ba;
 }
@@ -121,15 +123,15 @@ nav a{
   scale: 1.1;
 }
 .facts img{
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
 }
 .Contact-container{
   width: 100%;
   height: 350px;
   text-align: center;
   background-color: #e2d4ba;
-  margin-left: 40px;
+
   margin-top: 50px;
 
 }
@@ -137,5 +139,3 @@ nav a{
 .sidebar2{
   transform: translateX(0);
 }
-
-

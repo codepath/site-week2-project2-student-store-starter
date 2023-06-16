@@ -3,6 +3,7 @@ import "./Home.css"
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import Productgrid from "../Productcontainer/Productcontainer"
+import About from "../About/About"
 
 export default function Home({products}) {
   const[search, setSearch] = useState("")
@@ -38,22 +39,20 @@ export default function Home({products}) {
         <button key={idx} onClick={() => setCategory(filtercat)}>{filtercat}</button>
       ))}
       </div>
-      <h1>Purchase</h1>
-      <Productgrid productFilter={Filter}/>
-      <div className="About-container">
-        <div className="About">
-          <h1>About Us</h1>
-          <p>The codepath student store offers great products at great prices from a great team and for a great cause.</p>
-          <p>We've searched far and wide for items that perk the interests of even the most eccentric students and decided to offer them all here in one place.</p>
-          <p>All proceeds go towards bringing high quality CS education to college students around the country.</p>
-        </div>
+      <div className="Purchase-header">
+        <h1>Purchase</h1>
       </div>
+      <Productgrid productFilter={Filter}/>
+      <About />
       <div className="Contact-container">
         <div className="Contact">
           <h1>Contact Us</h1>
           <p>Email: code@path.org</p>
           <p>Phone: 1-800-CODEPATH</p>
           <p>Address: 123 Fake Street, San Francisco, CA</p>
+          <div className="Contact-img">
+                <img src = "https://cdni.iconscout.com/illustration/free/thumb/free-about-us-2061897-1740019.png"/>
+          </div>
         </div>
       </div>
       
