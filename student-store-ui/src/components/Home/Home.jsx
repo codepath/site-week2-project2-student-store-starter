@@ -17,7 +17,6 @@ export default function Home({ products }) {
     <div className="home">
       <Navbar />
       <Hero />
-      <Filter products={ products }/>
       <Search handleSearch={handleSearch} products={ products }/>
       <Navbar />
     </div>

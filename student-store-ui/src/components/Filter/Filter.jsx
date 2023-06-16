@@ -23,6 +23,7 @@ export default function Filter({ products }) {
     <nav className="navbar">
       <div className="navcontent">
       <ul className="filter">
+        <li className="filter" onClick={handleCatChange}>All</li>
         <li className="filter" onClick={handleCatChange} data-category="clothing">Clothing</li>
         <li className="filter" onClick={handleCatChange} data-category="accessories">Accessories</li>
         <li className="filter" onClick={handleCatChange} data-category="tech">Tech</li>
@@ -31,7 +32,11 @@ export default function Filter({ products }) {
 
       </div>
     </nav>
-    <ProductGrid products={!catProducts ? products : catProducts} />
+    <ProductGrid products={filteredProducts.filter((product) =>
+  product.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
+  (!catSelect || product.category.includes(catSelect))
+)} />
+
     </div>
       
   );
