@@ -3,6 +3,7 @@ import "./Home.css"
 import Subnavbar from "../Subnavbar/Subnavbar"
 import {useState} from 'react'
 import { Link } from "react-router-dom";
+import Hero from "../Hero/Hero";
 
 export default function Home({products}) {
 
@@ -15,11 +16,11 @@ export default function Home({products}) {
     return (
       <div className="grid">
       <div className="product" key={idx}>
-        <Link to={"/" + info.id}>
+        <Link to={"products/" + info.id}>
         <img src={info.image}/>
         </Link>
         <p>{info.name}</p>
-        <p>{info.price}</p>
+        <p>${info.price}</p>
       </div>
       </div>
     )
@@ -45,6 +46,7 @@ export default function Home({products}) {
 
     <>
     
+    <Hero/>
 
     {/* Subnavbar "component"*/}
 

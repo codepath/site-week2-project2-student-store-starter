@@ -31,26 +31,33 @@ export default function App() {
 
 
   return (
+    <BrowserRouter>
     <div className="app">
-      <BrowserRouter>
         <main>
           <Navbar />
-            <Hero/>
             <Sidebar isActive={sidebarState} handleClick={() => setSidebar(!sidebarState)}/>
           <Routes>
-            <Route  
-              path="/"
-              element={<Home products={products}/>}
-            />
-            <Route
-              path="/:id" element={<ProductDetails/>}
+              <Route  
+                path="/"
+                element={<Home products={products}/>}
               />
+
+              <Route
+                path="products/:id"
+                element={<ProductDetails/>}
+                />
+              <Route 
+                path="/about" 
+                element={<About/>}
+              />
+                
+            
           </Routes>
           <About/>
           <Contact/>
           <Footer/>
         </main>
-      </BrowserRouter>
     </div>
+    </BrowserRouter>
   )
 }

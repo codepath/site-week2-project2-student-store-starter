@@ -1,7 +1,7 @@
 .navbar {
     width: 100%;
     max-width: 100vw;
-    background:rgb(43, 163, 255);
+    background:#3066be;
     height: 70px;
     display: flex;
     flex-direction: row;
@@ -29,4 +29,8 @@
     margin-left: auto;
     flex: 1;
     max-width: 650px;
+}
+a{
+    text-decoration: none;
+    color: black;
 }

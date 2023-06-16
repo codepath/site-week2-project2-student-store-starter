@@ -18,7 +18,7 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - [X] The website displays the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store) on initial page load.
 - [X] Users can click on a category (clothing, food, etc.) to filter the product grid by type.
 - [X] Users can search for products.
-- [ ] User can click on a product in the grid to navigate to a new page containing additional product details.
+- [X] User can click on a product in the grid to navigate to a new page containing additional product details.
 
 ### Stretch Features
 

@@ -40,8 +40,11 @@
   border: solid 1px var(--border-color);
   border-radius: 10px;
 }
+.product-grid .product:hover{
+  transform: scale(1.015)
+}
 .product-grid img{
-  height: 70%;
-  width: 100%;
+  height: 200px;
+  width: 249px;
   border-radius: 10px;
 }

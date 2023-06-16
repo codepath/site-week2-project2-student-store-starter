@@ -10,7 +10,7 @@
     top: 0px;
     height: 100vh;;
     overflow-y: scroll;
-    background: rgb(43, 163, 255);
+    background: linear-gradient(#3066be, #963484);
 }
 
 .sidebar.open{
@@ -20,7 +20,7 @@
 .toggle-button{
     margin-top: 10px;
     margin-bottom: 20px;
-    background: rgb(43, 163, 255);
+    background: #3066be;
     border: 0px;
     cursor: pointer;
 }

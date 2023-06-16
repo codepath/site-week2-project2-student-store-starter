@@ -43,7 +43,7 @@
 
 .subnavbar .container .cart {
     color: white;
-    background: rgb(43, 163, 255);
+    background: #60afff;
     width: 170px;
     height: 40px;
     display: flex;
@@ -117,4 +117,7 @@
   box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
   color: rgba(0, 0, 0, 0.65);
   transform: translateY(0);
+}
+.btn.is-active{
+    background-color:#2af4ff56 ;
 }
