@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
+import "./ProductDetails.css"
 
 export default function ProductDetails() {
   const params = useParams();
@@ -21,7 +22,7 @@ export default function ProductDetails() {
   }
 
   return (
-    <div>
+    <div className="Center-on-Page">
       <h2>{product.name}</h2>
       <img src={product.image} alt={product.name} />
       <p>{product.description}</p>

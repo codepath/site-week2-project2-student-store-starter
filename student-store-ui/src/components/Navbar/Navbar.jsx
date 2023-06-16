@@ -10,13 +10,7 @@ export default function Navbar() {
       <a href="/#">About Us</a>
       <a href="/#">Contact Us</a>
       <a href="/#">Buy Now</a>
-      {/* <button>
-  
-        <FaTimes/>
-      </button>
-      <button>
-        <FaBars/>
-      </button> */ }
+    
     </nav>
   );
 }

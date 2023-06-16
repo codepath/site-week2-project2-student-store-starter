@@ -1,0 +1,17 @@
+.Center-on-Page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+  }
+  
+  .Center-on-Page h2,
+  .Center-on-Page img,
+  .Center-on-Page p,
+  .Center-on-Page a {
+    margin: 0 auto;
+    max-width: 600px;
+  }
+  

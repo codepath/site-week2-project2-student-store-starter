@@ -39,13 +39,11 @@ function HomePage(){
 
   return(
     <main>
-          {/* YOUR CODE HERE! */
-          // products?.map((product, index) => <h1 key={index}>{product.name}</h1>)
-          }
+      
           <Navbar />
           <Sidebar />
           <Home products={products}/>
-           {/* YOUR CODE HERE! */}
+         
         </main>
   )
 }

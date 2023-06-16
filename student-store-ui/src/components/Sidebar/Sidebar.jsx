@@ -1,31 +1,20 @@
-import * as React from "react"
-import "./Sidebar.css"
-import{FaBars, FaTimes} from "react-icons/fa"
+import * as React from "react";
+import "./Sidebar.css";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Sidebar() {
   return (
     <section className="sidebar">
-      {/* <p>Sidebar</p> */}
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-
-        <a href="/#">Shopping Cart</a>
-        <br></br>
-        <br></br>
-        <br></br>
-        <a href="/#">Checkout Form</a>
-      {/* <button>
-        <FaTimes/>
-      </button>
-      <button>
-        <FaBars/>
-      </button> */}
-  
+      <a href="/#" className="sidebar-link">
+        Shopping Cart
+      </a>
+      <br />
+      <br />
+      <br />
+      <a href="/#" className="sidebar-link">
+        Checkout Form
+      </a>
     </section>
-  )
+  );
 }
+
