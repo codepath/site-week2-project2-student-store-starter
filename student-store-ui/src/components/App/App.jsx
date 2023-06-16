@@ -9,20 +9,28 @@ import Hero from "../Hero/Hero";
 import About from "../About/About";
 import Contact from "../Contact/Contact";
 import Footer from "../Footer/Footer";
-import ProductCard from "../ProductCard/ProductCard";
+// import ProductCard from "../ProductCard/ProductCard";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import ProductGrid from "../ProductGrid/ProductGrid";
+// import ProductGrid from "../ProductGrid/ProductGrid";
 
 export default function App() {
   const url = "https://codepath-store-api.herokuapp.com/store";
+
   const [products, setProducts] = useState([]);
+  const [searchTerm, setSearchTerm] = React.useState('');
+  const [selectedCategory, setSelectedCategory] = useState("");
+
+
+
   useEffect(() => {
     axios.get(url).then((response) => {
       setProducts(response.data.products);
     });
   }, []);
-  console.log(products);
+  
+
+
   return (
     <div className="app">
       {/* <BrowserRouter> */}
@@ -35,16 +43,9 @@ export default function App() {
 
         <Navbar />
         <Hero />
-        <Subnavbar />
+        <Subnavbar setSearchTerm={setSearchTerm} setSelectedCategory={setSelectedCategory} />
 
-        {/*
-          <Subnavbar items {item} setItems 
-          
-          */}
-
-
-
-        <Home products ={products}/>
+        <Home products={products} searchTerm={searchTerm} selectedCategory={selectedCategory} />
 
         <About />
         <Contact />

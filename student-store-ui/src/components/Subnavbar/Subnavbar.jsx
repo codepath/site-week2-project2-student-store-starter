@@ -1,7 +1,18 @@
 import * as React from "react";
 import "./Subnavbar.css";
 
-export default function Subnavbar() {
+
+
+export default function Subnavbar({ searchTerm, setSelectedCategory, setSearchTerm }) {
+
+  const handleCategory = (category) => {
+    setSelectedCategory(category);
+  };
+
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+  
   return (
     <nav className="sub-navbar">
       <div className="content">
@@ -11,7 +22,8 @@ export default function Subnavbar() {
               type="text"
               name="search"
               placeholder="Search"
-              value=""
+              value={searchTerm}
+              onChange={handleSearchChange}
             ></input>
             <i className="material-icons">search</i>
           </div>
@@ -35,16 +47,20 @@ export default function Subnavbar() {
               <button>All Categories</button>
             </li>
             <li className="">
-              <button onClick={() => handleCategory()}>Clothing</button>
+            <button onClick={() => handleCategory("Clothing")}>Clothing</button>
+
             </li>
             <li className="">
-              <button>Food</button>
+            <button onClick={() => handleCategory("Food")}>Food</button>
+
             </li>
             <li className="">
-              <button>Accessories</button>
+            <button onClick={() => handleCategory("Accessories")}>Accessories</button>
+
             </li>
             <li className="">
-              <button>Tech</button>
+            <button onClick={() => handleCategory("Tech")}>Tech</button>
+
             </li>
           </ul>
         </div>
