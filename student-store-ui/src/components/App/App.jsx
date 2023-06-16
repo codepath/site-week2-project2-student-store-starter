@@ -7,7 +7,6 @@ import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
 import "./App.css"
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-// import ProductGrid from "../ProductGrid/ProductGrid"
 import Hero from "../Hero/Hero"
 import About from "../About/About"
 import Search from "../Search/Search"
@@ -15,9 +14,6 @@ import ProductGrid from "../ProductGrid/ProductGrid"
 import Contact from "../Contact/Contact"
 import Footer from "../Footer/Footer"
 import Logo from "../Logo/Logo"
-
-
-
 
 
 export default function App() {
@@ -48,9 +44,9 @@ const [catValue, setCatValue] = useState('')
           <Sidebar />
           <Navbar />
           <Hero />
-          <Search products={products} searchValue={searchValue} setSearchValue={setSearchValue} setCatValue={setCatValue} setSearchCatValue={setSearchCatValue}/>
-          <Home products={products} searchValue={searchValue} catValue={catValue} searchCatValue={searchCatValue}/>
-          {/* <ProductGrid/> */}
+           <Search products={products} searchValue={searchValue} setSearchValue={setSearchValue} setCatValue={setCatValue} setSearchCatValue={setSearchCatValue}/>
+           <Home />
+          <ProductGrid products={products} searchValue={searchValue} catValue={catValue} searchCatValue={searchCatValue}/>
           <About />
           <Contact />
           <Footer />

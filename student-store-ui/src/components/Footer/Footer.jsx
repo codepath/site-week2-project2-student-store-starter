@@ -5,45 +5,52 @@ export default function Footer () {
 <div className="footer" style={{
     backgroundColor: '#9bd1e5', 
     padding: '100px',
-    // display: 'inline-block',
-    // float:'left',
-    }}>
+    marginTop:'200px',
+       }}>
 
-        <ul>
-            <ul>Categories</ul>
-            <li>All Categories</li>
-            <li>Clothing</li>
-            <li>Food</li>
-            <li>Accessories</li>
-            <li>Tech</li>
+        <span style={{float:'left', padding:'40px', margin:'0 auto'}}>
+            <p style={{fontWeight:'bold'}}>Categories</p>
+            <p>All Categories</p>
+            <p>Clothing</p>
+            <p>Food</p>
+            <p>Accessories</p>
+            <p>Tech</p>
+        </span>
 
-        </ul> 
+        <span style={{float:'left', padding:'40px'}}>
+        <p style={{fontWeight:'bold'}}>Company</p>
+            <p>About Us</p>
+            <p>Find A Store</p>
+            <p>Terms</p>
+            <p>Sitemap</p>
+            <p>Careers</p>
+        </span>
 
-        <ul>
-            <ul>Company</ul>
-            <li>About Us</li>
-            <li>Find A Store</li>
-            <li>Terms</li>
-            <li>Sitemap</li>
-            <li>Careers</li>
-        </ul> 
+        <span style={{float:'left', padding:'40px'}}>
+        <p style={{fontWeight:'bold'}}>Support</p>
+            <p>Contact Us</p>
+            <p>Money Refund</p>
+            <p>Order Status</p>
+            <p>Shipping Info</p>
+            <p>Open Dispute</p>
+        </span>
 
-        <ul>
-            <ul>Support</ul>
-            <li>About Us</li>
-            <li>Find A Store</li>
-            <li>Terms</li>
-            <li>Sitemap</li>
-            <li>Careers</li>
-        </ul> 
+        <span style={{float:'left', padding:'40px'}}>
+        <p style={{fontWeight:'bold'}}>Account</p>
+            <p>Login</p>
+            <p>Register</p>
+            <p>Account Setting</p>
+            <p>My Orders</p>
+        </span>
 
-        <ul>
-            <ul>Categories</ul>
-            <li>All Categories</li>
-            <li>Food</li>
-            <li>Accessories</li>
-        </ul> 
-
+        <span style={{float:'left', padding:'40px'}}>
+        <p style={{fontWeight:'bold'}}>Socials</p>
+            <p>Facebook</p>
+            <p>Twitter</p>
+            <p>LinkedIn</p>
+            <p>Instagram</p>
+            <p>YouTube</p>
+        </span>
     </div>)
 }
 

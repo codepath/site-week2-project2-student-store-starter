@@ -3,14 +3,27 @@ import happygirl from "../../images/happygirl.png"
 
 export default function Contact() {
     return(
-    <div className="contact" style={{ padding: '100px'}}>
-        <h1>Contact</h1> 
+        <div>
+        <h1 style={{marginLeft: '350px',
+            marginTop: '90px'}}>Contact</h1> 
+
+        <div className="contact" style={{ 
+       padding: '100px',
+       backgroundColor: 'white',
+       fontSize: '20px',
+       borderStyle: 'solid',
+       display: 'flex',
+       margin: '0 auto',
+       maxWidth:'1100px', 
+       }}>
         <ul>
-            <li>Email:code@path.org</li>
-            <li>Phone:1-800-CODEPATH</li>
-            <li>Address: 123 Fake Street, San Francisco, CA</li>
+            <ul>Email: code@path.org</ul>
+            <ul>Phone: 1-800-CODEPATH</ul>
+            <ul>Address: 123 Fake Street, San Francisco, CA</ul>
         </ul> 
         <img src={happygirl} alt="happy girl at codepath" id="happygirl"/>
-    </div>)
+    </div>
+    </div>
+    )
 }
 

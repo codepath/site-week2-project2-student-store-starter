@@ -30,7 +30,7 @@ export default function Search(props) {
             defaultValue={props.searchValue}
             onChange={handleSearchChange}
             id="search-input"
-            placeholder="search for products"
+            placeholder="Search ..."
             />
              <button 
                 type="submit" 

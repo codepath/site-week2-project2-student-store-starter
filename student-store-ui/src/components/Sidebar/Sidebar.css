@@ -1,15 +1,9 @@
-:root {
-    --dark-Cp: #2c4047;
-    --light-Cp: #00c98d;
-}
-
-
-
 .sidebar{
     width: 4%;
     height: 100%;
     display: block;
     position: fixed;
     background-color: #6A8EAE;
+    border-color: black;
 
 }

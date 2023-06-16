@@ -6,12 +6,16 @@
 .content{
     background-color: #9bd1e5;
     color: black;
-    /* margin: 0 auto;     */
-    /* width: 1100px; */
+    margin: 0 auto;     
+    width: 1100px;
+    display: flex;
 }
 
+/* .intro{
+text-align: center;} */
 .intro{
-text-align: center;}
+    margin-left: 90px;
+}
 
 h1{
     font-size: 40px;

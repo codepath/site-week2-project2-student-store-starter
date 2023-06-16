@@ -1,7 +1,3 @@
-:root {
-    --dark-Cp: #2c4047;
-    --light-Cp: #00c98d;
-}
 
 .navbar {
 padding: 10px;
@@ -21,6 +17,7 @@ nav ul li{
 a{
 text-decoration: none;
 color: black;
+font-style:oblique;
 }
 
 #logo{

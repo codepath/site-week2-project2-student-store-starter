@@ -7,24 +7,5 @@
 
 
 
-/*need to move*/
-.productGrid{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 50px;
-}
 
-img{
-  width: 350px;
-  height: 350px;
-  padding: 10px;
-
-}
-
-.product{
-  padding: 10px;
-  border: 1px solid black;
-}
 
