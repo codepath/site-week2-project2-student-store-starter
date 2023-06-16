@@ -6,3 +6,14 @@
   display: flex;
   flex-direction: column;
 }
+
+.subnav-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.subnavbar {
+  display: flex;
+  flex-direction: column;
+  color: #00c385;
+}

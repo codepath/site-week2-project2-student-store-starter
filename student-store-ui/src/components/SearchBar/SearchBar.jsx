@@ -1,4 +1,3 @@
-import * as React from "react"
 import "./SearchBar.css"
 
 export default function SearchBar({ searchTerm, setSearchTerm }) {
@@ -9,7 +8,9 @@ export default function SearchBar({ searchTerm, setSearchTerm }) {
 
   return (
     <form className="product-search" onSubmit={handleChange}>
-      <label className="form-label" htmlFor="search"><b>Product Search: </b></label>
+      <label className="form-label" htmlFor="search">
+        <b>Product Search: </b>
+      </label>
       <input
         className="form-input"
         name="search"

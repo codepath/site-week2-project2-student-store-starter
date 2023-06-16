@@ -3,14 +3,14 @@
     margin-bottom: 20px;
 }
 
-.product-search input {
+.product-search input{
     border: solid 0px;
     border-radius: 10px;
     height: 25px;
     width: 300px;
 }
 
-.product-search button {
+.product-search button{
     background: #00c385;
     border: 0px;
     border-radius: 10px;

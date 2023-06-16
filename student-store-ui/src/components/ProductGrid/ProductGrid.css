@@ -1,8 +1,8 @@
 .product-grid {
     display: grid;
+    justify-content: center;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 15px;
-    justify-content: center;
 }
 
 .product-grid a{

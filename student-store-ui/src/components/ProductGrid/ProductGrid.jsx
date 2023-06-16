@@ -1,14 +1,25 @@
 import * as React from "react"
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
-import ProductCard from "../ProductCard/ProductCard"
+import { useState, useEffect } from "react"
+import axios from "axios"
+import { Link } from "react-router-dom"
+
 import "./ProductGrid.css"
 
-export default function ProductGrid({products, category, searchTerm}) {
+import ProductCard from "../ProductCard/ProductCard"
+
+export default function ProductGrid({ category, searchTerm }) {
+  const [products, setProducts] = useState()
+
+  const mockAPI = "https://codepath-store-api.herokuapp.com/store"
+  useEffect(() => {
+    axios.get(mockAPI)
+      .then(response => {
+        setProducts(response.data.products)
+      })
+  }, [])
+
   let selectedProducts = searchTerm === "" ? products
     : products?.filter(product => product.name.toLowerCase().includes(searchTerm.toLowerCase()))
-
-
-  console.log(selectedProducts)
 
   return (
     <section className="product-grid">

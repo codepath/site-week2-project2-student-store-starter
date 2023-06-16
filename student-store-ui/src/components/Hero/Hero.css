@@ -21,6 +21,7 @@
     justify-content: center;
     width: 60%;
     margin-left: 10%;
+    min-width: 340px;
 }
 
 h1 {

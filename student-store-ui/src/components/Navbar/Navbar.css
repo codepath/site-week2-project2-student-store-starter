@@ -20,9 +20,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     width: 50%;
     min-width: 340px;
-    align-items: center;
 }
 
 .navbar div:hover{

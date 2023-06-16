@@ -1,32 +1,37 @@
 import * as React from "react"
 import { useState } from "react"
+
 import "./Home.css"
+
 import ProductGrid from "../ProductGrid/ProductGrid"
-import Logo from "../Logo/logo"
 import About from "../About/About"
 import Contact from "../Contact/Contact"
-import Subnavbar from "../Subnavbar/Subnavbar"
+import CategoryBar from "../CategoryBar/CategoryBar"
+import SearchBar from "../Searchbar/Searchbar"
 
-export default function Home({products}) {
+
+export default function Home() {
   const [category, setCategory] = useState("All Categories")
   const [searchTerm, setSearchTerm] = useState("")
 
-  const categories = ["All Categories", "Food", "Clothing", "Tech", "Accessories"]
-
   return (
     <>
-      <Subnavbar 
-        categories={categories}
-        category={category}
-        setCategory={setCategory}
-        searchTerm={searchTerm}
-        setSearchTerm={setSearchTerm}
-      />
+      <div className="subnav-wrap" id="subnavbar">
+        <section className="subnavbar">
+          <SearchBar 
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm} 
+          />
+          <CategoryBar
+            category={category}
+            setCategory={setCategory} 
+          />
+        </section>
+      </div>
       <div className="home">
         <section className="buy">
           <h3>Best Selling Products</h3>
-            <ProductGrid 
-              products={products}
+            <ProductGrid
               category={category}
               searchTerm={searchTerm}
             />

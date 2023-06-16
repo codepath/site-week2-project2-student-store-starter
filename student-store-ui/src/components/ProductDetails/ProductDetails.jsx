@@ -1,30 +1,29 @@
 import { useState, useEffect} from "react"
 import { useParams } from "react-router-dom"
 import axios from "axios"
+
 import "./ProductDetails.css"
 
-
 export default function ProductDetails() {
-  const mockBackend = "https://codepath-store-api.herokuapp.com/store"
-  const [product, setProduct] = useState({})
-  const { id } = useParams()
+  const [productToDisplay, setProductToDisplay] = useState({})
 
+  const { id } = useParams()
+  const mockBackend = "https://codepath-store-api.herokuapp.com/store"
   useEffect(() => {
     axios.get(`${mockBackend}/${id}`)
       .then(response => {
-        setProduct(response.data.product)
+        setProductToDisplay(response.data.product)
       })
   }, [])
 
-  console.log(product)
-    return (
-       <div className="product-card-description">
-          <img src={product.image}/>
-          <div className="info-box">
-            <b>{product.name}</b><br/>
-            ${product.price}
-            <p>{product.description}</p>
-          </div>
-        </div>
-    )
+  return (
+    <div className="product-card-description">
+      <img src={productToDisplay.image}/>
+      <div className="info-box">
+        <b>{productToDisplay.name}</b><br/>
+        ${productToDisplay.price}
+        <p>{productToDisplay.description}</p>
+      </div>
+    </div>
+  )
 }
