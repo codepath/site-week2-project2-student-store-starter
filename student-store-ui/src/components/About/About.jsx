@@ -37,16 +37,16 @@ export default function About() {
           <br />
           <span>
             Socials: &emsp;&ensp;
-            <a href="https://www.facebook.com/codepath.org/">
+            <a className="nav-link" href="https://www.facebook.com/codepath.org/">
               <FontAwesomeIcon icon={fab.faFacebook} size="xl" />{" "}
             </a>
-            <a href="https://www.instagram.com/pelumiumi/?igshid=MzNlNGNkZWQ4Mg%3D%3D">
+            <a className="nav-link" href="https://www.instagram.com/pelumiumi/?igshid=MzNlNGNkZWQ4Mg%3D%3D">
               <FontAwesomeIcon icon={fab.faInstagram} size="xl" />{" "}
             </a>
-            <a href="https://www.linkedin.com/in/oluwapelumi-tayo-orisadare/">
+            <a className="nav-link" href="https://www.linkedin.com/in/oluwapelumi-tayo-orisadare/">
               <FontAwesomeIcon icon={fab.faLinkedinIn} size="xl" />{" "}
             </a>
-            <a href="https://twitter.com/codepath">
+            <a className="nav-link" href="https://twitter.com/codepath">
               <FontAwesomeIcon icon={fab.faTwitter} size="xl" />{" "}
             </a>
           </span>

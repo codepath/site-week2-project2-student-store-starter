@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "../Navbar/Navbar";
+import Home from "../Home/Home";
+import ProductDetails from "../ProductDetails/ProductDetails";
 import Hero from "../Hero/Hero";
 import About from "../About/About";
 import Search from "../Search/Search";
@@ -13,8 +14,8 @@ import Category from "../Category/Category";
 import "./App.css";
 
 export default function App() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [catSearch, setCatSearch] = useState("");
+  // const [product, setProduct] = useState(null);
+const [catSearch, setCatSearch] = useState("");
   const [searchValue, setSearchValue] = useState("");
   const [category, setCategory] = useState("");
   const [products, setProducts] = useState([]);
@@ -31,22 +32,17 @@ export default function App() {
     <div className="app">
       <BrowserRouter>
         <main>
-          <Navbar />
-          <Hero />
-          <Search
-            products={products}
+        <Routes>
+          <Route exact path="/" element={<Home products={products}
             searchValue={searchValue}
             setSearchValue={setSearchValue}
             setCatSearch={setCatSearch}
-          />
-          <Category setCategory={setCategory} setCatSearch={setCatSearch} />
-          <ProductGrid
-            products={products}
-            searchValue={searchValue}
+            setCategory={setCategory}
             category={category}
-            catSearch={catSearch}
-          />
-          <About />
+            catSearch={catSearch}/>} />
+          <Route path="/about" element={<About/>} />
+          <Route path="/products/:id" element={<ProductDetails products={products} />}/>
+        </Routes>
         </main>
       </BrowserRouter>
     </div>

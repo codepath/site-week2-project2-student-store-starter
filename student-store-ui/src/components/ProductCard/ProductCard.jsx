@@ -1,28 +1,21 @@
 import * as React from "react";
 import "./ProductCard.css";
+import { Link } from "react-router-dom";
 
-export default function ProductCard(props) {
+export default function ProductCard(prop) {
   return (
-    <div className="product-grid">
-      {props.products?.length === 0 ? (
-        <p className="grid-p">No products available 🛑</p>
-      ) : (
-        props.products?.map((product) => {
-          return (
-            <div className="product">
-              <img
-                className="product-poster"
-                src={product.image}
-                alt={`Image of ${product.name}`}
-              />
-              <div className="product-info">
-                <p>{product.name}</p>
-                <p>${product.price}</p>
-              </div>
-            </div>
-          );
-        })
-      )}
-    </div>
+    <Link to={"products/" + prop.product.id}>
+      <div className="product">
+        <img
+          className="product-poster"
+          src={prop.product.image}
+          alt={`Image of ${prop.product.name}`}
+        />
+        <div className="product-info">
+          <p>{prop.product.name}</p>
+          <p>${prop.product.price}</p>
+        </div>
+      </div>
+    </Link>
   );
 }

@@ -8,15 +8,15 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 
 console.log(fab)
 
-export default function Navbar(props) {
+export default function Navbar() {
   return (
     <nav className="navbar">
 
-    <Sidebar isOpen={props.isOpen} setIsOpen={props.setIsOpen}/>
+    <Sidebar />
 
-
+    <Link to="/">
     <Logo prop={"nav-logo"}/>
-        
+    </Link>
     <div className="socials">
       <a className="codePathHandle" title="CodePath Twitter" href="https://twitter.com/codepath" target="_blank"><FontAwesomeIcon icon={fab.faTwitter} size="xl"/></a>
       <a className="codePathHandle" title="CodePath Instagram" href="https://www.instagram.com/codepathorg/?hl=en" target="_blank"><FontAwesomeIcon icon={fab.faInstagram} /></a>
@@ -24,12 +24,13 @@ export default function Navbar(props) {
     </div>
       <ul className="menu-links">
         <li>
+          <Link to="/">
           <a href="" className="nav-link">
             Home
           </a>
+          </Link>
         </li>
         <li>
-          {/* <Link to="/about">About Us</Link> */}
           <a href="#about-container" className="nav-link">
             About Us
           </a>

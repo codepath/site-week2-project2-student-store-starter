@@ -7,6 +7,7 @@
 .product-poster {
   height: 245px;
   width: 245px;
+  
 }
 .product-info {
   font-weight: bold;
@@ -23,6 +24,7 @@
   padding-left: 40px;
   padding-right: 40px;
   color: white;
+  
 }
 .product-grid {
   justify-content: center;
@@ -32,4 +34,5 @@
   min-height: 200px;
   width: 60%;
   margin: 0 auto;
+  
 }

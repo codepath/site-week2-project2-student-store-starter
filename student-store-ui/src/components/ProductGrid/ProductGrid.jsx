@@ -19,11 +19,16 @@ export default function ProductGrid(props) {
   } else {
     newProducts = props.products;
   }
-
   return (
     <div className="product-gridContainer">
       <h2>Best Selling Products</h2>
-      <ProductCard products={newProducts} />
+      <div className="product-grid">
+        {newProducts?.length === 0 ? (
+          <p className="grid-p">No products available 🛑</p>
+        ) : (
+          newProducts?.map((product) => <ProductCard product={product} />)
+        )}
+      </div>
     </div>
   );
 }

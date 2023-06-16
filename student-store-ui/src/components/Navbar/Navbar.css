@@ -35,19 +35,25 @@ nav ul li {
     height: 60px;
 }
 
-a {
-    float: inline-end;
+.nav-link, .codePathHandle{
+    /* float: inline-end; */
     color: white;
-    font-size: 20px;
+    /* font-size: 20px; */
     padding: 7px 13px;
     border-radius: 3px;
     transition: .5s;
+    /* text-decoration: underline; */
+}
+
+.nav-link{
+    float: inline-end;
+    font-size: 20px;
     text-decoration: underline;
 }
 .menu-links{
     margin-top: 22px;
 }
 
-a:hover {
+.nav-link:hover, .codePathHandle:hover {
     background: var(--light-cp)
   }

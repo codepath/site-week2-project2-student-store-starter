@@ -5,7 +5,7 @@ export default function Sidebar(props) {
   return (
     <>
       <input type="checkbox" id="check" />
-      <label for="check" class="checkbtn">
+      <label htmlFor="check" className="checkbtn">
         <i className="fa fa-bars"> </i>
       </label>
       <section className="sidebar">
