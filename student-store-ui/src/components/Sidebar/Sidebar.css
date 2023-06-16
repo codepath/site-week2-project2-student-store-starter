@@ -4,11 +4,12 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: black;
+    background-color: #F29727;
     transition: 0.5s;
     z-index: 2;
 }
 
 #change-sidebar-btn {
     position: absolute;
+    width: 100%;
 }

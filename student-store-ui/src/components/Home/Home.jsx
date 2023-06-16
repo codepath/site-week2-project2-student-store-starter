@@ -41,6 +41,7 @@ export default function Home() {
       .then((response) => {
         itemListSet(response.data.products)
         displayedItemListSet(response.data.products)
+        currentItemSet(response.data.products[parseInt(window.location.pathname.split("/").pop()) - 1])
       })
       .catch((error) => {
         console.error(error)
@@ -53,8 +54,8 @@ export default function Home() {
     return (
       <div className="home">
         <div className="hero">
-          <h1 id="hero-pic-header-1">cool epic pic of skating cat</h1>
-          <h2 id="hero-pic-header-2">cool epic description of skating cat</h2>
+          <h1 id="hero-pic-header-1">cool epic skating cat store</h1>
+          <h2 id="hero-pic-header-2">cool epic description of skating cat store</h2>
           <img src={homePic} id="hero-pic"/>
         </div>
         <div className="search-bar-section">
@@ -63,7 +64,7 @@ export default function Home() {
         <div className="display-categories">
           {
             categories.map((category) => {
-              return <button type="submit" name={category} onClick={handleCategory}>{category}</button>
+              return <button type="submit" className="category-buttons" name={category} onClick={handleCategory}>{category}</button>
             })
           }
         </div>
@@ -73,11 +74,13 @@ export default function Home() {
             displayedItemList.map((item) => {
               return (
                 <div className="item" key={item.id}> 
-                  <Link to={"/item" + item.id}>
-                    <img className= "item-image" src={item.image} style={{"width": "250px", "height": "250px"}} onClick={() => currentItemSet(item)}/>
-                  </Link>
-                  <h3>{item.name}</h3>
-                  <h3>${item.price}</h3>
+                  <div className="innerItem">
+                    <Link to={"/item/" + item.id}>
+                      <img className= "item-image" src={item.image} style={{"width": "250px", "height": "250px"}} onClick={() => currentItemSet(item)}/>
+                    </Link>
+                    <h3 className="item-text">{item.name}</h3>
+                    <h3 className="item-text">${item.price}</h3>
+                  </div>
                 </div>
               )
             })
@@ -95,9 +98,9 @@ export default function Home() {
           <h3>wowwwww epic trick yes yes this is another paragraph about it</h3>
         </div>
         <div className="footer">
-          <h3 className="footer-text">contact us or something</h3>
-          <h3 className="footer-text">phone: hello-bye-cya-888</h3>
-          <h3 className="footer-text">email: ialreadygaveup@gmail.com</h3>
+          <h3 className="footer-text">contact the cool epic skating cat !</h3>
+          <h3 className="footer-text">phone: skate-cat-epic-999</h3>
+          <h3 className="footer-text">email: theepicskatingcat@cool.com</h3>
         </div>
       </div>
     )
@@ -107,7 +110,7 @@ export default function Home() {
     return (
       <div className="item-page">
         <h1>Product #{item?.id} : {item?.name}</h1>
-        <img className= "item-image" src={item?.image}/>
+        <img className= "item-image" src={item?.image} style={{"width": "1000px", "height": "1000px"}}/>
         <h3>{item?.description}</h3>
         <h3>${item?.price} USD</h3>
       </div>
@@ -119,7 +122,7 @@ export default function Home() {
   return (
     <Routes>
       <Route path="/" element={Home()}/>
-      <Route path={"/item" + currentItem?.id} element={ItemPage(currentItem)}/>
+      <Route path={"/item/" + currentItem?.id} element={ItemPage(currentItem)}/>
     </Routes>
   )
 }
