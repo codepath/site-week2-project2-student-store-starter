@@ -19,14 +19,18 @@ import ProductDetails from "../Product Details/ProductDetails";
 export default function App() {
   const url = "https://codepath-store-api.herokuapp.com/store";
 
-  const [items, setItems] = useState([]);
-  const [category, setCategory] = useState('');
+  const [items, setItems] = useState([])
+  const [category, setCategory] = useState('')
+  const [productsByCategory, setProductsByCategory] = useState([])
   const [isActive, setIsActive] = useState(false);
   const [products, setProducts] = useState([]);
 
+  console.log('app', category)
   useEffect(() => {
     axios.get(url).then((response) => {
-      setProducts(response.data.products);
+      const dataProducts = response.data.products
+      setProducts(dataProducts);
+      setProductsByCategory(dataProducts)
     });
   }, [items, category]);
 
@@ -50,7 +54,7 @@ export default function App() {
           <Routes>
             <Route
               path="/"
-              element={<Home products={products} items={items} category={category}/>}
+              element={<Home  products={products} items={items} category={category} />}
             />
             <Route path="/:id" element={<ProductDetails />} />
           </Routes>
