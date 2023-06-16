@@ -2,8 +2,11 @@ import * as React from "react"
 import "./ProductGrid.css"
 import ProductCard from '../ProductCard/ProductCard'
 
-export default function ProductGrid({products}) {
+// import {useEffect, useState} from "react"
 
+
+export default function ProductGrid({products}) {
+console.log("REACHED PRODUCT GRID")
 return (
     
     <div id="Buy" className = "product-grid">
@@ -27,7 +30,7 @@ return (
             // });
             
             
-             return <ProductCard product={product} index = {index} />})}
+             return <ProductCard product={product} index ={index} />})}
           </div>
         </div>
     </div>

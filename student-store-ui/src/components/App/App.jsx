@@ -8,6 +8,7 @@ import "./App.css"
 import {useEffect, useState} from "react"
 import axios from "axios"
 import About from "../About/About"
+import ProductView from "../ProductView/ProductView"
 // usually put external dependencies at the top
 
 // //import react pro sidebar components
@@ -22,8 +23,8 @@ import About from "../About/About"
 
 // TODO:
 // CREATE INDIVIDUAL PRODUCT PAGE
-// FIX SEARCH TO NOT WORK FOR UNFOUND INPUT
 // stretch features!!
+// FIX SEARCH TO NOT WORK FOR UNFOUND INPUT
 
 export const appInfo ={
   title: "Welcome! Find Your Merch!",
@@ -138,7 +139,7 @@ export default function App() {
                   formData = {formData} 
                   products = {filteredSearchArray.length === 0 ? products : filteredSearchArray} 
                   />}>           
-              {/* <Route path="products/:id" element={<ProductDetail handleRoute/>} /> */}
+              <Route path="products/:id" element={<ProductView ProductView/>} />
               
               {/* <Route path="Contact" element={<Contact />}/> */}
           </Route>

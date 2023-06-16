@@ -1,5 +1,7 @@
 import * as React from "react"
 import "./Navbar.css"
+import Logo from '../Logo/Logo'
+
 import { BrowserRouter, Routes, Route, useActionData } from 'react-router-dom'
 import About from "../About/About"
 import Contact from "../Contact/Contact"
@@ -10,10 +12,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="content">
-      <div className="company-logo">
-        <a href="/"><img src={"https://codepath-student-store-demo.surge.sh/assets/codepath.f1b3e41a.svg"} alt="codepath logo" className="logo-img" ></img></a>
-       
-      </div>
+      <Logo />
       <section className = "socials">
           <img src={"https://www.transparentpng.com/download/linkedin/linkedin-shiny-icon-png-0.png"} alt="linked in logo" className="linkedin-logo-img"></img>
           <img src={"https://assets.stickpng.com/images/580b57fcd9996e24bc43c53e.png"} alt="twitter logo" className="twitter-logo-img"></img>

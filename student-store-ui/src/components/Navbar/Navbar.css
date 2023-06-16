@@ -24,13 +24,6 @@
     /* color: #fff; */
 }
 
-.navbar .content .company-logo {
-    width: 100px;
-    margin-right: 50px;
-    color: #fff;
-    font-weight: 500;
-}
-
 .navbar .content .socials {
     display: flex;
     flex-direction: row;

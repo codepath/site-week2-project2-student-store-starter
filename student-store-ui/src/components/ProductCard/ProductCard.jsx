@@ -1,12 +1,16 @@
 import * as React from "react"
 import "./ProductCard.css"
 import {useEffect, useState} from "react"
+import { Link } from 'react-router-dom'
+
 
 export default function ProductCard({product, index}){
     const num_in_cart=0;
     return (
         <div className="product-card" key={index} > 
-            <img src={product.image} ></img>
+            <Link to={"products/" + product.id}>
+                <img src={product.image} ></img>
+            </Link>
             {/* {onClick={() => selectSearchEntry(searchEntry)}} */}
             <div className="product-info">
                 <div className="main-info">
