@@ -8,13 +8,27 @@ import { useParams } from "react-router-dom";
 export default function ProductDetail(props) {
   const { id } = useParams();
 
+  // when this component mounts/renders, get the product information from api with specified id
+
   const product = props.products.find((product) => product.id == parseInt(id));
-  console.log(product)
+
+  if (props.products.length === 0) {
+    return (
+      <>
+        <Navbar />
+        <Hero />
+        <div id="loading">
+          <h1>Loading...</h1>
+        </div>
+      </>
+    );
+  }
+
   return (
     <>
       <Navbar />
       <Hero />
-        <h2 id="details-header">Product #{id}</h2>
+      <h2 id="details-header">Product #{id}</h2>
       <div className="prod-details">
         <img
           className="pd-poster"
@@ -24,7 +38,7 @@ export default function ProductDetail(props) {
         <div className="product-info">
           <p>{product.name}</p>
           <p>{product.description}</p>
-          <p>${product.price}</p>
+          <p>${product.price.toFixed(2)}</p>
         </div>
       </div>
     </>

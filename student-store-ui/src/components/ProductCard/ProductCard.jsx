@@ -14,7 +14,7 @@ export default function ProductCard(prop) {
         <div className="product-info">
           <p>{prop.product.name}</p>
           <p>⭐️ ⭐️ ⭐️ ⭐️ ⭐️</p>
-          <p>${prop.product.price}</p>
+          <p>${prop.product.price.toFixed(2)}</p>
         </div>
       </div>
     </Link>

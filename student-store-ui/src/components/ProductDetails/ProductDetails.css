@@ -1,6 +1,5 @@
 .prod-details{
     margin: 0 auto;
-    /* background-color: purple; */
     border-radius: 20px;
   border: solid 5px var(--light-cp);
     text-align: center;
@@ -13,4 +12,12 @@
 #details-header{
     margin-left: 20%;
     font-size: xx-large;
+}
+#loading {
+    margin: 0 auto;
+    font-size: xx-large;
+}
+
+#loading h1{
+padding-top: 30px;
 }
