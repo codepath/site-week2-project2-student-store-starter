@@ -28,8 +28,8 @@ body{
 .navbar ul{
   list-style: none;
   display: flex;
-  gap: 5rem;
-  margin-left: 65rem;
+  gap: 10rem;
+  margin-left: 21rem;
   font-size: 20px;
   font-weight: bold;
 }
@@ -78,9 +78,11 @@ nav a{
   margin-top: 50px;
   margin-bottom: 50px;
   padding-left: 50px;
+  margin-left: 40px;
 }
 .intro{
   margin-left: 25%;
+  padding-left: 62px;
 }
 
 .media img{
@@ -93,10 +95,16 @@ nav a{
   padding-bottom: 50px;
   background-color: transparent;
 }
+.Purchase-header{
+  text-align: center;
+  margin-left: 30px;
+}
 .About-container{
   width: 100%;
   height: 350px;
   text-align: center;
+  margin-left: 40px;
+  margin-top: 50px;
   background-color: #e2d4ba;
 }
 .search-container{
@@ -115,6 +123,15 @@ nav a{
 .facts img{
   width: 300px;
   height: 300px;
+}
+.Contact-container{
+  width: 100%;
+  height: 350px;
+  text-align: center;
+  background-color: #e2d4ba;
+  margin-left: 40px;
+  margin-top: 50px;
+
 }
 
 .sidebar2{

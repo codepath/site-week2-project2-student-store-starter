@@ -42,10 +42,18 @@ export default function Home({products}) {
       <Productgrid productFilter={Filter}/>
       <div className="About-container">
         <div className="About">
-          <h1>About</h1>
+          <h1>About Us</h1>
           <p>The codepath student store offers great products at great prices from a great team and for a great cause.</p>
           <p>We've searched far and wide for items that perk the interests of even the most eccentric students and decided to offer them all here in one place.</p>
           <p>All proceeds go towards bringing high quality CS education to college students around the country.</p>
+        </div>
+      </div>
+      <div className="Contact-container">
+        <div className="Contact">
+          <h1>Contact Us</h1>
+          <p>Email: code@path.org</p>
+          <p>Phone: 1-800-CODEPATH</p>
+          <p>Address: 123 Fake Street, San Francisco, CA</p>
         </div>
       </div>
       
