@@ -34,7 +34,7 @@ export default function Subnavbar({ activeCategory, setActiveCategory, products,
                     <div className="search-bar"><input id="search-input" type="text" name="search" placeholder="Search" value={query} onChange={handleChange} /><i className="material-icons">search</i></div>
                     <div className="links">
                         <span className="help"><i className="material-icons">help</i>Help</span>
-                        <div className="cart"><a href="/">My Cart<i class="material-icons">shopping_cart</i></a></div>
+                        <div className="cart"><a href="/">My Cart<i className="material-icons">shopping_cart</i></a></div>
                     </div>
                 </div>
                 <div className="row">
