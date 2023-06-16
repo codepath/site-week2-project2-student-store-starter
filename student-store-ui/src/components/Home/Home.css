@@ -56,6 +56,10 @@
   justify-self: start;
 }
 
+.item-page {
+  margin-left: 10%;
+}
+
 .about-section {
   margin-left: 10%;
   margin-top: 3%;
