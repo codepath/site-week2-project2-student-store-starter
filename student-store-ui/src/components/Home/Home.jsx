@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import "./Home.css";
 import Hero from "../Hero/Hero";
 import ProductDetails from "../ProductDetails/ProductDetails";
+import { Link } from "react-router-dom";
 
 export default function Home({ products }) {
   const [searchTerm, setSearchTerm] = useState("");
@@ -34,57 +35,64 @@ export default function Home({ products }) {
   return (
     <div className="home">
       <Hero />
+      <br></br>
       <div className="Menu-bar">
-        <p>I will add search and the filter thing here</p>
-        <div className="Row-for-Seach-and-Cart-icon">
-          <div className="Search-Bar">
-            <input type="text" name="search" placeholder="Search" />
-            <br />
-            <button>Cart</button>
-            {/* I will open the cart from here */}
-          </div>
-        </div>
-        <div className="Menu-bar-button-fliter">
+        <div className="Search-bar-and-filter" >
           <input
+            className="search-input"
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search!"
           />
+          <br></br>
+          <br></br>
           {categories.map((cat, index) => (
-            <button key={index} onClick={() => setSelectedCategory(cat)}>
+            <button
+              key={index}
+              onClick={() => setSelectedCategory(cat)}
+              className={selectedCategory === cat ? "selected" : ""}
+            >
               {cat}
             </button>
           ))}
+
         </div>
       </div>
 
       <div className="product-container">
-        {productFilter?.map((product) => {
+        {productFilter?.map((product, idx) => {
           return (
-            // <div className="product" key={product.id}>
-            //   <img src={product.image} alt={product.name} />
-            //   <p>{product.name}</p>
-            //   <p>{product.price}</p>
-            // </div>
-            <div
-            className="product"
-            key={product.id}
-            onClick={() => setSelectedProduct(product)} // Set the selected product
-          >
-            <img src={product.image} alt={product.name} />
-            <p>{product.name}</p>
-            <p>{product.price}</p>
-          </div>
+              <Link key={idx} to={"products/" + product.id}>
+              <div
+              className="product"
+              key={product.id}
+              onClick={() => setSelectedProduct(product)} // Set the selected product
+            >
+              <img src={product.image} alt={product.name} />
+              <p>{product.name}</p>
+              <p>{product.price}</p>
+            </div>
+              </Link>
+    
           );
         })}
       </div>
 
-      <div className="hero">
+      <div className="About">
         <h1>About ME!</h1>
         <h1>Find Your Merch!</h1>
         <p>I will be adding cool facts about me</p>
       </div>
+      <br></br>
+      <br></br>
+
+      <div className="Footer">
+      <h1>This is the footer!</h1>
+        <h1>Find Your Merch!</h1>
+      </div>
     </div>
+    
+    
   );
 }

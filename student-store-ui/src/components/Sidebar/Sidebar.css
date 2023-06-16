@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 200px;
+    width: 175px;
     position: fixed;
     top: 0;
     left: 0;
@@ -10,7 +10,20 @@
     padding: 0;
     overflow-y: auto;
     padding-bottom: 2rem;
-    background-color: gray;
+    background-color: #16425b;
     z-index: 50;
-    margin-bottom: 3%;
   }
+  
+  .sidebar a {
+    text-align: center;
+    text-decoration: none;
+    user-select: none; /* Disable text selection */
+    color: #fff;
+  }
+  
+  .sidebar-link {
+    display: block;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+  

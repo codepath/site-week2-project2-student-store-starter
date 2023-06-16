@@ -5,12 +5,18 @@ import{FaBars, FaTimes} from "react-icons/fa"
 export default function Sidebar() {
   return (
     <section className="sidebar">
-      <p>Sidebar</p>
+      {/* <p>Sidebar</p> */}
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <br></br>
       <br></br>
       <br></br>
 
         <a href="/#">Shopping Cart</a>
+        <br></br>
+        <br></br>
         <br></br>
         <a href="/#">Checkout Form</a>
       {/* <button>
