@@ -1,7 +1,7 @@
 import * as React from "react"
 import "./Sidebar.css"
 
-export default function Sidebar({isActive = false, handleOnClick}) {
+export default function Sidebar({ isActive = false, handleOnClick }) {
 
   const divClass = isActive ? "sidebar open" : "sidebar closed";
 
@@ -29,7 +29,7 @@ export default function Sidebar({isActive = false, handleOnClick}) {
 
           {isActive ? openSideBar : closedSideBar}
 
-          
+
 
 
 
@@ -42,11 +42,6 @@ export default function Sidebar({isActive = false, handleOnClick}) {
 
       </div>
 
-
-      {/* <div className="sidebar opened">
-
-
-      </div> */}
     </section>
   )
 }

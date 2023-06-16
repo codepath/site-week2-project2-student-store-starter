@@ -1,32 +1,31 @@
-
-.product-card{
+.product-card {
 
     background-color: white;
     margin: 10px;
-    
-    
+
+
     border-style: solid;
     border-color: rgb(191, 191, 191);
-    
+
     width: 300px;
-    
+
 }
-    
-.product-card img { 
-    
-      height: 250px;
-      width: 297px; 
-    
-      border-style: solid;
-      border-color: rgb(191, 191, 191);
-    
-} 
-    
-.product-card p{
-    
-      padding-left: 20px;
-      font-size: 14pt;
-      font-weight: 500;
+
+.product-card img {
+
+    height: 250px;
+    width: 297px;
+
+    border-style: solid;
+    border-color: rgb(191, 191, 191);
+
+}
+
+.product-card p {
+
+    padding-left: 20px;
+    font-size: 14pt;
+    font-weight: 500;
 }
 
 
@@ -42,7 +41,7 @@
     flex-direction: column;
     padding: 8px 12px;
     align-items: flex-start;
-    
+
 }
 
 .product-card .main-info .product-name {
@@ -125,7 +124,8 @@
     max-width: 600px;
     width: 100%
 }
-.stars svg{
+
+.stars svg {
 
     height: 20px;
     width: 20px;

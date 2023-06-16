@@ -21,7 +21,7 @@
    }  
   
    .codepathLogo img { 
-     height: 100%; /*Make the image the same height as the paragraph div */
+     height: 100%; 
      object-fit: contain;
   } 
    

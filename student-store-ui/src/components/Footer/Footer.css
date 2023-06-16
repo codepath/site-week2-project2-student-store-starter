@@ -1,8 +1,5 @@
 
-.Footer {
 
-    /* width: 100%; */
-}
 
 .footer-content{
 
@@ -19,8 +16,6 @@ flex-direction: column;
 
     display: flex;
     flex-direction: row;
-    
-    /* padding: 20px; */
     justify-content: space-between;
     margin-right: 140px;
     margin-left: 140px;
