@@ -5,7 +5,7 @@ import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
 import "./App.css"
 import Hero from "../Hero/Hero"
-import Sub_Navbar from "../Sub_Navbar/Sub_Navbar"
+import Sub_Navbar from "../SubNavbar/SubNavbar"
 
 // import { useEffect } from "react"
 // import axios from 'axios'
