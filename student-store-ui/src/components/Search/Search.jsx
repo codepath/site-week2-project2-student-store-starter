@@ -27,7 +27,7 @@ export default function Search(props) {
           id="search-input"
           placeholder="Search for an item..."
           />
-        <button onClick={handleSubmit} type="submit">🔍</button>
+        <button id="search-button" onClick={handleSubmit} type="submit">🔍</button>
       </form>
     </div>
     </>

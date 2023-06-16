@@ -23,9 +23,13 @@ input{
     border: solid #afafaf;
 }
 
-button{
+#search-button{
     height: 4.0vh;
     width: 40px;
     background-color: var(--light-cp);
     border: solid #afafaf;
+}
+#search-button:hover, #search-button:active{
+    cursor: pointer;
+    box-shadow: 3px 3px 5px var(--light-cp);
 }

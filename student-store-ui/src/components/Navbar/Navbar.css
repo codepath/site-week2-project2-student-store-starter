@@ -13,11 +13,11 @@
     margin-right: 80px;
     width: 500px;
     height: 80px;
-    padding-top: 12px;
+    padding-top: 15px;
 }
 .codePathHandle{
-    font-size: 200%;
-    margin: 20px;
+    font-size: 180%;
+    margin: 25px;
     color: white;
     justify-content: center;
 }

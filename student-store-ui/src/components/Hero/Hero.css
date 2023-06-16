@@ -10,8 +10,12 @@
     padding: 20px;
 }
 
-img{
+.hero-img{
     width: 150px;
+    transition: all .7s;
+}
+.hero-img:hover{
+    transform: scale(1.6);
 }
 
 .intro{
