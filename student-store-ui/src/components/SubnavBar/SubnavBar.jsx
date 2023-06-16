@@ -1,7 +1,7 @@
 import * as React from "react"
 import "./SubnavBar.css"
 
-export default function SubnavBar({formData, handleInput, changeCategory}){
+export default function SubnavBar({formData, handleInput, changeCategory, handleSubmit}){
 
     return (
         <nav className="sub-navbar">
@@ -12,7 +12,8 @@ export default function SubnavBar({formData, handleInput, changeCategory}){
             className="search-bar">
             <input type="text" name="search" placeholder="Search" value={formData} onChange={handleInput}></input>
                 <i className="material-icons">search</i>
-        
+            {/* <button onClick={(event) => handleSubmit(event)} > Search </button> */}
+            {/* TODO: add accessibility line */}
             </form>
             <div className="links">
             <span className="help">
@@ -32,18 +33,18 @@ export default function SubnavBar({formData, handleInput, changeCategory}){
                 {/* EXCEPT CHANGECATEGORY IS A FUNCTION DECLARED IN HOME! */}
                 <button onClick={() => changeCategory("")}>All Categories</button>
             </li>
-            <li className="">
-                <button onClick={() => changeCategory("clothing")} >Clothing</button> 
+            <li className="is-active">
+                <button onClick={() => changeCategory("clothing")}> Clothing</button> 
 
                 {/* <button>Clothing</button> */}
             </li>
-            <li className="">
+            <li className="is-active">
                 <button onClick={() => changeCategory("food")}>Food</button>
             </li>
-            <li className="">
+            <li className="is-active">
                 <button onClick={() => changeCategory("accessories")}>Accessories</button>
             </li>
-            <li className="">
+            <li className="is-active">
                 <button onClick={() => changeCategory("tech")}>Tech</button>
             </li>
             </ul>

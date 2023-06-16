@@ -5,8 +5,11 @@ import ProductCard from '../ProductCard/ProductCard'
 // import {useEffect, useState} from "react"
 
 
+// export default function ProductGrid({products, quantity}) {
 export default function ProductGrid({products}) {
+
 console.log("REACHED PRODUCT GRID")
+
 return (
     
     <div id="Buy" className = "product-grid">
@@ -30,8 +33,10 @@ return (
             // });
             
             
-             return <ProductCard product={product} index ={index} />})}
-          </div>
+            // return <ProductCard product={product} index ={index} quantity={quantity}/>})}
+            return <ProductCard product={product} index ={index} />})}
+
+            </div>
         </div>
     </div>
 )}

@@ -7,16 +7,11 @@ import {useParams} from "react-router-dom"
 import ProductView from '../ProductView/ProductView'
 
 export default function ProductDetail(){
-    
-    return {
-    //     // <div> id = "product-detail"
-    //     //     <ProductView />
-    //     // </div>
+    return(
+    <div id="Buy" className = "product-grid">
+        {/* export default function ProductDetail(quantity){ */}
+        {/* <ProductView quantity={quantity} /> */}
+    <ProductView />
 
-
-    }
-        // }
-
-    //   }
-
-}
+</div>
+)}

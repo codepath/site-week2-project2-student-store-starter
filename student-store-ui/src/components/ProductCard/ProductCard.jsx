@@ -4,8 +4,9 @@ import {useEffect, useState} from "react"
 import { Link } from 'react-router-dom'
 
 
+// export default function ProductCard({product, index, quantity}){
 export default function ProductCard({product, index}){
-    const num_in_cart=0;
+    const quantity = 0;
     return (
         <div className="product-card" key={index} > 
             <Link to={"products/" + product.id}>
@@ -16,17 +17,18 @@ export default function ProductCard({product, index}){
                 <div className="main-info">
                     <p className="product-name">{product.name}</p>
                     <div className="stars">
-                        <img src={"https://assets.stickpng.com/images/580b585b2edbce24c47b2913.png"} alt="star ratings" className="star-rating"
+                        <img src={"https://www.transparentpng.com/download/star/jjbv96-star-icon-clipart.png"} alt="star ratings" className="star-rating"
                         style={{width: "20px", height: "20px"}}></img>
-                        <img src={"https://assets.stickpng.com/images/580b585b2edbce24c47b2913.png"} alt="star ratings" className="star-rating"
+                        <img src={"https://www.transparentpng.com/download/star/jjbv96-star-icon-clipart.png"} alt="star ratings" className="star-rating"
                         style={{width: "20px", height: "20px"}}></img>
-                        <img src={"https://assets.stickpng.com/images/580b585b2edbce24c47b2913.png"} alt="star ratings" className="star-rating"
+                        <img src={"https://www.transparentpng.com/download/star/jjbv96-star-icon-clipart.png"} alt="star ratings" className="star-rating"
                         style={{width: "20px", height: "20px"}}></img>
-                        <img src={"https://assets.stickpng.com/images/580b585b2edbce24c47b2913.png"} alt="star ratings" className="star-rating"
+                        <img src={"https://www.transparentpng.com/download/star/jjbv96-star-icon-clipart.png"} alt="star ratings" className="star-rating"
                         style={{width: "20px", height: "20px"}}></img>
                         {/* <img src={"https://www.pngitem.com/pimgs/m/610-6107201_transparent-half-of-a-star-hd-png-download.png"} alt="star ratings" className="star-rating"
                         style={{width: "20px", height: "20px"}}></img> HALF STAR?? */} 
                         </div>
+                        {console.log(product.price)}
                     <p className="product-price">{"$"+product.price}</p>
                 </div>
                 <div className="actions">
@@ -39,7 +41,7 @@ export default function ProductCard({product, index}){
                     </button>
                 </div>
                 <span className="quantity">
-                    <span className="amt">{num_in_cart}</span>
+                    <span className="amt">{quantity}</span>
                 </span>
                 </div>
 

@@ -10,12 +10,9 @@ import About from "../About/About"
 import Contact from '../Contact/Contact'
 import ProductGrid from '../ProductGrid/ProductGrid'
 
+// export default function Home({products, formData, handleInput, changeCategory, handleSubmit, quantity}) {
 export default function Home({products, formData, handleInput, changeCategory}) {
-  // pass in changecategory as a prop
-  
-  // const [formData, setFormData] = useState(""); // useState for searching
-
-  return (
+    return (
 
     // <SubnavBar/>
 
@@ -23,6 +20,7 @@ export default function Home({products, formData, handleInput, changeCategory}) 
       <SubnavBar formData={formData} handleInput={handleInput} changeCategory={changeCategory} />
       {/* <p>Home</p> */}
       <Hero />
+      {/* <ProductGrid products = {products} quantity={quantity}/> */}
       <ProductGrid products = {products}/>
       <About />
       <Contact />

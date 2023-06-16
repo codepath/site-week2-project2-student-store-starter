@@ -8,7 +8,7 @@ import "./App.css"
 import {useEffect, useState} from "react"
 import axios from "axios"
 import About from "../About/About"
-import ProductView from "../ProductView/ProductView"
+import ProductDetail from "../ProductDetail/ProductDetail"
 // usually put external dependencies at the top
 
 // //import react pro sidebar components
@@ -43,6 +43,7 @@ export default function App() {
   const [filteredSearchArray, setFilteredSearchArray] = useState([])
   // const [filteredCategoryArray, setFilteredCategoryArray] = useState([])
   // const [haveFiltered, setHaveFiltered] = useState(false);
+  const [quantity, setQuantity] = useState(0);
 
   useEffect(() => {
     axios.get(url).then((response) =>{
@@ -86,6 +87,10 @@ export default function App() {
      
  }
 
+ function handleAddToCart(event){
+    setQuantity(quantity+1);
+ }
+ 
 
  function changeCategory(category){
   console.log(category);
@@ -123,26 +128,40 @@ export default function App() {
       <BrowserRouter>
         <main>
         {/* <About/> */}
-        <Navbar />
+        {/* <Navbar /> */}
         <Sidebar />
        
         <Routes>
-          {/* <Route path= "" element={<Navbar />} > */}
+
+          <Route path= "" element={<Navbar />} >
 
           {/* <Route path= "" element={<Sidebar />}/>  */}
             <Route 
+          
               path= "/" 
               element=
                 {<Home 
                   changeCategory = {changeCategory} 
                   handleInput = {handleInput} 
                   formData = {formData} 
-                  products = {filteredSearchArray.length === 0 ? products : filteredSearchArray} 
-                  />}>           
-              <Route path="products/:id" element={<ProductView ProductView/>} />
+                  products = {filteredSearchArray.length === 0 ? products : filteredSearchArray}
+                  // handleSubmit = {handleSubmit} 
+                  // quantity={quantity}
+                  />}>     
+            </Route>    
               
+            <Route path="products/:id" element={<ProductDetail/>} />
+
+            {/* <Route path="products/:id" element={<ProductDetail quantity={quantity}/>} /> */}
+
               {/* <Route path="Contact" element={<Contact />}/> */}
+         
+          
+          <Route path = "" element = {<Footer />} />
+
+          
           </Route>
+          
           {/* <Route path = "*" element={<NotFound/>}/> */}
           {/* <Route path="Contact" element={<Contact />}/> */}
         </Routes>
@@ -150,7 +169,7 @@ export default function App() {
           
         {/* ? to see if we actually have it  */}
         {/* map returns whole new array with those changes, unlike for loop */}
-      <Footer />
+     
       
           
         

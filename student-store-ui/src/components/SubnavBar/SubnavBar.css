@@ -105,7 +105,11 @@
     font-weight: 500;
     transition: all .2s ease;
   }
-  .sub-navbar .category-menu li.is-active button {
+  .sub-navbar .category-menu li.is-active button:hover {
+    border-bottom: solid 2px #00c385;
+  }
+
+  .sub-navbar .category-menu li.is-active button:active {
     border-bottom: solid 2px #00c385;
   }
   .sub-navbar .category-menu li button {
