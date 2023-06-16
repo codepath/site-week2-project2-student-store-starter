@@ -1,0 +1,42 @@
+.cont {
+  border: 1px solid black;
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.button-bar {
+  font-size: 25px;
+  padding-top: -1px;
+  padding-bottom: 5px;
+  border-radius: 10px;
+  border: solid 1px #e4e4e4;
+  background-color: #00c385;
+  color: #fff;
+  fill: #fff;
+}
+
+.search-bar {
+  height: 40px;
+  flex: 1;
+  font-size: 16px;
+  width: 300px;
+  border-radius: 8px;
+  border: solid 1px #e4e4e4;
+}
+
+.filteredData {
+  display: grid;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
+}
+
+.filteredImage {
+  width: 100px;
+  height: 100px;
+}

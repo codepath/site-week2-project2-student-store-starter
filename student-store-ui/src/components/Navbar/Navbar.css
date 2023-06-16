@@ -1,0 +1,16 @@
+.navbar {
+  display: flex;
+  align-content: space-between;
+  width: 100%;
+  height: 10vh;
+  border: 1px solid black;
+}
+
+.links {
+  display: flex;
+  text-align: right;
+}
+
+.socials > img {
+  width: 50px;
+}
