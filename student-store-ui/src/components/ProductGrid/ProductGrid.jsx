@@ -22,6 +22,7 @@ export default function ProductGrid(props) {
 
   return (
     <div className="home">
+      <h2>Best Selling Products</h2>
       <div className="product-grid">
         {newProducts?.length === 0 ? (
           <p className="grid-p">No products available 🛑</p>
@@ -34,8 +35,10 @@ export default function ProductGrid(props) {
                   src={product.image}
                   alt={`Image of ${product.name}`}
                 />
+                <div className="product-info">
                 <p>{product.name}</p>
-                <p>{product.price}</p>
+                <p>${product.price}</p>
+                </div>
               </div>
             );
           })

@@ -24,24 +24,24 @@ export default function Navbar(props) {
     </div>
       <ul className="menu-links">
         <li>
-          <a href="/" className="nav-link">
+          <a href="" className="nav-link">
             Home
           </a>
         </li>
         <li>
           {/* <Link to="/about">About Us</Link> */}
-          <a href="#about" className="nav-link">
+          <a href="#about-container" className="nav-link">
             About Us
           </a>
         </li>
         <li>
           {" "}
-          <a href="/" className="nav-link">
+          <a href="#contact" className="nav-link">
             Contact Us
           </a>
         </li>
         <li>
-         <a href="/" className="nav-link">
+         <a href="" className="nav-link">
           Buy Now
         </a>
         </li>

@@ -7,7 +7,7 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 export default function About() {
   return (
     <>
-      <h2>About</h2>
+      <h2 id="about-container">About</h2>
       <div id="about">
         <div className="about-info">
           <p>
@@ -22,17 +22,17 @@ export default function About() {
         </div>
         <Logo prop={"about-logo"} />
       </div>
-      <h2>Contact Us</h2>
+      <h2 id="contact">Contact Us</h2>
       <div className="contact">
         <div id="socials">
-          <span>Email: &emsp;&emsp; &ensp; pelumi.tayoorisadare@gmail.com</span>{" "}
+          <span>Email: &emsp;&emsp; &ensp; <span className="span-contact"> pelumi@codepath.com</span></span>
           <br />
           <br />
-          <span>Phone: &emsp;&emsp;&ensp; 1-800-CALLME</span> <br />
+          <span>Phone: &emsp;&emsp;&ensp; <span className="span-contact">1-800-CALLME </span></span> <br />
           <br />
           <span>
-            Address: &emsp;&ensp; 123 Fake Street, San Francisco, CA
-          </span>{" "}
+            Address: &emsp;&ensp; <span className="span-contact">123 Fake Street, San Francisco, CA</span>
+          </span>
           <br />
           <br />
           <span>
@@ -159,6 +159,3 @@ export default function About() {
     </>
   );
 }
-// &nbsp;
-// Two spaces gap: &ensp;
-// Four spaces gap: &emsp;
