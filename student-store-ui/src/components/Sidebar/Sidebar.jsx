@@ -13,7 +13,7 @@ export default function Sidebar({ isActive = false, handleOnClick }) {
   </div>
 
 
-  let openSideBar = <h1>Sidebar</h1>
+  let openSideBar = <h1 className="sidebar-title">Sidebar</h1>
 
 
 
