@@ -3,10 +3,12 @@ import "./SubNavbar.css";
 
 import { useState } from "react";
 
-export default function SubNavbar({ items, setItems }) {
+export default function SubNavbar({ items, products, setProducts, setItems, isActive = false, setCategory, category = 'all categories' }) {
   const [formData, setFormData] = useState({
     productName: '',
   });
+
+  // const classState = isCategActive ? "is-active" : "";
 
   function handleInput(event){
     setFormData({
@@ -20,6 +22,7 @@ export default function SubNavbar({ items, setItems }) {
     event.preventDefault();
     setItems(formData.productName)
   }
+
 
   return (
     <nav className="sub-navbar">
@@ -58,20 +61,31 @@ export default function SubNavbar({ items, setItems }) {
             <i className="material-icons">menu</i>
           </div>
           <ul className="category-menu open">
-            <li className="is-active">
-              <button>All Categories</button>
+            <li className={category === 'All Categories' ? 'is-active' : ''}>
+              <button 
+                value={'All Categories'}
+                onClick={() => setProducts(products)}>All Categories</button>
             </li>
-            <li className="">
-              <button>Clothing</button>
+            <li className={category === 'Clothing' ? 'is-active' : ''}>
+              <button 
+                value={'Clothing'}
+                onClick={() => setProducts(products.filter( product => product.category === 'clothing'))}>Clothing</button>
             </li>
-            <li className="">
-              <button>Food</button>
+            <li className={category === 'Food' ? 'is-active' : ''}>
+              <button 
+                value={"Food"}
+                onClick={() => setProducts(products.filter( product => product.category === 'food'))}>Food</button>
             </li>
-            <li className="">
-              <button>Accessories</button>
+            <li className={category === 'Acessories' ? 'is-active' : ''}>
+              <button 
+                value={'Accessories'}
+                onClick={() => setProducts(products.filter( product => product.category === 'accessories'))}
+              >Accessories</button>
             </li>
-            <li className="">
-              <button>Tech</button>
+            <li>
+              <button 
+                value={"Tech"}
+                onClick={() => setProducts(products.filter( product => product.category === 'tech'))}>Tech</button>
             </li>
           </ul>
         </div>

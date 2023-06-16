@@ -3,10 +3,15 @@ import * as React from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
 
-export default function Home({ products, items }) {
+export default function Home({ products, items, category }) {
   const filteredProducts = products.filter((product) =>
-    product.name.toLowerCase().includes(items)
+    product.name.toLowerCase().includes(items) 
   );
+  console.log('filter', filteredProducts)
+  console.log('test', filteredProducts.filter(prod => prod.category.includes(category))) 
+
+  // product.category
+  
 
   return (
     <div className="home" id="Buy">

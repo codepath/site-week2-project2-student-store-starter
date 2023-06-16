@@ -20,9 +20,16 @@ export default function Navbar() {
           
 
           <div className="socials">
-            <img src={twitter} alt="" />
-            <img src={instagram} alt="" />
-            <img src={facebook} alt="" />
+            <a href="https://twitter.com/codepath">
+              <img src={twitter} alt="" />
+            </a>
+            <a href="https://www.instagram.com/codepathorg/?hl=en">
+              <img src={instagram} alt="" />
+            </a>
+            <a href="">
+              <img src={facebook} alt="" />
+            </a>
+            
           </div>
 
           <ul className="links">

@@ -20,15 +20,15 @@ export default function App() {
   const url = "https://codepath-store-api.herokuapp.com/store";
 
   const [items, setItems] = useState([]);
+  const [category, setCategory] = useState('');
+  const [isActive, setIsActive] = useState(false);
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     axios.get(url).then((response) => {
       setProducts(response.data.products);
     });
-  }, [items]);
-
-  const [isActive, setIsActive] = useState(false);
+  }, [items, category]);
 
   return (
     <div className="app">
@@ -40,11 +40,17 @@ export default function App() {
             isActive={isActive}
           />
           <Hero />
-          <SubNavbar items={items} setItems={setItems} />
+          <SubNavbar 
+            items={items} 
+            setItems={setItems} 
+            products={products}
+            setProducts={setProducts}
+            setCategory={setCategory}
+            category={category}/>
           <Routes>
             <Route
               path="/"
-              element={<Home products={products} items={items} />}
+              element={<Home products={products} items={items} category={category}/>}
             />
             <Route path="/:id" element={<ProductDetails />} />
           </Routes>
