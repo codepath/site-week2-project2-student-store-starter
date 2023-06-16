@@ -63,6 +63,7 @@
   margin-right: 280px;
   background-color: #3A7CA5;
   height: 400px;
+  color: #D9DCD6;
 
 }
 
@@ -159,9 +160,21 @@
   margin-left: 40px;
   margin-right: 280px;
   background-color: #3A7CA5;
-  height: 400px;  
+  height: 600px;  
   margin-top: 5%;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
+  color: #D9DCD6;
+
+}
+.Contact-Me{
+  text-align: center;
+  margin-left: 40px;
+  margin-right: 280px;
+  background-color: #3A7CA5;
+  height: 600px;  
+  margin-top: 5%;
+  margin-bottom: 5%;
+  color: #D9DCD6;
 
 }
 
@@ -170,6 +183,7 @@
   margin-left: 40px;
   margin-right: 280px;
   background-color: #3A7CA5;
-  height: 400px;
+  height: 200px;
+  color: #D9DCD6;
 
 }

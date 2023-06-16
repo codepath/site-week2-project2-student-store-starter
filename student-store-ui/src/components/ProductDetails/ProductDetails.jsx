@@ -1,28 +1,32 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 
-export default function ProductDetails({ }) {
+export default function ProductDetails() {
+  const params = useParams();
+  const [product, setProduct] = useState(null);
 
-  const params = useParams()
-  const [products, setProducts] = useState([])
-
-  const url = `https://codepath-store-api.herokuapp.com/store`
+  const url = `https://codepath-store-api.herokuapp.com/store`;
 
   React.useEffect(() => {
     axios.get(url).then((response) => {
-      setProducts(response.data.products)
+      const products = response.data.products;
+      const selectedProduct = products.find((p) => p.id === Number(params.id));
+      setProduct(selectedProduct);
     });
-  }, []);
+  }, [params.id]);
 
-  let product = products[params.id -1]
+  if (!product) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div>
-      <h2>{product?.name}</h2>
-      <img src={product?.image} alt={product?.name} />
-      <p>{product?.description}</p>
-      <p>Price: {product?.price}</p>
+      <h2>{product.name}</h2>
+      <img src={product.image} alt={product.name} />
+      <p>{product.description}</p>
+      <p>Price: {product.price}</p>
+      <Link to="/">Go back to Home</Link>
     </div>
   );
 }

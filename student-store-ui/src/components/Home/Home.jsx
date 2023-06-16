@@ -84,9 +84,13 @@ export default function Home({ products }) {
         <h1>Find Your Merch!</h1>
         <p>I will be adding cool facts about me</p>
       </div>
-      <br></br>
-      <br></br>
-
+      
+      <div className="Contact-Me">
+        <h1>Contact Me!</h1>
+        <h1>Find Your Merch!</h1>
+        <p>I will be adding cool facts about me</p>
+      </div>
+     
       <div className="Footer">
       <h1>This is the footer!</h1>
         <h1>Find Your Merch!</h1>
