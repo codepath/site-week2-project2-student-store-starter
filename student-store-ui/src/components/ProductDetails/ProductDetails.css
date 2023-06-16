@@ -1,0 +1,11 @@
+.product-image{
+
+}
+.product-image img{
+    --size: 3rem;
+    width: var(--size);
+    height: var(--size);
+}
+.product-content{
+
+}

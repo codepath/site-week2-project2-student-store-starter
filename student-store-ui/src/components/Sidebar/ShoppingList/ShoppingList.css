@@ -1,0 +1,16 @@
+.ShoppingList {
+  padding: 2rem;
+  height: 90vh;
+}
+
+.title {
+  font-size: 3.0em ;
+}
+
+.list-full {
+  background-color: lightgreen;
+}
+
+.list-empty {
+  background-color: lightsalmon;
+}

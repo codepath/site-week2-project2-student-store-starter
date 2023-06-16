@@ -8,7 +8,7 @@ export default function Contact(){
         "123 Fake Street, San Francisco, CA"]
 
     return (
-        <div className="contact-container">
+        <section className="contact-container">
             <div className="contact-content">
                 <h1 className="contact-title title">Contact Us</h1>
                 <div className="contacts">
@@ -26,6 +26,6 @@ export default function Contact(){
                 </div>
 
             </div>
-        </div>
+        </section>
     )
 }

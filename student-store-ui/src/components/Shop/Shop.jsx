@@ -20,7 +20,7 @@ function ProductGrid({ products, filter }) {
                 {/* // rendering products */}
                 {filteredProducts.map((product) => (
                     <div className="product">
-                        <Link to="/products/:id">
+                        <Link to={`/products/${product.id}`}>
                             <img src={product.image} alt={"image of" + product.name} />
                             <p className="product-title">{product.name}</p>
                         </Link>
