@@ -28,6 +28,40 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - [ ] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
 - [ ] Your choice! (Replace this bullet explaining what you implemented. Example: Users can leave ratings for products they have purchased.)
 
+### Reflection
+
+- Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
+
+I can clearly see that the labs will serve as the fundamental building blocks for our project. Specifically, I believe the the search feature is crucial. Since I'm new to JSX, I wouldn't be able to accomplish this without assistance from others.
+
+- If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
+  
+  
+If I had more time, I would have been delighted to have add more strech
+
+- Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
+I like my home page alot I did a lot of styling. Something that didnt go as planed was when flitering it changes the styling of the card. 
+
+
+### Open-source libraries used
+
+- Add any links to open-source libraries used in your project.
+
+### Shout out
+
+Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+Sammy,Luis, Alan, Marwan
+
+
+
+
+
+
+
+
+
+
+
 ## *Week 3* Application Features
 
 ### Core Features
