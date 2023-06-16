@@ -22,6 +22,7 @@ import About from "../About/About"
 
 // TODO:
 // CREATE INDIVIDUAL PRODUCT PAGE
+// FIX SEARCH TO NOT WORK FOR UNFOUND INPUT
 // stretch features!!
 
 export const appInfo ={
