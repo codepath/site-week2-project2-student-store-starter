@@ -1,5 +1,6 @@
 import * as React from "react";
 import "./ProductGrid.css";
+import { Link } from "react-router-dom";
 
 export default function ProductGrid({products, searchTerm, category}) {
 
@@ -7,7 +8,9 @@ export default function ProductGrid({products, searchTerm, category}) {
       return (
         <>
           <div className="product">
+            <Link to={"/products/" + info.id}>
             <img className="test" src={info.image} />
+            </Link>
             <div>{info.name}</div>
             <div>{info.price}</div>
           </div>
@@ -26,7 +29,7 @@ export default function ProductGrid({products, searchTerm, category}) {
 
 
   return (
-    <div className="product-grid">
+    <div className="">
       {searchTerm == "" ? (returnItems.map((p) => createProduct(p))) : (searchFiltered.map((p) => createProduct(p)))}
     </div>
 

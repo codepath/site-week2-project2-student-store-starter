@@ -13,6 +13,8 @@ import Footer from "../Footer/Footer";
 import Contact from "../ContactUs/ContactUs";
 import About from "../About/About";
 import SubNavBar from "../SubNavBar/SubNavBar";
+import ProductDetails from "../Product Details/ProductDetails";
+import Overlay from "../Overlay/Overlay";
 
 export default function App() {
   const url = "https://codepath-store-api.herokuapp.com/store";
@@ -44,39 +46,17 @@ export default function App() {
     <div className="app">
       <BrowserRouter>
         <main>
-          {/* {userNames.map(name=><p>{name}</p>)} */}
-          {/* {products?.map((product,index) => (<h1 key = {index + product.name}>{product.name}</h1>) )} */}
 
           <Routes>
-            <Route path="/" element={<Navbar />}>
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
+            <Route path="" element={<Overlay category={category} setCategory={setCategory} searchInput={searchTerm} setSearchInput={setSearchTerm}
+            />}>
+              <Route path="" element={<Home products={products} searchTerm={searchTerm} category={category}/>} />
+              <Route path="/products/:id" element={<ProductDetails />} />
+
             </Route>
+            
           </Routes>
 
-          <Hero />
-          <SubNavBar
-            //handleChange={handleChange}
-            //handleSubmit={handleSubmit}
-            searchTerm={searchTerm}
-            setSearchTerm={setSearchTerm}
-            category={category}
-            setCategory={setCategory}
-          />
-
-          <Sidebar />
-          {/* <Hero/>
-          <ProductGrid products = {products}/>
-          <Footer/>
-          <Home products = {products}/>  */}
-
-          {/* <Home products={products} /> */}
-
-          <ProductGrid products={products} searchTerm={searchTerm} category={category}/>
-
-
-
-          <About />
         </main>
       </BrowserRouter>
     </div>

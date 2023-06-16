@@ -5,6 +5,7 @@ import { Link, Outlet } from "react-router-dom";
 
 export default function Navbar() {
   return (
+    <>
     <nav className="navbar">
       <div className="content">
         <div className="logo"></div>
@@ -20,7 +21,8 @@ export default function Navbar() {
         {/* <Link to="/about">About</Link> */}
         {/* <span>Buy Now</span> */}
       </div>
-      <Outlet />
+      
     </nav>
+    </>
   );
 }
