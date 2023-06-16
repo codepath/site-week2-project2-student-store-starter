@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import "./SubNavBar.css";
 
-export default function SubNavBar({}) {
+export default function SubNavBar({ products }) {
+  const results = products.filter((product) => {});
+
   return (
     <div className="searchAndFilter">
       <br></br>
