@@ -24,11 +24,9 @@ export default function Search({ handleSearch, products }) {
           className="input"
           value={searchTerm}
           onChange={handleSearchChange}
-          placeholder="Search for a product"
+          placeholder="  Search for a product"
         />
-        <i class="material-icons">search</i>
-        <div className="selectCat">
-        </div>
+        
         </div>
       <ProductGrid products={!filteredProducts ? products : filteredProducts} />
       </div>

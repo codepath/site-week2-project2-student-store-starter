@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom"
 
 export default function ProductDetails(props) {
     const { id } = useParams();
-    console.log({ id })
     const product = props.props.find((product) => product.id === parseInt(id));
     return (
         <>

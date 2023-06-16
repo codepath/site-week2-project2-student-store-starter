@@ -1,0 +1,21 @@
+.filter {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #e4ddac;
+  }
+
+.filter{
+    float: right;
+    display:grid;
+    text-align:center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: black;
+  }
+
+  .filter:hover {
+    background-color: #FEFAE0;
+
+  }

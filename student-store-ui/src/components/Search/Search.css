@@ -1,6 +1,6 @@
 .input {
     height: 42px;
-    border-radius: 8px 0 0 8px;
+    border-radius: 8px;
     border: solid 1px #e4e4e4;
     flex: 1;
     font-size: 16px;
