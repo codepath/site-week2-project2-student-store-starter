@@ -7,11 +7,11 @@ import ProductCard from '../ProductCard/ProductCard'
 import axios from "axios"
 
 export default function ProductView() {
-    
-    console.log("REACHED NEW PAGE!")
+
+    // console.log("REACHED NEW PAGE!")
     // console.log(newProducts);
     const { id } = useParams();
-    console.log(id);
+    // console.log(id);
     const [product, setProduct] = useState({})
     const quantity = 0; 
     // will change later
@@ -19,14 +19,14 @@ export default function ProductView() {
 
     useEffect(() => {
         axios.get(productUrl).then((response) =>{
-            console.log("SETTING TO THIS: ", response.data.product);
+            // console.log("SETTING TO THIS: ", response.data.product);
             setProduct(response.data.product);
           // console.log(response.data.product) // getting the food item
           // console.log(product)
         })
     
       }, []);
-      console.log("PRODUCT: ", product);
+    //   console.log("PRODUCT: ", product);
     
       if (!product) {return <h1 className ="loading" > Loading...</h1>} // undefined product array
 
@@ -48,7 +48,7 @@ return(
                         <div className="main-info">
                             <p className="product-name">{product.name}</p>
                             <div className="stars">
-                                <img src={"https://www.transparentpng.com/download/star/jjbv96-star-icon-clipart.pngg"} alt="star ratings" className="star-rating"
+                                <img src={"https://www.transparentpng.com/download/star/jjbv96-star-icon-clipart.png"} alt="star ratings" className="star-rating"
                                 style={{width: "20px", height: "20px"}}></img>
                                 <img src={"https://www.transparentpng.com/download/star/jjbv96-star-icon-clipart.png"} alt="star ratings" className="star-rating"
                                 style={{width: "20px", height: "20px"}}></img>

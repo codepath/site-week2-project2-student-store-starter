@@ -8,7 +8,6 @@ export default function SubnavBar({formData, handleInput, changeCategory, handle
         <div className="content">
         <div className="row">
             <form 
-            // onSubmit={handleSubmit} 
             className="search-bar">
             <input type="text" name="search" placeholder="Search" value={formData} onChange={handleInput}></input>
                 <i className="material-icons">search</i>

@@ -22,9 +22,10 @@ import ProductDetail from "../ProductDetail/ProductDetail"
 // } from "react-pro-sidebar";
 
 // TODO:
-// CREATE INDIVIDUAL PRODUCT PAGE
-// stretch features!!
 // FIX SEARCH TO NOT WORK FOR UNFOUND INPUT
+// shopping cart update
+// add for product details as well
+// math.round(price x 100)/100 => tofixed (2)
 
 export const appInfo ={
   title: "Welcome! Find Your Merch!",

@@ -11,7 +11,7 @@ export default function About(){
                 <p>All proceeds go towards bringing high quality CS education to college students around the country.</p>
                 </div>
                 <div className="media">
-                <img src="https://codepath-student-store-demo.surge.sh/assets/giant_codepath.6952ef57.svg" alt="codepath large"></img>
+                <a href="/"><img src="https://codepath-student-store-demo.surge.sh/assets/giant_codepath.6952ef57.svg" alt="codepath large"></img></a>
                 </div>
             </div>
             </div> 
