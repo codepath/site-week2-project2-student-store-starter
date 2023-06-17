@@ -1,0 +1,46 @@
+.subnavbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #C7A59D;
+    padding: 10px 20px;
+  }
+  
+  .material-icons {
+    font-size: 24px;
+    margin-right: 100px;
+  }
+  
+  li {
+    display: inline;
+    margin-right: 100px;
+  }
+  
+  li.is-active button {
+    font-weight: bold;
+  }
+  
+  button {
+    border: none;
+    background-color: transparent;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    text-decoration: underline;
+  }
+  
+  .search-bar {
+    flex: 1;
+    margin-left: 20px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }

@@ -1,7 +1,8 @@
 .hero {
     width: 100%;
     max-width: 100vw;
-    height: 350px
+    height: 350px;
+    background-color: #884B58;
 }
 .hero .content {
     background: var(--bright-green);

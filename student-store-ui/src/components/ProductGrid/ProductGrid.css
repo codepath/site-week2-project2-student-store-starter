@@ -1,0 +1,9 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Each card takes 1/4th of the grid */
+    grid-gap: 20px; /* Add some spacing between the cards */
+    background-color: #A26769
+  }
+
+  /* .product-card {
+  } */
