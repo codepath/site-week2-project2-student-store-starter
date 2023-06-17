@@ -1,5 +1,6 @@
 import * as React from "react"
 
+//This is the About component that displays the About section
 function About(){
     return(
         <div className="About-container">

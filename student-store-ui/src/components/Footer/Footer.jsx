@@ -1,5 +1,7 @@
 import react from 'react'
 import "./Footer.css"
+
+//Creating Footer
 export default function Footer(){
     return(
         <footer className='Footer'>

@@ -8,19 +8,23 @@ import { useState } from "react"
 import { useEffect } from "react"
 import "./App.css"
 import Productfacts from "../Productdetails/Productdetails"
-
+//MOST STYLING WAS DONE IN APP.CSS
 
 export default function App() {
   //Url for API
   const url = "https://codepath-store-api.herokuapp.com/store"
+
   //useState
   const[products, setProducts] = useState();
+
+  //Fetching Data
   useEffect(() => {
     axios.get(url).then((response) => {
       setProducts(response.data.products)
     })
   }, [])
 
+//Calling function order
   return (
     <div className="app">
       <BrowserRouter>

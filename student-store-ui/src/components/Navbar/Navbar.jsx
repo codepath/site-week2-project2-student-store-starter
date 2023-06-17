@@ -1,7 +1,7 @@
 import * as React from "react"
-// import { AiOutlineInstagram, BsTwitter, BsFacebook } from "react-icons/fa";
 import "./Navbar.css"
 
+//This is the navigation bar at the top of the page
 export default function Navbar() {
   return (
     <nav className="navbar">
