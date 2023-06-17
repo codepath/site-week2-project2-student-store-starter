@@ -13,8 +13,8 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 ## *Week 2* Application Features
 
 Demo recorded on Loom:
-<a href="https://www.loom.com/share/9ddf4f40a12a45ff8cfdbb2151e5431b">
-    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/private/9ddf4f40a12a45ff8cfdbb2151e5431b-with-play.gif?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4ubG9vbS5jb20vc2Vzc2lvbnMvdGh1bWJuYWlscy9wcml2YXRlLzlkZGY0ZjQwYTEyYTQ1ZmY4Y2ZkYmIyMTUxZTU0MzFiLXdpdGgtcGxheS5naWYiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2ODcwNjM2MDZ9fX1dfQ__&Key-Pair-Id=APKAJQIC5BGSW7XXK7FQ&Signature=RsCO7QFXSfjD8Peu%7EeSwLQ0Ovl161EHUTTxt8WVut4n%7EAHvykRPrISbUXJ0%7Eb8SFzIsFMF3gx1rWlasOaM29jERaux4YgwKQIjNoNDAuGjVS70HJDBrdDXWHHE%7ElssZI-Nqqf4u8qUN7Anhq8KJ-AT3Bjc-5PwbbuywLKnWNLBa82ABemCczk4gGkIprzKZyNTR0TVtiv7RazDgC9KEtwsq5L2qkBEUvHj2oKMUvxSTBwjUVhZtolLD09RjZ2r0QK5iAspLw3xttzJexjSG6nzg7DirHHH0Mk1B8mF5M-XPBbNekIgUm2l2KpGPKhAdAWFW-nir0%7EoAQNfZ3HvD0hQ__">
+<a href="https://www.loom.com/share/340628fe00a44156bfee9e4d88e1595b">
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/340628fe00a44156bfee9e4d88e1595b-with-play.gif">
   </a>
    
 
