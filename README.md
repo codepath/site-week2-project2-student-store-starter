@@ -29,7 +29,7 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 
 ## Walkthrough Video
 <a href="https://www.loom.com/share/adc9ddf9a9374d3b957510ef29bc7350">
-    <img style="max-width:300px;" src="https://cdn.loom.com/placeholders/private-video.gif">
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/adc9ddf9a9374d3b957510ef29bc7350-with-play.gif">
   </a>
 
 ## *Week 3* Application Features
