@@ -8,7 +8,6 @@ import ProductDetails from "../ProductDetails/ProductDetails";
 import "./App.css";
 
 export default function App() {
-  const [catSearch, setCatSearch] = useState("");
   const [searchValue, setSearchValue] = useState("");
   const [category, setCategory] = useState("");
   const [products, setProducts] = useState([]);
@@ -34,10 +33,8 @@ export default function App() {
                   products={products}
                   searchValue={searchValue}
                   setSearchValue={setSearchValue}
-                  setCatSearch={setCatSearch}
                   setCategory={setCategory}
                   category={category}
-                  catSearch={catSearch}
                 />
               }
             />

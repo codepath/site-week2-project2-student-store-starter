@@ -4,21 +4,22 @@ import ProductCard from "../ProductCard/ProductCard";
 
 export default function ProductGrid(props) {
   let newProducts;
-  if (props.catSearch === "search") {
+  if (props.category === "all") {
+    newProducts = props.products;
+
+    newProducts = props.products?.filter((product) =>
+    product.name.toLowerCase().includes(props.searchValue.toLowerCase())
+  );
+  } else {
     newProducts = props.products?.filter((product) =>
       product.name.toLowerCase().includes(props.searchValue.toLowerCase())
     );
-  } else if (props.catSearch === "category") {
-    if (props.category === "all") {
-      newProducts = props.products;
-    } else {
-      newProducts = props.products?.filter((product) =>
-        product.category.toLowerCase().includes(props.category.toLowerCase())
-      );
-    }
-  } else {
-    newProducts = props.products;
+
+    newProducts = newProducts?.filter((product) =>
+      product.category.toLowerCase().includes(props.category.toLowerCase())
+    );
   }
+
   return (
     <div className="product-gridContainer">
       <h2 id="buy-now">Best Selling Products</h2>

@@ -26,7 +26,6 @@ export default function Home(props) {
         products={props.products}
         searchValue={props.searchValue}
         category={props.category}
-        catSearch={props.catSearch}
       />
       <About />
     </>
