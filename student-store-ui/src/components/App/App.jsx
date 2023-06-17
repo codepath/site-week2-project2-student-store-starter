@@ -3,11 +3,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
-import Footer from "../Footer/Footer"
 import "./App.css"
 import {useEffect, useState} from "react"
 import axios from "axios"
-import About from "../About/About"
 import ProductDetail from "../ProductDetail/ProductDetail"
 // usually put external dependencies at the top
 
@@ -61,7 +59,7 @@ export default function App() {
  
 
 // Updates selectedCategory state with current state of input element (render each click of category)
- function changeCategory(event){
+ function handleCategoryFilter(event){
   setSelectedCategory(event.target.value);
     let filteredItemsCategory = (products?.filter((product) => {
     return (product.category.toLowerCase() === event.target.value.toLowerCase());  
@@ -85,6 +83,7 @@ function getFilteredProducts(){
     filteredItems = filteredItems.filter((product) => 
     product.category.toLowerCase().includes(selectedCategory.toLowerCase()));
   }
+ 
   return filteredItems;
 
 }
@@ -93,22 +92,20 @@ function getFilteredProducts(){
     <div className="app">
       <BrowserRouter>
         <main>
-        {/* <About/> */}
-        {/* <Navbar /> */}
+
         <Sidebar />
        
         <Routes>
 
           <Route path= "" element={<Navbar />} >
 
-          {/* <Route path= "" element={<Sidebar />}/>  */}
             <Route 
           
               path= "/" 
               element=
                 {<Home 
                   // handleInput={handleInput}
-                  changeCategory = {changeCategory} 
+                  handleCategoryFilter = {handleCategoryFilter} 
                   handleSearch = {handleSearch} 
                   searchInput = {searchInput} 
                   // products = {filteredSearchArray.length === 0 ? products : filteredSearchArray}
@@ -122,29 +119,14 @@ function getFilteredProducts(){
             <Route path="products/:id" element={<ProductDetail />} />
 
             {/* <Route path="products/:id" element={<ProductDetail quantity={quantity}/>} /> */}
-
-              {/* <Route path="Contact" element={<Contact />}/> */}
-         
-          
-          <Route path = "" element = {<Footer />} />
-
           
           </Route>
           
           {/* <Route path = "*" element={<NotFound/>}/> */}
-          {/* <Route path="Contact" element={<Contact />}/> */}
         </Routes>
-     
-          
-        {/* ? to see if we actually have it  */}
-        {/* map returns whole new array with those changes, unlike for loop */}
-     
-      
-          
-        
+
           {/* <Home products = {filteredSearchArray.length === 0 ? products : filteredSearchArray} />  */}
 
-        {/* <About></About> */}
         </main>
       
       </BrowserRouter>

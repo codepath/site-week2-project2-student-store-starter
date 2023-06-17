@@ -26,7 +26,12 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - [ ] Users can click the '+' button on a product cart to increment that product in the shopping cart.
 - [ ] Users can click the '-' button on a product cart to decrement that product in the shopping cart.
 - [ ] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
-- [ ] Your choice! (Replace this bullet explaining what you implemented. Example: Users can leave ratings for products they have purchased.)
+- [x] Users can click on links to navigate to company's social media pages (both on Navbar and Contact Us)
+- [x] Users can refresh to home page by clicking company image on about page
+- [x] Users can hover over hero logo for an animation
+- [x] Users can navigate to different sections on the page using the Navbar links
+- [x] Users will not receive an output if they try to search for a product that does meet search or filter criteria
+- [x] Placeholder search value for accessibility
 
 ## *Week 3* Application Features
 

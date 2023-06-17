@@ -8,7 +8,7 @@ import axios from "axios"
 
 export default function ProductView() {
 
-    // console.log("REACHED NEW PAGE!")
+    console.log("REACHED NEW PAGE!")
     // console.log(newProducts);
     const { id } = useParams();
     // console.log(id);
@@ -22,11 +22,12 @@ export default function ProductView() {
             setProduct(response.data.product);
         })
       }, []);
-    
-      const productPrice = product.price.toLocaleString("us-EN", {
-        style: "currency",
-        currency: "USD",
-})
+//     console.log(product.price)
+//       const productPrice = product.price.toLocaleString("us-EN", {
+//         style: "currency",
+//         currency: "USD",
+// })
+// wasn't working with this^^
 
       if (!product) {return <h1 className ="loading" > Loading...</h1>} // undefined product array
 
@@ -56,7 +57,7 @@ return(
                                 style={{width: "20px", height: "20px"}}></img> HALF STAR?? */} 
                                 </div>
                                 
-                            <p className="product-price">{productPrice}</p>
+                            <p className="product-price">{product.price}</p>
                         </div>
                         <div className="desc">
                             <p className="product-description">{product.description}</p>
@@ -64,10 +65,10 @@ return(
                         <div className="actions">
                         <div className="buttons">
                             <button className="add">
-                            <i className="material-icons" onClick={()=> incrementQuantForCard()}>add</i>
+                            <i className="material-icons" >add</i>
                             </button>
                             <button className="remove">
-                            <i className="material-icons" onClick={()=> decrementQuantForCard()}>remove</i>
+                            <i className="material-icons" >remove</i>
                             </button>
                         </div>
                         <span className="quantity">

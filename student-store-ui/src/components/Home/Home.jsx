@@ -1,17 +1,14 @@
 import * as React from "react"
 import "./Home.css"
-import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom'
-// import About from "../About"
-import {useEffect, useState} from "react"
-import { Link } from 'react-router-dom'
 import Hero from '../Hero/Hero'
 import SubnavBar from "../SubnavBar/SubnavBar"
 import About from "../About/About"
 import Contact from '../Contact/Contact'
+import Footer from '../Footer/Footer'
 import ProductGrid from '../ProductGrid/ProductGrid'
 
-// export default function Home({products, formData, handleSearch, changeCategory, handleSubmit, quantity}) {
-  export default function Home({products, formData, handleSearch, changeCategory}) {
+// export default function Home({products, formData, handleSearch, handleCategoryFilter, handleSubmit, quantity}) {
+  export default function Home({products, formData, handleSearch, handleCategoryFilter}) {
     // export default function Home({products, formData, handleInput}) {
       return (
 
@@ -19,17 +16,13 @@ import ProductGrid from '../ProductGrid/ProductGrid'
 
     <div className="home">
       <Hero />
-      <SubnavBar formData={formData} handleSearch={handleSearch} changeCategory={changeCategory} />
-      {/* <SubnavBar formData={formData} handleInput={handleInput} /> */}
-      {/* <p>Home</p> */}
-  
-      {/* <ProductGrid products = {products} quantity={quantity}/> */}
-      {/* {console.log("AT HOME", quantity)} */}
+      <SubnavBar formData={formData} handleSearch={handleSearch} handleCategoryFilter={handleCategoryFilter} />
+
       <ProductGrid products = {products} />
       <About />
       <Contact />
+      <Footer />
 
-    {/* <Outlet/> */}
 
    </div>
   )

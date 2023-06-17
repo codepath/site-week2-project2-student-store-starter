@@ -24,11 +24,6 @@ export default function Navbar() {
       <ul className="links">
 
         <li><a href="/">Home</a></li>
-         
-        {/* apply an id so i can jump to it on the same page for a link component */}
-
-        {/* <Link to={"#Contact"}>   Contact Us   </Link> */}
-{/* <Link to={"#Buy"}>   Buy   </Link> */}
         <li><a href="/#About">About Us</a></li>
         <li><a href="/#Contact">Contact Us</a></li>
         <li><a href="/#Buy">Buy Now</a></li>

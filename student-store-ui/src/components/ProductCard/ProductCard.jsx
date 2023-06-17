@@ -2,8 +2,6 @@ import * as React from "react"
 import "./ProductCard.css"
 import {useEffect, useState} from "react"
 import { Link } from 'react-router-dom'
-// import math from 
-
 
 // export default function ProductCard({product, index, quantity}){
 export default function ProductCard({product, index}){
@@ -31,7 +29,6 @@ function incrementQuant(event){
             <Link to={"products/" + product.id}>
                 <img src={product.image} ></img>
             </Link>
-            {/* {onClick={() => selectSearchEntry(searchEntry)}} */}
             <div className="product-info">
                 <div className="main-info">
                     <p className="product-name">{product.name}</p>
@@ -44,10 +41,7 @@ function incrementQuant(event){
                         style={{width: "20px", height: "20px"}}></img>
                         <img src={"https://www.transparentpng.com/download/star/jjbv96-star-icon-clipart.png"} alt="star ratings" className="star-rating"
                         style={{width: "20px", height: "20px"}}></img>
-                        {/* <img src={"https://www.pngitem.com/pimgs/m/610-6107201_transparent-half-of-a-star-hd-png-download.png"} alt="star ratings" className="star-rating"
-                        style={{width: "20px", height: "20px"}}></img> HALF STAR?? */} 
                         </div>
-                        {/* {console.log(product.price)} */}
                     <p className="product-price">{productPrice}</p>
                 </div>
                 <div className="actions">
