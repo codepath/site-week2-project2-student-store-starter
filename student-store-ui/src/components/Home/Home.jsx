@@ -1,6 +1,9 @@
 import * as React from "react";
 import "./Home.css";
+import About from "../About/About";
+import ContactUs from "../ContactUs/ContactUs";
 import ProductGrid from "../ProductGrid/ProductGrid";
+import Footer from "../Footer/Footer";
 
 
 export default function Home({ products, searchTerm, category }) {
@@ -13,22 +16,9 @@ export default function Home({ products, searchTerm, category }) {
         <div className="content">
           <h3>Best Selling Products</h3>
           <ProductGrid products={products} searchTerm={searchTerm} category={category} />
-
-
-          {/* <div className="grid">
-            <div className="product-card"> */}
-              {/* {products.map((product) => createProduct(product))}{" "} */}
-              {/* {products.map((product) => {
-                return (
-                  <div className="product-container" key={product.id}>
-                    <img className="test" src={product.image} />
-                    <p>{product.name}</p>
-                    <p>{product.price}</p>
-                  </div>
-                );
-              })}
-            </div>
-          </div> */}
+         <About />
+         <ContactUs/>
+          <Footer/>
         </div>
       </div>
     </div>

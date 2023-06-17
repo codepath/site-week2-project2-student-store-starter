@@ -51,9 +51,11 @@ export default function App() {
             <Route path="" element={<Overlay category={category} setCategory={setCategory} searchInput={searchTerm} setSearchInput={setSearchTerm}
             />}>
               <Route path="" element={<Home products={products} searchTerm={searchTerm} category={category}/>} />
+              
               <Route path="/products/:id" element={<ProductDetails />} />
-
+              <Route path = "" element= {<About/>}/>
             </Route>
+            
             
           </Routes>
 

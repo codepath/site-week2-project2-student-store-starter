@@ -11,12 +11,10 @@
 
  .home {
   display: grid;
-  flex-direction: row;
-  flex-wrap: wrap;
-} 
+ }
 
- .grid {
-  display: flex;
+ .product-grid {
+  display: grid;
   flex-direction: row;
   flex-wrap: wrap;
 } 
