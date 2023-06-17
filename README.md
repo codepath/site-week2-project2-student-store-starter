@@ -29,6 +29,7 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - [ ] Your choice! (Replace this bullet explaining what you implemented. Example: Users can leave ratings for products they have purchased.)
 
 ## Demo
+May take some time to load
 <img style="width:auto; height: 400px;" src="Demo.gif">
 
 ## *Week 3* Application Features
