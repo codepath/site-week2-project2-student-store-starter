@@ -9,7 +9,7 @@ export default function Sidebar(props) {
         <i className="fa fa-bars"> </i>
       </label>
       <section className="sidebar">
-        <p>Sidebar</p>
+        <p>Shopping Cart</p>
       </section>
     </>
   );
