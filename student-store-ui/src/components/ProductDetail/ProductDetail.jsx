@@ -6,12 +6,11 @@ import {useParams} from "react-router-dom"
 // import PropTypes from "prop-types"
 import ProductView from '../ProductView/ProductView'
 
-export default function ProductDetail(){
+export default function ProductDetail(quantity, incrementQuant, decrementQuant){
     return(
     <div id="Buy" className = "product-grid">
-        {/* export default function ProductDetail(quantity){ */}
-        {/* <ProductView quantity={quantity} /> */}
-    <ProductView />
+
+    <ProductView quantity={quantity} incrementQuant={incrementQuant} decrementQuant={decrementQuant}/>
 
 </div>
 )}

@@ -7,20 +7,25 @@ import { Link } from 'react-router-dom'
 
 // export default function ProductCard({product, index, quantity}){
 export default function ProductCard({product, index}){
-    const [quant, setQuant] = useState(0);
-    // const quantity = 0;
-    function incrementQuant(event){
-        // if (quant>=0){
-            setQuant(quant+1);
-        // }
-       
+
+const [quantity, setQuantity] = useState(0);
+
+function incrementQuant(event){
+    // if (quant>=0){
+      setQuantity(quantity+1);
+    // }
+   
+  }
+  function decrementQuant(event){
+    if (quantity > 0){
+      setQuantity(quantity-1);
     }
-    function decrementQuant(event){
-        if (quant > 0){
-            setQuant(quant-1);
-        }
-    
-    }
+  
+  }
+  const productPrice = product.price.toLocaleString("us-EN", {
+            style: "currency",
+            currency: "USD",
+   })
     return (
         <div className="product-card" key={index} > 
             <Link to={"products/" + product.id}>
@@ -43,7 +48,7 @@ export default function ProductCard({product, index}){
                         style={{width: "20px", height: "20px"}}></img> HALF STAR?? */} 
                         </div>
                         {/* {console.log(product.price)} */}
-                    <p className="product-price">{"$"+(product.price)}</p>
+                    <p className="product-price">{productPrice}</p>
                 </div>
                 <div className="actions">
                 <div className="buttons">
@@ -55,8 +60,7 @@ export default function ProductCard({product, index}){
                     </button>
                 </div>
                 <span className="quantity">
-                    <span className="amt">{quant}</span>
-                    {/* {console.log} */}
+                    <span className="amt" style={{background: "#013a63"}}>{quantity}</span>
                 </span>
                 </div>
 

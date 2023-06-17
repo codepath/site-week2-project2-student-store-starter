@@ -24,7 +24,8 @@ import ProductGrid from '../ProductGrid/ProductGrid'
       {/* <p>Home</p> */}
   
       {/* <ProductGrid products = {products} quantity={quantity}/> */}
-      <ProductGrid products = {products}/>
+      {/* {console.log("AT HOME", quantity)} */}
+      <ProductGrid products = {products} />
       <About />
       <Contact />
 

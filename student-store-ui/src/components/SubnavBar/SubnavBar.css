@@ -40,12 +40,14 @@
   .sub-navbar .content .search-bar i {
     height: 40px;
     width: 40px;
-    background: #00c385;
+    background: #012a4a;
     color: #fff;
     fill: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 6px outset #012a4a;
+
   }
   .sub-navbar .content .links {
     display: flex;
@@ -67,13 +69,16 @@
   
   .sub-navbar .content .cart {
     color: #fff;
-    background: #00c385;
+    background: #012a4a;
     width: 170px;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-left: 20px;
+    /* outline-style: outset; */
+    /* outline-color: black; */
+    border: 6px outset #012a4a;
   }
 
   .sub-navbar .content .cart i, .sub-navbar .content .cart a {
@@ -92,7 +97,7 @@
   }
   .sub-navbar .hamburger-menu i {
     cursor: pointer;
-    color: #969696;
+    color: #012a4a;
   }
   .sub-navbar .category-menu {
     display: flex;
@@ -104,13 +109,18 @@
     height: 40px;
     font-weight: 500;
     transition: all .2s ease;
+    outline-color: #012a4a;
+    
+    /* align-items: center; */
   }
   .sub-navbar .category-menu li.is-active button:hover {
-    border-bottom: solid 2px #00c385;
+    border-bottom: solid 2px #012a4a;
+ 
+    
   }
 
   /* .sub-navbar .category-menu li.is-active button:active {
-    border-bottom: solid 2px #00c385;
+    border-bottom: solid 2px #012a4a;
   } */
   .sub-navbar .category-menu li button {
     cursor: pointer;
@@ -123,4 +133,5 @@
     padding-bottom: 10px;
     border-bottom: solid 2px transparent;
     transition: all .2s ease;
+    color: #012a4a;
   }

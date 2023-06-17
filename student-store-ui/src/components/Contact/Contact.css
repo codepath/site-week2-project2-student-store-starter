@@ -18,20 +18,21 @@
   margin: 10px 0 30px;
   font-size: 24px;
   font-weight: 600;
+  color: #012a4a;
 }
 
 .contact .content .summary {
   display: flex;
   flex-direction: row;
-  background: #2c4047;
-  color: #fff;
+  background: #012a4a;
+  color: #a9d6e5;
   height: 330px;
-  border: solid 1px #e0e0e0;
+  border: 6px outset #012a4a;
   overflow: visible;
 }
 .contact .content .summary .info {
   padding: 28px 36px;
-  color: #fff;
+  color: #a9d6e5;
   list-style-type: none;
   flex: 1;
   width: 100%;
@@ -41,7 +42,7 @@
   justify-content: space-between;
 }
 .contact .content .summary .info li {
-  color: #fff;
+  color: #a9d6e5;
   margin-bottom: 18px;
   font-size: 18px;
   display: flex;
@@ -51,10 +52,10 @@
 .contact .content .summary .info li span {
   width: 100px;
   margin-right: 20px;
-  color: #fff;
+  color: #a9d6e5;
 }
 .contact .content .summary .info li .socials {
-  color: #fff;
+  color: #a9d6e5;
   display: flex;
   align-items: center;
   justify-content: space-between;

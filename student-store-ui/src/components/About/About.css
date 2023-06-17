@@ -16,18 +16,20 @@
   margin: 10px 0 30px;
   font-size: 24px;
   font-weight: 600;
+  color: #012a4a;
 }
 .about .content .summary {
   display: flex;
   flex-direction: row;
   background: white;
   height: 330px;
-  border: solid 1px #e0e0e0;
+  border: 6px outset #012a4a;
 }
 .about .content .summary .text {
   align-items: flex-start;
   padding: 28px 36px;
   color: #5b5b5b;
+  margin: auto;
 }
 .about .content .summary .text p {
   color: #5b5b5b;
@@ -38,6 +40,10 @@
 .about .content .summary .media {
   background: #2c4047;
 
-  height: 329px;
+  /* height: 329px; */
+  /* height: 329px; */
 }
+/* .about .content .summary .media .a{
+  width: 500px;
+} */
 

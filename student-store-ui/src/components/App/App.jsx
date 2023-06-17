@@ -25,6 +25,7 @@ import ProductDetail from "../ProductDetail/ProductDetail"
 // shopping cart update
 // add for product details as well
 // math.round(price x 100)/100 => tofixed (2)
+// toggle category bar menu?
 
 export const appInfo ={
   title: "Welcome! Find Your Merch!",
@@ -36,13 +37,10 @@ export const appInfo ={
 const url = "https://codepath-store-api.herokuapp.com/store"
 export default function App() {
   const [products, setProducts] = useState();
-  const[formData, setFormData] = useState(); // used for search
+  const[searchInput, setSearchInput] = useState(); // used for search
   const [selectedCategory, setSelectedCategory] = useState(); // used for category filtering
   const[filteredCategoryArray, setFilteredCategoryArray] = useState(); // used for category filtering - default should be "all categ.." ?
   const [filteredSearchArray, setFilteredSearchArray] = useState()
-  // const [filteredCategoryArray, setFilteredCategoryArray] = useState([])
-  // const [haveFiltered, setHaveFiltered] = useState(false);
-  const [quantity, setQuantity] = useState(0);
 
   useEffect(() => {
     axios.get(url).then((response) =>{
@@ -52,9 +50,9 @@ export default function App() {
   }, []);
 
 
-//  Update local state with current state of input element (render each keystroke)
+//  Updates searchInput state with current state of input element (render each keystroke)
  function handleSearch(event) {
-    setFormData(event.target.value);
+    setSearchInput(event.target.value);
       let filteredItems = products?.filter((product) => {
         return product.name.toLowerCase().includes(event.target.value.toLowerCase());
         })
@@ -62,13 +60,11 @@ export default function App() {
  };
  
 
-
+// Updates selectedCategory state with current state of input element (render each click of category)
  function changeCategory(event){
   setSelectedCategory(event.target.value);
     let filteredItemsCategory = (products?.filter((product) => {
-    return (product.category.toLowerCase() === event.target.value.toLowerCase());
-    // return product.category.includes(!category ? "" : category)
-  
+    return (product.category.toLowerCase() === event.target.value.toLowerCase());  
 })) 
   setFilteredCategoryArray(filteredItemsCategory);
 
@@ -77,13 +73,13 @@ export default function App() {
 // function to make search and filter by category work together, also handles initial loading case
 function getFilteredProducts(){
    // initial page load
-  if (!formData && !selectedCategory){
+  if (!searchInput && !selectedCategory){
     return products; 
   }
 
   let filteredItems = products;
-  if (formData){
-    filteredItems = filteredItems.filter((product) => product.name.toLowerCase().includes(formData.toLowerCase()));
+  if (searchInput){
+    filteredItems = filteredItems.filter((product) => product.name.toLowerCase().includes(searchInput.toLowerCase()));
   }
   if (selectedCategory){
     filteredItems = filteredItems.filter((product) => 
@@ -92,7 +88,6 @@ function getFilteredProducts(){
   return filteredItems;
 
 }
-
 
   return (
     <div className="app">
@@ -115,13 +110,16 @@ function getFilteredProducts(){
                   // handleInput={handleInput}
                   changeCategory = {changeCategory} 
                   handleSearch = {handleSearch} 
-                  formData = {formData} 
+                  searchInput = {searchInput} 
                   // products = {filteredSearchArray.length === 0 ? products : filteredSearchArray}
                   products = {getFilteredProducts()}
+                  // quantity={quantity}
+                  // incrementQuant = {incrementQuant}
+                  // decrementQuant={decrementQuant}
                   />}>     
             </Route>    
               
-            <Route path="products/:id" element={<ProductDetail/>} />
+            <Route path="products/:id" element={<ProductDetail />} />
 
             {/* <Route path="products/:id" element={<ProductDetail quantity={quantity}/>} /> */}
 

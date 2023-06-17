@@ -11,7 +11,7 @@ export default function About(){
                 <p>All proceeds go towards bringing high quality CS education to college students around the country.</p>
                 </div>
                 <div className="media">
-                <a href="/"><img src="https://codepath-student-store-demo.surge.sh/assets/giant_codepath.6952ef57.svg" alt="codepath large"></img></a>
+                <a href="/"><img src="https://consleague.com/wp-content/uploads/2021/11/Is-your-current-Salesforce-Partner-meeting-your-expectations-1.png" alt="codepath large" style={{width: "500px", height: "318px"}}></img></a>
                 </div>
             </div>
             </div> 

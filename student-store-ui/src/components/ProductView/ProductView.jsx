@@ -14,27 +14,23 @@ export default function ProductView() {
     // console.log(id);
     const [product, setProduct] = useState({})
     const quantity = 0; 
-    // will change later
+    // will change later!
     const productUrl = "https://codepath-store-api.herokuapp.com/store/" + `${id}`
 
     useEffect(() => {
         axios.get(productUrl).then((response) =>{
-            // console.log("SETTING TO THIS: ", response.data.product);
             setProduct(response.data.product);
-          // console.log(response.data.product) // getting the food item
-          // console.log(product)
         })
-    
       }, []);
-    //   console.log("PRODUCT: ", product);
     
+      const productPrice = product.price.toLocaleString("us-EN", {
+        style: "currency",
+        currency: "USD",
+})
+
       if (!product) {return <h1 className ="loading" > Loading...</h1>} // undefined product array
 
 return(
-    
-    <>
-        {/* <img> style={{width: "200px"}} src={product.image}</img> */}
-        {/* <p> {product.description} </p> */}
 
         <div className="product-view">
             <h1 className="product-id">Product #7</h1>
@@ -59,7 +55,8 @@ return(
                                 {/* <img src={"https://www.pngitem.com/pimgs/m/610-6107201_transparent-half-of-a-star-hd-png-download.png"} alt="star ratings" className="star-rating"
                                 style={{width: "20px", height: "20px"}}></img> HALF STAR?? */} 
                                 </div>
-                            <p className="product-price">{"$"+product.price}</p>
+                                
+                            <p className="product-price">{productPrice}</p>
                         </div>
                         <div className="desc">
                             <p className="product-description">{product.description}</p>
@@ -67,10 +64,10 @@ return(
                         <div className="actions">
                         <div className="buttons">
                             <button className="add">
-                            <i className="material-icons">add</i>
+                            <i className="material-icons" onClick={()=> incrementQuantForCard()}>add</i>
                             </button>
                             <button className="remove">
-                            <i className="material-icons">remove</i>
+                            <i className="material-icons" onClick={()=> decrementQuantForCard()}>remove</i>
                             </button>
                         </div>
                         <span className="quantity">
@@ -82,7 +79,6 @@ return(
                 </div>
             </div>
         </div>
-    </>  
 
     //     // if (product === -1){
     //     //     return <NotFound/>

@@ -71,7 +71,7 @@ h1 {
     flex: 1;
     display: flex;
     border-top: solid 1px #e4e4e4;
-    background: white;
+    background: #a9d6e5;
   }
   
   .product-card .main-info .product-name {
@@ -117,8 +117,8 @@ h1 {
   .product-card .buttons i {
     width: 20px;
     height: 20px;
-    border: solid 1px #00c385;
-    color: #00c385;
+    border: solid 1px #012a4a;
+    color: #012a4a;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -144,3 +144,12 @@ h1 {
     align-items: center;
     justify-content: center;
   }
+
+  .product-card .desc {
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 600px;
+    width: 100%;
+}

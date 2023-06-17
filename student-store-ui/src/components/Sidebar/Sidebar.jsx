@@ -103,13 +103,13 @@ export default function Sidebar() {
         <div className="shopping-cart">
           <div className="cart-icons">
             <span className="cart-icon icon button">
-              <i className="material-icons md-48">add_shopping_cart</i>
+              <i className="material-icons md-48" onClick={() => changeSidebar(!sidebarOpen)} > add_shopping_cart</i>
             </span>
             <span className="cart-icon icon button">
-              <i className="material-icons md-48">monetization_on</i>
+              <i className="material-icons md-48" onClick={() => changeSidebar(!sidebarOpen)} > monetization_on</i>
             </span>
             <span className="cart-icon icon button">
-              <i className="material-icons md-48">fact_check</i>
+              <i className="material-icons md-48" onClick={() => changeSidebar(!sidebarOpen)} > fact_check</i>
             </span>
           </div>
         </div>
