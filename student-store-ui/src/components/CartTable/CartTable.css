@@ -1,0 +1,18 @@
+*{
+    color: white;
+    font-size: 18px;
+}
+table{
+    margin-left: 5%;
+}
+
+tr{
+    width: 30%;
+    text-align: left;
+}
+
+td{
+    width: 30%;
+    text-align: left;
+    max-width: 50px;
+}
