@@ -1,4 +1,4 @@
-.sidebar {
+.sidebar{
     background-color: black;
     display: flex;
     flex-direction: column;
@@ -10,6 +10,34 @@
     gap: 30px;
     position: fixed;
     z-index: 1;
+    transition: gap 0.5s linear, width 0.5s linear 0.5s;
+}
+
+#open{
+    transform: rotate(180deg);
+    transition: transform 0.5s ease-in-out;
+}
+
+#close{
+    transform: rotate(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+.open-sidebar{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    height: 200vh;
+    width: 60px;
+    row-gap: 20%;
+    align-items: center;
+    padding-top: 1%;
+    position: fixed;
+    z-index: 1;
+    width: 35%;
+    max-height: 100%;
+    overflow-y: scroll;
+    transition: width 0.5s linear, gap 0.5s linear 0.5s;
 }
 
 .side-bar-button{
@@ -27,4 +55,8 @@
     text-align: center;
     padding: 0;
     margin: 0;
+}
+
+.open-sidebar{
+    width: 50%;
 }

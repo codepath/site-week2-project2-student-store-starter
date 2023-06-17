@@ -6,10 +6,10 @@ import paymentInfoIcon from "../assets/payment-info.svg"
 import checkOutIcon from "../assets/checkout.svg"
 export default function Sidebar({isOpen = false, shoppingCart = {}, products, checkoutForm, handleOnCheckoutFormChange,
   handleOnSubmitCheckoutForm, handleOnToggle}) {
-  // const ids = ["open-close-button", "shopping-cart-button", "payment-info-button", "checkout-button"]  
+     
   return (
-    <section className="sidebar">
-      <button id="open-close-btn" className="side-bar-button">
+    <section className={isOpen ? "open-sidebar" : "sidebar"}>
+      <button id = {isOpen ? "close" : "open"} className="side-bar-button" onClick={handleOnToggle}>
         <img className="btn-img" src={backButtonIcon}/>
       </button>
       <button id="shopping-cart-btn" className="side-bar-button">
