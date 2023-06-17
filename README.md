@@ -10,6 +10,11 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - Add several products to the shopping cart.
 - Checkout and view the final receipt.
 
+  <a href="https://www.loom.com/share/6621236ac81043e7a332a56b854fd3cb">
+<!--     <p>Submission Guidelines - SITE | Summer Internship for Tech Excellence | CodePath Courses - 16 June 2023 - Watch Video</p> -->
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/6621236ac81043e7a332a56b854fd3cb-with-play.gif">
+  </a>
+
 ## *Week 2* Application Features
 
 ### Core Features
