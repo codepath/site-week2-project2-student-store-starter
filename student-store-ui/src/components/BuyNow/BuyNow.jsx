@@ -1,52 +1,61 @@
 import React, { useState } from "react";
 import ProductGrid from "../ProductGrid/ProductGrid";
 import Categories from "../Categories/Categories";
-import ProductCard from "../ProductCard/ProductCard";
-import './BuyNow.css'
+import "./BuyNow.css";
 
-function BuyNow({ products }) {
-  const [productsInCategory, setProductsInCategory] = useState(products);
-  const [productsSearched, setProductsSearched] = useState( products);
+function BuyNow({ products, setProducts, originalProducts }) {
+  const [searchTerm, setSearchTerm] = useState();
+  const [categories, setCategories] = useState();
 
-  function updateCategory(e) {
-    const newCategory = e.target.value;
-    // setCategory(() => newCategory);
 
-    const newProducts=  products.filter((product) => product.category === newCategory)
-    setProductsInCategory(newProducts)
-  }
 
   function handleSearchProduct(e) {
     const searchTerm = e.target.value;
-    const newProducts = productsInCategory.filter((product) => {
-      const prodName = product.name;
-      return prodName.includes(searchTerm);
-    });
-    console.log(newProducts, searchTerm)
-    setProductsSearched(newProducts)
+    setSearchTerm(searchTerm);
+    setProducts(
+      originalProducts.filter((product) => {
+        return product.name.toLowerCase().includes(searchTerm.toLowerCase());
+      })
+      .filter(product => product.category === categories )
+    );
+    
   }
 
-  function handleSubmit(e){
-    e.preventDefault()
-    setProductsSearched(products)
+  
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setSearchTerm('')
   }
 
   return (
     <div className="buy-now">
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="product"> search for item: </label>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    
+    <div className="search-bar">
+      <h1> Best Selling Products</h1>
+
+        <form onSubmit={handleSubmit}>
+        <label htmlFor="product" />
         <input
+          className="search-input"
           type="text"
           name="product"
+          placeholder="    enter product"
           onChange={handleSearchProduct}
-          value={productsSearched.name}
+          
         />
-        <br /> <br />
-        <button onClick={handleSubmit}> Submit </button>
       </form>
-      <Categories handleClick={updateCategory} />
-      {/* need to put product grid and product view in a router */}
-      <ProductGrid products={productsSearched}/>
+
+    </div>
+      
+      <Categories
+        originalProducts={originalProducts}
+        setProducts={setProducts}
+        setCategories={setCategories}
+      />
+
+      <ProductGrid products={products} />
     </div>
   );
 }

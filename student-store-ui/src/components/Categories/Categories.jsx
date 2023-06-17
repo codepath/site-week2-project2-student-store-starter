@@ -1,29 +1,85 @@
-import React, {useState} from 'react'
-import './Categories.css'
-import { Link } from 'react-router-dom'
+import React, { useState } from "react";
+import "./Categories.css";
 
-function Categories({handleClick}) {
-    // const [category, setCategory] = useState('')
+function Categories({
+  setCategories,
+  originalProducts,
+  setProducts,
+}) {
+  
 
-    // function updateCategory(e) {
-    //     const newCategory = e.target.value
-    //     setCategory(()=> newCategory)
+  function handleClick(selectedCategory, allCat = false) {
+    if (allCat){
+        setProducts(originalProducts);
+    }
+    else{
+        setProducts(
+            originalProducts
+              .filter((product) => product.category === selectedCategory)
+              
+          )
+    }
+        
+    setCategories(selectedCategory);
+   
+  }
 
-    //     {products.filter((product)=> product.category===newCategory).map(product => 
-    //     createProd(product))
-    //     }
-    //   }
-    return (
-        <nav className='categories'>
-            <ul>
-                <li><Link className='links' value='all' onClick={handleClick} to="/all"> All Categories </Link></li>
-                <li><Link className='links' value= 'clothing' onClick={handleClick} to="/clothing"> Clothing </Link></li>
-                <li><Link className='links' value= 'food' onClick={handleClick} to="/food"> Food </Link></li>
-                <li><Link className='links' value= 'accessories' onClick={handleClick} to="/accessories"> Accessories </Link></li>
-                <li><Link className='links' value= 'tech' onClick={handleClick} to="/tech"> Tech </Link></li>
-            </ul>
-        </nav>
-    )
+  
+
+  return (
+    <nav className="categories">
+      <ul>
+        <li className="links"
+            onClick={() => {
+              handleClick("", true);
+            }}>
+            All Categories
+        </li>
+        <li
+          
+            className="links"
+            onClick={() => {
+              handleClick("clothing");
+            }}>
+          
+            Clothing
+          
+        </li>
+        <li
+          
+            className="links"
+            onClick={() => {
+              handleClick("food");
+            }}>
+          
+            
+            Food
+         
+        </li>
+        <li
+          
+            className="links"
+            onClick={() => {
+              handleClick("accessories");
+            }}>
+          
+            Accessories
+          
+        </li>
+        <li
+          
+          className="links"
+            onClick={() => {
+              handleClick("tech");
+            }}>
+          
+            
+            Tech
+          
+        </li>
+      </ul>
+    </nav>
+  );
 }
 
-export default Categories
+export default Categories;

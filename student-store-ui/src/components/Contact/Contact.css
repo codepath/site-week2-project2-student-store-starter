@@ -1,3 +1,66 @@
 a{
     display:inline
 }
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+  
+  /* Facebook */
+  .fa-facebook {
+    color: white;
+    margin-left: 1%
+
+  }
+  
+  /* Twitter */
+  .fa-twitter {
+    color: white;
+
+  }
+
+  .fa-instagram {
+    color: white;
+
+
+  }
+
+  .fa-linkedin {
+    color: white;
+    
+
+
+  }
+
+  .contacts {
+    color: white;
+    font-size: 25px;
+    font-family:'Times New Roman', Times, serif;
+  }
+
+  .contacts-container {
+
+    display: flex;
+    flex-direction: column;
+    
+
+  }
+
+  .contact-us{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #2c4047;
+    margin-top: 7%;
+    margin-left: 7%;
+    margin-right: 3%
+
+  }

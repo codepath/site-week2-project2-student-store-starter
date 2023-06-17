@@ -1,4 +1,4 @@
-p{
+.description{
     display: flex;
     justify-content: center;
     color:white;
@@ -9,7 +9,7 @@ p{
     
 }
 
-h1 {
+.intro {
     text-align: center;
     color: white;
     font-size: 50px;
@@ -17,10 +17,10 @@ h1 {
 
 .hero{
     display:block;
-    justify-content: center;
     background-color: #00c385;
     width: 70%;
-    /* height: 200px */
+    margin-left: 8%;
+    margin-right: 2%
 }
 
 .hero-image{

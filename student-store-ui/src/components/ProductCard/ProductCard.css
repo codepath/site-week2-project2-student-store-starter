@@ -1,36 +1,70 @@
-.prod-name{
-    /* font-w eight: bolder; */
-    color: black;
-    font-size: 20px;
-width: 100%
+.prod-image{
+    width: 300px;
+    height: 300px;
+    border-radius: 5%;
+    padding: 5px 
 
-    /* text-align: center; */
-    /* height: 20% */
+  }
+
+.prod-details{
+    display: grid;
+    grid-template-columns: auto auto;
+    
+}
+
+.prod-name{
+    color: black;
+    font-size: 17px;
+    width: 100%
+
   }
   
 .prod-price{
-/* font-weight: bolder; */
-color: black;
-font-size: 20px;
-width: 100%
-/* text-align: center; */
-
-/* height: 20% */
+    color: black;
+    font-size: 17px;
+    width: 100%
+    
 }
 
-.product-cont{
-display:flex;
-flex-direction: column;
-justify-content: center;
-width:25%;
-/* border: 20px; */
-border-color: black;
-/* background-color: beige; */
+
+
+.product-card{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    border-color: solid 1px black;
+    background-color: white;
+    border-radius: 3%;
+
+    max-width: 310px;
+    margin: 7px
 }
+
+
 
 .buttons{
-    display: inline
+    display: inline-block;
+    justify-content: center;
+    padding-top: 10%;
+    padding-left: 40%;
 }
-/* .prod-card{
-    margin-left: 7%;
-} */
+
+button{
+    background-color: white;
+    border-radius: 10%;
+    border: solid 0.5px black;
+    margin-left: 3px
+}
+
+.amount{
+    color:black;
+    font-size: 17px
+
+}
+
+.amount-cont{
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: baseline;
+
+}

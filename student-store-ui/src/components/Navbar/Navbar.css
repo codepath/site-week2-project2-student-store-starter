@@ -1,10 +1,14 @@
-nav{
-    background-color: lightblue;
+.navbar{
+    background-color:#2c4047;
     height: 5%;
     padding-left: 7%;
     display: grid;
     grid-template-columns: auto auto;
+    justify-content: baseline;
     margin-left: 5%;
+    width:100vw;
+    position: fixed
+    
 }
 
 a{
@@ -19,14 +23,27 @@ li{
 }
 
 ul{
-    /* margin-left */
     display: flex;
     justify-content: space-evenly;
 }
 
 .store-name{
-    display: inline-block;
+    display: inline;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: x-large;
     color: white;
+    margin-left: 5%;
+    padding-bottom: 2%
+}
+
+.nav-link{
+    text-decoration: none;
+    font-size: 21px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.logo-title{
+    display: flex;
+    flex-direction: row;
 }
