@@ -27,7 +27,7 @@ border: none;
 font-size: 20px;
 }
 
-.cat-button:active{
+.cat-button:focus{
 position: relative;
 border-bottom: solid #9bd1e5;
 }

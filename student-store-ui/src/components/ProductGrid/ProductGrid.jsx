@@ -26,7 +26,7 @@ export default function ProductGrid(props) {
       <div className="product-name">
         <img src={info.image} />
         <p>{info.name}</p>
-        <p>{info.price}</p>
+        <p>${info.price.toFixed(2)}</p>
       </div>
     );
   }

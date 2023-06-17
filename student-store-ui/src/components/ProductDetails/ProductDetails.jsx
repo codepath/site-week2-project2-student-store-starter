@@ -2,12 +2,14 @@ import * as React from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Hero from "../Hero/Hero";
+import Search from "../Search/Search";
+
 
 export default function ProductDetail({ products }) {
   const { id } = useParams();
 
   // debugger;
-  console.log(products);
+  // console.log(products);
   if (products.length === 0) {
     return <h2 style={{ margin: "0 auto" }}>Loading...</h2>;
   }
@@ -16,6 +18,7 @@ export default function ProductDetail({ products }) {
     <>
       <Navbar />
       <Hero />
+      <Search />
       <h2 style={{ margin: "0 auto" }}>Product: {products[id - 1].name}</h2>
       <img
         style={{ width: "500px", height: "500px", margin: "0 auto" }}
