@@ -33,7 +33,7 @@ Google Material Icons
 
 ### Walkthrough Video
 
-https://www.loom.com/share/8e503919a8514255b1b43ed8e9b2e757?sid=8309bbd9-79f1-4de7-b57e-07dec5e0bebf
+https://www.loom.com/share/650a1bbce5e742b2bbdac6f32a7bba72?sid=4f939568-8d2e-4b35-a6c8-4684633da874
 
 ### Reflection
 - Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
