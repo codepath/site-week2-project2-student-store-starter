@@ -11,7 +11,6 @@ export default function Sidebar() {
 
   return (
     <section className="sidebar" style={{'width':`${activeSidebar ? '300px' : '80px'}`}}>
-      <p>Sidebar</p>
       <button id="change-sidebar-btn" onClick={() => changeSidebar(activeSidebar)}>Open Sidebar</button>
     </section>
   )
