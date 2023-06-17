@@ -14,7 +14,7 @@ https://imgur.com/a/svwM252
 
 ## *Week 2* Application Features
 
-### Core Features ss
+### Core Features
 
 - [x] The website displays header, banner, search, product grid, about, contact, and footer section.
 - [x] The website displays the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store) on initial page load.
