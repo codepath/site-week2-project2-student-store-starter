@@ -172,7 +172,7 @@
 .checkout-form .label {
     color: #fff;
 }
-.checkout-form .label .a {
+.checkout-form .label .terms-and-conditions {
     /* NOT PICKING UP THE LINK HERE */
     text-decoration: none;
     color: #00c385;

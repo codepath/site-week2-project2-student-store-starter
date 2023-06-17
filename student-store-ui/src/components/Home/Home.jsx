@@ -10,16 +10,19 @@ import About from "../About/About"
 import Contact from '../Contact/Contact'
 import ProductGrid from '../ProductGrid/ProductGrid'
 
-// export default function Home({products, formData, handleInput, changeCategory, handleSubmit, quantity}) {
-export default function Home({products, formData, handleInput, changeCategory}) {
-    return (
+// export default function Home({products, formData, handleSearch, changeCategory, handleSubmit, quantity}) {
+  export default function Home({products, formData, handleSearch, changeCategory}) {
+    // export default function Home({products, formData, handleInput}) {
+      return (
 
     // <SubnavBar/>
 
     <div className="home">
-      <SubnavBar formData={formData} handleInput={handleInput} changeCategory={changeCategory} />
-      {/* <p>Home</p> */}
       <Hero />
+      <SubnavBar formData={formData} handleSearch={handleSearch} changeCategory={changeCategory} />
+      {/* <SubnavBar formData={formData} handleInput={handleInput} /> */}
+      {/* <p>Home</p> */}
+  
       {/* <ProductGrid products = {products} quantity={quantity}/> */}
       <ProductGrid products = {products}/>
       <About />

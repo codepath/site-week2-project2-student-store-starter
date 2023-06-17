@@ -109,9 +109,9 @@
     border-bottom: solid 2px #00c385;
   }
 
-  .sub-navbar .category-menu li.is-active button:active {
+  /* .sub-navbar .category-menu li.is-active button:active {
     border-bottom: solid 2px #00c385;
-  }
+  } */
   .sub-navbar .category-menu li button {
     cursor: pointer;
     transition: all .1s ease;

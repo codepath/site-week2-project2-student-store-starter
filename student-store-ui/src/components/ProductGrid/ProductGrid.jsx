@@ -23,7 +23,7 @@ return (
               return ((selectedCategory == "All Categories") || (item.category === selectedCategory));
             })}; */}
 
-            {/* {console.log("Home component products",products)} */}
+            {console.log("Home component products",products)}
         
             {products?.map((product, index) => {
             // have to put additional return bc => has implicit return

@@ -22,7 +22,6 @@ import ProductDetail from "../ProductDetail/ProductDetail"
 // } from "react-pro-sidebar";
 
 // TODO:
-// FIX SEARCH TO NOT WORK FOR UNFOUND INPUT
 // shopping cart update
 // add for product details as well
 // math.round(price x 100)/100 => tofixed (2)
@@ -37,11 +36,10 @@ export const appInfo ={
 const url = "https://codepath-store-api.herokuapp.com/store"
 export default function App() {
   const [products, setProducts] = useState();
-  // useEffect(setup, dependencies)
-  // if you pass in an empty dependency aray, it will run only once
   const[formData, setFormData] = useState(); // used for search
-  // const[selectedCategory, setSelectedCategory] = useState(""); // used for category filtering - default should be "all categ.." ?
-  const [filteredSearchArray, setFilteredSearchArray] = useState([])
+  const [selectedCategory, setSelectedCategory] = useState(); // used for category filtering
+  const[filteredCategoryArray, setFilteredCategoryArray] = useState(); // used for category filtering - default should be "all categ.." ?
+  const [filteredSearchArray, setFilteredSearchArray] = useState()
   // const [filteredCategoryArray, setFilteredCategoryArray] = useState([])
   // const [haveFiltered, setHaveFiltered] = useState(false);
   const [quantity, setQuantity] = useState(0);
@@ -49,80 +47,52 @@ export default function App() {
   useEffect(() => {
     axios.get(url).then((response) =>{
       setProducts(response.data.products)
-      // console.log(response.data.products) // getting the food items
-      // console.log(products)
     })
 
   }, []);
 
- // Update local state with current state of input element (render each keystroke)
- function handleInput(event) {
-  // console.log("FILTERED???? ", haveFiltered);
-    setFormData(event.target.value);
-  //   if (haveFiltered){
-  //     // setHaveFiltered(true);
-  //     console.log("HAVE FILTERED, HERE IS THE FILTERED - SEARCH: " + `${filteredSearchArray}`);
-  //     let filteredItems = filteredSearchArray?.filter((product) => {
-  //       return product.name.toLowerCase().includes(event.target.value.toLowerCase());
-  //       })
-  //       setFilteredSearchArray(filteredItems);
-  //   }
-  //   // console.log(products)
 
-  //  else {
-    // setHaveFiltered(true);
-    // if (filteredSearchArray == products){ // have altered original array already
+//  Update local state with current state of input element (render each keystroke)
+ function handleSearch(event) {
+    setFormData(event.target.value);
       let filteredItems = products?.filter((product) => {
         return product.name.toLowerCase().includes(event.target.value.toLowerCase());
         })
         setFilteredSearchArray(filteredItems);
-      // }
-      // setHaveFiltered(true);
-    // } 
-    // else { // haven't filtered array already
-      // let filteredItems = filteredSearchArray?.filter((product) => {
-      //   return product.name.toLowerCase().includes(event.target.value.toLowerCase());
-      //   })
-      //   setFilteredSearchArray(filteredItems);
-      // }
-     
- }
-
- function handleAddToCart(event){
-    setQuantity(quantity+1);
- }
+ };
  
 
- function changeCategory(category){
-  console.log(category);
-  // console.log("FILTERED BEFORE ???? ", haveFiltered);
-  // if (haveFiltered){
-  //   // setHaveFiltered(true);
-  //   console.log("HAVE FILTERED, HERE IS THE FILTERED - CATEOGRY: ", filteredSearchArray)
-  //   let filteredItemsCategory = filteredSearchArray?.filter((product) => {
-    
-  //     return (product.category === category);
-  //   })
-  //   setFilteredSearchArray(filteredItemsCategory);
-  // } else {
 
-    // console.log("HAVE NOT FILTERED YET - CATEGORY")
-  
-    // setSelectedCategory(event.target.value);
+ function changeCategory(event){
+  setSelectedCategory(event.target.value);
     let filteredItemsCategory = (products?.filter((product) => {
-    // console.log("SELECTED: " + `${selectedCategory}`)
-   
-    // console.log(products)
-    // setProducts(filiteredCategoryArray)
-
-    return (product.category === category);
+    return (product.category.toLowerCase() === event.target.value.toLowerCase());
+    // return product.category.includes(!category ? "" : category)
   
-}))
-    setFilteredSearchArray(filteredItemsCategory);
-// }
-// setHaveFiltered(true);
-// setFilteredSearchArray(filteredItemsCategory);
+})) 
+  setFilteredCategoryArray(filteredItemsCategory);
+
 }; 
+
+// function to make search and filter by category work together, also handles initial loading case
+function getFilteredProducts(){
+   // initial page load
+  if (!formData && !selectedCategory){
+    return products; 
+  }
+
+  let filteredItems = products;
+  if (formData){
+    filteredItems = filteredItems.filter((product) => product.name.toLowerCase().includes(formData.toLowerCase()));
+  }
+  if (selectedCategory){
+    filteredItems = filteredItems.filter((product) => 
+    product.category.toLowerCase().includes(selectedCategory.toLowerCase()));
+  }
+  return filteredItems;
+
+}
+
 
   return (
     <div className="app">
@@ -142,12 +112,12 @@ export default function App() {
               path= "/" 
               element=
                 {<Home 
+                  // handleInput={handleInput}
                   changeCategory = {changeCategory} 
-                  handleInput = {handleInput} 
+                  handleSearch = {handleSearch} 
                   formData = {formData} 
-                  products = {filteredSearchArray.length === 0 ? products : filteredSearchArray}
-                  // handleSubmit = {handleSubmit} 
-                  // quantity={quantity}
+                  // products = {filteredSearchArray.length === 0 ? products : filteredSearchArray}
+                  products = {getFilteredProducts()}
                   />}>     
             </Route>    
               
