@@ -3,6 +3,7 @@ import { Routes, Route, Link } from "react-router-dom"
 import { useEffect } from "react"
 import axios from "axios"
 import "./Home.css"
+import homePic from "./heropic.jpeg"
 
 export default function Home() {
 
