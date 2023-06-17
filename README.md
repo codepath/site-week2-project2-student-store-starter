@@ -11,6 +11,7 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - Checkout and view the final receipt.
 
 ## *Week 2* Application Features
+![ezgif com-video-to-gif (1)](https://github.com/BrianB7B/project2-student-store-starter/assets/120551307/7aff5e3a-3d51-4ff0-a791-415b55df9098)
 
 ### Core Features
 
