@@ -1,37 +1,15 @@
 import * as React from "react";
 import "./Navbar.css";
-import About from "../About/About";
-import Twitter from "../App/Images/Twitter_icon.png";
-import { Link, Outlet } from "react-router-dom";
+
 
 export default function Navbar() {
   return (
-    // <>
-    // <nav className="navbar">
-    //   <div className="content">
-    //     <div className="logo"></div>
-    //   </div>
-    //   <div className="socials">
-    //     <img src="https://cdn1.iconfinder.com/data/icons/social-media-outline-6/128/SocialMedia_Instagram-Outline-1024.png" />
-    //     <img src={Twitter} />
-    //     <img src="student-store-ui/src/components/App/Images/instagram_logo.png" />
-    //     <img src="../components/App/Images/facebook_logo.png" />
-    //   </div>
-    //   <div className="links">
-    //     <a href="/#ContactUs">Contact</a>
-    //     <a href="/#About"> About</a>
-    //     {/* <Link to="/about">About</Link> */}
-    //     {/* <span>Buy Now</span> */}
-    //   </div>
-
-    // </nav>
-    // </>
 
     <nav className="navbar">
       <div className="content">
         <div className="logo">
           <a href="/">
-            <img src="/assets/codepath.f1b3e41a.svg" alt="codepath logo" />
+            <img src="https://codepath-student-store-demo.surge.sh/assets/codepath.f1b3e41a.svg" alt="codepath logo" />
           </a>
         </div>
         <div className="socials">

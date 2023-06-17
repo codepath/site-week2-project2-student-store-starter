@@ -3,7 +3,6 @@ import axios from "axios";
 import "./ProductDetails.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ProductGrid from "../ProductGrid/ProductGrid";
 
 export default function ProductDetails() {
   const [product, setProduct] = useState({});
@@ -26,7 +25,7 @@ export default function ProductDetails() {
             <div className="product-view-card">
               <div className="product-card">
                 <div className="media">
-                  <a href = {"/products/" + product.id}>
+                  <a href={"/products/" + product.id}>
                     <img
                       src={product.image}
                       alt="product cover"

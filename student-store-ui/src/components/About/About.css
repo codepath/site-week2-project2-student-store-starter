@@ -51,6 +51,6 @@
 }
 
 .about .contents .summary .codepath {
-    background: var(--dark-blue);
+    background: #323232;
     height: 329px
 }

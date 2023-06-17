@@ -1,7 +1,8 @@
 @import"https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;700;900&display=swap";.navbar {
   width: 100%;
   max-width: 100vw;
-  background: var(--dark-blue);
+  background: #323232;
+  background-image: linear-gradient(to right, rgba(255,0,0,0),);
   color: var(--pure-white);
   height: 70px;
   display: flex;

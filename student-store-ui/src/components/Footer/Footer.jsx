@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="content">
         <div className="top">
           <div className="links">
-            <div className="link-column">
+            <div className="link-column" >
               <h4>Categories</h4>
               <ul>
                 <li>All Categories</li>
@@ -56,33 +56,8 @@ export default function Footer() {
                 <li>YouTube</li>
               </ul>
             </div>
-            {/* <div className="link-column">
-              <h4>Our App</h4>
-              <ul>
-                <li>
-                  <img src="/assets/app_store.a7d8c549.svg" alt="app store" />
-                </li>
-                <li>
-                  <img
-                    src="/assets/google_play.27aab7c8.svg"
-                    alt="google play store"
-                  />
-                </li>
-              </ul>
-            </div> */}
           </div>
         </div>
-        {/* <div className="bottom">
-          <span className="payment-options">
-            <img
-              src="/assets/american_express.40f242c7.svg"
-              alt="american express"
-            />
-            <img src="/assets/mastercard.c75b7bc4.svg" alt="mastercard" />
-            <img src="/assets/paypal.6a45b239.svg" alt="paypal" />
-            <img src="/assets/visa.a818ddc4.svg" alt="visa" />
-          </span>
-        </div> */}
       </div>
     </footer>
   );

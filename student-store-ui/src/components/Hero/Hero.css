@@ -5,7 +5,8 @@
 }
 
 .hero .content {
-    background: var(--bright-green);
+    background: #daad8f;
+    background-image: linear-gradient(#ac8d79);
     max-width: var(--content-width);
     width: 100%;
     margin: 0 auto;

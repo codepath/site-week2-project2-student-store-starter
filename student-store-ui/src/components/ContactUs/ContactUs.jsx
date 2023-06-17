@@ -64,9 +64,7 @@ export default function Contact() {
               </span>
             </li>
           </ul>
-          <div className="media">
-            <img src="/assets/happy_person.517b658d.svg" alt="codepath large" />
-          </div>
+          <div className="media"></div>
         </div>
       </div>
     </div>

@@ -1,10 +1,7 @@
 import * as React from "react";
 import "./SubNavBar.css";
-import { useState } from "react";
-import ProductGrid from "../ProductGrid/ProductGrid";
-import Home from "../Home/Home";
-//import { handleSubmit, handleChange, searchTerm } from "react";
-import { Outlet } from "react-router-dom";
+
+
 
 export default function SubNavBar({
   searchTerm,
@@ -17,7 +14,7 @@ export default function SubNavBar({
   };
 
   const handleChange = (event) => {
-    event.preventDefault();
+   event.preventDefault();
     setSearchTerm(event.target.value);
     console.log(event.target.value);
   };
