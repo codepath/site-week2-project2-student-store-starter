@@ -10,15 +10,20 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - Add several products to the shopping cart.
 - Checkout and view the final receipt.
 
+Week 2 Walk Through Video:
+<a href="https://www.loom.com/share/e2110422d718498d9eb2273e69312fd7">
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/e2110422d718498d9eb2273e69312fd7-with-play.gif">
+  </a>
+
 ## *Week 2* Application Features
 
 ### Core Features
 
-- [ ] The website displays header, banner, search, product grid, about, contact, and footer section.
-- [ ] The website displays the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store) on initial page load.
-- [ ] Users can click on a category (clothing, food, etc.) to filter the product grid by type.
-- [ ] Users can search for products.
-- [ ] User can click on a product in the grid to navigate to a new page containing additional product details.
+- [X] The website displays header, banner, search, product grid, about, contact, and footer section.
+- [X] The website displays the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store) on initial page load.
+- [X] Users can click on a category (clothing, food, etc.) to filter the product grid by type.
+- [X] Users can search for products.
+- [X] User can click on a product in the grid to navigate to a new page containing additional product details.
 
 ### Stretch Features
 
