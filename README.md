@@ -12,6 +12,11 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 
 ## *Week 2* Application Features
 
+Demo recorded on Loom:
+    <a href="https://www.loom.com/share/75f66e5155a24d66961689c045a617ad">
+        <img style="max-width:300px;" src="https://cdn.loom.com/placeholders/private-video.gif">
+    </a>
+
 ### Core Features
 
 - [x] The website displays header, banner, search, product grid, about, contact, and footer section.
