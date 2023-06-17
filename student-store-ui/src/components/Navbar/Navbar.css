@@ -1,0 +1,44 @@
+nav {
+    background-color: rgb(87, 2, 87);
+    height: 0.5in;
+    display: grid;
+    /* width: 80%; */
+    border-radius: 60px;
+    align-content: center;
+}
+
+.topnavbar {
+    margin-left: 120px;
+    width: 87%;
+    align-self:right
+    
+}
+
+.topnavbar a {
+    text-decoration: none;
+    color: white;
+    
+}
+
+li {
+    display: inline;
+    font-style: oblique;
+    color: azure;
+    ;
+}
+
+ul {
+    display:flex;
+    justify-content: space-evenly;
+    white-space: 1%;
+    color: whitesmoke;
+}
+
+.navbar {
+    border-radius: 75px;
+    background-color: rgb(87, 2, 87);
+    margin-left: 60px;
+    width: 89%;
+    border-color: rgb(87, 2, 87);
+    margin-bottom: 20px;
+}

@@ -1,0 +1,12 @@
+.Footer {
+display: flex;
+/* margin: 0 auto; */
+background-color: white;
+justify-content: space-evenly;
+width:80%;
+margin:0 auto;
+}
+
+.bold{
+    font-weight: bold;
+}

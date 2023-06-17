@@ -4,8 +4,30 @@ body {
     "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  max-height: fit-content;
+}
+
+html{
+  max-height: fit-content;
+
 }
 
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+
+
+input {
+  padding: 5px;
+  border-radius: 65px;
+  width: 20%;
+  height: 50px;
+  color: black;
+  background-color: whitesmoke;
+  margin-left:69%;
+  margin-top: 30px;
+  margin-bottom: 20px
+
 }
