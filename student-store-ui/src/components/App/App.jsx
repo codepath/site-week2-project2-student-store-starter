@@ -9,12 +9,12 @@ import "./App.css";
 import SubNavBar from "../SubNavBar/SubNavBar";
 import Hero from "../Hero/Hero";
 import Logo from "../Logo/Logo";
+import ProductDetails from "../ProductDetails/ProductDetails";
 
 export default function App() {
   const url = "https://codepath-store-api.herokuapp.com/store";
   const [products, setProducts] = useState([]);
 
-  const results = products.filter((product) => {});
   useEffect(() => {
     axios.get(url).then((response) => {
       setProducts(response.data.products);
@@ -28,9 +28,10 @@ export default function App() {
           <Logo />
           <Navbar />
           <Sidebar />
-          <Hero />
-          <SubNavBar products={products} />
-          <Home products={products} />
+          <Routes>
+            <Route path="/" element={<Home products={products} />} />
+            <Route path="products/:id" element={<ProductDetails />} />
+          </Routes>
         </main>
       </BrowserRouter>
     </div>

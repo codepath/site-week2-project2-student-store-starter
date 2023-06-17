@@ -8,7 +8,7 @@ export default function ProductCard({ name, id, image, price }) {
           <b>{name}</b>
         </p>
         <p>
-          <b>${price}</b>
+          <b>{price}</b>
         </p>
       </div>
     </section>
