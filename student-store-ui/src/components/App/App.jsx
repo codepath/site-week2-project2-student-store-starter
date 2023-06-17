@@ -5,12 +5,23 @@ import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
 import "./App.css"
 import Hero from "../Hero/Hero"
-import Sub_Navbar from "../SubNavbar/SubNavbar"
-
-// import { useEffect } from "react"
-// import axios from 'axios'
+import SubNavbar from "../SubNavbar/SubNavbar"
+import { useEffect } from "react"
+import axios from 'axios'
+import {useState} from "react"
 
 export default function App() {
+
+const url = "https://codepath-store-api.herokuapp.com/store"
+const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    axios.get(url).then((response) => {
+      setProducts(response.data.products)
+    })
+  }, [])
+
+  
 
   return (
     <div className="app">
@@ -19,9 +30,9 @@ export default function App() {
           {/* YOUR CODE HERE! */}
           <Navbar />
           <Hero />
-          <Sub_Navbar />
+          <SubNavbar />
           <Sidebar />
-          <Home />
+          <Home products={products} />
         </main>
       </BrowserRouter>
     </div>
