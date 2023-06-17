@@ -4,6 +4,7 @@
     flex-wrap: wrap;
   } 
   
+  
    .test {
     width: 300px;
     height: 300px;
@@ -58,4 +59,11 @@
   .Samtest {
     display: flex;
     flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+
+  }
+  h3{
+     
+    justify-content: left;
   }

@@ -28,55 +28,20 @@ export default function SubNavBar({
   }
 
   return (
-    // <>
-    //   <nav className="sub-navbar">
-    //     <div className="cont">
-    //       <div className="row">
-    //         <form className="form-input" onSubmit={handleSubmit}>
-    //           <label className="product-label" htmlFor="search"></label>
-    //           <input
-    //             className="search-bar"
-    //             type="text"
-    //             name="search"
-    //             onChange={handleChange}
-    //             value={searchTerm}
-    //             placeholder="Search"
-    //           />
-    //           <button className="button-bar">🔍</button>
-    //         </form>
-    //       </div>
-
-    //       <div className="row">
-    //         <div className="hamburger-menu">
-    //           <i> button </i>
-    //         </div>
-    //         <ul>
-    //           <li className={category == "All Categories" ? "is-active" : ""}>
-    //             <button onClick={handleCategoryClick}>All Categories</button>
-    //           </li>
-    //           <li className={category == "Clothing" ? "is-active" : ""}>
-    //             <button onClick={handleCategoryClick}>Clothing</button>
-    //           </li>
-    //           <li className={category == "Food" ? "is-active" : ""}>
-    //             <button onClick={handleCategoryClick}>Food</button>
-    //           </li>
-    //           <li className={category == "Accessories" ? "is-active" : ""}>
-    //             <button onClick={handleCategoryClick}>Accessories</button>
-    //           </li>
-    //           <li className={category == "Tech" ? "is-active" : ""}>
-    //             <button onClick={handleCategoryClick}>Tech</button>
-    //           </li>
-    //         </ul>
-    //       </div>
-    //     </div>
-    //   </nav>
-    //   {/* <Outlet /> */}
-    // </>
     <nav class="sub-navbar">
       <div class="content">
         <div class="row">
           <div class="search-bar">
-            <input type="text" name="search" placeholder="Search" value="" />
+
+
+            <input
+              type="text"
+              name="search"
+              onChange={handleChange}
+              placeholder="Search"
+              value={searchTerm}
+            />
+
             <i class="material-icons">search</i>
           </div>
           <div class="links">
@@ -95,23 +60,21 @@ export default function SubNavBar({
             <i class="material-icons">menu</i>
           </div>
           <ul class="category-menu open">
-          
-             <li className={category == "All Categories" ? "is-active" : ""}>
-               <button onClick={handleCategoryClick}>All Categories</button>
-              </li>
-               <li className={category == "Clothing" ? "is-active" : ""}>
-                 <button onClick={handleCategoryClick}>Clothing</button>
-               </li>
-               <li className={category == "Food" ? "is-active" : ""}>
-                 <button onClick={handleCategoryClick}>Food</button>
-               </li>
-               <li className={category == "Accessories" ? "is-active" : ""}>
-                 <button onClick={handleCategoryClick}>Accessories</button>
-               </li>
-               <li className={category == "Tech" ? "is-active" : ""}>
-                 <button onClick={handleCategoryClick}>Tech</button>
-               </li>
-             
+            <li className={category == "All Categories" ? "is-active" : ""}>
+              <button onClick={handleCategoryClick}>All Categories</button>
+            </li>
+            <li className={category == "Clothing" ? "is-active" : ""}>
+              <button onClick={handleCategoryClick}>Clothing</button>
+            </li>
+            <li className={category == "Food" ? "is-active" : ""}>
+              <button onClick={handleCategoryClick}>Food</button>
+            </li>
+            <li className={category == "Accessories" ? "is-active" : ""}>
+              <button onClick={handleCategoryClick}>Accessories</button>
+            </li>
+            <li className={category == "Tech" ? "is-active" : ""}>
+              <button onClick={handleCategoryClick}>Tech</button>
+            </li>
           </ul>
         </div>
       </div>
