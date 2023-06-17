@@ -14,11 +14,11 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 
 ### Core Features
 
-- [ ] The website displays header, banner, search, product grid, about, contact, and footer section.
-- [ ] The website displays the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store) on initial page load.
-- [ ] Users can click on a category (clothing, food, etc.) to filter the product grid by type.
-- [ ] Users can search for products.
-- [ ] User can click on a product in the grid to navigate to a new page containing additional product details.
+- [ X ] The website displays header, banner, search, product grid, about, contact, and footer section.
+- [ X ] The website displays the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store) on initial page load.
+- [ X ] Users can click on a category (clothing, food, etc.) to filter the product grid by type.
+- [ X ] Users can search for products.
+- [ X] User can click on a product in the grid to navigate to a new page containing additional product details.
 
 ### Stretch Features
 
@@ -26,7 +26,7 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - [ ] Users can click the '+' button on a product cart to increment that product in the shopping cart.
 - [ ] Users can click the '-' button on a product cart to decrement that product in the shopping cart.
 - [ ] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
-- [ ] Your choice! (Replace this bullet explaining what you implemented. Example: Users can leave ratings for products they have purchased.)
+- [ X ] Users can nagivate between home and shop pages
 
 ### Additional Resources Used
 Google Material Icons
@@ -56,8 +56,8 @@ Jordan, Niya, Sophia, Oj, and the amazing instructors!
 ### Core Features
 
 - [ ] User can click to expand the shopping cart in the left navigation.
-- [ ] Users can click the '+' button on a product cart to increment that product in the shopping cart.
-- [ ] Users can click the '-' button on a product cart to decrement that product in the shopping cart. If the count is zero, the product should be removed from the cart.
+- [  ] Users can click the '+' button on a product cart to increment that product in the shopping cart.
+- [  ] Users can click the '-' button on a product cart to decrement that product in the shopping cart. If the count is zero, the product should be removed from the cart.
 - [ ] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
 - [ ] Users can checkout, and receive a receipt confirming their purchase.
 
