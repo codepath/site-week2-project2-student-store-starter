@@ -8,6 +8,11 @@ import { useParams } from "react-router-dom";
 export default function ProductDetails() {
   const { id } = useParams();
   const [products, setProducts] = useState({});
+  const [count, setCount] = useState(0);
+  function teste(event, value){
+    const haha = event.value
+    console.log(value)
+  }
 
   useEffect(() => {
     axios
@@ -37,13 +42,29 @@ export default function ProductDetails() {
                   <p>{products.name}</p>
                   <div className="actions">
                     <div className="buttons">
-                      <button className="add">
+                      <button
+                        value={products.id}
+                        className="add"
+                        onClick={(event) => {
+                          setCount(count + 1);
+                          teste(event, event.value);
+                        }}
+                      >
                         <i className="material-icons">add</i>
                       </button>
-                      <button className="remove">
+                      <button
+                        className="remove"
+                        onClick={() => {
+                          count > 0 ? setCount(count - 1) : setCount(0);
+                        }}
+                      >
                         <i className="material-icons">remove</i>
                       </button>
+                      <button></button>
                     </div>
+                    <span class="quantity">
+                      <span class="amt">{count}</span>
+                    </span>
                   </div>
                 </div>
                 <p>${products.price}</p>

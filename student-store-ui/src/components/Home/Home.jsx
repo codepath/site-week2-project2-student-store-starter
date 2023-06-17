@@ -1,20 +1,25 @@
 import * as React from "react";
+import { useState } from "react";
 
 import "./Home.css";
 import { Link } from "react-router-dom";
 
 export default function Home({ products, items, category }) {
+  const [count, setCount] = useState(0);
 
-  console.log(category)
-  
   const filteredProducts = products.filter((product) => {
-    const matchSearch = items === '' || product.name.toLowerCase().includes(items)
-    const matchCategory = category.toLowerCase() === '' || (product.category?.toLowerCase() === category.toLowerCase())
-    return matchSearch && matchCategory
+    const matchSearch =
+      items === "" || product.name.toLowerCase().includes(items);
+    const matchCategory =
+      category.toLowerCase() === "" ||
+      product.category?.toLowerCase() === category.toLowerCase();
+    return matchSearch && matchCategory;
+  });
+
+  function teste(event, value){
+    const haha = event.value
+    console.log(value)
   }
-    
-  
-  );
 
   return (
     <div className="home" id="Buy">
@@ -27,19 +32,29 @@ export default function Home({ products, items, category }) {
               <img src={product.image} alt="" />
             </Link>
             <div className="description-line">
-              <p>{product.name}</p>
+              <div>
+                <p>{product.name}</p>
+                <p>${product.price}</p>
+              </div>
+
               <div className="actions">
                 <div className="buttons">
-                  <button className="add">
+                  <button value={product.id} className="add" onClick={event => {setCount(count+1)
+                  teste(event, event.value)}}>
                     <i className="material-icons">add</i>
                   </button>
-                  <button className="remove">
+                  <button className="remove" onClick={() => {
+                    count > 0 ?
+                    setCount(count-1) : setCount(0)}}>
                     <i className="material-icons">remove</i>
                   </button>
+                  <button></button>
                 </div>
+                <span class="quantity">
+                  <span class="amt">{count}</span>
+                </span>
               </div>
             </div>
-            <p>${product.price}</p>
           </div>
         ))}
       </div>
