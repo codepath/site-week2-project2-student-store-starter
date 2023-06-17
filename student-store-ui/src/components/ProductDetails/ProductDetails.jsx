@@ -2,6 +2,9 @@ import * as React from "react";
 import "./ProductDetails.css";
 import Navbar from "../Navbar/Navbar";
 import Hero from "../Hero/Hero";
+import Search from "../Search/Search";
+import Category from "../Category/Category";
+
 
 import { useParams } from "react-router-dom";
 
@@ -15,6 +18,7 @@ export default function ProductDetail(props) {
       <>
         <Navbar />
         <Hero />
+
         <div id="loading">
           <h1>Loading...</h1>
         </div>
@@ -26,6 +30,8 @@ export default function ProductDetail(props) {
     <>
       <Navbar />
       <Hero />
+      <Search />
+      <Category />
       <h2 id="details-header">Product #{id}</h2>
       <div className="prod-details">
         <img

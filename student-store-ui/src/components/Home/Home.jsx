@@ -1,10 +1,9 @@
 import * as React from "react";
-import "./Home.css";
 import Navbar from "../Navbar/Navbar";
 import Hero from "../Hero/Hero";
 import About from "../About/About";
-import Search from "../Search/Search";
 import ProductGrid from "../ProductGrid/ProductGrid";
+import Search from "../Search/Search";
 import Category from "../Category/Category";
 
 export default function Home(props) {
