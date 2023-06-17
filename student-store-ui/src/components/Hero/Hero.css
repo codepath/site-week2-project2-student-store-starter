@@ -1,8 +1,3 @@
-:root {
-    --dark-Cp: #2c4047;
-    --light-Cp: #00c98d;
-} 
-    
 .content{
     background-color: #9bd1e5;
     color: black;
@@ -11,8 +6,6 @@
     display: flex;
 }
 
-/* .intro{
-text-align: center;} */
 .intro{
     margin-left: 90px;
 }
@@ -20,9 +13,11 @@ text-align: center;} */
 h1{
     font-size: 40px;
 }
+
 h2{
     font-size: 30px;
 }
+
 p{
     font-size: 20px;
 }

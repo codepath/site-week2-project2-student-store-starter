@@ -1,12 +1,28 @@
 import * as React from "react"
 import "./Home.css"
 
+
+import Navbar from "../Navbar/Navbar"
+import Hero from "../Hero/Hero"
+import Contact from "../Contact/Contact"
+import Footer from "../Footer/Footer"
+
+import About from "../About/About"
+import Search from "../Search/Search"
+import ProductGrid from "../ProductGrid/ProductGrid"
+
+
+
 export default function Home(props) {
   return(
-    <h2 style={{marginLeft:'200px',
-    marginTop: '20px',
-    marginBottom:'-20px',          
-     fontSize: '20px'               }}>Best Selling Products!</h2>
+    <>
+    <Navbar />
+    <Hero />
+    <Search products={props.products} searchValue={props.searchValue} setSearchValue={props.setSearchValue} setCatValue={props.setCatValue} setSearchCatValue={props.setSearchCatValue}/>
+    <ProductGrid products={props.products} searchValue={props.searchValue} catValue={props.catValue} searchCatValue={props.searchCatValue}/>
+    <About />
+    <Contact />
+    <Footer /> 
+    </>
   )
-
 }

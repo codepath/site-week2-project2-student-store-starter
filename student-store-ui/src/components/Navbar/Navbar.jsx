@@ -1,19 +1,22 @@
 import * as React from "react"
 import "./Navbar.css"
 import logo from "../../images/logo.png"
+import {Link} from "react-router-dom"
 
 export default function Navbar() {
   return (
     <nav className="navbar">
       <div>
+        <Link to="/"> 
         <img src={logo} alt="code path logo" id="logo"/>
+        </Link>
         <ul style={{ 
           display: "flex",         
           }}>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html">About Us</a></li>
-          <li><a href="index.html">Contact Us</a></li>
-          <li><a href="index.html">Buy Now</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="#About">About Us</a></li>
+          <li><a href="#Contact">Contact Us</a></li>
+          <li><a href="#buy-now">Buy Now</a></li>
         </ul>
       </div>
     </nav>

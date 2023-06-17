@@ -6,7 +6,7 @@ export default function About() {
     return(
         <div>
     
-    <h1 style={{marginLeft: '350px',
+    <h1 id="About" style={{marginLeft: '350px',
             marginTop: '90px'}}>About</h1> 
 
     <div className="about" style={{ 
@@ -15,11 +15,8 @@ export default function About() {
         fontSize: '20px',
         borderStyle: 'solid',
         display: 'flex',
-        // marginBottom: '18px',
         maxWidth:'1100px', 
-        margin: '0 auto'
-        // marginLeft: '350px' 
-        
+        margin: '0 auto'        
         }}>
 
         <p>The codepath student store offers great products at great prices from a great team and for a great cause.

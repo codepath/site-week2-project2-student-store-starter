@@ -1,19 +1,11 @@
 import * as React from "react"
 import axios from 'axios'
 import { useEffect, useState } from "react"
-
-import Navbar from "../Navbar/Navbar"
-import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
 import "./App.css"
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Hero from "../Hero/Hero"
-import About from "../About/About"
-import Search from "../Search/Search"
-import ProductGrid from "../ProductGrid/ProductGrid"
-import Contact from "../Contact/Contact"
-import Footer from "../Footer/Footer"
-import Logo from "../Logo/Logo"
+import ProductDetails from "../ProductDetails/ProductDetails"
+
 
 
 export default function App() {
@@ -35,21 +27,18 @@ const [catValue, setCatValue] = useState('')
     <>
     <div className="app">
       <BrowserRouter>
-      {/* <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/About" element={<About />} />
-      </Routes> */}
         <main>
-          {/* {products?.map((product,index) => (<h1 key={index + product.className}>{product.name}</h1>))} */}
-          <Sidebar />
-          <Navbar />
-          <Hero />
-           <Search products={products} searchValue={searchValue} setSearchValue={setSearchValue} setCatValue={setCatValue} setSearchCatValue={setSearchCatValue}/>
-           <Home />
-          <ProductGrid products={products} searchValue={searchValue} catValue={catValue} searchCatValue={searchCatValue}/>
-          <About />
-          <Contact />
-          <Footer />
+        <Routes>
+          <Route path="" element={<Home products={products}
+           searchValue={searchValue}
+        setSearchValue={setSearchValue}
+        setSearchCatValue={setSearchCatValue}
+        setCatValue={setCatValue}
+        catValue={catValue}
+        searchCatValue={searchCatValue}
+        />}/>
+      <Route path="products/:id" element={<ProductDetails products={products}/>}/>
+      </Routes>
         </main>
       </BrowserRouter>
     </div>

@@ -1,43 +1,50 @@
-import * as React from "react"
-import "./ProductGrid.css"
+import * as React from "react";
+import "./ProductGrid.css";
+import ProductCard from "../ProductCard/ProductCard";
 
 export default function ProductGrid(props) {
-     // console.log(products);
   let newProducts;
-  //needs to be moved to ProductGrid
-if (props.searchCatValue === 'search') {
-  newProducts=props.products?.filter((product) =>
-  product.name.toLowerCase().includes(props.searchValue.toLowerCase()));  
-}
 
-else if (props.searchCatValue === 'category') {
-  if (props.catValue === 'all') {
-    newProducts=props.products
+  if (props.catValue === "all") {
+    newProducts = props.products;
+
+    newProducts = props.products?.filter((product) =>
+      product.name.toLowerCase().includes(props.searchValue.toLowerCase())
+    );
+  } else {
+    newProducts = props.products?.filter((product) =>
+      product.name.toLowerCase().includes(props.searchValue.toLowerCase())
+    );
+
+    newProducts = newProducts?.filter((product) =>
+      product.category.toLowerCase().includes(props.catValue.toLowerCase())
+    );
   }
- else {newProducts=props.products?.filter((product) =>
-  product.category.toLowerCase().includes(props.catValue.toLowerCase()))}; 
-}
 
-else {
-newProducts=props.products
-}
-
-function createProduct(info) {
+  function createProduct(info) {
     return (
-      <div className="product">
+      <div className="product-name">
         <img src={info.image} />
         <p>{info.name}</p>
         <p>{info.price}</p>
-        </div>
-    )
+      </div>
+    );
   }
 
   return (
+    <>
+      <h2 id="buy-now" style={{ marginLeft: "50px", font: "large" }}>
+        Best Selling Products
+      </h2>
       <div className="productGrid">
-      {
-        newProducts?.map(product => createProduct(product))
-      }
+        {newProducts?.length === 0 ? (
+          <p className="gridP">Nun Here!</p>
+        ) : (
+          newProducts?.map((product) => (
+            <ProductCard product={product} createProduct={createProduct} />
+          ))
+        )}
       </div>
-  )
+    </>
+  );
 }
-

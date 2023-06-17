@@ -1,22 +1,8 @@
-.productGrid{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 50px;
-    gap: 25px;
-  }
-
-  img {
-    width: 350px;
-    height: 350px;
-    padding: 10px;
-    padding-top: 20px;
-  }
-  
-  .product {
-    padding: 5px;
-    border: 1px solid black;
-    /* border-radius: 50px; */
-    /* padding-top: 30px; */
-  }
+.productGrid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 5px;
+  gap: 25px;
+}

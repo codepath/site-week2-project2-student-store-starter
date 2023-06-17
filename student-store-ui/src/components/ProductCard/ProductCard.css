@@ -1,0 +1,13 @@
+img {
+    width: 350px;
+    height: 350px;
+    padding: 10px;
+    padding-top: 20px;
+  }
+
+  .product-name {
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 10px;      
+  }
+  

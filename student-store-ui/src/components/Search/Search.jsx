@@ -39,6 +39,7 @@ export default function Search(props) {
                 </button>
             </form>
         </div>
+        
         <div className="categories">
             <button className="cat-button" name="all" onClick={handleCatSubmit}>All Categories</button>
             <button className="cat-button" name="clothing" onClick={handleCatSubmit}>Clothing</button>

@@ -4,7 +4,7 @@ import happygirl from "../../images/happygirl.png"
 export default function Contact() {
     return(
         <div>
-        <h1 style={{marginLeft: '350px',
+        <h1 id="Contact" style={{marginLeft: '350px',
             marginTop: '90px'}}>Contact</h1> 
 
         <div className="contact" style={{ 
