@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import "./ProductDetails.css";
 
 export default function ProductDetails(){
     let params = useParams();
@@ -25,8 +26,8 @@ export default function ProductDetails(){
                     </div>
 
                     <div className="product--side-summary">
-                        <p className="product-name">{product.name}</p>
-                        <p className="product-price">{product.price}</p>
+                        <h1 className="product-name">{product.name}</h1>
+                        <p className="product-price">${product.price}</p>
                         <div className="product-rating"></div>
                     </div>
 

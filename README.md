@@ -29,7 +29,27 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - [ ] Your choice! (Replace this bullet explaining what you implemented. Example: Users can leave ratings for products they have purchased.)
 
 ### Additional Resources Used
+Google Material Icons
 
+### Walkthrough Video
+
+https://www.loom.com/share/8e503919a8514255b1b43ed8e9b2e757?sid=8309bbd9-79f1-4de7-b57e-07dec5e0bebf
+
+### Reflection
+- Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
+
+Yes, learning about useState and understanding how pages are reloading with changing variables was really helpful in building out the project of this week. It was also really helpful to understand how the navigation in React works using the React Router library. I think I felt least prepared to complete the sidebar featur because I think it requires learning about other react hooks that were not talked about in much length during the class time.
+
+- If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
+
+I would have loved to continue styling my product details page, and add some css animations to the website. I also would have liked to implement my sidebar checkout cart and have compartmentalize the home page better. I wanted to also focus more on ensuring my website is more accessible, so I would have wanted to implement a way for users to navigate my website using only tab keys among other accessiblity features. 
+
+- Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
+
+Understanding React was diffcult but I was able to build out a functional store which I think went really well for me. I did not expect the search bar to some extra critical thinking and caution, but I'm glad I was able to design and implement a neat solution to have products be filtered by searches and categories. I really like our Marwan included images in his footer, and I would have liked to add a similar thing in my website.
+
+### Shout Outs
+Jordan, Niya, Sophia, Oj, and the amazing instructors!
 
 ## *Week 3* Application Features
 
