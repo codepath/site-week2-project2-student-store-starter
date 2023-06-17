@@ -6,6 +6,10 @@ Submitted by: **Kennedy Parks**
 
 ### Walkthrough Video
 
+![Kapture 2023-06-16 at 19 07 18](https://github.com/KennedyParks/site-week2-project2-student-store-starter/assets/112662157/17e0ba5c-808a-4055-9e1a-ceab690344b5)
+
+
+
 ## *Week 2* Application Features
 
 ### Core Features ss
