@@ -30,7 +30,7 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 
 It is a little more interactive with the use of css and animaitons.
 
-Video WalkThrough
+## Video WalkThrough
 <a href="https://www.loom.com/share/3b28506c13c841aebefd2cae207f2927">
     <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/3b28506c13c841aebefd2cae207f2927-with-play.gif">
   </a>
