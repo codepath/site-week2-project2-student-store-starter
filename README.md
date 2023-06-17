@@ -5,8 +5,7 @@ Submitted by: **Kennedy Parks**
 **Live Website** 
 
 ### Walkthrough Video
-
-![Kapture 2023-06-16 at 19 07 18](https://github.com/KennedyParks/site-week2-project2-student-store-starter/assets/112662157/17e0ba5c-808a-4055-9e1a-ceab690344b5)
+![Kapture 2023-06-16 at 19 07 18](https://github.com/KennedyParks/site-week2-project2-student-store-starter/assets/112662157/144ddf18-288e-4b5d-9774-485925419bb8)
 
 ### Imgur video link
 https://imgur.com/a/svwM252
