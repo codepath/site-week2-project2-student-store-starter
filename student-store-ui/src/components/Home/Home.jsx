@@ -15,13 +15,14 @@ export default function Home() {
   const [displayedItemList, displayedItemListSet] = React.useState(null)
   
   const [currentItem, currentItemSet] = React.useState(null)
-  const [currentCategory, currentCategorySet] =  React.useState(null)
+  const [currentCategory, currentCategorySet] =  React.useState("")
 
   // Event Handlers / Click and KeyUp
 
   function handleSearchBar(e) {
     const searchInput = e.target.value.toLowerCase()
     const newFilteredItemList = itemList.filter(item => item.name.toLowerCase().includes(searchInput) && item.category.includes(currentCategory))
+    console.log(newFilteredItemList)
     displayedItemListSet(newFilteredItemList)
   }
 
@@ -48,7 +49,7 @@ export default function Home() {
       })
   }, [])
 
-  // Components => Home and Item Page
+  // Components => Home, Item, and NotFound Page
 
   function Home() {
     return (
@@ -68,7 +69,7 @@ export default function Home() {
             })
           }
         </div>
-        <div className="item-grid">
+        <div id="item-grid">
         {
             (displayedItemList) ? 
             displayedItemList.map((item) => {
@@ -88,19 +89,19 @@ export default function Home() {
             <h1>Loading...</h1>
         }
         </div>
-        <div className="about-section">
-          <img className="about-pic" src={homePic}/>
-          <h1>webite</h1>
-          <h3>cool webite that talks about a cat skating its skateboard</h3>
-          <h3>even more cooler text that talks about skating and doing cool cat tricks</h3>
-          <h3>wowwwww epic trick yes yes this is another paragraph about it</h3>
-          <h3>wowwwww epic trick yes yes this is another paragraph about it</h3>
-          <h3>wowwwww epic trick yes yes this is another paragraph about it</h3>
+        <div id="about-section">
+          <img id="about-pic" src={homePic}/>
+          <h1>{"about the cool epic skating cat !!"}</h1>
+          <h3>{"this cool cat has its own store and merch and has decided to set his foot into the full-stack webdev world !"}</h3>
+          <h3>{"as you can see, his endeavors have been [questionably] successful and have blossomed into fruition (making a lot of money)."}</h3>
+          <h3>{"he additionally hopes that you join his \"epic membership cool cat skating premium club\" for exclusive deals and offers for only $19.99 a month!"}</h3>
+          <h3>{"he hopes you had a wonderful visit to his website and hopes you return soon enough !!!"}</h3>
+          <h3>{"(side note: website made by his extremely underpaid human react developer [who will never be as cool as he is])"}</h3>
         </div>
-        <div className="footer">
-          <h3 className="footer-text">contact the cool epic skating cat !</h3>
-          <h3 className="footer-text">phone: skate-cat-epic-999</h3>
-          <h3 className="footer-text">email: theepicskatingcat@cool.com</h3>
+        <div id="footer">
+          <h1 className="footer-text">contact the cool epic skating cat !</h1>
+          <h2 className="footer-text">phone: skate-cat-epic-999</h2>
+          <h2 className="footer-text">email: theepicskatingcat@cool.com</h2>
         </div>
       </div>
     )
@@ -117,12 +118,23 @@ export default function Home() {
     )
   }
 
+  function NotFound() {
+    return (
+      <div className="not-found">
+        <h1>skating cat did not find the page you were looking for !!!</h1>
+        <h1>{"try a cooler \"window.location.pathname\" !!! (preferrably \"/item/x\" where 1≤x≤16 and x∈N)"}</h1>
+        <img src={homePic} />
+      </div>
+    )
+  }
+
   // Returning Component
 
   return (
     <Routes>
       <Route path="/" element={Home()}/>
       <Route path={"/item/" + currentItem?.id} element={ItemPage(currentItem)}/>
+      <Route path={"*"} element={NotFound()}/>
     </Routes>
   )
 }

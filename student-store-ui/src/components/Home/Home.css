@@ -11,6 +11,7 @@
   left: 10%;
   font-size: 60px;
   color: #F24C3D;
+  backdrop-filter: blur(10px);
 }
 
 #hero-pic-header-2 {
@@ -31,6 +32,14 @@
   display: block;
   margin: 0 auto;
   margin-top: 30px;
+  border:solid 3px #fff;
+  box-sizing:border-box;
+  font-size:2em;
+  height:2em;
+  outline:solid #fc0 0;
+  padding:.5em;
+  width:30vw;
+  z-index:1;
 }
 
 .display-categories {
@@ -38,6 +47,17 @@
   margin: 0 auto;
   text-align: center;
   margin-top: 30px;
+}
+
+.category-buttons {
+  border-radius: 5px;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 
 .category-buttons:visited {
@@ -65,7 +85,7 @@
   padding-bottom: 10px;
 }
 
-.item-grid {
+#item-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -73,7 +93,7 @@
   gap: 40px;
   padding-left: 6%;
   padding-right: 6%;
-  padding-top: 3%;
+  padding-top: 1.5%;
   padding-bottom: 3%;
   margin-bottom: 6%;
   background-color: #F24C3D;
@@ -91,21 +111,20 @@
   margin-left: 10%;
 }
 
-.about-section {
+#about-section {
   margin-left: 10%;
   margin-top: 6%;
   margin-bottom: 5%;
 }
 
-.about-pic {
+#about-pic {
   float: right;
-  width: 900px;
+  width: 600px;
   height: 300px;
-  margin-bottom: 3%;
-  margin-right: 3%;
+  margin: 3%;
 }
 
-.footer {
+#footer {
   width: 100%;
   max-width: 100vw;
   background-color: #22A699;
@@ -118,4 +137,8 @@
 .footer-text {
   margin-left: 10%;
   display: flex;
+}
+
+.not-found {
+  padding-left: 8%;
 }
