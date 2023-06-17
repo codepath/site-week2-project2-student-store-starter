@@ -31,7 +31,7 @@ function Categories({
       <ul>
         <li className="links"
             onClick={() => {
-              handleClick("", true);
+              handleClick("all", true);
             }}>
             All Categories
         </li>

@@ -11,12 +11,21 @@ function BuyNow({ products, setProducts, originalProducts }) {
 
   function handleSearchProduct(e) {
     const searchTerm = e.target.value;
-    setSearchTerm(searchTerm);
-    setProducts(
-      originalProducts.filter((product) => {
+    setSearchTerm(searchTerm)
+    let filterProd
+    if (categories==='all'){
+     filterProd= originalProducts.filter((product) => {
+      return product.name.toLowerCase().includes(searchTerm.toLowerCase());
+    })
+    }
+     else {
+      filterProd= originalProducts.filter((product) => {
         return product.name.toLowerCase().includes(searchTerm.toLowerCase());
-      })
-      .filter(product => product.category === categories )
+      }).filter(product => product.category === categories )
+    }
+    
+    setProducts(
+      filterProd
     );
     
   }
