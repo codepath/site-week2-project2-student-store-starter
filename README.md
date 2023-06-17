@@ -14,11 +14,16 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 
 ### Core Features
 
-- [ ] The website displays header, banner, search, product grid, about, contact, and footer section.
-- [ ] The website displays the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store) on initial page load.
-- [ ] Users can click on a category (clothing, food, etc.) to filter the product grid by type.
-- [ ] Users can search for products.
-- [ ] User can click on a product in the grid to navigate to a new page containing additional product details.
+- [X] The website displays header, banner, search, product grid, about, contact, and footer section.
+- [X] The website displays the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store) on initial page load.
+- [X] Users can click on a category (clothing, food, etc.) to filter the product grid by type.
+- [X] Users can search for products.
+- [X] User can click on a product in the grid to navigate to a new page containing additional product details.
+
+<a href="https://www.loom.com/share/9a0f62c9d7ab46329a9f20c1950b58eb">
+    <p>Marley's Student Store</p>
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/9a0f62c9d7ab46329a9f20c1950b58eb-with-play.gif">
+  </a>
 
 ### Stretch Features
 

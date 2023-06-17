@@ -14,7 +14,10 @@ export default function ProductGrid({products}) {
           </div>
           <div className= "product-info">
             <p>{info.name}</p>
-            <p>${info.price}</p>
+            <p>{info.price.toLocaleString("us-EN", {
+                      style: "currency",
+                      currency: "USD",
+                })}</p>
           </div>
         </div>
       </section>

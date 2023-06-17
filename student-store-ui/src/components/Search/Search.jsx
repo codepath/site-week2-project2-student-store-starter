@@ -34,22 +34,24 @@ export default function Search({ handleSearch, products }) {
     if (!searchTerm && !catSelect) {
       return products;
     }
-
     let filtered = products;
-
     if (searchTerm) {
       filtered = filtered.filter((product) =>
         product.name.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
-
     if (catSelect) {
       filtered = filtered.filter((product) =>
         product.category.includes(catSelect)
       );
     }
-
     return filtered;
+  };
+
+  const [style, setStyle] = useState("filter");
+  
+  const changeStyle = () => {
+    setStyle("filter2");
   };
 
   return (

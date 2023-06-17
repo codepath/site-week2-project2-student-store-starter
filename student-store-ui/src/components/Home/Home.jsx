@@ -4,7 +4,6 @@ import Hero from "../Hero/Hero";
 import Search from "../Search/Search";
 import Navbar from "../Navbar/Navbar";
 import { useState } from "react";
-import Filter from "../Filter/Filter";
 
 
 export default function Home({ products }) {

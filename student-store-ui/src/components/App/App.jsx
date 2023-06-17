@@ -8,6 +8,7 @@ import About from "../About/About";
 import Contact from "../Contact/Contact";
 import ProductDetails from "../ProductDetails/ProductDetails"
 import { useState } from "react";
+import ProductGrid from "../ProductGrid/ProductGrid";
 
 export default function App() {
   // Toggle sidebar
