@@ -5,6 +5,8 @@
   min-height: 100vh;
   display: flex;
   flex-direction: row;
+  background-color:#ffffff;
+  font-family: 'Geologica', sans-serif;
 }
 .app main {
   width: 100%;
