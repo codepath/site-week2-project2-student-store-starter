@@ -5,6 +5,7 @@ import cartPNG from "../../../Assets/cart_logo.png";
 import About from "../About/About";
 import Contact from "../Contact/Contact";
 import Footer from "../Footer/Footer";
+import Shop from "../Shop/Shop";
 
 function Hero() {
   // displays hero banner
@@ -30,6 +31,7 @@ export default function Home() {
   return (
     <div className="home">
       <Hero />
+      <Shop />
       <About />
       <Contact />
       <Footer />

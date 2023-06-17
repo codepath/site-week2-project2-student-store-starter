@@ -26,7 +26,7 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - [ ] Users can click the '+' button on a product cart to increment that product in the shopping cart.
 - [ ] Users can click the '-' button on a product cart to decrement that product in the shopping cart.
 - [ ] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
-- [ X ] Users can nagivate between home and shop pages
+- [ X ] CSS animations (text hovering)
 
 ### Additional Resources Used
 Google Material Icons

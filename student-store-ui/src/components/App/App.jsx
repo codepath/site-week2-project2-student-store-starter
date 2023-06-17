@@ -28,7 +28,6 @@ export default function App() {
       <Routes>
           <Route path="/" element={<Overlay />}>
             <Route path="/" element={<Home />}/>
-            <Route path="/Shop" element={<Shop />}/>
             <Route path="products/:id" element={<ProductDetails />} />
           </Route>
           <Route path='*' element={<> <Navbar/> <Outlet/> </>}>
