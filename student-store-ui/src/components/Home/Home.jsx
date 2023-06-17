@@ -32,6 +32,7 @@ export default function Home() {
       <Hero />
       <About />
       <Contact />
+      <Footer />
     </div>
   )
 }

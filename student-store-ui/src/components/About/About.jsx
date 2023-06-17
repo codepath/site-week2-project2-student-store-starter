@@ -4,7 +4,7 @@ import "../../globals.css";
 
 export default function About(){
     return (
-        <section className="about-container">
+        <section className="about-container" id="about">
             <div className="content">
                 <h1 className="about-title title">About</h1>
                 <div className="body-content">

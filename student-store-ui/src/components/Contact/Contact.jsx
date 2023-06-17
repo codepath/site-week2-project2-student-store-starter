@@ -8,7 +8,7 @@ export default function Contact(){
         "123 Fake Street, San Francisco, CA"]
 
     return (
-        <section className="contact-container">
+        <section id="contact" className="contact-container">
             <div className="contact-content">
                 <h1 className="contact-title title">Contact Us</h1>
                 <div className="contacts">

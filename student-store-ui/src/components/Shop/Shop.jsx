@@ -4,13 +4,15 @@ import { Link } from "react-router-dom";
 import "./Shop.css";
 import "./QueryBars.css";
 import "./ProductGrid.css";
+import Footer from "../Footer/Footer";
 
 function ProductGrid({ products, filter }) {
     // Returns all products in grid style using CSS
     const filteredProducts = products.filter((product) => {
         // filters products by search and category tag. 
-        return (product.name.toLowerCase().includes(filter.search.toLowerCase()) || filter.search === "") &&
-            (product.category.toLowerCase() === filter.category.toLowerCase() || filter.category.toLowerCase() === "all");
+        return (product.name.toLowerCase().includes(filter.search.toLowerCase())) &&
+            (product.category.toLowerCase() === filter.category.toLowerCase() 
+            || filter.category.toLowerCase() === "all");
     });
 
     return (
@@ -110,6 +112,7 @@ export default function Shop() {
                     <FilterBar updateQuery={queryUpdateHandler} activeCategory={query.category} />
                 </div>
                 <ProductGrid products={products} filter={query} />
+                <Footer />
             </div>
     )
 }

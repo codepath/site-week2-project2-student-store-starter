@@ -24,14 +24,14 @@ function Links() {
         </Link>
       </li>
       <li>
-        <Link to="/">
+        <Link to="/#about">
           <div className="social-link">
             About Us
           </div>
         </Link>
       </li>
       <li>
-        <Link to="/">
+        <Link to="/#contact">
           <div className="social-link">
             Contact Us
           </div>
