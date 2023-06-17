@@ -3,16 +3,15 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 import Home from "../Home/Home";
+import ProductDetails from "../ProductDetails/ProductDetails"; 
 import "./App.css";
 import Subnavbar from "../Subnavbar/Subnavbar";
 import Hero from "../Hero/Hero";
 import About from "../About/About";
 import Contact from "../Contact/Contact";
 import Footer from "../Footer/Footer";
-// import ProductCard from "../ProductCard/ProductCard";
 import { useEffect, useState } from "react";
 import axios from "axios";
-// import ProductGrid from "../ProductGrid/ProductGrid";
 
 export default function App() {
   const url = "https://codepath-store-api.herokuapp.com/store";
@@ -21,37 +20,37 @@ export default function App() {
   const [searchTerm, setSearchTerm] = React.useState('');
   const [selectedCategory, setSelectedCategory] = useState("");
 
-
-
   useEffect(() => {
     axios.get(url).then((response) => {
       setProducts(response.data.products);
     });
   }, []);
-  
-
 
   return (
+    
     <div className="app">
-      {/* <BrowserRouter> */}
-      {/* <Routes>
-        <Route path="/" element ={<Home></Home>}></Route>
-        <Route path="/About" element={<About/>}></Route>
-      </Routes> */}
       <main>
-        <Sidebar />
+      <BrowserRouter>
+      <Sidebar />
+      <Navbar />
+      <Hero/>
+      <Subnavbar setSearchTerm={setSearchTerm} setSelectedCategory={setSelectedCategory} />
 
-        <Navbar />
-        <Hero />
-        <Subnavbar setSearchTerm={setSearchTerm} setSelectedCategory={setSelectedCategory} />
-
-        <Home products={products} searchTerm={searchTerm} selectedCategory={selectedCategory} />
-
-        <About />
+      
+        <Routes>
+          <Route path="/" element={<Home products={products} searchTerm={searchTerm} selectedCategory={selectedCategory} />}></Route>
+          <Route path="/About" element={<About/>}></Route>
+          <Route path="/products/:id" element={<ProductDetails />}></Route>
+ 
+        </Routes>
+      
+        <About/>
         <Contact />
         <Footer />
-      </main>
-      {/* </BrowserRouter> */}
+        </BrowserRouter>
+        </main>
+     
     </div>
+   
   );
 }

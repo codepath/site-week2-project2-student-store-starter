@@ -1,16 +1,20 @@
 import * as React from "react";
 import "./ProductCard.css";
+import { Link } from 'react-router-dom';
+
 
 
 export default function ProductCard({ product }) {
   return (
 
+    <div className="home">
 
+    
     <div className="product-card">
       <div className="media">
-        <a href={`/products/${product.id}`}>
-          <img src={product.image} alt="product cover" loading="lazy" />
-        </a>
+      <Link to={`/products/${product.id}`}>
+  <img src={product.image} alt="product cover" loading="lazy" />
+</Link>
       </div>
       <div className="product-info">
         <div className="main-info">
@@ -35,6 +39,7 @@ export default function ProductCard({ product }) {
           
         </div>
       </div>
+    </div>
     </div>
   );
 }

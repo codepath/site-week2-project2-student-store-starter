@@ -25,7 +25,7 @@ export default function Subnavbar({ searchTerm, setSelectedCategory, setSearchTe
               value={searchTerm}
               onChange={handleSearchChange}
             ></input>
-            <i className="material-icons">search</i>
+            {/* <i className="material-icons">search</i> */}
           </div>
           <div className="links">
             <span className="help">
@@ -44,7 +44,7 @@ export default function Subnavbar({ searchTerm, setSelectedCategory, setSearchTe
           </div>
           <ul className="category-menu open">
             <li className="is-active">
-              <button>All Categories</button>
+              <button onClick={() =>handleCategory("")}>All Categories</button>
             </li>
             <li className="">
             <button onClick={() => handleCategory("Clothing")}>Clothing</button>
