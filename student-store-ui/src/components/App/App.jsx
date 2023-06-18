@@ -10,13 +10,14 @@ import ProductCard from "../ProductCard/ProductCard";
 import axios from "axios";
 
 export default function App() {
+  //stores the product's list
   const [productList, setProductList] = useState([]);
   //   const [isFetching, setIsFetching] = useState(true);
   //   const [error, setIsError] = useState("");
   //   const [isOpen, setIsOpen] = useState("");
   //   const [shoppingCart, setShoppingCard] = useState("");
   //   const [checkoutForm, setCheckoutForm] = useState("");
-
+  //useeffect, gets the api
   useEffect(() => {
     axios
       .get("https://codepath-store-api.herokuapp.com/store")
@@ -26,10 +27,10 @@ export default function App() {
       });
   }, []);
 
-  console.log("App", productList);
   return (
     <>
       <div></div>
+      {/* returns the router and routes according to the url */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home products={productList} />} />

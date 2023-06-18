@@ -14,6 +14,7 @@ const ProductCard = ({
   //   const { productId } = useParams();
 
   return (
+    // returns the productbar the main card
     <div className="product-card">
       <div className="product-name">
         <div className="media">

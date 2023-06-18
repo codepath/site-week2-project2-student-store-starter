@@ -4,6 +4,8 @@ import Logo from "../Logo/Logo";
 // import Header from "../Header/Header";
 import { Link } from "react-router-dom";
 
+//returns the navbar. The navigation bar
+
 export default function Navbar() {
   return (
     <>

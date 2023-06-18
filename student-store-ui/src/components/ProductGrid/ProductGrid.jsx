@@ -14,6 +14,7 @@ const ProductGrid = ({ products, devcategory }) => {
   // );
   // console.log("flte", filteredData);
   return (
+    //returns the grid where the product cards will be displayed
     <div
       id="AllCategories"
       style={{

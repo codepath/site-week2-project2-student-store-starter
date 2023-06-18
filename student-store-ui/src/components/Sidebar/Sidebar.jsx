@@ -1,5 +1,8 @@
 import * as React from "react";
 import "./Sidebar.css";
+import { Link } from "react-router-dom";
+import { AiOutlineArrowRight } from "react-icons/fa";
+import { FaBeerMugEmpty } from "react-icons/fa";
 
 export default function Sidebar({
   isOpen,
@@ -12,8 +15,9 @@ export default function Sidebar({
 }) {
   return (
     <section className="sidebar">
-      {/* <p>Sidebar</p> */}
-      {/* <button className="toggle-button">Sidebar</button> */}
+      <Link to="#" className="menu-bar">
+        <FaBeerMugEmpty />
+      </Link>
     </section>
   );
 }

@@ -3,6 +3,7 @@ import "./Hero.css";
 
 const Hero = () => {
   return (
+    //return the hero text and section of the cod
     <div className="hero">
       <p className="intro">Welcome!</p>
       <p className="find-merch">Find Your Merch!</p>

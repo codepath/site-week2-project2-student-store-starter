@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const Logo = () => {
   return (
+    //stores the logo
     <div className="logo">
       <img
         to="/"

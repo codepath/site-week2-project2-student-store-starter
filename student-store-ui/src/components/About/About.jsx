@@ -2,6 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
+    //Returns about section of code
     <div tag="about-us">
       <div className="content">
         <h3>About Us</h3>

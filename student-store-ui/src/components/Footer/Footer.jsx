@@ -4,6 +4,7 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <div>
+      {/* //displays the footer */}
       <footer className="footer">
         <div className="content">
           <div className="top">

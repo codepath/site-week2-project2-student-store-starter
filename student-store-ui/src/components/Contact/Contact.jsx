@@ -3,6 +3,7 @@ import "./Contact.css";
 
 const Contact = () => {
   return (
+    //returns the contact information info
     <div className="contact-box">
       <div>
         <div className="content">

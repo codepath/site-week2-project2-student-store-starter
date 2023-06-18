@@ -4,9 +4,10 @@ import axios from "axios";
 import ProductView from "../ProductView/ProductView";
 
 const ProductDetail = () => {
+  //puts in the setProduct and stores it in product
   const [product, setProduct] = useState("");
+  //helps with the routing
   const { productId } = useParams();
-  console.log(productId);
   useEffect(() => {
     axios
       .get(`https://codepath-store-api.herokuapp.com/store/${productId}`)

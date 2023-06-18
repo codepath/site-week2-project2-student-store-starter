@@ -14,11 +14,13 @@ export default function Home({ products, category }) {
   //create new state
 
   return (
+    //puts together all of the components and displays them
     <div className="home">
       <Navbar />
       <Hero />
       {/* second navbar */}
       <Subnavbar products={products} />
+
       <About />
       <Sidebar />
       <Contact />

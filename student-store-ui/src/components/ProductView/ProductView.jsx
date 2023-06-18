@@ -15,6 +15,7 @@ const ProductView = ({
   console.log("Product id " + productId);
 
   return (
+    //puts in the nav bar and the product card
     <div className="product-view">
       <Navbar />
       <Hero />
