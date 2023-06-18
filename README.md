@@ -22,10 +22,10 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 
 ### Stretch Features
 
-- [ ] Users can click to expand the shopping cart in the left navigation.
-- [ ] Users can click the '+' button on a product cart to increment that product in the shopping cart.
-- [ ] Users can click the '-' button on a product cart to decrement that product in the shopping cart.
-- [ ] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
+- [ X ] Users can click to expand the shopping cart in the left navigation.
+- [ X ] Users can click the '+' button on a product cart to increment that product in the shopping cart.
+- [ X ] Users can click the '-' button on a product cart to decrement that product in the shopping cart.
+- [ X ] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
 - [ X ] CSS animations (text hovering)
 
 ### Additional Resources Used
@@ -33,7 +33,7 @@ Google Material Icons
 
 ### Walkthrough Video
 
-https://www.loom.com/share/650a1bbce5e742b2bbdac6f32a7bba72?sid=4f939568-8d2e-4b35-a6c8-4684633da874
+https://www.loom.com/share/5711cb411b6c4044a631d999ba506331?sid=06ca8283-57ce-49f4-ac22-a7e15ed2c856
 
 ### Reflection
 - Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
