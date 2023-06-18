@@ -10,7 +10,7 @@ import { CheckoutCartContext, CheckoutCartDispatchContext } from "../CheckoutCar
 function ProductGrid({ products, filter }) {
     // Returns all products in grid style using CSS
     const dispatch = useContext(CheckoutCartDispatchContext);
-    const checkoutCart = useContext(CheckoutCartContext);
+    // const checkoutCart = useContext(CheckoutCartContext);
     const filteredProducts = products.filter((product) => {
         // filters products by search and category tag. 
         return (product.name.toLowerCase().includes(filter.search.toLowerCase())) &&
@@ -22,9 +22,7 @@ function ProductGrid({ products, filter }) {
         // after a user clicks the plus/minus sign
 
         event.preventDefault();
-        // console.log("buttonpress")
         let type = event.target.id + "ed"; // using id attribute to get dispatch type
-        // console.log("apples");
         dispatch({
             productID: product.id,
             type : type,
@@ -47,10 +45,10 @@ function ProductGrid({ products, filter }) {
                                 <p className="product-title">{product.name}</p>
                             </Link>
                             <div className="product-buttons">
-                                <button id="increment" onClick={(e) => handleProductButtonOnClick(e, product)} className="add">
+                                <button type="button" id="increment" onClick={(e) => handleProductButtonOnClick(e, product)} className="add">
                                     <i id="increment" className="material-icons">add</i>
                                 </button>
-                                <button id="decrement" onClick={(e) => handleProductButtonOnClick(e, product)} className="remove">
+                                <button type="button" id="decrement" onClick={(e) => handleProductButtonOnClick(e, product)} className="remove">
                                     <i id="decrement" className="material-icons">remove</i>
                                 </button>
                             </div>

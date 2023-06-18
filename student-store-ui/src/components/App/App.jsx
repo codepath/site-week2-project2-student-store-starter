@@ -28,9 +28,9 @@ export default function App() {
   return (
     // <div className="app-container">
 
-    <BrowserRouter>
+    <CheckoutCartDispatchContext.Provider value={dispatch}>
       <CheckoutCartContext.Provider value={checkoutCart}>
-        <CheckoutCartDispatchContext.Provider value={dispatch}>
+        <BrowserRouter>
           <Routes>
             <Route path="/" element={<Overlay />}>
               <Route path="/" element={<Home />} />
@@ -42,9 +42,9 @@ export default function App() {
           </Routes>
           {/* <main className="app-content">
       </main> */}
-        </CheckoutCartDispatchContext.Provider>
+        </BrowserRouter>
       </CheckoutCartContext.Provider>
-    </BrowserRouter>
+    </CheckoutCartDispatchContext.Provider>
 
     
 

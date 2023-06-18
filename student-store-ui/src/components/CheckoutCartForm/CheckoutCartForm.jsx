@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { CheckoutCartDispatchContext } from "../CheckoutCartContext/CheckoutCartContext";
+import "./CheckoutCartForm.css";
 function PurchaseMessage(){
     const [showLoader, setShowLoader] = useState(true); // used to display activiy loader
     useEffect(() => {
@@ -58,27 +59,40 @@ export default function CheckoutCartForm(){
     }
   
     return (
-      <>
-      <form onSubmit={handleSubmit}>
-        <label className="form-label" htmlFor="name"></label>
-        <input
-          type="text"
-          className="form-input"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-        />
-        <label className="form-label" htmlFor="email"></label>
-        <input
-          className="form-input"
-          type="text"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-        />
-        <button>{ "Buy Now"}</button>
-      </form>
-      {hasPurchased && <PurchaseMessage />}
-      </>
+      <div className="cart-payment-form-container">
+        <h1>Payment<i className="material-symbols-outlined">attach_money</i></h1>
+        <form className="cart-payment-form" onSubmit={handleSubmit}>
+          <label className="form-label" htmlFor="name">Name</label>
+          <input
+            type="text"
+            className="form-input"
+            name="name"
+            placeholder="Your Name"
+            value={formData.name}
+            onChange={handleChange}
+          />
+          <label className="form-label" htmlFor="email">Email</label>
+          <input
+            className="form-input"
+            type="text"
+            name="email"
+            placeholder="your@email.com"
+            value={formData.email}
+            onChange={handleChange}
+          />
+          <div className="form-checkbox-container">
+            <label className="form-label form-checkbox-label" htmlFor="agreement">I agree to CodePath Collectible's Terms of Service</label>
+            <input
+              className="form-checkbox"
+              type="checkbox"
+              name="agreement"
+              value={formData.email}
+              onChange={handleChange}
+            />
+          </div>
+          <button>{ "Buy Now"}</button>
+        </form>
+        {hasPurchased && <PurchaseMessage />}
+      </div>
     );
   }
