@@ -1,11 +1,9 @@
 import * as React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import "./Sidebar.css";
 import CheckoutCartForm from "../CheckoutCartForm/CheckoutCartForm";
 import CartItemsTable from "../CartItemsTable/CartItemsTable.jsx";
-
 export default function Sidebar() {
-  const [checkoutCart, setCheckoutCart] = useState({});
   const [isOpen, setIsOpen] = useState(false);
   return (
     <section className={"sidebar-container " + (isOpen ? "open" : "")}>
@@ -14,8 +12,8 @@ export default function Sidebar() {
       </button>
       {isOpen && (
         <>
-          <CartItemsTable checkoutItems={checkoutCart} />
-          <CheckoutCartForm setCheckoutCart={setCheckoutCart} />
+          <CartItemsTable />
+          <CheckoutCartForm/>
         </>
       )}
     </section>

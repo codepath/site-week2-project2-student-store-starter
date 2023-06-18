@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-
+import { useState, useEffect, useContext } from "react";
+import { CheckoutCartContext } from "../CheckoutCartContext/CheckoutCartContext";
 function CartProductTableRow({ product }){
     return (
       <div className="cart-product-row">
@@ -11,16 +11,21 @@ function CartProductTableRow({ product }){
     )
   }
 
-export default function CartItemsTable({ checkoutItems }){
-    
-    let [subTotal, taxesAndFees, total] = [0, 0, 0]
+export default function CartItemsTable(){
+    const checkoutCart = useContext(CheckoutCartContext); // checkout cart context
+    let [subTotal, taxesAndFees, total] = [0, 0, 0] // global variables
+
     const getCartTotals = () => {
+        // helper function calculates the 
+        // subtotals, taxes, and totals for a given
+        // order
         let currentSubTotal = 0;
-        for (const itemID of Object.keys(checkoutItems)){
-            const item = checkoutItems[itemID];
+        for (const itemID of Object.keys(checkoutCart)){
+            // for each item's price, add it to the currentSubtotal
+            const item = checkoutCart[itemID];
             currentSubTotal += item.price
         }
-
+        // 
         let currentTaxesAndFees = currentSubTotal * 0.0764
         let currentTotal = taxesAndFees + currentSubTotal;
         return [currentSubTotal, currentTaxesAndFees, currentTotal]
@@ -29,7 +34,7 @@ export default function CartItemsTable({ checkoutItems }){
         // calculate cart totals
         // everytime the checkout items are updated
       subTotal,taxesAndFees,total = getCartTotals();
-    }, [checkoutItems]);
+    }, [checkoutCart]);
 
     // display user checkout items and
     return (
@@ -42,8 +47,8 @@ export default function CartItemsTable({ checkoutItems }){
             <span>Unit Price</span>
             <span>Cost</span>
           </div>
-          {Object.keys(checkoutItems).map((itemID) => {
-            let item = checkoutItems[itemID];
+          {Object.keys(checkoutCart).map((itemID) => {
+            let item = checkoutCart[itemID];
             // display items only with quantities > 0
             item.quantity > 0 ?  (
               <CartProductTableRow product={item} />

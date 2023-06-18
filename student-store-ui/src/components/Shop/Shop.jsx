@@ -1,45 +1,66 @@
-import {useState, useEffect} from "react";
+import {useState, useEffect, useContext} from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./Shop.css";
 import "./QueryBars.css";
 import "./ProductGrid.css";
 import Footer from "../Footer/Footer";
+import { CheckoutCartContext, CheckoutCartDispatchContext } from "../CheckoutCartContext/CheckoutCartContext";
 
 function ProductGrid({ products, filter }) {
     // Returns all products in grid style using CSS
+    const dispatch = useContext(CheckoutCartDispatchContext);
+    const checkoutCart = useContext(CheckoutCartContext);
     const filteredProducts = products.filter((product) => {
         // filters products by search and category tag. 
         return (product.name.toLowerCase().includes(filter.search.toLowerCase())) &&
             (product.category.toLowerCase() === filter.category.toLowerCase() 
             || filter.category.toLowerCase() === "all");
     });
+    function handleProductButtonOnClick(event, product) {
+        // this handler will update the cart
+        // after a user clicks the plus/minus sign
+
+        event.preventDefault();
+        // console.log("buttonpress")
+        let type = event.target.id + "ed"; // using id attribute to get dispatch type
+        // console.log("apples");
+        dispatch({
+            productID: product.id,
+            type : type,
+            product : product
+        });
+    };
 
     return (
         <>
             <h1 className="products-title title">Best Selling Products</h1>
             <div className="product-grid">
-                {/* // rendering products */}
-                {filteredProducts.map((product) => (
-                    <div className="product">
-                        <Link to={`/products/${product.id}`}>
-                            <img src={product.image} alt={"image of" + product.name} />
-                            <p className="product-title">{product.name}</p>
-                        </Link>
-                        <div className="product-buttons">
-                            <button onClick={() => console.log("button click")} className="add">
-                                <i className="material-icons">add</i>
-                            </button>
-                            <button onClick={() => console.log("button click")} className="remove">
-                                <i className="material-icons">remove</i>
-                            </button>
-                        </div>
-                        <div className="prices"></div>
-                        <p className="product-price">${product.price.toFixed(2)}</p>
-                    </div>
+                {/* // renders each product */}
+                {filteredProducts.map((product) => {
                     
 
-                ))}
+                    return (
+                        <div className="product">
+                            <Link to={`/products/${product.id}`}>
+                                <img src={product.image} alt={"image of" + product.name} />
+                                <p className="product-title">{product.name}</p>
+                            </Link>
+                            <div className="product-buttons">
+                                <button id="increment" onClick={(e) => handleProductButtonOnClick(e, product)} className="add">
+                                    <i id="increment" className="material-icons">add</i>
+                                </button>
+                                <button id="decrement" onClick={(e) => handleProductButtonOnClick(e, product)} className="remove">
+                                    <i id="decrement" className="material-icons">remove</i>
+                                </button>
+                            </div>
+                            <div className="prices"></div>
+                            <p className="product-price">${product.price.toFixed(2)}</p>
+                        </div>
+
+
+                    )
+                })}
             </div>
         </>
 

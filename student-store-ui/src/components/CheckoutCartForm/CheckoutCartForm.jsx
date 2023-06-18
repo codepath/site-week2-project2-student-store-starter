@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { CheckoutCartDispatchContext } from "../CheckoutCartContext/CheckoutCartContext";
 function PurchaseMessage(){
     const [showLoader, setShowLoader] = useState(true); // used to display activiy loader
     useEffect(() => {
@@ -20,8 +21,9 @@ function PurchaseMessage(){
         </>
     )
 }
-export default function CheckoutCartForm({ setCheckoutCart }){
+export default function CheckoutCartForm(){
     // form to handle user checkout credentials
+    const dispatch = useContext(CheckoutCartDispatchContext);
     const [formData, setFormData] = useState({ name: "", email: "" });
     const [hasPurchased, setHasPurchased] = useState(false);
     // check if empty
@@ -39,7 +41,9 @@ export default function CheckoutCartForm({ setCheckoutCart }){
       // then show purchase message
       setHasPurchased(true);
       setFormData({ name: "", email: "" });
-      setCheckoutCart({});
+      dispatch({
+        type: "cleared"
+      });
     }
   
     // Update local state with current state of input element (render each keystroke)
