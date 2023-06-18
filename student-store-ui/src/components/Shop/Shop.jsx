@@ -133,7 +133,6 @@ export default function Shop() {
                     <FilterBar updateQuery={queryUpdateHandler} activeCategory={query.category} />
                 </div>
                 <ProductGrid products={products} filter={query} />
-                <Footer />
             </div>
     )
 }

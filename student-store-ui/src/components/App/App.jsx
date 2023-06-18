@@ -26,13 +26,14 @@ export default function App() {
     </>
   )
   return (
-    <CheckoutCartContext.Provider value={checkoutCart}>
-      <CheckoutCartDispatchContext.Provider value={dispatch}>
-        <BrowserRouter>
+    // <div className="app-container">
+
+    <BrowserRouter>
+      <CheckoutCartContext.Provider value={checkoutCart}>
+        <CheckoutCartDispatchContext.Provider value={dispatch}>
           <Routes>
             <Route path="/" element={<Overlay />}>
               <Route path="/" element={<Home />} />
-              <Route path="/Shop" element={<Shop />} />
               <Route path="products/:id" element={<ProductDetails />} />
             </Route>
             <Route path='*' element={<> <Navbar /> <Outlet /> </>}>
@@ -41,9 +42,10 @@ export default function App() {
           </Routes>
           {/* <main className="app-content">
       </main> */}
-        </BrowserRouter>
-      </CheckoutCartDispatchContext.Provider>
-    </CheckoutCartContext.Provider>
+        </CheckoutCartDispatchContext.Provider>
+      </CheckoutCartContext.Provider>
+    </BrowserRouter>
+
     
 
   )
