@@ -14,8 +14,7 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 
 Demo
 
-
-https://www.loom.com/share/ee84975bcd404acaa9c8a0add1c00f0a?sid=b66e8fb4-a306-4223-8161-eb50b5875518
+https://www.loom.com/share/c830c10b348241b5a1c41c3405b72258?sid=c7e3a38e-2eff-4903-bc10-c497b22c7498
 
 ### Core Features
 
