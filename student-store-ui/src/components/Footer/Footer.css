@@ -7,6 +7,12 @@
     margin-left: 40px;
     margin-right: 480px;
     font-size: 20px;
+    text-align: left;
+    margin-left: 40px;
+    margin-right: 280px;
+    background-color: #3A7CA5;
+    height: 300px;
+    color: #D9DCD6;
   }
   
   .column {

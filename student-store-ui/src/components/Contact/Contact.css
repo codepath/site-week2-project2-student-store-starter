@@ -1,0 +1,38 @@
+.Contact-Me{
+  
+    background-color: #3A7CA5;
+    /* width: 90%; */
+    margin-left: 40px;
+    margin-right: 280px;
+    height: 600px;  
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color: #D9DCD6;
+    font-size: xx-large;
+    gap: 5%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .Contactimg {
+    position: relative;
+    right: 20%;
+    top: 20%;
+    width: 200px;
+    height: 200px;
+  }
+  
+  
+  
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5%; /* Adjust this value to change the spacing between paragraphs */
+    text-align: center;
+  }
+  .contact-info p{
+    font-size: xx-large;
+    gap: 10rem;
+    text-align: left;
+  }
+  
