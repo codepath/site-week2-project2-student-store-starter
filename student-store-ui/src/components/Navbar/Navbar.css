@@ -9,6 +9,7 @@
     align-items: center;
     position: sticky;
     top: 0;
+    margin-left: 30px;
   }
 
   .navbar .content .links {

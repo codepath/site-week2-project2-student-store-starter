@@ -10,6 +10,7 @@ import Footer from "../Footer/Footer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import SubNavbar from "../SubNavbar/SubNavbar";
+import Sidebar from "../Sidebar/Sidebar";
 
 export default function App() {
 
@@ -42,10 +43,12 @@ export default function App() {
       <div className="app">
         <main>
         <Router>
-          <Routes><Route path="/" element={<Home products={productList}
+          <Routes>
+            <Route path="/" element={<Home products={productList}
           searchValue={searchValue} handleSearch={handleSearch} activeCategory={activeCategory} setActiveCategory={setActiveCategory}/>}/>
             <Route path="/products/:productId" element={
             <main>
+              <Sidebar /> 
               <Navbar />
               <Hero />
               <SubNavbar />

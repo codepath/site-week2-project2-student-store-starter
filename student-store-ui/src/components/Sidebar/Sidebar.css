@@ -1,0 +1,13 @@
+.sidebar {
+    width: 20%;
+    height: 100%;
+    background-color: #393939;
+    transition: width 0.3s;
+    position: fixed;
+    display: block;
+  }
+  
+  .sidebar.open {
+    width: 80px;
+  }
+  
