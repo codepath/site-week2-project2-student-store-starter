@@ -1,9 +1,12 @@
 import * as React from "react"
 import "./ProductCard.css"
+import { Link } from "react-router-dom"
 
 export default function ProductCard({product}) {
   return (
-    <div className="card">
+      <div className="card">
+        <Link to={`products/${product.id}`}>
+        {/* <img className="small-image" src={product.image} alt="product cover" /> */}
       <img className="small-image" src={product.image} alt="product cover" />
       <div className="product-info">
         <div className="main-info">
@@ -22,6 +25,7 @@ export default function ProductCard({product}) {
           </div>
         </div>
       </div>
+      </Link>
     </div>
   )
 }

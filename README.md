@@ -14,11 +14,11 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 
 ### Core Features
 
-- [ ] The website displays header, banner, search, product grid, about, contact, and footer section.
-- [ ] The website displays the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store) on initial page load.
-- [ ] Users can click on a category (clothing, food, etc.) to filter the product grid by type.
-- [ ] Users can search for products.
-- [ ] User can click on a product in the grid to navigate to a new page containing additional product details.
+- [x] The website displays header, banner, search, product grid, about, contact, and footer section.
+- [x] The website displays the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store) on initial page load.
+- [x] Users can click on a category (clothing, food, etc.) to filter the product grid by type.
+- [x] Users can search for products.
+- [x] User can click on a product in the grid to navigate to a new page containing additional product details.
 
 ### Stretch Features
 
@@ -27,6 +27,11 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - [ ] Users can click the '-' button on a product cart to decrement that product in the shopping cart.
 - [ ] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
 - [ ] Your choice! (Replace this bullet explaining what you implemented. Example: Users can leave ratings for products they have purchased.)
+
+<a href="https://www.loom.com/share/4ae9e71d9fe64763b561e109278e7816">
+    <p>Student Store - 21 June 2023 - Watch Video</p>
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/4ae9e71d9fe64763b561e109278e7816-with-play.gif">
+  </a>
 
 ## *Week 3* Application Features
 

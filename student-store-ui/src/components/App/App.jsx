@@ -1,5 +1,5 @@
 import * as React from "react"
-import { BrowserRouter } from 'react-router-dom'
+// import { BrowserRouter, Routes } from 'react-router-dom'
 import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
@@ -10,14 +10,17 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import About from "../About/About"
 import Contact from "../Contact/Contact"
+import ProductDetail from "../ProductDetail/ProductDetail"
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 export default function App() {
-  const url = "https://codepath-store-api.herokuapp.com/store";
+  const temp = "https://codepath-store-api.herokuapp.com/store";
+  const url = 'http://localhost:3001/'
 
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios.get(url).then((response) => {
+    axios.get(temp).then((response) => {
       setProducts(response.data.products);
     });
   }, []);
@@ -29,12 +32,14 @@ export default function App() {
     <div className="app">
       <BrowserRouter>
         <main>
-          {/* YOUR CODE HERE! */}
           <Navbar />
           <Hero />
           <Subnavbar setSearchInput={setSearchInput} setCurrentCategory={setCurrentCategory}/>
           <Sidebar />
-          <Home products={products} searchInput={searchInput} currentCategory={currentCategory}/>
+          <Routes>
+          <Route path="/" element={<Home products={products} searchInput={searchInput} currentCategory={currentCategory}/>}/>
+          <Route path="/products/:id" element={<ProductDetail/>}/>
+          </Routes>
           <About/>
           <Contact />
         </main>
