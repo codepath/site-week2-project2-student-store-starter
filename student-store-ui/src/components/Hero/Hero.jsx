@@ -15,6 +15,7 @@ export default function Hero({ products }) {
         <div className="media">
           <img
             src="student_store_icon.18e5d61a.svg"
+            width={300}
             alt="hero-icon"
             className="hero-img"
           />

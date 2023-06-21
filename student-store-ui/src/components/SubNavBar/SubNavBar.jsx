@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./SubNavBar.css";
+import Search from "../Search/Search";
 
 export default function SubNavBar({ setCategory }) {
   const [active, setActive] = useState("1");

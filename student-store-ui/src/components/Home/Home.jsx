@@ -23,26 +23,29 @@ export default function Home({ products }) {
   return (
     <div className="home">
       <br></br>
-      <Search text={text} setText={setText} />
+
       <Hero />
+      <Search text={text} setText={setText} />
       <SubNavBar category={category} setCategory={setCategory} />
-      <div className="products-grid">
-        {filter?.map((product, idx) => {
-          return (
-            <Link to={"products/" + product.id}>
-              <ProductCard
-                name={product.name}
-                id={product.id}
-                image={product.image}
-                price={product.price.toLocaleString("us-EN", {
-                  style: "currency",
-                  currency: "USD",
-                })}
-                key={idx}
-              />
-            </Link>
-          );
-        })}
+      <div className="grid-content">
+        <div className="products-grid">
+          {filter?.map((product, idx) => {
+            return (
+              <Link to={"products/" + product.id}>
+                <ProductCard
+                  name={product.name}
+                  id={product.id}
+                  image={product.image}
+                  price={product.price.toLocaleString("us-EN", {
+                    style: "currency",
+                    currency: "USD",
+                  })}
+                  key={idx}
+                />
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

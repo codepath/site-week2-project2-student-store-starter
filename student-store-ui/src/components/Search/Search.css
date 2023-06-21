@@ -1,0 +1,12 @@
+    
+  input  {
+    height: 40px;
+    padding: 0 15px;
+    border-radius: 8px 0 0 8px;
+    border: solid 1px #e4e4e4;
+    width: 620px;
+    flex: 1;
+    font-size: 16px;
+    align-items: center;
+    margin-left: 500px;
+  }

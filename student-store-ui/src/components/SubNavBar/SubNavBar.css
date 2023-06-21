@@ -19,6 +19,32 @@ li button{
   transition: all .2s ease;
 }
 
+.searchAndFilter{
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 li{
   list-style-type: none;
+}
+
+.category-menu{
+      display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex: 1;
+    list-style-type: none;
+    height: 40px;
+    font-weight: 500;
+    transition: all .2s ease;
+}
+
+subNavBar{
+  width: 100%;
+  max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--side-padding);
 }
