@@ -8,13 +8,13 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="logo-title">
         <Logo/>
-        <h1 className="store-name"> Almaz Gebeya </h1>
+        <h1 className="store-name"> CodePath Store </h1>
       </div>
       <ul>
         <li><Link className="nav-link" to="/">Home</Link></li>
         <li><Link className="nav-link" to="/about">About Us</Link></li>
         <li><Link className="nav-link" to="/contact">Contact Us</Link></li>
-        <li><Link className="nav-link" to="/buy-now">Buy Now</Link></li>
+        {/* <li><Link className="nav-link" to="/buy-now">Buy Now</Link></li> */}
       </ul>
     </nav>
   )

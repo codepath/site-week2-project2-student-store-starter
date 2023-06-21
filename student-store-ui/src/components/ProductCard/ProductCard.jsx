@@ -13,12 +13,10 @@ function ProductCard({product, showDescription}) {
         setAmount(amount => amount-=1)
     }
 
-    // const style= {}
 
     return (
         
             <div className='product-card'>
-            {/* <div className="product-cont">  */}
                 <Link to= {'/product/' + product.id}>
                 <img className= 'prod-image' src={product.image}/> 
                 <div className='prod-details'>
@@ -45,7 +43,6 @@ function ProductCard({product, showDescription}) {
                     </div> 
 
                 }
-        {/* </div> */}
                 
             </div>
         

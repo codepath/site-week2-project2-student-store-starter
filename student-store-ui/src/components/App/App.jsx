@@ -41,10 +41,12 @@ export default function App() {
         <main>
         <AppOverlay/>
         <Routes>
-            <Route path='/' element={<Home className='home' products={products}/>}/>
+          <Route path='/' element={<BuyNow products={products} setProducts={setProducts} originalProducts= {originalProducts}/>}/>
+
+            {/* <Route path='/' element={<Home className='home' products={products}/>}/> */}
             <Route path='/about' element={<About/>}/>
             <Route path='/contact' element={<Contact/>}/>
-            <Route path='/buy-now' element={<BuyNow products={products} setProducts={setProducts} originalProducts= {originalProducts}/>}/>
+            {/* <Route path='/buy-now' element={<BuyNow products={products} setProducts={setProducts} originalProducts= {originalProducts}/>}/> */}
             <Route path='product/:id' element={<ProductDetail products={products}/>}/>
             <Route path='*' element={<NotFound/>}/>
             

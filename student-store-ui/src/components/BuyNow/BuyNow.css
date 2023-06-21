@@ -26,13 +26,14 @@
 .search-bar{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content:left;
+    /* margin-right: 70pxs */
 }
 .search-bar form input {
     width: 260px;
     height: 35px;
     margin-top: 7%;
-    margin-right: 200px;
+    margin-right: 20px;
     border: 1px solid #555;
     display: block;
     padding: 9px 4px 9px 40px;
@@ -42,4 +43,30 @@
 
   .search-bar h3 {
     margin-left: 3%;
+  }
+
+  .search-bar button {
+    border-radius: 40%;
+    height: 35px;
+    /* width: 50px; */
+    margin-top: 7%;
+
+  }
+
+  .search-bar button :hover{
+    border-radius: 40%;
+    height: 35px;
+    /* width: 50px; */
+    margin-top: 7%;
+    background-color: #555;
+
+  }
+
+  .search-bar form div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* grid-template-columns: auto auto; */
+    /* width: 260px; */
+    
   }
