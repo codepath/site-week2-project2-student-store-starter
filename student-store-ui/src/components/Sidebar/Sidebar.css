@@ -1,4 +1,4 @@
-.sidebar {
+/*.sidebar {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,7 +17,7 @@
   .sidebar a {
     text-align: center;
     text-decoration: none;
-    user-select: none; /* Disable text selection */
+    user-select: none; /* Disable text selection 
     color: #fff;
   }
   
@@ -26,4 +26,74 @@
     margin-bottom: 1rem;
     color: #fff;
   }
+*/  
+/* 
+  .sidebar {
+    width: 200px;
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  .sidebar-link {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    margin-bottom: 10px;
+  }
+  
+  .sidebar-link:hover {
+    color: #666;
+  }
+  
+  .cart-content {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #fff;
+  }
+   */
+
+   .sidebar {
+    width: 60px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #16425b;
+    transition: width 0.3s ease;
+  }
+  
+  .sidebar.open {
+    width: 500px;
+  }
+  
+  .sidebar-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    cursor: pointer;
+    color: white;
+
+  }
+  .sidebar-icon svg{
+    width: 5em;
+    height: 5em;
+  }
+
+  .sidebar-content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    color: azure;
+  }
+  
+  .sidebar.open .sidebar-content {
+    opacity: 1;
+    background-color: #D9DCD6;
+    height: 1100px;
+  }
+  
   

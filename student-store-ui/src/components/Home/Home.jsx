@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import "./Home.css";
 import Hero from "../Hero/Hero";
-import ProductDetails from "../ProductDetails/ProductDetails";
 import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import About from "../About/About";
 import Contact from "../Contact/Contact";
 import Menu from "../Menu/Menu";
+import ProductContainer from "../ProductContainer/ProductContainer";
 
 export default function Home({ products }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
-  const [selectedProduct, setSelectedProduct] = useState(null);
 
   const categories = [
     "All Categories",
@@ -30,14 +29,10 @@ export default function Home({ products }) {
     return matchesSearch && matchesCategory;
   });
 
-  if (selectedProduct) {
-    return <ProductDetails product={selectedProduct} />;
-  }
-
   return (
     <div className="home">
       <Hero />
-      <br></br>
+      <br />
       <Menu
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
@@ -45,21 +40,7 @@ export default function Home({ products }) {
         setSelectedCategory={setSelectedCategory}
         categories={categories}
       />
-      <div className="product-container">
-        {productFilter?.map((product, idx) => (
-          <Link key={idx} to={"products/" + product.id}>
-            <div
-              className="product"
-              key={product.id}
-              onClick={() => setSelectedProduct(product)}
-            >
-              <img src={product.image} alt={product.name} />
-              <p>{product.name}</p>
-              <p>{product.price}</p>
-            </div>
-          </Link>
-        ))}
-      </div>
+      <ProductContainer products={productFilter} />
       <About />
       <Contact />
       <Footer />
