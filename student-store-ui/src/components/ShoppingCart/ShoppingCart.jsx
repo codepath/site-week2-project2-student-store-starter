@@ -3,14 +3,10 @@ import "./ShoppingCart.css"
 import {useEffect, useState} from "react"
 import { Link } from 'react-router-dom'
 
-export default function ShoppingCart({sidebarOpen, products, shoppingCart}){
-
-    // shoppingCart?.filter((product) => { return (product.id === shoppingCart.itemId)});
-    
-
-
+export default function ShoppingCart({sidebarOpen, shoppingCart, products}){
+console.log("PRODUCTS: ", products)
     if (sidebarOpen){
-        // console.log(shoppingCart)
+        console.log(shoppingCart)
         if (shoppingCart.length === 0){
             // {// console.log("SHOPPING CART EMPTY")}
             return <div className="notification">No items added to cart yet. Start shopping now!</div>
@@ -33,13 +29,16 @@ export default function ShoppingCart({sidebarOpen, products, shoppingCart}){
                 <div className="product-row">
 
                     {
-                        shoppingCart.map( item => <div>{item.name}</div>)
+                        shoppingCart.map( 
+                            item => <div> {products.filter((product) => item.itemId === product.id)[0].name} </div>
+                        )
                     }
-                    
-                    
-                    {/* <span className="flex-2 cart-product-name">{product.name}</span> */}
-                    {/* <span className="center cart-product-quantity">{quantity}</span> */}
-                    {/* <span className="center cart-product-price">{product.price}</span> */}
+                    {
+                       shoppingCart.map( item => <span className="center cart-product-quantity">{item.quantity}</span>)
+                    }
+                    {
+                        shoppingCart.map(item => <span className="center cart-product-price"> {products.filter((product) => item.itemId === product.id)[0].price} </span>)
+                    }
                     {/* <span className="center cart-product-subtotal">{product.price * quantity}</span> */}
                     {/* need to take into account previous subtotal! */}
                 </div>

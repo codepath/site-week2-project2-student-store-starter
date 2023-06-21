@@ -5,12 +5,8 @@ import ShoppingCart from '../ShoppingCart/ShoppingCart'
 
 // export default function Sidebar(products, onToggle, sidebarOpen) {
   export default function Sidebar({products, onToggle, sidebarOpen, handleOnCheckoutFormChange, shoppingCart, handleOnSubmitCheckoutForm}) {
-   console.log(shoppingCart)
-    // // console.log(changing)
-    // // console.log(products.onToggle)
-//     // console.log(sidebarOpen)
-// // console.log(onToggle)
-// // console.log(sidebarOpen)
+  //  console.log(shoppingCart)
+
 const [nameTerm, setNameTerm] = useState("")
 const [emailTerm, setEmailTerm] = useState("")
 
@@ -40,7 +36,7 @@ const [emailTerm, setEmailTerm] = useState("")
                   </span>
                 </h3>
                 
-                <ShoppingCart sidebarOpen = {sidebarOpen} products={products} shoppingCart={shoppingCart}></ShoppingCart>
+                <ShoppingCart key={"shopping-cart"} sidebarOpen = {sidebarOpen} products={products} shoppingCart={shoppingCart}></ShoppingCart>
                 
 
 

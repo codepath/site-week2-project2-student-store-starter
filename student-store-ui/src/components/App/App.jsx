@@ -145,7 +145,8 @@ export default function App() {
     <div className="app">
       <BrowserRouter>
         <main>
-          <Sidebar
+          <Sidebar 
+            key={"sidebar"}
             products={getFilteredProducts()}
             onToggle={onToggle}
             sidebarOpen={sidebarOpen}
