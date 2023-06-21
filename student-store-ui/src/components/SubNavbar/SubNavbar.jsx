@@ -1,49 +1,66 @@
-import * as React from "react"
-import "./SubNavbar.css"
+import { useEffect, useState } from "react";
+import "./SubNavbar.css";
 
-export default function SubNavbar() {
+export default function SubNavbar({ setCategory }) {
+  const [active, setActive] = useState("1");
+
+  function handleClick(e) {
+    e.preventDefault();
+    setCategory(e.target.name);
+    setActive(e.target.id);
+  }
+
   return (
-<nav className="sub-navbar">
-  <div className="content">
-    <div className="row">
-      <form className="search-bar">
-        <input type="text" name="search" placeholder="Search" defaultValue="" />
-        <i className="material-icons">search</i>
-      </form>
-      <div className="links">
-        <span className="help">
-          <i className="material-icons">help</i>Help
-        </span>
-        <div className="cart">
-          <a href="/">
-            My Cart<i className="material-icons">shopping_cart</i>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div className="row">
-      <div className="hamburger-menu">
-        <i className="material-icons">menu</i>
-      </div>
-      <ul className="category-menu open">
+    <div className="categories">
+      <ul className="category-menu">
         <li className="is-active">
-          <button>All Categories</button>
+          <button id={"1"} 
+          className="cloth" name={""} 
+          onClick={handleClick}>
+            All Categories
+          </button>
         </li>
-        <li className="">
-          <button>Clothing</button>
+        <li>
+          <button
+            id={"2"}
+            className="cloth"
+            name={"clothing"}
+            onClick={handleClick}
+          >
+            Clothing
+          </button>
         </li>
-        <li className="">
-          <button>Food</button>
+        <li>
+          <button
+            id={"3"}
+            className="cloth"
+            name={"food"}
+            onClick={handleClick}
+          >
+            Food
+          </button>
         </li>
-        <li className="">
-          <button>Accessories</button>
+        <li>
+          <button
+            id={"4"}
+            className="cloth"
+            name={"accessories"}
+            onClick={handleClick}
+          >
+            Accessories
+          </button>
         </li>
-        <li className="">
-          <button>Tech</button>
+        <li>
+          <button
+            id={"5"}
+            className="cloth"
+            name={"tech"}
+            onClick={handleClick}
+          >
+            Tech
+          </button>
         </li>
       </ul>
     </div>
-  </div>
-</nav>
-  )
+  );
 }

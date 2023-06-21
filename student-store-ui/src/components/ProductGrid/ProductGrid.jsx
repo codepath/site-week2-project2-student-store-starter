@@ -1,46 +1,70 @@
-import * as React from "react"
-import "./ProductGrid.css"
+import * as React from "react";
+import "./ProductGrid.css";
+import { useState } from "react";
 
-export default function ProductGrid({products}) {
+export default function ProductGrid({ products }) {
+  const [selectedCategory, setSelectedCategory] = useState("");
 
-    // export default function Home({ products }) {
-    //     const [searchTerm, setSearchTerm] = useState("");
-    //     const [selectedCategory, setSelectedCategory] = useState("");
-    //     const categories = [
-    //       "All Categories",
-    //       "Clothing",
-    //       "Food",
-    //       "Accessories",
-    //       "Tech"
-    //     ];
-    //     const productFilter = products?.filter((product) => {
-    //       const lowercaseSearchTerm = searchTerm.toLowerCase();
-    //       const lowercaseSelectedCategory = selectedCategory.toLowerCase() === "all categories" ? "" : selectedCategory.toLowerCase();
-    //       const productName = product.name.toLowerCase();
-    //       const matchesSearch = lowercaseSearchTerm === "" || productName.includes(lowercaseSearchTerm);
-    //       const matchesCategory = lowercaseSelectedCategory === "" || product.category?.toLowerCase() === lowercaseSelectedCategory;
-    //       return matchesSearch && matchesCategory;
-    //     });
+  const [searchText, setSearchText] = useState("");
 
-
-    function createProduct(info) {
-        return (
-          <section className="products-grid">
-            <div className="product-card">
-              <div className="product-img">
-                <img src={info.image} />
-              </div>
-              <div className= "product-info">
-                <p>{info.name}</p>
-                <p>{info.price}</p>
-              </div>
-            </div>
-          </section>
-        )
+  function search(category, text) {
+    if (text.trim === "") {
+      for (let item in products) {
+        if (
+          item.category.trim().toLowerCase() === category.trim().toLowerCase()
+        ) {
+          createProduct(item);
+        }
       }
-      return (
-        <div className="prodgrid">
-           {products?.map(product => createProduct(product))}
+    } else {
+      for (let item in products) {
+        if (
+          item.category === category &&
+          item.name.trim().toLowerCase().includes(text.trim().toLowerCase())
+        ) {
+          createProduct(item);
+        }
+      }
+    }
+  }
+
+  // function search(category, query) {
+
+  //     if (query is empty){
+  //         for (item in products){
+  //             if (product.category == category){
+  //                 createProduct(item)
+  //             }
+  //         }
+  //     }
+
+  //     else {
+  //         for (item in products){
+  //             if(item.category == category && query is a substring of item.name){
+  //                 createProduct(item)
+  //             }
+  //     }
+
+  // }
+
+  function createProduct(info) {
+    return (
+      <section className="products-grid">
+        <div className="product-card">
+          <div className="product-img">
+            <img src={info.image} />
+          </div>
+          <div className="product-info">
+            <p>{info.name}</p>
+            <p>{info.price}</p>
+          </div>
         </div>
-      )
+      </section>
+    );
+  }
+  return (
+    <div className="prodgrid">
+      {products?.map((product) => createProduct(product))}
+    </div>
+  );
 }

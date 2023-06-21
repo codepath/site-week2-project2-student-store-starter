@@ -1,8 +1,11 @@
 import * as React from "react"
 import "./Home.css"
 import ProductGrid from "../ProductGrid/ProductGrid"
+// import Search from "./Search/search"
 
 export default function Home({products}) {
+
+
 
     return (
 
