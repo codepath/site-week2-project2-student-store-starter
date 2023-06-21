@@ -1,4 +1,4 @@
-# Week 2 Assignment: Flixter
+# Week 2 Assignment: Student Store Pt. 1
 
 Submitted by: **Kennedy Parks**
 
@@ -7,10 +7,16 @@ Submitted by: **Kennedy Parks**
 
 
 ### Walkthrough Video
+![Kapture 2023-06-16 at 19 07 18](https://github.com/KennedyParks/site-week2-project2-student-store-starter/assets/112662157/144ddf18-288e-4b5d-9774-485925419bb8)
+
+### Imgur video link
+https://imgur.com/a/svwM252
+
+
 
 ## *Week 2* Application Features
 
-### Core Features ss
+### Core Features
 
 - [x] The website displays header, banner, search, product grid, about, contact, and footer section.
 - [x] The website displays the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store) on initial page load.
