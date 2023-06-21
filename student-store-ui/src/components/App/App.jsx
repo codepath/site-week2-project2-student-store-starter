@@ -10,7 +10,7 @@ import ProductDetails from "../Product Details/ProductDetails";
 import Overlay from "../Overlay/Overlay";
 
 export default function App() {
-  const url = "https://codepath-store-api.herokuapp.com/store";
+  const url = "http://localhost:3001";
 
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
