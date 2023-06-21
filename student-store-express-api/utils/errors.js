@@ -17,9 +17,14 @@ class ExpressError extends Error {
       super(message, 400)
     }
   }
-  
+  class ProductNotFoundError extends ExpressError{
+    constructor(productID){
+        super(`Product with ID: ${productID} Cannot Be Found`, 400)
+    }
+  }
   module.exports = {
     ExpressError,
     NotFoundError,
     BadRequestError,
+    ProductNotFoundError,
   }
