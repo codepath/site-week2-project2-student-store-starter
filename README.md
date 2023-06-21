@@ -34,6 +34,9 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 https://drive.google.com/file/d/1iU5uV7w_fnLezN7Mrk52W2ej8HrT3RTt/view
 
 
+## working side bar video
+https://drive.google.com/file/d/1A6P7WtdXn3sGqX0PgdTy0tEnygruiyJW/view
+
 ## *Week 3* Application Features
 
 ### Core Features
