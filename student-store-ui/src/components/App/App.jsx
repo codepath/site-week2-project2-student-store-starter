@@ -12,7 +12,7 @@ import Logo from "../Logo/Logo";
 import ProductDetails from "../ProductDetails/ProductDetails";
 
 export default function App() {
-  const url = "http://localhost:3001/";
+  const url = "http://localhost:3000/";
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
