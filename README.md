@@ -13,10 +13,10 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 ## *Week 2* Application Features
 
 Demo recorded on Loom:
-<a href="https://www.loom.com/share/340628fe00a44156bfee9e4d88e1595b">
-    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/340628fe00a44156bfee9e4d88e1595b-with-play.gif">
+<a href="https://www.loom.com/share/35b2645e27bf420f9b18b871c50fa092">
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/35b2645e27bf420f9b18b871c50fa092-1687321751325-with-play.gif">
   </a>
-   
+
 
 ### Core Features
 
