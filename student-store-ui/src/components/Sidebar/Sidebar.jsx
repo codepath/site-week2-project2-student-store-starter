@@ -1,21 +1,35 @@
 import * as React from "react"
 import "./Sidebar.css"
+import CheckoutForm from "../CheckoutForm/CheckoutForm";
+import ShoppingCart from "../ShoppingCart/ShoppingCart";
 
-export default function Sidebar({ isActive = false, handleOnClick }) {
+export default function Sidebar({ isOpen = false, handleOnToggle, shoppingCart, products, checkoutForm, handleOnCheckoutFormChange, handleOnSubmitCheckoutForm }) {
 
-  const divClass = isActive ? "sidebar open" : "sidebar closed";
-
-
-  let closedSideBar = <div className="shoppingCart">
-    <span className="cart-icon icon button"><i className="material-icons md-48">add_shopping_cart</i></span>
-    <span className="cart-icon icon button"><i className="material-icons md-48">monetization_on</i></span>
-    <span className="cart-icon icon button"><i className="material-icons md-48">fact_check</i></span>
-  </div>
+  const divClass = isOpen ? "sidebar open" : "sidebar closed";
 
 
-  let openSideBar = <h1 className="sidebar-title">Sidebar</h1>
+  let closedSideBar =
+    <div className="shoppingCart">
+      <button onClick={handleOnToggle}><i className="material-icons md-48">arrow_forward</i></button>
+      <span className="cart-icon icon button"><i className="material-icons md-48">add_shopping_cart</i></span>
+      <span className="cart-icon icon button"><i className="material-icons md-48">monetization_on</i></span>
+      <span className="cart-icon icon button"><i className="material-icons md-48">fact_check</i></span>
+    </div>
 
 
+  let openSideBar =
+
+    <>
+      <section className="sidebar open">
+        <div className="wrapper">
+        <button onClick={handleOnToggle}><i className="material-icons md-48">arrow_forward</i></button>
+          <ShoppingCart/>
+          <CheckoutForm />
+        </div>
+      </section>
+
+
+    </>
 
 
   return (
@@ -24,10 +38,11 @@ export default function Sidebar({ isActive = false, handleOnClick }) {
       <div className={divClass}>
 
 
-        <button onClick={handleOnClick}><i className="material-icons md-48">arrow_forward</i></button>
+        
         <div className="wrapper">
+          
 
-          {isActive ? openSideBar : closedSideBar}
+          {isOpen ? openSideBar : closedSideBar}
 
 
 

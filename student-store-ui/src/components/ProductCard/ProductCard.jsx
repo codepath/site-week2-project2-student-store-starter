@@ -1,8 +1,21 @@
 import * as React from "react"
 import "./ProductCard.css"
 import { Link } from "react-router-dom"
+import { useState } from "react"
 
-export default function ProductCard({ product }) {
+export default function ProductCard({ product, handleAddItemToCart, handleRemoveItemToCart }) {
+
+   const [quantity, setQuantity] = useState(null)
+
+   function handleAddQuantity(product) {
+      setQuantity(quantity + 1);
+    }
+    
+    function handleSubstractQuantity(product) {
+      if (quantity > 0) {
+         setQuantity(quantity - 1);
+       }
+    }
 
    return (
 
@@ -24,7 +37,10 @@ export default function ProductCard({ product }) {
                <p className="product-price">${product.price.toFixed(2)}</p>
             </div>
             <div className="actions">
-               <div className="buttons"><button className="add"><i className="material-icons">add</i></button><button className="remove"><i className="material-icons">remove</i></button></div>
+               <div className="buttons">
+                  <button className="add" onClick={()=> handleAddQuantity(product)}><i className="material-icons">add</i></button>
+                  <button className="remove" onClick={()=>handleSubstractQuantity(product)}><i className="material-icons">remove</i></button></div>
+               <span className="quantity"><span className="amt">{quantity}</span></span>
             </div>
          </div>
       </div>

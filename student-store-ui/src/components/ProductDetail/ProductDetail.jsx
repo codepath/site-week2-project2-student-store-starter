@@ -4,7 +4,7 @@ import "./ProductDetail.css"
 import { useEffect, useState } from "react"
 import axios from "axios"
 
-export default function ProductDetail() {
+export default function ProductDetail(handleAddItemToCart, handleRemoveItemToCart) {
 
    const { id } = useParams();
    const [product, setProduct] = useState({});
@@ -43,7 +43,10 @@ export default function ProductDetail() {
                <p className="product-description">{product.description}</p>
             </div>
             <div className="actions">
-               <div className="buttons"><button className="add"><i className="material-icons">add</i></button><button className="remove"><i className="material-icons">remove</i></button></div>
+               <div className="buttons">
+                  <button className="add"><i className="material-icons">add</i></button>
+                  <button className="remove"><i className="material-icons">remove</i></button></div>
+               <span className="quantity"><span className="amt">1</span></span>
             </div>
          </div>
       </div>

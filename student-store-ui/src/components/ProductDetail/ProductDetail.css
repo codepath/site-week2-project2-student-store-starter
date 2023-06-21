@@ -59,8 +59,8 @@
     padding: 5px
 }
 
-.product-card .quantity .amt {
-    background: var(--accent-orange);
+/* .product-card .quantity .amt {
+    background: orange;
     color: #fff;
     width: 20px;
     height: 20px;
@@ -68,9 +68,9 @@
     display: flex;
     align-items: center;
     justify-content: center
-}
+} */
 
-.pProductDetail .buttons {
+.ProductDetail .buttons {
     width: 80px;
     height: 100%;
     display: flex;
