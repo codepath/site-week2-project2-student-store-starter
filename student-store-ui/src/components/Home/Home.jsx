@@ -7,7 +7,7 @@ import About from "../About/About"
 import Footer from "../Footer/Footer"
 
 //Default Home function that takes in the param products
-export default function Home({products}) {
+export default function Home({products, ShoppingList, SetShoppingList}) {
 
   //State variables for search and category
   const[search, setSearch] = useState("")
@@ -61,7 +61,7 @@ export default function Home({products}) {
       </div>
 
       {/* This is the productgrid Component that is taking in Filter as a param */}
-      <Productgrid productFilter={Filter}/>
+      <Productgrid productFilter={Filter} ShoppingList = {ShoppingList} SetShoppingList = {SetShoppingList}/>
 
       {/* Calling About Component */}
       <About />
