@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 // export default function ProductCard({product, index, quantity}){
 export default function ProductCard({product, index, handleAddItemToCart, handleRemoveItemToCart, shoppingCart}){
-
+// console.log(shoppingCart)
 let selectedItemQuantity = (shoppingCart?.filter((item) => {
     if (item[itemId] === product.id){
         return item[quantity];

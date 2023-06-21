@@ -8,7 +8,7 @@ import Footer from '../Footer/Footer'
 import ProductGrid from '../ProductGrid/ProductGrid'
 
 // export default function Home({products, formData, handleSearch, handleCategoryFilter, handleSubmit, quantity}) {
-  export default function Home({products, formData, handleSearch, handleCategoryFilter, handleAddItemToCart, handleRemoveItemToCart}) {
+  export default function Home({products, formData, handleSearch, handleCategoryFilter, handleAddItemToCart, handleRemoveItemToCart, shoppingCart}) {
     // export default function Home({products, formData, handleInput}) {
       return (
 

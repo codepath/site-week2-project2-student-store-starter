@@ -5,7 +5,7 @@ import ShoppingCart from '../ShoppingCart/ShoppingCart'
 
 // export default function Sidebar(products, onToggle, sidebarOpen) {
   export default function Sidebar({products, onToggle, sidebarOpen, handleOnCheckoutFormChange, shoppingCart, handleOnSubmitCheckoutForm}) {
-   
+   console.log(shoppingCart)
     // // console.log(changing)
     // // console.log(products.onToggle)
 //     // console.log(sidebarOpen)

@@ -31,11 +31,15 @@ export default function ShoppingCart({sidebarOpen, products, shoppingCart}){
                     <span className="center">Cost</span>
                 </div>
                 <div className="product-row">
+
+                    {
+                        shoppingCart.map( item => <div>{item.name}</div>)
+                    }
                     
                     
-                    <span className="flex-2 cart-product-name">{product.name}</span>
+                    {/* <span className="flex-2 cart-product-name">{product.name}</span> */}
                     {/* <span className="center cart-product-quantity">{quantity}</span> */}
-                    <span className="center cart-product-price">{product.price}</span>
+                    {/* <span className="center cart-product-price">{product.price}</span> */}
                     {/* <span className="center cart-product-subtotal">{product.price * quantity}</span> */}
                     {/* need to take into account previous subtotal! */}
                 </div>

@@ -100,26 +100,15 @@ export default function App() {
   }
 
   function handleAddItemToCart(productId) {
-    console.log("before addition", shoppingCart)
-    let productInCart = shoppingCart.some((item) => item.itemId === productId);
-    // console.log("product in cart? : ", productInCart)
-    if (!productInCart) {
-      setShoppingCart([...shoppingCart, { itemId: productId, quantity: 1 }])
-      console.log('just added a new item')
-    } else { // FIX
-      // Increment the quantity by 1 for the item with the given item ID
-      // console.log("updating quantity in shopping cart");
-      let updatedItems = shoppingCart.map((item) => {
-
-        if (item.itemId === productId) { // but not carrying previous items in cart
-          return { ...item, quantity: item.quantity + 1 };
-        } 
-      });
-      console.log("CHANGED: ", updatedItems)
-      setShoppingCart(updatedItems);
-
+    let isAlreadyInCart = shoppingCart.some( product => product.itemId === productId);
+    if (isAlreadyInCart) {
+      let index = shoppingCart.findIndex(product => product.itemId === productId);
+      let updatedCart = [...shoppingCart];
+      updatedCart[index] = {itemId: updatedCart[index].itemId, quantity: ++updatedCart[index].quantity}
+      setShoppingCart(updatedCart);
+    } else {
+      setShoppingCart([...shoppingCart, {itemId: productId, quantity: 1}])
     }
-    console.log("after update: ", shoppingCart);
   }
 
   function handleRemoveItemToCart(productId) {
