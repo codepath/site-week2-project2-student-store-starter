@@ -2,11 +2,13 @@ import * as React from "react";
 import "./Subnavbar.css";
 import {useState} from 'react';
 
-export default function Subnavbar({currState}) {
+export default function Subnavbar({searchTerm, setSearchTerm, selectedCategory, setSelectedCategory}) {
   
-  const [selectedCategory, setSelectedCategory] = useState({ 'categories' : 'all categories'});
+  // handle input
+  function handleInput(event){
+    setSearchTerm(event.target.value);
+  }
 
-  
 
   return (
     <section className="subnavbar">
@@ -18,17 +20,17 @@ export default function Subnavbar({currState}) {
               type="text"
               name="search"
               placeholder="🔍 Search..."
-              value=""
+              value={searchTerm}
+              onChange={handleInput}
             />
           </div>
 
-
+          <a href="/" >
           <div className="cart">
-            <a href="/" >
               My Cart
               <i className="material-icons">shopping_cart</i>
-            </a>
           </div>
+          </a>
         </div>
 
           <div className="row">
@@ -36,19 +38,19 @@ export default function Subnavbar({currState}) {
             </div>
               <ul className="category-menu">
                 <li className=''>
-                  <button className={selectedCategory.category === 'all categories' ? 'btn is-active' : 'btn'} onClick={()=> setSelectedCategory({...selectedCategory, 'category': 'all categories'})} >All Categories</button>
+                  <button className={selectedCategory === 'all categories' ? 'btn is-active' : 'btn'} onClick={()=> setSelectedCategory('all categories')} >All Categories</button>
                 </li>
                 <li className=''>
-                  <button className={selectedCategory.category === 'clothing' ? 'btn is-active' : 'btn'} onClick={()=> setSelectedCategory({...selectedCategory, 'category': 'clothing'})}>Clothing</button>
+                  <button className={selectedCategory === 'clothing' ? 'btn is-active' : 'btn'} onClick={()=> setSelectedCategory('clothing')}>Clothing</button>
                 </li>
                 <li className=''>
-                  <button className={selectedCategory.category === 'food' ? 'btn is-active' : 'btn'} onClick={()=> setSelectedCategory({...selectedCategory, 'category': 'food'})}>Food</button>
+                  <button className={selectedCategory === 'food' ? 'btn is-active' : 'btn'} onClick={()=> setSelectedCategory('food')}>Food</button>
                 </li>
                 <li className=''>
-                  <button className={selectedCategory.category === 'accessories' ? 'btn is-active' : 'btn'} onClick={()=> setSelectedCategory({...selectedCategory, 'category': 'accessories'})}>Accessories</button>
+                  <button className={selectedCategory === 'accessories' ? 'btn is-active' : 'btn'} onClick={()=> setSelectedCategory('accessories')}>Accessories</button>
                 </li>
                 <li className=''>
-                  <button className={selectedCategory.category === 'tech' ? 'btn is-active' : 'btn'} onClick={()=> setSelectedCategory({...selectedCategory, 'category': 'tech'})}> Tech</button>
+                  <button className={selectedCategory === 'tech' ? 'btn is-active' : 'btn'} onClick={()=> setSelectedCategory('tech')}> Tech</button>
                 </li>
               </ul>
           </div>

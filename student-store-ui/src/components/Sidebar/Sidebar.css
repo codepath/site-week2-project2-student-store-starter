@@ -17,13 +17,22 @@
     width: 575px;
 }
 
+.wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
 .toggle-button{
     margin-top: 10px;
     margin-bottom: 20px;
-    background: #3066be;
+    background: none;
     border: 0px;
     cursor: pointer;
     color: white
+}
+
+.toggle-button .open{
+    float: right;
 }
 .material-icons.md-48 {
     font-size: 40px;
