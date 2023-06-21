@@ -15,16 +15,27 @@ export default function Home({products}) {
   const [search, setSearch] = React.useState("")
   const [category, setCategory] = React.useState("all categories")
 
+  function addItemtoCart(){
+
+  }
+
   function createProduct(info) {
+  const [quantity, setQuantity] =React.useState(0)
+
   return (
-    <Link id="product-link" to={'products/' + info.id}>
-      <div className="product">
+    <div className="product">
+        <Link id="product-link" to={'products/' + info.id}>
+      <div>
         <img src={info.image} />
         <p className="">{info.name}</p>
         <p>⭐️⭐️⭐️⭐️⭐️</p>
         <p>${info.price.toFixed(2)}</p>
       </div>
     </Link>
+    <button onClick={addItemtoCart}> - </button>
+    <button onClick={RemoveItemfromCart}> + </button>
+    </div>
+    
   )
 }
 

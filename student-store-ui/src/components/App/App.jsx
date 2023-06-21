@@ -14,8 +14,10 @@ import ContactUs from "../ContactUs/ContactUs"
 
 export default function App() {
 
-  const url = "https://codepath-store-api.herokuapp.com/store";
+  // const url = "https://codepath-store-api.herokuapp.com/store";
+  const url = "http://localhost:3001/"
 
+  const {id} = useParams();
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -60,31 +62,32 @@ export default function App() {
   );
 }
 
-function Details(){
+function Details() {
 
 
-  const parms = useParams()
-  let productID = parms.id
+  const { id } = useParams()
+  let productID = id
+  console.log(id) 
 
-  const url = "https://codepath-store-api.herokuapp.com/store/"+ productID;
+  const url = "http://localhost:3001/products/"+ productID.toString();
 
   const [product, setProduct] = useState([]);
 
   useEffect(() => {
     axios.get(url).then((response) => {
-      setProduct(()=>response.data.product);
+      console.log(response.data)
+      setProduct(response.data);
     });
   }, [])
-  // console.log(product.im)
 
   return (
     <div className="details">
-      <h1>{product.name}</h1>
+      <h1>{product[0].name}</h1>
       <p>Product #{productID}</p>
-      <img src={product.image}></img>
-      <p>{product.description}</p>
+      <img src={product[0].image}></img>
+      <p>{product[0].description}</p>
       <p>⭐️⭐️⭐️⭐️⭐️</p>
-      <p>${product.price}</p>
+      <p>${product[0].price}</p>
     </div>
     // <h1>{product.name}</h1>
     // <img>{product.img}</img>
