@@ -13,8 +13,23 @@ export default function ProductView() {
     const { id } = useParams();
     // console.log(id);
     const [product, setProduct] = useState({})
-    const quantity = 0; 
+    // const quantity = 0; 
+    const [quantity, setQuantity] = useState(0);
     // will change later!
+
+    function incrementQuant(event){
+        // if (quant>=0){
+        setQuantity(quantity+1);
+        // }
+    
+    }
+    function decrementQuant(event){
+        if (quantity > 0){
+        setQuantity(quantity-1);
+        }
+    
+    }
+
     const productUrl = "https://codepath-store-api.herokuapp.com/store/" + `${id}`
 
     useEffect(() => {
@@ -65,10 +80,10 @@ return(
                         <div className="actions">
                         <div className="buttons">
                             <button className="add">
-                            <i className="material-icons" >add</i>
+                            <i className="material-icons" onClick={incrementQuant} >add</i>
                             </button>
                             <button className="remove">
-                            <i className="material-icons" >remove</i>
+                            <i className="material-icons" onClick={decrementQuant}  >remove</i>
                             </button>
                         </div>
                         <span className="quantity">

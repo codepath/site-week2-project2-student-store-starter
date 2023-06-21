@@ -1,18 +1,17 @@
 import * as React from "react"
 import "./Sidebar.css"
 import {useEffect, useState} from "react"
+import ShoppingCart from '../ShoppingCart/ShoppingCart'
 
-
-export default function Sidebar() {
-  const[sidebarOpen, setSidebarOpen] = useState(false);
-  // console.log("sidebarOpen: " + `${sidebarOpen}`);
-  function changeSidebar(event){
-    setSidebarOpen(!sidebarOpen);
-   
-  }
-
+// export default function Sidebar(products, changeSidebar, sidebarOpen) {
+  export default function Sidebar({products, changeSidebar, sidebarOpen, handleOnCheckoutFormChange, shoppingCart}) {
+    // console.log(changing)
+    // console.log(products.changeSidebar)
+//     console.log(sidebarOpen)
+// console.log(changeSidebar)
+// console.log(sidebarOpen)
   if (sidebarOpen){
-    // console.log("sidebar is now open")
+    console.log("sidebar is now open")
     return(
     <section className="sidebar open">
           {/* <p>Sidebar</p> */}
@@ -28,7 +27,14 @@ export default function Sidebar() {
                     <i className="material-icons md-48">add_shopping_cart</i>
                   </span>
                 </h3>
-                <div className="notification">No items added to cart yet. Start shopping now!</div>
+                
+                
+                <ShoppingCart sidebarOpen = {sidebarOpen} products={products} shoppingCart={shoppingCart}></ShoppingCart>
+                
+
+
+
+
                 <div className="checkout-form">
                   <h3 className="">Payment Info 
                     <span className="button">
@@ -91,13 +97,13 @@ export default function Sidebar() {
         </section>
     )
   } else {
-    // console.log("sidebar is now closed");
+    console.log("sidebar is now closed");
   return (
    
     <section className="sidebar closed">
       {/* <p>Sidebar</p> */}
       <div className="wrapper">
-        <button className="toggle-button button closed" onClick={() => changeSidebar(!sidebarOpen)}>
+        <button className="toggle-button button closed" onClick={changeSidebar}>
           <i className="material-icons md-48">arrow_forward</i>
         </button>
         <div className="shopping-cart">

@@ -9,7 +9,7 @@ import axios from "axios"
 import ProductDetail from "../ProductDetail/ProductDetail"
 // usually put external dependencies at the top
 
-// //import react pro sidebar components
+// import react pro sidebar components
 // import {
 //   ProSidebar,
 //   Menu,
@@ -22,14 +22,11 @@ import ProductDetail from "../ProductDetail/ProductDetail"
 // TODO:
 // shopping cart update
 // add for product details as well
-// math.round(price x 100)/100 => tofixed (2)
-// toggle category bar menu?
 
-export const appInfo ={
+export const appInfo = {
   title: "Welcome! Find Your Merch!",
   tagline: "We have all kinds of goodies. Click on any of the items to start filling up your shopping cart. Checkout whenever you're ready.",
   img_src: "./student-store-express-api/data/images.png"
-
 }
 
 const url = "https://codepath-store-api.herokuapp.com/store"
@@ -37,8 +34,12 @@ export default function App() {
   const [products, setProducts] = useState();
   const[searchInput, setSearchInput] = useState(); // used for search
   const [selectedCategory, setSelectedCategory] = useState(); // used for category filtering
-  const[filteredCategoryArray, setFilteredCategoryArray] = useState(); // used for category filtering - default should be "all categ.." ?
+  const[filteredCategoryArray, setFilteredCategoryArray] = useState(); // used for category filtering
   const [filteredSearchArray, setFilteredSearchArray] = useState()
+  const[sidebarOpen, setSidebarOpen] = useState(false);
+  const[shoppingCart, setShoppingCart] = useState([])
+  // const[shoppingCart, setShoppingCart] = useState([{itemId: 4, quantity: 2}, {itemId: 2, quantity: 1}])
+  //{ {itemId: 4, quantity: 2}, {itemId: 2, quantity: 1}}
 
   useEffect(() => {
     axios.get(url).then((response) =>{
@@ -88,12 +89,44 @@ function getFilteredProducts(){
 
 }
 
+function changeSidebar(event){
+  setSidebarOpen(!sidebarOpen);
+}
+
+
+function handleAddItemToCart(productId){
+  if (!(productId in shoppingCart)){
+    // shoppingCart.push({productId, quantity})
+  }
+}
+
+function handleRemoveItemToCart(productId){
+  if ((productId in shoppingCart)){
+    if (quantity - 1 == 0){
+      // shoppingCart.remove({productId, quantity}) // remove method? splice? filter?
+    }
+  }
+}
+
+
+function handleOnCheckoutFormChange(name, value){
+  
+
+
+}
+
   return (
+   
     <div className="app">
       <BrowserRouter>
         <main>
 
-        <Sidebar />
+        <Sidebar 
+          products={getFilteredProducts()} 
+          changeSidebar={changeSidebar} 
+          sidebarOpen={sidebarOpen} 
+          handleOnCheckoutFormChange={handleOnCheckoutFormChange} 
+          shoppingCart={shoppingCart}/>
        
         <Routes>
 

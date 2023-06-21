@@ -7,12 +7,10 @@ import ProductCard from '../ProductCard/ProductCard'
 
 // export default function ProductGrid({products, quantity}) {
 export default function ProductGrid({products}) {
-if (!products){
-  console.log("IF STATEME ")
-return (<div>
-  PRODUCT NOT FOUND, SORRY!
 
-</div>)
+
+if (!products){
+  return (<div>PRODUCT NOT FOUND, SORRY!</div>)
   // TODO: FIX BUG
 } else {
 
