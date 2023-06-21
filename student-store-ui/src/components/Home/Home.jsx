@@ -4,6 +4,7 @@ import Hero from "../Hero/Hero";
 import Search from "../Search/Search";
 import Navbar from "../Navbar/Navbar";
 import { useState } from "react";
+import ProductCard from "../ProductCard/ProductCard";
 
 
 export default function Home({ products }) {
@@ -12,11 +13,12 @@ export default function Home({ products }) {
   const handleSearch = (results) => {
     setSearchResults(results);
   };
+
   return (
     <div className="home">
       <Navbar />
       <Hero />
-      <Search handleSearch={handleSearch} products={ products }/>
+      <Search handleSearch={handleSearch} products={products} />
       <Navbar />
     </div>
   );
