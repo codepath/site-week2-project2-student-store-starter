@@ -13,8 +13,9 @@ const ProductDetail = () => {
       .get(`https://codepath-store-api.herokuapp.com/store/${productId}`)
       .then((response) => {
         //not sure
-        console.log("product", response.data.product);
+        console.log("product ....", response.data.product);
         setProduct(response.data.product);
+        console.log(product.id);
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
@@ -23,6 +24,7 @@ const ProductDetail = () => {
   if (!ProductDetail) {
     return <h1 className="loading">Loading......</h1>;
   }
+  console.log("product id ..." + product.id);
 
   return (
     <div className="product-detail">

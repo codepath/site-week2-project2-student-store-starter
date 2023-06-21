@@ -11,7 +11,16 @@ const ProductCard = ({
   showDescription,
 }) => {
   const [productQuantity, setProductQuantity] = useState(0);
+  const [productAmount, setProductAmount] = useState(0);
   //   const { productId } = useParams();
+  const decrement = () => {
+    setProductQuantity(productQuantity - 1);
+  };
+  const increment = () => {
+    setProductQuantity(productQuantity + 1);
+  };
+
+  console.log(productQuantity);
 
   return (
     // returns the productbar the main card
@@ -24,12 +33,16 @@ const ProductCard = ({
         </div>
         <h2 className="product-name">{product.name}</h2>
         <p className="product-price">${product.price}</p>
-        <button className="add" onClick={handleAddItemToCart}>
-          +
-        </button>
-        <button className="remove" onClick={handleRemoveItemToCart}>
-          -
-        </button>
+
+        <div className="wrapper">
+          <span onClick={decrement} className="minus">
+            -
+          </span>
+          <span className="01">{productQuantity}</span>
+          <span onClick={increment} className="plus">
+            +
+          </span>
+        </div>
       </div>
     </div>
   );
