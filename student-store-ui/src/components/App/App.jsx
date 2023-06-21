@@ -28,7 +28,9 @@ export default function App() {
         <main>
           <Navbar />
           <Hero />
-          <SubNavbar setSelectedCategory={setSelectedCategory} />
+          <SubNavbar 
+          setCategory={setSelectedCategory}
+          setSearchTerm={setSearchTerm} />
           <Sidebar />
           <Home 
             products={products} 
