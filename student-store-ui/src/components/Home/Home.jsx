@@ -1,17 +1,14 @@
 import * as React from "react"
 import "./Home.css"
 import ProductGrid from "../ProductGrid/ProductGrid"
-// import Search from "./Search/search"
+import Search from "../Search/Search";
 
-export default function Home({products}) {
-
-
-
+export default function Home({products, searchTerm, setSearchTerm}) {
     return (
-
         <div className="home">
+            <Search setSearchTerm={setSearchTerm} />
             <div className="product-grid">
-                <ProductGrid products={products}/>
+                <ProductGrid products={products} searchTerm={searchTerm}/>
             </div>
             <div className="about">
                 About
@@ -23,7 +20,5 @@ export default function Home({products}) {
                 Footer
             </div>
         </div>
-        
     )
-
 }

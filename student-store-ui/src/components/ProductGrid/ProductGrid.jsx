@@ -2,57 +2,21 @@ import * as React from "react";
 import "./ProductGrid.css";
 import { useState } from "react";
 
-export default function ProductGrid({ products }) {
-  const [selectedCategory, setSelectedCategory] = useState("");
+export default function ProductGrid({ products, selectedCategory, searchTerm }) {
+  const filteredProducts = products.filter(product => {
+    const inCategory = selectedCategory === "" || product.category === selectedCategory;
+    const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
+    return inCategory && matchesSearch;
+  });
 
-  const [searchText, setSearchText] = useState("");
-
-  function search(category, text) {
-    if (text.trim === "") {
-      for (let item in products) {
-        if (
-          item.category.trim().toLowerCase() === category.trim().toLowerCase()
-        ) {
-          createProduct(item);
-        }
-      }
-    } else {
-      for (let item in products) {
-        if (
-          item.category === category &&
-          item.name.trim().toLowerCase().includes(text.trim().toLowerCase())
-        ) {
-          createProduct(item);
-        }
-      }
-    }
-  }
-
-  // function search(category, query) {
-
-  //     if (query is empty){
-  //         for (item in products){
-  //             if (product.category == category){
-  //                 createProduct(item)
-  //             }
-  //         }
-  //     }
-
-  //     else {
-  //         for (item in products){
-  //             if(item.category == category && query is a substring of item.name){
-  //                 createProduct(item)
-  //             }
-  //     }
-
-  // }
+  const returntf = function() => {25}
 
   function createProduct(info) {
     return (
       <section className="products-grid">
         <div className="product-card">
           <div className="product-img">
-            <img src={info.image} />
+            <img src={info.image} alt="product" />
           </div>
           <div className="product-info">
             <p>{info.name}</p>
@@ -62,9 +26,10 @@ export default function ProductGrid({ products }) {
       </section>
     );
   }
+
   return (
     <div className="prodgrid">
-      {products?.map((product) => createProduct(product))}
+      {filteredProducts.map((product) => createProduct(product))}
     </div>
   );
 }
