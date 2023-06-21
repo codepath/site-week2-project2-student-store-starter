@@ -4,9 +4,11 @@ import Navbar from "../Navbar/Navbar"
 import Hero from "../Hero/Hero"
 import { useParams } from "react-router-dom"
 
-export default function ProductDetails(props) {
+export default function ProductDetails({products}) {
     const { id } = useParams();
-    const product = props.props.find((product) => product.id === parseInt(id));
+    const product = products?.find((product) => product.id === parseInt(id));
+      
+    console.log(id)
     return (
         <>
         <Navbar />

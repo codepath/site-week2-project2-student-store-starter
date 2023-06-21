@@ -7,8 +7,6 @@ import axios from "axios";
 import About from "../About/About";
 import Contact from "../Contact/Contact";
 import ProductDetails from "../ProductDetails/ProductDetails"
-import { useState } from "react";
-import ProductGrid from "../ProductGrid/ProductGrid";
 
 export default function App() {
   // Toggle sidebar
@@ -20,6 +18,7 @@ export default function App() {
   // Pull products from API
   const [products, setProducts] = React.useState();
   const url = 'https://codepath-store-api.herokuapp.com/store'
+  // const url = 'http://localhost:3001'
   React.useEffect(() => {
     axios.get(url).then((response) => {
       setProducts(response.data.products)
@@ -35,7 +34,7 @@ export default function App() {
           <Route path="/" element={<Home products={products}/>} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="product/:id" element={<ProductDetails props={products}/>} />
+          <Route path="/product/:id" element={<ProductDetails products={products}/>} />
       </Routes>
       
       <Sidebar isOpen={sidebarOpen} toggleSidebar={handleSidebarToggle} />

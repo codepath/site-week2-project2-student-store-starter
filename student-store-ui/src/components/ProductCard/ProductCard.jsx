@@ -16,13 +16,12 @@ export default function ProductCard({ product }) {
         setNum(num - 1);
       }
     };
-    console.log(product)
   
     return (
       <section className="products-grid">
         <div className="product-card">
           <div className="product-img">
-            <Link to={"product/" + product.productId}>
+            <Link to={"/product/" + product.id}>
               <img src={product.image} alt={product.name} />
             </Link>
           </div>
@@ -36,9 +35,9 @@ export default function ProductCard({ product }) {
             </p>
           </div>
           <div className="action">
-            <button onClick={subtract}>-</button>
+            <button className="addsub" onClick={subtract}>-</button>
             <button className="count">{num}</button>
-            <button onClick={add}>+</button>
+            <button className="addsub" onClick={add}>+</button>
           </div>
         </div>
       </section>
