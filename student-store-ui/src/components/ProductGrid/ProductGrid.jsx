@@ -10,7 +10,7 @@ export default function ProductGrid({products}) {
 
 
 if (!products){
-  return (<div>PRODUCT NOT FOUND, SORRY!</div>)
+  return (<div className = "not-found" > PRODUCT NOT FOUND, SORRY!</div>)
   // TODO: FIX BUG
 } else {
 

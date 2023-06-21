@@ -29,7 +29,8 @@ export const appInfo = {
   img_src: "./student-store-express-api/data/images.png"
 }
 
-const url = "https://codepath-store-api.herokuapp.com/store"
+// const url = "https://codepath-store-api.herokuapp.com/store"
+const url = "http://localhost:3001" // nonsecure
 export default function App() {
   const [products, setProducts] = useState();
   const[searchInput, setSearchInput] = useState(); // used for search

@@ -37,3 +37,11 @@
   font-weight: 600;
   color: #012a4a;
 }
+
+.not-found{
+  /* max-width: var(--content-width); */
+  margin: 0 auto;
+  font-size: 24px;    
+  /* display: flex;
+  flex-direction: column; */
+}
