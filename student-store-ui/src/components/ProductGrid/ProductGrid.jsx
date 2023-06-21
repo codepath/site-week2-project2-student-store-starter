@@ -6,7 +6,7 @@ import ProductCard from '../ProductCard/ProductCard'
 
 
 // export default function ProductGrid({products, quantity}) {
-export default function ProductGrid({products}) {
+export default function ProductGrid({shoppingCart, products, handleAddItemToCart, handleRemoveItemToCart}) {
 
 
 if (!products){
@@ -21,10 +21,9 @@ return (
           <h3>Our Products</h3>
 
           <div className="grid">
-        
             {products?.map((product, index) => {
             
-            return <ProductCard product={product} index ={index} />})}
+            return <ProductCard key={index} product={product} index={index} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemToCart} shoppingCart={shoppingCart}/>})}
 
           </div>
         </div>

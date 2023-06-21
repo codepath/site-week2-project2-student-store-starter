@@ -4,22 +4,15 @@ import {useEffect, useState} from "react"
 import { Link } from 'react-router-dom'
 
 // export default function ProductCard({product, index, quantity}){
-export default function ProductCard({product, index}){
+export default function ProductCard({product, index, handleAddItemToCart, handleRemoveItemToCart, shoppingCart}){
 
-const [quantity, setQuantity] = useState(0);
+let selectedItemQuantity = (shoppingCart?.filter((item) => {
+    if (item[itemId] === product.id){
+        return item[quantity];
+    }  
+})) 
+// // console.log(selectedItemQuantity);
 
-function incrementQuant(event){
-    // if (quant>=0){
-      setQuantity(quantity+1);
-    // }
-   
-  }
-  function decrementQuant(event){
-    if (quantity > 0){
-      setQuantity(quantity-1);
-    }
-  
-  }
   const productPrice = product.price.toLocaleString("us-EN", {
             style: "currency",
             currency: "USD",
@@ -46,15 +39,15 @@ function incrementQuant(event){
                 </div>
                 <div className="actions">
                 <div className="buttons">
-                    <button className="add" onClick={()=> incrementQuant()}>
+                    <button className="add" onClick={()=> handleAddItemToCart(product.id)}>
                     <i className="material-icons">add</i>
                     </button>
-                    <button className="remove" onClick={() => decrementQuant()}>
+                    <button className="remove" onClick={() => handleRemoveItemToCart(product.id)}>
                     <i className="material-icons">remove</i>
                     </button>
                 </div>
                 <span className="quantity">
-                    <span className="amt" style={{background: "#013a63"}}>{quantity}</span>
+                    <span className="amt" style={{background: "#013a63"}}>{selectedItemQuantity}</span>
                 </span>
                 </div>
 

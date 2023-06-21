@@ -8,10 +8,10 @@ import axios from "axios"
 
 export default function ProductView() {
 
-    console.log("REACHED NEW PAGE!")
-    // console.log(newProducts);
+    // console.log("REACHED NEW PAGE!")
+    // // console.log(newProducts);
     const { id } = useParams();
-    // console.log(id);
+    // // console.log(id);
     const [product, setProduct] = useState({})
     // const quantity = 0; 
     const [quantity, setQuantity] = useState(0);
@@ -37,7 +37,7 @@ export default function ProductView() {
             setProduct(response.data.product);
         })
       }, []);
-//     console.log(product.price)
+//     // console.log(product.price)
 //       const productPrice = product.price.toLocaleString("us-EN", {
 //         style: "currency",
 //         currency: "USD",
@@ -99,6 +99,6 @@ return(
     //     // if (product === -1){
     //     //     return <NotFound/>
     //     // } else {
-    // {console.log("REACHED THE PAGE!!")}
+    // {// console.log("REACHED THE PAGE!!")}
 )
 }
