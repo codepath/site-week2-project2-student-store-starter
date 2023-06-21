@@ -9,7 +9,6 @@ export default function ProductGrid({ products, selectedCategory, searchTerm }) 
     return inCategory && matchesSearch;
   });
 
-  const returntf = function() => {25}
 
   function createProduct(info) {
     return (

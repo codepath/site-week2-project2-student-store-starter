@@ -71,11 +71,6 @@ export default function SubNavbar({ setCategory, setSearchTerm  }) {
           </button>
         </li>
       </ul>
-      <input 
-        type="search" 
-        onChange={handleSearchChange} 
-        placeholder="Search products..." 
-      />
     </div>
   );
 }
