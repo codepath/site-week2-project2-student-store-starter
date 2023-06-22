@@ -22,9 +22,22 @@ class ExpressError extends Error {
         super(`Product with ID: ${productID} Cannot Be Found`, 400)
     }
   }
+  class PurchaseNotFoundError extends ExpressError{
+    constructor(purchaseID){
+        super(`Purchase with ID: ${productID} Cannot Be Found`, 400)
+    }
+  }
+  class InvalidPurchaseError extends ExpressError{
+    constructor(shoppingCart){
+      super(`Shopping cart cannot contain duplicate values. Cart: ${shoppingCart}` )
+    }
+  }
   module.exports = {
     ExpressError,
     NotFoundError,
     BadRequestError,
     ProductNotFoundError,
+    PurchaseNotFoundError,
+    InvalidPurchaseError,
+    
   }
