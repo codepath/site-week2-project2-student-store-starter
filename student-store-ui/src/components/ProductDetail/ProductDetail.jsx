@@ -4,14 +4,14 @@ import "./ProductDetail.css"
 import { useEffect, useState } from "react"
 import axios from "axios"
 
-export default function ProductDetail(handleAddItemToCart, handleRemoveItemToCart) {
+export default function ProductDetail({handleAddQuantity,getQuantity, handleSubstractQuantity, shoppingCart, setShoppingCart}) {
 
    const { id } = useParams();
    const [product, setProduct] = useState({});
 
    useEffect(() => {
 
-      axios.get(`https://codepath-store-api.herokuapp.com/store/${id}`).then(response => {
+      axios.get(`http://localhost:3001/store/${id}`).then(response => {
 
          setProduct(response.data.product)
       });
@@ -19,8 +19,6 @@ export default function ProductDetail(handleAddItemToCart, handleRemoveItemToCar
    }, []);
 
    return (
-
-
       <div className="ProductDetail">
          <div className="productTitle">
             <h2>Product # {product.id}</h2>
@@ -44,9 +42,9 @@ export default function ProductDetail(handleAddItemToCart, handleRemoveItemToCar
             </div>
             <div className="actions">
                <div className="buttons">
-                  <button className="add"><i className="material-icons">add</i></button>
-                  <button className="remove"><i className="material-icons">remove</i></button></div>
-               <span className="quantity"><span className="amt">1</span></span>
+                  <button className="add" onClick={()=> handleAddQuantity(product)}><i className="material-icons">add</i></button>
+                  <button className="remove" onClick={()=> handleSubstractQuantity(product)}><i className="material-icons">remove</i></button></div>
+               <span className="quantity"><span className="amt">{getQuantity(product)}</span></span>
             </div>
          </div>
       </div>

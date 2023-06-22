@@ -27,6 +27,7 @@ export default function CheckoutForm({ shoppingCart, setShoppingCart }) {
           setNameInput('');
           setDanger(false);
           setMissingInput(false);
+          
         }
       }
 
@@ -49,8 +50,7 @@ export default function CheckoutForm({ shoppingCart, setShoppingCart }) {
 
 
     function handleExit() {
-
-        setShoppingCart([]) // finish shopping and emptying the cart to new shop
+        setShoppingCart([]) // finish shopping and emptying the cart to new shop 
         setCheckoutActive(false)
     }
 

@@ -117,3 +117,15 @@
     width: 20px;
     fill: orange;
 }
+
+.quantity .amt {
+background: orange;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}

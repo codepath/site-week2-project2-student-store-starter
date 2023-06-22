@@ -19,6 +19,66 @@ export default function App() {
   const [checkoutForm, setCheckoutForm] = useState({}); // user's information that will be sent to the API when they checkout
   const [error, setError] = useState("there has been an error"); //used to display message when something goes wrong with api requests
 
+  function handleAddQuantity(product) {
+    const cartItem = shoppingCart?.find(item => item.id === product.id) // evaluates if the given product is already at the shoppingCart array or not
+    if(cartItem) {
+       // we need to increment 
+       const updateCart = shoppingCart?.map(item => {
+
+          if(item.id === product.id){
+
+             return {...item, quantity: item.quantity + 1}
+          }
+
+          return item
+       })
+
+       setShoppingCart(updateCart)
+    }
+
+    else{
+
+       setShoppingCart ([...shoppingCart, {...product, quantity: 1}])
+    }
+ } 
+ function handleSubstractQuantity(product) {
+
+    const cartItem = shoppingCart?.find(item => item.id === product.id) // evaluates if the given product is already at the shoppingCart array or not
+    if(cartItem) {
+       // we need to decrement 
+       const updateCart = shoppingCart?.map(item => {
+
+          if((item.id === product.id) && item.quantity > 0 ){
+
+             return {...item, quantity: item.quantity - 1}
+          }
+          return item
+       })
+       const updatedCart = updateCart.filter((item) => item.quantity > 0); 
+       setShoppingCart(updatedCart)
+    }  
+ }
+ 
+ function getQuantity(product){
+
+    // compare current product with products in shopping cart
+    // if exists get quantity from shopping cart
+    // else quantity = 0
+
+    return shoppingCart?.map(item => {
+
+       if(item.id === product.id){
+
+          return item.quantity
+       }
+
+    })
+
+ }
+  
+  
+  
+  
   useEffect(() => {
     axios
       .get(url)
@@ -34,45 +94,6 @@ export default function App() {
       });
   }, []);
 
-  function handleAddItemToCart(productId) {
-    setQuantity(quantity + 1);
-  }
-  
-  function handleRemoveItemToCart(productId) {
-    if (quantity > 0) {
-       setQuantity(quantity - 1);
-     }
-  }
-
-  function handleOnCheckoutFormChange(name,value) {
-    setCheckoutForm(name, value) // is this correct? CHECK 
-  }
-
-  function handleOnSubmitCheckoutForm() { // IS THIS CORRECT?
-    const order = {
-      user: {
-        name: checkoutForm.name,
-        email: checkoutForm.email,
-      },
-      shoppingCart: shoppingCart.map((item) => ({
-        itemId: item.itemId,
-        quantity: item.quantity,
-      })),
-    };
-
-    axios
-      .post(url, order)
-      .then((response) => {
-        // Handle successful submission
-      })
-      .catch((error) => {
-        // Handle error during submission
-      });
-  }
-
-
-
-
   return (
 
     <div className="app">
@@ -80,15 +101,13 @@ export default function App() {
         <main>
 
           <Navbar />
-          <Sidebar isOpen={sidebar} handleOnToggle={() => setSideBar(!sidebar)} shoppingCart = {shoppingCart} setShoppingCart = {setShoppingCart} products = {products} checkoutForm = {checkoutForm} handleOnCheckoutFormChange = {handleOnCheckoutFormChange} handleOnSubmitCheckoutForm = {handleOnSubmitCheckoutForm} />
+          <Sidebar isOpen={sidebar} handleOnToggle={() => setSideBar(!sidebar)} shoppingCart = {shoppingCart} setShoppingCart = {setShoppingCart} products = {products} checkoutForm = {checkoutForm} />
 
           <Routes>
-            <Route path="/" element={<Home products={products} setProducts={setProducts} handleAddItemToCart = {handleAddItemToCart} handleRemoveItemToCart = {handleRemoveItemToCart} shoppingCart = {shoppingCart} setShoppingCart = {setShoppingCart}/>} />
-            <Route path="products/:id" element={<ProductDetail handleAddItemToCart = {handleAddItemToCart} handleRemoveItemToCart = {handleRemoveItemToCart}/>} />
+            <Route path="/" element={<Home products={products} setProducts={setProducts}  shoppingCart = {shoppingCart} setShoppingCart = {setShoppingCart} handleAddQuantity = {handleAddQuantity} handleSubstractQuantity = {handleSubstractQuantity} getQuantity = {getQuantity} />} />
+            <Route path="products/:id" element={<ProductDetail handleAddQuantity = {handleAddQuantity} handleSubstractQuantity = {handleSubstractQuantity} getQuantity = {getQuantity} shoppingCart = {shoppingCart} setShoppingCart = {setShoppingCart}/>} />
 
           </Routes>
-
-
         </main>
       </BrowserRouter>
     </div>

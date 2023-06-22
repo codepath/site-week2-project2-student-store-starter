@@ -9,7 +9,7 @@ import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
 import ProductGrid from "../ProductGrid/ProductGrid";
 
-export default function Home({ products, setProducts, handleAddItemToCart, handleRemoveItemToCart, shoppingCart, setShoppingCart}) {
+export default function Home({ products, setProducts, shoppingCart, setShoppingCart, handleAddQuantity, handleSubstractQuantity, getQuantity}) {
   const [activeCategory, setActiveCategory] = useState("All Categories");
   const [searchResults, setSearchResults] = useState("");
 
@@ -59,7 +59,7 @@ export default function Home({ products, setProducts, handleAddItemToCart, handl
       <div className="home">
         <div className="home-content" id="Buy">
           <h2 className="home-title">Best Selling Products</h2>
-          <ProductGrid products={filteredProducts} shoppingCart = {shoppingCart} setShoppingCart = {setShoppingCart}/>
+          <ProductGrid products={filteredProducts} shoppingCart = {shoppingCart} setShoppingCart = {setShoppingCart} handleAddQuantity = {handleAddQuantity} handleSubstractQuantity = {handleSubstractQuantity} getQuantity = {getQuantity}/>
         </div>
       </div>
       <About />
