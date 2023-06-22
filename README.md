@@ -20,6 +20,10 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - [X] Users can search for products.
 - [X] User can click on a product in the grid to navigate to a new page containing additional product details.
 
+<a href="https://www.loom.com/share/9a0f62c9d7ab46329a9f20c1950b58eb">
+    <p>Demo of My Student Store 🎥 - Watch Video</p>
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/9a0f62c9d7ab46329a9f20c1950b58eb-with-play.gif">
+  </a>
 <a href="https://www.loom.com/share/bc1dcf77112c445bbc866bdc2973189c">
     <p>Marley's Student Store - 22 June 2023 - Watch Video</p>
     <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/bc1dcf77112c445bbc866bdc2973189c-with-play.gif">
