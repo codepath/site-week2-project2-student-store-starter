@@ -21,8 +21,14 @@ class Storage {
   get(key) {
     return this.db.get(key)
   }
+
+  getProducts() {
+    return this.db.get('products')
+  }
+
+  getProductById(id) {
+    return this.getProducts().value().find(product => product.id === id)
+  }
 }
 
-module.exports = {
-  storage: new Storage(),
-}
+module.exports = new Storage()

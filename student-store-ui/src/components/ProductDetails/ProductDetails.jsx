@@ -8,11 +8,11 @@ export default function ProductDetails() {
   const [productToDisplay, setProductToDisplay] = useState({})
 
   const { id } = useParams()
-  const mockBackend = "https://codepath-store-api.herokuapp.com/store"
+  const storeURL = "http://localhost:3001/store"
   useEffect(() => {
-    axios.get(`${mockBackend}/${id}`)
+    axios.get(`${storeURL}/${id}`)
       .then(response => {
-        setProductToDisplay(response.data.product)
+        setProductToDisplay(response.data)
       })
   }, [])
 

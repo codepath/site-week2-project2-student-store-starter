@@ -10,11 +10,11 @@ import ProductCard from "../ProductCard/ProductCard"
 export default function ProductGrid({ category, searchTerm }) {
   const [products, setProducts] = useState()
 
-  const mockAPI = "https://codepath-store-api.herokuapp.com/store"
+  const storeURL = "http://localhost:3001/store"
   useEffect(() => {
-    axios.get(mockAPI)
+    axios.get(storeURL)
       .then(response => {
-        setProducts(response.data.products)
+        setProducts(response.data)
       })
   }, [])
 
