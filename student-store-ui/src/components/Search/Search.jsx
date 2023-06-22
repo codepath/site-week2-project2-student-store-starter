@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import ProductGrid from "../ProductGrid/ProductGrid";
 import "./Search.css"
+import ShoppingCart from "../ShoppingCart/ShoppingCart";
+import Home from "../Home/Home";
 
-export default function Search({ handleSearch, products }) {
+
+export default function Search({ products, cartItems, setCartItems }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredProducts, setFilteredProducts] = useState(products); // Initialize with all products
 
@@ -80,7 +83,7 @@ export default function Search({ handleSearch, products }) {
     </nav>
 
 
-      <ProductGrid products={getFilteredProducts()} />
+      <ProductGrid products={getFilteredProducts()} cartItems={cartItems}  setCartItems={setCartItems}/>
       </div>
       
   );

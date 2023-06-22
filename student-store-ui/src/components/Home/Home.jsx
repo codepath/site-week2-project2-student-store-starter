@@ -4,22 +4,27 @@ import Hero from "../Hero/Hero";
 import Search from "../Search/Search";
 import Navbar from "../Navbar/Navbar";
 import { useState } from "react";
-import ProductCard from "../ProductCard/ProductCard";
+import ShoppingCart from "../ShoppingCart/ShoppingCart";
+import Sidebar from "../Sidebar/Sidebar";
 
 
 export default function Home({ products }) {
   const [searchResults, setSearchResults] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
 
   const handleSearch = (results) => {
     setSearchResults(results);
   };
+  const allItemSubtotal = 0
 
   return (
     <div className="home">
-      <Navbar />
+      <Sidebar props={products} cartItems={cartItems} setCartItems={setCartItems} allItemSubtotal={allItemSubtotal}/>
+      {/* <ShoppingCart cartItems={cartItems} setCartItems={setCartItems} allItemSubtotal={allItemSubtotal}/> */}
       <Hero />
-      <Search handleSearch={handleSearch} products={products} />
+      <Search handleSearch={handleSearch} products={products} cartItems={cartItems} setCartItems={setCartItems} />
       <Navbar />
+      
     </div>
   );
 }

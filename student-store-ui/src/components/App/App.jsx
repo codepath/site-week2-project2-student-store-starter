@@ -7,6 +7,7 @@ import axios from "axios";
 import About from "../About/About";
 import Contact from "../Contact/Contact";
 import ProductDetails from "../ProductDetails/ProductDetails"
+import { useState } from "react";
 
 export default function App() {
   // Toggle sidebar
@@ -25,29 +26,26 @@ export default function App() {
   });
 }, []);
 
+
+
   return (
     <div className="app">
+      <Sidebar isOpen={sidebarOpen} toggleSidebar={handleSidebarToggle} />
       <BrowserRouter>
         <main>
         <Routes>
 
-          <Route path="/" element={<Home products={products}/>} />
+          <Route path="/" element={<Home products={products} />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/product/:id" element={<ProductDetails products={products}/>} />
       </Routes>
-      
-      <Sidebar isOpen={sidebarOpen} toggleSidebar={handleSidebarToggle} />
-        {/* <footer>
-        <p>Author: Marley Burrows</p>
-        <p><a href="mailto:mburrows@salesforce.com">mburrows@salesforce.com</a></p>
-      </footer> */}
 
-      <footer class="footer">
-        <div class="content">
-          <div class="top">
-            <div class="links">
-              <div class="link-column">
+      <footer className="footer">
+        <div className="content">
+          <div className="top">
+            <div className="links">
+              <div className="link-column">
                 <h4>Categories</h4>
                 <ul>
                   <li>All Categories</li>
@@ -57,7 +55,7 @@ export default function App() {
                 <li>Tech</li>
                 </ul>
                 </div>
-              <div class="link-column">
+              <div className="link-column">
                 <h4>Company</h4>
                 <ul>
                   <li>About Us</li>
@@ -66,7 +64,7 @@ export default function App() {
                   <li>Careers</li>
                 </ul>
                 </div>
-              <div class="link-column">
+              <div className="link-column">
                 <h4>Support</h4>
                 <ul>
                   <li>Contact Us</li>
@@ -76,7 +74,7 @@ export default function App() {
                   <li>Open Dispute</li>
                   </ul>
                 </div>
-              <div class="link-column">
+              <div className="link-column">
                 <h4>Account</h4>
                 <ul><li>Login</li>
                 <li>Register</li>
@@ -84,7 +82,7 @@ export default function App() {
                 <li>My Orders</li>
                 </ul>
                 </div>
-              <div class="link-column">
+              <div className="link-column">
                 <h4>Socials</h4>
                 <ul>
                   <li>Facebook</li>
@@ -94,7 +92,7 @@ export default function App() {
                   <li>YouTube</li>
                   </ul>
                 </div>
-              <div class="link-column">
+              <div className="link-column">
                 <h4>Our App</h4>
                 <ul>
                   <li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/1200px-Download_on_the_App_Store_Badge.svg.png" alt="app store"></img></li>

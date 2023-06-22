@@ -11,10 +11,10 @@ export default function Contact() {
             <h2>Contact</h2>
             <div className="contact-info">
               <div className="contact-text">
-              <ul class="info">
-                <li><span class="label">Email: </span><span>mburrows@salesforce.com</span></li>
-                <li><span class="label">Phone: </span><span>1-800-MARLEY!</span></li>
-                <li><span class="label">Address: </span><span>123 Fake Street, San Francisco, CA</span></li>
+              <ul className="info">
+                <li><span className="label">Email: </span><span>mburrows@salesforce.com</span></li>
+                <li><span className="label">Phone: </span><span>1-800-MARLEY!</span></li>
+                <li><span className="label">Address: </span><span>123 Fake Street, San Francisco, CA</span></li>
             </ul>
               </div>
               <div className="contact-img">

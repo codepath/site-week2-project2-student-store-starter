@@ -2,14 +2,17 @@ import * as React from "react"
 import "./ProductGrid.css"
 import { Link } from "react-router-dom"
 import ProductCard from "../ProductCard/ProductCard"
+import { useState } from "react"
 
-export default function ProductGrid({ products }) {
+export default function ProductGrid({ products, setCartItems, cartItems }) 
+{
+  
   return (
     <div className="product-grid">
       <h3 className="best-sellers">Best Sellers</h3>
       <div className="grid-content">
         {products?.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <ProductCard key={product.id} product={product} setCartItems={setCartItems} cartItems={cartItems}/>
         ))}
       </div>
     </div>

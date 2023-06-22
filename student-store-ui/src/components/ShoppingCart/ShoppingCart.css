@@ -1,0 +1,57 @@
+.cart-icon {
+    margin-bottom: 16px
+}
+
+.CartTable {
+    width: 100%;
+    margin: 0 10px
+}
+
+.CartTable .header {
+    display: flex;
+    flex-direction: column;
+    background: var(--pure-white);
+    border: solid 1px var(--border-color);
+    border-radius: 4px;
+    width: 100%
+}
+
+.CartTable {
+    display: flex;
+    flex-direction: column;
+    border: none;
+  }
+  
+  .header-row,
+  .product-row,
+  .receipt-subtotal,
+  .receipt-taxes,
+  .receipt-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .flex-2 {
+    flex: 2;
+  }
+  
+  .center {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .cart-product-name {
+    font-weight: bold;
+  }
+  
+  .label {
+    font-weight: bold;
+  }
+  
+  .subtotal,
+  .total-price {
+    font-weight: bold;
+  }
+  

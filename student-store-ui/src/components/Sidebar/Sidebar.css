@@ -1,4 +1,4 @@
-  .sidebar {
+  /* .sidebar {
     position: absolute;
     top: 60px;
     left: -15vw;
@@ -23,5 +23,88 @@
   }
   .content.open {
     left: 15vw;
-  }
+  } */
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 320px;
+    flex: 1;
+    transition: all .2s cubic-bezier(.215,.61,.355,1);
+    position: fixed;
+    z-index: 100;
+    top: 0px;
+    height: 100vh;
+    padding: 20;
+    overflow-y: scroll;
+    padding-bottom: 2rem;
+    background: var(--dark-blue);
+    border-right: solid 1px white
+}
+/* 
+.sidebar-closed {
+    width: 60px;
+    
+}
+
+.sidebar-open {
+    width: 520px
+}
+
+.sidebar .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%
+    
+}
+
+.sidebar .toggle-button {
+    margin-top: 20px;
+    transition: all .2s cubic-bezier(.075,.82,.165,1);
+    background: black;
+    color: #fff;
+    border: none;
+}
+
+.sidebar .toggle-button.open {
+    transform: rotateY(180deg);
+    border: none;
+    background: black
+}
+
+
+.sidebar .wrapper.closed{
+  display: none
   
+}
+
+.sidebar i {
+    margin-right: 10px;
+    cursor: pointer;
+    color: #fff
+}
+
+.toggle-button .button .open{
+  background-color: none;
+} */
+
+
+.toggle-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.toggle-button .material-icons {
+  font-size: 24px;
+}
+
+.sidebar.open .toggle-button {
+  display: none;
+}
