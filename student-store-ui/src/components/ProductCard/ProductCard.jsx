@@ -6,7 +6,6 @@ import {useState} from 'react';
 export default function ProductCard(props) {
 
   const[quantity, setQuantity] = useState(0)
-  console.log(quantity)
   
   
     function addHandleQuantity (event) {
@@ -26,11 +25,12 @@ export default function ProductCard(props) {
           <img src={props.product.image} />
           </Link>
           <p>{props.product.name}</p>
-          <p>${props.product.price.toFixed(2)}</p>
+          <p>⭐⭐⭐⭐⭐</p>
+          <p id="price">${props.product.price.toFixed(2)}</p>
           <div className="quantity">
-          <button onClick={addHandleQuantity}> + </button>
-          <button onClick={subHandleQuantity}> - </button> 
-          <p>{quantity}</p>
+          <button id="add" onClick={addHandleQuantity}> + </button>
+          <button id="sub" onClick={subHandleQuantity}> - </button> 
+          <p id="quant">Quantity: {quantity}</p>
         </div>
         </div>
       );

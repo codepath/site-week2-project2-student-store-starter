@@ -1,8 +1,30 @@
-.sidebar{
-    width: 4%;
-    height: 100%;
-    display: block;
-    position: fixed;
-    background-color: #6A8EAE;
-    border-color: black;
+.sidebar {
+font-size: 20px;
+background-color: #6a8eae;
+height: 100vh;
+position: fixed;
+width: 200px;
+padding: 15px;
+border-right: solid 1px white;
 }
+
+.sidebar li{
+    list-style: none;
+}
+
+#button{
+    border: none;
+    background-color: #6a8eae;
+    
+}
+
+#button:hover{
+    border: none;
+    background-color: aliceblue;
+}
+
+
+
+
+
+

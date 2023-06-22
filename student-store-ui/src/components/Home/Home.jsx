@@ -3,7 +3,6 @@ import Navbar from "../Navbar/Navbar"
 import Hero from "../Hero/Hero"
 import Contact from "../Contact/Contact"
 import Footer from "../Footer/Footer"
-
 import About from "../About/About"
 import Search from "../Search/Search"
 import ProductGrid from "../ProductGrid/ProductGrid"
@@ -11,6 +10,8 @@ import ProductGrid from "../ProductGrid/ProductGrid"
 
 
 export default function Home(props) {
+  
+  
   return(
     <>
     <Navbar />

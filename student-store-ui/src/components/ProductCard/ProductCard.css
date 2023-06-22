@@ -8,12 +8,18 @@ img {
   .product-name {
     padding: 5px;
     border: 1px solid black;
-    border-radius: 10px;      
+    border-radius: 10px;     
   }
 
-  .quantity {
-  display: flex;
-  justify-content: right;
+
+
+#quant, #add, #sub {
+padding: 1px 5px;
+border-radius: 4px;
+margin-right: 10px;
+display: inline-block;
+margin-top: 0;
+
 }
 
 

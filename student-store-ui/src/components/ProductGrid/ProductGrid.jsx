@@ -1,8 +1,6 @@
 import * as React from "react";
 import "./ProductGrid.css";
 import ProductCard from "../ProductCard/ProductCard";
-import {useState} from 'react';
-import { Link } from "react-router-dom";
 
 
 
@@ -26,39 +24,9 @@ export default function ProductGrid(props) {
   }
 
 
-//   const[quantity, setQuantity] = useState(0)
-// console.log(quantity)
-
-
-//   function addHandleQuantity (event) {
-//     setQuantity((quantity) => 
-//       quantity + 1)
-//   }
-
-//   function subHandleQuantity (event) {
-//     setQuantity((quantity) => 
-//       quantity - 1)
-//   }
-
-//   function createProduct(info) {
-
-//     return (
-//       <div className="product-name">
-//         <Link to={"products/" + info.id}>
-//         <img src={info.image} />
-//         </Link>
-//         <p>{info.name}</p>
-//         <p>${info.price.toFixed(2)}</p>
-//         <button onClick={addHandleQuantity}> + </button>
-//       <button onClick={subHandleQuantity}> - </button> 
-//       <p>{quantity}</p>
-//       </div>
-//     );
-//   }
-
   return (
     <>
-      <h2 id="buy-now" style={{ marginLeft: "50px", font: "large" }}>
+      <h2 id="buy-now" style={{ marginLeft: "120px", font: "large" }}>
         Best Selling Products
       </h2>
       <div className="productGrid">

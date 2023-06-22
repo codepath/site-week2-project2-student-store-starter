@@ -2,11 +2,18 @@ import * as React from "react"
 import "./Navbar.css"
 import logo from "../../images/logo.png"
 import {Link} from "react-router-dom"
+import Sidebar from "../Sidebar/Sidebar"
 
 export default function Navbar() {
+
+
   return (
+    <>
+    <Sidebar/>
     <nav className="navbar">
       <div>
+
+
         <Link to="/"> 
         <img src={logo} alt="code path logo" id="logo"/>
         </Link>
@@ -20,5 +27,6 @@ export default function Navbar() {
         </ul>
       </div>
     </nav>
+    </>
   )
 }
