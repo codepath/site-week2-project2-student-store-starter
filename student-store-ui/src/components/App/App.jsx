@@ -30,7 +30,6 @@ export default function App() {
 
   return (
     <div className="app">
-      <Sidebar isOpen={sidebarOpen} toggleSidebar={handleSidebarToggle} />
       <BrowserRouter>
         <main>
         <Routes>

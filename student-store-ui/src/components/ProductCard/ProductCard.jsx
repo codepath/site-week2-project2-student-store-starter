@@ -18,8 +18,8 @@ const addToCart = (item) => {
       id: product.id,
       name: product.name,
       price: product.price,
-      quantity: quantity +1,
-      subtotal: quantity * product.price,
+      quantity: quantity + 1,
+      subtotal: (quantity +1) * product.price,
     };
     // handles existing items
     const existingItemIndex = cartItems.findIndex((cartItem) => cartItem.id === item.id);
@@ -55,6 +55,7 @@ const addToCart = (item) => {
       setQuantity(0);
       handleRemoveFromCart();
     } 
+    
     else {
       setQuantity(quantity - 1);
       const updatedCartItems = [...cartItems];
