@@ -21,7 +21,7 @@
 .product-grid .product-card {
   height: 350px;
   width: 250px;
-  background: #fff;
+  /* background: #fff; */
   display: flex;
   flex-direction: column;
   border: solid 1px #e4e4e4;

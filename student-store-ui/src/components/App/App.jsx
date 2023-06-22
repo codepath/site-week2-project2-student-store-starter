@@ -1,27 +1,12 @@
 import * as React from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
 import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 import Home from "../Home/Home";
-import "./App.css";
-import { useEffect, useState } from "react";
-import axios from "axios";
 import ProductDetail from "../ProductDetail/ProductDetail";
-// usually put external dependencies at the top
-
-// import react pro sidebar components
-// import {
-//   ProSidebar,
-//   Menu,
-//   MenuItem,
-//   SidebarHeader,
-//   SidebarFooter,
-//   SidebarContent,
-// } from "react-pro-sidebar";
-
-// TODO:
-// shopping cart update
-// add for product details as well
 
 export const appInfo = {
   title: "Welcome! Find Your Merch!",
@@ -38,14 +23,15 @@ export default function App() {
   const [selectedCategory, setSelectedCategory] = useState(); // used for category filtering
   const [filteredCategoryArray, setFilteredCategoryArray] = useState(); // used for category filtering
   const [filteredSearchArray, setFilteredSearchArray] = useState();
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [shoppingCart, setShoppingCart] = useState([]);
   const [checkoutSubmitted, setCheckoutSubmitted] = useState(false);
   const [nameTerm, setNameTerm] = useState("");
   const [emailTerm, setEmailTerm] = useState("");
 
-  //example of shopping cart => {{itemId: 4, quantity: 2}, {itemId: 2, quantity: 1}}
-
+  // Example of shopping cart => {{itemId: 4, quantity: 2}, {itemId: 2, quantity: 1}}
+// TODO: FIX PRODUCT NOT FOUND PAGE
+// TODO: PRODUCT QUANTITY NEEDS TO MATCH ON PRODOCUTVE VIEW
   useEffect(() => {
     axios.get(url).then((response) => {
       setProducts(response.data.products);
@@ -74,13 +60,12 @@ export default function App() {
     setFilteredCategoryArray(filteredItemsCategory);
   }
 
-  // function to make search and filter by category work together, also handles initial loading case
+  // Makes search and filter by category work together, also handles initial loading case (display no products)
   function getFilteredProducts() {
     // initial page load
     if (!searchInput && !selectedCategory) {
       return products;
     }
-
     let filteredItems = products;
     if (searchInput) {
       filteredItems = filteredItems.filter((product) =>
@@ -92,15 +77,17 @@ export default function App() {
         product.category.toLowerCase().includes(selectedCategory.toLowerCase())
       );
     }
-
     return filteredItems;
   }
 
-  // function to set the sidebar state to open/closed
+  // Sets the sidebar state to open/closed
   function onToggle(event) {
-    setSidebarOpen(!sidebarOpen);
+    setIsOpen(!isOpen);
   }
 
+  // Add a product with input ID to the shoppingCart 
+  // If product isn't already in the shopping cart, and set its quantity to 1.
+  // If the product is already in the shopping cart, increment its quantity by 1.
   function handleAddItemToCart(productId) {
     let isAlreadyInCart = shoppingCart.some( product => product.itemId === productId);
     if (isAlreadyInCart) {
@@ -113,6 +100,8 @@ export default function App() {
     }
   }
 
+  // Decrease the quantity of a product with input ID in the shoppingCart by 1, but only if it is in the shopping cart.
+  // If the new quantity is 0, it should remove the item from the shoppingCart.
   function handleRemoveItemToCart(productId) {
     let isAlreadyInCart = shoppingCart.some( product => product.itemId === productId);
     if (isAlreadyInCart) {
@@ -136,16 +125,17 @@ export default function App() {
     // The body of the POST request should be an object with two fields:
   }
 
+  // Sets the checkout form as submitted
   function handleCheckout(event){
     setCheckoutSubmitted(true)
   }
 
+  // Sets the checkout form as not submitted and resets name and email inputs from use
   function handleShopMore(event){
     setCheckoutSubmitted(false);
     setNameTerm("")
     setEmailTerm("")
   }
-
 
   return (
     <div className="app">
@@ -155,7 +145,7 @@ export default function App() {
             key={"sidebar"}
             products={getFilteredProducts()}
             onToggle={onToggle}
-            sidebarOpen={sidebarOpen}
+            isOpen={isOpen}
             handleOnCheckoutFormChange={handleOnCheckoutFormChange}
             shoppingCart={shoppingCart}
             checkoutSubmitted={checkoutSubmitted}
@@ -173,32 +163,23 @@ export default function App() {
                 path="/"
                 element={
                   <Home
-                    // handleInput={handleInput}
                     handleCategoryFilter={handleCategoryFilter}
                     handleSearch={handleSearch}
                     searchInput={searchInput}
-                    // products = {filteredSearchArray.length === 0 ? products : filteredSearchArray}
                     products={getFilteredProducts()}
                     handleAddItemToCart={handleAddItemToCart}
                     handleRemoveItemToCart={handleRemoveItemToCart}
                     shoppingCart={shoppingCart}
                     handleCheckout={handleCheckout}
-                    // quantity={quantity}
-                    // incrementQuant = {incrementQuant}
-                    // decrementQuant={decrementQuant}
                   />
                 }
               ></Route>
 
-              <Route path="products/:id" element={<ProductDetail />} />
-
-              {/* <Route path="products/:id" element={<ProductDetail quantity={quantity}/>} /> */}
+              <Route path="products/:id" element={<ProductDetail shoppingCart={shoppingCart} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemToCart}/>} />
             </Route>
 
             {/* <Route path = "*" element={<NotFound/>}/> */}
           </Routes>
-
-          {/* <Home products = {filteredSearchArray.length === 0 ? products : filteredSearchArray} />  */}
         </main>
       </BrowserRouter>
     </div>

@@ -1,13 +1,12 @@
 import * as React from "react";
 import "./Sidebar.css";
-import { useEffect, useState } from "react";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import CheckoutForm from "../CheckoutForm/CheckoutForm";
 
 export default function Sidebar({
   products,
   onToggle,
-  sidebarOpen,
+  isOpen,
   handleOnCheckoutFormChange,
   shoppingCart,
   handleOnSubmitCheckoutForm,
@@ -19,7 +18,6 @@ export default function Sidebar({
   setNameTerm,
   setEmailTerm
 }) {
-
 
   function handleNameChange(event) {
     setNameTerm(event.target.value);
@@ -50,13 +48,13 @@ export default function Sidebar({
     }
   );
 
-  if (sidebarOpen) {
+  if (isOpen) {
     return (
       <section className="sidebar open">
         <div className="wrapper">
           <button
             className="toggle-button button open"
-            onClick={() => onToggle(!sidebarOpen)}
+            onClick={() => onToggle(!isOpen)}
           >
             <i className="material-icons md-48">arrow_forward</i>
           </button>
@@ -70,8 +68,8 @@ export default function Sidebar({
               </h3>
 
               <ShoppingCart
-                key={"shopping-cart"}
-                sidebarOpen={sidebarOpen}
+                key={"shoppingCart"}
+                isOpen={isOpen}
                 products={products}
                 shoppingCart={shoppingCart}
                 taxesAndFees={taxesAndFees}
@@ -160,7 +158,6 @@ export default function Sidebar({
       </section>
     );
   } else {
-    // console.log("sidebar is now closed");
     return (
       <section className="sidebar closed">
         <div className="wrapper">
@@ -172,7 +169,7 @@ export default function Sidebar({
               <span className="cart-icon icon button">
                 <i
                   className="material-icons md-48"
-                  onClick={() => onToggle(!sidebarOpen)}
+                  onClick={() => onToggle(!isOpen)}
                 >
                   add_shopping_cart
                 </i>
@@ -180,7 +177,7 @@ export default function Sidebar({
               <span className="cart-icon icon button">
                 <i
                   className="material-icons md-48"
-                  onClick={() => onToggle(!sidebarOpen)}
+                  onClick={() => onToggle(!isOpen)}
                 >
                   monetization_on
                 </i>
@@ -188,7 +185,7 @@ export default function Sidebar({
               <span className="cart-icon icon button">
                 <i
                   className="material-icons md-48"
-                  onClick={() => onToggle(!sidebarOpen)}
+                  onClick={() => onToggle(!isOpen)}
                 >
                   fact_check
                 </i>

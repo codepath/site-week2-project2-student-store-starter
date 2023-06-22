@@ -2,8 +2,6 @@ import * as React from "react"
 import "./SubnavBar.css"
 
 export default function SubnavBar({formData, handleSearch, handleCategoryFilter}){
-    // export default function SubnavBar({formData, handleInput}){
-
     return (
         <nav className="sub-navbar">
         <div className="content">

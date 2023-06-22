@@ -7,17 +7,16 @@
       display:flex;
       flex-direction: column;
       align-items: center;
-      padding-bottom: 50px;
+      padding-bottom: 150px;
+      /* background: #fff; */
+ 
+      max-width: 800px;
+      margin-left: 150px
   /* } */
 }
-div {
-  display: block;
-}
-div{
-  margin: 0;
-  padding: 0;
-  font-family: Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
-  color: #212121;
+.product-view-card{
+  align-items: center;
+  border: solid 1px #e4e4e4;
 }
 h1 {
   display: block;
@@ -33,34 +32,48 @@ h1 {
   color: #212121;
 }
 
-.product-view-card {
+/* .product-view-card {
   background: #fff;
   display: flex;
   flex-direction: column;
   border: solid 1px #e4e4e4;
   max-width: 800px;
+} */
+
+.product-card{
+  align-items:center
 }
-
-
-.product-view-card .product-card {
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  border: solid 1px #e4e4e4;
-
-  max-width: 800px;
-}
-.product-view-card .media {
+.product-card .media {
   width: 100%;
   max-width: 800px;
   display: flex;
   justify-content: center;
 }
-.product-view-card .product-card .media img {
-  width: 800px;
-  height: 1000px;
+
+.product-view-card .product-card {
+  /* background: #fff; */
+  display: flex;
+  flex-direction: column;
+  border: solid 1px #e4e4e4;
+  max-width: 800px;
+  /* height: 500px */
+}
+/* .product-view-card .media {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+} */
+
+a {
+  text-decoration: none;
+  color: #a9d6e5;
 }
 
+.product-view-card .product-card .media img {
+  width: 550px;
+  height: 550px;
+}
 .product-view-card .product-card .main-info {
   flex: 1;
   display: flex;
@@ -72,6 +85,7 @@ h1 {
   display: flex;
   border-top: solid 1px #e4e4e4;
   background: #a9d6e5;
+  width: 800px;
 }
 
 .product-card .main-info .product-name {
@@ -136,7 +150,7 @@ h1 {
 
 .product-card .quantity .amt {
   background: #ff9017;
-  color: #fff;
+  /* color: #fff; */
   width: 20px;
   height: 20px;
   border-radius: 4px;

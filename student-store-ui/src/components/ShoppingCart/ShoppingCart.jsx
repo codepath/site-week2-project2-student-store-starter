@@ -1,12 +1,9 @@
 import * as React from "react";
 import "./ShoppingCart.css";
 
-export default function ShoppingCart({ sidebarOpen, shoppingCart, products, taxesAndFees, totalPrice, subtotalCalc }) {
-  
-
-  
-
-  if (sidebarOpen) {
+export default function ShoppingCart({ isOpen, shoppingCart, products, taxesAndFees, totalPrice, subtotalCalc }) {
+ 
+  if (isOpen) {
     if (shoppingCart.length === 0) {
       return (
         <div className="notification">
