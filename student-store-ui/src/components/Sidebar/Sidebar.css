@@ -6,6 +6,8 @@
     position: fixed;
     display: block;
     z-index: 1;
+    color: white;
+    text-align: center;
   }
   
   .sidebar.open {
@@ -24,5 +26,9 @@
     align-items: center;
     margin-top: 50px;
     width: 100%;
-padding-right: 2px;
+    padding-right: 2px;
+}
+
+.toggleButton{
+    background-color: #a3815f;
 }
