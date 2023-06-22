@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./ShoppingCart.css";
 
-export default function ShoppingCart(){
-    
+export default function ShoppingCart(props){
+
 }

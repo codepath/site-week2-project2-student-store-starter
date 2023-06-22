@@ -4,7 +4,6 @@ import "./Category.css";
 export default function Category(props) {
   function handleSubmit(e) {
     props.setCategory(e.target.name);
-    props.setCatSearch("category");
   }
   return (
     <div className="category">

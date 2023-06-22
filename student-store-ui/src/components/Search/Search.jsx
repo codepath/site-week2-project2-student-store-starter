@@ -4,7 +4,6 @@ import "./Search.css";
 export default function Search(props) {
   const handleChange = (event) => {
     props.setSearchValue(event.target.value);
-    props.setCatSearch("search");
   };
 
   function handleSubmit(e) {

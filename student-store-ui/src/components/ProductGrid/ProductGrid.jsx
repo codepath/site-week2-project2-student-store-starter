@@ -1,10 +1,18 @@
 import * as React from "react";
 import ProductCard from "../ProductCard/ProductCard";
+import { useState } from "react";
+
 
 export default function ProductGrid(props) {
+  const [shoppingCart, setShoppingCart] = useState([]);
+
+
+  console.log(shoppingCart);
+
+
   let newProducts;
   if (props.category === "all") {
-
+    
     newProducts = props.products?.filter((product) =>
     product.name.toLowerCase().includes(props.searchValue.toLowerCase())
   );
@@ -25,7 +33,7 @@ export default function ProductGrid(props) {
         {newProducts?.length === 0 ? (
           <p className="grid-p">No products available 🛑</p>
         ) : (
-          newProducts?.map((product) => <ProductCard product={product} />)
+          newProducts?.map((product) => <ProductCard product={product} shoppingCart={shoppingCart} setShoppingCart={setShoppingCart} />)
         )}
       </div>
     </div>
