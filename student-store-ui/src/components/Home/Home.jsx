@@ -10,7 +10,7 @@ import CategoryBar from "../CategoryBar/CategoryBar"
 import SearchBar from "../Searchbar/Searchbar"
 
 
-export default function Home() {
+export default function Home({ cart, setCart }) {
   const [category, setCategory] = useState("All Categories")
   const [searchTerm, setSearchTerm] = useState("")
 
@@ -24,7 +24,7 @@ export default function Home() {
           />
           <CategoryBar
             category={category}
-            setCategory={setCategory} 
+            setCategory={setCategory}
           />
         </section>
       </div>
@@ -34,6 +34,8 @@ export default function Home() {
             <ProductGrid
               category={category}
               searchTerm={searchTerm}
+              cart={cart}
+              setCart={setCart}
             />
         </section>
         <About />

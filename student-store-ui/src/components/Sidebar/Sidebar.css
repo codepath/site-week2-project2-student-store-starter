@@ -7,5 +7,13 @@
     background: #2c4047;
     color: #fff;
     height: 100vh;
+    transition: all .5s;
+}
+
+.open {
+    width: 600px;
+}
+
+.closed {
     width: 80px;
 }

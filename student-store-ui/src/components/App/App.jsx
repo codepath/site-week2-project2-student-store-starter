@@ -1,4 +1,5 @@
 import * as React from "react"
+import { useState } from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 import "./App.css"
@@ -11,17 +12,18 @@ import Footer from "../Footer/Footer"
 import Hero from "../Hero/Hero"
 
 export default function App() {
+  const [cart, setCart] = useState([])
   return (
     <BrowserRouter>
       <div className="app">
           <main>
-            <Sidebar />
+            <Sidebar cart={cart}/>
             <section className="page">
               <Navbar />
               <Hero />
               <div className="main-content">
                 <Routes>
-                  <Route path="/" element={<Home />} />
+                  <Route path="/" element={<Home cart={cart} setCart={setCart}/>} />
                   <Route path="/product/:id" element={<ProductDetails />} />
                 </Routes>
               </div>

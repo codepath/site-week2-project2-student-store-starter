@@ -1,13 +1,12 @@
 import * as React from "react"
 import { useState, useEffect } from "react"
 import axios from "axios"
-import { Link } from "react-router-dom"
 
 import "./ProductGrid.css"
 
 import ProductCard from "../ProductCard/ProductCard"
 
-export default function ProductGrid({ category, searchTerm }) {
+export default function ProductGrid({ category, searchTerm, cart, setCart }) {
   const [products, setProducts] = useState()
 
   const storeURL = "http://localhost:3001/store"
@@ -27,21 +26,19 @@ export default function ProductGrid({ category, searchTerm }) {
       : selectedProducts?.map((product, index) => {
         if (category === "All Categories") {
           return (
-            <Link key={product.id} to={`/product/${product.id}`}>
               <ProductCard 
                 product={product}
+                cart={cart}
+                setCart={setCart}
                 key={index}
               />
-            </Link>
           )
         } else if (category.toLowerCase() === product.category) {
           return (
-            <Link key={product.id} to={`/product/${product.id}`}>
               <ProductCard 
                 product={product}
                 key={product.id}
               />
-            </Link>
           )
         }
       })}
