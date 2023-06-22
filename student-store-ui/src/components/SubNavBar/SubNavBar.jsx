@@ -1,8 +1,6 @@
 import * as React from "react";
 import "./SubNavBar.css";
 
-
-
 export default function SubNavBar({
   searchTerm,
   setSearchTerm,
@@ -14,7 +12,7 @@ export default function SubNavBar({
   };
 
   const handleChange = (event) => {
-   event.preventDefault();
+    event.preventDefault();
     setSearchTerm(event.target.value);
     console.log(event.target.value);
   };
@@ -25,12 +23,10 @@ export default function SubNavBar({
   }
 
   return (
-    <nav class="sub-navbar">
-      <div class="content">
-        <div class="row">
-          <div class="search-bar">
-
-
+    <nav className="sub-navbar">
+      <div className="content">
+        <div className="row">
+          <div className="search-bar">
             <input
               type="text"
               name="search"
@@ -39,24 +35,24 @@ export default function SubNavBar({
               value={searchTerm}
             />
 
-            <i class="material-icons">search</i>
+            <i className="material-icons">search</i>
           </div>
-          <div class="links">
-            <span class="help">
-              <i class="material-icons">help</i>Help
+          <div className="links">
+            <span className="help">
+              <i className="material-icons">help</i>Help
             </span>
-            <div class="cart">
+            <div className="cart">
               <a href="/">
-                My Cart<i class="material-icons">shopping_cart</i>
+                My Cart<i className="material-icons">shopping_cart</i>
               </a>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="hamburger-menu">
-            <i class="material-icons">menu</i>
+        <div className="row">
+          <div className="hamburger-menu">
+            <i className="material-icons">menu</i>
           </div>
-          <ul class="category-menu open">
+          <ul className="category-menu open">
             <li className={category == "All Categories" ? "is-active" : ""}>
               <button onClick={handleCategoryClick}>All Categories</button>
             </li>

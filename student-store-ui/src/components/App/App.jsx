@@ -10,7 +10,7 @@ import ProductDetails from "../Product Details/ProductDetails";
 import Overlay from "../Overlay/Overlay";
 
 export default function App() {
-  const url = "http://localhost:3001";
+  const url = "http://localhost:3001/store";
 
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -19,6 +19,7 @@ export default function App() {
   console.log(products);
   useEffect(() => {
     axios.get(url).then((response) => {
+      console.log(response)
       setProducts(response.data.products);
     });
   }, []);

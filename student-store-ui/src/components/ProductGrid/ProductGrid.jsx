@@ -12,7 +12,7 @@ export default function ProductGrid({ products, searchTerm, category }) {
           </Link>
 
           <p>{info.name}</p>
-          <div class="stars">
+          <div className="stars">
             <svg
               x="0px"
               y="0px"
@@ -71,7 +71,7 @@ export default function ProductGrid({ products, searchTerm, category }) {
               width="32px"
               height="32px"
               viewBox="0 0 32 32"
-              class=""
+              className=""
               fill="none"
             >
               <path
