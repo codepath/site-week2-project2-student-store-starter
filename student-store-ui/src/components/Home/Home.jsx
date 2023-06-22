@@ -4,7 +4,15 @@ import { useState } from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
 
-export default function Home({ products, items, category, setCartItems, cartItems }) {
+export default function Home({
+  products,
+  items,
+  category,
+  setCartItems,
+  cartItems,
+  itemsOnCart,
+  setItemsOnCart 
+}) {
   const filteredProducts = products.filter((product) => {
     const matchSearch =
       items === "" || product.name.toLowerCase().includes(items);
@@ -18,21 +26,14 @@ export default function Home({ products, items, category, setCartItems, cartItem
 
   function incrementCount(e, cardId) {
     if (cardId in count) {
-      // console.log("Item in cart already")
       const increment = { ...count, [cardId]: count[cardId] + 1 };
-      console.log("Adding cart item", increment)
       setCount(increment);
     } else {
-      console.log("Item not in cart already")
       const create = { ...count, [cardId]: 1 };
-      console.log("New cart item", create)
       setCount(create);
     }
-    // console.log('trying the btton', count)
-    const cartCount = 1 + (count[cardId] || 0)
-    addItemCart(cardId, count[cardId])
-    // console.log('cart',cartItems)
-
+    const cartCount = 1 + (count[cardId] || 0);
+    addItemCart(cardId, cartCount);
   }
 
   function decrementCount(e, cardId) {
@@ -40,14 +41,34 @@ export default function Home({ products, items, category, setCartItems, cartItem
       if (count[cardId] > 0) {
         const decrementCount = { ...count, [cardId]: count[cardId] - 1 };
         setCount(decrementCount);
+
+        const cartCount = (count[cardId] || 0) - 1;
+        const decrementItemCart = { ...cartItems, [cardId]: cartCount };
+        console.log("cart after you just decremented", cartItems, cartCount);
+        // const {[cardId]: value, prev} = count
+        console.log("test",  cartCount, decrementItemCart)
+        cartCount === 0
+          ? (
+            // delete cartItems[cardId],
+            // delete count[cardId],
+            count[cardId] = 0,
+            console.log("test after deleting", cartItems, "count", count),
+            console.log('every', Object.values(count).every(e => e === 0)),
+            setCartItems(decrementItemCart)
+
+            // setItemsOnCart(false)
+            (Object.values(count).every(e => e === 0)) ? (setItemsOnCart(false)):(<></>)
+            
+            )
+            
+          : setCartItems(decrementItemCart);
       }
     }
   }
 
-  function addItemCart(cardId, quantity){
-    const appendNewItem = {...cartItems, [cardId]: quantity}
-    setCartItems(appendNewItem)
-    console.log('log home', cartItems)
+  function addItemCart(cardId, quantity) {
+    const appendNewItem = { ...cartItems, [cardId]: quantity };
+    setCartItems(appendNewItem);
   }
 
   return (
@@ -82,8 +103,8 @@ export default function Home({ products, items, category, setCartItems, cartItem
                   </button>
                   <button></button>
                 </div>
-                <span class="quantity">
-                  <span class="amt">{count[product.id]}</span>
+                <span className="quantity">
+                  <span className="amt">{count[product.id]}</span>
                 </span>
               </div>
             </div>

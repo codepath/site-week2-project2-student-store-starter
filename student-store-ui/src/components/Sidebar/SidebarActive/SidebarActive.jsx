@@ -1,8 +1,14 @@
 import * as React from "react";
+import { useEffect, useState } from "react";
 import Cart from "../../Cart/Cart";
 
-export default function SidebarActive({cartItems, products}) {
-  console.log('sidebaractive log', cartItems, products)
+export default function SidebarActive({ cartItems, products, itemsOnCart, setItemsOnCart }) {
+  
+  useEffect(() => {
+    setItemsOnCart(Object.keys(cartItems)?.length > 0);
+    console.log("you're inside the useEffect", itemsOnCart, cartItems)
+  }, [cartItems]);
+
   return (
     <>
       <div className="shopping-cart">
@@ -14,10 +20,9 @@ export default function SidebarActive({cartItems, products}) {
             </span>
           </h3>
 
-          {Object.keys(cartItems)?.length > 0 ? (
-            <Cart cartItems={cartItems} products={products}/>
+          {itemsOnCart ? (console.log('itemsOnCart?', itemsOnCart),
+            <Cart cartItems={cartItems} products={products} />
           ) : (
-            
             <div className="notification">
               {" "}
               No items added to cart yet. Start shopping now!

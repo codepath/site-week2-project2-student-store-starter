@@ -9,10 +9,7 @@ export default function ProductDetails() {
   const { id } = useParams();
   const [products, setProducts] = useState({});
   const [count, setCount] = useState(0);
-  function teste(event, value){
-    const haha = event.value
-    console.log(value)
-  }
+  
 
   useEffect(() => {
     axios
@@ -47,7 +44,6 @@ export default function ProductDetails() {
                         className="add"
                         onClick={(event) => {
                           setCount(count + 1);
-                          teste(event, event.value);
                         }}
                       >
                         <i className="material-icons">add</i>
@@ -62,8 +58,8 @@ export default function ProductDetails() {
                       </button>
                       <button></button>
                     </div>
-                    <span class="quantity">
-                      <span class="amt">{count}</span>
+                    <span className="quantity">
+                      <span className="amt">{count}</span>
                     </span>
                   </div>
                 </div>

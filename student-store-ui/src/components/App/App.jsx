@@ -25,8 +25,8 @@ export default function App() {
   const [isActive, setIsActive] = useState(false);
   const [products, setProducts] = useState([]);
   const [cartItems, setCartItems] = useState({});
+  const [itemsOnCart, setItemsOnCart] = useState(false);
 
-  console.log('log app', cartItems)
   useEffect(() => {
     axios.get(url).then((response) => {
       const dataProducts = response.data.products;
@@ -43,8 +43,10 @@ export default function App() {
           <Sidebar
             handleClick={() => setIsActive(!isActive)}
             isActive={isActive}
-            cartItems = {cartItems}
+            cartItems={cartItems}
             products={products}
+            itemsOnCart = {itemsOnCart}
+            setItemsOnCart = {setItemsOnCart}
           />
           <Hero />
           <SubNavbar
@@ -59,7 +61,15 @@ export default function App() {
             <Route
               path="/"
               element={
-                <Home products={products} items={items} category={category} setCartItems={setCartItems} cartItems={cartItems} />
+                <Home
+                  products={products}
+                  items={items}
+                  category={category}
+                  setCartItems={setCartItems}
+                  cartItems={cartItems}
+                  itemsOnCart = {itemsOnCart}
+                  setItemsOnCart = {setItemsOnCart}
+                />
               }
             />
             <Route path="/:id" element={<ProductDetails />} />
