@@ -4,7 +4,12 @@ import { useState, useEffect } from "react"
 
 export default function ShoppingCart({shoppingCart }) {
 
-    
+    function subtotal(shoppingCart){
+        return shoppingCart.reduce((sum, item) => {
+            return (sum + (item.price * item.quantity))
+          }, 0);
+
+    }
     
     
     
@@ -58,9 +63,9 @@ export default function ShoppingCart({shoppingCart }) {
           <div className="product-row" key={item.name}>
             <span className="flex-2 cart-product-name">{item.name}</span>
             <span className="center cart-product-quantity">{item.quantity}</span>
-            <span className="center cart-product-price">{item.price}</span>
+            <span className="center cart-product-price">${item.price.toFixed(2)}</span>
             <span className="center cart-product-subtotal">
-              {item.price * item.quantity}
+            ${(item.price * item.quantity).toFixed(2)}
             </span>
           </div>
         );
@@ -74,15 +79,15 @@ export default function ShoppingCart({shoppingCart }) {
       <div className="receipt">
         <div className="receipt-subtotal">
           <span className="label">Subtotal</span>
-          <span className="center subtotal">$2.99</span>
+          <span className="center subtotal">${subtotal(shoppingCart).toFixed(2)}</span>
         </div>
         <div className="receipt-taxes">
           <span className="label">Taxes and Fees</span>
-          <span className="center">$0.26</span>
+          <span className="center">${(subtotal(shoppingCart) * 0.08).toFixed(2)}</span>
         </div>
         <div className="receipt-total">
           <span className="label">Total</span>
-          <span className="center total-price">$3.25</span>
+          <span className="center total-price">${(subtotal(shoppingCart) + subtotal(shoppingCart) * 0.08).toFixed(2)}</span>
         </div>
       </div>
     </div>

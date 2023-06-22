@@ -68,7 +68,7 @@ export default function ProductCard({ product, handleAddItemToCart, handleRemove
       // if exists get quantity from shopping cart
       // else quantity = 0
 
-      return shoppingCart?.map(item =>{
+      return shoppingCart?.map(item => {
 
          if(item.id === product.id){
 
