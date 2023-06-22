@@ -39,7 +39,10 @@ console.log("PRODUCTS: ", products)
                     {
                         shoppingCart.map(item => <span className="center cart-product-price"> {products.filter((product) => item.itemId === product.id)[0].price} </span>)
                     }
-                    {/* <span className="center cart-product-subtotal">{product.price * quantity}</span> */}
+                    {
+                        shoppingCart.map(item => <span className="center cart-product-subtotal"> {(products.filter((product) => item.itemId === product.id)[0].price) * (item.quantity)} </span>)
+                    }
+
                     {/* need to take into account previous subtotal! */}
                 </div>
                 </div>
