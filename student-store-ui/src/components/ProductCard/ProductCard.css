@@ -9,6 +9,7 @@
   display: flex;
   background: #a9d6e5;
   border-top: solid 1px #e4e4e4;
+  width: 250px
 }
 
 .product-card .main-info .product-name {

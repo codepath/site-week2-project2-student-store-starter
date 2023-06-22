@@ -25,13 +25,14 @@ export default function App() {
   const [filteredSearchArray, setFilteredSearchArray] = useState();
   const [isOpen, setIsOpen] = useState(false);
   const [shoppingCart, setShoppingCart] = useState([]);
+    // Example of shopping cart => {{itemId: 4, quantity: 2}, {itemId: 2, quantity: 1}}
+
   const [checkoutSubmitted, setCheckoutSubmitted] = useState(false);
   const [nameTerm, setNameTerm] = useState("");
   const [emailTerm, setEmailTerm] = useState("");
+  const [incorrectSubmission, setIncorrectSubmission] = useState(false);
+  const [acceptedTermsAndConditions, setAcceptedTermsAndConditions] = useState(false);
 
-  // Example of shopping cart => {{itemId: 4, quantity: 2}, {itemId: 2, quantity: 1}}
-// TODO: FIX PRODUCT NOT FOUND PAGE
-// TODO: PRODUCT QUANTITY NEEDS TO MATCH ON PRODOCUTVE VIEW
   useEffect(() => {
     axios.get(url).then((response) => {
       setProducts(response.data.products);
@@ -77,7 +78,8 @@ export default function App() {
         product.category.toLowerCase().includes(selectedCategory.toLowerCase())
       );
     }
-    return filteredItems;
+    
+    return filteredItems?filteredItems:null;
   }
 
   // Sets the sidebar state to open/closed
@@ -126,8 +128,19 @@ export default function App() {
   }
 
   // Sets the checkout form as submitted
+  // Empties shopping cart, resets the name and email forms and accepted T&C state
   function handleCheckout(event){
-    setCheckoutSubmitted(true)
+    if (nameTerm != "" && emailTerm !== "" && acceptedTermsAndConditions && shoppingCart && shoppingCart.length > 0){
+      setCheckoutSubmitted(true)
+      setNameTerm("")
+      setEmailTerm("")
+      setAcceptedTermsAndConditions(false)
+      // BUT what baout unclicking the actual box? --> css?
+      // setShoppingCart([])
+      // TODO: UNCOMMENT
+    } else {
+      setIncorrectSubmission(true)
+    }
   }
 
   // Sets the checkout form as not submitted and resets name and email inputs from use
@@ -135,6 +148,12 @@ export default function App() {
     setCheckoutSubmitted(false);
     setNameTerm("")
     setEmailTerm("")
+    setAcceptedTermsAndConditions(false)
+    setShoppingCart([])
+  }
+
+  function handleAcceptTermsAndConditions(event){
+    setAcceptedTermsAndConditions(true)
   }
 
   return (
@@ -155,6 +174,9 @@ export default function App() {
             setNameTerm={setNameTerm}
             emailTerm={emailTerm}
             setEmailTerm={setEmailTerm}
+            incorrectSubmission={incorrectSubmission}
+            acceptedTermsAndConditions={acceptedTermsAndConditions}
+            handleAcceptTermsAndConditions={handleAcceptTermsAndConditions}
           />
 
           <Routes>

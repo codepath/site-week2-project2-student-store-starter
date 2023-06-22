@@ -16,9 +16,11 @@ export default function Sidebar({
   nameTerm,
   emailTerm,
   setNameTerm,
-  setEmailTerm
+  setEmailTerm,
+  incorrectSubmission,
+  acceptedTermsAndConditions,
+  handleAcceptTermsAndConditions,
 }) {
-
   function handleNameChange(event) {
     setNameTerm(event.target.value);
   }
@@ -68,7 +70,7 @@ export default function Sidebar({
               </h3>
 
               <ShoppingCart
-                key={"shoppingCart"}
+                key={2}
                 isOpen={isOpen}
                 products={products}
                 shoppingCart={shoppingCart}
@@ -114,7 +116,11 @@ export default function Sidebar({
                 <div className="field">
                   <div className="control">
                     <label className="checkbox">
-                      <input name="termsAndConditions" type="checkbox"></input>
+                      <input
+                        name="termsAndConditions"
+                        type="checkbox"
+                        onChange={handleAcceptTermsAndConditions}
+                      ></input>
                       <span className="label">
                         I agree to the{" "}
                         <a
@@ -127,8 +133,17 @@ export default function Sidebar({
                     </label>
                   </div>
                 </div>
-                <p className="is-danger"></p>
-                {/* TODO: EDGE CASE!! ADD AN EVENT LISTENER AND IF STATEMENT */}
+
+                <p className="is-danger">
+                  {!acceptedTermsAndConditions
+                    ? "You must first agree to our terms and conditions. "
+                    : null}
+                  <br></br>
+                  {!shoppingCart || shoppingCart.length == 0
+                    ? "No cart or items in cart found to checkout."
+                    : null}
+                </p>
+
                 <div className="field">
                   <div className="control">
                     <button

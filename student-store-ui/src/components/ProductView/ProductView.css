@@ -85,7 +85,7 @@ a {
   display: flex;
   border-top: solid 1px #e4e4e4;
   background: #a9d6e5;
-  width: 800px;
+  /* width: 800px; */
 }
 
 .product-card .main-info .product-name {

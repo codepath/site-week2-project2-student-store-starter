@@ -31,12 +31,11 @@ export default function ProductView({
       setProduct(response.data.product);
     });
   }, []);
-  // console.log(product)
   if (!product) {
     return <h1 className="loading"> Loading...</h1>;
   } // undefined product array
   else {
-    const productPrice = product.price.toLocaleString("us-EN", {
+    const productPrice = product.price?.toLocaleString("us-EN", {
       style: "currency",
       currency: "USD",
     });
@@ -55,7 +54,7 @@ export default function ProductView({
                 ></img>
               </a>
             </div>
-            <div className="product-info">
+            <div className="product-info" style={{width: "800px"}}>
               <div className="main-info">
                 <p className="product-name">{product.name}</p>
                 <div className="stars">
