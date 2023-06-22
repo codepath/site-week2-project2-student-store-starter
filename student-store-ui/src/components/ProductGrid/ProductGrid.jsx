@@ -20,7 +20,7 @@ export default function ProductGrid({ products, searchTerm, category }) {
           <Link to={`/product/${product.id}`}>
             <div className="product-card">
               <div className="product-img">
-                <img src={product.image} alt={product.name} />
+                <img className="product-image" src={product.image} alt={product.name} />
               </div>
               <div className="product-info">
                 <p>{product.name}</p>

@@ -8,12 +8,14 @@ import SubNavbar from "../SubNavbar/SubNavbar"
 import ProductDetail from "../ProductDetail/ProductDetail"
 import { useEffect, useState } from "react"
 import axios from 'axios'
+import "./App.css"
 
 export default function App() {
   const url = "https://codepath-store-api.herokuapp.com/store"
   const [products, setProducts] = useState([])
   const [searchTerm, setSearchTerm] = useState("")
   const [category, setCategory] = useState("")
+  const [cart, setCart] = useState([])
   
 
   useEffect(() => {
@@ -30,17 +32,20 @@ export default function App() {
   return (
     <div className="app">
       <BrowserRouter>
-        <main>
-          <Navbar />
-          <Hero />
-          <SubNavbar setCategory={setCategory} setSearchTerm={setSearchTerm} />
-          <Sidebar />
-          <Routes>
-            <Route path="/" element={<Home products={filteredProducts} />} />
-            <Route path="/product/:id" element={<ProductDetail products={products} />} />
-          </Routes>
-        </main>
+        <Sidebar />
+        <div className="main-content">
+          <main>
+            <Navbar />
+            <Hero />
+            <SubNavbar setCategory={setCategory} setSearchTerm={setSearchTerm} />
+            <Routes>
+              <Route path="/" element={<Home products={filteredProducts} />} />
+              <Route path="/product/:id" element={<ProductDetail products={products} />} />
+            </Routes>
+          </main>
+        </div>
       </BrowserRouter>
     </div>
   )
+
 }

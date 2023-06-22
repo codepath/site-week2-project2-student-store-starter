@@ -22,3 +22,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: black;
 }
+
+.main-content {
+  margin-left: 40px;
+}

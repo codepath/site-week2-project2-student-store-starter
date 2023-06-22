@@ -1,4 +1,11 @@
 .product-grid{
     display: flex;
+    
 
+}
+
+.product-image {
+    height: 300px;
+    width: 200px;
+    object-fit: fill;
 }
