@@ -21,3 +21,11 @@
 #loading h1 {
   padding-top: 30px;
 }
+
+.productdet-info{
+  font-weight: bold;
+  font-size: large;
+  background-color: var(--light-cp);
+  color: white;
+  padding: 10px;
+}

@@ -4,7 +4,6 @@ import ProductCard from "../ProductCard/ProductCard";
 export default function ProductGrid(props) {
   let newProducts;
   if (props.category === "all") {
-    newProducts = props.products;
 
     newProducts = props.products?.filter((product) =>
     product.name.toLowerCase().includes(props.searchValue.toLowerCase())

@@ -22,6 +22,8 @@
   background-color: var(--light-cp);
   color: white;
   padding: 10px;
+  display: flex;
+  justify-content: space-around;
 }
 .grid-p {
   font-size: xx-large;
@@ -40,4 +42,36 @@
   min-height: 200px;
   width: 60%;
   margin: 0 auto;
+}
+
+.div-button{
+  display: flex;
+  flex-direction: column;
+}
+
+#button-card{
+  margin-top: 17px;
+  margin-bottom: 52px;
+}
+.card-button{
+  border: solid var(--dark-Cp);
+  background-color: white;
+  width: 22px;
+  height: 22px;
+  color: var(--dark-Cp);
+  margin: 2px;
+}
+
+.card-button:hover{
+  background-color: orange;
+  color: white;
+}
+
+#quantitySpan{
+  background-color: orange;
+  width: 30px;
+  height: 30px;
+  padding-top: 3px;
+  text-align: center;
+  margin-left: 8px;
 }

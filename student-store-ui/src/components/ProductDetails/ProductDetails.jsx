@@ -4,16 +4,26 @@ import Navbar from "../Navbar/Navbar";
 import Hero from "../Hero/Hero";
 import Search from "../Search/Search";
 import Category from "../Category/Category";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 
 import { useParams } from "react-router-dom";
 
 export default function ProductDetail(props) {
   const { id } = useParams();
+  console.log(id)
+  let url = `http://localhost:3001/store/${id}`;
 
-  const product = props.products.find((product) => product.id == parseInt(id));
+  const [product, setProduct] = useState([]);
 
-  if (props.products.length === 0) {
+  useEffect(() => {
+    axios.get(url).then((response) => {
+      setProduct(response.data[0]);
+    });
+  }, []);
+ 
+  if (product.length === 0) {
     return (
       <>
         <Navbar />
@@ -39,7 +49,7 @@ export default function ProductDetail(props) {
           src={product.image}
           alt={`Image of ${product.name}`}
         />
-        <div className="product-info">
+        <div className="productdet-info">
           <p>{product.name}</p>
           <p>{product.description}</p>
           <p>${product.price.toFixed(2)}</p>

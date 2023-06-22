@@ -11,12 +11,12 @@ export default function App() {
   const [searchValue, setSearchValue] = useState("");
   const [category, setCategory] = useState("");
   const [products, setProducts] = useState([]);
-  const url = "https://codepath-store-api.herokuapp.com/store";
+  const url = "http://localhost:3001/store";
 
   useEffect(() => {
     axios.get(url).then((response) => {
-      console.log(response.data.products);
-      setProducts(response.data.products);
+      // console.log(response.data);
+      setProducts(response.data);
     });
   }, []);
 

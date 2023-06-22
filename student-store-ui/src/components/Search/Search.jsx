@@ -2,7 +2,6 @@ import * as React from "react";
 import "./Search.css";
 
 export default function Search(props) {
-  console.log(props.products);
   const handleChange = (event) => {
     props.setSearchValue(event.target.value);
     props.setCatSearch("search");
@@ -16,7 +15,7 @@ export default function Search(props) {
     <>
       <div className="search">
         <form action="search" id="search-form">
-          <label htmlFor="search">Search for Merch! 🛍️ </label> <br />
+          <label id="search-label" htmlFor="search">Search for Merch! 🛍️ </label> <br />
           <input
             type="search"
             name="search"
