@@ -176,21 +176,3 @@
     border: 3px outset #012a4a;
 
 }
-.checkout-success {
-    width: 100%;
-    padding: 1rem;
-}
-.checkout-success>h3 {
-    color: #a9d6e5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.checkout-success>h3>span {
-    margin-left: 10px;
-}
-.checkout-success p {
-    color: #a9d6e5;
-}
-
-/* add for rest of open bar */

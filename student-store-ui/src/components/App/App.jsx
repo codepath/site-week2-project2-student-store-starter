@@ -40,10 +40,9 @@ export default function App() {
   const [filteredSearchArray, setFilteredSearchArray] = useState();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [shoppingCart, setShoppingCart] = useState([]);
-  // const [restOfCart, setRestOfCart] = useState
-  // const[shoppingCart, setShoppingCart] = useState([{itemId: 4, quantity: 2}, {itemId: 2, quantity: 1}])
+  const [checkoutSubmitted, setCheckoutSubmitted] = useState(false);
 
-  //{ {itemId: 4, quantity: 2}, {itemId: 2, quantity: 1}}
+  //example of shopping cart => {{itemId: 4, quantity: 2}, {itemId: 2, quantity: 1}}
 
   useEffect(() => {
     axios.get(url).then((response) => {
@@ -95,6 +94,7 @@ export default function App() {
     return filteredItems;
   }
 
+  // function to set the sidebar state to open/closed
   function onToggle(event) {
     setSidebarOpen(!sidebarOpen);
   }
@@ -134,6 +134,11 @@ export default function App() {
     // The body of the POST request should be an object with two fields:
   }
 
+  function handleCheckout(event){
+    setCheckoutSubmitted(!checkoutSubmitted)
+  }
+
+
   return (
     <div className="app">
       <BrowserRouter>
@@ -145,6 +150,8 @@ export default function App() {
             sidebarOpen={sidebarOpen}
             handleOnCheckoutFormChange={handleOnCheckoutFormChange}
             shoppingCart={shoppingCart}
+            checkoutSubmitted={checkoutSubmitted}
+            handleCheckout={handleCheckout}
           />
 
           <Routes>
@@ -162,6 +169,7 @@ export default function App() {
                     handleAddItemToCart={handleAddItemToCart}
                     handleRemoveItemToCart={handleRemoveItemToCart}
                     shoppingCart={shoppingCart}
+                    handleCheckout={handleCheckout}
                     // quantity={quantity}
                     // incrementQuant = {incrementQuant}
                     // decrementQuant={decrementQuant}
