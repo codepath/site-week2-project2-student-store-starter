@@ -1,0 +1,16 @@
+.Categories{
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border: 5px solid white;
+}
+
+.ShoppingCartSpan{
+    flex-direction: row;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+

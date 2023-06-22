@@ -1,8 +1,10 @@
 import * as React from "react"
 import "./Sidebar.css"
 import { useState } from "react";
+import ShoppingCart from "../ShoppingCart/ShoppingCart";
 
-function Sidebar() {
+
+function Sidebar({ShoppingList}) {
   //State varible to toggle the sidebar
   const [isOpen, setOpen] = useState(false);
   return (
@@ -11,6 +13,7 @@ function Sidebar() {
       {/* Button to toggle */}
       <button className="Side-button" onClick={() => {setOpen(!isOpen)}}>Click Me!</button>
       {/* Content of Sidebar */}
+      <ShoppingCart ShoppingList = {ShoppingList}/>
       <div style = {{display: isOpen ? "block" : "none"}}>
         Name
         <input style = {{width: "90%"}} type = "text" />

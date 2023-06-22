@@ -35,7 +35,7 @@ export default function App() {
         <Routes>
           <Route path = "" element = {<main>
           <Navbar />
-          <Sidebar />
+          <Sidebar ShoppingList={ShoppingList} />
           <Home products={products} ShoppingList= {ShoppingList} SetShoppingList={SetShoppingList}/>
           </main>}/>
           <Route path="products/:id" element={<Productfacts/>}/>
