@@ -9,19 +9,32 @@ function ProductDetails() {
   useEffect(() => {
     axios.get(`https://codepath-store-api.herokuapp.com/store/${id}`)
       .then(response => {
-        setProduct(response.data);
+        console.log(response.data.product);
+        setProduct(response.data.product);
       });
-  }, [id]);
+  }, []);
 
   if (!product) {
     return <div>Loading...</div>
   }
 
   return (
-    <div>
-      <h1>{product.name}</h1>
-      
-    </div>
+    <>
+      <div className="product-detail" key={id}>
+        <div className="product-container">
+        <h1>{product?.name}</h1>
+          <div className="product-image">
+            <img
+              src={product?.image}
+              alt={product?.name}
+              style={{ width: "50%" }}
+            />
+          </div>
+          <p>{product?.description}</p>
+          <p>{product?.price}</p>
+        </div>
+      </div>
+    </>
   );
 }
 
