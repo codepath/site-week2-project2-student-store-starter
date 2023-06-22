@@ -1,5 +1,7 @@
 /* Banner */
 .hero-content{
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
     display: flex;
     flex-direction: row;
     justify-content: center;
