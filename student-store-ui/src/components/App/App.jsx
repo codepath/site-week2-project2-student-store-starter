@@ -17,14 +17,37 @@ import ProductDetails from "../ProductDetails/ProductDetails"
 
 export default function App() {
 
-  const URL = "https://codepath-store-api.herokuapp.com/store";
+  const URL = "http://localhost:3001";
 
   const [products, setProducts] = useState();
   const [sidebarState, setSidebar] = useState(false);
+  const [count, setCount] = useState({});
+    
+  function handleAdd(e, cardId){
+      if(cardId in count){
+          const add = {...count, [cardId]: count[cardId] +1};
+          setCount(add);
+      }else{
+          const create = {...count, [cardId]:1};
+          setCount(create);
+      }
+  }
+
+  function handleMinus(e, cardId){
+      if(cardId in count){
+          if (count[cardId] > 0) { // Check if count is already greater than 0
+              const minus = { ...count, [cardId]: count[cardId] - 1 };
+              setCount(minus);
+            }
+      }else {
+          setCount({ ...count, [cardId]: 0 });
+      }
+  }
 
   useEffect(()=>{
     axios.get(URL)
     .then((response) => {
+        console.log(response.data)
         setProducts(response.data.products);
       });
   }, [])
@@ -40,12 +63,12 @@ export default function App() {
           <Routes>
               <Route  
                 path="/"
-                element={<Home products={products}/>}
+                element={<Home products={products} count={count} setCount={setCount} handleAdd={handleAdd} handleMinus={handleMinus}/>}
               />
 
               <Route
                 path="products/:id"
-                element={<ProductDetails/>}
+                element={<ProductDetails count={count} setCount={setCount} handleAdd={handleAdd} handleMinus={handleMinus}/>}
                 />
               <Route 
                 path="/about" 

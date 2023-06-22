@@ -12,3 +12,58 @@
     height: 500px;
     width: 600px;
 }
+
+.productdetails .actions {
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.productdetails .buttons {
+    width: 80px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+.productdetails .buttons button {
+    display: flex;
+    outline: none;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    max-height: fit-content;
+    max-width: fit-content;
+    margin: 10px 5px;
+}
+.productdetails .buttons i {
+    width: 50px;
+    height: 50px;
+    border: solid 1px #60afff;;
+    color: #60afff;;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.productdetails .quantity {
+    width: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5px;
+}
+.productdetails .quantity .amt {
+    background: #3066be ;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

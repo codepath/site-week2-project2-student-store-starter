@@ -8,8 +8,7 @@
     position:fixed;
     z-index: 100;
     top: 0px;
-    height: 100vh;;
-    overflow-y: scroll;
+    height: 100vh;
     background: linear-gradient(#3066be, #963484);
 }
 
