@@ -1,29 +1,10 @@
 import * as React from "react";
 import "./ShoppingCart.css";
 
-export default function ShoppingCart({ sidebarOpen, shoppingCart, products }) {
-  let taxRate = 0.0875;
-  let subtotalCalc = 0;
-  shoppingCart.forEach((i) => {
-    let specificItemId = i.itemId;
-    let specificItemQuantity = i.quantity;
-    subtotalCalc +=
-      products.filter((product) => specificItemId === product.id)[0].price *
-      specificItemQuantity;
-  });
+export default function ShoppingCart({ sidebarOpen, shoppingCart, products, taxesAndFees, totalPrice, subtotalCalc }) {
+  
 
-  let taxesAndFees = (subtotalCalc * taxRate).toLocaleString("us-EN", {
-    style: "currency",
-    currency: "USD",
-  });
-
-  let totalPrice = (subtotalCalc + subtotalCalc * taxRate).toLocaleString(
-    "us-EN",
-    {
-      style: "currency",
-      currency: "USD",
-    }
-  );
+  
 
   if (sidebarOpen) {
     if (shoppingCart.length === 0) {
@@ -45,33 +26,30 @@ export default function ShoppingCart({ sidebarOpen, shoppingCart, products }) {
             {shoppingCart.map((item) => (
               <div className="product-row">
                 <div>
-                  {" "}
                   {
                     products.filter((product) => item.itemId === product.id)[0]
                       .name
-                  }{" "}
+                  }
                 </div>
                 <span className="center cart-product-quantity">
                   {item.quantity}
                 </span>
                 <span className="center cart-product-price">
-                  {" "}
                   {products
                     .filter((product) => item.itemId === product.id)[0]
                     .price.toLocaleString("us-EN", {
                       style: "currency",
                       currency: "USD",
-                    })}{" "}
+                    })}
                 </span>
                 <span className="center cart-product-subtotal">
-                  {" "}
                   {(
                     products.filter((product) => item.itemId === product.id)[0]
                       .price * item.quantity
                   ).toLocaleString("us-EN", {
                     style: "currency",
                     currency: "USD",
-                  })}{" "}
+                  })}
                 </span>
               </div>
             ))}

@@ -41,6 +41,8 @@ export default function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [shoppingCart, setShoppingCart] = useState([]);
   const [checkoutSubmitted, setCheckoutSubmitted] = useState(false);
+  const [nameTerm, setNameTerm] = useState("");
+  const [emailTerm, setEmailTerm] = useState("");
 
   //example of shopping cart => {{itemId: 4, quantity: 2}, {itemId: 2, quantity: 1}}
 
@@ -135,7 +137,13 @@ export default function App() {
   }
 
   function handleCheckout(event){
-    setCheckoutSubmitted(!checkoutSubmitted)
+    setCheckoutSubmitted(true)
+  }
+
+  function handleShopMore(event){
+    setCheckoutSubmitted(false);
+    setNameTerm("")
+    setEmailTerm("")
   }
 
 
@@ -152,6 +160,11 @@ export default function App() {
             shoppingCart={shoppingCart}
             checkoutSubmitted={checkoutSubmitted}
             handleCheckout={handleCheckout}
+            handleShopMore={handleShopMore}
+            nameTerm={nameTerm}
+            setNameTerm={setNameTerm}
+            emailTerm={emailTerm}
+            setEmailTerm={setEmailTerm}
           />
 
           <Routes>

@@ -13,11 +13,13 @@ export default function Sidebar({
   handleOnSubmitCheckoutForm,
   checkoutSubmitted,
   handleCheckout,
+  handleShopMore,
+  nameTerm,
+  emailTerm,
+  setNameTerm,
+  setEmailTerm
 }) {
-  //  console.log(shoppingCart)
 
-  const [nameTerm, setNameTerm] = useState("");
-  const [emailTerm, setEmailTerm] = useState("");
 
   function handleNameChange(event) {
     setNameTerm(event.target.value);
@@ -25,12 +27,32 @@ export default function Sidebar({
   function handleEmailChange(event) {
     setEmailTerm(event.target.value);
   }
+  let taxRate = 0.0875;
+  let subtotalCalc = 0;
+  shoppingCart.forEach((i) => {
+    let specificItemId = i.itemId;
+    let specificItemQuantity = i.quantity;
+    subtotalCalc +=
+      products.filter((product) => specificItemId === product.id)[0].price *
+      specificItemQuantity;
+  });
+
+  let taxesAndFees = (subtotalCalc * taxRate).toLocaleString("us-EN", {
+    style: "currency",
+    currency: "USD",
+  });
+
+  let totalPrice = (subtotalCalc + subtotalCalc * taxRate).toLocaleString(
+    "us-EN",
+    {
+      style: "currency",
+      currency: "USD",
+    }
+  );
 
   if (sidebarOpen) {
-    // console.log("sidebar is now open")
     return (
       <section className="sidebar open">
-        {/* <p>Sidebar</p> */}
         <div className="wrapper">
           <button
             className="toggle-button button open"
@@ -52,6 +74,9 @@ export default function Sidebar({
                 sidebarOpen={sidebarOpen}
                 products={products}
                 shoppingCart={shoppingCart}
+                taxesAndFees={taxesAndFees}
+                totalPrice={totalPrice}
+                subtotalCalc={subtotalCalc}
               ></ShoppingCart>
 
               <div className="checkout-form">
@@ -120,6 +145,14 @@ export default function Sidebar({
 
               <CheckoutForm
                 checkoutSubmitted={checkoutSubmitted}
+                shoppingCart={shoppingCart}
+                products={products}
+                taxesAndFees={taxesAndFees}
+                totalPrice={totalPrice}
+                subtotalCalc={subtotalCalc}
+                nameTerm={nameTerm}
+                emailTerm={emailTerm}
+                handleShopMore={handleShopMore}
               ></CheckoutForm>
             </div>
           </div>
@@ -130,7 +163,6 @@ export default function Sidebar({
     // console.log("sidebar is now closed");
     return (
       <section className="sidebar closed">
-        {/* <p>Sidebar</p> */}
         <div className="wrapper">
           <button className="toggle-button button closed" onClick={onToggle}>
             <i className="material-icons md-48">arrow_forward</i>
@@ -142,7 +174,6 @@ export default function Sidebar({
                   className="material-icons md-48"
                   onClick={() => onToggle(!sidebarOpen)}
                 >
-                  {" "}
                   add_shopping_cart
                 </i>
               </span>
@@ -151,7 +182,6 @@ export default function Sidebar({
                   className="material-icons md-48"
                   onClick={() => onToggle(!sidebarOpen)}
                 >
-                  {" "}
                   monetization_on
                 </i>
               </span>
@@ -160,7 +190,6 @@ export default function Sidebar({
                   className="material-icons md-48"
                   onClick={() => onToggle(!sidebarOpen)}
                 >
-                  {" "}
                   fact_check
                 </i>
               </span>

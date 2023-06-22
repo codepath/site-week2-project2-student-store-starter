@@ -15,23 +15,23 @@
     color: #a9d6e5;
 }
 .checkout-success .card {
-    color: #fff;
+    color: #a9d6e5;
     display: flex;
     flex-direction: column;
 }
 .checkout-success .card .card-title {
-    color: #fff;
+    color: #a9d6e5;
     font-weight: 20px;
     margin-bottom: 5px;
 }
 .checkout-success p {
-    color: #fff;
+    color: #a9d6e5;
 }
 .checkout-success .purchase {
     padding-left: 20px;
 }
 .checkout-success .purchase li {
-    color: #fff;
+    color: #a9d6e5;
 }
 .checkout-success button {
     margin: 10px;
@@ -40,5 +40,6 @@
     cursor: pointer;
     background: transparent;
     border: solid 1px white;
-    color: #fff;
+    color: #a9d6e5;
+    border: 3px outset #012a4a;
 }

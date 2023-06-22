@@ -46,7 +46,7 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - [x] Users can click the '+' button on a product cart to increment that product in the shopping cart.
 - [x] Users can click the '-' button on a product cart to decrement that product in the shopping cart. If the count is zero, the product should be removed from the cart.
 - [x] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
-- [ ] Users can checkout, and receive a receipt confirming their purchase.
+- [x] Users can checkout, and receive a receipt confirming their purchase.
 
 ### Stretch Features
 
