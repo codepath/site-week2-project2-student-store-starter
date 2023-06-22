@@ -5,6 +5,8 @@ export default function ShoppingCart({ShoppingList}){
 
     console.log(ShoppingList)
     const [FirstItem, SetFirstItem] = useState(false)
+    const [SubTotal, SetSubTotal] = useState(0)
+
     useEffect(() =>{
         if(ShoppingList?.length > 0){
             SetFirstItem(true)
@@ -12,6 +14,16 @@ export default function ShoppingCart({ShoppingList}){
             SetFirstItem(false)
         }
     })
+
+    useEffect(() => {
+        let itemTotal = 0
+        ShoppingList?.map((item) => {
+            itemTotal += item.price * item.quantity
+        })
+        SetSubTotal(itemTotal)
+    })
+
+
     return(
         <div className="Shoppingcart">
             <h2>Shopping Cart</h2>
@@ -33,6 +45,11 @@ export default function ShoppingCart({ShoppingList}){
                     </span>)
             })}
             </>)}
+            <span className="subTotal" style={{display: FirstItem ? "" : "none"}}>
+                <p>{"Subtotal : $"}{SubTotal.toFixed(2)}</p>
+                <p>{"Taxes and Fees : $"}{(SubTotal.toFixed(2) * 0.0875).toFixed(2)}</p>
+                <p>{"Total : $"}{(+SubTotal.toFixed(2) + +(SubTotal.toFixed(2) * 0.0875).toFixed(2)).toFixed(2)}</p>
+            </span>
         </div>
     )
 }
