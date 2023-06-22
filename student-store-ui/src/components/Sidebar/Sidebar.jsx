@@ -1,10 +1,11 @@
 import * as React from "react";
 import "./Sidebar.css";
 
-import SidebarActive from "./SidebarActive/SidebarActive"
-import SidebarClosed from "./SidebarClosed/SidebarClosed";
+import SidebarClosed from "./SidebarClosed/SidebarClosed"
+import SidebarActive from "./SidebarActive/SidebarActive";
 
-export default function Sidebar({ isActive = false, handleClick }) {
+export default function Sidebar({ isActive = false, handleClick, cartItems, products }) {
+    console.log('log sidebar', cartItems, isActive)
     const sidebarClassName = isActive ? "sidebar open" : "sidebar closed";
     const toggleButtonClassName = isActive
       ? "toggle-button button open"
@@ -19,8 +20,9 @@ export default function Sidebar({ isActive = false, handleClick }) {
           </button>
           {
             isActive ? 
-             <SidebarClosed />: 
-             <SidebarActive/>
+            <SidebarActive cartItems={cartItems} products={products}/> :
+            <SidebarClosed/>
+            
           }
         </div>
       </section>

@@ -17,20 +17,21 @@ import Footer from "../Footer/Footer";
 import ProductDetails from "../Product Details/ProductDetails";
 
 export default function App() {
-  const url = "https://codepath-store-api.herokuapp.com/store";
+  const url = "http://localhost:3001/";
 
-  const [items, setItems] = useState([])
-  const [category, setCategory] = useState('')
-  const [productsByCategory, setProductsByCategory] = useState([])
+  const [items, setItems] = useState([]);
+  const [category, setCategory] = useState("");
+  const [productsByCategory, setProductsByCategory] = useState([]);
   const [isActive, setIsActive] = useState(false);
   const [products, setProducts] = useState([]);
+  const [cartItems, setCartItems] = useState({});
 
-  console.log('app', category)
+  console.log('log app', cartItems)
   useEffect(() => {
     axios.get(url).then((response) => {
-      const dataProducts = response.data.products
+      const dataProducts = response.data.products;
       setProducts(dataProducts);
-      setProductsByCategory(dataProducts)
+      setProductsByCategory(dataProducts);
     });
   }, [items, category]);
 
@@ -42,19 +43,24 @@ export default function App() {
           <Sidebar
             handleClick={() => setIsActive(!isActive)}
             isActive={isActive}
+            cartItems = {cartItems}
+            products={products}
           />
           <Hero />
-          <SubNavbar 
-            items={items} 
-            setItems={setItems} 
+          <SubNavbar
+            items={items}
+            setItems={setItems}
             products={products}
             setProducts={setProducts}
             setCategory={setCategory}
-            category={category}/>
+            category={category}
+          />
           <Routes>
             <Route
               path="/"
-              element={<Home  products={products} items={items} category={category} />}
+              element={
+                <Home products={products} items={items} category={category} setCartItems={setCartItems} cartItems={cartItems} />
+              }
             />
             <Route path="/:id" element={<ProductDetails />} />
           </Routes>
