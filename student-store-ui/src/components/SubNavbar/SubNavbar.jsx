@@ -1,23 +1,13 @@
 import { useEffect, useState } from "react";
 import "./SubNavbar.css";
 
-export default function SubNavbar({ setCategory, setSearchTerm  }) {
+export default function SubNavbar({ setCategory, setSearchTerm }) {
   const [active, setActive] = useState("1");
 
   function handleClick(e) {
     e.preventDefault();
     setCategory(e.target.name);
     setActive(e.target.id);
-  }
-
-  function handleCategoryClick(e) {
-    e.preventDefault();
-    setCategory(e.target.name);
-    setActive(e.target.id);
-  }
-
-  function handleSearchChange(e) {
-    setSearchTerm(e.target.value);
   }
 
   return (
@@ -71,6 +61,11 @@ export default function SubNavbar({ setCategory, setSearchTerm  }) {
           </button>
         </li>
       </ul>
+      <input 
+        type="search" 
+        placeholder="Search..." 
+        onChange={(event) => setSearchTerm(event.target.value)} 
+      />
     </div>
   );
 }

@@ -1,20 +1,20 @@
-import * as React from "react"
-import { BrowserRouter } from 'react-router-dom'
-import Navbar from "../Navbar/Navbar"
-import Sidebar from "../Sidebar/Sidebar"
-import Home from "../Home/Home"
-import "./App.css"
-import Hero from "../Hero/Hero"
-import SubNavbar from "../SubNavbar/SubNavbar"
-import { useEffect } from "react"
-import axios from 'axios'
-import { useState } from "react";
+import * as React from "react";
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Navbar from "../Navbar/Navbar";
+import Sidebar from "../Sidebar/Sidebar";
+import Home from "../Home/Home";
+import ProductDetails from "../ProductDetails/ProductDetails";
+import "./App.css";
+import Hero from "../Hero/Hero";
+import SubNavbar from "../SubNavbar/SubNavbar";
+import { useEffect, useState } from "react";
+import axios from 'axios';
 
 export default function App() {
   const url = "https://codepath-store-api.herokuapp.com/store";
   const [products, setProducts] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
+  const [category, setCategory] = useState("");
 
   useEffect(() => {
     axios.get(url).then((response) => {
@@ -28,29 +28,18 @@ export default function App() {
         <main>
           <Navbar />
           <Hero />
-          <SubNavbar 
-            setCategory={setSelectedCategory}
-            setSearchTerm={setSearchTerm} 
-          />
+          <SubNavbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} setCategory={setCategory} />
           <Sidebar />
-          <Home 
-            products={products}
-            selectedCategory={selectedCategory}
-            searchTerm={searchTerm}
-            setSearchTerm={setSearchTerm}
-          />
+          <Switch>
+            <Route path="/product/:id">
+              <ProductDetails />
+            </Route>
+            <Route path="/">
+              <Home products={products} searchTerm={searchTerm} category={category} />
+            </Route>
+          </Switch>
         </main>
       </BrowserRouter>
     </div>
   );
 }
-
-// return (
-//   <BrowserRouter>
-//     <Switch>
-//       <Route exact path="/" component={Home} />
-//       <Route exact path="/products/:id" component={ProductDetails} />
-//     </Switch>
-//   </BrowserRouter>
-// );
-// }

@@ -1,35 +1,28 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import axios from "axios";
-import Navbar from "../Navbar/Navbar";
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
-export default function ProductDetails() {
+function ProductDetails() {
   const { id } = useParams();
-  console.log(id);
-  const [product, setProduct] = useState();
+  const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    axios
-      .get(`https://codepath-store-api.herokuapp.com/store/${id}`)
-      .then((response) => {
-        setProduct(response.data.product);
+    axios.get(`https://codepath-store-api.herokuapp.com/store/product/${id}`)
+      .then(response => {
+        setProduct(response.data);
       });
-  }, []);
-  console.log(product);
+  }, [id]);
+
+  if (!product) {
+    return <div>Loading...</div>
+  }
+
   return (
-    <>
-      <div className="product-detail" key={id}>
-        <div className="product-container">
-          <div className="product-image">
-            <img
-              src={product?.image}
-              alt={product?.name}
-              style={{ width: "50%" }}
-            />
-          </div>
-          <p>{product?.description}</p>
-        </div>
-      </div>
-    </>
+    <div>
+      <h1>{product.name}</h1>
+      {/* add more product details as needed */}
+    </div>
   );
 }
+
+export default ProductDetails;
