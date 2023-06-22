@@ -23,6 +23,7 @@ import Card from './homeComponents/Card';
 import CodePathLogo from '../../assets/images/codepathLogo.png';
 import GirlModel from '../../assets/images/student.png';
 import Footer from './homeComponents/Footer';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
   const options = [
@@ -56,6 +57,7 @@ export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState(options[0]);
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const navigate = useNavigate();
 
   const fetchData = async () => {
     try {
@@ -70,7 +72,6 @@ export default function Home() {
   };
   useEffect(() => {
     fetchData();
-    console.log(products);
   }, []);
 
   const handleOptionClick = (option) => {
@@ -81,9 +82,12 @@ export default function Home() {
       const filtered = products.filter(
         (product) => product.category === option.category
       );
-      console.log(filtered, 'hola');
       setFilteredProducts(filtered);
     }
+  };
+
+  const goToProduct = (id) => {
+    navigate(`/product/${id}`);
   };
 
   return (
@@ -137,7 +141,7 @@ export default function Home() {
       >
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
-            <Card key={product.id} props={product} />
+            <Card key={product.id} props={product} goToProduct={goToProduct} />
           ))
         ) : (
           <p className='text-3xl font-bold'>Loading...</p>
