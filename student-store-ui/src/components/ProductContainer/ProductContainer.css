@@ -1,4 +1,87 @@
-.product{
-    background-color: white;
 
+  
+  .product img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+  }
+  
+  .product p {
+    text-align: center;
+    text-decoration: none;
+  }
+
+  
+  .product-container button {
+    border: none;
+    background-color: inherit;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+    color: #3a7ca5;
+    text-decoration: none;
+  }
+  
+  .product-container button:hover,
+  .product-container button.selected {
+    text-decoration: underline;
+  }
+  
+  .product-container button:hover {
+    background: #3a7ca5;
+    color: white;
+  }
+  
+  .product-container button.selected {
+    background: #3a7ca5;
+    color: white;
+  }
+  
+  .search-input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #3a7ca5;
+    width: 480px;
+    margin-bottom: 10px;
+    margin-left: 8px;
+    text-align: center;
+  }
+  
+  .label {
+    display: block;
+    text-decoration: none;
+    color: #d9dcd6;
+    margin-bottom: 10px;
+    list-style: none;
+  }
+  .product-container a {
+    display: inline-block;
+    vertical-align: top;
+    padding: auto;
+    margin-bottom: 30px;
+    background-color: white;
+    text-align: center;
+    width: 460px;
+    display: flex;
+    height: 450px;
+    flex-direction: column;
+    flex-basis: 22%;
+    margin-left: 30px;
+    margin-right: 30px;
+    text-decoration: none;
+    color: #001021;
+  }
+  .product p{
+    font-weight: bolder;
+    font-size: large;
+  }
+  .addRemovebuttons span{
+    font-weight: bold;
+    font-size: larger;
+  } 
+  .addRemovebuttons {
+    position: relative;
+    right: -110px;
+    top: -130px;
 }
