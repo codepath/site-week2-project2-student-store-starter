@@ -29,13 +29,15 @@ export default function App() {
           <Navbar />
           <Hero />
           <SubNavbar 
-          setCategory={setSelectedCategory}
-          setSearchTerm={setSearchTerm} />
+            setCategory={setSelectedCategory}
+            setSearchTerm={setSearchTerm} 
+          />
           <Sidebar />
           <Home 
-            products={products} 
-            selectedCategory={selectedCategory} 
+            products={products}
+            selectedCategory={selectedCategory}
             searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
           />
         </main>
       </BrowserRouter>
