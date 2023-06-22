@@ -20,4 +20,7 @@ body {
   font-size: 3rem;
   color: var(--text-color-dark);
   padding: 1.5rem;
+  display: flex;
+  width: 100%;
+  border-bottom-color: (var(--p-color));
 }
