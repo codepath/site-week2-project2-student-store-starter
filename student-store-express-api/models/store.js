@@ -18,19 +18,19 @@ class Store {
         this.newPurchaseID = 0;
     };
     getAllProducts(limit = Infinity, offset = 0){
-        // get database object
-        const database  = this._getDatabase();
+        // get storage object
+        const storage  = this._getStorage();
         // get products object
-        const productsObject = database.get("products").value();
+        const productsObject = storage.get("products");
 
         // return all products from products obj
         return Object.values(productsObject);
     }
     getProductByID(productID){
-        //  get database object
-        const database = this._getDatabase();
-        // get products object from database
-        const productsObject = database.get("products").value(); // retrieves products obj from database
+        //  get storage object
+        const storage = this._getStorage();
+        // get products object from storage
+        const productsObject = storage.get("products"); // retrieves products obj from storage
         // get product from product object ()
         const product = productsObject[productID] // product is undefined if not found
         // throw error if product cannot be found
@@ -41,18 +41,19 @@ class Store {
         return product;
     }
     getAllPurhases(){
-        // get database object
-        const database = this._getDatabase();
+        // get storage object
+        const storage = this._getStorage();
         // get purchases object
-        const purchasesObject = database.get("purchases").value();
+        const purchasesObject = storage.get("purchases");
         // return all purchases from purchases obj
         return Object.values(purchasesObject); 
     }
     getPurchasesByID(purchaseID){
-        //  get database object
-        const database = this._getDatabase();
-        // get purchases object from database
-        const purchasesObject = database.get("purchases").value(); // retrieves purchase obj from database
+        
+        //  get storage object
+        const storage = this._getStorage();
+        // get purchases object from storage
+        const purchasesObject = storage.get("purchases"); // retrieves purchase obj from storage
         // get purchase from purchase object ()
         const purchase = purchasesObject[purchaseID] // purchase is undefined if not found
         // throw error if purchase cannot be found
@@ -62,13 +63,13 @@ class Store {
         // otherwise return purchase
         return product;
     }
-     _getDatabase(){
+     _getStorage(){
         // need error handling?
-        return require("../data/storage").storage.db;
+        const { storage } = require("../data/storage");
+        return storage;
     }
     addPurchase(newPurchase){
         const TAX = 0.0875  // global tax
-        const database = this._getDatabase();
         const shoppingCart = newPurchase.shoppingCart;
         const user = newPurchase.user;
 
@@ -114,20 +115,15 @@ class Store {
             }
             // update new purchase id
             this.newPurchaseID += 1
+            const storage = this._getStorage();
             
-            // write new purchase into database
+            // write new purchase into storage
 
             return newPurchase
 
         }
         // throws error if shopping cart or user value is 'falsy'
         throw new InvalidPurchaseError(shoppingCart)
-        // const a = database.write({"purchases" : {"apples": 3}});
-        // console.log(Object.getOwnPropertyNames(database.read("products").values()));
-        // console.log(database.write({"PLWA": 1212}))
-        // console.log(database.read().value().products);
-        // console.log(database.get("purchases").value());
-        // adds newPurchase to database (newPurchase must match purchase schema)
     }
     generateReceipt(){
         let receipt = `Receipt

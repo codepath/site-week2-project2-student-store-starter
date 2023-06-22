@@ -1,11 +1,14 @@
 const path = require("path")
 const low = require("lowdb")
+const fs = require("fs");
+
 const FileSync = require("lowdb/adapters/FileSync")
 
 class Storage {
   constructor() {
-    this.path = path.resolve(__dirname, "db.json")
-    this.setup()
+    this.path = path.resolve(__dirname, "db.json");
+    this.setup();
+    // this.data = fs.readFileSync("db.json", {encoding : "utf-8"})
   }
 
   async setup() {
@@ -19,7 +22,7 @@ class Storage {
   }
 
   get(key) {
-    return this.db.get(key)
+    return this.db.get(key).value()
   }
 }
 

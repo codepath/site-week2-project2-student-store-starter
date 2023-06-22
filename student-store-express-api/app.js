@@ -17,16 +17,16 @@ app.get("/", async (request, response) => {
 })
 
 /* Handle all 404 errors that weren't matched by a route */
-app.use((req, res, next) => {
+app.use((resquest, response, next) => {
     return next(new NotFoundError())
   })
   
   /* Generic error handler - anything that is unhandled will be handled here */
-app.use((error, req, res, next) => {
+app.use((error, resquest, response, next) => {
     const status = error.status || 500
     const message = error.message || "Something went wrong in the application"
   
-    return res.status(status).json({
+    return response.status(status).json({
       error: { message, status },
     })
   });

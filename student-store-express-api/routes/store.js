@@ -14,6 +14,13 @@ storeRouter.get("/", (request, response) => {
     console.log("Retrieving products...");
     response.status(201).json({"products": products})
 })
+storeRouter.get("/purchases/", (request, response) => {
+    // Responds to GET requests to /store with an 
+    // array of all products in the store in the format 
+    const purchases = store.getAllPurhases();
+    console.log("Retrieving purchases...");
+    response.status(201).json({"purchases": purchases})
+})
 storeRouter.get("/:id", (request, response) => {
     const product = store.getProductByID(request.params.id);
     response.status(201).json({"product": product});
@@ -22,6 +29,8 @@ storeRouter.get("/:id", (request, response) => {
     // based on the product's ID 
     // in the format: { "product": product }
 })
+
+
 
 // POST
 storeRouter.post("/", (request, response) => {
