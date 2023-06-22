@@ -10,6 +10,7 @@
   border-right: solid white;
   padding-left: 20px;
   padding-right: 20px;
+  overflow: scroll;
 }
 
 .sidebarHeader {
@@ -18,7 +19,9 @@
   text-align: center;
 }
 
-
+#paymentHeader {
+  margin-top: 45px;
+}
 .checkbtn {
   color: white;
   padding-top: 20px;

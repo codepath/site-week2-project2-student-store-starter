@@ -1,33 +1,39 @@
 import * as React from "react";
 import "./ProductCard.css";
 import { Link } from "react-router-dom";
-import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import { useState, useEffect } from "react";
 
-export default function ProductCard(prop) {
+export default function ProductCard(props) {
   const [quantity, setQuantity] = useState(0);
+  
+  useEffect(() => {
+    if (props.shoppingCart.length === 0){
+      setQuantity(0)
+    }
+  }, [props.shoppingCart])
 
   useEffect(() => {
-    if (quantity === 1) {
+    let index = props.shoppingCart?.findIndex((cart) => {
+      return cart.product === props.product.name;
+    });
+    if (quantity === 1 && index === -1) {
       const newCart = [
-        ...prop.shoppingCart,
+        ...props.shoppingCart,
         {
-          product: prop.product.name,
+          product: props.product.name,
           quantity: quantity,
-          price: prop.product.price,
+          price: props.product.price,
         },
       ];
-      prop.setShoppingCart(newCart);
-    } else if (quantity > 1) {
-      let index = prop.shoppingCart?.findIndex((cart) => {
-        return cart.product === prop.product.name;
-      });
-      console.log(index);
-      prop.setShoppingCart((prevCart) => {
+      props.setShoppingCart(newCart);
+    } else if (quantity >= 1) {
+      props.setShoppingCart((prevCart) => {
         const updatedCart = [...prevCart];
         updatedCart[index].quantity = quantity;
         return updatedCart;
       });
+    } else if (quantity === 0) {
+      props.setShoppingCart((shoppingCart => shoppingCart.toSpliced(index, 1)))
     }
   }, [quantity]);
 
@@ -43,18 +49,18 @@ export default function ProductCard(prop) {
 
   return (
     <div className="product">
-      <Link id="product-link" to={"products/" + prop.product.id}>
+      <Link id="product-link" to={"products/" + props.product.id}>
         <img
           className="product-poster"
-          src={prop.product.image}
-          alt={`Image of ${prop.product.name}`}
+          src={props.product.image}
+          alt={`Image of ${props.product.name}`}
         />
       </Link>
       <div className="product-info">
         <div>
-          <p>{prop.product.name}</p>
+          <p>{props.product.name}</p>
           <p>⭐️ ⭐️ ⭐️ ⭐️ ⭐️</p>
-          <p>${prop.product.price.toFixed(2)}</p>
+          <p>${props.product.price.toFixed(2)}</p>
         </div>
         <div id="div-button">
           <div id="button-card">
@@ -74,11 +80,7 @@ export default function ProductCard(prop) {
             </button>
           </div>
           <div>
-            {quantity > 0 ? (
-              <div id="quantitySpan">{quantity}</div>
-            ) : (
-              console.log("nothing here to see")
-            )}
+            {quantity > 0 && <div id="quantitySpan">{quantity}</div>}
           </div>
         </div>
       </div>

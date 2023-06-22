@@ -6,48 +6,47 @@ import Sidebar from "../Sidebar/Sidebar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 
-console.log(fab);
-
-export default function Navbar() {
+export default function Navbar(props) {
   return (
     <nav className="navbar">
-      <Sidebar />
+      <Sidebar
+        setShoppingCart={props.setShoppingCart}
+        shoppingCart={props.shoppingCart}
+      />
 
       <Link to="/">
         <Logo prop={"nav-logo"} />
       </Link>
       <div className="socials">
-        <a
+        <FontAwesomeIcon
           className="codePathHandle"
           title="CodePath Twitter"
           href="https://twitter.com/codepath"
           target="_blank"
-        >
-          <FontAwesomeIcon icon={fab.faTwitter} size="xl" />
-        </a>
-        <a
+          icon={fab.faTwitter}
+          size="xl"
+        />
+
+        <FontAwesomeIcon
           className="codePathHandle"
           title="CodePath Instagram"
           href="https://www.instagram.com/codepathorg/?hl=en"
           target="_blank"
-        >
-          <FontAwesomeIcon icon={fab.faInstagram} />
-        </a>
-        <a
+          icon={fab.faInstagram}
+        />
+
+        <FontAwesomeIcon
           className="codePathHandle"
           title="CodePath Facebook"
           href="https://www.facebook.com/codepath.org/"
           target="_blank"
-        >
-          <FontAwesomeIcon icon={fab.faFacebook} />
-        </a>
+          icon={fab.faFacebook}
+        />
       </div>
       <ul className="menu-links">
         <li>
-          <Link to="/">
-            <a href="" className="nav-link">
-              Home
-            </a>
+          <Link className="nav-link" to="/">
+            Home
           </Link>
         </li>
         <li>

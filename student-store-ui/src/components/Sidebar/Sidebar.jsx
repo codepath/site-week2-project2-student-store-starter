@@ -1,6 +1,11 @@
 import * as React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faListCheck, faCartPlus, faDollarSign } from "@fortawesome/free-solid-svg-icons";
+import {
+  faListCheck,
+  faCartPlus,
+  faDollarSign,
+} from "@fortawesome/free-solid-svg-icons";
+import ShoppingCart from "../ShoppingCart/ShoppingCart";
 
 import "./Sidebar.css";
 
@@ -16,11 +21,12 @@ export default function Sidebar(props) {
           <p className="sidebarHeader">
             Shopping Cart <FontAwesomeIcon icon={faCartPlus} bounce />
           </p>
-          <span style={{ fontSize: "large" }}>
-            No items added to cart yet. Start shopping now!
-          </span>
+          <ShoppingCart
+            setShoppingCart={props.setShoppingCart}
+            shoppingCart={props.shoppingCart}
+          />
           <br />
-          <p className="sidebarHeader">
+          <p id="paymentHeader" className="sidebarHeader">
             Payment Info <FontAwesomeIcon icon={faDollarSign} flip />
           </p>
         </div>
@@ -46,9 +52,13 @@ export default function Sidebar(props) {
           />
         </form>
         <div id="termSidebar">
-          <input style={{ width: "12px", height: "12px" }} type="checkbox" required/>
+          <input
+            style={{ width: "12px", height: "12px" }}
+            type="checkbox"
+            required
+          />
           <span>
-            I agree to the {" "}
+            I agree to the{" "}
             <a
               style={{ color: "var(--light-cp", textDecoration: "none" }}
               href="/"
@@ -57,12 +67,16 @@ export default function Sidebar(props) {
             </a>
           </span>
         </div>
-        <button onClick={(e) => e.preventDefault()} id="button-sidebar" type="submit">
+        <button
+          onClick={(e) => e.preventDefault()}
+          id="button-sidebar"
+          type="submit"
+        >
           Checkout
         </button>
         <div id="infoSidebar">
           <p className="sidebarHeader">
-            Checkout Info <FontAwesomeIcon icon={faListCheck} shake/>
+            Checkout Info <FontAwesomeIcon icon={faListCheck} shake />
           </p>
           <p style={{ fontSize: "large" }}>
             A confirmation email will be sent to you so that you can confirm

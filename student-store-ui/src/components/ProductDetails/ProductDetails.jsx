@@ -12,7 +12,6 @@ import { useParams } from "react-router-dom";
 
 export default function ProductDetail(props) {
   const { id } = useParams();
-  console.log(id)
   let url = `http://localhost:3001/store/${id}`;
 
   const [product, setProduct] = useState([]);

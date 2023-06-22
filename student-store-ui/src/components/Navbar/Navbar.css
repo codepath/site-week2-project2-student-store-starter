@@ -16,7 +16,8 @@
 }
 .codePathHandle {
   font-size: 180%;
-  margin: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
   color: white;
   justify-content: center;
 }
