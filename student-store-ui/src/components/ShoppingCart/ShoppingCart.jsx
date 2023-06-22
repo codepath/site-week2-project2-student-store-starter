@@ -1,7 +1,7 @@
 import * as React from "react";
 import "./ShoppingCart.css";
 
-export default function ShoppingCart({ isOpen, shoppingCart, products, taxesAndFees, totalPrice, subtotalCalc }) {
+export default function ShoppingCart({ isOpen, shoppingCart, products, taxesAndFees, totalPrice, subtotal }) {
  
   if (isOpen) {
     if (shoppingCart.length === 0) {
@@ -58,7 +58,7 @@ export default function ShoppingCart({ isOpen, shoppingCart, products, taxesAndF
               <span></span>
               <span></span>
               <span className="center subtotal">
-                {subtotalCalc.toLocaleString("us-EN", {
+                {subtotal.toLocaleString("us-EN", {
                   style: "currency",
                   currency: "USD",
                 })}

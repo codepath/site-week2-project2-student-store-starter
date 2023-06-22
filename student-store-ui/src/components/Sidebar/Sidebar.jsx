@@ -7,9 +7,7 @@ export default function Sidebar({
   products,
   onToggle,
   isOpen,
-  handleOnCheckoutFormChange,
   shoppingCart,
-  handleOnSubmitCheckoutForm,
   checkoutSubmitted,
   handleCheckout,
   handleShopMore,
@@ -17,16 +15,27 @@ export default function Sidebar({
   emailTerm,
   setNameTerm,
   setEmailTerm,
-  incorrectSubmission,
   acceptedTermsAndConditions,
   handleAcceptTermsAndConditions,
+  totalPrice,
+  setTotalPrice,
+  order,
+  subtotal,
+  setSubtotal,
+  receiptSubtotal,
+  receiptName,
+  receiptEmail,
+  receiptTotalPrice,
+ 
 }) {
+
   function handleNameChange(event) {
     setNameTerm(event.target.value);
   }
   function handleEmailChange(event) {
     setEmailTerm(event.target.value);
   }
+
   let taxRate = 0.0875;
   let subtotalCalc = 0;
   shoppingCart.forEach((i) => {
@@ -36,19 +45,20 @@ export default function Sidebar({
       products.filter((product) => specificItemId === product.id)[0].price *
       specificItemQuantity;
   });
+  setSubtotal(subtotalCalc);
 
-  let taxesAndFees = (subtotalCalc * taxRate).toLocaleString("us-EN", {
+  let taxesAndFees = (subtotal * taxRate).toLocaleString("us-EN", {
     style: "currency",
     currency: "USD",
   });
 
-  let totalPrice = (subtotalCalc + subtotalCalc * taxRate).toLocaleString(
+  setTotalPrice((subtotal + subtotal * taxRate).toLocaleString(
     "us-EN",
     {
       style: "currency",
       currency: "USD",
     }
-  );
+  ));
 
   if (isOpen) {
     return (
@@ -76,7 +86,7 @@ export default function Sidebar({
                 shoppingCart={shoppingCart}
                 taxesAndFees={taxesAndFees}
                 totalPrice={totalPrice}
-                subtotalCalc={subtotalCalc}
+                subtotal={subtotal}
               ></ShoppingCart>
 
               <div className="checkout-form">
@@ -96,7 +106,6 @@ export default function Sidebar({
                       placeholder="Student Name"
                       value={nameTerm}
                       onChange={handleNameChange}
-                      onSubmit={handleOnSubmitCheckoutForm}
                     ></input>
                   </div>
                 </div>
@@ -142,6 +151,10 @@ export default function Sidebar({
                   {!shoppingCart || shoppingCart.length == 0
                     ? "No cart or items in cart found to checkout."
                     : null}
+                  <br></br>
+                  {(nameTerm == "") ? "Name input required." : null}
+                  <br></br>
+                  {(emailTerm == "") ? "Email input required." : null}
                 </p>
 
                 <div className="field">
@@ -158,14 +171,15 @@ export default function Sidebar({
 
               <CheckoutForm
                 checkoutSubmitted={checkoutSubmitted}
-                shoppingCart={shoppingCart}
                 products={products}
                 taxesAndFees={taxesAndFees}
-                totalPrice={totalPrice}
-                subtotalCalc={subtotalCalc}
-                nameTerm={nameTerm}
-                emailTerm={emailTerm}
+                receiptTotalPrice={receiptTotalPrice}
+                subtotal={subtotal}
+                receiptName={receiptName}
+                receiptEmail={receiptEmail}
                 handleShopMore={handleShopMore}
+                order={order}
+                receiptSubtotal={receiptSubtotal}
               ></CheckoutForm>
             </div>
           </div>

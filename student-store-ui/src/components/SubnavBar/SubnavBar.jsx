@@ -1,5 +1,6 @@
 import * as React from "react"
 import "./SubnavBar.css"
+import { Link } from 'react-router-dom'
 
 export default function SubnavBar({formData, handleSearch, handleCategoryFilter}){
     return (
@@ -16,7 +17,10 @@ export default function SubnavBar({formData, handleSearch, handleCategoryFilter}
                 <i className="material-icons">help</i>
             Help</span>
             <div className="cart">
-                <a href="/">My Cart<i className="material-icons">shopping_cart</i></a>
+            <Link className = "material-icons" to={"/orders"}>
+                My Orders
+            </Link>
+                {/* <a href="/">My Cart<i className="material-icons">shopping_cart</i></a> */}
             </div>
             </div>
         </div>

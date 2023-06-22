@@ -3,15 +3,17 @@ import "./CheckoutForm.css";
 
 export default function CheckoutForm({
   checkoutSubmitted,
-  shoppingCart,
   products,
-  subtotalCalc,
   totalPrice,
-  nameTerm,
-  emailTerm,
+  receiptName,
+  receiptEmail,
   handleShopMore,
+  order,
+  receiptSubtotal,
+  receiptTotalPrice
 }) {
-  let shoppingCartSubmitted = [...shoppingCart];
+  // console.log(shoppingCart)
+
   if (!checkoutSubmitted) {
     return (
       <div className="checkout-success">
@@ -32,7 +34,7 @@ export default function CheckoutForm({
     );
   } else {
     // checkout form has been submitted
-    if (shoppingCart !== []) { // checkout only if there are items in the cart
+    if (order !== []) { // checkout only if there are items in the cart
       return (
         <div className="checkout-success">
           <h3>
@@ -47,11 +49,10 @@ export default function CheckoutForm({
             </header>
             <section className="card-body">
               <p className="header">
-                Showing receipt for {nameTerm} available at {emailTerm}:
+                Showing receipt for {receiptName} available at {receiptEmail}:
               </p>
               <ul className="purchase">
-                {/* TODO: how to make the shopping cart data static here bc submitted already? */}
-                {shoppingCartSubmitted.map((item) => (
+                {order.map((item) => (
                   <li>
                     {item.quantity} total
                     {" " +
@@ -76,10 +77,10 @@ export default function CheckoutForm({
                         )[0].price}
                   </li>
                 ))}
-                <li>Before taxes, the subtotal was {subtotalCalc}</li>
+                <li>Before taxes, the subtotal was {receiptSubtotal}</li>
                 <li>
                   After taxes and fees were applied, the total comes out to{" "}
-                  {totalPrice}
+                  {receiptTotalPrice}
                 </li>
               </ul>
             </section>

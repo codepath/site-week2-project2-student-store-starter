@@ -7,6 +7,7 @@ import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 import Home from "../Home/Home";
 import ProductDetail from "../ProductDetail/ProductDetail";
+import Orders from "../Orders/Orders";
 
 export const appInfo = {
   title: "Welcome! Find Your Merch!",
@@ -25,13 +26,20 @@ export default function App() {
   const [filteredSearchArray, setFilteredSearchArray] = useState();
   const [isOpen, setIsOpen] = useState(false);
   const [shoppingCart, setShoppingCart] = useState([]);
-    // Example of shopping cart => {{itemId: 4, quantity: 2}, {itemId: 2, quantity: 1}}
+  // Example of shopping cart => {{itemId: 4, quantity: 2}, {itemId: 2, quantity: 1}}
 
   const [checkoutSubmitted, setCheckoutSubmitted] = useState(false);
   const [nameTerm, setNameTerm] = useState("");
   const [emailTerm, setEmailTerm] = useState("");
   const [incorrectSubmission, setIncorrectSubmission] = useState(false);
   const [acceptedTermsAndConditions, setAcceptedTermsAndConditions] = useState(false);
+  const [order, setOrder] = useState([]);
+  const [subtotal, setSubtotal] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [receiptSubtotal, setReceiptSubtotal] = useState(0);
+  const [receiptName, setReceiptName] = useState("");
+  const [receiptEmail, setReceiptEmail] = useState("");
+  const [receiptTotalPrice, setReceiptTotalPrice] = useState(0);
 
   useEffect(() => {
     axios.get(url).then((response) => {
@@ -78,8 +86,8 @@ export default function App() {
         product.category.toLowerCase().includes(selectedCategory.toLowerCase())
       );
     }
-    
-    return filteredItems?filteredItems:null;
+
+    return filteredItems ? filteredItems : null;
   }
 
   // Sets the sidebar state to open/closed
@@ -87,85 +95,108 @@ export default function App() {
     setIsOpen(!isOpen);
   }
 
-  // Add a product with input ID to the shoppingCart 
+  // Add a product with input ID to the shoppingCart
   // If product isn't already in the shopping cart, and set its quantity to 1.
   // If the product is already in the shopping cart, increment its quantity by 1.
   function handleAddItemToCart(productId) {
-    let isAlreadyInCart = shoppingCart.some( product => product.itemId === productId);
+    let isAlreadyInCart = shoppingCart.some(
+      (product) => product.itemId === productId
+    );
     if (isAlreadyInCart) {
-      let index = shoppingCart.findIndex(product => product.itemId === productId);
+      let index = shoppingCart.findIndex(
+        (product) => product.itemId === productId
+      );
       let updatedCart = [...shoppingCart];
-      updatedCart[index] = {itemId: updatedCart[index].itemId, quantity: ++updatedCart[index].quantity}
+      updatedCart[index] = {
+        itemId: updatedCart[index].itemId,
+        quantity: ++updatedCart[index].quantity,
+      };
       setShoppingCart(updatedCart);
     } else {
-      setShoppingCart([...shoppingCart, {itemId: productId, quantity: 1}])
+      setShoppingCart([...shoppingCart, { itemId: productId, quantity: 1 }]);
     }
   }
 
   // Decrease the quantity of a product with input ID in the shoppingCart by 1, but only if it is in the shopping cart.
   // If the new quantity is 0, it should remove the item from the shoppingCart.
   function handleRemoveItemToCart(productId) {
-    let isAlreadyInCart = shoppingCart.some( product => product.itemId === productId);
+    let isAlreadyInCart = shoppingCart.some(
+      (product) => product.itemId === productId
+    );
     if (isAlreadyInCart) {
-      let index = shoppingCart.findIndex(product => product.itemId === productId);
-      let updatedCart = [...shoppingCart]
+      let index = shoppingCart.findIndex(
+        (product) => product.itemId === productId
+      );
+      let updatedCart = [...shoppingCart];
       if (updatedCart[index].quantity - 1 == 0) {
         // remove item from shopping cart array entirely
         updatedCart = shoppingCart.filter((item) => item.itemId !== productId);
         setShoppingCart(updatedCart);
       } else {
         // Decrement the quantity by 1 for the item with the given item ID
-        updatedCart[index] = {itemId: updatedCart[index].itemId, quantity: --updatedCart[index].quantity}
+        updatedCart[index] = {
+          itemId: updatedCart[index].itemId,
+          quantity: --updatedCart[index].quantity,
+        };
       }
       setShoppingCart(updatedCart);
-    };
-  }  // if item is not in shopping cart yet, just do nothing
-
-  function handleOnCheckoutFormChange(name, value) {}
-  function handleOnSubmitCheckoutForm() {
-    //  This function should submit the user's order to the API using the axios.post method to send a POST request to the /store endpoint.
-    // The body of the POST request should be an object with two fields:
-  }
+    }
+  } // if item is not in shopping cart yet, just do nothing
 
   // Sets the checkout form as submitted
   // Empties shopping cart, resets the name and email forms and accepted T&C state
-  function handleCheckout(event){
-    if (nameTerm != "" && emailTerm !== "" && acceptedTermsAndConditions && shoppingCart && shoppingCart.length > 0){
-      setCheckoutSubmitted(true)
-      setNameTerm("")
-      setEmailTerm("")
-      setAcceptedTermsAndConditions(false)
-      // BUT what baout unclicking the actual box? --> css?
-      // setShoppingCart([])
-      // TODO: UNCOMMENT
+  function handleCheckout(event) {
+    if (
+      nameTerm != "" &&
+      emailTerm !== "" &&
+      acceptedTermsAndConditions &&
+      shoppingCart &&
+      shoppingCart.length > 0
+    ) {
+      setReceiptTotalPrice(totalPrice)
+      setReceiptEmail(emailTerm)
+      setReceiptName(nameTerm)
+      setOrder(shoppingCart)
+      setReceiptSubtotal(subtotal)
+      setCheckoutSubmitted(true);
+      setNameTerm("");
+      setEmailTerm("");
+      setAcceptedTermsAndConditions(false);
+      setShoppingCart([])
+      // TODO:
+      // BUT what about the name disappearing?
+      // BUT what about the shopping cart items disappearing?
+      // BUT what about unclicking the actual box? --> css?
+
     } else {
-      setIncorrectSubmission(true)
+      setIncorrectSubmission(true);
     }
   }
 
   // Sets the checkout form as not submitted and resets name and email inputs from use
-  function handleShopMore(event){
+  function handleShopMore(event) {
     setCheckoutSubmitted(false);
-    setNameTerm("")
-    setEmailTerm("")
-    setAcceptedTermsAndConditions(false)
-    setShoppingCart([])
+    setNameTerm("");
+    setEmailTerm("");
+    setAcceptedTermsAndConditions(false);
+    // setShoppingCart([]);
   }
 
-  function handleAcceptTermsAndConditions(event){
-    setAcceptedTermsAndConditions(true)
+  function handleAcceptTermsAndConditions(event) {
+    setAcceptedTermsAndConditions(true);
   }
+
+
 
   return (
     <div className="app">
       <BrowserRouter>
         <main>
-          <Sidebar 
+          <Sidebar
             key={"sidebar"}
             products={getFilteredProducts()}
             onToggle={onToggle}
             isOpen={isOpen}
-            handleOnCheckoutFormChange={handleOnCheckoutFormChange}
             shoppingCart={shoppingCart}
             checkoutSubmitted={checkoutSubmitted}
             handleCheckout={handleCheckout}
@@ -174,9 +205,17 @@ export default function App() {
             setNameTerm={setNameTerm}
             emailTerm={emailTerm}
             setEmailTerm={setEmailTerm}
-            incorrectSubmission={incorrectSubmission}
             acceptedTermsAndConditions={acceptedTermsAndConditions}
             handleAcceptTermsAndConditions={handleAcceptTermsAndConditions}
+            order={order}
+            subtotal={subtotal}
+            totalPrice={totalPrice}
+            setTotalPrice={setTotalPrice}
+            setSubtotal={setSubtotal}
+            receiptSubtotal ={receiptSubtotal}
+            receiptName={receiptName}
+            receiptEmail={receiptEmail}
+            receiptTotalPrice={receiptTotalPrice}
           />
 
           <Routes>
@@ -197,9 +236,25 @@ export default function App() {
                 }
               ></Route>
 
-              <Route path="products/:id" element={<ProductDetail shoppingCart={shoppingCart} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemToCart}/>} />
+              <Route
+                path="products/:id"
+                element={
+                  <ProductDetail
+                    shoppingCart={shoppingCart}
+                    handleAddItemToCart={handleAddItemToCart}
+                    handleRemoveItemToCart={handleRemoveItemToCart}
+                  />
+                }
+              />
+              <Route
+                path="products/orders"
+                element={
+                  <Orders
+                    shoppingCart={shoppingCart}
+                  />
+                }
+              />
             </Route>
-
             {/* <Route path = "*" element={<NotFound/>}/> */}
           </Routes>
         </main>
