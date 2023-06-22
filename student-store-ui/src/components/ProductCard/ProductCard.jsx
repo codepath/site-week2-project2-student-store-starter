@@ -5,13 +5,15 @@ import { Link } from 'react-router-dom'
 
 // export default function ProductCard({product, index, quantity}){
 export default function ProductCard({product, index, handleAddItemToCart, handleRemoveItemToCart, shoppingCart}){
-// console.log(shoppingCart)
-let selectedItemQuantity = (shoppingCart?.filter((item) => {
-    if (item[itemId] === product.id){
-        return item[quantity];
-    }  
-})) 
-// // console.log(selectedItemQuantity);
+
+    let cartIndex = shoppingCart.findIndex(item => item.itemId === product.id);
+    let updatedCart = [...shoppingCart]
+    let selectedItemQuantity
+    if (cartIndex === -1){ // not found in shopping cart (hasn't been added yet)
+        selectedItemQuantity = 0
+    } else {
+        selectedItemQuantity = updatedCart[cartIndex].quantity
+    }
 
   const productPrice = product.price.toLocaleString("us-EN", {
             style: "currency",

@@ -18,7 +18,7 @@ import ProductGrid from '../ProductGrid/ProductGrid'
       <Hero />
       <SubnavBar formData={formData} handleSearch={handleSearch} handleCategoryFilter={handleCategoryFilter} />
 
-      <ProductGrid products = {products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart = {handleRemoveItemToCart}/>
+      <ProductGrid products = {products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart = {handleRemoveItemToCart} shoppingCart={shoppingCart}/>
       <About />
       <Contact />
       <Footer />

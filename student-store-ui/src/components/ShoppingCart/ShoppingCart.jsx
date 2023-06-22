@@ -4,9 +4,10 @@ import {useEffect, useState} from "react"
 import { Link } from 'react-router-dom'
 
 export default function ShoppingCart({sidebarOpen, shoppingCart, products}){
-console.log("PRODUCTS: ", products)
+// console.log("PRODUCTS: ", products)
     if (sidebarOpen){
-        console.log(shoppingCart)
+        // console.log(shoppingCart)
+
         if (shoppingCart.length === 0){
             // {// console.log("SHOPPING CART EMPTY")}
             return <div className="notification">No items added to cart yet. Start shopping now!</div>
@@ -26,25 +27,22 @@ console.log("PRODUCTS: ", products)
                     <span className="center">Unit Price</span>
                     <span className="center">Cost</span>
                 </div>
-                <div className="product-row">
-
+               
                     {
                         shoppingCart.map( 
-                            item => <div> {products.filter((product) => item.itemId === product.id)[0].name} </div>
+                            item => 
+                            <div className="product-row"> 
+                            <div> {products.filter((product) => item.itemId === product.id)[0].name} </div>
+                            <span className="center cart-product-quantity">{item.quantity}</span>
+                            <span className="center cart-product-price"> {products.filter((product) => item.itemId === product.id)[0].price} </span>
+                            <span className="center cart-product-subtotal"> {(products.filter((product) => item.itemId === product.id)[0].price) * (item.quantity)} </span>
+                            </div>
                         )
                     }
-                    {
-                       shoppingCart.map( item => <span className="center cart-product-quantity">{item.quantity}</span>)
-                    }
-                    {
-                        shoppingCart.map(item => <span className="center cart-product-price"> {products.filter((product) => item.itemId === product.id)[0].price} </span>)
-                    }
-                    {
-                        shoppingCart.map(item => <span className="center cart-product-subtotal"> {(products.filter((product) => item.itemId === product.id)[0].price) * (item.quantity)} </span>)
-                    }
+                    
 
                     {/* need to take into account previous subtotal! */}
-                </div>
+
                 </div>
                 <div className="receipt">
                 <div className="receipt-subtotal">

@@ -112,28 +112,21 @@ export default function App() {
   }
 
   function handleRemoveItemToCart(productId) {
-    // console.log("REMOVING ITEM!");
-    let productInCart = shoppingCart.some((item) => item.itemId === productId);
-    if (!productInCart) {
-      if (quantity - 1 == 0) {
+    let isAlreadyInCart = shoppingCart.some( product => product.itemId === productId);
+    if (isAlreadyInCart) {
+      let index = shoppingCart.findIndex(product => product.itemId === productId);
+      let updatedCart = [...shoppingCart]
+      if (updatedCart[index].quantity - 1 == 0) {
         // remove item from shopping cart array entirely
-        const updatedItems = items.filter((item) => item.itemId !== productId);
-        setShoppingCart(updatedItems);
+        updatedCart = shoppingCart.filter((item) => item.itemId !== productId);
+        setShoppingCart(updatedCart);
       } else {
-        // just regularly decrement the quantity
         // Decrement the quantity by 1 for the item with the given item ID
-        const updatedItems = items.map((item) => {
-          // // console.log("input", productId)
-          // // console.log("finding id: " ,item.itemId)
-          if (item.itemId === productId) {
-            // // console.log("FOUND ITEM IN CART")
-            return { ...item, quantity: item.quantity - 1 };
-          }
-          setShoppingCart(updatedItems);
-        });
+        updatedCart[index] = {itemId: updatedCart[index].itemId, quantity: --updatedCart[index].quantity}
       }
-    } // if item is not in shopping cart yet, just do nothing
-  }
+      setShoppingCart(updatedCart);
+    };
+  }  // if item is not in shopping cart yet, just do nothing
 
   function handleOnCheckoutFormChange(name, value) {}
   function handleOnSubmitCheckoutForm() {
@@ -168,6 +161,7 @@ export default function App() {
                     products={getFilteredProducts()}
                     handleAddItemToCart={handleAddItemToCart}
                     handleRemoveItemToCart={handleRemoveItemToCart}
+                    shoppingCart={shoppingCart}
                     // quantity={quantity}
                     // incrementQuant = {incrementQuant}
                     // decrementQuant={decrementQuant}
