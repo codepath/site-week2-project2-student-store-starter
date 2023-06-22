@@ -1,0 +1,30 @@
+.cartProductName {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+  }
+  
+  .sidebarOpen{
+      display: flex;
+      justify-content:center;
+  }
+  .shop {
+      display: flex;
+      flex-direction: column;
+  }
+  
+  .shopping-cart, .name-label, .quantity-label, .price-label {
+      display: flex;
+  }
+  
+  .shopping-cart {
+      flex-direction: column;
+  }
+  .name-label, .quantity-label, .price-label {
+     display: flex;
+      flex-direction: row;
+  }
+  
+  .labelsAndProducts {
+      display:flex;
+  }

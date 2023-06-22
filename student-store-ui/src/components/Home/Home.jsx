@@ -6,7 +6,6 @@ import ProductGrid from "../ProductGrid/ProductGrid"
 import About from "../About/About"
 import Contact from "../Contact/Contact"
 import Footer from "../Footer/Footer"
-import Sidebar from "../Sidebar/Sidebar"
 import "./Home.css"
 export default function Home({products, searchValue, handleSearch, activeCategory, setActiveCategory}) {
   
@@ -23,7 +22,6 @@ const displayProducts =
   return (
     <div className="home">
       <Navbar />
-      <Sidebar />
       <Hero />
       <About />
       <SubNavbar handleSearch={handleSearch} searchValue={searchValue} 
@@ -34,4 +32,3 @@ const displayProducts =
     </div>
   )
 }
-

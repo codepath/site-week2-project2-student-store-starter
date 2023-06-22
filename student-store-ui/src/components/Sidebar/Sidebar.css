@@ -1,13 +1,28 @@
 .sidebar {
-    width: 20%;
+    width: 80px;
     height: 100%;
     background-color: #393939;
     transition: width 0.3s;
     position: fixed;
     display: block;
+    z-index: 1;
   }
   
   .sidebar.open {
-    width: 80px;
+    width: 300px;
+    list-style-type: none;
   }
+
+.sidebar .sidebar-icons{
+    padding-right: 25px;
+}
   
+.sidebar .sidebar-icons ul li{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    width: 100%;
+padding-right: 2px;
+}

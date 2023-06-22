@@ -14,6 +14,9 @@ import Sidebar from "../Sidebar/Sidebar";
 
 export default function App() {
 
+  const [isOpen, setIsOpen] = useState(false);
+
+
     // products list hook
     const [productList, setProductList] = useState([])
     // search hook
@@ -43,12 +46,13 @@ export default function App() {
       <div className="app">
         <main>
         <Router>
+        <Sidebar />
           <Routes>
             <Route path="/" element={<Home products={productList}
           searchValue={searchValue} handleSearch={handleSearch} activeCategory={activeCategory} setActiveCategory={setActiveCategory}/>}/>
             <Route path="/products/:productId" element={
             <main>
-              <Sidebar /> 
+              <Sidebar />
               <Navbar />
               <Hero />
               <SubNavbar />
