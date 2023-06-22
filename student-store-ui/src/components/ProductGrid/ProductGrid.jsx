@@ -1,6 +1,10 @@
 import * as React from "react";
 import "./ProductGrid.css";
 import ProductCard from "../ProductCard/ProductCard";
+import {useState} from 'react';
+import { Link } from "react-router-dom";
+
+
 
 export default function ProductGrid(props) {
   let newProducts;
@@ -21,15 +25,36 @@ export default function ProductGrid(props) {
     );
   }
 
-  function createProduct(info) {
-    return (
-      <div className="product-name">
-        <img src={info.image} />
-        <p>{info.name}</p>
-        <p>${info.price.toFixed(2)}</p>
-      </div>
-    );
-  }
+
+//   const[quantity, setQuantity] = useState(0)
+// console.log(quantity)
+
+
+//   function addHandleQuantity (event) {
+//     setQuantity((quantity) => 
+//       quantity + 1)
+//   }
+
+//   function subHandleQuantity (event) {
+//     setQuantity((quantity) => 
+//       quantity - 1)
+//   }
+
+//   function createProduct(info) {
+
+//     return (
+//       <div className="product-name">
+//         <Link to={"products/" + info.id}>
+//         <img src={info.image} />
+//         </Link>
+//         <p>{info.name}</p>
+//         <p>${info.price.toFixed(2)}</p>
+//         <button onClick={addHandleQuantity}> + </button>
+//       <button onClick={subHandleQuantity}> - </button> 
+//       <p>{quantity}</p>
+//       </div>
+//     );
+//   }
 
   return (
     <>
@@ -41,7 +66,7 @@ export default function ProductGrid(props) {
           <p className="gridP">Nun Here!</p>
         ) : (
           newProducts?.map((product) => (
-            <ProductCard product={product} createProduct={createProduct} />
+            <ProductCard product={product}  />
           ))
         )}
       </div>

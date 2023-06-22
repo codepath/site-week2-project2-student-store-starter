@@ -3,28 +3,33 @@ import { useParams } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Hero from "../Hero/Hero";
 import Search from "../Search/Search";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 
-export default function ProductDetail({ products }) {
+export default function ProductDetail() {
   const { id } = useParams();
+  const [product, setProduct] = useState({});
 
-  // debugger;
-  // console.log(products);
-  if (products.length === 0) {
-    return <h2 style={{ margin: "0 auto" }}>Loading...</h2>;
-  }
+  useEffect(() => {
+    axios.get(`http://localhost:3001/products/${id}`).then((response) => {
+      console.log(response.data[0])
+      setProduct(response.data[0])
+    });
+  }, []);
+
 
   return (
     <>
       <Navbar />
       <Hero />
       <Search />
-      <h2 style={{ margin: "0 auto" }}>Product: {products[id - 1].name}</h2>
+      <h2 style={{ margin: "0 auto" }}>Product: {product.name}</h2>
       <img
         style={{ width: "500px", height: "500px", margin: "0 auto" }}
-        src={products[id - 1].image}
+        src={product.image}
       />
-      <p style={{ margin: "0 auto" }}>{products[id - 1].description}</p>
+      <p style={{ margin: "0 auto" }}>{product.description}</p>
     </>
   );
 }

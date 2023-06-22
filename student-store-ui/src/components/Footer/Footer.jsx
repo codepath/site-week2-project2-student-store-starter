@@ -4,11 +4,11 @@ export default function Footer () {
     return(
 <div className="footer" style={{
     backgroundColor: '#9bd1e5', 
-    padding: '100px',
     marginTop:'200px',
+    display:'inline-block',
        }}>
 
-        <span style={{float:'left', padding:'40px', margin:'0 auto'}}>
+        <span style={{float:'left', padding:'40px', marginLeft:'20%'}}>
             <p style={{fontWeight:'bold'}}>Categories</p>
             <p>All Categories</p>
             <p>Clothing</p>
@@ -26,7 +26,7 @@ export default function Footer () {
             <p>Careers</p>
         </span>
 
-        <span style={{float:'left', padding:'40px'}}>
+        <span style={{float:'left', padding:'40px', }}>
         <p style={{fontWeight:'bold'}}>Support</p>
             <p>Contact Us</p>
             <p>Money Refund</p>

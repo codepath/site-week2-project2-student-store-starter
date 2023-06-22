@@ -14,7 +14,7 @@ export default function Search(props) {
    }
 
    function handleCatSubmit (event) {
-    props.setSearchCatValue('category')
+    // props.setSearchCatValue('category')
     props.setCatValue(event.target.name)
    }
    

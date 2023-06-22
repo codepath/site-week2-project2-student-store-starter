@@ -9,16 +9,15 @@ import ProductDetails from "../ProductDetails/ProductDetails"
 
 
 export default function App() {
-const url = "https://codepath-store-api.herokuapp.com/store";
+// const url = "https://codepath-store-api.herokuapp.com/store";
 const [products, setProducts] = useState([]);
 const [searchValue, setSearchValue] = useState('')
 const [searchCatValue, setSearchCatValue] = useState('')
 const [catValue, setCatValue] = useState('')
 
 
-
   useEffect(() => {
-    axios.get(url).then((response) => {
+    axios.get('http://localhost:3001/').then((response) => {
       setProducts(response.data.products)
     });
   }, []);
@@ -37,7 +36,7 @@ const [catValue, setCatValue] = useState('')
         catValue={catValue}
         searchCatValue={searchCatValue}
         />}/>
-      <Route path="products/:id" element={<ProductDetails products={products}/>}/>
+      <Route path="products/:id" element={<ProductDetails/>}/>
       </Routes>
         </main>
       </BrowserRouter>
