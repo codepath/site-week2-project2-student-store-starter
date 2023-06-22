@@ -2,6 +2,8 @@ import * as React from "react"
 import "./Home.css"
 import ProductGrid from "../ProductGrid/ProductGrid"
 import Search from "../Search/Search";
+import { Link } from "react-router-dom";
+import ProductCard from "../ProductCard/ProductCard";
 
 export default function Home({products, selectedCategory, searchTerm, setSearchTerm}) {
     return (
@@ -22,3 +24,13 @@ export default function Home({products, selectedCategory, searchTerm, setSearchT
         </div>
     )
 }
+
+{products.map((product) => (
+    <ProductCard
+      key={product.id}
+      id={product.id}
+      name={product.name}
+      image={product.image}
+      price={product.price}
+    />
+  ))}

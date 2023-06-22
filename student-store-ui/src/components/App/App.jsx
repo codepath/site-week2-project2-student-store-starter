@@ -44,3 +44,13 @@ export default function App() {
     </div>
   );
 }
+
+// return (
+//   <BrowserRouter>
+//     <Switch>
+//       <Route exact path="/" component={Home} />
+//       <Route exact path="/products/:id" component={ProductDetails} />
+//     </Switch>
+//   </BrowserRouter>
+// );
+// }
