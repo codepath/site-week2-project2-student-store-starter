@@ -5,7 +5,7 @@ import "./ProductDetails.css";
 
 export default function ProductDetails(){
     let params = useParams();
-    const URL = `https://codepath-store-api.herokuapp.com/store/${params.id}`;
+    const URL = `http://localhost:3001/store/${params.id}`;
     const [isLoading, setIsLoading] = useState(true); 
     const [product, setProduct] = useState({});
     // fetch product data
@@ -25,14 +25,17 @@ export default function ProductDetails(){
                         <img src={product.image} alt={"image of" + product.name} />
                     </div>
 
-                    <div className="product--side-summary">
+                    <div className="product-side-summary">
                         <h1 className="product-name">{product.name}</h1>
-                        <p className="product-price">${product.price}</p>
+                        <p className="product-details-price">${product.price?.toFixed(2)}</p>
                         <div className="product-rating"></div>
                     </div>
 
                 </div>
                 <div className="sub-header-content">
+                    <h1 className="description-container">
+                        Description
+                    </h1>
                     <p className="product-description">
                         {product.description}
                     </p>
