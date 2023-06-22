@@ -5,8 +5,8 @@ import {
   utilityButtons,
   aboutP,
   contactInfo,
-} from '../../assets/styles';
-import merchIcon from '../../assets/images/merchandise.png';
+} from '../../assets/style.js';
+import merchIcon from '../../assets/images/medium.jpeg';
 import {
   InputGroup,
   InputLeftElement,
@@ -17,12 +17,12 @@ import {
 } from '@chakra-ui/react';
 import { Search2Icon, QuestionIcon } from '@chakra-ui/icons';
 import { FiShoppingCart } from 'react-icons/fi';
-import Categories from './homeComponents/CategoriesMenu';
+import Categories from './HomeComponents/Categories';
 import axios from 'axios';
-import Card from './homeComponents/Card';
+import Card from './HomeComponents/Card';
 import CodePathLogo from '../../assets/images/codepathLogo.png';
-import GirlModel from '../../assets/images/student.png';
-import Footer from './homeComponents/Footer';
+import GirlModel from '../../assets/images/ed-tech-survey-march-2023-schwartz.jpg';
+import Footer from './HomeComponents/Footer';
 import { useNavigate } from 'react-router-dom';
 
 export default function Home() {

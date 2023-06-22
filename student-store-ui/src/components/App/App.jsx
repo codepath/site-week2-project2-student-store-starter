@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import Sidebar from '../Sidebar/Sidebar';
 import Home from '../Home/Home';
-import ProductView from '../Product/ProductView';
+import ProductView from '../ProductView/ProductView';
 import './App.css';
 
 export default function App() {
