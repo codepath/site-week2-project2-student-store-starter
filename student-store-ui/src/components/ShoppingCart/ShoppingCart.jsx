@@ -11,10 +11,6 @@ export default function ShoppingCart({shoppingCart }) {
 
     }
     
-    
-    
-    
-    
     const [itemsInCart, setItemsInCart] = useState(false)
 
     useEffect(() => {
@@ -70,9 +66,7 @@ export default function ShoppingCart({shoppingCart }) {
           </div>
         );
       }
-    //   } else {
-    //     return null; // Don't render the item if the condition is not met
-    //   }
+
     })}
       </div>
   

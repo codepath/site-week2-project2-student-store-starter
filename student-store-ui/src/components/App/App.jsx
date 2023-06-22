@@ -80,7 +80,7 @@ export default function App() {
         <main>
 
           <Navbar />
-          <Sidebar isOpen={sidebar} handleOnToggle={() => setSideBar(!sidebar)} shoppingCart = {shoppingCart} products = {products} checkoutForm = {checkoutForm} handleOnCheckoutFormChange = {handleOnCheckoutFormChange} handleOnSubmitCheckoutForm = {handleOnSubmitCheckoutForm} />
+          <Sidebar isOpen={sidebar} handleOnToggle={() => setSideBar(!sidebar)} shoppingCart = {shoppingCart} setShoppingCart = {setShoppingCart} products = {products} checkoutForm = {checkoutForm} handleOnCheckoutFormChange = {handleOnCheckoutFormChange} handleOnSubmitCheckoutForm = {handleOnSubmitCheckoutForm} />
 
           <Routes>
             <Route path="/" element={<Home products={products} setProducts={setProducts} handleAddItemToCart = {handleAddItemToCart} handleRemoveItemToCart = {handleRemoveItemToCart} shoppingCart = {shoppingCart} setShoppingCart = {setShoppingCart}/>} />

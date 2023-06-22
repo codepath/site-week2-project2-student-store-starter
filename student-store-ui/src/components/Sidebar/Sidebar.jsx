@@ -3,7 +3,7 @@ import "./Sidebar.css"
 import CheckoutForm from "../CheckoutForm/CheckoutForm";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
 
-export default function Sidebar({ isOpen = false, handleOnToggle, shoppingCart, products, checkoutForm, handleOnCheckoutFormChange, handleOnSubmitCheckoutForm }) {
+export default function Sidebar({ isOpen = false, handleOnToggle, shoppingCart, products, checkoutForm, handleOnCheckoutFormChange, handleOnSubmitCheckoutForm, setShoppingCart }) {
 
   const divClass = isOpen ? "sidebar open" : "sidebar closed";
 
@@ -24,7 +24,7 @@ export default function Sidebar({ isOpen = false, handleOnToggle, shoppingCart, 
         <div className="wrapper">
         <button onClick={handleOnToggle}><i className="material-icons md-48">arrow_backward</i></button>
           <ShoppingCart shoppingCart = {shoppingCart}/>
-          <CheckoutForm />
+          <CheckoutForm shoppingCart = {shoppingCart} setShoppingCart = {setShoppingCart}/>
         </div>
       </section>
 
