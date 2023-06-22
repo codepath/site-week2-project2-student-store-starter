@@ -10,6 +10,7 @@
     
     width: 600px;
     align-items: center;
+    margin-left: -20px;
 }
 
 .sidebar{
@@ -108,13 +109,14 @@
   } */
 
   .shopping-cart {
-    width: 100%;
+    width: 550px;
     color: black
 
 }
 
 .shopping-cart .open {
     max-width: 550px
+    
 }
 
 .shopping-cart .open>h3 {
@@ -243,7 +245,7 @@
 
 }
 
-checkout-form {
+.checkout-form {
     padding: 16px
 }
 
@@ -355,4 +357,9 @@ checkout-form {
     background: transparent;
     border: solid 1px white;
     color: #fff
+}
+
+.checkbox {
+
+    color: white;
 }

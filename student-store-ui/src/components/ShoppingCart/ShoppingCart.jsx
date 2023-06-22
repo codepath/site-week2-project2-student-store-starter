@@ -1,51 +1,103 @@
 import * as React from "react"
 import "./ShoppingCart.css"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
-export default function ShoppingCart() {
-    
-    const [itemsStatus, setItemsStatus] = useState(true)
-
-
-    let shoppingCartEmpty = 
-    <>
-    <div className="open">
-                <h3 className="">Shopping Cart <span className="button"><i className="material-icons md-48">add_shopping_cart</i></span></h3>
-                <div className="notification">No items added to cart yet. Start shopping now!</div>
-    </div>
+export default function ShoppingCart({shoppingCart }) {
 
     
-    </>
+    
+    
+    
+    
+    
+    const [itemsInCart, setItemsInCart] = useState(false)
 
-    let shoppingCartFull = 
+    useEffect(() => {
+        // Update the itemsInCart state based on the shoppingCart array length
+        setItemsInCart(shoppingCart.length > 0);
+    }, [shoppingCart]); // useEffects is activated whenever shoppingCart Changes
 
-    <>
+
+
+
+    let shoppingCartEmpty =
+        <>
             <div className="open">
                 <h3 className="">Shopping Cart <span className="button"><i className="material-icons md-48">add_shopping_cart</i></span></h3>
-               
-            </div>
-            <div class="CartTable">
-                <div class="header">
-                    <div class="header-row"><span class="flex-2">Name</span><span class="center">Quantity</span><span class="center">Unit Price</span><span class="center">Cost</span></div>
-                    <div class="product-row"><span class="flex-2 cart-product-name">Cinnamon Rolls</span><span class="center cart-product-quantity">1</span><span class="center cart-product-price">$2.99</span><span class="center cart-product-subtotal">$2.99</span></div>
-                </div>
-                <div class="receipt">
-                    <div class="receipt-subtotal"><span class="label">Subtotal</span><span></span><span></span><span class="center subtotal">$2.99</span></div>
-                    <div class="receipt-taxes"><span class="label">Taxes and Fees</span><span></span><span></span><span class="center">$0.26</span></div>
-                    <div class="receipt-total"><span class="label">Total</span><span></span><span></span><span class="center total-price">$3.25</span></div>
-                </div>
+                <div className="notification">No items added to cart yet. Start shopping now!</div>
             </div>
 
-    
-    </>
-    
-    
+
+        </>
+
+    let shoppingCartFull =
+
+    <>
+    <div className="open">
+      <h3 className="">
+        Shopping Cart
+        <span className="button">
+          <i className="material-icons md-48">add_shopping_cart</i>
+        </span>
+      </h3>
+    </div>
+  
+    <div className="CartTable">
+      <div className="header">
+        <div className="header-row">
+          <span className="flex-2">Name</span>
+          <span className="center">Quantity</span>
+          <span className="center">Unit Price</span>
+          <span className="center">Cost</span>
+        </div>
+      
+  
+        {shoppingCart?.map((item) => {
+      if (item.quantity > 0) {
+        return (
+          <div className="product-row" key={item.name}>
+            <span className="flex-2 cart-product-name">{item.name}</span>
+            <span className="center cart-product-quantity">{item.quantity}</span>
+            <span className="center cart-product-price">{item.price}</span>
+            <span className="center cart-product-subtotal">
+              {item.price * item.quantity}
+            </span>
+          </div>
+        );
+      }
+    //   } else {
+    //     return null; // Don't render the item if the condition is not met
+    //   }
+    })}
+      </div>
+  
+      <div className="receipt">
+        <div className="receipt-subtotal">
+          <span className="label">Subtotal</span>
+          <span className="center subtotal">$2.99</span>
+        </div>
+        <div className="receipt-taxes">
+          <span className="label">Taxes and Fees</span>
+          <span className="center">$0.26</span>
+        </div>
+        <div className="receipt-total">
+          <span className="label">Total</span>
+          <span className="center total-price">$3.25</span>
+        </div>
+      </div>
+    </div>
+  </>
+  
+
+
     return (
+        <>
         <div className="shopping-cart">
 
-        {itemsStatus ? shoppingCartFull : shoppingCartEmpty}  
+            {itemsInCart ? shoppingCartFull : shoppingCartEmpty}
 
-            
+
         </div>
+        </>
     )
 }

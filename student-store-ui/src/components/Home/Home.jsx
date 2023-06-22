@@ -59,7 +59,7 @@ export default function Home({ products, setProducts, handleAddItemToCart, handl
       <div className="home">
         <div className="home-content" id="Buy">
           <h2 className="home-title">Best Selling Products</h2>
-          <ProductGrid products={filteredProducts} handleAddItemToCart = {handleAddItemToCart} handleRemoveItemToCart = {handleRemoveItemToCart} shoppingCart = {shoppingCart} setShoppingCart = {setShoppingCart}/>
+          <ProductGrid products={filteredProducts} shoppingCart = {shoppingCart} setShoppingCart = {setShoppingCart}/>
         </div>
       </div>
       <About />
