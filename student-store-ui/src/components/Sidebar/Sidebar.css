@@ -265,7 +265,8 @@
 }
 
 .checkout-form .is-danger {
-    color: var(--bright-red)
+    color: rgb(244, 62, 62);
+    font-weight: 700;
 }
 
 .checkout-form .input-field {
