@@ -7,7 +7,7 @@ function ProductDetails() {
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    axios.get(`https://codepath-store-api.herokuapp.com/store/product/${id}`)
+    axios.get(`https://codepath-store-api.herokuapp.com/store/${id}`)
       .then(response => {
         setProduct(response.data);
       });

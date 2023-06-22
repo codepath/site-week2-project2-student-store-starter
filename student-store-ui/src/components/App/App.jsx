@@ -1,26 +1,31 @@
-import * as React from "react";
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Navbar from "../Navbar/Navbar";
-import Sidebar from "../Sidebar/Sidebar";
-import Home from "../Home/Home";
-import ProductDetails from "../ProductDetails/ProductDetails";
-import "./App.css";
-import Hero from "../Hero/Hero";
-import SubNavbar from "../SubNavbar/SubNavbar";
-import { useEffect, useState } from "react";
-import axios from 'axios';
+import * as React from "react"
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Navbar from "../Navbar/Navbar"
+import Sidebar from "../Sidebar/Sidebar"
+import Home from "../Home/Home"
+import Hero from "../Hero/Hero"
+import SubNavbar from "../SubNavbar/SubNavbar"
+import ProductDetail from "../ProductDetail/ProductDetail"
+import { useEffect, useState } from "react"
+import axios from 'axios'
 
 export default function App() {
-  const url = "https://codepath-store-api.herokuapp.com/store";
-  const [products, setProducts] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [category, setCategory] = useState("");
+  const url = "https://codepath-store-api.herokuapp.com/store"
+  const [products, setProducts] = useState([])
+  const [searchTerm, setSearchTerm] = useState("")
+  const [category, setCategory] = useState("")
+  
 
   useEffect(() => {
     axios.get(url).then((response) => {
-      setProducts(response.data.products);
-    });
-  }, []);
+      setProducts(response.data.products)
+    })
+  }, [])
+
+  const filteredProducts = products.filter(product =>
+    product.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
+    (category ? product.category === category : true)
+  )
 
   return (
     <div className="app">
@@ -28,18 +33,14 @@ export default function App() {
         <main>
           <Navbar />
           <Hero />
-          <SubNavbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} setCategory={setCategory} />
+          <SubNavbar setCategory={setCategory} setSearchTerm={setSearchTerm} />
           <Sidebar />
-          <Switch>
-            <Route path="/product/:id">
-              <ProductDetails />
-            </Route>
-            <Route path="/">
-              <Home products={products} searchTerm={searchTerm} category={category} />
-            </Route>
-          </Switch>
+          <Routes>
+            <Route path="/" element={<Home products={filteredProducts} />} />
+            <Route path="/product/:id" element={<ProductDetail products={products} />} />
+          </Routes>
         </main>
       </BrowserRouter>
     </div>
-  );
+  )
 }
