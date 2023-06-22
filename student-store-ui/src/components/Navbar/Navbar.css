@@ -1,0 +1,43 @@
+.navbar{
+    display: flex;
+    background-color: #2c4047;
+    color: white;
+    height: 70px;
+    align-items: center;
+    flex-direction: rows;
+    padding: 0;
+    max-width: 100vw;
+    width: 100%;
+    
+}
+
+.navbar .content{
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+
+}
+
+.navbar .content .links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type: none;
+    margin-left: auto;
+    flex: 1;
+    align-items: center;
+    
+
+}
+.navbar a {
+    color: white;
+    font-weight: 500;
+    
+}
+
+a{
+    text-decoration: none;
+   
+}
+
