@@ -19,9 +19,10 @@ export default function Home({ products }) {
 
   return (
     <div className="home">
+      <Navbar />
       <Sidebar cartItems={cartItems} setCartItems={setCartItems} allItemSubtotal={allItemSubtotal}/>
       <Hero />
-      <Search handleSearch={handleSearch} products={products} cartItems={cartItems} setCartItems={setCartItems} />
+      <Search handleSearch={handleSearch} products={products} cartItems={cartItems} setCartItems={setCartItems}/>
       <Navbar />
       
     </div>

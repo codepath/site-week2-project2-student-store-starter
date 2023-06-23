@@ -1,3 +1,5 @@
+
+
 .shopping-cart {
   width: 100%;
   color: #554028;
@@ -117,6 +119,7 @@ h3 {
   width: 100%;
   margin-top: 10px;
   background-color: #e4ddac;
+  color: #554028
 }
 
 .shopping-cart .receipt span {
@@ -184,7 +187,7 @@ h3 {
 }
 
 .checkout-form .is-danger {
-  color: black
+  color: #554028
 }
 
 .checkout-form .input-field {
@@ -218,7 +221,7 @@ h3 {
   cursor: pointer;
   background: transparent;
   border: solid 1px white;
-  color: #fff
+  color: #fff;
 }
 
 .checkout-form button:hover {
@@ -246,13 +249,19 @@ h3 {
 }
 
 .checkout-success .card {
-  color: #fff;
+  color: #554028;
   display: flex;
   flex-direction: column
 }
 
+.purchase {
+  padding: 20px;
+  color: #554028
+}
+
+
 .checkout-success .card .card-title {
-  color: #fff;
+  color: #554028;
   font-weight: 20px;
   margin-bottom: 5px
 }
@@ -265,7 +274,8 @@ h3 {
 }
 
 .checkout-success .purchase {
-  padding-left: 20px
+  padding-left: 20px;
+ 
 }
 
 .checkout-success .purchase li {

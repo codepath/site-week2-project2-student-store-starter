@@ -9,7 +9,10 @@ export default function Search({ products, cartItems, setCartItems }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredProducts, setFilteredProducts] = useState(products); // Initialize with all products
 
-  const handleSearchChange = (event) => {
+  //setting quantity of items
+  const [quantity, setQuantity] = useState(0);
+
+    const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
     const filtered = products.filter((product) =>
       product.name.toLowerCase().includes(event.target.value.toLowerCase())
@@ -83,7 +86,7 @@ export default function Search({ products, cartItems, setCartItems }) {
     </nav>
 
 
-      <ProductGrid products={getFilteredProducts()} cartItems={cartItems}  setCartItems={setCartItems}/>
+      <ProductGrid products={getFilteredProducts()} cartItems={cartItems}  quantity={quantity }setQuantity={setQuantity} setCartItems={setCartItems}/>
       </div>
       
   );

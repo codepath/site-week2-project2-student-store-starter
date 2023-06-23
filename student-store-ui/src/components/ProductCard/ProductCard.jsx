@@ -11,7 +11,8 @@ const addToCart = (item) => {
 
 
 //setting quantity of items
-  const [quantity, setQuantity] = useState(0);
+const [quantity, setQuantity] = useState(0);
+
 // user adds to cart
   const handleAddToCart = () => {
     const item = {
