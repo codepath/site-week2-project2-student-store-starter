@@ -26,6 +26,7 @@
 }
 .checkout-success p {
     color: #a9d6e5;
+    font-size: 18px
 }
 .checkout-success .purchase {
     padding-left: 20px;

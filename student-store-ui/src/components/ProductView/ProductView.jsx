@@ -47,6 +47,7 @@ export default function ProductView({
           <div className="product-card">
             <div className="media">
               <a href="/products/7">
+                {/* TODO: FIX ID NUMBER */}
                 <img
                   src={product.image}
                   alt="product cover"

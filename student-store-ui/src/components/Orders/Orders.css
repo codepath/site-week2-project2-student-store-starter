@@ -31,3 +31,14 @@ h1 {
     width: 350px;
     height: 350px;
 }
+.see-transaction {
+    color: #a9d6e5;
+    background: #012a4a;
+    width: 170px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    border: 6px outset #012a4a;
+  }

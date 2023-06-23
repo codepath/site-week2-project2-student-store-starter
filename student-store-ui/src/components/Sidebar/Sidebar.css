@@ -117,6 +117,7 @@
     color: #a9d6e5;
     text-align: center;
     margin: 10px;
+    font-size: 18px
 }
 .checkout-form {
     padding: 16px;
@@ -136,6 +137,7 @@
 }
 .checkout-form .input-field .label {
     color: #a9d6e5;
+    font-size: 18px;
 }
 .checkout-form .input-field .control {
     width: 100%;
@@ -157,13 +159,16 @@
 
 .checkout-form .label {
     color: #a9d6e5;
+    font-size: 18px
 }
 .checkout-form .label #terms-and-conditions {
     color: #a9d6e5;
+    font-size: 18px;
 }
 
 .checkout-form .is-danger {
     color: #fe3210;
+    font-size: 18px;
 }
 .checkout-form button {
     margin-top: 10px;

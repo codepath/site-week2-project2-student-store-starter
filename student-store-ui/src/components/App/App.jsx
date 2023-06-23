@@ -8,6 +8,7 @@ import Sidebar from "../Sidebar/Sidebar";
 import Home from "../Home/Home";
 import ProductDetail from "../ProductDetail/ProductDetail";
 import Orders from "../Orders/Orders";
+import Transaction from "../Transaction/Transaction";
 
 export const appInfo = {
   title: "Welcome! Find Your Merch!",
@@ -32,7 +33,8 @@ export default function App() {
   const [nameTerm, setNameTerm] = useState("");
   const [emailTerm, setEmailTerm] = useState("");
   const [incorrectSubmission, setIncorrectSubmission] = useState(false);
-  const [acceptedTermsAndConditions, setAcceptedTermsAndConditions] = useState(false);
+  const [acceptedTermsAndConditions, setAcceptedTermsAndConditions] =
+    useState(false);
   const [order, setOrder] = useState([]);
   const [subtotal, setSubtotal] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -41,7 +43,8 @@ export default function App() {
   const [receiptEmail, setReceiptEmail] = useState("");
   const [receiptTotalPrice, setReceiptTotalPrice] = useState(0);
   const [totalSpendings, setTotalSpendings] = useState(0);
-  const [allTransactions, setAllTransactions] = useState([]) 
+  const [allTransactions, setAllTransactions] = useState([]);
+  const [totalOrderQuantity, setTotalOrderQuantity] = useState(0);
 
   useEffect(() => {
     axios.get(url).then((response) => {
@@ -155,19 +158,32 @@ export default function App() {
       shoppingCart.length > 0
     ) {
       // console.log(shoppingCart)
-      setReceiptTotalPrice(totalPrice)
-      setReceiptEmail(emailTerm)
-      setReceiptName(nameTerm)
-      setOrder(shoppingCart)
-      setReceiptSubtotal(subtotal)
+      setReceiptTotalPrice(totalPrice);
+      setReceiptEmail(emailTerm);
+      setReceiptName(nameTerm);
+      setOrder(shoppingCart);
+      setReceiptSubtotal(subtotal);
       setCheckoutSubmitted(true);
-      setAllTransactions([...allTransactions, {order: shoppingCart, email: emailTerm, name: nameTerm, total: totalPrice}])
-      setTotalSpendings(totalSpendings.toLocaleString("us-EN", { style: "currency", currency: "USD", }) + totalPrice);
+      setAllTransactions([
+        ...allTransactions,
+        {
+          order: shoppingCart,
+          email: emailTerm,
+          name: nameTerm,
+          total: totalPrice,
+          quantity: 0,
+        },
+      ]);
+      setTotalSpendings(
+        totalSpendings.toLocaleString("us-EN", {
+          style: "currency",
+          currency: "USD",
+        }) + totalPrice
+      );
       setNameTerm("");
       setEmailTerm("");
       setAcceptedTermsAndConditions(false);
-      setShoppingCart([])
-
+      setShoppingCart([]);
     } else {
       setIncorrectSubmission(true);
     }
@@ -183,8 +199,8 @@ export default function App() {
   }
 
   function handleAcceptTermsAndConditions(event) {
-      // console.log("checked?: ", event.target.checked)
-      setAcceptedTermsAndConditions(event.target.checked);
+    // console.log("checked?: ", event.target.checked)
+    setAcceptedTermsAndConditions(event.target.checked);
   }
 
   return (
@@ -211,7 +227,7 @@ export default function App() {
             totalPrice={totalPrice}
             setTotalPrice={setTotalPrice}
             setSubtotal={setSubtotal}
-            receiptSubtotal ={receiptSubtotal}
+            receiptSubtotal={receiptSubtotal}
             receiptName={receiptName}
             receiptEmail={receiptEmail}
             receiptTotalPrice={receiptTotalPrice}
@@ -256,9 +272,13 @@ export default function App() {
                     receiptEmail={receiptEmail}
                     totalSpendings={totalSpendings}
                     allTransactions={allTransactions}
-                  />
+                    totalOrderQuantity={totalOrderQuantity}
+                    setTotalOrderQuantity={setTotalOrderQuantity}
+                  ></Orders>
                 }
-              />
+              ></Route>
+
+              <Route path="/orders/0" element={<Transaction ></Transaction>} />
             </Route>
             {/* <Route path = "*" element={<NotFound/>}/> */}
           </Routes>

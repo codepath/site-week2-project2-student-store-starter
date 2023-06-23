@@ -2,6 +2,10 @@ import * as React from "react";
 import "./Orders.css";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Transaction from "../Transaction/Transaction";
+import { Link } from "react-router-dom";
+import { useLocation } from 'react-router-dom'
+
 
 const gifToDisplay =
   "https://api.giphy.com/v1/gifs/search?q=shopping&limit=1&apiKey=RXqwRIzTKNCuE32A6fSJFG4kiYoob3hv";
@@ -28,6 +32,8 @@ export default function Orders({
   receiptEmail,
   totalSpendings,
   allTransactions,
+  totalOrderQuantity,
+  setTotalOrderQuantity,
 }) {
   if (!allTransactions || allTransactions.length == 0) {
     return (
@@ -37,61 +43,40 @@ export default function Orders({
       </div>
     );
   }
+  
+  {/* Calculate the total number of items in this order */}
+//   console.log("before", totalOrderQuantity)
+  allTransactions?.map((transaction, i) => (
+    transaction?.order.map( item => (
+        transaction.quantity = transaction.quantity + item.quantity
+        // setTotalOrderQuantity(transaction.quantity = item.quantity))
+  )))
+  )
+  console.log("this is a transaction: ", allTransactions)
+
 
   return (
     <div className="orders">
       <section className="card-body">
         <h1>Your Previous Orders:</h1>
-        {allTransactions?.map((transaction) => (
-            <>
-              <h4 className="header">
-                Showing all orders for {transaction.name}. Order receipt
-                available at {transaction.email}:
-              </h4>
-              <ul className="purchase">
-                {transaction.order.map((item) => (
-                  <>
-                    <li>
-                      {item.quantity} total
-                      {" " +
-                        products.filter(
-                          (product) => item.itemId === product.id
-                        )[0].name +
-                        " "}
-                      purchased at a cost of
-                      {" " +
-                        products
-                          .filter((product) => item.itemId === product.id)[0]
-                          .price.toLocaleString("us-EN", {
-                            style: "currency",
-                            currency: "USD",
-                          }) +
-                        " "}
-                      for a total cost of
-                      {" $" +
-                        item.quantity *
-                          products.filter(
-                            (product) => item.itemId === product.id
-                          )[0].price}
-                      <br></br>
-                      <img
-                        className="product-img"
-                        src={
-                          products.filter(
-                            (product) => item.itemId === product.id
-                          )[0].image
-                        }
-                        alt="product cover"
-                      ></img>
-                    </li>
-                    <li>
-                      After taxes and fees were applied, your total came out to{" "}
-                      {transaction.total}
-                    </li>
-                  </>
-                ))}
-              </ul>
-            </>
+        {allTransactions?.map((transaction, i) => (
+          <>
+            <h4 className="header">
+              {/* {console.log(transaction)} */}
+              Transaction #{i + 1}: {transaction.quantity} item
+              {transaction.quantity > 1 ? "s" : ""} ordered by{" "}
+              {transaction.name}
+            </h4>
+            <button className="see-transaction">
+              {/* {console.log(transaction)} */}
+              {/* <Link to={{ pathname: "/orders/0", search:"hello", hash: "", state: { transaction } }}> */}
+                <Link to="/orders/0" state={{ transaction: "transaction"}}>
+                    See Transaction Details
+                </Link>
+            </button>
+           
+            <Transaction transaction={transaction} products={products}></Transaction>
+          </>
         ))}
       </section>
     </div>
