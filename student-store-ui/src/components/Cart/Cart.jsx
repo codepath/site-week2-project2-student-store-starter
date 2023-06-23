@@ -3,8 +3,6 @@ import * as React from "react";
 import "./Cart.css";
 
 export default function Cart({ cartItems, products }) {
-  //   console.log("items inside Cart component", cartItems);
-
   function renderItemsCart(product, quantity) {
     return (
       <>
@@ -34,12 +32,8 @@ export default function Cart({ cartItems, products }) {
             <span className="center">Cost</span>
           </div>
           {products?.map((product) =>
-            (product.id in cartItems && cartItems[product.id] !== 0) ? (
-              (
-              console.log('cartItems[product.id]',cartItems[product.id]),
-              cartItems[product.id] === 0
-                ? console.log("my value is 0")
-                : renderItemsCart(product, cartItems[product.id]))
+            product.id in cartItems  ? (
+              renderItemsCart(product, cartItems[product.id])
             ) : (
               <></>
             )

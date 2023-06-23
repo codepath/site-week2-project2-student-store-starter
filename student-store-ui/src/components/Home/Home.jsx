@@ -10,8 +10,6 @@ export default function Home({
   category,
   setCartItems,
   cartItems,
-  itemsOnCart,
-  setItemsOnCart 
 }) {
   const filteredProducts = products.filter((product) => {
     const matchSearch =
@@ -44,24 +42,7 @@ export default function Home({
 
         const cartCount = (count[cardId] || 0) - 1;
         const decrementItemCart = { ...cartItems, [cardId]: cartCount };
-        console.log("cart after you just decremented", cartItems, cartCount);
-        // const {[cardId]: value, prev} = count
-        console.log("test",  cartCount, decrementItemCart)
-        cartCount === 0
-          ? (
-            // delete cartItems[cardId],
-            // delete count[cardId],
-            count[cardId] = 0,
-            console.log("test after deleting", cartItems, "count", count),
-            console.log('every', Object.values(count).every(e => e === 0)),
-            setCartItems(decrementItemCart)
-
-            // setItemsOnCart(false)
-            (Object.values(count).every(e => e === 0)) ? (setItemsOnCart(false)):(<></>)
-            
-            )
-            
-          : setCartItems(decrementItemCart);
+        setCartItems(decrementItemCart);
       }
     }
   }

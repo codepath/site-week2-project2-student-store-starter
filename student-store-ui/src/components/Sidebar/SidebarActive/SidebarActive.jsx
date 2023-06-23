@@ -6,8 +6,9 @@ export default function SidebarActive({ cartItems, products, itemsOnCart, setIte
   
   useEffect(() => {
     setItemsOnCart(Object.keys(cartItems)?.length > 0);
-    console.log("you're inside the useEffect", itemsOnCart, cartItems)
   }, [cartItems]);
+
+  (Object.values(cartItems).every(e => e === 0)) ? (setItemsOnCart(false)):(<></>)
 
   return (
     <>
@@ -20,7 +21,7 @@ export default function SidebarActive({ cartItems, products, itemsOnCart, setIte
             </span>
           </h3>
 
-          {itemsOnCart ? (console.log('itemsOnCart?', itemsOnCart),
+          {itemsOnCart ? (
             <Cart cartItems={cartItems} products={products} />
           ) : (
             <div className="notification">
@@ -28,6 +29,8 @@ export default function SidebarActive({ cartItems, products, itemsOnCart, setIte
               No items added to cart yet. Start shopping now!
             </div>
           )}
+
+
 
           <div className="checkout-form">
             <h3>
