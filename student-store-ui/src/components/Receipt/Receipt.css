@@ -1,0 +1,20 @@
+.checkout h3{
+    color: white;
+    margin-left: 5px
+}
+
+.checkout p{
+    color: white;
+    margin-left: 5px
+}
+
+.checkout li{
+    color:white;
+    list-style: square;
+
+}
+
+.checkout ul{
+    display: flex;
+    flex-direction: column;
+}

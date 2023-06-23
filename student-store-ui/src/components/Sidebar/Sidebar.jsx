@@ -4,8 +4,15 @@ import { useState } from "react"
 import ShoppingCart from "../ShoppingCart/ShoppingCart"
 
 
-export default function Sidebar({originalProducts, quantities}) {
+export default function Sidebar({clearCart, cart, setCart, originalProducts, setQuantities, quantities}) {
   const [open, setOpen] = useState(false)
+  // const addedToCart = Object.entries(quantities).filter(
+  //   ([id, quantity]) => quantity > 0
+  // );
+
+  // const shoppingCart = [];
+  // addedToCart.forEach(([id, quantity])=> shoppingCart.push({ itemId: parseInt(id), quantity: quantity }))
+  // const [cart, setCart] = useState([...shoppingCart]);
 
   function openSidebar(){
     console.log('clicked!')
@@ -27,7 +34,7 @@ export default function Sidebar({originalProducts, quantities}) {
               <div className='m'>
                 <i onClick= {closeSideBar} className="material-icons md-36">arrow_backward</i>
               </div>
-              <ShoppingCart quantities={quantities} originalProducts={originalProducts}/>
+              <ShoppingCart clearCart={clearCart} cart={cart} setCart={setCart} setQuantities={setQuantities} quantities={quantities} originalProducts={originalProducts}/>
           </div>
           ) : 
           (

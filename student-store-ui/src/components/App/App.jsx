@@ -45,7 +45,17 @@ export default function App() {
         })
   }, [])
 
+  
 
+  const [cart, setCart] = useState([]);
+
+  function clearCart(){
+
+    setCart([])
+    setAtCheckout(false)
+    setQuantities(quantsObj)
+}
+  
   
   return (
     <div className="app">
@@ -53,9 +63,9 @@ export default function App() {
         
 
         <main>
-        <AppOverlay quantities={quantities} setQuantities={setQuantities} originalProducts={originalProducts}/>
+        <AppOverlay clearCart={clearCart} cart={cart}  setCart={setCart} quantities={quantities} setQuantities={setQuantities} originalProducts={originalProducts}/>
         <Routes>
-          <Route path='/' element={<BuyNow products={products} setProducts={setProducts} originalProducts= {originalProducts} quantities={quantities} setQuantities={setQuantities}/>}/>
+          <Route path='/' element={<BuyNow cart={cart}  setCart={setCart} products={products} setProducts={setProducts} originalProducts= {originalProducts} quantities={quantities} setQuantities={setQuantities}/>}/>
 
             {/* <Route path='/' element={<Home className='home' products={products}/>}/> */}
             <Route path='/about' element={<About/>}/>

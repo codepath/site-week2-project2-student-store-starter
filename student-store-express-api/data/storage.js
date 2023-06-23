@@ -1,6 +1,7 @@
 const path = require("path")
 const low = require("lowdb")
 const FileSync = require("lowdb/adapters/FileSync")
+const db = require('./db.json');
 
 class Storage {
   constructor() {
@@ -12,6 +13,10 @@ class Storage {
     const adapter = new FileSync(this.path)
     this.db = low(adapter)
     this.db.defaults({ purchases: [], products: [] }).write()
+  }
+
+  getDB() {
+    return db;
   }
 
   set(key, value) {

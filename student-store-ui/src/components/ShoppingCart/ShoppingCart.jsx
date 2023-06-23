@@ -3,83 +3,48 @@ import axios from "axios";
 import "./ShoppingCart.css";
 import Receipt from "../Receipt/Receipt";
 
-function ShoppingCart({ quantities, originalProducts }) {
-  // console.log(originalProducts.find(product => (4 === product.id)))
+function ShoppingCart({clearCart, cart, setCart,quantities, setQuantities, originalProducts }) {
   console.log("op", originalProducts);
   console.log("q", quantities);
-  const addedToCart = Object.entries(quantities).filter(
-    ([id, quantity]) => quantity > 0
-  );
-  // console.log('atc',addedToCart)
-  // const [subTotal, setSubTotal] = useState(0)
+  
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [cart, setCart] = useState([]);
   let subTotal = 0;
   const percentTax = 0.0875;
-  // console.log('st', subTotal)
-  const shoppingCart = [];
   const user = {};
   const [atCheckout, setAtCheckout] = useState(false);
-  // const cartToPost= {shoppingCart:[], user}
+
+  console.log('ca',cart)
 
   function handleCheckOut() {
     user.name = name;
     user.email = email;
     setAtCheckout(true);
-    setCart(shoppingCart);
+    // setCart(shoppingCart)
 
-    // const li=shoppingCart.map((prodInCart) => {
-    //     console.log('pic', prodInCart)
-    //     const product = originalProducts.find((product) => parseInt(product.id) === prodInCart.itemId)
-    //     console.log('p',product)
-    //     return (
-    //         <li key={prodInCart.itemId}>
-    //             {prodInCart.quantity} total {product.name} at a cost of
-    //             ${product.price.toFixed(2)} for a total of ${(product.price*prodInCart.quantity).toFixed(2)}
-    //         </li>
-    //     )
-    // })
-
-
-    axios.post("http://localhost:3001/store", { shoppingCart, user }).then((response) => {
+    // shoppingCart= []
+    axios.post("http://localhost:3001/store", { cart, user }).then((response) => {
       console.log(response);
     });
 
-    console.log("sc", user, shoppingCart);
-    // return(
-    //     <div className='checkout'>
-    //         <h3> Receipt </h3>
-    //         <p> Showing receipt for {name} available at {email}: </p>
-
-    //        {/* need to make axios post request  */}
-
-    //     </div>
-    // )
+    console.log("sc", user, cart);
+    
   }
+  
 
-  function showReceipt() {
-    return shoppingCart.map((prodInCart) => {
-      <div> hi </div>;
-    });
-    // console.log('pic', prodInCart)
-    // const product = originalProducts.find((product) => parseInt(product.id) === prodInCart.itemId)
-    // console.log('p',product)
-    // return (
-    //     <li key={prodInCart.itemId}>
-    //         {prodInCart.quantity} total {product.name} at a cost of
-    //         ${product.price.toFixed(2)} for a total of ${(product.price*prodInCart.quantity).toFixed(2)}
-    //     </li>
-    // )
-  }
+  
 
   return atCheckout ? (
     <Receipt
       name={name}
       email={email}
-      shoppingCart={cart}
+      cart={cart}
       setCart={setCart}
       originalProducts={originalProducts}
+      atCheckout={atCheckout}
+      setAtCheckout= {setAtCheckout}
+      setQuantities={setQuantities}
+      clearCart={clearCart}
     />
   ) : (
     <div className="shopping-cart">
@@ -97,12 +62,17 @@ function ShoppingCart({ quantities, originalProducts }) {
           </tr>
         </thead>
         <tbody>
-          {addedToCart?.map(([id, quantity]) => {
+          
+          { 
+          // !atCheckout &&
+          cart.map((prod) => {
+            const id= prod.itemId
+            const quantity= prod.quantity
             const product = originalProducts.find(
               (product) => parseInt(id) === product.id
             );
             subTotal += quantity * product.price;
-            shoppingCart.push({ itemId: parseInt(id), quantity: quantity });
+            // shoppingCart.push({ itemId: parseInt(id), quantity: quantity });
             return (
               <tr>
                 <th> {product.name} </th>
@@ -135,8 +105,7 @@ function ShoppingCart({ quantities, originalProducts }) {
 
           <tr>
             <th scope="row" colSpan="1">
-              {" "}
-              Taxes and Fees{" "}
+              Taxes and Fees
             </th>
             <th scope="row" colSpan="4">
               {" "}

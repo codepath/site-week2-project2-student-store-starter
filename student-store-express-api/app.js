@@ -5,9 +5,9 @@ const app = express();
 const fs = require("fs");
 const path = require("path");
 const cors = require("cors");
-const db= require('./data/db.json')
+const db = require('./data/db.json')
 const morgan= require('morgan')
-// const storage= require('./data/storage')
+// const storage = require('./data/storage')
 
 app.use(cors()); //middleware;
 app.use(express.json())
@@ -40,6 +40,8 @@ app.post('/store', (req, res) => {
       // create new json object 
     console.log(req.body)
     db.purchases.push(req.body)
+    console.log(db);
+    fs.writeFileSync('./data/db.json', JSON.stringify(db, null, 2));
     res.send(req.body) 
 })
 

@@ -4,7 +4,7 @@ import Categories from "../Categories/Categories";
 import Hero from "../Hero/Hero";
 import "./BuyNow.css";
 
-function BuyNow({ products, setProducts, originalProducts, quantities, setQuantities }) {
+function BuyNow({ cart, setCart, products, setProducts, originalProducts, quantities, setQuantities }) {
   const [searchTerm, setSearchTerm] = useState();
   const [categories, setCategories] = useState();
 
@@ -84,7 +84,7 @@ function BuyNow({ products, setProducts, originalProducts, quantities, setQuanti
       
       
 
-      <ProductGrid products={products} quantities={quantities} setQuantities={setQuantities}/>
+      <ProductGrid cart={cart}  setCart={setCart} products={products} quantities={quantities} setQuantities={setQuantities}/>
     </div>
   );
 }
