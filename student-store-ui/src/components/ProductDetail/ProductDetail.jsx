@@ -4,7 +4,7 @@ import "./ProductDetail.css"
 import { useEffect, useState } from "react"
 import axios from "axios"
 
-export default function ProductDetail({handleAddQuantity,getQuantity, handleSubstractQuantity, shoppingCart, setShoppingCart}) {
+export default function ProductDetail({handleAddQuantity,getQuantity, handleSubstractQuantity}) {
 
    const { id } = useParams();
    const [product, setProduct] = useState({});

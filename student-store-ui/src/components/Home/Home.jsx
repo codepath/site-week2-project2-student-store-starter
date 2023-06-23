@@ -5,21 +5,22 @@ import Subnavbar from "../Subnavbar/Subnavbar";
 import Footer from "../Footer/Footer";
 import About from "../About/About";
 import Contact from "../Contact/Contact";
-import { useEffect, useState } from "react"
-import { Link } from "react-router-dom";
+import {useState } from "react"
 import ProductGrid from "../ProductGrid/ProductGrid";
 
 export default function Home({ products, setProducts, shoppingCart, setShoppingCart, handleAddQuantity, handleSubstractQuantity, getQuantity}) {
   const [activeCategory, setActiveCategory] = useState("All Categories");
   const [searchResults, setSearchResults] = useState("");
 
-  function filterCategory() {
-    if (activeCategory === "All Categories") {
-      return products;
-    } else {
+  // IF NOT NEEDED DELETE!
 
-    }
-  }
+  // function filterCategory() {
+  //   if (activeCategory === "All Categories") {
+  //     return products;
+  //   } else {
+
+  //   }
+  // }
 
   function filterFunction() {
     const filteredSearchProducts = products?.filter((product) => {

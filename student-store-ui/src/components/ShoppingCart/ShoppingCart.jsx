@@ -18,17 +18,12 @@ export default function ShoppingCart({shoppingCart }) {
         setItemsInCart(shoppingCart.length > 0);
     }, [shoppingCart]); // useEffects is activated whenever shoppingCart Changes
 
-
-
-
     let shoppingCartEmpty =
         <>
             <div className="open">
                 <h3 className="">Shopping Cart <span className="button"><i className="material-icons md-48">add_shopping_cart</i></span></h3>
                 <div className="notification">No items added to cart yet. Start shopping now!</div>
             </div>
-
-
         </>
 
     let shoppingCartFull =
@@ -87,15 +82,10 @@ export default function ShoppingCart({shoppingCart }) {
     </div>
   </>
   
-
-
     return (
         <>
         <div className="shopping-cart">
-
             {itemsInCart ? shoppingCartFull : shoppingCartEmpty}
-
-
         </div>
         </>
     )

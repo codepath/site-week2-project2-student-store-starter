@@ -3,7 +3,7 @@ import "./Sidebar.css"
 import CheckoutForm from "../CheckoutForm/CheckoutForm";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
 
-export default function Sidebar({ isOpen = false, handleOnToggle, shoppingCart, products, checkoutForm, handleOnCheckoutFormChange, handleOnSubmitCheckoutForm, setShoppingCart }) {
+export default function Sidebar({ isOpen = false, handleOnToggle, shoppingCart, setShoppingCart }) {
 
   const divClass = isOpen ? "sidebar open" : "sidebar closed";
 
@@ -27,8 +27,6 @@ export default function Sidebar({ isOpen = false, handleOnToggle, shoppingCart, 
           <CheckoutForm shoppingCart = {shoppingCart} setShoppingCart = {setShoppingCart}/>
         </div>
       </section>
-
-
     </>
 
 
@@ -37,23 +35,11 @@ export default function Sidebar({ isOpen = false, handleOnToggle, shoppingCart, 
 
       <div className={divClass}>
 
-
-        
         <div className="wrapper">
-          
-
+        
           {isOpen ? openSideBar : closedSideBar}
 
-
-
-
-
-
         </div>
-
-
-
-
 
       </div>
 

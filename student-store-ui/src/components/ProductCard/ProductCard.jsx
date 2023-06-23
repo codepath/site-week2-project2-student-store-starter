@@ -3,72 +3,7 @@ import "./ProductCard.css"
 import { Link } from "react-router-dom"
 import { useState } from "react"
 
-export default function ProductCard({ product, shoppingCart, setShoppingCart }) {
-
-   const [quantity, setQuantity] = useState(null)
-
-   // adds product and quantities to cart
-   function handleAddQuantity(product) {
-      const cartItem = shoppingCart?.find(item => item.id === product.id) // evaluates if the given product is already at the shoppingCart array or not
-      if(cartItem) {
-         // we need to increment 
-         const updateCart = shoppingCart?.map(item => {
-
-            if(item.id === product.id){
-
-               return {...item, quantity: item.quantity + 1}
-            }
-
-            return item
-         })
-
-         setShoppingCart(updateCart)
-      }
-
-      else{
-
-         setShoppingCart ([...shoppingCart, {...product, quantity: 1}])
-      }
-
-   }
-     
-   function handleSubstractQuantity(product) {
-
-      const cartItem = shoppingCart?.find(item => item.id === product.id) // evaluates if the given product is already at the shoppingCart array or not
-      if(cartItem) {
-         // we need to decrement 
-         const updateCart = shoppingCart?.map(item => {
-
-            if((item.id === product.id) && item.quantity > 0 ){
-
-               return {...item, quantity: item.quantity - 1}
-            }
-            return item
-         })
-         const updatedCart = updateCart.filter((item) => item.quantity > 0); 
-         setShoppingCart(updatedCart)
-      }  
-   }
-   
-
-
-
-   function getQuantity(product){
-
-      // compare current product with products in shopping cart
-      // if exists get quantity from shopping cart
-      // else quantity = 0
-      return shoppingCart?.map(item => {
-
-         if(item.id === product.id){
-
-            return item.quantity
-         }
-
-      })
-
-   }
-   
+export default function ProductCard({ product, handleAddQuantity, handleSubstractQuantity, getQuantity }) {
 
    return (
 
