@@ -224,6 +224,10 @@ h3 {
   color: #fff;
 }
 
+.header {
+  color: #554028
+}
+
 .checkout-form button:hover {
   background-color: #b4834c;
 }

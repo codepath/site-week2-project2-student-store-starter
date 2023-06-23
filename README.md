@@ -28,6 +28,11 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
     <p>Marley's Student Store - 22 June 2023 - Watch Video</p>
     <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/bc1dcf77112c445bbc866bdc2973189c-with-play.gif">
   </a>
+WEEK 3
+  <a href="https://www.loom.com/share/0ff424f832c849fda8114f0112c8e586">
+    <p>Demo of Student Store Project Pt. 2 👨‍💻 - Watch Video</p>
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/0ff424f832c849fda8114f0112c8e586-with-play.gif">
+  </a>
 
 ### Stretch Features
 
@@ -41,11 +46,11 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 
 ### Core Features
 
-- [ ] User can click to expand the shopping cart in the left navigation.
-- [ ] Users can click the '+' button on a product cart to increment that product in the shopping cart.
-- [ ] Users can click the '-' button on a product cart to decrement that product in the shopping cart. If the count is zero, the product should be removed from the cart.
-- [ ] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
-- [ ] Users can checkout, and receive a receipt confirming their purchase.
+- [x] User can click to expand the shopping cart in the left navigation.
+- [x] Users can click the '+' button on a product cart to increment that product in the shopping cart.
+- [x] Users can click the '-' button on a product cart to decrement that product in the shopping cart. If the count is zero, the product should be removed from the cart.
+- [x] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
+- [x] Users can checkout, and receive a receipt confirming their purchase.
 
 ### Stretch Features
 

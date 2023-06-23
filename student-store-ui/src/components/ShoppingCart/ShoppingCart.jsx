@@ -1,7 +1,6 @@
 import * as React from "react"
 import "./ShoppingCart.css"
 import { useState } from "react";
-import { CheckBadgeIcon } from "@heroicons/react/24/outline";
 
 export default function ShoppingCart({cartItems, setCartItems, allItemSubtotal}) {
     {cartItems?.map((item) => (allItemSubtotal += item.subtotal))}
@@ -10,18 +9,17 @@ export default function ShoppingCart({cartItems, setCartItems, allItemSubtotal})
     const [email, setEmail] = useState('')
     const [showCheckout, setShowCheckout] = useState(false)
 
-    const handleClick = event => {
+    
+    const handleClick = () => {
       setShowCheckout(true);
     };
+    
 
     function resetCart() {
       setCartItems([])
       setName('')
       setEmail('')
       setShowCheckout(false)
-      {cartItems?.map((item) => (
-        item.quantity = 0
-      ))}
     }
 
   function checkoutSuccess() {
@@ -31,11 +29,9 @@ export default function ShoppingCart({cartItems, setCartItems, allItemSubtotal})
       )
      }
      else{
+      
     return(
       <div class="card">
-    <header class="card-head">
-      <h4 class="card-title">Receipt</h4>
-    </header>
     <section class="card-body">
       <p class="header">Showing receipt for {name} available at {email}</p>
       <ul class="purchase">
@@ -47,10 +43,6 @@ export default function ShoppingCart({cartItems, setCartItems, allItemSubtotal})
       <li>🔸 After taxes and fees were applied, the total comes out to ${(allItemSubtotal + allItemTaxes).toFixed(2)}</li>
       </ul>
     </section>
-    <footer class="card-foot">
-      <button class="button is-success" onClick={handleClick}>Shop More</button>
-      <button class="button" onClick={function(event){ resetCart(); handleClick()}} >Exit</button>
-    </footer>
   </div>  )
   }
   }
@@ -63,7 +55,7 @@ export default function ShoppingCart({cartItems, setCartItems, allItemSubtotal})
     <label class="label">Name</label>
     <div class="control">
       <input name="name" class="checkout-form-input" type="text" value={name} placeholder="Student Name" onChange={event => {
-          setName(event.target.value)}}></input>
+          setName(event.target.value)}} required></input>
     </div>
   </div>
   
@@ -71,7 +63,7 @@ export default function ShoppingCart({cartItems, setCartItems, allItemSubtotal})
     <label class="label">Email</label>
     <div class="control">
       <input name="email" class="checkout-form-input" value={email} type="email" placeholder="student@codepath.org" onChange={event => {
-          setEmail(event.target.value)}}></input>
+          setEmail(event.target.value)}} required></input>
     </div>
   </div>
   

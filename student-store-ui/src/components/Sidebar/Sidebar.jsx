@@ -15,7 +15,7 @@ export default function Sidebar({cartItems, setCartItems, allItemSubtotal}) {
     if(isOpen) {
       return (
         <>
-          <ShoppingCart cartItems={cartItems} setCartItems={setCartItems} allItemSubtotal={allItemSubtotal} />
+          <ShoppingCart cartItems={cartItems} setCartItems={setCartItems} allItemSubtotal={allItemSubtotal}/>
         </>
       )
     }

@@ -8,7 +8,6 @@ export default function ProductDetails({products}) {
     const { id } = useParams();
     const product = products?.find((product) => product.id === parseInt(id));
       
-    console.log(id)
     return (
         <>
         <Navbar />

@@ -15,6 +15,7 @@ export default function App() {
   const handleSidebarToggle = () => {
     setSidebarOpen(!sidebarOpen);
   };
+  
 
   // Pull products from API
   const [products, setProducts] = React.useState();
@@ -34,7 +35,7 @@ export default function App() {
         <main>
         <Routes>
 
-          <Route path="/" element={<Home products={products} />} />
+          <Route path="/" element={<Home products={products}/>} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/product/:id" element={<ProductDetails products={products}/>} />
