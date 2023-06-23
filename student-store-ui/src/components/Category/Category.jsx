@@ -1,9 +1,9 @@
 import * as React from "react";
 import "./Category.css";
 
-export default function Category(props) {
+export default function Category({ setCategory }) {
   function handleSubmit(e) {
-    props.setCategory(e.target.name);
+    setCategory(e.target.name);
   }
   return (
     <div className="category">

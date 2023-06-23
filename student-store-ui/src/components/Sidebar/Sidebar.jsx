@@ -11,7 +11,7 @@ import { useState } from "react";
 
 import "./Sidebar.css";
 
-export default function Sidebar(props) {
+export default function Sidebar({ setShoppingCart, shoppingCart }) {
   const [subtotal, setSubtotal] = useState(0);
   const [total, setTotal] = useState(0);
   const [taxes, setTaxes] = useState(0);
@@ -34,11 +34,11 @@ export default function Sidebar(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (name && email && termsChecked && props.shoppingCart.length > 0) {
+    if (name && email && termsChecked && shoppingCart.length > 0) {
       setSavedSubtotal(subtotal);
       setSavedTotal(total);
-      setLastSavedSC(props.shoppingCart);
-      props.setShoppingCart([]);
+      setLastSavedSC(shoppingCart);
+      setShoppingCart([]);
       setLastSavedName(name);
       setLastSavedEmail(email);
       setEmail("");
@@ -69,8 +69,8 @@ export default function Sidebar(props) {
             setTotal={setTotal}
             taxes={taxes}
             setTaxes={setTaxes}
-            setShoppingCart={props.setShoppingCart}
-            shoppingCart={props.shoppingCart}
+            setShoppingCart={setShoppingCart}
+            shoppingCart={shoppingCart}
           />
           <br />
           <p id="paymentHeader" className="sidebarHeader">
@@ -119,22 +119,22 @@ export default function Sidebar(props) {
               </a>
             </span>
             {!name && (
-              <p style={{ color: "red", margin: "0" }}>
+              <p style={{ color: "red", margin: "0", fontWeight: "bold" }}>
                 Please fill out the name field!
               </p>
             )}
             {!email && (
-              <p style={{ color: "red", margin: "0" }}>
+              <p style={{ color: "red", margin: "0", fontWeight: "bold" }}>
                 Please fill out the email field!
               </p>
             )}
             {!termsChecked && (
-              <p style={{ color: "red", margin: "0" }}>
+              <p style={{ color: "red", margin: "0", fontWeight: "bold" }}>
                 Please agree to the terms and conditions!
               </p>
             )}
-            {props.shoppingCart.length === 0 && (
-              <p style={{ color: "red", margin: "0" }}>
+            {shoppingCart?.length === 0 && (
+              <p style={{ color: "red", margin: "0", fontWeight: "bold" }}>
                 Please add to your cart!
               </p>
             )}

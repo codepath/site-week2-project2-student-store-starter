@@ -7,10 +7,9 @@ import Category from "../Category/Category";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-
 import { useParams } from "react-router-dom";
 
-export default function ProductDetail(props) {
+export default function ProductDetail() {
   const { id } = useParams();
   let url = `http://localhost:3001/store/${id}`;
 
@@ -21,7 +20,7 @@ export default function ProductDetail(props) {
       setProduct(response.data[0]);
     });
   }, []);
- 
+
   if (product.length === 0) {
     return (
       <>

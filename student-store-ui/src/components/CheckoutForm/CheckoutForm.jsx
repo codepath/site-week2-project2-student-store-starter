@@ -1,12 +1,20 @@
 import * as React from "react";
-import "./CheckoutForm.css";
-export default function CheckoutForm(props) {
+
+export default function CheckoutForm({
+  checkout,
+  setCheckout,
+  email,
+  name,
+  shoppingCart,
+  subtotal,
+  total,
+}) {
   function handleSubmit() {
-    props.setCheckout("normal");
+    setCheckout("normal");
   }
   return (
     <>
-      {props.checkout === "purchase" ? (
+      {checkout === "purchase" ? (
         <>
           <span style={{ fontWeight: "bold", fontSize: "large" }}>
             {" "}
@@ -14,9 +22,9 @@ export default function CheckoutForm(props) {
           </span>
           <div style={{ border: "solid white", padding: "10px" }}>
             <p>
-              Showing receipt for {props.name} available at {props.email}:
+              Showing receipt for {name} available at {email}:
             </p>
-            {props.shoppingCart?.map((cart) => {
+            {shoppingCart?.map((cart) => {
               return (
                 <p>
                   &bull; {cart.quantity} total {cart.product} purchased at a
@@ -26,13 +34,10 @@ export default function CheckoutForm(props) {
               );
             })}
 
-            <p>
-              {" "}
-              &bull;Before taxes, the subtotal was ${props.subtotal.toFixed(2)}
-            </p>
+            <p> &bull;Before taxes, the subtotal was ${subtotal.toFixed(2)}</p>
             <p>
               &bull;After taxes and fees were applied, the total comes out to $
-              {props.total.toFixed(2)}
+              {total.toFixed(2)}
               <button className="sc-button" onClick={handleSubmit}>
                 Shop More
               </button>

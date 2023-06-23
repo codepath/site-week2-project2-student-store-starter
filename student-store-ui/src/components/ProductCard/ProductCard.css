@@ -44,16 +44,16 @@
   margin: 0 auto;
 }
 
-.div-button{
+.div-button {
   display: flex;
   flex-direction: column;
 }
 
-#button-card{
+#button-card {
   margin-top: 17px;
   margin-bottom: 52px;
 }
-.card-button{
+.card-button {
   border: solid white;
   background-color: var(--light-cp);
   width: 22px;
@@ -64,12 +64,12 @@
   margin: 2px;
 }
 
-.card-button:hover{
+.card-button:hover {
   background-color: orange;
   color: white;
 }
 
-#quantitySpan{
+#quantitySpan {
   background-color: orange;
   width: 30px;
   height: 30px;

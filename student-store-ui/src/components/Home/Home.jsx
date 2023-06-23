@@ -7,32 +7,27 @@ import Search from "../Search/Search";
 import Category from "../Category/Category";
 import { useState } from "react";
 
-export default function Home(props) {
+export default function Home({
+  products,
+  searchValue,
+  setSearchValue,
+  setCategory,
+  category,
+}) {
   const [shoppingCart, setShoppingCart] = useState([]);
 
   return (
     <>
-      <Navbar 
-        setShoppingCart={setShoppingCart} 
-        shoppingCart={shoppingCart} 
-      />
+      <Navbar setShoppingCart={setShoppingCart} shoppingCart={shoppingCart} />
       <Hero />
-      <Search
-        products={props.products}
-        searchValue={props.searchValue}
-        setSearchValue={props.setSearchValue}
-        setCatSearch={props.setCatSearch}
-      />
-      <Category
-        setCategory={props.setCategory}
-        setCatSearch={props.setCatSearch}
-      />
+      <Search searchValue={searchValue} setSearchValue={setSearchValue} />
+      <Category setCategory={setCategory} />
       <ProductGrid
         shoppingCart={shoppingCart}
         setShoppingCart={setShoppingCart}
-        products={props.products}
-        searchValue={props.searchValue}
-        category={props.category}
+        products={products}
+        searchValue={searchValue}
+        category={category}
       />
       <About />
     </>

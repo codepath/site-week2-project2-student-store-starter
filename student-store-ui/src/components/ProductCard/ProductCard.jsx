@@ -3,40 +3,44 @@ import "./ProductCard.css";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-export default function ProductCard(props) {
+export default function ProductCard({
+  product,
+  shoppingCart,
+  setShoppingCart,
+}) {
   const [quantity, setQuantity] = useState(0);
-  
+
   // clear cart
   useEffect(() => {
-    if (props.shoppingCart.length === 0){
-      setQuantity(0)
+    if (shoppingCart.length === 0) {
+      setQuantity(0);
     }
-  }, [props.shoppingCart])
+  }, [shoppingCart]);
 
   useEffect(() => {
-    let index = props.shoppingCart?.findIndex((cart) => {
-      return cart.product === props.product.name;
+    let index = shoppingCart?.findIndex((cart) => {
+      return cart.product === product.name;
     });
     if (quantity === 1 && index === -1) {
       const newCart = [
-        ...props.shoppingCart,
+        ...shoppingCart,
         {
-          product: props.product.name,
+          product: product.name,
           quantity: quantity,
-          unit_price: props.product.price,
-          cost: props.product.price
+          unit_price: product.price,
+          cost: product.price,
         },
       ];
-      props.setShoppingCart(newCart);
+      setShoppingCart(newCart);
     } else if (quantity >= 1) {
-      props.setShoppingCart((prevCart) => {
+      setShoppingCart((prevCart) => {
         const updatedCart = [...prevCart];
         updatedCart[index].quantity = quantity;
-        updatedCart[index].cost = props.product.price * quantity
+        updatedCart[index].cost = product.price * quantity;
         return updatedCart;
       });
     } else if (quantity === 0) {
-      props.setShoppingCart((shoppingCart => shoppingCart.toSpliced(index, 1)))
+      setShoppingCart((shoppingCart) => shoppingCart.toSpliced(index, 1));
     }
   }, [quantity]);
 
@@ -52,18 +56,18 @@ export default function ProductCard(props) {
 
   return (
     <div className="product">
-      <Link id="product-link" to={"products/" + props.product.id}>
+      <Link id="product-link" to={"products/" + product.id}>
         <img
           className="product-poster"
-          src={props.product.image}
-          alt={`Image of ${props.product.name}`}
+          src={product.image}
+          alt={`Image of ${product.name}`}
         />
       </Link>
       <div className="product-info">
         <div>
-          <p>{props.product.name}</p>
+          <p>{product.name}</p>
           <p>⭐️ ⭐️ ⭐️ ⭐️ ⭐️</p>
-          <p>${props.product.price.toFixed(2)}</p>
+          <p>${product.price.toFixed(2)}</p>
         </div>
         <div id="div-button">
           <div id="button-card">
@@ -82,9 +86,7 @@ export default function ProductCard(props) {
               -
             </button>
           </div>
-          <div>
-            {quantity > 0 && <div id="quantitySpan">{quantity}</div>}
-          </div>
+          <div>{quantity > 0 && <div id="quantitySpan">{quantity}</div>}</div>
         </div>
       </div>
     </div>

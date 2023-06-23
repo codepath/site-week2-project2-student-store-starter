@@ -8,7 +8,6 @@ table {
 
 tr {
   height: 50px;
-  
 }
 .sc-header {
   background-color: var(--dark-Cp);
@@ -22,32 +21,31 @@ td {
   height: 80px;
 }
 
-#checkout{
-    width: 100%;
-    background-color: white;
-    color: black;
-    padding-right: 30px;
-    border: solid white;
-    font-weight: bold;
-    border-radius: 8px;
-    text-align: left;
-
+#checkout {
+  width: 100%;
+  background-color: white;
+  color: black;
+  padding-right: 30px;
+  border: solid white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-align: left;
 }
 
-.prices{
-    float: right;
+.prices {
+  float: right;
 }
 
-#checkoutHeader{
-    border-top: solid black;
+#checkoutHeader {
+  border-top: solid black;
 }
 
-.sc-button{
-    float: right;
-    margin-top: 3px;
-    margin-bottom: 8px;
+.sc-button {
+  float: right;
+  margin-top: 3px;
+  margin-bottom: 8px;
 
-    color: white;
+  color: white;
   background-color: var(--dark-Cp);
   width: 120px;
   height: 50px;
@@ -55,7 +53,7 @@ td {
   border: solid white;
 }
 
-.sc-button:hover{
-    background-color: var(--light-cp);
-    cursor: pointer;
+.sc-button:hover {
+  background-color: var(--light-cp);
+  cursor: pointer;
 }

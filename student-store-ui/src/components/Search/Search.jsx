@@ -1,9 +1,9 @@
 import * as React from "react";
 import "./Search.css";
 
-export default function Search(props) {
+export default function Search({ searchValue, setSearchValue }) {
   const handleChange = (event) => {
-    props.setSearchValue(event.target.value);
+    setSearchValue(event.target.value);
   };
 
   function handleSubmit(e) {
@@ -14,11 +14,14 @@ export default function Search(props) {
     <>
       <div className="search">
         <form action="search" id="search-form">
-          <label id="search-label" htmlFor="search">Search for Merch! 🛍️ </label> <br />
+          <label id="search-label" htmlFor="search">
+            Search for Merch! 🛍️{" "}
+          </label>{" "}
+          <br />
           <input
             type="search"
             name="search"
-            defaultValue={props.searchValue}
+            defaultValue={searchValue}
             onChange={handleChange}
             id="search-input"
             placeholder="Search for an item..."

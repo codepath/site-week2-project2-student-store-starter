@@ -1,21 +1,25 @@
 import * as React from "react";
 import ProductCard from "../ProductCard/ProductCard";
-import ShoppingCart from "../ShoppingCart/ShoppingCart";
-import { useState } from "react";
 
-export default function ProductGrid(props) {
+export default function ProductGrid({
+  shoppingCart,
+  setShoppingCart,
+  products,
+  searchValue,
+  category,
+}) {
   let newProducts;
-  if (props.category === "all") {
-    newProducts = props.products?.filter((product) =>
-      product.name.toLowerCase().includes(props.searchValue.toLowerCase())
+  if (category === "all") {
+    newProducts = products?.filter((product) =>
+      product.name.toLowerCase().includes(searchValue.toLowerCase())
     );
   } else {
-    newProducts = props.products?.filter((product) =>
-      product.name.toLowerCase().includes(props.searchValue.toLowerCase())
+    newProducts = products?.filter((product) =>
+      product.name.toLowerCase().includes(searchValue.toLowerCase())
     );
 
     newProducts = newProducts?.filter((product) =>
-      product.category.toLowerCase().includes(props.category.toLowerCase())
+      product.category.toLowerCase().includes(category.toLowerCase())
     );
   }
 
@@ -29,8 +33,8 @@ export default function ProductGrid(props) {
           newProducts?.map((product) => (
             <ProductCard
               product={product}
-              shoppingCart={props.shoppingCart}
-              setShoppingCart={props.setShoppingCart}
+              shoppingCart={shoppingCart}
+              setShoppingCart={setShoppingCart}
             />
           ))
         )}

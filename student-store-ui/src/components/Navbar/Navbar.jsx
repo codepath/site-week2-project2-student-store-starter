@@ -6,13 +6,10 @@ import Sidebar from "../Sidebar/Sidebar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 
-export default function Navbar(props) {
+export default function Navbar({ setShoppingCart, shoppingCart }) {
   return (
     <nav className="navbar">
-      <Sidebar
-        setShoppingCart={props.setShoppingCart}
-        shoppingCart={props.shoppingCart}
-      />
+      <Sidebar setShoppingCart={setShoppingCart} shoppingCart={shoppingCart} />
 
       <Link to="/">
         <Logo prop={"nav-logo"} />
