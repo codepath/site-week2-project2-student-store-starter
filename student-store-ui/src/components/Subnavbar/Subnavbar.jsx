@@ -1,10 +1,11 @@
 import * as React from "react";
 import "./Subnavbar.css";
 
-
-
-export default function Subnavbar({ searchTerm, setSelectedCategory, setSearchTerm }) {
-
+export default function Subnavbar({
+  searchTerm,
+  setSelectedCategory,
+  setSearchTerm,
+}) {
   const handleCategory = (category) => {
     setSelectedCategory(category);
   };
@@ -12,7 +13,7 @@ export default function Subnavbar({ searchTerm, setSelectedCategory, setSearchTe
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
   };
-  
+
   return (
     <nav className="sub-navbar">
       <div className="content">
@@ -25,7 +26,6 @@ export default function Subnavbar({ searchTerm, setSelectedCategory, setSearchTe
               value={searchTerm}
               onChange={handleSearchChange}
             ></input>
-            {/* <i className="material-icons">search</i> */}
           </div>
           <div className="links">
             <span className="help">
@@ -44,23 +44,23 @@ export default function Subnavbar({ searchTerm, setSelectedCategory, setSearchTe
           </div>
           <ul className="category-menu open">
             <li className="is-active">
-              <button onClick={() =>handleCategory("")}>All Categories</button>
+              <button onClick={() => handleCategory("")}>All Categories</button>
             </li>
             <li className="">
-            <button onClick={() => handleCategory("Clothing")}>Clothing</button>
-
+              <button onClick={() => handleCategory("Clothing")}>
+                Clothing
+              </button>
             </li>
             <li className="">
-            <button onClick={() => handleCategory("Food")}>Food</button>
-
+              <button onClick={() => handleCategory("Food")}>Food</button>
             </li>
             <li className="">
-            <button onClick={() => handleCategory("Accessories")}>Accessories</button>
-
+              <button onClick={() => handleCategory("Accessories")}>
+                Accessories
+              </button>
             </li>
             <li className="">
-            <button onClick={() => handleCategory("Tech")}>Tech</button>
-
+              <button onClick={() => handleCategory("Tech")}>Tech</button>
             </li>
           </ul>
         </div>

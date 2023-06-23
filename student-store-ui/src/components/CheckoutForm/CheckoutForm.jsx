@@ -1,5 +1,4 @@
 import * as React from "react";
-import "./CheckoutForm.css";
 import axios from "axios";
 
 export default function CheckoutForm({
@@ -11,7 +10,6 @@ export default function CheckoutForm({
     name: "",
     email: "",
   });
-
   const [termsAndConditions, setTermsAndConditions] = React.useState(false);
   const [errorMessage, setErrorMessage] = React.useState("");
   const [receiptItems, setReceiptItems] = React.useState([]);
@@ -47,7 +45,7 @@ export default function CheckoutForm({
 
     setReceiptItems([...shoppingCart]);
 
-    setShoppingCart([]); // Empty the shopping cart after successful form submission
+    setShoppingCart([]);
   };
 
   /// end of handleOnSubmitCheckout

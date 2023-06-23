@@ -3,7 +3,6 @@ import * as React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "./ProductDetails.css";
-// import ProductView from '../ProductView/ProductView';
 
 export default function ProductDetails() {
   let { id } = useParams();
@@ -27,9 +26,6 @@ export default function ProductDetails() {
     return <h1 className="loading">Loading...</h1>;
   }
 
-  //   if (!product) {
-  //     return <NotFound />;
-  //   }
   return (
     <div className="product-detail">
       <div className="product-view">
@@ -66,10 +62,4 @@ export default function ProductDetails() {
       </div>
     </div>
   );
-}
-
-{
-  /* <div className="product-detail">
-  <ProductView product={product} productId={productId} />
-</div>; */
 }
