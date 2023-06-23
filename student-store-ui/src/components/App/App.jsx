@@ -16,19 +16,33 @@ import NotFound from "./NotFound"
 
 
 export default function App() {
-  const url= 'https://codepath-store-api.herokuapp.com/store'
-
+  // const url= 'https://codepath-store-api.herokuapp.com/store' //replace url with our endpoint from server
+  const newUrl= 'http://localhost:3001/store'
   const [originalProducts, setOriginalProducts] = useState([]);
 
   const [products, setProducts] = useState([]);
+  const [quantities, setQuantities] = useState({})
+  
+  
+
 
 
 
   useEffect(()=> {
-    axios.get(url).then((response) => {
+    axios.get(newUrl).then((response) => {
+      // console.log(rbbbbesponse)
       setOriginalProducts(response.data.products)
       setProducts(response.data.products)
-    })
+
+      const quantsObj= {}
+      for (const product of response.data.products){
+        quantsObj[product.id]= 0
+      }
+
+      setQuantities(quantsObj)
+    // console.log('yo',quantsObj)
+      
+        })
   }, [])
 
 
@@ -39,15 +53,15 @@ export default function App() {
         
 
         <main>
-        <AppOverlay/>
+        <AppOverlay quantities={quantities} setQuantities={setQuantities} originalProducts={originalProducts}/>
         <Routes>
-          <Route path='/' element={<BuyNow products={products} setProducts={setProducts} originalProducts= {originalProducts}/>}/>
+          <Route path='/' element={<BuyNow products={products} setProducts={setProducts} originalProducts= {originalProducts} quantities={quantities} setQuantities={setQuantities}/>}/>
 
             {/* <Route path='/' element={<Home className='home' products={products}/>}/> */}
             <Route path='/about' element={<About/>}/>
             <Route path='/contact' element={<Contact/>}/>
             {/* <Route path='/buy-now' element={<BuyNow products={products} setProducts={setProducts} originalProducts= {originalProducts}/>}/> */}
-            <Route path='product/:id' element={<ProductDetail products={products}/>}/>
+            <Route path='product/:id' element={<ProductDetail products={products} quantities={quantities} setQuantities={setQuantities}/>}/>
             <Route path='*' element={<NotFound/>}/>
             
             

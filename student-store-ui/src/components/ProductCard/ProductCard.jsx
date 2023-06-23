@@ -2,15 +2,21 @@ import React, {useState} from 'react'
 import './ProductCard.css'
 import { Link } from 'react-router-dom'
 
-function ProductCard({product, showDescription}) {
-    const [amount, setAmount] = useState(0)
+function ProductCard({product, showDescription, quantities, setQuantities}) {
+    // const [amount, setAmount] = useState(0)
+
+    // console.log('old', quantities)
+    // console.log('new', {...quantities, [product.id]: quantities[product.id]+1})
+
 
     function handleAddItemToCart(){
-        setAmount(amount => amount+=1)
+        setQuantities({...quantities, [product.id]: quantities[product.id]+1})
     }
 
     function handleRemoveItemToCart() {
-        setAmount(amount => amount-=1)
+        if (quantities[product.id]>0){
+            setQuantities({...quantities, [product.id]: quantities[product.id]-1})
+        }
     }
 
 
@@ -31,7 +37,7 @@ function ProductCard({product, showDescription}) {
                         <button onClick={handleAddItemToCart}> + </button>
                         <button onClick={handleRemoveItemToCart}> - </button>
                     </div>
-                    <p className='amount'> Amount: {amount} </p>
+                    <p className='amount'> Amount: {quantities[product.id]} </p>
 
                 </div>
                 
