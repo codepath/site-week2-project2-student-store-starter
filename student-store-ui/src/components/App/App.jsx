@@ -10,7 +10,8 @@ export default function App() {
   return (
     <div className='app'>
       <BrowserRouter>
-        <main>
+        <Sidebar />
+        <main className='main-content'>
           <Navbar />
           <Routes>
             <Route path='/' element={<Home />} />
