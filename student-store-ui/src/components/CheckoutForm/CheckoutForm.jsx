@@ -161,7 +161,5 @@ export default function CheckoutForm({ shoppingCart, setShoppingCart }) {
             </div>
 
         </>
-
-
     )
 }

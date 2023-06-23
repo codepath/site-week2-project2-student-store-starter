@@ -36,6 +36,14 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 
 ## *Week 3* Application Features
 
+### Walkthrough Video
+
+<a href="https://www.loom.com/share/632b9f31ca3e40b191ca12bc158a937e">
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/632b9f31ca3e40b191ca12bc158a937e-with-play.gif">
+</a>
+
+
+
 ### Core Features
 
 - [x] User can click to expand the shopping cart in the left navigation.
