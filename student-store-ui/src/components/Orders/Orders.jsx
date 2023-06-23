@@ -8,10 +8,12 @@ export default function Orders({
   receiptName,
   receiptEmail,
   receiptTotalPrice,
-  receiptSubtotal,
+//   receiptSubtotal,
+  allSpendings,
   allOrders
 }) {
   console.log("ALL ORDER: ", allOrders);
+  console.log("total spending", allSpendings);
 //   if (!order || order.length == 0) {
     if (!allOrders || allOrders.length == 0) {
         return (
@@ -33,14 +35,15 @@ export default function Orders({
     <div className="orders">
       {/* {order} */}
       <section className="card-body">
-        <h1>Your Orders:</h1>
+        <h1>Your Previous Orders:</h1>
         <h4 className="header">
-          Showing receipt for {receiptName} available at {receiptEmail}:
+          Showing all orders for {receiptName}. Order receipts available at {receiptEmail}:
         </h4>
         <ul className="purchase">
-          {allOrders.map((order) => (
+          {/* {allOrders.map((order) => ( */}
             
-            order.map((item) => (
+            {allOrders.map((item) => (
+                // <>
             <li>
               {item.quantity} total
               {" " +
@@ -69,21 +72,20 @@ export default function Orders({
                   alt="product cover"
                 ></img>
             </li>
-          )))
-          
-          )}
-          <li>
+            ))}
+          {/* <li>
             Before taxes, the subtotal was{" "}
             {receiptSubtotal.toLocaleString("us-EN", {
               style: "currency",
               currency: "USD",
             })}
-          </li>
+          </li> */}
           <li>
             After taxes and fees were applied, the total comes out to{" "}
-            {receiptTotalPrice}
+            {allSpendings}
           </li>
-          
+          {/* </> */}
+           
         </ul>
       </section>
     </div>
