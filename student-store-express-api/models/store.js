@@ -15,7 +15,7 @@ const { ProductNotFoundError,
 class Store {
     constructor(){
         // need error handling?
-        this.newPurchaseID = 0;
+        console.log("creating new store object")
     };
     getAllProducts(limit = Infinity, offset = 0){
         // get storage object
@@ -40,7 +40,7 @@ class Store {
         // otherwise return product
         return product;
     }
-    getAllPurhases(){
+    getAllPurchases(){
         // get storage object
         const storage = this._getStorage();
         // get purchases object
@@ -78,21 +78,21 @@ class Store {
             // calculate total and create purchase
             const name = user.name;
             const email = user.email;
-            const duplicateChecker = set();
-            let subtotal = 0;
+            const duplicateChecker = new Set();
+            let subtotal = 0
             for (let i = 0; i < shoppingCart.length; i++){
                 // for each unique item in shopping cart, 
                 // calculate the new subtotal
                 const item = shoppingCart[i];
-                if (duplicateChecker.has(item.itemID)){
+                if (duplicateChecker.has(item.id)){
                     // throw error for duplicate items in shopping cart
                     throw new InvalidPurchaseError(shoppingCart);
                 }
-                duplicateChecker.add(item.itemId);
-                product = this.getProductByID(item.itemId);
+                console.log(item)
+                duplicateChecker.add(item.id);
                 try{
 
-                    subtotal += product.price * item.quantity;
+                    subtotal += item.price * item.quantity;
 
                 } catch (e){
                     // throw error if product.price or item.quantiy
@@ -102,9 +102,12 @@ class Store {
             }
             const total = subtotal + subtotal*TAX;
             const createdAt = new Date().toLocaleString();
+             // get storage object
+            const storage = this._getStorage();
+            let newPurchaseID = storage.get("newPurchaseID");
             const newPurchase = {
                 name: name,
-                id: this.newPurchaseID,
+                id: newPurchaseID,
                 email: email,
                 total: total,
                 order: shoppingCart,
@@ -113,37 +116,23 @@ class Store {
                     this.newPurchaseID, email,
                     total, shoppingCart, createdAt),
             }
-            // update new purchase id
-            this.newPurchaseID += 1
-            const storage = this._getStorage();
+           
+            // get all current purchases from purchasesObject
+            const purchasesObject = storage.get("purchases");
+            // update purchasesObject with new purchase
+            purchasesObject[newPurchaseID] = newPurchase;
+            // write data into db
+            storage.set("purchases", purchasesObject)
+            console.log("added new purchase to purchase object: ", newPurchase);
             
-            // write new purchase into storage
-
+            // update purchase id
+            newPurchaseID += 1;
+            storage.set("newPurchaseID", newPurchaseID);
             return newPurchase
 
         }
         // throws error if shopping cart or user value is 'falsy'
         throw new InvalidPurchaseError(shoppingCart)
-    }
-    generateReceipt(){
-        let receipt = `Receipt
---------------------------
-Purchase ID: ${id}
-Customer Name: ${name}
-Email: ${email}
-Date: ${createdAt}
---------------------------
-Items Purchased:
-`;
-
-    order.forEach((item, index) => {
-        receipt += `${index + 1}. ${item.name} - $${item.price} ${item.quantity}x\n`;
-    });
-
-    receipt += `--------------------------
-Total: $${total}`;
-
-    return receipt;
     }
 }
 module.exports = {

@@ -29,7 +29,7 @@ class ExpressError extends Error {
   }
   class InvalidPurchaseError extends ExpressError{
     constructor(shoppingCart){
-      super(`Shopping cart cannot contain duplicate values. Cart: ${shoppingCart}` )
+      super(`Shopping cart fields are missing or contain duplicate values. Cart: ${shoppingCart}` )
     }
   }
   module.exports = {

@@ -145,5 +145,6 @@
       "price": 999.99
     }
   },
-  "purchases": {}
+  "purchases": {},
+  "newPurchaseID": 0
 }
