@@ -20,12 +20,6 @@
     justify-content: space-between;
 }
 
-.nav-link{
-    cursor: pointer;
-    height: 50px;
-    width: 100%;
-}
-
 .nav-button{
     border: none;
     background: transparent;
@@ -41,4 +35,11 @@
 .nav-button:hover{
     border: solid 2px;
     border-color:#be22ff;
+}
+
+.link-text{
+    text-decoration: none;
+    color: white;
+    display: hidden;
+    width: 100%;
 }

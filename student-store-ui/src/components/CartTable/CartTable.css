@@ -1,18 +1,28 @@
-table{
-    color: white;
-    font-size: 18px;
+table {
+  color: white;
+  font-size: 18px;
 }
-table{
-    margin-left: 5%;
+table {
+  margin: 1%;
+  /* height: max-content; */
+  background-color: rgb(105, 105, 105);
+  width: 98%;
+  padding: 1%;
 }
 
-tr{
-    width: 30%;
-    text-align: left;
+th {
+  width: 26%;
+  text-align: left;
+  background-color: rgb(72, 72, 72);
+  height: 50px;
+  padding: 2%;
 }
 
-td{
-    width: 30%;
-    text-align: left;
-    max-width: 50px;
+td {
+  text-align: left;
+  /* min-width: max-content; */
+  max-width: 100px;
+  background-color: rgb(105, 105, 105);
+  height: 4vh;
+  padding: 1.5% 0.5%;
 }

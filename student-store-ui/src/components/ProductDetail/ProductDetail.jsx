@@ -9,22 +9,27 @@ export default function ProductDetail({handleAddItemToCart, handleRemoveItemFrom
   const [product, setProduct] = useState(null);
   const [fetched, setFetched] = useState(false);
   const { id } = useParams();
-  const url = `https://codepath-store-api.herokuapp.com/store/${id}`;
+  // const url = `https://codepath-store-api.herokuapp.com/store/${id}`;
+  const url = `http://localhost:3001/store/${id}`
   useEffect(() => {
     axios
       .get(url)
       .then((response) => {
         setProduct(response.data.product);
+        setFetched(true);
       })
       .catch((error) => {
         console.error(error);
         setFetched(true);
+        setProduct(error.response.data.product)
       });
   }, [id]);
 
   return (
     <div className="product-details">
-      {product === null ? (
+      {/* if there are no products but the data has been fetched then the product was likely not found
+      if there are no products and the data has not been fethced, we should display a loading screen */}
+      {(product === null || Object.keys(product).length === 0)? (
         fetched ? (
           <NotFound />
         ) : (

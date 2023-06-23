@@ -13,6 +13,7 @@ export default function CartTable({ shoppingCart, products, style }) {
     const subtotal = (shoppingCart) => {
         return shoppingCart.reduce((subt, product) =>  subt + products[findProduct(product.itemId)]?.price * product?.quantity, 0)
     }
+    
   return (
     <table className="checkoutTable" style={style}>
       <tr className="table-header">
@@ -26,7 +27,7 @@ export default function CartTable({ shoppingCart, products, style }) {
             <td className="table-entry">{ products[findProduct(product.itemId)]?.name}</td>
             <td className="table-entry">{product?.quantity}</td>
             <td className="table-entry">{ `$${products[findProduct(product.itemId)]?.price.toFixed(2)}`}</td>
-            <td className="table-entry">{ `$${products[findProduct(product.itemId)]?.price * product?.quantity}`}</td>
+            <td className="table-entry">{ `$${(products[findProduct(product.itemId)]?.price * product?.quantity).toFixed(2)}`}</td>
         </tr>
       ))}
       {<tr>

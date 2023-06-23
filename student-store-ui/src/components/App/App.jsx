@@ -10,9 +10,10 @@ import ProductDetail from "../ProductDetail/ProductDetail";
 import NotFound from "../NotFound/NotFound";
 
 export default function App() {
-  const url = "https://codepath-store-api.herokuapp.com/store";
+  // const url = "https://codepath-store-api.herokuapp.com/store"; 
+  const url = "http://localhost:3001/store"
   const [products, setProducts] = useState([]);
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
   const [shoppingCart, setShoppingCart] = useState([]);
 
   // fetch the data
@@ -23,13 +24,13 @@ export default function App() {
         setProducts(response.data.products);
       })
       .catch((error) => {
-        setProducts(error);
+        setProducts([]);
       });
   }, []);
 
-  const adjustSidebar = (event) => {
-    setIsOpen(!isOpen);
-  };
+  // const adjustSidebar = (event) => {
+  //   setIsOpen(!isOpen);
+  // };
 
   const handleAddItemToCart = (id) => {
     let index = -1;
@@ -97,10 +98,10 @@ export default function App() {
             </Routes>
           </div>
           <Sidebar
-            isOpen={isOpen}
+            // isOpen={isOpen}
             shoppingCart={shoppingCart}
             products={products}
-            handleOnToggle={adjustSidebar}
+            // handleOnToggle={adjustSidebar}
           />
           <Navbar />
         </BrowserRouter>
