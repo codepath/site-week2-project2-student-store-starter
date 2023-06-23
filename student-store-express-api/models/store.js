@@ -17,7 +17,7 @@ class Store {
         // need error handling?
         console.log("creating new store object")
     };
-    getAllProducts(limit = Infinity, offset = 0){
+    getAllProducts(){
         // get storage object
         const storage  = this._getStorage();
         // get products object
@@ -61,7 +61,7 @@ class Store {
             throw new PurchaseNotFoundError(purchaseID);
         }
         // otherwise return purchase
-        return product;
+        return purchase;
     }
      _getStorage(){
         // need error handling?
