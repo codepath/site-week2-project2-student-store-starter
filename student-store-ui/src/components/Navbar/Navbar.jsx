@@ -1,13 +1,13 @@
 import * as React from 'react';
 import '../../globals.css';
 import CodePathLogo from '../../assets/images/codepathLogo.png';
-import { listItem } from '../../assets/styles';
+import { listItem } from '../../assets/style.js';
 import { useNavigate } from 'react-router-dom';
 
 export default function Navbar() {
   const navigate = useNavigate();
   return (
-    <div className='flex px-2 justify-around items-center w-full h-100px bg-green-700'>
+    <div className='flex px-2 justify-around items-center w-full h-100px bg-green-200'>
       <img
         src={CodePathLogo}
         alt='CodePath logo'
