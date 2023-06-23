@@ -33,7 +33,7 @@ export default function ProductCard({ product, cart, setCart }) {
   }
 
   let quantity = 0
-  if (cart.find(item => item.id === product.id)) {
+  if (cart?.find(item => item.id === product.id)) {
     let itemIndex = cart.findIndex(item => item.id === product.id)
     quantity = cart[itemIndex].quantity
   }
