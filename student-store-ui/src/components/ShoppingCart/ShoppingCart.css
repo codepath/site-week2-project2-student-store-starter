@@ -1,0 +1,181 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.toggle-button{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background: none;
+    border: 0px;
+    cursor: pointer;
+    color: white
+}
+
+.toggle-button .open{
+    float: right;
+}
+.material-icons.md-48 {
+    font-size: 40px;
+}
+.shopping-cart{
+    text-align: center;
+    color: white;
+}
+
+.shopping-cart .CartTable {
+    width: 95%;
+    margin: 0 10px;
+}
+.shopping-cart .CartTable .header {
+    display: flex;
+    flex-direction: column;
+    background: var(--pure-white);
+    border: solid 1px var(--border-color);
+    border-radius: 4px;
+    width: 100%;
+}
+.shopping-cart .header-row {
+    display: flex;
+    height: 50px;
+    background: #60afff;
+    margin-bottom: 15px;
+}
+.shopping-cart .header-row span {
+    flex: 1;
+    color: var(--pure-white);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 17px;
+    font-weight: 600;
+    margin-left: 15px;
+}
+.shopping-cart .header-row span.center {
+    display: flex;
+    justify-content: center;
+}
+.shopping-cart .product-row {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20px;
+    margin-top: 10px;
+    border-bottom: solid 1px var(--border-color);
+    color: black;
+}
+.shopping-cart .product-row span {
+    flex: 1;
+}
+.shopping-cart .product-row span.center {
+    display: flex;
+    justify-content: center;
+}
+.shopping-cart .receipt {
+    display: flex;
+    flex-direction: column;
+    background: var(--pure-white);
+    border-radius: 4px;
+    width: 100%;
+    margin-top: 10px;
+    color: black;
+}
+.shopping-cart .receipt .receipt-subtotal, .shopping-cart .receipt .receipt-taxes, .shopping-cart .receipt .receipt-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+.shopping-cart .receipt .label {
+    font-weight: 600;
+    padding-left: 10px;
+}
+.shopping-cart .receipt span {
+    flex: 1;
+}
+.shopping-cart .receipt span.center {
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+}
+.shopping-cart .receipt .receipt-subtotal, .shopping-cart .receipt .receipt-taxes, .shopping-cart .receipt .receipt-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+.shopping-cart .receipt .label {
+    font-weight: 600;
+    padding-left: 10px;
+}
+.shopping-cart .receipt span {
+    flex: 1;
+}
+.shopping-cart .receipt span.center {
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+}
+.shopping-cart .receipt .receipt-total {
+    border-top: solid 1px var(--border-color);
+}
+.shopping-cart .receipt .label {
+    font-weight: 600;
+    padding-left: 10px;
+}
+.shopping-cart .receipt span.center {
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+}
+.checkout-form {
+    padding: 16px;
+}
+.checkout-form>h3 {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.checkout-form>h3>span {
+    margin-left: 10px;
+}
+.checkout-form .input-field .label {
+    color: #fff;
+}
+.checkout-form .input-field .control {
+    width: 100%;
+    margin: 5px 0;
+}
+.checkout-form-input {
+    width: 100%;
+    height: 36px;
+    padding: 0 15px;
+    border-radius: 8px;
+    border: solid 1px #e4e4e4;
+    flex: 1;
+    font-size: 16px;
+}
+.checkout-form button {
+    margin-top: 10px;
+    padding: 12px 18px;
+    font-size: 18px;
+    cursor: pointer;
+    background: transparent;
+    border: solid 1px white;
+    color: #fff;
+}
+.checkout-success {
+    width: 100%;
+    padding: 1rem;
+}
+.checkout-success>h3 {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.checkout-success .card {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}

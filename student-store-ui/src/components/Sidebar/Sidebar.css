@@ -10,6 +10,7 @@
     top: 0px;
     height: 100vh;
     background: linear-gradient(#3066be, #963484);
+    overflow: auto;
 }
 
 .sidebar.open{

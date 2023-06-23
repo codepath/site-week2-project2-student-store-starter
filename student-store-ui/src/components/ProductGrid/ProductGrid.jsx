@@ -3,31 +3,9 @@ import "./ProductGrid.css"
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-export default function ProductGrid({searchTerm, setSearchTerm, selectedCategory, setSelectedCategory, products, count, setCount, handleAdd, handleMinus} ) {
+export default function ProductGrid({searchTerm, setSearchTerm, selectedCategory, setSelectedCategory, products, count, setCount, handleAdd, handleMinus, shoppingCart, setShoppingCart} ) {
     
     
-    // const [count, setCount] = useState({});
-    
-    // function handleAdd(e, cardId){
-    //     if(cardId in count){
-    //         const add = {...count, [cardId]: count[cardId] +1};
-    //         setCount(add);
-    //     }else{
-    //         const create = {...count, [cardId]:1};
-    //         setCount(create);
-    //     }
-    // }
-
-    // function handleMinus(e, cardId){
-    //     if(cardId in count){
-    //         if (count[cardId] > 0) { // Check if count is already greater than 0
-    //             const minus = { ...count, [cardId]: count[cardId] - 1 };
-    //             setCount(minus);
-    //           }
-    //     }else {
-    //         setCount({ ...count, [cardId]: 0 });
-    //     }
-    // }
     
     // creating products
     function createProduct(info, idx){
@@ -47,10 +25,10 @@ export default function ProductGrid({searchTerm, setSearchTerm, selectedCategory
             <div className="actions">
 
                 <div className="buttons" >
-                    <button className="add" onClick={(e)=>handleAdd(e, info.id)}>
+                    <button className="add" onClick={(e)=>handleAdd(e, info.id, info)}>
                         <i className="material-icons">add</i>
                     </button>
-                    <button className="remove" onClick={(e) => handleMinus(e,info.id)}>
+                    <button className="remove" onClick={(e) => handleMinus(e,info.id,info)}>
                         <i className="material-icons">remove</i>
                     </button>
                 </div>

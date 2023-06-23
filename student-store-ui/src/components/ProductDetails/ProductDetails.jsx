@@ -10,7 +10,7 @@ export default function ProductDetails({count, setCount, handleAdd, handleMinus}
     const [product, setProduct] = useState({});
 
     useEffect(()=> {
-        axios.get(`https://codepath-store-api.herokuapp.com/store/${id}`)
+        axios.get(`http://localhost:3001/store/products/${id}`)
         .then(response => {
             // console.log(response.data.product)
             setProduct(response.data.product)
@@ -29,10 +29,10 @@ export default function ProductDetails({count, setCount, handleAdd, handleMinus}
          <div className="actions">
 
                 <div className="buttons" >
-                    <button className="add" onClick={(e)=>handleAdd(e, product.id)}>
+                    <button className="add" onClick={(e)=>handleAdd(e, product.id, product)}>
                         <i className="material-icons">add</i>
                     </button>
-                    <button className="remove" onClick={(e) => handleMinus(e,product.id)}>
+                    <button className="remove" onClick={(e) => handleMinus(e,product.id, product)}>
                         <i className="material-icons">remove</i>
                     </button>
                 </div>

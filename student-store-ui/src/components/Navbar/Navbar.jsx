@@ -13,9 +13,15 @@ export default function Navbar() {
           <Link to={"/"}>
           <li >Home</li>
           </Link>
+          <Link to={"/about"}>
           <li>About Us</li>
+          </Link>
+          <Link to={"/contact"}>
           <li>Contact Us</li>
+          </Link>
+          <Link to={'/'}>
           <li>Buy Now</li>
+          </Link>
         </ul>
       </div>
     </nav>
