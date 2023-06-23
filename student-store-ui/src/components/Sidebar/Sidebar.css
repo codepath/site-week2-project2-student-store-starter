@@ -12,7 +12,10 @@
     padding: 1rem;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
-
+    overflow-y: scroll;
+}
+.sidebar-container::-webkit-scrollbar{
+    scrollbar-width: 0px;
 }
 .cart-summary-container{
     justify-content: center;

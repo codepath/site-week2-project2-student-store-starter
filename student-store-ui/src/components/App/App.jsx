@@ -35,6 +35,7 @@ export default function App() {
             <Route path="/" element={<Overlay />}>
               <Route path="/" element={<Home />} />
               <Route path="products/:id" element={<ProductDetails />} />
+              <Route path="*" element={<ProductDetails />} />
             </Route>
             <Route path='*' element={<> <Navbar /> <Outlet /> </>}>
               <Route path="*" element={<NotFound />} />

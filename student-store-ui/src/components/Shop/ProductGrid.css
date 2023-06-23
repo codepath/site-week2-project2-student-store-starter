@@ -43,13 +43,12 @@
 }
 .product-title{
     transition: color 200ms ease-in-out;
+    font-size: 1.5rem;
+    font-weight: bold;
 
 }
 .product-title:hover{
     color: var(--s-color);
-}
-.product-buttons{
-    align-self: center;
 }
 .product-price{
     font-size: smaller;

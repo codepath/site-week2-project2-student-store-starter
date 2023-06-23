@@ -17,7 +17,7 @@ function Hero() {
           <h1>Collectibles</h1>
           <p>Shop all things <b>CodePath Univeristy</b>. From Clothes, Food, and everything in between!</p>
         </div>
-        <div className="hero-media">
+        <div className="hero-media floating">
           <img src={cartPNG} alt="shopping art logo" />
         </div>
       </div>

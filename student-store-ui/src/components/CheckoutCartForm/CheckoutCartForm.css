@@ -52,3 +52,9 @@
     cursor: pointer;
     color: var(--text-color-light);
 }
+.error-message{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    text-align: center;
+}

@@ -112,9 +112,10 @@ class Store {
                 total: total,
                 order: shoppingCart,
                 createdAt: createdAt,
-                receipt: this.generateReceipt(name,
-                    this.newPurchaseID, email,
-                    total, shoppingCart, createdAt),
+                receipt: {
+                    subtotal:  subtotal,
+                    taxes : subtotal*TAX
+                }
             }
            
             // get all current purchases from purchasesObject

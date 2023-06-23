@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import "./ProductDetails.css";
+import AddToCartButtton from "../AddToCartButton/AddToCartButton";
 
 export default function ProductDetails(){
     let params = useParams();
@@ -29,6 +30,9 @@ export default function ProductDetails(){
                         <h1 className="product-name">{product.name}</h1>
                         <p className="product-details-price">${product.price?.toFixed(2)}</p>
                         <div className="product-rating"></div>
+                        <div className="cart-button-container">
+                            <AddToCartButtton product={product} />
+                        </div>
                     </div>
 
                 </div>
@@ -39,9 +43,6 @@ export default function ProductDetails(){
                     <p className="product-description">
                         {product.description}
                     </p>
-                    <button onChange={() => alert("adding to cart")}>
-                        Add To Cart
-                    </button>
                 </div>
                 
 

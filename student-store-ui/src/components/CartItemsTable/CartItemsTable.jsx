@@ -27,7 +27,7 @@ export default function CartItemsTable(){
             currentSubTotal += item.price;
         }
         // 
-        let currentTaxesAndFees = currentSubTotal * 0.0764;
+        let currentTaxesAndFees = currentSubTotal * 0.0875;
         let currentTotal = currentTaxesAndFees + currentSubTotal;
         setCheckoutReceipt([currentSubTotal, currentTaxesAndFees, currentTotal]) 
     }

@@ -6,29 +6,16 @@ import "./QueryBars.css";
 import "./ProductGrid.css";
 import Footer from "../Footer/Footer";
 import { CheckoutCartContext, CheckoutCartDispatchContext } from "../CheckoutCartContext/CheckoutCartContext";
+import AddToCartButtton from "../AddToCartButton/AddToCartButton";
 
 function ProductGrid({ products, filter }) {
     // Returns all products in grid style using CSS
-    const dispatch = useContext(CheckoutCartDispatchContext);
-    // const checkoutCart = useContext(CheckoutCartContext);
     const filteredProducts = products.filter((product) => {
         // filters products by search and category tag. 
         return (product.name.toLowerCase().includes(filter.search.toLowerCase())) &&
             (product.category.toLowerCase() === filter.category.toLowerCase() 
             || filter.category.toLowerCase() === "all");
     });
-    function handleProductButtonOnClick(event, product) {
-        // this handler will update the cart
-        // after a user clicks the plus/minus sign
-
-        event.preventDefault();
-        let type = event.target.id + "ed"; // using id attribute to get dispatch type
-        dispatch({
-            productID: product.id,
-            type : type,
-            product : product
-        });
-    };
 
     return (
         <>
@@ -36,7 +23,6 @@ function ProductGrid({ products, filter }) {
             <div className="product-grid">
                 {/* // renders each product */}
                 {filteredProducts.map((product) => {
-
                     return (
                         <div className="product">
                             <Link to={`/products/${product.id}`}>
@@ -46,14 +32,7 @@ function ProductGrid({ products, filter }) {
                                     <p className="product-price">${product.price.toFixed(2)}</p>
                                 </div>
                             </Link>
-                            <div className="product-buttons">
-                                <button type="button" id="increment" onClick={(e) => handleProductButtonOnClick(e, product)} className="add">
-                                    <i id="increment" className="material-icons">add</i>
-                                </button>
-                                <button type="button" id="decrement" onClick={(e) => handleProductButtonOnClick(e, product)} className="remove">
-                                    <i id="decrement" className="material-icons">remove</i>
-                                </button>
-                            </div>
+                            <AddToCartButtton product={product} />
                         </div>
 
 
