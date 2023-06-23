@@ -22,3 +22,11 @@
     justify-content: space-between;
     width: 50%;
 }
+
+.checkout {
+    width: auto;
+}
+
+.closed {
+    display: none;
+}

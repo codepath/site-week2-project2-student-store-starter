@@ -13,11 +13,12 @@ import Hero from "../Hero/Hero"
 
 export default function App() {
   const [cart, setCart] = useState([])
+
   return (
     <BrowserRouter>
       <div className="app">
           <main>
-            <Sidebar cart={cart}/>
+            <Sidebar cart={cart} setCart={setCart} />
             <section className="page">
               <Navbar />
               <Hero />

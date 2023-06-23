@@ -1,11 +1,10 @@
 import { useState } from "react"
 
 import CheckoutInfo from "../CheckoutInfo/CheckoutInfo"
-import PaymentInfo from "../PaymentInfo.jsx/PaymentInfo"
 import ShoppingCart from "../ShoppingCart/ShoppingCart"
 import "./Sidebar.css"
 
-export default function Sidebar({ cart }) {
+export default function Sidebar({ cart, setCart }) {
   const [isOpen, setIsOpen] = useState(false)
 
   const handleClick = () => {
@@ -18,9 +17,7 @@ export default function Sidebar({ cart }) {
     return (
       <section className={sidebarClass}>
         <button onClick={handleClick}>Cart</button>
-        <ShoppingCart cart={cart}/>
-        <PaymentInfo />
-        <CheckoutInfo />
+        <ShoppingCart cart={cart} setCart={setCart} />
       </section>
     )
   } else {

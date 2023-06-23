@@ -7,7 +7,7 @@ export default function SearchBar({ searchTerm, setSearchTerm }) {
   }
 
   return (
-    <form className="product-search" onSubmit={handleChange}>
+    <form className="product-search" onSubmit={event => event.preventDefault}>
       <label className="form-label" htmlFor="search">
         <b>Product Search: </b>
       </label>
