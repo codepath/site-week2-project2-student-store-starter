@@ -1,11 +1,16 @@
-.product-grid{
+.product-grid {
     display: flex;
-    
-
-}
-
-.product-image {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .product-card {
+    flex: 0 0 250px;
+    margin-bottom: 20px;
+  }
+  
+  .product-image {
     height: 250px;
     width: 248px;
     object-fit: fill;
-}
+  }
