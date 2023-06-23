@@ -48,9 +48,9 @@ export default function Productgrid({ productFilter, ShoppingList, SetShoppingLi
                         </Link>
                     <p>{product.name}</p>
                     <p>{"$"}{product.price.toFixed(2)}</p>
-                    <div>
-                        <button onClick={() => addToCart(product)}>+</button>
-                        <button onClick={() => removeFromCart(product)}>-</button>
+                    <div className="PlusMinusButton">
+                        <button className="productButton" onClick={() => addToCart(product)}>+</button>
+                        <button className="productButton" onClick={() => removeFromCart(product)}>-</button>
                     </div>
                     </div>)
                 })
