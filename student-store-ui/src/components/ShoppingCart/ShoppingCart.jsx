@@ -1,12 +1,10 @@
 import react, { useEffect, useState } from "react"
 import './Shoppingcart.css'
 
-export default function ShoppingCart({ShoppingList}){
+export default function ShoppingCart({ShoppingList, SubTotal, SetSubTotal}){
 
     console.log(ShoppingList)
     const [FirstItem, SetFirstItem] = useState(false)
-    
-    const [SubTotal, SetSubTotal] = useState(0)
 
     useEffect(() =>{
         if(ShoppingList?.length > 0){

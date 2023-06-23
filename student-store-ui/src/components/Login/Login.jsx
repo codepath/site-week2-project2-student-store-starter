@@ -1,19 +1,18 @@
 import react from "react"
 import "./Login.css"
-export default function Loginform(){
+export default function Loginform({SetName, SetEmail}){
     return(
         <div className="Loginform">
-            <h2>Login</h2>
+            <h2>Checkout Info</h2>
             <form>
                 <div className="formGroup">
-                    <label htmlFor="email">Email</label>
-                    <input type = "email" id = "email" placeholder="Enter Your Email"/>
+                    <label htmlFor="name">Name</label>
+                    <input type = "name" id = "name" placeholder="Enter Your Name" onChange={(event) => {SetName(event.target.value)}}/>
                 </div>
                 <div className="formGroup">
-                    <label htmlFor="password">Password</label>
-                    <input type = "password" id = "password" placeholder="Enter Your Password"/>
+                    <label htmlFor="Email">Email</label>
+                    <input type = "Email" id = "Email" placeholder="Enter Your Email" onChange={(event) => {SetEmail(event.target.value)}}/>
                 </div>
-                <button type = "submit">Submit</button>
             </form>
         </div>
     )
