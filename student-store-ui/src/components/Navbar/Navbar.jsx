@@ -37,6 +37,13 @@ function Links() {
           </div>
         </Link>
       </li>
+      <li>
+        <Link to="/purchases">
+          <div className="social-link">
+            Orders
+          </div>
+        </Link>
+      </li>
     </ul >
   )
 }

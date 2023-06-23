@@ -16,7 +16,6 @@ export default function ProductDetails(){
             setIsLoading(false);
         });
     }, []);
-    
 
     return (
         <div className="product-details-container">
@@ -44,11 +43,7 @@ export default function ProductDetails(){
                         {product.description}
                     </p>
                 </div>
-                
-
-                
-
             </div>
         </div>
-    )
+    );
 }

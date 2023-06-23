@@ -1,5 +1,5 @@
 import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
-import { useState, useReducer } from "react";
+import { useReducer } from "react";
 import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 import Home from "../Home/Home";
@@ -12,6 +12,8 @@ import Footer from "../Footer/Footer";
 import ProductDetails from '../ProductDetails/ProductDetails';
 import { CheckoutCartContext, CheckoutCartDispatchContext } from '../CheckoutCartContext/CheckoutCartContext';
 import CheckoutCartReducer from '../Reducer/CheckoutCartReducer';
+import Purchases from '../Purchases/Purchases';
+import PurchaseDetails from '../PurchaseDetails/PurchaseDetails';
 export default function App() {
   const [checkoutCart, dispatch] = useReducer(CheckoutCartReducer, {});
   const Overlay = () => (
@@ -35,7 +37,9 @@ export default function App() {
             <Route path="/" element={<Overlay />}>
               <Route path="/" element={<Home />} />
               <Route path="products/:id" element={<ProductDetails />} />
-              <Route path="*" element={<ProductDetails />} />
+              <Route path="purchases" element={<Purchases />} />
+              <Route path="purchases/:id" element={<PurchaseDetails />} />
+              <Route path="*" element={<NotFound />} />
             </Route>
             <Route path='*' element={<> <Navbar /> <Outlet /> </>}>
               <Route path="*" element={<NotFound />} />

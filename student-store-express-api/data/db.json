@@ -145,6 +145,109 @@
       "price": 999.99
     }
   },
-  "purchases": {},
-  "newPurchaseID": 0
+  "purchases": {
+    "0": {
+      "name": "Johnny",
+      "id": 0,
+      "email": "johhny@applesee.com",
+      "total": 3.2625,
+      "order": [
+        {
+          "quantity": 2,
+          "id": 2,
+          "name": "Flamin Hot Cheetos",
+          "category": "food",
+          "image": "https://static.openfoodfacts.org/images/products/896/400/009/0879/front_en.14.full.jpg",
+          "source": "https://world.openfoodfacts.org/cgi/product_image.pl?code=8964000090879&id=front_en",
+          "description": "No one knows what's in the powder that covers these snacks, but wow is it amazing!",
+          "price": 1.5
+        }
+      ],
+      "createdAt": "6/23/2023, 1:46:36 PM",
+      "receipt": {
+        "subtotal": 3,
+        "taxes": 0.26249999999999996
+      }
+    },
+    "1": {
+      "name": "dere",
+      "id": 1,
+      "email": "ererer",
+      "total": 4.89375,
+      "order": [
+        {
+          "quantity": 3,
+          "id": 2,
+          "name": "Flamin Hot Cheetos",
+          "category": "food",
+          "image": "https://static.openfoodfacts.org/images/products/896/400/009/0879/front_en.14.full.jpg",
+          "source": "https://world.openfoodfacts.org/cgi/product_image.pl?code=8964000090879&id=front_en",
+          "description": "No one knows what's in the powder that covers these snacks, but wow is it amazing!",
+          "price": 1.5
+        }
+      ],
+      "createdAt": "6/23/2023, 2:26:40 PM",
+      "receipt": {
+        "subtotal": 4.5,
+        "taxes": 0.39375
+      }
+    },
+    "2": {
+      "name": "xss",
+      "id": 2,
+      "email": "ssss",
+      "total": 4.3065,
+      "order": [
+        {
+          "quantity": 4,
+          "id": 1,
+          "name": "Rice Krispies",
+          "category": "food",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/c/cd/RKTsquares.jpg",
+          "source": "https://en.wikipedia.org/wiki/Rice_Krispies_Treats",
+          "description": "Delicious corn-based rice grains melted together with marshmallows into a square-like shape.",
+          "price": 0.99
+        }
+      ],
+      "createdAt": "6/23/2023, 3:01:19 PM",
+      "receipt": {
+        "subtotal": 3.96,
+        "taxes": 0.3465
+      }
+    },
+    "3": {
+      "name": "Kel",
+      "id": 3,
+      "email": "Apples@gmail.com",
+      "total": 9.7875,
+      "order": [
+        {
+          "quantity": 1,
+          "id": 2,
+          "name": "Flamin Hot Cheetos",
+          "category": "food",
+          "image": "https://static.openfoodfacts.org/images/products/896/400/009/0879/front_en.14.full.jpg",
+          "source": "https://world.openfoodfacts.org/cgi/product_image.pl?code=8964000090879&id=front_en",
+          "description": "No one knows what's in the powder that covers these snacks, but wow is it amazing!",
+          "price": 1.5
+        },
+        {
+          "quantity": 1,
+          "id": 5,
+          "name": "Fruit Medley",
+          "category": "food",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Fruits.png/640px-Fruits.png",
+          "source": "https://commons.wikimedia.org/wiki/File:Fruits.png",
+          "description": "More fruit than you know what to do with!",
+          "price": 7.5
+        }
+      ],
+      "createdAt": "6/23/2023, 4:44:45 PM",
+      "receipt": {
+        "subtotal": 9,
+        "taxes": 0.7875
+      }
+    }
+  },
+  "newPurchaseID": 4
 }

@@ -1,0 +1,9 @@
+.purchase-container{
+    padding: 10rem;
+    width: 100%;
+    display: flex;
+    box-shadow: 0px 0px 0px 0px var(--text-color-dark);
+}
+.purchase-content{
+    width: 100%;
+}

@@ -1,12 +1,11 @@
 import {useState, useEffect, useContext} from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import AddToCartButtton from "../AddToCartButton/AddToCartButton";
+import SearchBar from "./SearchBar";
 import "./Shop.css";
 import "./QueryBars.css";
 import "./ProductGrid.css";
-import Footer from "../Footer/Footer";
-import { CheckoutCartContext, CheckoutCartDispatchContext } from "../CheckoutCartContext/CheckoutCartContext";
-import AddToCartButtton from "../AddToCartButton/AddToCartButton";
 
 function ProductGrid({ products, filter }) {
     // Returns all products in grid style using CSS
@@ -44,19 +43,6 @@ function ProductGrid({ products, filter }) {
     )
 }
 
-function SearchBar({ updateQuery, search }) {
-    return (
-        <div className="search-bar-container">
-            <label htmlFor="name"></label>
-            <input
-                type="text" name="search"
-                value={search} onChange={updateQuery}
-                label="Search" placeholder="Search Products"
-                className="search-input" />
-            <i className="material-icons">help</i>
-        </div>
-    )
-}
 function FilterBar({ updateQuery, activeCategory }) {
     const CATEGORIES = ["All", "Clothing", "Food", "Accessories", "Tech"];
     return (

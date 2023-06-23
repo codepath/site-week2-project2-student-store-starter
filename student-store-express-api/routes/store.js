@@ -14,7 +14,7 @@ storeRouter.get("/", (request, response) => {
     console.log("Retrieving products...");
     response.status(201).json({"products": products})
 });
-storeRouter.get("/purchases/", (request, response) => {
+storeRouter.get("/purchases", (request, response) => {
     // Responds to GET requests to /store with an 
     // array of all products in the store in the format 
     const purchases = store.getAllPurchases();
