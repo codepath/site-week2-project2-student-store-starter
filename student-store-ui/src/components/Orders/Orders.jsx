@@ -27,8 +27,9 @@ export default function Orders({
   receiptEmail,
   totalSpendings,
   allOrders,
+  allTransactions
 }) {
-  //   console.log("total spending", totalSpendings);
+    console.log("transaaction list: ", allTransactions);
   if (!allOrders || allOrders.length == 0) {
     return (
       <div className="orders">

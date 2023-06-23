@@ -42,6 +42,8 @@ export default function App() {
   const [receiptTotalPrice, setReceiptTotalPrice] = useState(0);
   const [allOrders, setAllOrders] = useState([]);
   const [totalSpendings, setTotalSpendings] = useState(0);
+  const [allTransactions, setAllTransactions] = useState([]) 
+  // combine allTransactions and allOrders?
 
   useEffect(() => {
     axios.get(url).then((response) => {
@@ -155,18 +157,19 @@ export default function App() {
       shoppingCart &&
       shoppingCart.length > 0
     ) {
-
+      console.log(shoppingCart)
       setReceiptTotalPrice(totalPrice)
       setReceiptEmail(emailTerm)
       setReceiptName(nameTerm)
       setOrder(shoppingCart)
       setReceiptSubtotal(subtotal)
       setCheckoutSubmitted(true);
+      setAllTransactions([...allTransactions, {order: shoppingCart, email: emailTerm}])
+      setAllOrders(allOrders.concat(shoppingCart)) // used in orders.jsx
+      setTotalSpendings(totalSpendings.toLocaleString("us-EN", { style: "currency", currency: "USD", }) + totalPrice);
       setNameTerm("");
       setEmailTerm("");
       setAcceptedTermsAndConditions(false);
-      setAllOrders(allOrders.concat(shoppingCart)) // used in orders.jsx
-      setTotalSpendings(totalSpendings.toLocaleString("us-EN", { style: "currency", currency: "USD", }) + totalPrice);
       setShoppingCart([])
 
     } else {
@@ -256,6 +259,7 @@ export default function App() {
                     receiptEmail={receiptEmail}
                     totalSpendings={totalSpendings}
                     allOrders={allOrders}
+                    allTransactions={allTransactions}
                   />
                 }
               />
