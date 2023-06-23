@@ -53,4 +53,4 @@ https://drive.google.com/file/d/1iU5uV7w_fnLezN7Mrk52W2ej8HrT3RTt/view
 
 ## Week 3 Video Walkthrough
 
-"https://drive.google.com/file/d/1szc2CHpYFtihFxMj14nGudsDszsLOH72/preview"
+https://drive.google.com/file/d/1szc2CHpYFtihFxMj14nGudsDszsLOH72/view
