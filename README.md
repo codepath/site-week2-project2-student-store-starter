@@ -34,6 +34,8 @@ https://www.loom.com/share/7c0b57da57654bda94d3cc969f7ea92b?sid=5a9dde21-415a-4b
 
 ## *Week 3* Application Features
 
+https://www.loom.com/share/4cb7ff2706b24d4c8cf4847fa7e997dc?sid=f7511505-6729-4ee7-b581-e12c09698862
+
 ### Core Features
 
 - [x] User can click to expand the shopping cart in the left navigation.

@@ -1,5 +1,3 @@
-import * as React from "react"
-
 import "./Navbar.css"
 
 import Logo from "../Logo/logo"

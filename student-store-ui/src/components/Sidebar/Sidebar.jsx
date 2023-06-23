@@ -1,6 +1,5 @@
 import { useState } from "react"
 
-import CheckoutInfo from "../CheckoutInfo/CheckoutInfo"
 import ShoppingCart from "../ShoppingCart/ShoppingCart"
 import "./Sidebar.css"
 

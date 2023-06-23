@@ -1,4 +1,3 @@
-import * as React from "react"
 import "./Chip.css"
 
 export default function Chip({category, isActive = false, handleClick}) {
