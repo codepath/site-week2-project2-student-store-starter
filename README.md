@@ -65,17 +65,44 @@ Sammy,Luis, Alan, Marwan
 
 ## *Week 3* Application Features
 
+
+
 ### Core Features
 
-- [ ] User can click to expand the shopping cart in the left navigation.
-- [ ] Users can click the '+' button on a product cart to increment that product in the shopping cart.
-- [ ] Users can click the '-' button on a product cart to decrement that product in the shopping cart. If the count is zero, the product should be removed from the cart.
-- [ ] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
-- [ ] Users can checkout, and receive a receipt confirming their purchase.
+- [x] User can click to expand the shopping cart in the left navigation.
+- [x] Users can click the '+' button on a product cart to increment that product in the shopping cart.
+- [x] Users can click the '-' button on a product cart to decrement that product in the shopping cart. If the count is zero, the product should be removed from the cart.
+- [x] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
+- [x] Users can checkout, and receive a receipt confirming their purchase.
 
 ### Stretch Features
 
 - [ ] Create an endpoint for fetching all orders in the database and an endpoint for serving an individual order based on its ID.
 - [ ] Build a page in the UI that displays the list of all past orders. The user should be able to click on any individual order to take them to a more detailed page of the transaction.
 - [ ] Allow users to use an input to filter orders by the email of the person who placed the order.
-- [ ] Your choice! (Replace this bullet explaining what you implemented. Example: Users can create a wish list of products they are interested in but not yet ready to purchase.)
+- [x] I have included a clear button for your convenience. Now users can easily remove all items at once instead of having to remove each item individually.
+
+
+### Reflection
+
+- Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
+
+I have a clear understanding that the labs will serve as the core elements for our project, providing the necessary foundation. In particular, I strongly emphasize the importance of the search feature. Given that I am still in my second week of working with React, I acknowledge that I would be unable to accomplish this task without the assistance and support of others.
+
+- If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
+  
+  
+Given additional time, I would have been thrilled to expand further and incorporate additional features and enhancements to the backend.
+
+- Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
+I am really happy with the outcome of my home page. I put a lot of effort into styling it, and it turned out great. It's satisfying to see that I was able to address the various issues I encountered last week. In particular, I'm quite fond of the clear button that I implemented.
+
+
+### Open-source libraries used
+
+- Add any links to open-source libraries used in your project.
+
+### Shout out
+
+Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+Sammy,Luis, Alan
