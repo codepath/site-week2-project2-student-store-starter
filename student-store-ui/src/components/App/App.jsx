@@ -29,6 +29,7 @@ function HomePage(){
 
   const url = "https://codepath-store-api.herokuapp.com/store";
   const [products, setProducts]=useState([]);
+  const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
     axios.get(url).then((response) => {
@@ -37,12 +38,14 @@ function HomePage(){
     });
   }, []);
 
+  console.log("App", cartItems)
+
   return(
     <main>
       
           <Navbar />
-          <Sidebar />
-          <Home products={products}/>
+          <Sidebar setCartItems={setCartItems} cartItems={cartItems}/>
+          <Home products={products} setCartItems={setCartItems} cartItems={cartItems}/>
          
         </main>
   )

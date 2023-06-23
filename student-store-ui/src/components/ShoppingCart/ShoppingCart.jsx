@@ -1,14 +1,17 @@
 import React from "react";
+import "./ShoppingCart.css"
 
-function ShoppingCart({ cartItems }) {
+function ShoppingCart({ cartItems,setcartItems }) {
   // Calculate subtotal
-  const subtotal = cartItems.reduce(
+  const subtotal = cartItems?.reduce(
     (total, item) => total + item.price * item.count,
     0
   );
 
+    console.log("shopping cart items", cartItems)
+
   // Calculate tax
-  const taxRate = 0.1; // Assuming tax rate of 10%
+  const taxRate = 0.0875; // Assuming tax rate of 10%
   const tax = subtotal * taxRate;
 
   // Calculate total
@@ -27,7 +30,7 @@ function ShoppingCart({ cartItems }) {
           </tr>
         </thead>
         <tbody>
-          {cartItems.map((item) => (
+          {cartItems?.map((item) => (
             <tr key={item.id}>
               <td>{item.name}</td>
               <td>{item.count}</td>
@@ -52,7 +55,7 @@ function ShoppingCart({ cartItems }) {
             <td></td>
             <td>Subtotal:</td>
             <td>
-              {subtotal.toLocaleString("en-US", {
+              {subtotal?.toLocaleString("en-US", {
                 style: "currency",
                 currency: "USD",
               })}

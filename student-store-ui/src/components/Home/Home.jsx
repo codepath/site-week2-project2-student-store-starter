@@ -8,7 +8,7 @@ import Contact from "../Contact/Contact";
 import Menu from "../Menu/Menu";
 import ProductContainer from "../ProductContainer/ProductContainer";
 
-export default function Home({ products }) {
+export default function Home({ products, setCartItems,cartItems }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
 
@@ -40,7 +40,7 @@ export default function Home({ products }) {
         setSelectedCategory={setSelectedCategory}
         categories={categories}
       />
-      <ProductContainer products={productFilter} />
+      <ProductContainer products={productFilter} setCartItems={setCartItems} cartItems={cartItems} />
       <About />
       <Contact />
       <Footer />

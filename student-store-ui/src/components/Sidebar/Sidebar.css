@@ -87,13 +87,14 @@
     padding: 20px;
     transition: opacity 0.3s ease;
     opacity: 0;
-    color: azure;
+    background-color: #16425b;
   }
   
   .sidebar.open .sidebar-content {
     opacity: 1;
-    background-color: #D9DCD6;
-    height: 1100px;
+    color: white;
+    font-size: 25px;
+    
   }
   
   

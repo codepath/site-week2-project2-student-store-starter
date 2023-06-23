@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 import ProductDetails from "../ProductDetails/ProductDetails";
 import "./ProductContainer.css";
 
-export default function ProductContainer({ products }) {
+export default function ProductContainer({ products, setCartItems,cartItems }) {
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const [cartItems, setCartItems] = useState([]);
+  // const [cartItems, setCartItems] = useState([]);
 
   const addToCart = (product) => {
-    const existingItem = cartItems.find((item) => item.id === product.id);
+    const existingItem = cartItems?.find((item) => item?.id === product?.id);
     if (existingItem) {
       setCartItems((prevItems) =>
         prevItems.map((item) =>
@@ -22,6 +22,7 @@ export default function ProductContainer({ products }) {
         { ...product, count: 1 },
       ]);
     }
+    console.log("shopping cart:", cartItems)
   };
 
   const removeFromCart = (productId) => {
@@ -39,7 +40,7 @@ export default function ProductContainer({ products }) {
   };
 
   const getCartItemQuantity = (productId) => {
-    const item = cartItems.find((item) => item.id === productId);
+    const item = cartItems?.find((item) => item?.id === productId);
     return item ? item.count : 0;
   };
 

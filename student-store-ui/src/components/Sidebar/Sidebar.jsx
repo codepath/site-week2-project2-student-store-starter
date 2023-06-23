@@ -95,13 +95,14 @@ import ProductContainer from "../ProductContainer/ProductContainer"; // Import t
 //   );
 // }
 
-export default function Sidebar() {
+export default function Sidebar({cartItems,setCartItems} ) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const [cartItems, setCartItems] = useState([]);
-
+  
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
+
+  console.log("Sidebar", cartItems)
 
   return (
     <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
@@ -110,8 +111,9 @@ export default function Sidebar() {
       </div>
       <div className="sidebar-content">
         {isSidebarOpen && <ShoppingCart cartItems={cartItems} />}
-        <ProductContainer products={[]} setCartItems={setCartItems} /> {/* Pass the setCartItems function as a prop */}
+        <ProductContainer products={[]} setCartItems={setCartItems} />
       </div>
+      {/* <ShoppingCart cartItems ={cartItems} setCartItems={setCartItems}/> */}
     </div>
   );
 }
