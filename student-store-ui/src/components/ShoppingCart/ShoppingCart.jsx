@@ -257,8 +257,12 @@ function ShoppingCart({ cartItems, setCartItems }) {
           </tr>
         </thead>
         <tbody>
-          {cartItems?.map((item) => (
-            <tr key={item.id}>
+          {cartItems?.map((item) => {
+            return (
+              <>
+                {(item.count != 0) ?
+                (
+                <tr key={item.id}>
               <td>{item.name}</td>
               <td>{item.count}</td>
               <td>
@@ -274,7 +278,30 @@ function ShoppingCart({ cartItems, setCartItems }) {
                 })}
               </td>
             </tr>
-          ))}
+                  ) : (<></>)
+                  }
+              
+              </>
+            )
+            // <tr key={item.id}>
+            //   <td>{item.name}</td>
+
+            //   <td>{item.count}</td>
+
+            //   <td>
+            //     {item.price.toLocaleString("en-US", {
+            //       style: "currency",
+            //       currency: "USD",
+            //     })}
+            //   </td>
+            //   <td>
+            //     {(item.price * item.count).toLocaleString("en-US", {
+            //       style: "currency",
+            //       currency: "USD",
+            //     })}
+            //   </td>
+            // </tr>
+                })}
         </tbody>
         <tfoot>
           <tr>
