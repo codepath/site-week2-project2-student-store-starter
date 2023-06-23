@@ -23,7 +23,9 @@ function Sidebar({ShoppingList, SetShoppingList}) {
       {/* Content of Sidebar */}
       <div className="ComponentContainer" style = {{display: isOpen ? "block" : "none"}}>
         <ShoppingCart ShoppingList = {ShoppingList} SubTotal={SubTotal} SetSubTotal={SetSubTotal}/>
-        <button onClick={() => {SetShoppingList([])}}>Clear Cart</button>
+        <div className="CartClear">
+          <button className="ClearButton" onClick={() => {SetShoppingList([])}}>Clear Cart</button>
+        </div>
         <Loginform SetName = {SetName} SetEmail = {SetEmail}/>
         <Checkout ShoppingList={ShoppingList} SubTotal={SubTotal} Name={Name} Email={Email}/>
       </div>
