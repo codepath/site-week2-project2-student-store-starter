@@ -1,33 +1,25 @@
-import * as React from "react"
-import "./Sidebar.css"
+import * as React from "react";
+import "./Sidebar.css";
 import { useState } from "react";
 
-export default function Sidebar({ cart, isCollapsed, setIsCollapsed }) {
-
+export default function Sidebar() {
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   const toggleSidebar = () => {
     setIsCollapsed(!isCollapsed);
   };
 
-return (
-  <section className={`sidebar ${isCollapsed ? "collapsed" : ""}`}>
-    { !isCollapsed && (
-      <div>
-        <div className="cart">
-          <h2>Shopping Cart</h2>
-          {cart.length === 0 ? (
-            <p>The cart is empty</p>
-          ) : (
-            cart.map((product, index) => (
-              <div key={index}>
-                <p>{product.name}</p>
-                <p>{product.price}</p>
-              </div>
-            ))
-          )}
+  return (
+    <section className={`sidebar ${isCollapsed ? "collapsed" : ""}`}>
+      <button onClick={toggleSidebar}>
+        {isCollapsed ? "Show Cart" : "Hide Cart"}
+      </button>
+      {!isCollapsed && (
+        <div>
+          <p>Sidebar</p>
+          {/* You can add your shopping cart component or any other content here */}
         </div>
-      </div>
-    )}
-  </section>
-)
- }
+      )}
+    </section>
+  );
+}
