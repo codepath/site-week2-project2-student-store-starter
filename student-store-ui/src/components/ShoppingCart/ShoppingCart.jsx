@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ShoppingCart.css";
 import CheckoutForm from "../CheckoutForm/CheckoutForm";
 
@@ -24,9 +24,11 @@ export default function ShoppingCart(props) {
 
   const shoppingCartHasItems = !shoppingCart.length ? false : true;
 
+  const [checkoutClicked, setCheckoutClicked] = useState(false);
+
   return (
     <div className="shopping-cart">
-      {isOpen == "closed" ? (
+      {isOpen === "closed" ? (
         <div className="cart-icons">
           <span className="cart-icon icon button" onClick={handleOnToggle}>
             <i className="material-icons md-48"></i>
@@ -53,7 +55,7 @@ export default function ShoppingCart(props) {
           ) : (
             <div className="CartTable">
               <div className="header">
-                <div className="header-row">
+              <div className="header-row">
                   <span className="flex-2">Name</span>
                   <span className="center">Quantity</span>
                   <span className="center">Unit Price</span>
@@ -71,7 +73,7 @@ export default function ShoppingCart(props) {
                 })}
               </div>
               <div className="receipt">
-                <div className="receipt-subtotal">
+              <div className="receipt-subtotal">
                   <span className="label">Subtotal</span>
                   <span></span>
                   <span></span>
@@ -85,16 +87,32 @@ export default function ShoppingCart(props) {
                   <span></span>
                   <span className="center tax">{formatter.format(subTotal * tax)}</span>
                 </div>
-                <div className="receipt-total">
-                  <span className="label">Total</span>
-                  <span></span>
-                  <span></span>
-                  <span className="center total-price">{formatter.format(subTotal + tax)}</span>
-                </div>
+​
+<div className="receipt-total">
+  <span className="label">Total</span>
+  <span></span>
+  <span></span>
+  <span className="center total-price">
+    {formatter.format(subTotal + subTotal * tax)}
+  </span>
+</div>
               </div>
             </div>
           )}
-          <CheckoutForm />
+          {checkoutClicked ? (
+            <CheckoutForm shoppingCart={shoppingCart} subTotal={subTotal} />
+          ) : (
+            <div className="field">
+              <div className="control">
+                <button
+                  className="button checkout-button"
+                  onClick={() => setCheckoutClicked(true)}
+                >
+                  Checkout
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       )}
     </div>

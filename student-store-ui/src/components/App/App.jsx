@@ -90,14 +90,20 @@ export default function App() {
     let newCart = shoppingCart?.map((item) => {
       if (item.id === product.id && item.quantity === 1) {
         console.log("--here in the if statement---");
+        return null; // Return null for items with quantity 1
       } else if (item.id === product.id) {
         return { ...item, quantity: item.quantity - 1 };
       } else {
-      return item;
+        return item;
       }
     });
+  
+    // Filter out null or undefined values from the newCart array
+    newCart = newCart.filter((item) => item !== null && item !== undefined);
+  
     setShoppingCart(newCart);
   };
+  
 
   // Event handler to get quantity of a specified item
   const handleGetItemQuantity = (item) => {
