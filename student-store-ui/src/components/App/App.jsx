@@ -16,7 +16,7 @@ export default function App() {
   const [searchTerm, setSearchTerm] = useState("")
   const [category, setCategory] = useState("")
   const [cart, setCart] = useState([])
-  
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(true);
 
   useEffect(() => {
     axios.get(url).then((response) => {
@@ -32,7 +32,7 @@ export default function App() {
   return (
     <div className="app">
       <BrowserRouter>
-        <Sidebar />
+      <Sidebar isCollapsed={isSidebarCollapsed} setIsCollapsed={setIsSidebarCollapsed} />
         <div className="main-content">
           <main>
             <Navbar />

@@ -2,17 +2,17 @@ import * as React from "react"
 import "./Sidebar.css"
 import { useState } from "react";
 
-export default function Sidebar({ cart }) {
-  const [isCollapsed, setIsCollapsed] = useState(true);
+export default function Sidebar({ cart, isCollapsed, setIsCollapsed }) {
+
 
   const toggleSidebar = () => {
     setIsCollapsed(!isCollapsed);
   };
 
-  return (
-    <section className="sidebar">
-      <button onClick={toggleSidebar}>{isCollapsed ? "Show cart" : "Hide cart"}</button>
-      {!isCollapsed && (
+return (
+  <section className={`sidebar ${isCollapsed ? "collapsed" : ""}`}>
+    { !isCollapsed && (
+      <div>
         <div className="cart">
           <h2>Shopping Cart</h2>
           {cart.length === 0 ? (
@@ -26,7 +26,8 @@ export default function Sidebar({ cart }) {
             ))
           )}
         </div>
-      )}
-    </section>
-  );
-}
+      </div>
+    )}
+  </section>
+)
+ }
