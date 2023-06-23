@@ -84,6 +84,8 @@
 .sub-navbar .content .cart i, .sub-navbar .content .cart a {
   color: #fff;
   margin: 0 5px;
+  font-size: 16px
+
 }
 .sub-navbar .content .row {
   display: flex;

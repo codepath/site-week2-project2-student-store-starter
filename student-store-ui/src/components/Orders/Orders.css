@@ -1,6 +1,10 @@
 .header {
     color: black;
 }
+h3{
+    font-size: 40px;
+    display: flex;
+}
 .purchase {
     padding-left: 20px;
 }

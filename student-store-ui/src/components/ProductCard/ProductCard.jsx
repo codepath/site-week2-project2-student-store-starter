@@ -3,7 +3,6 @@ import "./ProductCard.css"
 import {useEffect, useState} from "react"
 import { Link } from 'react-router-dom'
 
-// export default function ProductCard({product, index, quantity}){
 export default function ProductCard({product, index, handleAddItemToCart, handleRemoveItemToCart, shoppingCart}){
     let cartIndex = shoppingCart.findIndex(item => item.itemId === product.id);
     let updatedCart = [...shoppingCart]
