@@ -40,10 +40,8 @@ export default function App() {
   const [receiptName, setReceiptName] = useState("");
   const [receiptEmail, setReceiptEmail] = useState("");
   const [receiptTotalPrice, setReceiptTotalPrice] = useState(0);
-  const [allOrders, setAllOrders] = useState([]);
   const [totalSpendings, setTotalSpendings] = useState(0);
   const [allTransactions, setAllTransactions] = useState([]) 
-  // combine allTransactions and allOrders?
 
   useEffect(() => {
     axios.get(url).then((response) => {
@@ -90,7 +88,6 @@ export default function App() {
         product.category.toLowerCase().includes(selectedCategory.toLowerCase())
       );
     }
-
     return filteredItems ? filteredItems : null;
   }
 
@@ -157,15 +154,14 @@ export default function App() {
       shoppingCart &&
       shoppingCart.length > 0
     ) {
-      console.log(shoppingCart)
+      // console.log(shoppingCart)
       setReceiptTotalPrice(totalPrice)
       setReceiptEmail(emailTerm)
       setReceiptName(nameTerm)
       setOrder(shoppingCart)
       setReceiptSubtotal(subtotal)
       setCheckoutSubmitted(true);
-      setAllTransactions([...allTransactions, {order: shoppingCart, email: emailTerm}])
-      setAllOrders(allOrders.concat(shoppingCart)) // used in orders.jsx
+      setAllTransactions([...allTransactions, {order: shoppingCart, email: emailTerm, name: nameTerm, total: totalPrice}])
       setTotalSpendings(totalSpendings.toLocaleString("us-EN", { style: "currency", currency: "USD", }) + totalPrice);
       setNameTerm("");
       setEmailTerm("");
@@ -253,12 +249,12 @@ export default function App() {
                 path="/orders"
                 element={
                   <Orders
+                    key={3}
                     products={products}
                     // order={order}
                     receiptName={receiptName}
                     receiptEmail={receiptEmail}
                     totalSpendings={totalSpendings}
-                    allOrders={allOrders}
                     allTransactions={allTransactions}
                   />
                 }

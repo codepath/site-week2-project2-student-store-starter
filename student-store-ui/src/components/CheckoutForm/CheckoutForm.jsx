@@ -53,7 +53,7 @@ export default function CheckoutForm({
                 Showing receipt for {receiptName} available at {receiptEmail}:
               </p>
               <ul className="purchase">
-                {console.log("THIS IS AN ORDER: ", order)}
+                {/* {console.log("THIS IS AN ORDER: ", order)} */}
                 {order.map((item) => (
                   <li>
                     {item.quantity} total
