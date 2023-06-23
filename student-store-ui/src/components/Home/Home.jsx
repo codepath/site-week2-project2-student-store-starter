@@ -57,6 +57,8 @@ export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState(options[0]);
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [showingProducts, setShowingProducts] = useState([]);
+  const [search, setSearch] = useState('');
   const navigate = useNavigate();
 
   const fetchData = async () => {
@@ -66,6 +68,7 @@ export default function Home() {
       );
       setProducts(response.data.products);
       setFilteredProducts(response.data.products);
+      setShowingProducts(response.data.products);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -78,11 +81,29 @@ export default function Home() {
     setSelectedCategory(option);
     if (option.category === null) {
       setFilteredProducts(products);
+      setShowingProducts(products);
     } else {
       const filtered = products.filter(
         (product) => product.category === option.category
       );
       setFilteredProducts(filtered);
+      setShowingProducts(filtered);
+    }
+  };
+
+  const handleSearchChange = (event) => {
+    const searchText = event.target.value;
+    setSearch(searchText);
+
+    if (searchText === '') {
+      // If the search input is empty, show all products
+      setShowingProducts(filteredProducts);
+    } else {
+      // Filter the products based on the search input
+      const filtered = filteredProducts.filter((product) =>
+        product.name.toLowerCase().includes(searchText.toLowerCase())
+      );
+      setShowingProducts(filtered);
     }
   };
 
@@ -116,6 +137,7 @@ export default function Home() {
             type='search'
             placeholder='Search'
             className='p-2 w-[80%] border border-green-500 rounded-lg'
+            onChange={handleSearchChange}
           />
         </div>
         {/* Help */}
@@ -139,12 +161,14 @@ export default function Home() {
         id='products-grid'
         className='w-2/3 grid grid-cols-4 gap-4 justify-self-center m-4'
       >
-        {filteredProducts.length > 0 ? (
-          filteredProducts.map((product) => (
+        {showingProducts.length > 0 ? (
+          showingProducts.map((product) => (
             <Card key={product.id} props={product} goToProduct={goToProduct} />
           ))
         ) : (
-          <p className='text-3xl font-bold'>Loading...</p>
+          <p className='text-2xl font-semibold'>
+            No hay el producto que buscas ☹️
+          </p>
         )}
       </div>
       {/* About */}
