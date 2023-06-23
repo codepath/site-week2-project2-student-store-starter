@@ -42,7 +42,7 @@ td {
     border-top: solid black;
 }
 
-#sc-button{
+.sc-button{
     float: right;
     margin-top: 3px;
     margin-bottom: 8px;
@@ -55,7 +55,7 @@ td {
   border: solid white;
 }
 
-#sc-button:hover{
+.sc-button:hover{
     background-color: var(--light-cp);
     cursor: pointer;
 }

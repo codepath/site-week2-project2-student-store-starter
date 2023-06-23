@@ -10,7 +10,7 @@
   border-right: solid white;
   padding-left: 20px;
   padding-right: 20px;
-  overflow: scroll;
+  overflow:scroll;
 }
 
 .sidebarHeader {

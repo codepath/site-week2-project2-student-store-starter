@@ -6,10 +6,51 @@ import {
   faDollarSign,
 } from "@fortawesome/free-solid-svg-icons";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
+import CheckoutForm from "../CheckoutForm/CheckoutForm";
+import { useState } from "react";
 
 import "./Sidebar.css";
 
 export default function Sidebar(props) {
+  const [subtotal, setSubtotal] = useState(0);
+  const [total, setTotal] = useState(0);
+  const [taxes, setTaxes] = useState(0);
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [termsChecked, setTermsChecked] = useState(false);
+  const [lastSavedName, setLastSavedName] = useState("");
+  const [savedSubtotal, setSavedSubtotal] = useState(0);
+  const [savedTotal, setSavedTotal] = useState(0);
+  const [lastSavedEmail, setLastSavedEmail] = useState("");
+  const [lastSavedSC, setLastSavedSC] = useState([]);
+  const [checkout, setCheckout] = useState("");
+
+  const handleName = (event) => {
+    setName(event.target.value);
+  };
+  const handleEmail = (event) => {
+    setEmail(event.target.value);
+  };
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (name && email && termsChecked && props.shoppingCart.length > 0) {
+      setSavedSubtotal(subtotal);
+      setSavedTotal(total);
+      setLastSavedSC(props.shoppingCart);
+      props.setShoppingCart([]);
+      setLastSavedName(name);
+      setLastSavedEmail(email);
+      setEmail("");
+      setName("");
+      setTermsChecked(false);
+      setCheckout("purchase");
+    }
+  }
+
+  console.log(subtotal);
+  console.log(total);
+
   return (
     <>
       <input type="checkbox" id="check" />
@@ -22,6 +63,12 @@ export default function Sidebar(props) {
             Shopping Cart <FontAwesomeIcon icon={faCartPlus} bounce />
           </p>
           <ShoppingCart
+            subtotal={subtotal}
+            setSubtotal={setSubtotal}
+            total={total}
+            setTotal={setTotal}
+            taxes={taxes}
+            setTaxes={setTaxes}
             setShoppingCart={props.setShoppingCart}
             shoppingCart={props.shoppingCart}
           />
@@ -33,56 +80,82 @@ export default function Sidebar(props) {
         <form action="search" className="sidebar-label">
           <label htmlFor="name">Name</label> <br />
           <input
+            value={name}
+            onChange={handleName}
             type="text"
             name="name"
             placeholder="student@codepath.org"
             className="input-sidebar"
+            required
           />
-        </form>
-        <form action="search" className="sidebar-label">
           <label className="sideBarInfo" htmlFor="email">
             Email
           </label>
           <br />
           <input
+            value={email}
+            onChange={handleEmail}
             className="input-sidebar"
             type="email"
             name="email"
             placeholder="Email"
-          />
-        </form>
-        <div id="termSidebar">
-          <input
-            style={{ width: "12px", height: "12px" }}
-            type="checkbox"
             required
           />
-          <span>
-            I agree to the{" "}
-            <a
-              style={{ color: "var(--light-cp", textDecoration: "none" }}
-              href="/"
-            >
-              terms and conditions
-            </a>
-          </span>
-        </div>
-        <button
-          onClick={(e) => e.preventDefault()}
-          id="button-sidebar"
-          type="submit"
-        >
-          Checkout
-        </button>
+          <div id="termSidebar">
+            <input
+              style={{ width: "12px", height: "12px" }}
+              type="checkbox"
+              checked={termsChecked}
+              onChange={(event) => setTermsChecked(event.target.checked)}
+              required
+            />
+            <span>
+              I agree to the &thinsp;
+              <a
+                style={{ color: "var(--light-cp", textDecoration: "none" }}
+                href="/"
+              >
+                terms and conditions
+              </a>
+            </span>
+            {!name && (
+              <p style={{ color: "red", margin: "0" }}>
+                Please fill out the name field!
+              </p>
+            )}
+            {!email && (
+              <p style={{ color: "red", margin: "0" }}>
+                Please fill out the email field!
+              </p>
+            )}
+            {!termsChecked && (
+              <p style={{ color: "red", margin: "0" }}>
+                Please agree to the terms and conditions!
+              </p>
+            )}
+            {props.shoppingCart.length === 0 && (
+              <p style={{ color: "red", margin: "0" }}>
+                Please add to your cart!
+              </p>
+            )}
+          </div>
+          <button onClick={handleSubmit} id="button-sidebar" type="submit">
+            Checkout
+          </button>
+        </form>
         <div id="infoSidebar">
           <p className="sidebarHeader">
             Checkout Info <FontAwesomeIcon icon={faListCheck} shake />
           </p>
-          <p style={{ fontSize: "large" }}>
-            A confirmation email will be sent to you so that you can confirm
-            this order. Once you have confirmed the order, it will be delivered
-            to your dorm room.
-          </p>
+          <CheckoutForm
+            checkout={checkout}
+            setCheckout={setCheckout}
+            email={lastSavedEmail}
+            name={lastSavedName}
+            shoppingCart={lastSavedSC}
+            subtotal={savedSubtotal}
+            total={savedTotal}
+          />
         </div>
       </section>
     </>

@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 export default function ProductCard(props) {
   const [quantity, setQuantity] = useState(0);
   
+  // clear cart
   useEffect(() => {
     if (props.shoppingCart.length === 0){
       setQuantity(0)
@@ -22,7 +23,8 @@ export default function ProductCard(props) {
         {
           product: props.product.name,
           quantity: quantity,
-          price: props.product.price,
+          unit_price: props.product.price,
+          cost: props.product.price
         },
       ];
       props.setShoppingCart(newCart);
@@ -30,6 +32,7 @@ export default function ProductCard(props) {
       props.setShoppingCart((prevCart) => {
         const updatedCart = [...prevCart];
         updatedCart[index].quantity = quantity;
+        updatedCart[index].cost = props.product.price * quantity
         return updatedCart;
       });
     } else if (quantity === 0) {
