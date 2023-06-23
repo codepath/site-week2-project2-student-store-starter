@@ -5,7 +5,7 @@ import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import Loginform from "../Login/Login";
 import Checkout from "../Checkout/Checkout";
 
-function Sidebar({ShoppingList}) {
+function Sidebar({ShoppingList, SetShoppingList}) {
   const[Name, SetName] = useState("")
   const[Email, SetEmail] = useState("")
   const [SubTotal, SetSubTotal] = useState(0)
@@ -23,6 +23,7 @@ function Sidebar({ShoppingList}) {
       {/* Content of Sidebar */}
       <div className="ComponentContainer" style = {{display: isOpen ? "block" : "none"}}>
         <ShoppingCart ShoppingList = {ShoppingList} SubTotal={SubTotal} SetSubTotal={SetSubTotal}/>
+        <button onClick={() => {SetShoppingList([])}}>Clear Cart</button>
         <Loginform SetName = {SetName} SetEmail = {SetEmail}/>
         <Checkout ShoppingList={ShoppingList} SubTotal={SubTotal} Name={Name} Email={Email}/>
       </div>
