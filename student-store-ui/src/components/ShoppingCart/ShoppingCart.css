@@ -1,30 +1,61 @@
-.cartProductName {
+
+.shopping-cart .header-row {
+    display: flex;
+    height: 50px;
+    background-color: #d3b89e;
+    color: black;
+    border-bottom: 2px solid white;
+
+}
+
+.shopping-cart .header-row span {
+    flex: 1;
+    color: var(--pure-white);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 17px;
+    font-weight: 600;
+    margin-left: 15px;
+}
+
+.shopping-cart .product-row {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+    background-color: #d3b89e;
+    color: black;
+    border-bottom: 1px solid white;
+
+}
+
+.shopping-cart .product-row span {
+    flex: 1;
+}
+
+.shopping-cart .receipt {
     display: flex;
     flex-direction: column;
-    list-style-type: none;
-  }
-  
-  .sidebarOpen{
-      display: flex;
-      justify-content:center;
-  }
-  .shop {
-      display: flex;
-      flex-direction: column;
-  }
-  
-  .shopping-cart, .name-label, .quantity-label, .price-label {
-      display: flex;
-  }
-  
-  .shopping-cart {
-      flex-direction: column;
-  }
-  .name-label, .quantity-label, .price-label {
-     display: flex;
-      flex-direction: row;
-  }
-  
-  .labelsAndProducts {
-      display:flex;
-  }
+    background: var(--pure-white);
+    border-top: 2px solid black;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.shopping-cart .receipt-taxes {
+    border-top: 2px solid black;
+}
+
+.shopping-cart .receipt-total {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.shopping-cart .receipt .receipt-subtotal, .shopping-cart .receipt .receipt-taxes, .shopping-cart .receipt .receipt-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+}

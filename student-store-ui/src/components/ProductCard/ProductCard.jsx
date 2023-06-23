@@ -6,8 +6,9 @@ import Star from "../Icons/Star.jsx"
 import "./ProductCard.css"
 import HalfStar from "../Icons/HalfStar";
 import { useState } from "react"
+import * as React from "react";
 
-export default function ProductCard({product, productId, handleAddItemToCart, handleRemoveItemToCart}) {
+export default function ProductCard({product, productId, handleAddItemToCart, handleRemoveItemFromCart}) {
     
     const formatter = new Intl.NumberFormat("en-US", {
         style: "currency",
@@ -48,12 +49,12 @@ export default function ProductCard({product, productId, handleAddItemToCart, ha
                     </div>
                     <div className="actions">
                         <div className="buttons">
-                            <i className="material-icons" onClick={increment}>
-                                ➕
-                            </i>
-                            <i className="material-icons" onClick={reduce}>
-                                ➖
-                            </i>
+                        <button className="add" onClick={() => handleAddItemToCart(product)}>
+      <i className="material-icons">Add</i>
+    </button>
+    <button className="remove">
+      <i className="material-icons" onClick={() => handleRemoveItemFromCart(product)}>Remove</i>
+    </button>
                         </div>
 
                         {quantity ? (

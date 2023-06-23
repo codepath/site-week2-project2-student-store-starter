@@ -19,8 +19,7 @@ export default function Sidebar({
     <section className={`sidebar ${isOpen}`}>
       <div className="wrapper">
         <button className={`toggle-button button ${isOpen}`} onClick={handleOnToggle}>
-
-          <img className="material-icons md-48" src="/src/assets/right-arrow.png"></img>
+          <img className="material-icons md-48" src="src/assets/right-arrow.png"></img>
         </button>
         <ShoppingCart 
         isOpen={isOpen}
