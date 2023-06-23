@@ -2,7 +2,11 @@ import * as React from "react";
 import "./ProductCard.css";
 import { Link } from "react-router-dom";
 
-export default function ProductCard({ product, cart, setCart }) {
+export default function ProductCard({
+  product,
+  shoppingCart,
+  setShoppingCart,
+}) {
   const [quantity, setQuantity] = React.useState(0);
 
   const handleAddToCart = () => {
@@ -10,17 +14,22 @@ export default function ProductCard({ product, cart, setCart }) {
       let newQuantity = prevQuantity + 1;
       let newCart;
 
-      const productInCart = cart.find((item) => item.productId === product.id);
+      const productInCart = shoppingCart.find(
+        (item) => item.productId === product.id
+      );
       if (productInCart) {
         productInCart.quantity = newQuantity;
-        newCart = cart.map((item) =>
+        newCart = shoppingCart.map((item) =>
           item.productId === product.id ? productInCart : item
         );
       } else {
-        newCart = [...cart, { productId: product.id, quantity: newQuantity }];
+        newCart = [
+          ...shoppingCart,
+          { productId: product.id, quantity: newQuantity },
+        ];
       }
 
-      setCart(newCart);
+      setShoppingCart(newCart);
       return newQuantity;
     });
   };
@@ -30,18 +39,22 @@ export default function ProductCard({ product, cart, setCart }) {
       let newQuantity = prevQuantity > 0 ? prevQuantity - 1 : 0;
       let newCart;
 
-      const productInCart = cart.find((item) => item.productId === product.id);
+      const productInCart = shoppingCart.find(
+        (item) => item.productId === product.id
+      );
       if (productInCart) {
         if (newQuantity === 0) {
-          newCart = cart.filter((item) => item.productId !== product.id);
+          newCart = shoppingCart.filter(
+            (item) => item.productId !== product.id
+          );
         } else {
           productInCart.quantity = newQuantity;
-          newCart = cart.map((item) =>
+          newCart = shoppingCart.map((item) =>
             item.productId === product.id ? productInCart : item
           );
         }
 
-        setCart(newCart);
+        setShoppingCart(newCart);
       }
 
       return newQuantity;

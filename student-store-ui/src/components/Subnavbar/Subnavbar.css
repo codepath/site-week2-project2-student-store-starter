@@ -121,9 +121,9 @@
     transform: scale(.01)
 }
 
-.sub-navbar .category-menu li.is-active button {
+/* .sub-navbar .category-menu li.is-active button {
     border-bottom: solid 2px var(--bright-green)
-}
+} */
 
 .sub-navbar .category-menu li button {
     cursor: pointer;

@@ -6,8 +6,8 @@ export default function Home({
   products,
   searchTerm,
   selectedCategory,
-  cart,
-  setCart,
+  shoppingCart,
+  setShoppingCart,
 }) {
   return (
     <div className="home">
@@ -16,8 +16,8 @@ export default function Home({
           products={products}
           searchTerm={searchTerm}
           selectedCategory={selectedCategory}
-          setCart={setCart}
-          cart={cart}
+          setShoppingCart={setShoppingCart}
+          shoppingCart={shoppingCart}
         />
       </div>
     </div>

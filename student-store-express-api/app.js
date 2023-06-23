@@ -25,26 +25,30 @@ app.get('/store/:id',(req,res) =>{
     res.status(200);
     res.send({"product" : myProduct})
 })
-app.post('/store', (req, res ) => {
 
-    console.log(req.body.names);
-    res.send(req.body.names[0])
-})
-
-app.post('/checkout', (req, res) => {
-    const cart = req.body;
+  app.post('/checkout', (req, res) => {
+    const cart = req.body; 
   
-    for (let item of cart) {
-      const product = db.products.find(prod => prod.id === item.productId);
-      if (!product) {
-        res.status(400).send({ error: `Product with id ${item.productId} not found.` });
-        return;
+    let total = 0;
+    let receiptItems = [];
+  
+    cart.forEach(item => {
+      const product = db.products.find(p => p.id === item.productId);
+      if (product) {
+        total += product.price * item.quantity;
+        receiptItems.push({ 
+          name: product.name,
+          price: product.price,
+          quantity: item.quantity,
+          productId: product.id
+        });
       }
-    }
-  
-   
-    res.send({ message: 'Order processed successfully.' });
+    });
+    
+    res.send({ total, receiptItems }); 
   });
+  
+  
   
 
 module.exports = app;

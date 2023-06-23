@@ -6,8 +6,8 @@ export default function ProductGrid({
   products,
   searchTerm,
   selectedCategory,
-  cart,
-  setCart,
+  shoppingCart,
+  setShoppingCart,
 }) {
   return (
     <div id="Buy" className="product-grid">
@@ -28,8 +28,8 @@ export default function ProductGrid({
               <ProductCard
                 key={product.id}
                 product={product}
-                cart={cart}
-                setCart={setCart}
+                shoppingCart={shoppingCart}
+                setShoppingCart={setShoppingCart}
               />
             ))}
         </div>

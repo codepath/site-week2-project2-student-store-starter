@@ -1,6 +1,10 @@
-export default function ShoppingCart({ cart, products, handleSidebarToggle }) {
+export default function ShoppingCart({
+  shoppingCart,
+  products,
+  handleSidebarToggle,
+}) {
   let subtotal = 0;
-  cart.forEach((item) => {
+  shoppingCart.forEach((item) => {
     const product = products.find((p) => p.id === item.productId);
     if (product) {
       subtotal += product.price * item.quantity;
@@ -19,7 +23,7 @@ export default function ShoppingCart({ cart, products, handleSidebarToggle }) {
         </span>
       </h3>
 
-      {cart.length > 0 ? (
+      {shoppingCart.length > 0 ? (
         <div>
           <div className="CartTable">
             <div className="header">
@@ -29,7 +33,7 @@ export default function ShoppingCart({ cart, products, handleSidebarToggle }) {
                 <span className="center">Unit Price</span>
                 <span className="center">Cost</span>
               </div>
-              {cart.map((item) => {
+              {shoppingCart.map((item) => {
                 const product = products.find((p) => p.id === item.productId);
                 return product ? (
                   <div className="product-row" key={product.id}>

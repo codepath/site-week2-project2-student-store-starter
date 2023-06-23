@@ -3,7 +3,7 @@ import "./Sidebar.css";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import CheckoutForm from "../CheckoutForm/CheckoutForm";
 
-export default function Sidebar({ cart, products }) {
+export default function Sidebar({ shoppingCart, products, setShoppingCart }) {
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
   const [isContentVisible, setIsContentVisible] = React.useState(false);
 
@@ -24,13 +24,17 @@ export default function Sidebar({ cart, products }) {
         <div className="shopping-cart">
           {isContentVisible && (
             <ShoppingCart
-              cart={cart}
+              shoppingCart={shoppingCart}
               handleSidebarToggle={handleSidebarToggle}
               products={products}
             />
           )}
           {isContentVisible && (
-            <CheckoutForm handleSidebarToggle={handleSidebarToggle} />
+            <CheckoutForm
+              handleSidebarToggle={handleSidebarToggle}
+              setShoppingCart={setShoppingCart}
+              shoppingCart={shoppingCart}
+            />
           )}
         </div>
       </div>

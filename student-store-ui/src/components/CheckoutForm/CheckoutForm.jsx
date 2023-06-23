@@ -1,21 +1,79 @@
 import * as React from "react";
 import "./CheckoutForm.css";
+import axios from "axios";
 
-export default function CheckoutForm({ handleSidebarToggle }) {
-  const [name, setName] = React.useState("");
-  const [email, setEmail] = React.useState("");
+export default function CheckoutForm({
+  handleSidebarToggle,
+  shoppingCart,
+  setShoppingCart,
+}) {
+  const [checkoutForm, setCheckoutForm] = React.useState({
+    name: "",
+    email: "",
+  });
+
   const [termsAndConditions, setTermsAndConditions] = React.useState(false);
+  const [errorMessage, setErrorMessage] = React.useState("");
+  const [receiptItems, setReceiptItems] = React.useState([]);
+  const [total, setTotal] = React.useState(0);
+  const [isCheckoutSuccessful, setIsCheckoutSuccessful] = React.useState(false);
 
-  const handleNameChange = (event) => {
-    setName(event.target.value);
+  const handleOnSubmitCheckoutForm = (event) => {
+    event.preventDefault();
+    setIsCheckoutSuccessful(false);
+
+    if (!checkoutForm.name || !checkoutForm.email) {
+      setErrorMessage("Please fill out all fields.");
+      return;
+    }
+
+    if (!termsAndConditions) {
+      setErrorMessage(
+        "You must agree to the terms and conditions before checking out."
+      );
+      return;
+    }
+
+    if (shoppingCart.length === 0) {
+      setErrorMessage(
+        "Your shopping cart is empty. Add some products before checking out."
+      );
+      return;
+    }
+
+    setErrorMessage(""); // Clear any previous errors
+    setIsCheckoutSuccessful(true);
+    sendCartDataToServer();
+
+    setReceiptItems([...shoppingCart]);
+
+    setShoppingCart([]); // Empty the shopping cart after successful form submission
   };
 
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
+  /// end of handleOnSubmitCheckout
+
+  const handleOnCheckoutFormChange = (event) => {
+    setCheckoutForm({
+      ...checkoutForm,
+      [event.target.name]: event.target.value,
+    });
   };
 
   const handleTermsAndConditionsChange = (event) => {
     setTermsAndConditions(event.target.checked);
+  };
+
+  const sendCartDataToServer = async () => {
+    try {
+      const response = await axios.post(
+        "http://localhost:3001/checkout",
+        shoppingCart
+      );
+      setTotal(response.data.total);
+      setReceiptItems(response.data.receiptItems);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -35,8 +93,8 @@ export default function CheckoutForm({ handleSidebarToggle }) {
               className="checkout-form-input"
               type="text"
               placeholder="Student Name"
-              value=""
-              onChange={(e) => setName(e.target.value)}
+              value={checkoutForm.name}
+              onChange={handleOnCheckoutFormChange}
             />
           </div>
         </div>
@@ -48,15 +106,19 @@ export default function CheckoutForm({ handleSidebarToggle }) {
               className="checkout-form-input"
               type="email"
               placeholder="student@codepath.org"
-              value=""
-              onChange={(e) => setEmail(e.target.value)}
+              value={checkoutForm.email}
+              onChange={handleOnCheckoutFormChange}
             />
           </div>
         </div>
         <div className="field">
           <div className="control">
             <label className="checkbox">
-              <input name="termsAndConditions" type="checkbox" />
+              <input
+                name="termsAndConditions"
+                type="checkbox"
+                onClick={handleTermsAndConditionsChange}
+              />
               <span className="label">
                 I agree to the{" "}
                 <a href="#terms-and-conditions">terms and conditions</a>
@@ -67,42 +129,56 @@ export default function CheckoutForm({ handleSidebarToggle }) {
         <p className="is-danger"></p>
         <div className="field">
           <div className="control">
-            <button className="button checkout-button">Checkout</button>
+            <button
+              className="button checkout-button"
+              onClick={handleOnSubmitCheckoutForm}
+            >
+              Checkout
+            </button>
+          </div>
+          <p className="is-danger">{errorMessage}</p>
+        </div>
+      </div>
+      {isCheckoutSuccessful && (
+        <div className="checkout-success">
+          <h3>
+            Checkout Info{" "}
+            <span className="icon button" onClick={handleSidebarToggle}>
+              <i className="material-icons md-48">fact_check</i>
+            </span>
+          </h3>
+          <div className="card">
+            <header className="card-head">
+              <h4 className="card-title">Receipt</h4>
+            </header>
+            <section className="card-body">
+              <p className="header">
+                Showing receipt for {checkoutForm.name} available at{" "}
+                {checkoutForm.email}:
+              </p>
+              <ul className="purchase">
+                {receiptItems.map((item) => (
+                  <li key={item.productId}>
+                    {item.quantity} total {item.name} purchased at a cost of $
+                    {item.price} for a total cost of $
+                    {(item.quantity * item.price).toFixed(2)}
+                  </li>
+                ))}
+                <li>Before taxes, the subtotal was ${total.toFixed(2)}</li>
+                <li>
+                  After taxes, the total comes out to $
+                  {(total * 1.0875).toFixed(2)}
+                </li>
+              </ul>
+            </section>
+
+            <footer className="card-foot">
+              <button className="button is-success">Shop More</button>
+              <button className="button">Exit</button>
+            </footer>
           </div>
         </div>
-      </div>
-      <div className="checkout-success">
-        <h3>
-          Checkout Info{" "}
-          <span className="icon button" onClick={handleSidebarToggle}>
-            <i className="material-icons md-48">fact_check</i>
-          </span>
-        </h3>
-        <div className="card">
-          <header className="card-head">
-            <h4 className="card-title">Receipt</h4>
-          </header>
-          <section className="card-body">
-            <p className="header">
-              Showing receipt for Nara Macias available at student:
-            </p>
-            <ul className="purchase">
-              <li>
-                7 total Flamin Hot Cheetos purchased at a cost of $1.50 for a
-                total cost of $10.50.
-              </li>
-              <li>Before taxes, the subtotal was $10.50</li>
-              <li>
-                After taxes and fees were applied, the total comes out to $11.42
-              </li>
-            </ul>
-          </section>
-          <footer className="card-foot">
-            <button className="button is-success">Shop More</button>
-            <button className="button">Exit</button>
-          </footer>
-        </div>
-      </div>
+      )}
     </div>
   );
 }

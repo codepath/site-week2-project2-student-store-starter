@@ -19,7 +19,7 @@ export default function App() {
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = React.useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
-  const [cart, setCart] = useState([]);
+  const [shoppingCart, setShoppingCart] = useState([]);
 
   useEffect(() => {
     axios.get(url).then((response) => {
@@ -31,7 +31,11 @@ export default function App() {
     <div className="app">
       <main>
         <BrowserRouter>
-          <Sidebar cart={cart} setCart={setCart} products={products} />
+          <Sidebar
+            shoppingCart={shoppingCart}
+            setShoppingCart={setShoppingCart}
+            products={products}
+          />
           <Navbar />
           <Hero />
           <Subnavbar
@@ -46,8 +50,8 @@ export default function App() {
                   products={products}
                   searchTerm={searchTerm}
                   selectedCategory={selectedCategory}
-                  cart={cart}
-                  setCart={setCart}
+                  shoppingCart={shoppingCart}
+                  setShoppingCart={setShoppingCart}
                 />
               }
             ></Route>
@@ -56,8 +60,8 @@ export default function App() {
               path="/products/:id"
               element={
                 <ProductDetails
-                  cart={cart}
-                  setCart={setCart}
+                  shoppingCart={shoppingCart}
+                  setShoppingCart={setShoppingCart}
                   products={products}
                 />
               }
