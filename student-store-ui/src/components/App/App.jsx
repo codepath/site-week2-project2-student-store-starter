@@ -11,13 +11,13 @@ import ProductDetails from "../ProductDetails/ProductDetails"
 
 export default function App() {
 
-  
+  const [cartItems, setCartItems] = useState([]);
 
   return (
     <div className="app">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<HomePage/>}/> 
+          <Route path="/" element={<HomePage cartItems={cartItems} setCartItems={setCartItems}/>}/> 
           <Route path="products/:id" element={<ProductDetails/>}/> 
         </Routes> 
       </BrowserRouter>
@@ -25,11 +25,11 @@ export default function App() {
   )
 }
 
-function HomePage(){
+function HomePage({cartItems, setCartItems}){
 
   const url = "https://codepath-store-api.herokuapp.com/store";
   const [products, setProducts]=useState([]);
-  const [cartItems, setCartItems] = useState([]);
+  
 
   useEffect(() => {
     axios.get(url).then((response) => {
