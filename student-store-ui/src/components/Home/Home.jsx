@@ -49,7 +49,7 @@ export default function Home({products, ShoppingList, SetShoppingList}) {
 
       {/* Making a search container with an input field and category buttons */}
       <div className="search-container">
-        <input type = "text" value = {search} onChange={(e) => setSearch(e.target.value)} placeholder = "Search for Cool Items!"/><br/><br/>
+        <input type = "text" value = {search} onChange={(e) => setSearch(e.target.value)} placeholder = "Search..."/><br/><br/>
         {categories.map((filtercat, idx) => (
         <button key={idx} onClick={() => setCategory(filtercat)}>{filtercat}</button>
       ))}

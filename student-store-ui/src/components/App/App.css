@@ -21,6 +21,7 @@ body{
   height: 100%;
   width: 20%;
   background-color: #035177;
+  text-align: center;
 }
 .navbar{
   background-color: #035177;
@@ -46,6 +47,7 @@ nav a{
   justify-content: space-between 100px;
   padding-left: 170px;
 }
+
 .product img{
   width: 80%;
   height: auto;
@@ -63,8 +65,14 @@ nav a{
   font-family: monospace;
   font-size: 15px;
   font-weight: bold;
-  
+  transition: scale 500ms ease-in-out;
 }
+
+.product:hover{
+  scale: 1.1;
+  transition: scale 500ms ease-in-out;
+}
+
 .link{
   width: 100%;
   display: flex;
@@ -128,7 +136,14 @@ nav a{
 
 .search-container{
   text-align: center;
+  font-size: large;
 }
+
+.search-container input{
+  text-align: center;
+  font-size: 25px;
+}
+
 .search-container button{
   background-color: #fcefb0;
   color: #035177;
@@ -137,9 +152,11 @@ nav a{
   height: 50px;
   font-family: monospace;
   font-weight: bold;
+  transition: scale 500ms ease-in-out;
 }
 .search-container button:hover{
   scale: 1.1;
+  transition: scale 500ms ease-in-out;
 }
 .facts{
   text-align: center;
@@ -166,11 +183,17 @@ nav a{
 
 }
 
-.Side-button{
-  width: 130px;
-  height: 30px;
-  background-color: #fcefb0;
+.ArrowButton{
+  filter: invert();
+  filter: brightness(8);
+  transition: scale 500ms ease-in-out;
 }
+
+.ArrowButton:hover{
+  transition: scale 500ms ease-in-out;
+  scale: 0.8;
+}
+
 .Side-button:hover{
   scale: 1.1;
 }

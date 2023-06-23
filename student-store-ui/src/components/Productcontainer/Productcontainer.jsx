@@ -1,5 +1,6 @@
 import react from "react";
 import { Link } from "react-router-dom";
+import "./Productcontainer.css"
 
 //Default function that takes in a prop productFilter
 export default function Productgrid({ productFilter, ShoppingList, SetShoppingList }) {
