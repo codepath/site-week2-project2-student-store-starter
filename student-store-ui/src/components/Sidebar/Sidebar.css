@@ -6,9 +6,9 @@
     width: 600px;
     overflow-x: hidden;
     transition: 0.5s;
-    background-color: #111;
+    background-color: #2c4047;;
   }
   
   .sidebar.collapsed {
-    width: 40px;
+    width: 60px;
   }
