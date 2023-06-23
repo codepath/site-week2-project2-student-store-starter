@@ -20,7 +20,7 @@ h3 {
   color: black;
 } */
 
-.about .summary {
+.summary {
   display: flex;
   flex-direction: row;
   width: 80%;
@@ -41,3 +41,18 @@ h3 {
   width: 360px;
   background-color: #2c4047;
 }
+
+.footer .content {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.footer .links {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+}
+
+/* .link-column {
+
+} */

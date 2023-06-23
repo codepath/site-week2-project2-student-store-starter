@@ -1,5 +1,3 @@
-element.style {
-}
 .hero {
     width: 80%;
     max-width: 100vw;
@@ -30,7 +28,6 @@ body {
 }
 .hero .content {
     background: #00c385;
-    max-width: var(--content-width);
     width: 100%;
     margin: 0 auto;
     display: flex;
@@ -40,3 +37,4 @@ body {
     height: 350px;
     padding: 30px;
 }
+

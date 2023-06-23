@@ -3,7 +3,7 @@ import "./Sidebar.css";
 import { useState } from "react";
 
 export default function Sidebar() {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
 
   const toggleSidebar = () => {
     setIsCollapsed(!isCollapsed);
@@ -15,10 +15,17 @@ export default function Sidebar() {
         {isCollapsed ? "Show Cart" : "Hide Cart"}
       </button>
       {!isCollapsed && (
-        <div>
-          <p>Sidebar</p>
-          {/* You can add your shopping cart component or any other content here */}
-        </div>
+        <>
+          <div>
+            <p>Shopping Cart</p>
+          </div>
+          <div>
+            <p>Payment Info</p>
+          </div>
+          <div>
+            <p>Checkout Info</p>
+          </div>
+        </>
       )}
     </section>
   );
