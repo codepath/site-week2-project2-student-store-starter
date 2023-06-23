@@ -93,7 +93,7 @@ export default function App() {
       } else if (item.id === product.id) {
         return { ...item, quantity: item.quantity - 1 };
       } else {
-        // return item;
+      return item;
       }
     });
     setShoppingCart(newCart);
