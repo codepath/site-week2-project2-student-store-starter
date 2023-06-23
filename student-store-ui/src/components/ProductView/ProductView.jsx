@@ -12,7 +12,6 @@ const ProductView = () => {
         `https://codepath-store-api.herokuapp.com/store/${id}`
       );
       setProduct(response.data.product);
-      console.log(response.data.product, 'hola');
     } catch (error) {
       console.error('Error fetching the data:', error);
     }

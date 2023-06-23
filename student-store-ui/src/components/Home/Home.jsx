@@ -25,7 +25,7 @@ import GirlModel from '../../assets/images/ed-tech-survey-march-2023-schwartz.jp
 import Footer from './HomeComponents/Footer';
 import { useNavigate } from 'react-router-dom';
 
-export default function Home() {
+export default function Home({ addToCart, removeFromCart }) {
   const options = [
     {
       title: 'All Categories',
@@ -79,14 +79,28 @@ export default function Home() {
 
   const handleOptionClick = (option) => {
     setSelectedCategory(option);
-    if (option.category === null) {
-      setFilteredProducts(products);
-      setShowingProducts(products);
+    if (search === '') {
+      if (option.category === null) {
+        setFilteredProducts(products);
+        setShowingProducts(products);
+      } else {
+        const filtered = products.filter(
+          (product) => product.category === option.category
+        );
+        setFilteredProducts(filtered);
+        setShowingProducts(filtered);
+      }
     } else {
-      const filtered = products.filter(
+      const filteredCategory = products.filter(
         (product) => product.category === option.category
       );
-      setFilteredProducts(filtered);
+      setFilteredProducts(filteredCategory);
+
+      const filtered = filteredCategory.filter(
+        (product) =>
+          product.category === option.category &&
+          product.name.toLowerCase().includes(search.toLowerCase())
+      );
       setShowingProducts(filtered);
     }
   };
@@ -96,10 +110,8 @@ export default function Home() {
     setSearch(searchText);
 
     if (searchText === '') {
-      // If the search input is empty, show all products
       setShowingProducts(filteredProducts);
     } else {
-      // Filter the products based on the search input
       const filtered = filteredProducts.filter((product) =>
         product.name.toLowerCase().includes(searchText.toLowerCase())
       );
@@ -163,11 +175,17 @@ export default function Home() {
       >
         {showingProducts.length > 0 ? (
           showingProducts.map((product) => (
-            <Card key={product.id} props={product} goToProduct={goToProduct} />
+            <Card
+              key={product.id}
+              props={product}
+              goToProduct={goToProduct}
+              addToCart={addToCart}
+              removeFromCart={removeFromCart}
+            />
           ))
         ) : (
           <p className='text-2xl font-semibold'>
-            No hay el producto que buscas ☹️
+            I think the product you're looking for is not available
           </p>
         )}
       </div>
