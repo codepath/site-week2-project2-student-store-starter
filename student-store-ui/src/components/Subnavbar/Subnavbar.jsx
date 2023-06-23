@@ -6,7 +6,12 @@ import "./Subnavbar.css";
 
 ProductGrid;
 
-const Subnavbar = ({ products }) => {
+const Subnavbar = ({
+  products,
+  shoppingCart,
+  handleAddItemToCart,
+  handleRemoveItemFromCart,
+}) => {
   //
   //   const { category } = useParams();
 
@@ -24,7 +29,7 @@ const Subnavbar = ({ products }) => {
   };
 
   const handleClick = (event) => {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     setFilteredData(
       products.filter((product) =>
         product.category
@@ -77,9 +82,19 @@ const Subnavbar = ({ products }) => {
         </ul>
 
         {filteredData ? (
-          <ProductGrid products={filteredData} />
+          <ProductGrid
+            products={filteredData}
+            handleAddItemToCart={handleAddItemToCart}
+            handleRemoveItemFromCart={handleRemoveItemFromCart}
+            shoppingCart={shoppingCart}
+          />
         ) : (
-          <ProductGrid products={products} />
+          <ProductGrid
+            products={products}
+            handleAddItemToCart={handleAddItemToCart}
+            handleRemoveItemFromCart={handleRemoveItemFromCart}
+            shoppingCart={shoppingCart}
+          />
         )}
       </div>
     </div>

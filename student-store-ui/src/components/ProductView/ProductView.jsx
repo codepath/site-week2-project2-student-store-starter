@@ -5,14 +5,15 @@ import Navbar from "../Navbar/Navbar";
 import Hero from "../Hero/Hero";
 
 const ProductView = ({
+  shoppingCart,
   product,
   productId,
   quantity,
   handleAddItemToCart,
-  handleRemoveItemToCart,
+  handleRemoveItemFromCart,
 }) => {
-  console.log("Product view product " + product);
-  console.log("Product id " + productId);
+  // console.log("Product view product " + product);
+  // console.log("Product id " + productId);
 
   return (
     //puts in the nav bar and the product card
@@ -22,12 +23,10 @@ const ProductView = ({
       <h1>{"Product " + product.id}</h1>
 
       <ProductCard
-        productNeeded={handleAddItemToCart}
+        shoppingCart={shoppingCart}
         product={product}
-        quantity={quantity}
         handleAddItemToCart={handleAddItemToCart}
-        handleRemoveItemToCart={handleRemoveItemToCart}
-        showDescription={false}
+        handleRemoveItemFromCart={handleRemoveItemFromCart}
       />
 
       <p>{product.description}</p>

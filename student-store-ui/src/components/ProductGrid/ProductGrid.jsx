@@ -2,17 +2,12 @@ import React from "react";
 import ProductCard from "../ProductCard/ProductCard";
 import { useEffect, useState } from "react";
 
-const ProductGrid = ({ products, devcategory }) => {
-  // console.log("pro", products[1].category);
-  // const [filteredData, setFilteredData] = useState(products);
-  // console.log("filter", filteredData);
-
-  // products.filter((product) => console.log(product.category));
-
-  // setFilteredData(
-  //   products.filter((product) => product.category.includes("food"))
-  // );
-  // console.log("flte", filteredData);
+const ProductGrid = ({
+  products,
+  handleAddItemToCart,
+  handleRemoveItemFromCart,
+  shoppingCart,
+}) => {
   return (
     //returns the grid where the product cards will be displayed
     <div
@@ -31,13 +26,14 @@ const ProductGrid = ({ products, devcategory }) => {
             key={product.id}
             product={product}
             productId={product.id}
+            handleAddItemToCart={handleAddItemToCart}
+            handleRemoveItemFromCart={handleRemoveItemFromCart}
+            shoppingCart={shoppingCart}
           />
         );
       })}
     </div>
   );
 };
-
-// <ProductCard key={product.id} product={product} />;
 
 export default ProductGrid;

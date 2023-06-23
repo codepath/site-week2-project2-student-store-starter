@@ -1,17 +1,19 @@
 import * as React from "react";
 import "./Home.css";
 import Hero from "../Hero/Hero";
-import ProductGrid from "../ProductGrid/ProductGrid";
 import Navbar from "../Navbar/Navbar";
-import SearchBar from "../SearchBar/SearchBar";
-// import Sidebar from "../Sidebar/Sidebar";
 import Subnavbar from "../Subnavbar/Subnavbar";
 import Contact from "../Contact/Contact";
 import Footer from "../Footer/Footer";
 import About from "../About/About";
 import Sidebar from "../Sidebar/Sidebar";
 
-export default function Home({ products, category }) {
+export default function Home({
+  products,
+  handleAddItemToCart,
+  handleRemoveItemFromCart,
+  shoppingCart,
+}) {
   //create new state
 
   return (
@@ -20,11 +22,21 @@ export default function Home({ products, category }) {
       <Navbar />
       <Hero />
       {/* second navbar */}
-      <Subnavbar products={products} />
-      <Sidebar className="sidebar" />
+      <Subnavbar
+        products={products}
+        handleAddItemToCart={handleAddItemToCart}
+        handleRemoveItemFromCart={handleRemoveItemFromCart}
+        shoppingCart={shoppingCart}
+      />
+      <Sidebar
+        className="sidebar"
+        products={products}
+        shoppingCart={shoppingCart}
+        handleAddItemToCart={handleAddItemToCart}
+        handleRemoveItemFromCart={handleRemoveItemFromCart}
+      />
 
       <About />
-      {/* <Sidebar /> */}
       <Contact />
       <Footer />
     </div>

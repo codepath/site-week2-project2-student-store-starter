@@ -5,40 +5,32 @@ import { useState } from "react";
 // import Cancel, { colorPalette } from "material-icons-react";
 // import { BiSolidCartAdd } from "react-icons/fa";
 // // import { AiOutlineShoppingCart } from "react-icons/fa";
-<link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/icon?family=Material+Icons"
-></link>;
+import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
+import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
+import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
+import ShoppingCart from "../ShoppingCart/ShoppingCart";
 
-export default function Sidebar({}) {
+export default function Sidebar({
+  products,
+  shoppingCart,
+  shoppingCartlength,
+  handleAddItemToCart,
+  handleRemoveItemFromCart,
+}) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const openTable = (
-    <>
-      <table>
-        <tr>
-          <th>Name</th>
-          <th>Quantity</th>
-          <th>Unit Price</th>
-          <th>Cost</th>
-        </tr>
-      </table>
-      <h3>Payment Info</h3>
-      <form>
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name"></input>
-        <label for="email">Email</label>
-        <input type="text" id="email" name="email"></input>
-        <button className="checkout-btn">Checkout</button>
-      </form>
-    </>
-  );
+  if (shoppingCart?.length === 0) {
+    // console.log(true);
+  } else {
+    // console.log("this is shopping", shoppingCart);
+  }
 
   return (
     <section className={isOpen ? "sidebar open" : "sidebar closed"}>
-      <h3>Shopping Cart</h3>
-      <button onClick={() => setIsOpen(!isOpen)}>Toggle</button>
-      {isOpen ? openTable : null}
+      <ArrowRightAltIcon onClick={() => setIsOpen(!isOpen)}></ArrowRightAltIcon>
+      {isOpen ? (
+        <ShoppingCart products={products} shoppingCart={shoppingCart} />
+      ) : null}
     </section>
   );
 }

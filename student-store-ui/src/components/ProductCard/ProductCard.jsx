@@ -4,23 +4,28 @@ import "./ProductCard.css";
 
 const ProductCard = ({
   product,
-  productId,
-  quantity = 0,
+  productQuantity,
   handleAddItemToCart,
-  handleRemoveItemToCart,
-  showDescription,
+  handleRemoveItemFromCart,
+  shoppingCart,
 }) => {
-  const [productQuantity, setProductQuantity] = useState(0);
-  const [productAmount, setProductAmount] = useState(0);
-  //   const { productId } = useParams();
-  const decrement = () => {
-    setProductQuantity(productQuantity - 1);
-  };
-  const increment = () => {
-    setProductQuantity(productQuantity + 1);
-  };
+  const { productId } = useParams();
+  // const decrement = (event) => {
+  //   setProductQuantity(productQuantity - 1);
+  //   handleRemoveItemFromCart;
+  // };
+  // const increment = (event) => {
+  //   setProductQuantity(productQuantity + 1);
+  //   handleAddItemToCart(event);
+  // };
 
-  console.log(productQuantity);
+  // console.log(shoppingCart);
+  // const handleRemoveItemFromCart = (event) => {
+  //   handleAddItemToCart++;
+  // };
+  // const handleRemoveItemFromCart = (event) => {
+  //   handleRemoveItemFromCart--;
+  // };
 
   return (
     // returns the productbar the main card
@@ -35,13 +40,21 @@ const ProductCard = ({
         <p className="product-price">${product.price}</p>
 
         <div className="wrapper">
-          <span onClick={decrement} className="minus">
+          <button
+            onClick={handleRemoveItemFromCart}
+            value={product.id}
+            className="minus"
+          >
             -
-          </span>
+          </button>
           <span className="01">{productQuantity}</span>
-          <span onClick={increment} className="plus">
+          <button
+            onClick={handleAddItemToCart}
+            value={product.id}
+            className="plus"
+          >
             +
-          </span>
+          </button>
         </div>
       </div>
     </div>

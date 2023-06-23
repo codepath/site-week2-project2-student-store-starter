@@ -1,0 +1,13 @@
+.MyTable {
+  display: table;
+}
+.MyTable .MyTable-Tr {
+  display: table-row;
+}
+.MyTable .MyTable-Tr .MyTable-Td {
+  display: table-cell;
+}
+.MyTable .title {
+  background-color: aliceblue;
+  color: white;
+}
