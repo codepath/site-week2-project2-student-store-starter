@@ -12,16 +12,6 @@ export default function Home({ products, setProducts, shoppingCart, setShoppingC
   const [activeCategory, setActiveCategory] = useState("All Categories");
   const [searchResults, setSearchResults] = useState("");
 
-  // IF NOT NEEDED DELETE!
-
-  // function filterCategory() {
-  //   if (activeCategory === "All Categories") {
-  //     return products;
-  //   } else {
-
-  //   }
-  // }
-
   function filterFunction() {
     const filteredSearchProducts = products?.filter((product) => {
       return product.name.toLowerCase().includes(searchResults.toLowerCase())
@@ -36,18 +26,11 @@ export default function Home({ products, setProducts, shoppingCart, setShoppingC
         return product.category.toLowerCase() === activeCategory.toLowerCase()
       })
     }
-
-
     return filteredByCategory
-
   }
-
   const filteredProducts = filterFunction()
-
-
   return (
     <>
-
       <Hero />
       <Subnavbar
         activeCategory={activeCategory}
@@ -56,7 +39,6 @@ export default function Home({ products, setProducts, shoppingCart, setShoppingC
         setProducts={setProducts}
         setSearchResults={setSearchResults}
       />
-
       <div className="home">
         <div className="home-content" id="Buy">
           <h2 className="home-title">Best Selling Products</h2>

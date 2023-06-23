@@ -88,14 +88,11 @@ export default function App() {
     <div className="app">
       <BrowserRouter>
         <main>
-
           <Navbar />
           <Sidebar isOpen={sidebar} handleOnToggle={() => setSideBar(!sidebar)} shoppingCart = {shoppingCart} setShoppingCart = {setShoppingCart} products = {products} />
-
           <Routes>
             <Route path="/" element={<Home products={products} setProducts={setProducts}  shoppingCart = {shoppingCart} setShoppingCart = {setShoppingCart} handleAddQuantity = {handleAddQuantity} handleSubstractQuantity = {handleSubstractQuantity} getQuantity = {getQuantity} />} />
             <Route path="products/:id" element={<ProductDetail handleAddQuantity = {handleAddQuantity} handleSubstractQuantity = {handleSubstractQuantity} getQuantity = {getQuantity} shoppingCart = {shoppingCart} setShoppingCart = {setShoppingCart}/>} />
-
           </Routes>
         </main>
       </BrowserRouter>

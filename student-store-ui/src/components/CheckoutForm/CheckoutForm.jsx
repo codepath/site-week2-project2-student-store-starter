@@ -71,7 +71,6 @@ export default function CheckoutForm({ shoppingCart, setShoppingCart }) {
     }
 
     // BACKEND
-
     const informationToBackend = async () => {
         try {
           const response = await axios.post(

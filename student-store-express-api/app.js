@@ -1,7 +1,5 @@
 const express = require('express')
 const app = express()
-// const fs = require('fs')
-// const path = require('path')
 const cors = require('cors')
 const db = require('./data/db.json')
 
@@ -42,7 +40,6 @@ app.post('/checkout', (req, res) => {
     taxesFees = subtotal * 0.0875;
     total = subtotal + taxesFees
     });
-    console.log(req.body)
     res.send({total, taxesFees, subtotal});
 });
 
