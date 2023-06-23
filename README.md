@@ -65,6 +65,7 @@ Sammy,Luis, Alan, Marwan
 
 ## *Week 3* Application Features
 
+![ezgif com-video-to-gif (2)](https://github.com/BrianB7B/project2-student-store-starter/assets/120551307/60518ba5-8aa2-4a38-854d-99f4f41e3ae2)
 
 
 ### Core Features
