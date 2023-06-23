@@ -40,6 +40,7 @@ export default function App() {
   const [receiptName, setReceiptName] = useState("");
   const [receiptEmail, setReceiptEmail] = useState("");
   const [receiptTotalPrice, setReceiptTotalPrice] = useState(0);
+  const [allOrders, setAllOrders] = useState([]);
 
   useEffect(() => {
     axios.get(url).then((response) => {
@@ -153,6 +154,7 @@ export default function App() {
       shoppingCart &&
       shoppingCart.length > 0
     ) {
+
       setReceiptTotalPrice(totalPrice)
       setReceiptEmail(emailTerm)
       setReceiptName(nameTerm)
@@ -162,15 +164,13 @@ export default function App() {
       setNameTerm("");
       setEmailTerm("");
       setAcceptedTermsAndConditions(false);
+      setAllOrders([allOrders.concat(shoppingCart)]) // used in orders.jsx
       setShoppingCart([])
-      // TODO:
-      // BUT what about the name disappearing?
-      // BUT what about the shopping cart items disappearing?
-      // BUT what about unclicking the actual box? --> css?
 
     } else {
       setIncorrectSubmission(true);
     }
+    // console.log(acceptedTermsAndConditions)
   }
 
   // Sets the checkout form as not submitted and resets name and email inputs from use
@@ -179,14 +179,12 @@ export default function App() {
     setNameTerm("");
     setEmailTerm("");
     setAcceptedTermsAndConditions(false);
-    // setShoppingCart([]);
   }
 
   function handleAcceptTermsAndConditions(event) {
-    setAcceptedTermsAndConditions(true);
+      // console.log("checked?: ", event.target.checked)
+      setAcceptedTermsAndConditions(event.target.checked);
   }
-
-
 
   return (
     <div className="app">
@@ -247,10 +245,17 @@ export default function App() {
                 }
               />
               <Route
-                path="products/orders"
+                path="/orders"
                 element={
                   <Orders
-                    shoppingCart={shoppingCart}
+                    products={products}
+                    // order={order}
+                    receiptName={receiptName}
+                    receiptEmail={receiptEmail}
+                    receiptTotalPrice={receiptTotalPrice}
+                    receiptSubtotal={receiptSubtotal}
+                 
+                    allOrders={allOrders}
                   />
                 }
               />

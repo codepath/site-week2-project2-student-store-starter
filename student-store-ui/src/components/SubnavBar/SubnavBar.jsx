@@ -18,7 +18,7 @@ export default function SubnavBar({formData, handleSearch, handleCategoryFilter}
             Help</span>
             <div className="cart">
             <Link className = "material-icons" to={"/orders"}>
-                My Orders
+                ORDERS
             </Link>
                 {/* <a href="/">My Cart<i className="material-icons">shopping_cart</i></a> */}
             </div>

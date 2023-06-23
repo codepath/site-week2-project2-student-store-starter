@@ -10,7 +10,7 @@ export default function CheckoutForm({
   handleShopMore,
   order,
   receiptSubtotal,
-  receiptTotalPrice
+  receiptTotalPrice,
 }) {
   // console.log(shoppingCart)
 
@@ -34,7 +34,8 @@ export default function CheckoutForm({
     );
   } else {
     // checkout form has been submitted
-    if (order !== []) { // checkout only if there are items in the cart
+    if (order !== []) {
+      // checkout only if there are items in the cart
       return (
         <div className="checkout-success">
           <h3>
@@ -52,6 +53,7 @@ export default function CheckoutForm({
                 Showing receipt for {receiptName} available at {receiptEmail}:
               </p>
               <ul className="purchase">
+                {console.log("THIS IS AN ORDER: ", order)}
                 {order.map((item) => (
                   <li>
                     {item.quantity} total
@@ -70,14 +72,20 @@ export default function CheckoutForm({
                         }) +
                       " "}
                     for a total cost of
-                    {" " +
+                    {" $" +
                       item.quantity *
                         products.filter(
                           (product) => item.itemId === product.id
                         )[0].price}
                   </li>
                 ))}
-                <li>Before taxes, the subtotal was {receiptSubtotal}</li>
+                <li>
+                  Before taxes, the subtotal was{" "}
+                  {receiptSubtotal.toLocaleString("us-EN", {
+                    style: "currency",
+                    currency: "USD",
+                  })}
+                </li>
                 <li>
                   After taxes and fees were applied, the total comes out to{" "}
                   {receiptTotalPrice}
@@ -88,7 +96,9 @@ export default function CheckoutForm({
               <button className="button is-success" onClick={handleShopMore}>
                 Shop More
               </button>
-              <button className="button" onClick={handleShopMore}>Exit</button>
+              <button className="button" onClick={handleShopMore}>
+                Exit
+              </button>
               {/* TODO: DO SOMETHING DIFFERENT ON EXIT? */}
             </footer>
           </div>

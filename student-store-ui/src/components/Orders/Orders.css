@@ -1,0 +1,29 @@
+.header {
+    color: black;
+}
+.purchase {
+    padding-left: 20px;
+}
+.card-body {
+    color: black;
+    display: flex;
+    flex-direction: column;
+}
+.purchase li {
+    color: black;
+}
+h1 {
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.orders{
+    justify-content: center;
+    display: flex;
+    background-color: #a9d6e5;
+}
+.purchase .product-img{
+    width: 350px;
+    height: 350px;
+}

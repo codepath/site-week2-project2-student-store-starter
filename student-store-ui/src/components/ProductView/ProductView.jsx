@@ -42,7 +42,7 @@ export default function ProductView({
 
     return (
       <div className="product-view">
-        <h1 className="product-id">Product #7</h1>
+        <h1 className="product-id">Product #{id}</h1>
         <div className="product-view-card">
           <div className="product-card">
             <div className="media">
