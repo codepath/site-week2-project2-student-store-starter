@@ -18,6 +18,7 @@ export default function App() {
   const [shoppingCart, setShoppingCart] = useState([]) //the array should have the products in cart with respective quantities
   const [error, setError] = useState("there has been an error"); //used to display message when something goes wrong with api requests
 
+  
   function handleAddQuantity(product) {
     const cartItem = shoppingCart?.find(item => item.id === product.id) // evaluates if the given product is already at the shoppingCart array or not
     if(cartItem) {

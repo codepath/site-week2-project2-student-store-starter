@@ -29,14 +29,22 @@ app.get('/store/:id',(req,res)=> {
     res.send({"product": myProduct})
 })
 
-app.post('/store', (req,res) => {
- // 1. When a user clicks check out, then run function that calls this endpoint (axios.post)
- // 2. This function (app.post) should receive req.body data (shopping cart)
- // 3. Function needs to calculate total price
- // 4. 
-    console.log(req.body.names);
-    res.send(req.body.names[0])
-})
+app.post('/checkout', (req, res) => {
+    const cart = req.body;
+    let subtotal = 0;
+    let taxesFees = 0;
+    let total = 0;
+    cart.forEach(item => {
+      const product = db.products.find(p => p.id === item.id);
+      if (product) {
+        subtotal += (product.price * item.quantity);
+    }
+    taxesFees = subtotal * 0.0875;
+    total = subtotal + taxesFees
+    });
+    console.log(req.body)
+    res.send({total, taxesFees, subtotal});
+});
 
 
 module.exports = app;

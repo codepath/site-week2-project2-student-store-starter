@@ -23,7 +23,7 @@ export default function Sidebar({ isOpen = false, handleOnToggle, shoppingCart, 
       <section className="sidebar open">
         <div className="wrapper">
         <button onClick={handleOnToggle}><i className="material-icons md-48">arrow_backward</i></button>
-          <ShoppingCart shoppingCart = {shoppingCart}/>
+          <ShoppingCart shoppingCart = {shoppingCart} setShoppingCart = {setShoppingCart}/>
           <CheckoutForm shoppingCart = {shoppingCart} setShoppingCart = {setShoppingCart}/>
         </div>
       </section>

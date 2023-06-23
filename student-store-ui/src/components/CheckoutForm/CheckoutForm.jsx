@@ -1,6 +1,7 @@
 import * as React from "react"
 import "./CheckoutForm.css"
 import { useState, useEffect } from "react"
+import axios from "axios"
 
 export default function CheckoutForm({ shoppingCart, setShoppingCart }) {
 
@@ -11,6 +12,9 @@ export default function CheckoutForm({ shoppingCart, setShoppingCart }) {
     const [emailForDisplay, setEmailForDisplay] = useState('')
     const [danger, setDanger] = useState(false)
     const [missingInput, setMissingInput] = useState(false)
+    const [total, setTotal] = useState(0)
+    const [taxesFees, setTaxesFees] = useState(0)
+    const [subtotalDisplay, setSubtotalDisplay] = useState(0)
 
     function handleCheckout() {
         if (shoppingCart.length === 0) {
@@ -29,6 +33,7 @@ export default function CheckoutForm({ shoppingCart, setShoppingCart }) {
           setMissingInput(false);
           
         }
+        informationToBackend();
       }
 
     let errorItemQuantity =
@@ -46,9 +51,6 @@ export default function CheckoutForm({ shoppingCart, setShoppingCart }) {
     <p class="is-danger" >User info must include an email and name.</p>
     </>
 
-
-
-
     function handleExit() {
         setShoppingCart([]) // finish shopping and emptying the cart to new shop 
         setCheckoutActive(false)
@@ -58,25 +60,36 @@ export default function CheckoutForm({ shoppingCart, setShoppingCart }) {
         return shoppingCart.reduce((sum, item) => {
             return (sum + (item.price * item.quantity))
         }, 0);
-
     }
 
     const handleNameInput = (e) => {
         setNameInput(nameInput => nameInput = e.target.value)
-
-
     }
 
     const handleEmailInput = (e) => {
         setEmailInput(emailInput => emailInput = e.target.value)
-
-
     }
 
+    // BACKEND
+
+    const informationToBackend = async () => {
+        try {
+          const response = await axios.post(
+            "http://localhost:3001/checkout",
+            shoppingCart
+          );
+          setTotal(response.data.total);
+          setSubtotalDisplay(response.data.subtotal)
+          setTaxesFees(response.data.taxesFees)
+        } catch (error) {
+          console.error(error);
+        }
+      };
+      console.log(subtotalDisplay)
 
 
-    let beforeCheckout =
 
+    let beforeCheckout = 
         <>
             <div className="content">
                 <p>A confirmation email will be sent to you so that you can confirm this order. Once you have confirmed the
@@ -86,7 +99,6 @@ export default function CheckoutForm({ shoppingCart, setShoppingCart }) {
         </>
 
     let checkoutReceipt =
-
         <>
             <div class="card">
                 <header class="card-head">
@@ -101,18 +113,15 @@ export default function CheckoutForm({ shoppingCart, setShoppingCart }) {
                                     <li> {item.quantity} total {item.name} purchased at a cost of ${item.price.toFixed(2)} for a total cost of {(item.quantity * item.price).toFixed(2)}.</li>
                                 );
                             }
-
                         })}
 
-                        <li>Before taxes, the subtotal was ${subtotal(shoppingCart).toFixed(2)}</li>
-                        <li>After taxes and fees were applied, the total comes out to ${(subtotal(shoppingCart) + subtotal(shoppingCart) * 0.08).toFixed(2)}</li>
+                        <li>Before taxes, the subtotal was ${subtotalDisplay.toFixed(2)}</li>
+                        <li>After taxes and fees were applied, the total comes out to ${total.toFixed(2)}</li>
                     </ul>
                 </section>
                 <footer class="card-foot"><button class="button" onClick={handleExit}>Exit</button></footer>
             </div>
         </>
-
-
 
     return (
         <>

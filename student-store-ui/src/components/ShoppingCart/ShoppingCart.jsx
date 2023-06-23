@@ -2,8 +2,12 @@ import * as React from "react"
 import "./ShoppingCart.css"
 import { useState, useEffect } from "react"
 
-export default function ShoppingCart({shoppingCart }) {
+export default function ShoppingCart({shoppingCart, setShoppingCart }) {
 
+    function handleEmptyCart(){
+      setShoppingCart([])
+    }
+    
     function subtotal(shoppingCart){
         return shoppingCart.reduce((sum, item) => {
             return (sum + (item.price * item.quantity))
@@ -46,6 +50,7 @@ export default function ShoppingCart({shoppingCart }) {
           <span className="center">Unit Price</span>
           <span className="center">Cost</span>
         </div>
+        
       
   
         {shoppingCart?.map((item) => {
@@ -64,6 +69,7 @@ export default function ShoppingCart({shoppingCart }) {
 
     })}
       </div>
+      
   
       <div className="receipt">
         <div className="receipt-subtotal">
@@ -72,13 +78,14 @@ export default function ShoppingCart({shoppingCart }) {
         </div>
         <div className="receipt-taxes">
           <span className="label">Taxes and Fees</span>
-          <span className="center">${(subtotal(shoppingCart) * 0.08).toFixed(2)}</span>
+          <span className="center">${(subtotal(shoppingCart) * 0.0875).toFixed(2)}</span>
         </div>
         <div className="receipt-total">
           <span className="label">Total</span>
-          <span className="center total-price">${(subtotal(shoppingCart) + subtotal(shoppingCart) * 0.08).toFixed(2)}</span>
+          <span className="center total-price">${(subtotal(shoppingCart) + subtotal(shoppingCart) * 0.0875).toFixed(2)}</span>
         </div>
       </div>
+      <div className="control"><button className="empty-button" onClick={handleEmptyCart}>Empty Cart</button></div>
     </div>
   </>
   
