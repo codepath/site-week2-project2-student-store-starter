@@ -39,9 +39,10 @@
     border: none
 }
 
-.sidebar .toggle-button.open {
-    transform: rotateY(180deg)
+.toggle-button.open {
+    transform: rotateY(180deg);
 }
+
 
 .sidebar i {
     margin-right: 10px;

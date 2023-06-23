@@ -36,3 +36,34 @@ a {
   text-decoration: none;
   color: var(--bright-green)
 }
+.material-icons.md-18 {
+  font-size: 18px
+}
+
+.material-icons.md-24 {
+  font-size: 24px
+}
+
+.material-icons.md-36 {
+  font-size: 36px
+}
+
+.material-icons.md-48 {
+  font-size: 40px
+}
+
+.material-icons.md-dark {
+  color: #0000008a
+}
+
+.material-icons.md-dark.md-inactive {
+  color: #00000042
+}
+
+.material-icons.md-light {
+  color: #fff
+}
+
+.material-icons.md-light.md-inactive {
+  color: #ffffff4d
+}

@@ -1,35 +1,37 @@
 import * as React from "react";
 import "./Sidebar.css";
-import { useState } from "react";
+import ShoppingCart from "../ShoppingCart/ShoppingCart";
+import CheckoutForm from "../CheckoutForm/CheckoutForm";
 
-export default function Sidebar() {
-    const [isOpen, setIsOpen] = useState("sidebar closed");
+export default function Sidebar({ cart, products }) {
+  const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
+  const [isContentVisible, setIsContentVisible] = React.useState(false);
 
-    const handleSideBarOpen = () => {
-      setIsOpen(isOpen === "sidebar closed" ? "sidebar open" : "sidebar closed");
-    }
-
-    console.log("isOpen: " + isOpen)
+  const handleSidebarToggle = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+    setIsContentVisible(!isSidebarOpen);
+  };
 
   return (
-    <section className={isOpen}>
+    <section className={isSidebarOpen ? "sidebar open" : "sidebar closed"}>
       <div className="wrapper">
-        <button className="toggle-button button closed" onClick={() => handleSideBarOpen()}>
+        <button
+          className={`toggle-button button ${isSidebarOpen ? "open" : ""}`}
+          onClick={handleSidebarToggle}
+        >
           <i className="material-icons md-48">arrow_forward</i>
         </button>
         <div className="shopping-cart">
-          <div className="cart-icons"> 
-            <span className="cart-icon icon button" onClick={() => handleSideBarOpen()}>
-              <i className="material-icons md-48">add_shopping_cart</i>
-            </span>   
-            
-            <span className="cart-icon icon button" onClick={() => handleSideBarOpen()}>
-              <i className="material-icons md-48">monetization_on</i>
-            </span>
-            <span className="cart-icon icon button"onClick={() => handleSideBarOpen()}>
-              <i className="material-icons md-48">fact_check</i>
-            </span>
-          </div>
+          {isContentVisible && (
+            <ShoppingCart
+              cart={cart}
+              handleSidebarToggle={handleSidebarToggle}
+              products={products}
+            />
+          )}
+          {isContentVisible && (
+            <CheckoutForm handleSidebarToggle={handleSidebarToggle} />
+          )}
         </div>
       </div>
     </section>
