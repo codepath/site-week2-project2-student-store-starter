@@ -5,6 +5,7 @@ export default function ShoppingCart({ShoppingList}){
 
     console.log(ShoppingList)
     const [FirstItem, SetFirstItem] = useState(false)
+    
     const [SubTotal, SetSubTotal] = useState(0)
 
     useEffect(() =>{

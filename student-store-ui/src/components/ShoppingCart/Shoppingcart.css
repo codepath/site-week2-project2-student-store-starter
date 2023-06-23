@@ -1,23 +1,32 @@
+
+ .Shoppingcart{
+    background-color: aliceblue;
+    border-radius: 10px;
+    padding: 20px;
+ }
+
 .Categories{
-    flex-direction: row;
-    display: flex;
-    flex-wrap: wrap;
+    display:flex;
     justify-content: space-between;
-    border: 5px solid white;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .ShoppingCartSpan{
-    flex-direction: row;
-    display:flex;
-    flex-wrap: wrap;
+    display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .subTotal{
     margin-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
     font-weight: bold;
-    color: aliceblue;
 }
 
+.subTotal p{
+    margin-bottom: 5px;
+}

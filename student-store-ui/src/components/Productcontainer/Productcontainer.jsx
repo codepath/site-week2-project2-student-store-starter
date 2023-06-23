@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 //Default function that takes in a prop productFilter
 export default function Productgrid({ productFilter, ShoppingList, SetShoppingList }) {
     function addToCart(product){
+
         const exists = ShoppingList?.find(item => product.id === item.id)
+        
         if(exists){
             const updatedList = ShoppingList.map((item)=>{
                 if(item.id === product.id){
