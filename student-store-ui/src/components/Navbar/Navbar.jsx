@@ -4,12 +4,15 @@ import logo from "../../images/logo.png"
 import {Link} from "react-router-dom"
 import Sidebar from "../Sidebar/Sidebar"
 
-export default function Navbar() {
+export default function Navbar({setShoppingCart, shoppingCart}) {
 
 
   return (
     <>
-    <Sidebar/>
+    <Sidebar 
+    setShoppingCart={setShoppingCart} 
+    shoppingCart={shoppingCart}/>
+
     <nav className="navbar">
       <div>
 

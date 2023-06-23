@@ -28,7 +28,7 @@ const [catValue, setCatValue] = useState('')
       <BrowserRouter>
         <main>
         <Routes>
-          <Route path="" element={<Home products={products}
+          <Route path="/" element={<Home products={products}
            searchValue={searchValue}
         setSearchValue={setSearchValue}
         setSearchCatValue={setSearchCatValue}

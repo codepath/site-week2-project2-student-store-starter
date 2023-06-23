@@ -1,7 +1,8 @@
  #search-input {
     font-size: 15px;
-    width: 500px;
+    width: 600px;
     height: 50px;
+    border-radius: 10px;
 }
 
 .search { 
@@ -9,11 +10,14 @@
     display: block;
     margin-top: 20px;
     margin-bottom: 20px;
+    
 }
 
 button {
     font-size: 15px;
     padding: 15px;
+    background-color: white;
+    border-radius: 10px;
 
 }
 
@@ -32,6 +36,10 @@ position: relative;
 border-bottom: solid #9bd1e5;
 }
 
+
+.cat-button:hover{
+    background-color: #9bd1e5;
+}
 .categories{
     margin: 0 auto;
 }

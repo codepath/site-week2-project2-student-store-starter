@@ -34,7 +34,11 @@ export default function ProductGrid(props) {
           <p className="gridP">Nun Here!</p>
         ) : (
           newProducts?.map((product) => (
-            <ProductCard product={product}  />
+            <ProductCard 
+            product={product} 
+            setShoppingCart={props.setShoppingCart} 
+            shoppingCart={props.shoppingCart}
+             />
           ))
         )}
       </div>

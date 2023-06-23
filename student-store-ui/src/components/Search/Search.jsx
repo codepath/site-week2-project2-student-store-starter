@@ -35,7 +35,7 @@ export default function Search(props) {
              <button 
                 type="submit" 
                 onClick={handleSearchSubmit}>
-                    Search
+                 🔍 
                 </button>
             </form>
         </div>

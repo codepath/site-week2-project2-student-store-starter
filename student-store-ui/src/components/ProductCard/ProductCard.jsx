@@ -1,7 +1,8 @@
 import * as React from "react";
 import "./ProductCard.css";
 import { Link } from "react-router-dom";
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
+
 
 export default function ProductCard(props) {
 
@@ -18,8 +19,36 @@ export default function ProductCard(props) {
         quantity - 1)
     }
   
-  
-      return (
+   useEffect(() => {
+    let index = props.shoppingCart?.findIndex((cart) => {
+      return cart.product === props.product.name;
+    });
+    if (quantity === 1 && index === -1){
+      const newCart = [
+        ...props.shoppingCart,
+        {
+          product: props.product.name, 
+          quantity: quantity,
+          unit_price: props.product.price,
+          cost: props.product.price 
+        },
+      ];
+      props.setShoppingCart(newCart);
+    } else if (quantity >= 1){
+      props.setShoppingCart((prevCart) => {
+        const updatedCart = [...prevCart];
+        updatedCart[index].quantity = quantity;
+        updatedCart[index].cost = props.product.price * quantity;
+
+        return updatedCart;
+      });
+    } else if (quantity === 0){
+      props.setShoppingCart((shoppingCart => shoppingCart.toSpliced(index,1)))
+    }
+   }, [quantity]);
+
+  console.log(props.shoppingCart)
+    return (
         <div className="product-name">
           <Link to={"products/" + props.product.id}>
           <img src={props.product.image} />

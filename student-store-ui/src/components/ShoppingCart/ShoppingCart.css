@@ -1,4 +1,61 @@
-span, h3 {
-    display: inline-block;
-justify-content: center;}
+span,
+h3 {
+  display: inline-block;
+  justify-content: center;
+}
 
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+}
+label {
+  display: flex;
+}
+
+#checkbox,
+#coding {
+  display: inline-block;
+}
+
+p {
+  font-size: 50px;
+}
+
+.checkbox-input {
+  display: inline-block;
+}
+
+#checkout-button {
+  background-color: white;
+  border: none;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+table {
+  /* border-collapse: collapse; */
+  width: 100%;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  text-align: left;
+  overflow: hidden;
+  border-color: black;
+  margin: auto;
+  margin-top: 50px;
+  background-color: white;
+  /* margin-bottom: 50px; */
+} 
+
+#checkout{
+  background-color: white;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  text-align: center;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
