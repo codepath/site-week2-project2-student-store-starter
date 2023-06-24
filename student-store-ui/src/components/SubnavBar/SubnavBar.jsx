@@ -20,10 +20,6 @@ export default function SubnavBar({formData, handleSearch, handleCategoryFilter}
             <Link className = "material-icons" to={"/orders"}>
                 PREVIOUS ORDERS
             </Link>
-            {/* <Link className = "material-icons" to="/orders/0" state={{ transaction: "transaction"}}> */}
-                {/* PREVIOUS ORDER */}
-              {/* </Link> */}
-                {/* <a href="/">My Cart<i className="material-icons">shopping_cart</i></a> */}
             </div>
             </div>
         </div>

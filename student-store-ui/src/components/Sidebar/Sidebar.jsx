@@ -154,7 +154,7 @@ export default function Sidebar({
                   <br></br>
                   {(nameTerm == "") ? "Name input required." : null}
                   <br></br>
-                  {(emailTerm == "") ? "Email input required." : null}
+                  {(emailTerm == "" || !emailTerm.includes("@") || !emailTerm.includes(".com")) ? "Email input required." : null}
                 </p>
 
                 <div className="field">

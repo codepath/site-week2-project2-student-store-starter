@@ -52,4 +52,5 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 
 - [ ] Create an endpoint for fetching all orders in the database and an endpoint for serving an individual order based on its ID.
 - [x] Build a page in the UI that displays the list of all past orders. The user should be able to click on any individual order to take them to a more detailed page of the transaction.
-- [ ] Allow users to use an input to filter orders by the email of the person who placed the order.
+- [x] Allow users to use an input to filter orders by the email of the person who placed the order.
+- [x] Only allow users to checkout using a valid email, name and accepting the terms and conditions for the storefront.

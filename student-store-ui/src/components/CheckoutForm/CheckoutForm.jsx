@@ -12,7 +12,6 @@ export default function CheckoutForm({
   receiptSubtotal,
   receiptTotalPrice,
 }) {
-  // console.log(shoppingCart)
 
   if (!checkoutSubmitted) {
     return (
@@ -73,10 +72,10 @@ export default function CheckoutForm({
                       " "}
                     for a total cost of
                     {" $" +
-                      item.quantity *
+                      (item.quantity *
                         products.filter(
                           (product) => item.itemId === product.id
-                        )[0].price}
+                        )[0].price).toFixed(2)}
                   </li>
                 ))}
                 <li>
@@ -99,7 +98,6 @@ export default function CheckoutForm({
               <button className="button" onClick={handleShopMore}>
                 Exit
               </button>
-              {/* TODO: DO SOMETHING DIFFERENT ON EXIT? */}
             </footer>
           </div>
         </div>

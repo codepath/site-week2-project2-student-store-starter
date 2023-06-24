@@ -45,7 +45,8 @@ export default function App() {
   const [totalSpendings, setTotalSpendings] = useState(0);
   const [allTransactions, setAllTransactions] = useState([]);
   const [totalOrderQuantity, setTotalOrderQuantity] = useState([]);
-// let totalOrderQuantity = [];
+  const [filteredTransactions, setFilteredTransactions] = useState([]);
+  const [transactionInput, setTransactionInput] = useState("")
 
   useEffect(() => {
     axios.get(url).then((response) => {
@@ -134,11 +135,9 @@ export default function App() {
       );
       let updatedCart = [...shoppingCart];
       if (updatedCart[index].quantity - 1 == 0) {
-        // remove item from shopping cart array entirely
         updatedCart = shoppingCart.filter((item) => item.itemId !== productId);
         setShoppingCart(updatedCart);
       } else {
-        // Decrement the quantity by 1 for the item with the given item ID
         updatedCart[index] = {
           itemId: updatedCart[index].itemId,
           quantity: --updatedCart[index].quantity,
@@ -146,19 +145,26 @@ export default function App() {
       }
       setShoppingCart(updatedCart);
     }
-  } // if item is not in shopping cart yet, just do nothing
+  } 
+
+  function handleTransactionInput(event){
+    setTransactionInput(event.target.value)
+    {let filteredItems = allTransactions?.filter((transaction) => {
+        return transaction.email.includes(event.target.value)
+    });
+    setFilteredTransactions(filteredItems)}   
+  }
 
   // Sets the checkout form as submitted
   // Empties shopping cart, resets the name and email forms and accepted T&C state
   function handleCheckout(event) {
     if (
       nameTerm != "" &&
-      emailTerm !== "" &&
+      emailTerm.includes("@") && emailTerm.includes(".com") &&
       acceptedTermsAndConditions &&
       shoppingCart &&
       shoppingCart.length > 0
     ) {
-      // console.log(shoppingCart)
       setReceiptTotalPrice(totalPrice);
       setReceiptEmail(emailTerm);
       setReceiptName(nameTerm);
@@ -272,9 +278,12 @@ export default function App() {
                     receiptName={receiptName}
                     receiptEmail={receiptEmail}
                     totalSpendings={totalSpendings}
-                    allTransactions={allTransactions}
+                    allTransactions={(transactionInput!="")? filteredTransactions : allTransactions}
                     totalOrderQuantity={totalOrderQuantity}
                     setTotalOrderQuantity={setTotalOrderQuantity}
+                    transactionInput={transactionInput}
+                    filteredTransactions={filteredTransactions}
+                    handleTransactionInput={handleTransactionInput}
                   ></Orders>
                 }
               ></Route>

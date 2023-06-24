@@ -1,25 +1,18 @@
 import * as React from "react";
 import "./Transaction.css";
-import { useLocation } from 'react-router-dom'
-
-
-
+// import { useLocation } from 'react-router-dom'
 
 export default function Transaction({transaction, products}) {
     // const location = useLocation()
 // const { transaction } = location.state.transaction
 // console.log(transaction)
   return (
-   
     <>
-
-        {console.log(transaction)}
-
-      <h4 className="header">
+      <h4 className="transaction-header">
         Showing all orders for {transaction.name}. Order receipt available at{" "}
         {transaction.email}:
       </h4>
-      <ul className="purchase">
+      <ul className="transaction-purchase">
         {transaction.order.map((item) => (
           <>
             <li>
