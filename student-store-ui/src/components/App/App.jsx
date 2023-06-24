@@ -14,6 +14,8 @@ export default function App() {
 
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [category, setCategory] = useState("All Categories");
   const [quantity, setQuantity] = useState({});
   const [shoppingCart, setShoppingCart] = useState([]);
@@ -40,6 +42,7 @@ export default function App() {
     if (isAlreadyOpen) {
       let i = shoppingCart.findIndex((product) => product.id === productId);
       let updatedCart = [...shoppingCart];
+      
       updatedCart[i] = {
         id: updatedCart[i].id,
         quantity: ++updatedCart[i].quantity,
@@ -58,10 +61,15 @@ export default function App() {
     if (isAlreadyOpen) {
       let i = shoppingCart.findIndex((product) => product.id === productId);
       let updatedCart = [...shoppingCart];
+      if (updatedCart[i].quantity === 1) {
+       updatedCart = updatedCart.toSpliced(i,1)
+      }
+
+      if (updatedCart[i]?.quantity > 0) {
       updatedCart[i] = {
         id: updatedCart[i].id,
         quantity: --updatedCart[i].quantity,
-      };
+      };}
       setShoppingCart(updatedCart);
     } else {
       setShoppingCart([...shoppingCart, { id: productId, quantity: 1 }]);

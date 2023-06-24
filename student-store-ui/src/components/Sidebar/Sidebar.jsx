@@ -9,6 +9,7 @@ export default function Sidebar({shoppingCart, setShoppingCart, quantity, setQua
   const [subtotal, setSubtotal] = useState(0);
   const[total, setTotal] = useState(0);
   const [taxes, setTaxes] = useState(0);
+  const[checkout, setCheckout] = useState(false);
 
   function handleToggleButton() {
     setSideBar((sideBar) => !sideBar);
@@ -67,11 +68,13 @@ export default function Sidebar({shoppingCart, setShoppingCart, quantity, setQua
             taxes={taxes}
             setTaxes={setTaxes}
             setQuantity={setQuantity}
+            checkout={checkout}
+            setCheckout={setCheckout}
           />
         ) : (
           showIcons()
         )}
-        
+
       </div>
     </section>
   );

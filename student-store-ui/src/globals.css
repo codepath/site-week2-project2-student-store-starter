@@ -2,7 +2,7 @@
 .navbar {
   width: 100%;
   max-width: 100vw;
-  background: var(--dark-blue);
+  background: (#100702);
   color: var(--pure-white);
   height: 70px;
   display: flex;
@@ -95,7 +95,7 @@
 .sub-navbar .content .search-bar i {
   height: 40px;
   width: 40px;
-  background: var(--bright-green);
+  background: (#a94814);
   color: #fff;
   fill: #fff;
   display: flex;
@@ -132,7 +132,7 @@
 
 .sub-navbar .content .cart {
   color: var(--pure-white);
-  background: var(--bright-green);
+  background: (#ad551f);
   width: 170px;
   height: 40px;
   display: flex;
@@ -177,7 +177,7 @@
 }
 
 .sub-navbar .category-menu li.is-active button {
-  border-bottom: solid 2px var(--bright-green);
+  border-bottom: solid 2px (#DDD0C8);
 }
 
 .sub-navbar .category-menu li button {
@@ -460,7 +460,7 @@
   padding: 0;
   overflow-y: scroll;
   padding-bottom: 2rem;
-  background: var(--dark-blue);
+  background: (#0a0502);
   border-right: solid 1px white;
 }
 
@@ -974,7 +974,7 @@
 }
 
 .hero .content {
-  background: var(--bright-green);
+  background: (#DDD0C8);
   max-width: var(--content-width);
   width: 100%;
   margin: 0 auto;

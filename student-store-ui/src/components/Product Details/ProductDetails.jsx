@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 
 export default function ProductDetails() {
   const [product, setProduct] = useState({});
-  const url = "https://codepath-store-api.herokuapp.com/store/";
+  const url = "http://localhost:3001/store";
 
   const { id } = useParams();
 

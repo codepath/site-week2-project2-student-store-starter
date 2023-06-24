@@ -1,5 +1,6 @@
 import react, { useState, useEffect } from "react";
 import "./ShoppingCart.css";
+import CheckoutForm from "../CheckoutForm/CheckoutForm";
 
 export default function ShoppingCart({
   searchTerm,
@@ -17,12 +18,24 @@ export default function ShoppingCart({
   setTotal,
   taxes,
   setTaxes,
+  checkout,
+  setCheckout
 }) {
   const handleChange = (event) => {
     event.preventDefault();
     setSearchTerm(event.target.value);
     console.log(event.target.value);
   };
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
+  const handleCheckout = (e) => {
+    e.preventDefault();
+  setCheckout(true);
+  };
+
+  
 
   useEffect(() => {
     const calcSubtotal = () => {
@@ -51,8 +64,10 @@ export default function ShoppingCart({
     calcTaxes();
     calcTotal();
   }, [shoppingCart, subtotal, taxes]);
+
   function emptyCart() {
     setShoppingCart([]);
+  
   }
 
   return (
@@ -65,78 +80,81 @@ export default function ShoppingCart({
           </span>
         </h3>
 
-        {/* if (shoppingCart.length === 0) {
-        return(
-            <div className="notification">
-          No items added to cart yet. Start shopping now!
-        </div>
-        );
-    }else{
-        return (
-   <>
-   
-   
-   </>
-        )
-    } */}
-
-        <div class="CartTable">
-          <div class="header">
-            <div class="header-row">
-              <span class="flex-2">Name</span>
-              <span class="center">Quantity</span>
-              <span class="center">Unit Price</span>
-              <span class="center">Cost</span>
-            </div>
-
-            {shoppingCart.map((item) => (
-              <div className="product-row">
-                <span className="flex-2 cart-product-name">
-                  {
-                    products?.filter((product) => product.id === item.id)[0]
-                      .name
-                  }
-                </span>
-
-                <span className="center cart-product-quantity">
-                  {item.quantity}
-                </span>
-
-                <span className="center cart-product-price">
-                  {
-                    products?.filter((product) => product.id === item.id)[0]
-                      .price
-                  }
-                </span>
-
-                <span className="center cart-product-subtotal">
-                  {products?.filter((product) => product.id === item.id)[0]
-                    .price * item.quantity}
-                </span>
+     
+        {shoppingCart?.length === 0 ? (
+          <div className="notification">
+            No items added to cart yet. Start shopping now!
+          </div>
+        ) : (
+          <div class="CartTable">
+            <div class="header">
+              <div class="header-row">
+                <span class="flex-2">Name</span>
+                <span class="center">Quantity</span>
+                <span class="center">Unit Price</span>
+                <span class="center">Cost</span>
               </div>
-            ))}
+
+              {shoppingCart.map((item) => (
+                <div className="product-row">
+                  <span className="flex-2 cart-product-name">
+                    {
+                      products?.filter((product) => product.id === item.id)[0]
+                        .name
+                    }
+                  </span>
+
+                  <span className="center cart-product-quantity">
+                    {item.quantity}
+                  </span>
+
+                  <span className="center cart-product-price">
+                    {
+                      products?.filter((product) => product.id === item.id)[0]
+                        .price
+                    }
+                  </span>
+
+                  <span className="center cart-product-subtotal">
+                    {(
+                      products?.filter((product) => product.id === item.id)[0]
+                        .price * item.quantity
+                    ).toFixed(2)}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <div class="receipt">
+              <div class="receipt-subtotal">
+                <span class="label">Subtotal</span>
+                <span></span>
+                <span></span>
+                <span class="center subtotal">${subtotal.toFixed(2)}</span>
+              </div>
+              <div class="receipt-taxes">
+                <span class="label">Taxes and Fees</span>
+                <span></span>
+                <span></span>
+                <span class="center">${taxes.toFixed(2)}</span>
+              </div>
+              <div class="receipt-total">
+                <span class="label">Total</span>
+                <span></span>
+                <span></span>
+                <span class="center total-price">${total.toFixed(2)}</span>
+                
+              </div>
+              <button
+                className="button checkout-button"
+                onClick={handleCheckout}>
+                Clear Cart
+              </button>
+              
+            </div>
           </div>
-          <div class="receipt">
-            <div class="receipt-subtotal">
-              <span class="label">Subtotal</span>
-              <span></span>
-              <span></span>
-              <span class="center subtotal">${subtotal}</span>
-            </div>
-            <div class="receipt-taxes">
-              <span class="label">Taxes and Fees</span>
-              <span></span>
-              <span></span>
-              <span class="center">${taxes}</span>
-            </div>
-            <div class="receipt-total">
-              <span class="label">Total</span>
-              <span></span>
-              <span></span>
-              <span class="center total-price">${total}</span>
-            </div>
-          </div>
-        </div>
+          
+        )}
+
         <div className="checkout-form">
           <h3 className="">
             Payment Info{" "}
@@ -151,9 +169,9 @@ export default function ShoppingCart({
                 name="name"
                 className="checkout-form-input"
                 type="text"
-                onChange={handleChange}
+                onChange={(e) => setName(e.target.value)}
                 placeholder="Student Name"
-                value={searchTerm}
+                value={name}
               />
             </div>
           </div>
@@ -164,9 +182,9 @@ export default function ShoppingCart({
                 name="email"
                 className="checkout-form-input"
                 type="email"
-                onChange={handleChange}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="student@codepath.org"
-                value={searchTerm}
+                value={email}
               />
             </div>
           </div>
@@ -181,12 +199,16 @@ export default function ShoppingCart({
               </label>
             </div>
           </div>
-          <p className="is-danger">
+          {/* <p className="is-danger">
             No cart or items in cart found to checkout.
-          </p>
+          </p> */}
           <div className="field">
             <div className="control">
-              <button className="button checkout-button">Checkout</button>
+              <button
+                className="button checkout-button"
+                onClick={handleCheckout}>
+                Checkout
+              </button>
             </div>
           </div>
         </div>
@@ -197,13 +219,24 @@ export default function ShoppingCart({
               <i className="material-icons md-48">fact_check</i>
             </span>
           </h3>
-          <div className="content">
+
+{!checkout ? (<div className="content">
             <p>
               A confirmation email will be sent to you so that you can confirm
               this order. Once you have confirmed the order, it will be
               delivered to your dorm room.
-            </p>
-          </div>
+            </p> </div>) :(<CheckoutForm
+            products={products}
+            email={email}
+            name={name}
+            subtotal={subtotal}
+            total={total}
+            taxes={taxes}
+            shoppingCart={shoppingCart}
+            setCheckout={setCheckout}
+          />)};
+          
+          
         </div>
       </div>
     </div>
