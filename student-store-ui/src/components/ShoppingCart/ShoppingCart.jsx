@@ -2,6 +2,16 @@ import * as React from "react";
 import "./ShoppingCart.css";
 
 export default function ShoppingCart({}) {
+  const [checkoutForm, setCheckoutForm] = React.useState({
+    name: "",
+    email: "",
+  });
+  const handleOnCheckoutFormChange = (event) => {
+    setCheckoutForm({
+      ...checkoutForm,
+      [event.target.name]: event.target.value,
+    });
+  };
   return (
     <section className="cart">
       <h3 className="">
@@ -22,18 +32,32 @@ export default function ShoppingCart({}) {
       <label className="label">Name</label>
       <div className="control ">
         <form>
-        <input name="name" className="checkout-form-input" type="text" placeholder="Student Name" value=""/>
+          <input
+            name="name"
+            className="checkout-form-input"
+            type="text"
+            placeholder="Student Name"
+            value={checkoutForm.name}
+            onChange={handleOnCheckoutFormChange}
+          />
         </form>
       </div>
       <div className="input-field">
         <label className="label">Email</label>
         <div className="control">
           <form>
-          <input name="email" className="checkout-form-input" type="email" placeholder="student@codepath.org" value=""/>
+            <input
+              name="email"
+              className="checkout-form-input"
+              type="email"
+              placeholder="student@codepath.org"
+              value={checkoutForm.email}
+              onChange={handleOnCheckoutFormChange}
+            />
           </form>
         </div>
         <div>
-        <input name="termsAndConditions" type="checkbox"/>
+          <input name="termsAndConditions" type="checkbox" />
           <span className="label">
             I agree to the
             <a href="#terms-and-conditions">terms and conditions</a>
