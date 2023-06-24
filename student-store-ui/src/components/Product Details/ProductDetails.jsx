@@ -13,7 +13,7 @@ export default function ProductDetails() {
 
   useEffect(() => {
     axios
-      .get(`https://codepath-store-api.herokuapp.com/store/${id}`)
+      .get(`http://localhost:3001/store/${id}`)
       .then((response) => {
         setProducts(response.data.product);
       });
@@ -37,31 +37,6 @@ export default function ProductDetails() {
               <div className="general-info">
                 <div className="description-line">
                   <p>{products.name}</p>
-                  <div className="actions">
-                    <div className="buttons">
-                      <button
-                        value={products.id}
-                        className="add"
-                        onClick={(event) => {
-                          setCount(count + 1);
-                        }}
-                      >
-                        <i className="material-icons">add</i>
-                      </button>
-                      <button
-                        className="remove"
-                        onClick={() => {
-                          count > 0 ? setCount(count - 1) : setCount(0);
-                        }}
-                      >
-                        <i className="material-icons">remove</i>
-                      </button>
-                      <button></button>
-                    </div>
-                    <span className="quantity">
-                      <span className="amt">{count}</span>
-                    </span>
-                  </div>
                 </div>
                 <p>${products.price}</p>
               </div>

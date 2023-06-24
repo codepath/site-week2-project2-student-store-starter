@@ -35,6 +35,7 @@ export default function App() {
     });
   }, [items, category]);
 
+
   return (
     <div className="app">
       <BrowserRouter>

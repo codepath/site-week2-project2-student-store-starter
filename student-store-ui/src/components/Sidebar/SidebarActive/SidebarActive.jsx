@@ -1,14 +1,132 @@
 import * as React from "react";
 import { useEffect, useState } from "react";
+import axios from "axios";
 import Cart from "../../Cart/Cart";
 
-export default function SidebarActive({ cartItems, products, itemsOnCart, setItemsOnCart }) {
-  
+export default function SidebarActive({
+  cartItems,
+  products,
+  itemsOnCart,
+  setItemsOnCart,
+}) {
   useEffect(() => {
     setItemsOnCart(Object.keys(cartItems)?.length > 0);
   }, [cartItems]);
 
-  (Object.values(cartItems).every(e => e === 0)) ? (setItemsOnCart(false)):(<></>)
+  Object.values(cartItems).every((e) => e === 0) ? (
+    setItemsOnCart(false)
+  ) : (
+    <></>
+  );
+
+  const [total, setTotal] = useState("");
+  const [subtotal, setSubtotal] = useState("");
+  const [taxes, setTaxes] = useState("");
+  const [formStudentName, setFormStudentName] = useState({
+    studentName: "",
+  });
+  const [formStudentEmail, setFormStudentEmail] = useState({
+    studentEmail: "",
+  });
+  const [receiptActive, setReceiptActive] = useState(false);
+
+  function handleInputEmail(event) {
+    setFormStudentEmail({
+      ...formStudentEmail,
+      [event.target.name]: event.target.value,
+    });
+  }
+
+  function handleInputName(event) {
+    setFormStudentName({
+      ...formStudentName,
+      [event.target.name]: event.target.value,
+    });
+  }
+
+  const myReceipt = async () => {
+    try {
+      const response = await axios.post(
+        "http://localhost:3001/checkout",
+        cartItems
+      );
+      setTotal(response.data.total);
+      setSubtotal(response.data.subtotal);
+      setTaxes(response.data.taxes);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  function handleCheckout() {
+    console.log("trigger", formStudentName, formStudentEmail);
+    !formStudentName.studentName || !formStudentEmail.studentEmail
+      ? setReceiptActive(false)
+      : (myReceipt(), setReceiptActive(true), console.log("im here"));
+  }
+
+  function renderReceipt() {
+    return (
+      <>
+        <div className="checkout-success">
+          <h3>
+            Checkout Info{" "}
+            <span className="icon button">
+              <i className="material-icons md-48">fact_check</i>
+            </span>
+          </h3>
+          <div className="card">
+            <header className="card-head">
+              <h4 className="card-title">Receipt</h4>
+            </header>
+            <section className="card-body">
+              <p className="header">
+                Showing receipt for {formStudentName.studentName} available at{" "}
+                {formStudentEmail.studentEmail}:
+              </p>
+              <ul className="purchase">
+                {products?.map((product) =>
+                  product.id in cartItems ? (
+                    <li>
+                      {cartItems[product.id]} total {product.name} purchased at
+                      a cost of ${product.price.toFixed(2)} for a total cost of
+                      ${(product.price * cartItems[product.id]).toFixed(2)}.
+                    </li>
+                  ) : (
+                    <></>
+                  )
+                )}
+                <li>Before taxes, the subtotal was ${}</li>
+                <li>
+                  After taxes and fees were applied, the total comes out to ${}
+                </li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </>
+    );
+  }
+
+  function testRender() {
+    return (
+      <>
+        <div className="content">
+          <h3>
+            Checkout Info{" "}
+            <span className="icon button">
+              <i className="material-icons md-48">fact_check</i>
+            </span>
+          </h3>
+          <p>
+            A confirmation email will be sent to you so that you can confirm
+            this order. Once you have confirmed the order, it will be delivered
+            to your dorm room.
+          </p>
+        </div>
+      </>
+    );
+  }
 
   return (
     <>
@@ -30,8 +148,6 @@ export default function SidebarActive({ cartItems, products, itemsOnCart, setIte
             </div>
           )}
 
-
-
           <div className="checkout-form">
             <h3>
               Payment Info
@@ -43,11 +159,12 @@ export default function SidebarActive({ cartItems, products, itemsOnCart, setIte
               <label className="label">Name</label>
               <div className="control ">
                 <input
-                  name="name"
+                  name="studentName"
                   className="checkout-form-input"
                   type="text"
                   placeholder="Student Name"
-                  value=""
+                  onChange={handleInputName}
+                  value={formStudentName.studentName}
                 ></input>
               </div>
             </div>
@@ -55,11 +172,12 @@ export default function SidebarActive({ cartItems, products, itemsOnCart, setIte
               <label className="label">Email</label>
               <div className="control">
                 <input
-                  name="email"
+                  name="studentEmail"
                   className="checkout-form-input"
                   type="email"
                   placeholder="student@codepath.org"
-                  value=""
+                  onChange={handleInputEmail}
+                  value={formStudentEmail.studentEmail}
                 ></input>
               </div>
             </div>
@@ -77,24 +195,11 @@ export default function SidebarActive({ cartItems, products, itemsOnCart, setIte
             {/* there is a p here for danger, check later */}
             <div className="field">
               <div className="control">
-                <button className="checkout-button">Checkout</button>
+                <button className="checkout-button" onClick={handleCheckout}>
+                  Checkout
+                </button>
+                {receiptActive ? renderReceipt() : testRender()}
               </div>
-            </div>
-          </div>
-
-          <div className="checkout-success">
-            <h3>
-              Checkout Info
-              <span className="icon button">
-                <i className="material-icons md-48">fact_check</i>
-              </span>
-            </h3>
-            <div className="content">
-              <p>
-                A confirmation email will be sent to you so that you can confirm
-                this order. Once you have confirmed the order, it will be
-                delivered to your dorm room.
-              </p>
             </div>
           </div>
         </div>

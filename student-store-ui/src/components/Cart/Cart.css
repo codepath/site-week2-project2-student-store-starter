@@ -42,3 +42,34 @@
     flex: 1;
     text-align: center;
 }
+
+.shopping-cart .receipt {
+    display: flex;
+    flex-direction: column;
+    background: var(--pure-white);
+    border-radius: 4px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.shopping-cart .receipt .receipt-subtotal, .shopping-cart .receipt .receipt-taxes, .shopping-cart .receipt .receipt-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.shopping-cart .receipt .label {
+    font-weight: 600;
+    padding-left: 10px;
+}
+
+.shopping-cart .receipt span {
+    flex: 1;
+}
+
+.shopping-cart .receipt span.center {
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+}
