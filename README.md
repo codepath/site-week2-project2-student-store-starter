@@ -69,5 +69,5 @@ Jordan, Niya, Sophia, Oj, and the amazing instructors!
 - [ X ] Your choice! CSS animations and using the useReducer hook
 
 ### Walkthrough Video
-https://www.loom.com/share/ebbc4d2d07b542e4a2fdd02faf26e6a8?sid=5dd929a0-d88d-4d8d-87b7-b363ab4103ff
+https://www.loom.com/share/ebbc4d2d07b542e4a2fdd02faf26e6a8?sid=651c4c2a-ac1a-4e9b-b081-06bd4b170e97
 
