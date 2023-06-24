@@ -1,4 +1,4 @@
-import {useState, useEffect, useContext} from "react";
+import {useState, useEffect} from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import AddToCartButtton from "../AddToCartButton/AddToCartButton";
@@ -23,7 +23,7 @@ function ProductGrid({ products, filter }) {
                 {/* // renders each product */}
                 {filteredProducts.map((product) => {
                     return (
-                        <div className="product">
+                        <div className="product" key={product.id}>
                             <Link to={`/products/${product.id}`}>
                                 <img src={product.image} alt={"image of" + product.name} />
                                 <div className="product-header">
@@ -49,11 +49,11 @@ function FilterBar({ updateQuery, activeCategory }) {
         <div className="filter-tags-container" label="Categories">
             <nav className="filter-tags-content">
                 <ul>
-                    {CATEGORIES.map((category) => {
+                    {CATEGORIES.map((category, index) => {
                         let isActive = category == activeCategory ? "active" : "";
                         return (
-                            <li>
-                                <button className={"category-button " + isActive} value={category} onClick={updateQuery}
+                            <li key={index} >
+                                <button key={index} className={"category-button " + isActive} value={category} onClick={updateQuery}
                                     name="category">{category}</button>
                             </li>
                         );

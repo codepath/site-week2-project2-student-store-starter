@@ -9,14 +9,14 @@ function ColumnLinks({links, header, isImg = false}){
                 {header}
             </h4>
             <ul className="links-list">
-                {links.map((linkName) => {
+                {links.map((linkName, index) => {
                     let imageName = linkName.name;
                     let imageSrc = linkName.src;
                     return (
                         isImg ? 
-                        <img src={imageSrc} alt={"photo of" + imageName} className="link-row-image" />
+                        <img key={index} src={imageSrc} alt={"photo of" + imageName} className="link-row-image" />
                         :
-                        <li className="link-row">
+                        <li key={index} className="link-row">
                             {linkName}
                         </li>
                     )
@@ -42,18 +42,18 @@ export default function Footer(){
 
     return (
         <div className="links-grid">
-            {linksGrid.map((columnLinks) => {
+            {linksGrid.map((columnLinks, index) => {
                 // map each list of links to a ColumnLinks Component
                 let header = columnLinks[0]
                 let links = columnLinks.slice(0, -1);
                 return (
-                    <ColumnLinks links={links} header={header} />
+                    <ColumnLinks key={index} links={links} header={header} />
                 )
             })}
-            {imageLinksGrid.map((imageLinks) => {
+            {imageLinksGrid.map((imageLinks, index) => {
                 // map each image link to a ColumnLinks Component
                 return (
-                    <ColumnLinks header="Our App" isImg={true} links={imageLinks} />
+                    <ColumnLinks key={index + "imgLinks"} header="Our App" isImg={true} links={imageLinks} />
                 )
             })}
         </div>

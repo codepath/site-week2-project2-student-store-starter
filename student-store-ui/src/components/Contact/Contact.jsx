@@ -13,9 +13,9 @@ export default function Contact(){
                 <h1 className="contact-title title">Contact Us</h1>
                 <div className="contacts">
                     <div className="contact-buttons-container">
-                    {contacts.map((contact) => {
+                    {contacts.map((contact, index) => {
                         return (
-                            <p className="contact-button">{contact}</p>
+                            <p key={index} className="contact-button">{contact}</p>
                         )
                     })}
                     </div>
