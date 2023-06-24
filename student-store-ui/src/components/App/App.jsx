@@ -4,35 +4,31 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import Sidebar from '../Sidebar/Sidebar';
 import Home from '../Home/Home';
-import ProductView from '../ProductView/ProductView';
+import ProductView from '../Productview/ProductView';
 import './App.css';
+import { useToast } from '@chakra-ui/react';
 
 export default function App() {
   const [cart, setCart] = useState(new Map());
   const [subtotal, setSubtotal] = useState(0);
   const [tax, setTax] = useState(0);
   const [total, setTotal] = useState(0);
+  const toast = useToast();
 
   useEffect(() => {
-    // const calculateSubtotal = () => {
-    //   const sub = cart.reduce(
-    //     (accumulator, product) => accumulator + product.price,
-    //     0
-    //   );
-    //   setSubtotal(sub);
-    // };
-    // const calculateTax = () => {
-    //   const taxAmount = subtotal * 0.08;
-    //   setTax(taxAmount);
-    // };
-    // const calculateTotal = () => {
-    //   const totalAmount = subtotal + tax;
-    //   setTotal(totalAmount);
-    // };
-    // calculateSubtotal();
-    // calculateTax();
-    // calculateTotal();
+    const calculateTotal = () => {
+      const totalAmount = subtotal + tax;
+      setTotal(totalAmount);
+    };
+    calculateTotal();
   }, [cart]);
+
+  const scrollToSection = () => {
+    scroller.scrollTo('sectionId', {
+      duration: 500, // Scroll duration in milliseconds
+      smooth: 'easeInOutQuart', // Scroll animation easing
+    });
+  };
 
   const addToCart = (product) => {
     if (cart.has(product.name)) {
@@ -46,7 +42,8 @@ export default function App() {
       };
       cart.set(product.name, newProduct);
     }
-    console.log(cart);
+    setSubtotal(subtotal + product.price);
+    setTax(tax + product.price * 0.08);
     setCart(new Map(cart));
   };
 
@@ -59,22 +56,47 @@ export default function App() {
         existingProduct.qty--;
         cart.set(product.name, existingProduct);
       }
+      setSubtotal(subtotal - product.price);
+      setTax(tax - product.price * 0.08);
     }
     console.log(cart);
     setCart(new Map(cart));
   };
 
+  const purchase = () => {
+    setCart(new Map());
+    setTax(0);
+    setSubtotal(0);
+    toast({
+      title: 'Purchase completed',
+      description: 'The items will be sent to your address',
+      status: 'success',
+      duration: 9000,
+      isClosable: true,
+    });
+  };
+
   return (
     <div className='app'>
       <BrowserRouter>
-        <Sidebar tax={tax} subtotal={subtotal} total={total} cart={cart} />
+        <Sidebar
+          tax={tax}
+          subtotal={subtotal}
+          total={total}
+          cart={cart}
+          purchase={purchase}
+        />
         <main className='main-content'>
           <Navbar />
           <Routes>
             <Route
               path='/'
               element={
-                <Home removeFromCart={removeFromCart} addToCart={addToCart} />
+                <Home
+                  removeFromCart={removeFromCart}
+                  addToCart={addToCart}
+                  scrollToSection={scrollToSection}
+                />
               }
             />
             <Route path='/product/:id' element={<ProductView />} />

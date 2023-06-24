@@ -19,19 +19,12 @@ const Categories = ({ options, selectedOption, handleOptionClick }) => {
         }
         return (
           <ScaleFade key={option.index} initialScale={0.9} in={isOpen}>
-            <Box
-              p='5px'
-              color='black'
-              mt='12px'
-              bg='teal.500'
-              rounded='md'
-              shadow='md'
-              cursor='pointer'
-              className={underLine}
+            <p
+              className={`text-md font-bold p-1 mt-2 cursor-pointer ${underLine}`}
               onClick={() => handleOptionClick(option)}
             >
               {option.title}
-            </Box>
+            </p>
           </ScaleFade>
         );
       })}

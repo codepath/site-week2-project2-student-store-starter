@@ -1,7 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AddIcon, MinusIcon } from '@chakra-ui/icons';
 
 const CardItem = ({ props, goToProduct, addToCart, removeFromCart }) => {
+  const [qty, setQty] = useState(0);
+
+  const handleMore = (props) => {
+    addToCart(props);
+    setQty(qty + 1);
+    console.log(qty + 1);
+  };
+
+  const handleMinus = (props) => {
+    removeFromCart(props);
+    if (qty > 0) {
+      setQty(qty - 1);
+      console.log(qty - 1);
+    }
+  };
   return (
     <div
       id={props.id}
@@ -23,19 +38,28 @@ const CardItem = ({ props, goToProduct, addToCart, removeFromCart }) => {
         {props.name}
       </p>
       <p className='text-lg font-semibold text-green-700'>${props.price}</p>
+      <div className='flex justify-between items-center absolute bottom-2'>
+        {qty > 0 ? (
+          <div className='py-2 px-3 flex justify-center items-center bg-blue-600 rounded-md text-white'>
+            {qty}
+          </div>
+        ) : (
+          <div></div>
+        )}
+      </div>
       <div className='absolute bottom-2 right-2 flex gap-2'>
         <button
           className={
             'p-2 bg-green-500 text-white rounded-lg flex justify-center items-center'
           }
-          onClick={() => addToCart(props)}
+          onClick={() => handleMore(props)}
         >
           <AddIcon />
         </button>
 
         <button
           className='p-2 bg-green-500 text-white rounded-lg flex justify-center items-center'
-          onClick={() => removeFromCart(props)}
+          onClick={() => handleMinus(props)}
         >
           <MinusIcon />
         </button>
