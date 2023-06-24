@@ -37,7 +37,7 @@ https://imgur.com/a/svwM252
 
 ### Walkthrough Video
 
-<img style="max-width:300px;" src="https://i.imgur.com/KVvICo8.mp4">
+<img src="https://i.imgur.com/KVvICo8.gif" width="40" height="40" />
 
 ## *Week 3* Application Features
 
