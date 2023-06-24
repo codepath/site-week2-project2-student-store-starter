@@ -15,6 +15,11 @@ Week 2 Walk Through Video:
     <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/e2110422d718498d9eb2273e69312fd7-with-play.gif">
   </a>
 
+Week 3 Walk Through Video
+<a href="https://www.loom.com/share/759493c3f3e94f179b5fdb9cea26f2eb">
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/759493c3f3e94f179b5fdb9cea26f2eb-with-play.gif">
+  </a>
+  
 ## *Week 2* Application Features
 
 ### Core Features
@@ -37,11 +42,11 @@ Week 2 Walk Through Video:
 
 ### Core Features
 
-- [ ] User can click to expand the shopping cart in the left navigation.
-- [ ] Users can click the '+' button on a product cart to increment that product in the shopping cart.
-- [ ] Users can click the '-' button on a product cart to decrement that product in the shopping cart. If the count is zero, the product should be removed from the cart.
-- [ ] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
-- [ ] Users can checkout, and receive a receipt confirming their purchase.
+- [X] User can click to expand the shopping cart in the left navigation.
+- [X] Users can click the '+' button on a product cart to increment that product in the shopping cart.
+- [X] Users can click the '-' button on a product cart to decrement that product in the shopping cart. If the count is zero, the product should be removed from the cart.
+- [X] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
+- [X] Users can checkout, and receive a receipt confirming their purchase.
 
 ### Stretch Features
 
