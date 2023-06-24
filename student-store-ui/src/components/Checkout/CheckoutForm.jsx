@@ -18,6 +18,7 @@ export default function CheckoutForm({
           <h3 className="check-text">Checkout Info</h3>
           <CheckoutIcon />
         </span>
+        <div className="receipt">
         <p>
           Showing receipt for {name} available at {email}.
         </p>
@@ -32,8 +33,9 @@ export default function CheckoutForm({
         <p>&bull; Before taxes, the subtotal was {subtotal}</p>
         <p>
           &bull;After taxes and fees were applied, the total comes out to{" "}
-          {total}
+          {total.toFixed(2)}
         </p>
+        </div>
       </div>
     </>
   );

@@ -57,7 +57,7 @@ export default function Sidebar({ setShoppingCart, shoppingCart }) {
               total={total}
             />
           ) : (
-            <p>
+            <p style={{color:'white'}}>
               A confirmation email will be sent to you so that you can confirm
               this order. Once you have confirmed the order, it will be
               delivered to your dorm room.

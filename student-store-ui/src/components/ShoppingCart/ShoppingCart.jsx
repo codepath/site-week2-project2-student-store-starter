@@ -60,7 +60,7 @@ export default function ShoppingCart({
     setShoppingCart([]);
     setCheckout(false);
   }
-  ``;
+  ;
 
   return (
     <>
@@ -69,7 +69,7 @@ export default function ShoppingCart({
       {shoppingCart?.length === 0 ? (
         <div className="shop">
           <span></span>
-          <p>No items added to cart yet. Start shopping now!</p>
+          <p style={{color:'white'}}>No items added to cart yet. Start shopping now!</p>
         </div>
       ) : (
         <>
@@ -129,7 +129,7 @@ export default function ShoppingCart({
           <h3>Payment Info</h3>
           <PaymentIcon />
         </span>
-        <label className="form-label" htmlFor="name">
+        <label className="form-label" htmlFor="name" style={{color:'white'}}>
           Name:
         </label>
         <input
@@ -141,7 +141,7 @@ export default function ShoppingCart({
           required=""
         />{" "}
         <br></br>
-        <label className="form-label" htmlFor="password">
+        <label className="form-label" htmlFor="password" style={{color:'white'}}>
           Email:
         </label>
         <input
@@ -153,7 +153,7 @@ export default function ShoppingCart({
           required
         />
         <input type="checkbox" required />
-        <label className="checkbox-input">
+        <label className="checkbox-input" style={{color:'white'}}>
           I agree to the terms and conditions
         </label>
         <br></br>

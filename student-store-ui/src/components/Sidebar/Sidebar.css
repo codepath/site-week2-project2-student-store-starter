@@ -7,6 +7,7 @@ width: 200px;
 padding: 15px;
 border-right: solid 1px white;
 transition: 0.2s;
+overflow: scroll;
 }
 
 .sidebar li{
