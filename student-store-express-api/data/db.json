@@ -273,7 +273,117 @@
             "total": "2.15",
             "createdAt": "Fri Jun 23 2023 18:50:54 GMT-0700 (Pacific Daylight Time)",
             "receipt": "Receipt for purchases by Kareon Dave: \n2 Rice Krispies at a unit price of $0.99 for a total of $1.98 \nSubtotal: \t\t $1.98\nTaxes: \t\t $0.17\nTotal: \t\t $2.15"
+        },
+        {
+            "id": 8,
+            "name": "Shaggy David",
+            "email": "hotconcord@gmail.com",
+            "order": [
+                {
+                    "itemId": 13,
+                    "quantity": 1
+                }
+            ],
+            "total": "76.13",
+            "createdAt": "Fri Jun 23 2023 19:00:48 GMT-0700 (Pacific Daylight Time)",
+            "receipt": "Receipt for purchases by Shaggy David: \n1 Copper Bracelet at a unit price of $70 for a total of $70 \nSubtotal: \t\t $70.00\nTaxes: \t\t $6.13\nTotal: \t\t $76.13"
+        },
+        {
+            "id": 9,
+            "name": "Gladis Perkins",
+            "email": "gp3tetris@yahoo.com",
+            "order": [
+                {
+                    "itemId": 5,
+                    "quantity": 1
+                },
+                {
+                    "itemId": 8,
+                    "quantity": 1
+                },
+                {
+                    "itemId": 9,
+                    "quantity": 1
+                },
+                {
+                    "itemId": 12,
+                    "quantity": 1
+                },
+                {
+                    "itemId": 11,
+                    "quantity": 1
+                }
+            ],
+            "total": "687.81",
+            "createdAt": "Fri Jun 23 2023 19:02:32 GMT-0700 (Pacific Daylight Time)",
+            "receipt": "Receipt for purchases by Gladis Perkins: \n1 Fruit Medley at a unit price of $7.5 for a total of $7.5 \n1 Knitted Beanie at a unit price of $19.99 for a total of $19.99 \n1 Pullover Sweater at a unit price of $4.99 for a total of $4.99 \n1 Apple Watch at a unit price of $399.99 for a total of $399.99 \n1 Matching Rings at a unit price of $200 for a total of $200 \nSubtotal: \t\t $632.47\nTaxes: \t\t $55.34\nTotal: \t\t $687.81"
+        },
+        {
+            "id": 10,
+            "name": "Union Square",
+            "email": "unionsquare@unionsquare.com",
+            "order": [
+                {
+                    "itemId": 16,
+                    "quantity": 2
+                },
+                {
+                    "itemId": 14,
+                    "quantity": 1
+                },
+                {
+                    "itemId": 15,
+                    "quantity": 1
+                },
+                {
+                    "itemId": 12,
+                    "quantity": 1
+                }
+            ],
+            "total": "2751.32",
+            "createdAt": "Fri Jun 23 2023 19:04:26 GMT-0700 (Pacific Daylight Time)",
+            "receipt": "Receipt for purchases by Union Square: \n2 Smart Glasses at a unit price of $999.99 for a total of $1999.98 \n1 Keyboard at a unit price of $110 for a total of $110 \n1 Mouse from 1998 at a unit price of $19.98 for a total of $19.98 \n1 Apple Watch at a unit price of $399.99 for a total of $399.99 \nSubtotal: \t\t $2529.95\nTaxes: \t\t $221.37\nTotal: \t\t $2751.32"
+        },
+        {
+            "id": 11,
+            "name": "Charlotte Windsale",
+            "email": "charolotte__203@gmail.com",
+            "order": [
+                {
+                    "itemId": 2,
+                    "quantity": 1
+                }
+            ],
+            "total": "1.63",
+            "createdAt": "Fri Jun 23 2023 19:23:04 GMT-0700 (Pacific Daylight Time)",
+            "receipt": "Receipt for purchases by Charlotte Windsale: \nEmail: charolotte__203@gmail.com\n1 Flamin Hot Cheetos at a unit price of $1.5 for a total of $1.5 \nSubtotal: \t\t $1.50\nTaxes: \t\t $0.13\nTotal: \t\t $1.63"
+        },
+        {
+            "id": 12,
+            "name": "Jane Doe",
+            "email": "anon@dnd.com",
+            "order": [
+                {
+                    "itemId": 13,
+                    "quantity": 1
+                },
+                {
+                    "itemId": 14,
+                    "quantity": 1
+                },
+                {
+                    "itemId": 15,
+                    "quantity": 1
+                },
+                {
+                    "itemId": 16,
+                    "quantity": 1
+                }
+            ],
+            "total": "1304.97",
+            "createdAt": "Fri Jun 23 2023 20:51:05 GMT-0700 (Pacific Daylight Time)",
+            "receipt": "Receipt for purchases by Jane Doe: \nEmail: anon@dnd.com\n1 Copper Bracelet at a unit price of $70 for a total of $70 \n1 Keyboard at a unit price of $110 for a total of $110 \n1 Mouse from 1998 at a unit price of $19.98 for a total of $19.98 \n1 Smart Glasses at a unit price of $999.99 for a total of $999.99 \nSubtotal: \t\t $1199.97\nTaxes: \t\t $105.00\nTotal: \t\t $1304.97"
         }
     ],
-    "nextId": 8
+    "nextId": 13
 }

@@ -26,3 +26,14 @@ td {
   height: 4vh;
   padding: 1.5% 0.5%;
 }
+
+.clear-cart-btn{
+  color: rgb(204, 204, 204);
+  min-height: 55px;
+  width: 50%;
+  margin: 3.5% 0;
+  background-color: transparent;
+  border: 3px solid rgb(204, 204, 204);
+  border-radius: 15px;
+  cursor: pointer;
+}

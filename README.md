@@ -28,7 +28,7 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - [x] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
 - [ ] Your choice! (Replace this bullet explaining what you implemented. Example: Users can leave ratings for products they have purchased.)
 
-## Demo
+## Demo: Part 1
 May take some time to load
 <img style="width:auto; height: 400px;" src="Demo.gif">
 
@@ -46,5 +46,9 @@ May take some time to load
 
 - [x] Create an endpoint for fetching all orders in the database and an endpoint for serving an individual order based on its ID.
 - [x] Build a page in the UI that displays the list of all past orders. The user should be able to click on any individual order to take them to a more detailed page of the transaction.
-- [ ] Allow users to use an input to filter orders by the email of the person who placed the order.
-- [ ] Your choice! (Replace this bullet explaining what you implemented. Example: Users can create a wish list of products they are interested in but not yet ready to purchase.)
+- [x] Allow users to use an input to filter orders by the email of the person who placed the order.
+- [x] Users can clear their shopping cart
+
+## Demo: Part 2
+May take some time to load
+<img style="width:auto; height: 400px;" src="Demo-2.gif">

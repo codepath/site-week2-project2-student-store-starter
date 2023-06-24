@@ -64,6 +64,7 @@ class Store {
 
   #generateReceipt(purchase) {
     let receipt = `Receipt for purchases by ${purchase.name}: ${"\n"}`;
+    receipt += `Email: ${purchase.email}\n`
     let subtotal = this.#getSubtotal(purchase.order);
     purchase.order.forEach((item) => {
       let index = this.#findProduct(item.itemId);

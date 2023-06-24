@@ -39,6 +39,7 @@ export default function Sidebar({
           products={products}
           shoppingCart={shoppingCart}
           style={{ display: isOpen ? "" : "none" }}
+          setShoppingCart={setShoppingCart}
         />
       ) : (
         <h3 className="empty-cart-text" style={{ display: isOpen ? "" : "none" }}>

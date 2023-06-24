@@ -1,7 +1,7 @@
 import React from "react";
 import "./CartTable.css";
 
-export default function CartTable({ shoppingCart, products, style }) {
+export default function CartTable({ shoppingCart, products, style, setShoppingCart}) {
     const findProduct = (id) => {
         let i = -1
         products.forEach((currProduct, idx) => {
@@ -13,8 +13,11 @@ export default function CartTable({ shoppingCart, products, style }) {
     const subtotal = (shoppingCart) => {
         return shoppingCart.reduce((subt, product) =>  subt + products[findProduct(product.itemId)]?.price * product?.quantity, 0)
     }
+
+    const handleClick = (event) => setShoppingCart([])
     
   return (
+    <>
     <table className="checkoutTable" style={style}>
       <tr className="table-header">
         <th className="table-header-elements">Name</th>
@@ -49,5 +52,7 @@ export default function CartTable({ shoppingCart, products, style }) {
             <td>{`$${(subtotal(shoppingCart) * 8.75 / 100 + subtotal(shoppingCart)).toFixed(2)}`}</td>
         </tr>
     </table>
+    <button className="clear-cart-btn" onClick={handleClick}>Clear Cart</button>
+    </>
   );
 }
