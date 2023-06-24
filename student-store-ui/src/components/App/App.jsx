@@ -12,8 +12,9 @@ import Logo from "../Logo/Logo";
 import ProductDetails from "../ProductDetails/ProductDetails";
 
 export default function App() {
-  const url = "http://localhost:3000/";
+  const url = "http://localhost:3001";
   const [products, setProducts] = useState([]);
+  const [shoppingCart, setShoppingCart] = useState([]);
 
   useEffect(() => {
     axios.get(url).then((response) => {
@@ -27,9 +28,21 @@ export default function App() {
         <main>
           <Logo />
           <Navbar />
-          <Sidebar />
+          <Sidebar
+            shoppingCart={shoppingCart}
+            setShoppingCart={setShoppingCart}
+          />
           <Routes>
-            <Route path="/" element={<Home products={products} />} />
+            <Route
+              path="/"
+              element={
+                <Home
+                  products={products}
+                  shoppingCart={shoppingCart}
+                  setShoppingCart={setShoppingCart}
+                />
+              }
+            />
             <Route path="products/:id" element={<ProductDetails />} />
           </Routes>
         </main>

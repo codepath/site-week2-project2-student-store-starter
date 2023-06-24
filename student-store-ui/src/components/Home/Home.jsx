@@ -7,7 +7,7 @@ import Search from "../Search/Search";
 import { useState } from "react";
 import SubNavBar from "../SubNavBar/SubNavBar";
 
-export default function Home({ products }) {
+export default function Home({ products, shoppingCart, setShoppingCart }) {
   // search state
   // a variable that stored the filtered products
   const [text, setText] = useState("");
@@ -31,18 +31,19 @@ export default function Home({ products }) {
         <div className="products-grid">
           {filter?.map((product, idx) => {
             return (
-              <Link to={"products/" + product.id}>
-                <ProductCard
-                  name={product.name}
-                  id={product.id}
-                  image={product.image}
-                  price={product.price.toLocaleString("us-EN", {
-                    style: "currency",
-                    currency: "USD",
-                  })}
-                  key={idx}
-                />
-              </Link>
+              <ProductCard
+                shoppingCart={shoppingCart}
+                setShoppingCart={setShoppingCart}
+                product={product}
+                name={product.name}
+                id={product.id}
+                image={product.image}
+                price={product.price.toLocaleString("us-EN", {
+                  style: "currency",
+                  currency: "USD",
+                })}
+                key={idx}
+              />
             );
           })}
         </div>
