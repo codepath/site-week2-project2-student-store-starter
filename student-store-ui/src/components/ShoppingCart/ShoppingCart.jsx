@@ -27,6 +27,7 @@ export default function ShoppingCart(props) {
   const [checkoutClicked, setCheckoutClicked] = useState(false);
 
   return (
+
     <div className="shopping-cart">
       {isOpen === "closed" ? (
         <div className="cart-icons">
@@ -87,7 +88,7 @@ export default function ShoppingCart(props) {
                   <span></span>
                   <span className="center tax">{formatter.format(subTotal * tax)}</span>
                 </div>
-​
+
 <div className="receipt-total">
   <span className="label">Total</span>
   <span></span>
@@ -99,25 +100,52 @@ export default function ShoppingCart(props) {
               </div>
             </div>
           )}
-          {checkoutClicked ? (
-            <CheckoutForm shoppingCart={shoppingCart} subTotal={subTotal} />
-          ) : (
-            <div className="field">
-              <div className="control">
-                <button
-                  className="button checkout-button"
-                  onClick={() => setCheckoutClicked(true)}
-                >
-                  Checkout
-                </button>
-              </div>
+
+<h3>Payment Info</h3>
+      <div className="input-field">
+      <label className="label">Name</label>
+            <div className="control">
+                <input name="name" className="checkout-form-input" type="text" placeholder="Student Name" />
             </div>
-          )}
+        </div>
+        <div className="input-field">
+            <label className="label">Email</label>
+            <div className="control">
+                <input name="email" className="checkout-form-input" type="email" placeholder="student@codepath.org" />
+            </div>
+      </div>
+      <div className="field">
+      <div className="control">
+                <label className="checkbox">
+                    <input name="termsAndConditions" type="checkbox" />
+                    <span className="label">
+                        I agree to the 
+                        <a href="#terms-and-conditions"> terms and conditions</a>
+                    </span>
+                </label>
+            </div>
+      </div>
+          {checkoutClicked ? (
+  <CheckoutForm shoppingCart={shoppingCart} subTotal={subTotal} tax={tax} />
+) : (
+  <div className="field">
+    <div className="control">
+      <button
+        className="button checkout-button"
+        onClick={() => setCheckoutClicked(true)}
+      >
+        Checkout
+      </button>
+    </div>
+  </div>
+)}
         </div>
       )}
     </div>
   );
 }
+
+
 
 function CartItem(props) {
   const { product, quantity } = props;

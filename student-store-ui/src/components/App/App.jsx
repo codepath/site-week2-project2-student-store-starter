@@ -123,7 +123,7 @@ export default function App() {
   // Fetches api products data
   useEffect(() => {
     axios
-      .get(`https://codepath-store-api.herokuapp.com/store/`)
+      .get(`http://localhost:3001/store`)
       .then((response) => {
         setProductList(response.data.products);
       })
