@@ -54,10 +54,4 @@ app.post("/store", (req, res) => {
   }
 });
 
-// app.post("/order/id", (req, res) => {
-//     try{
-//         res.status(200).send()
-//     }
-// })
-
 module.exports = app;

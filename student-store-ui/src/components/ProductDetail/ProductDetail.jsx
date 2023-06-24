@@ -5,11 +5,15 @@ import axios from "axios";
 import ProductView from "../ProductView/ProductView";
 import NotFound from "../NotFound/NotFound";
 
-export default function ProductDetail({handleAddItemToCart, handleRemoveItemFromCart, shoppingCart}) {
+export default function ProductDetail({
+  handleAddItemToCart,
+  handleRemoveItemFromCart,
+  shoppingCart,
+}) {
   const [product, setProduct] = useState(null);
   const [fetched, setFetched] = useState(false);
   const { id } = useParams();
-  const url = `http://localhost:3001/store/${id}`
+  const url = `http://localhost:3001/store/${id}`;
   useEffect(() => {
     axios
       .get(url)
@@ -20,7 +24,7 @@ export default function ProductDetail({handleAddItemToCart, handleRemoveItemFrom
       .catch((error) => {
         console.error(error);
         setFetched(true);
-        setProduct(error.response.data.product)
+        setProduct(error.response.data.product);
       });
   }, [id]);
 
@@ -28,7 +32,7 @@ export default function ProductDetail({handleAddItemToCart, handleRemoveItemFrom
     <div className="product-details">
       {/* if there are no products but the data has been fetched then the product was likely not found
       if there are no products and the data has not been fethced, we should display a loading screen */}
-      {(product === null || Object.keys(product).length === 0)? (
+      {product === null || Object.keys(product).length === 0 ? (
         fetched ? (
           <NotFound />
         ) : (

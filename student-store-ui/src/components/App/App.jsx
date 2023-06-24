@@ -3,7 +3,7 @@ import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 import Home from "../Home/Home";
-import History from "../History/History"
+import History from "../History/History";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
@@ -11,7 +11,7 @@ import ProductDetail from "../ProductDetail/ProductDetail";
 import NotFound from "../NotFound/NotFound";
 
 export default function App() {
-  const url = "http://localhost:3001/store"
+  const url = "http://localhost:3001/store";
   const [products, setProducts] = useState([]);
   const [shoppingCart, setShoppingCart] = useState([]);
 
@@ -89,10 +89,8 @@ export default function App() {
                 }
               />
               <Route
-              path="/history"
-              element={
-                <History shoppingCart={shoppingCart}/>
-              }
+                path="/history"
+                element={<History shoppingCart={shoppingCart} />}
               />
               <Route path="*" element={<NotFound />} />
             </Routes>

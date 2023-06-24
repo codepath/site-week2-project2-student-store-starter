@@ -93,7 +93,6 @@ class Store {
         throw new BadRequestError("Can not checkout empty shopping Cart")
     }
 
-    // if there are duplicates
     if (this.#containsDuplicates(shoppingCart)) {
       throw new BadRequestError("Shopping Cart contains duplicates");
     }
@@ -123,7 +122,7 @@ class Store {
       email: user.email,
       order: shoppingCart,
       total: (subTotal + (8.75 / 100) * subTotal).toFixed(2),
-      createdAt: Date(),
+      createdAt: Date(), //gets the current date
     };
 
     purchase.receipt = this.#generateReceipt(purchase);

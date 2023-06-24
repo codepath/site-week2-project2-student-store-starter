@@ -1,45 +1,75 @@
 @keyframes heartbeat {
-    0% {scale: 1.00;}
-    10% {scale: 1.02;}
-    20% {scale: 1.04;}
-    30% {scale: 1.06;}
-    40% {scale: 1.08;}
-    50% {scale: 1.1;}
-    60% {scale: 1.08;}
-    70% {scale: 1.06;}
-    80% {scale: 1.04;}
-    90% {scale: 1.02;}
-    100% {scale: 1.00;}
+  0% {
+    scale: 1;
+  }
+  10% {
+    scale: 1.02;
+  }
+  20% {
+    scale: 1.04;
+  }
+  30% {
+    scale: 1.06;
+  }
+  40% {
+    scale: 1.08;
+  }
+  50% {
+    scale: 1.1;
+  }
+  60% {
+    scale: 1.08;
+  }
+  70% {
+    scale: 1.06;
+  }
+  80% {
+    scale: 1.04;
+  }
+  90% {
+    scale: 1.02;
+  }
+  100% {
+    scale: 1;
+  }
 }
 
 @keyframes borderChange {
-    0% {border-color: #be22ff;}
-    33% {border-color: #ff279c;}
-    66% {border-color: #ff981f;}
-    100% {border-color: #be22ff;}
+  0% {
+    border-color: #be22ff;
+  }
+  33% {
+    border-color: #ff279c;
+  }
+  66% {
+    border-color: #ff981f;
+  }
+  100% {
+    border-color: #be22ff;
+  }
 }
 
-#about{
-    display: flex;
-    background-color: black;
-    width: 82vw;
-    margin: 10% auto;
-    padding: 2.5% 5%;
-    border-radius: 10px;
-    justify-content: space-between;
-    border: solid 5px;
-    animation: borderChange 3s infinite;
+#about {
+  display: flex;
+  background-color: black;
+  width: 82vw;
+  margin: 10% auto;
+  padding: 2.5% 5%;
+  border-radius: 10px;
+  justify-content: space-between;
+  border: solid 5px;
+  animation: borderChange 3s infinite;
 }
 
-.about-text{
-    color: white;
-    font-size: 25px;
-    line-height: 1.35;
+.about-text {
+  color: white;
+  font-size: 25px;
+  line-height: 1.35;
 }
 
-.about-image{
-    width: 200%;
-    max-width: 400px;
-    height: auto;
-    animation: heartbeat 1.37s infinite;
+.about-image {
+  width: 200%;
+  max-width: 400px;
+  height: auto;
+  animation: heartbeat 1.37s infinite;
 }

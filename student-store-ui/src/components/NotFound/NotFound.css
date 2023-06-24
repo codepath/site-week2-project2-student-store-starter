@@ -1,54 +1,60 @@
 @keyframes load {
-    0% {
-        background-color: #be22ff;
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-    }
-
-    33% {
-        background-color: #ff279c;
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-    }
-
-    66% {
-        background-color: #ff981f;
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-    }
-
-    100% {
-        background-color: #be22ff;
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-    }
-}
-
-.not-found{
-    width: 100%;
-    height: 100vh;
-    background-color: black;
-    position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.not-found-link, .not-found-text{
-    font-size: 100px;
-    text-decoration: none;
-    animation: load 1.5s infinite;
-}
-
-.error-num{
-    font-size: 450px;
-    background: -webkit-linear-gradient(0deg,#be22ff 20%,#ff279c 50%,#ff981f 80%);
+  0% {
+    background-color: #be22ff;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+  }
+
+  33% {
+    background-color: #ff279c;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  66% {
+    background-color: #ff981f;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  100% {
+    background-color: #be22ff;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+.not-found {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.not-found-link,
+.not-found-text {
+  font-size: 100px;
+  text-decoration: none;
+  animation: load 1.5s infinite;
+}
+
+.error-num {
+  font-size: 450px;
+  background: -webkit-linear-gradient(
+    0deg,
+    #be22ff 20%,
+    #ff279c 50%,
+    #ff981f 80%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }

@@ -8,14 +8,13 @@ export default function ProductGrid({
   handleAddItemToCart,
   handleRemoveItemFromCart,
 }) {
-
-    const findInShoppingCart = (currProduct) => {
-        let i = -1
-        shoppingCart.forEach((e, idx) => {
-            i = e.itemId === currProduct.id ? idx : i
-        })
-        return i
-    }
+  const findInShoppingCart = (currProduct) => {
+    let i = -1;
+    shoppingCart.forEach((e, idx) => {
+      i = e.itemId === currProduct.id ? idx : i;
+    });
+    return i;
+  };
 
   return (
     <div className="product-grid">

@@ -1,41 +1,41 @@
 @keyframes load {
-    0% {
-        background-color: #be22ff;
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-    }
+  0% {
+    background-color: #be22ff;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
 
-    33% {
-        background-color: #ff279c;
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-    }
+  33% {
+    background-color: #ff279c;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
 
-    66% {
-        background-color: #ff981f;
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-    }
+  66% {
+    background-color: #ff981f;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
 
-    100% {
-        background-color: #be22ff;
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-    }
+  100% {
+    background-color: #be22ff;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
 }
 
-.loading-text{
-    font-size: 48px;
-    width: 100%;
-    height: 100vh;
-    max-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 60px;
-    animation: load 1s infinite;
+.loading-text {
+  font-size: 48px;
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+  animation: load 1s infinite;
 }

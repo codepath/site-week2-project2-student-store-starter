@@ -13,9 +13,9 @@
   min-height: 100vh;
   max-height: 100vh;
   display: flex;
-  flex-direction: column; /* formarly column */
+  flex-direction: column;
 }
 
-.container{
-  background-color : #323232;
+.container {
+  background-color: #323232;
 }

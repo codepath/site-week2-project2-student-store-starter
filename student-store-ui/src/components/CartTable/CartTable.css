@@ -4,7 +4,6 @@ table {
 }
 table {
   margin: 1%;
-  /* height: max-content; */
   background-color: rgb(105, 105, 105);
   width: 98%;
   padding: 1%;
@@ -20,14 +19,13 @@ th {
 
 td {
   text-align: left;
-  /* min-width: max-content; */
   max-width: 100px;
   background-color: rgb(105, 105, 105);
   height: 4vh;
   padding: 1.5% 0.5%;
 }
 
-.clear-cart-btn{
+.clear-cart-btn {
   color: rgb(204, 204, 204);
   min-height: 55px;
   width: 50%;

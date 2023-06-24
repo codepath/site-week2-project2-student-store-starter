@@ -1,9 +1,9 @@
-.receipt{
-    width: 100%;
-    text-align: left;
-    border: 3px #ff279c solid;
-    padding: 2%;
-    margin: 3% auto;
-    border-radius: 15px;
-    opacity: 100%;
+.receipt {
+  width: 100%;
+  text-align: left;
+  border: 3px #ff279c solid;
+  padding: 2%;
+  margin: 3% auto;
+  border-radius: 15px;
+  opacity: 100%;
 }

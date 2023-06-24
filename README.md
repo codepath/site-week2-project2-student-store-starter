@@ -10,7 +10,7 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - Add several products to the shopping cart.
 - Checkout and view the final receipt.
 
-## *Week 2* Application Features
+## _Week 2_ Application Features
 
 ### Core Features
 
@@ -29,10 +29,11 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - [ ] Your choice! (Replace this bullet explaining what you implemented. Example: Users can leave ratings for products they have purchased.)
 
 ## Demo: Part 1
+
 May take some time to load
 <img style="width:auto; height: 400px;" src="Demo.gif">
 
-## *Week 3* Application Features
+## _Week 3_ Application Features
 
 ### Core Features
 
@@ -50,5 +51,6 @@ May take some time to load
 - [x] Users can clear their shopping cart
 
 ## Demo: Part 2
+
 May take some time to load
 <img style="width:auto; height: 400px;" src="Demo-2.gif">

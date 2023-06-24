@@ -1,64 +1,63 @@
-.sidebar{
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 60px;
-    overflow: scroll;
-    align-items: center;
-    padding-top: 1%;
-    gap: 30px;
-    position: fixed;
-    z-index: 1;
-    transition: gap 0.15s linear, width 0.25s linear 0.25s;
+.sidebar {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 60px;
+  overflow: scroll;
+  align-items: center;
+  padding-top: 1%;
+  gap: 30px;
+  position: fixed;
+  z-index: 1;
+  transition: gap 0.15s linear, width 0.25s linear 0.25s;
 }
 
-#open{
-    transform: rotate(180deg);
-    transition: transform 0.25s ease-in-out;
+#open {
+  transform: rotate(180deg);
+  transition: transform 0.25s ease-in-out;
 }
 
-#close{
-    transform: rotate(0);
-    transition: transform 0.25s ease-in-out;
+#close {
+  transform: rotate(0);
+  transition: transform 0.25s ease-in-out;
 }
 
-.open-sidebar{
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    max-height: 100vh;
-    height: 100%;
-    row-gap: 1.5%;
-    align-items: center;
-    padding-top: 1%;
-    position: fixed;
-    z-index: 1;
-    width: 40%;
-    padding: 1% 2.5%;
-    overflow-y: scroll;
-    transition: width 0.25s linear, gap 0.15s linear 0.25s;
+.open-sidebar {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+  height: 100%;
+  row-gap: 1.5%;
+  align-items: center;
+  padding-top: 1%;
+  position: fixed;
+  z-index: 1;
+  width: 40%;
+  padding: 1% 2.5%;
+  overflow-y: scroll;
+  transition: width 0.25s linear, gap 0.15s linear 0.25s;
 }
 
-.side-bar-button{
-    background-color: transparent;
-    height: 50px;
-    width: 50px;
-    padding: 0%;
-    border: none;
-    cursor: pointer;
+.side-bar-button {
+  background-color: transparent;
+  height: 50px;
+  width: 50px;
+  padding: 0%;
+  border: none;
+  cursor: pointer;
 }
 
-.btn-img{
-    height: 40px;
-    width: 40px;
-    text-align: center;
-    padding: 0;
-    margin: 0;
+.btn-img {
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  padding: 0;
+  margin: 0;
 }
 
-
-.empty-cart-text{ 
-    color: rgb(204, 204, 204);
-    font-size: 20px;
+.empty-cart-text {
+  color: rgb(204, 204, 204);
+  font-size: 20px;
 }

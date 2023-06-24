@@ -7,7 +7,7 @@ export default function ProductView({
   id,
   handleAddItemToCart,
   handleRemoveItemFromCart,
-  shoppingCart
+  shoppingCart,
 }) {
   const findInShoppingCart = (currProduct) => {
     let i = -1;

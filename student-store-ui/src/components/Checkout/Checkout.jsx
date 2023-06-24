@@ -3,19 +3,25 @@ import "./Checkout.css";
 import { useState } from "react";
 import axios from "axios";
 import Receipt from "../Receipt/Receipt";
-export default function Checkout({ style , shoppingCart}) {
+export default function Checkout({ style, shoppingCart }) {
   const [userData, setUserData] = useState({ name: "", email: "" });
-  const [purchase, setPurchase] = useState({})
+  const [purchase, setPurchase] = useState({});
 
   useEffect(() => {
-    if(shoppingCart.length === 0){setPurchase({})}
-  }, [shoppingCart])
+    if (shoppingCart.length === 0) {
+      setPurchase({});
+    }
+  }, [shoppingCart]);
 
   const handleClick = (event) => {
-    event.preventDefault()
-    axios.post(`http://localhost:3001/store`, {shoppingCart: shoppingCart, user: userData})
-    .then(response => setPurchase(response.data.purchase))
-    setUserData({ name: "", email: "" })
+    event.preventDefault();
+    axios
+      .post(`http://localhost:3001/store`, {
+        shoppingCart: shoppingCart,
+        user: userData,
+      })
+      .then((response) => setPurchase(response.data.purchase));
+    setUserData({ name: "", email: "" });
   };
 
   const handleChange = (event) => {
@@ -44,12 +50,21 @@ export default function Checkout({ style , shoppingCart}) {
         value={userData.email}
         required
       />
-      <button type="submit" className="checkout-btn" onClick={handleClick} onSubmit={handleClick}>
+      <button
+        type="submit"
+        className="checkout-btn"
+        onClick={handleClick}
+        onSubmit={handleClick}
+      >
         Check Out
       </button>
 
       {/* if we make a purchase, then we sgould display a receipt */}
-      {Object.keys(purchase).length > 0? (<Receipt receipt={purchase.receipt} />) : <></>}
+      {Object.keys(purchase).length > 0 ? (
+        <Receipt receipt={purchase.receipt} />
+      ) : (
+        <></>
+      )}
     </form>
   );
 }
