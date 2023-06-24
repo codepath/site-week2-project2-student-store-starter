@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import "./ShoppingCart.css";
+import CheckoutForm from "../CheckoutForm/CheckoutForm";
 const ShoppingCart = ({ isOpen, products, shoppingCart }) => {
   const [novalueInShoppingCart, setNoValueInShoppingCart] = useState(true);
   const [productValues, setProductValues] = useState([]);
@@ -9,27 +10,38 @@ const ShoppingCart = ({ isOpen, products, shoppingCart }) => {
   const [productId, setProductId] = useState("");
   const [productPrice, setProductPrice] = useState("");
   const [cost, setCost] = useState(0);
+  const [checkout, setCheckout] = useState(true);
+  const [buyerName, setBuyerName] = useState("");
+  const [buyerEmail, setBuyerEmail] = useState("");
+  const [checkOutRecipt, setCheckoutRecipt] = useState([]);
+  const [sendSubTotal, setSendSubTotal] = useState(0);
+  const [subPlusTaxesAndFees, setSubPluseTaxesAndFees] = useState(0);
+  const [ftotal, setFTotal] = useState(0);
+
   let subtotal = 0;
-  let taxesAndFees = 0;
+  let subplustaxesAndFees = 0;
+  let total = 0;
   // console.log("product", products);
   // console.log("itemid", itemId);
 
-  taxesAndFees = subtotal + taxesAndFees;
   console.log(shoppingCart.length);
-  // if (shoppingCart.length > 0) {
-  //   setNoValueInShoppingCart(!novalueInShoppingCart);
-  // }
 
-  // shoppingCart.map((item) => {
-  //   let product = {
-  //     productName: products[item.itemId - 1].name,
-  //     productQuantity: products.quantity,
-  //     productPrice: products[item.itemId - 1],
-  //     productCost: products[item.itemId - 1].price * item.quantity,
-  //   };
-  //   let individualProduct = productValues;
-  //   individualProduct.push(product);
-  // });
+  const handleClick = (e) => {
+    setCheckout(false);
+    let checkOutRecipt = [...shoppingCart];
+    setCheckoutRecipt(checkOutRecipt);
+    shoppingCart.splice(0, shoppingCart.length);
+    console.log("shoppingcart", shoppingCart);
+    setSendSubTotal(subtotal);
+    setSubPluseTaxesAndFees(subplustaxesAndFees);
+    setFTotal(total);
+  };
+  const handleNameChange = (e) => {
+    setBuyerName(e.target.value);
+  };
+  const handleEmailChange = (e) => {
+    setBuyerEmail(e.target.value);
+  };
 
   return (
     <>
@@ -42,13 +54,18 @@ const ShoppingCart = ({ isOpen, products, shoppingCart }) => {
       {shoppingCart.length <= 0 ? (
         <div>No items added to cart yet</div>
       ) : (
-        <h2>{"Name|Quantity|Unit Price|Cost"}</h2>
+        <table>
+          <h2>{"Name|Quantity|Unit Price|Cost"}</h2>
+        </table>
       )}
 
       <div className="MyTable-Tr">
         {console.log(shoppingCart.length)}
         {shoppingCart.map((item) => {
+          console.log(item.itemId - 1);
           subtotal = subtotal + products[item.itemId - 1].price * item.quantity;
+          subplustaxesAndFees = subtotal * 0.07;
+          total = subtotal + subplustaxesAndFees;
           return (
             <p className={itemId}>
               {products[item.itemId - 1].name},{"  "} {item.quantity} ,
@@ -59,34 +76,74 @@ const ShoppingCart = ({ isOpen, products, shoppingCart }) => {
         })}
       </div>
 
-      {shoppingCart.length > 0 ? <p>Subtotal: {subtotal}</p> : null}
       {shoppingCart.length > 0 ? (
-        <p>Taxes and Fees: {"Taxes and Fees"}</p>
+        <div>
+          <p>Subtotal: {subtotal}</p>
+        </div>
       ) : null}
-      {shoppingCart.length > 0 ? <p>Total:{"Total"}</p> : null}
+
+      {shoppingCart.length > 0 ? (
+        <p>
+          Taxes and Fees:{" "}
+          {(Math.round(subplustaxesAndFees * 100) / 100).toFixed(2)}
+        </p>
+      ) : null}
+      {shoppingCart.length > 0 ? (
+        <p>Total:{(Math.round(total * 100) / 100).toFixed(2)}</p>
+      ) : null}
       {/* {shoppingCart.length > 0 ? { subtotal } : null} */}
 
       {/* {!shoppingCart.length ? <p>{subtotal}</p> : " "} */}
 
       <h3>Payment Info</h3>
       <form>
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name"></input>
-        <label for="email">Email</label>
-        <input type="text" id="email" name="email"></input>
-        <input type="checkbox" id="verified" value="read" />
-        <label for="verified">
-          I agree to the <a>terms and conditions</a>
-        </label>
-        <button className="checkout-btn">Checkout</button>
+        <label>Name</label>
+        <input
+          onChange={handleNameChange}
+          type="text"
+          id="name"
+          name="name"
+          value={buyerName}
+        ></input>
+        <label>Email</label>
+        <input
+          onChange={handleEmailChange}
+          type="text"
+          id="email"
+          name="email"
+          value={buyerEmail}
+        ></input>
       </form>
+      <input type="checkbox" id="verified" value="read" />
+      <label for="verified">
+        I agree to the <a>terms and conditions</a>
+      </label>
+      <button onClick={handleClick} className="checkout-btn">
+        Checkout
+      </button>
       <h2>Checkout Info</h2>
       <p>Receipt</p>
-      <p>
-        A confirmation email will be sent to you so that you can confirm this
-        order. Once you have confirmed the order, it will be delivered to your
-        dorm room.
-      </p>
+      {checkout ? (
+        <p>
+          A confirmation email will be sent to you so that you can confirm this
+          order. Once you have confirmed the order, it will be delivered to your
+          dorm room.
+        </p>
+      ) : (
+        <>
+          <CheckoutForm
+            ftotal={ftotal}
+            subplustaxesAndFees={subplustaxesAndFees}
+            sendSubTotal={sendSubTotal}
+            products={products}
+            checkOutRecipt={checkOutRecipt}
+            handleClick={handleClick}
+            buyerName={buyerName}
+            buyerEmail={buyerEmail}
+            shoppingCart={shoppingCart}
+          />
+        </>
+      )}
     </>
   );
 };

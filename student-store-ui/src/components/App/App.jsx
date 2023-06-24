@@ -22,6 +22,7 @@ export default function App() {
 
   const handleAddItemToCart = (e) => {
     const id = e.target.value;
+
     let itemAlreadyInCart = shoppingCart.filter(
       (item) => parseInt(item.itemId) === parseInt(id)
     );
@@ -53,10 +54,16 @@ export default function App() {
 
       let index = shoppingCart.findIndex((item) => item.itemId == id);
       let newShoppingCart = [...shoppingCart];
-      if (newShoppingCart[index].quantity == 1) {
+      if (newShoppingCart[index].quantity === 1) {
         //remove item from cart.
         //dgionnot know how to implement yet
-        console.log("wait");
+        // const deleteProduct = newShoppingCart.filter
+        const deleteProduct = newShoppingCart.splice(index, 1);
+        // delete newShoppingCart[index];
+        // newShoppingCart.filter((product) => product.itemId >== 1);
+        setShoppingCart(deleteProduct);
+
+        console.log(shoppingCart);
       } else {
         newShoppingCart[index].quantity = newShoppingCart[index].quantity - 1;
       }
