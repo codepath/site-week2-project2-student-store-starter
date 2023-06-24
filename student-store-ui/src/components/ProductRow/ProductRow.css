@@ -1,0 +1,7 @@
+.product-row {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20px;
+    margin-top: 10px;
+    border-bottom: solid 1px grey;
+}
