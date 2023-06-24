@@ -12,7 +12,6 @@ export default function PurchaseDetails(){
             setPurchase(() => response.data.purchase);  
         })
     }, []);
-    console.log(purchase.order);
 
     return (
         <div className="purchase-container">
@@ -44,7 +43,6 @@ export default function PurchaseDetails(){
                         <p className="purchase-taxes">Taxes: {purchase.receipt?.taxes.toFixed(2)}</p>
                         <p className="purchase-subtotal">Subtotal: {purchase.receipt?.subtotal.toFixed(2)}</p>
                         <p className="purchase-total">Total: {purchase.total?.toFixed(2)}</p>
-
                     </div>
                 </div>
             </div>

@@ -5,13 +5,12 @@ import SearchBar from "../Shop/SearchBar";
 import axios from "axios";
 
 function PurchaseTableRow({ purchase }) {
-    console.log(purchase);
     return (
         <div className="cart-purchase-row">
         <span>{purchase.name}</span>
         <span>{purchase.email}</span>
         <span>{purchase.total.toFixed(2)}</span>
-        <span>{purchase.createdAt}</span>
+        <span>{purchase.createdAt.split(",")[0]}</span>
         <span>{purchase.id}</span>
     </div>
     )
@@ -31,7 +30,6 @@ export default function Purchases() {
         })
     }, []);
     const queryFilter = (query, criteria) => {
-        console.log(query, criteria)
         return criteria.toLowerCase().includes(query.toLowerCase());
     }
 
@@ -53,7 +51,7 @@ export default function Purchases() {
                         // display items only with quantities > 0
 
                         return (queryFilter(inputValue, purchase.name) || queryFilter(inputValue, purchase.email)) ? (
-                            <Link to={`/purchases/${purchase.id}`}>
+                            <Link className="cart-purchase-row-container" to={`/purchases/${purchase.id}`}>
                                 <PurchaseTableRow purchase={purchase} />
                             </Link> 
                         ) : (<></>)

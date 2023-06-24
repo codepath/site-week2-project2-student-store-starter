@@ -54,7 +54,7 @@
     margin-left: 1.3rem;
     justify-content: start;
 }
-.cart-purchase-row span:nth-child(n){
+.cart-purchase-row span:nth-child(5){
     justify-content: end;
     margin-right: 1.3rem;
 }

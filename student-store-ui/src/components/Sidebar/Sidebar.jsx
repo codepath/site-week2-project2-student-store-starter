@@ -3,7 +3,7 @@ import { useState, useEffect, useContext } from "react";
 import "./Sidebar.css";
 import CheckoutCartForm from "../CheckoutCartForm/CheckoutCartForm";
 import CartItemsTable from "../CartItemsTable/CartItemsTable.jsx";
-export default function Sidebar() {
+export default function Sidebar({checkoutCart, dispatch}) {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <section className={"sidebar-container " + (isOpen ? "open" : "")}>
@@ -13,8 +13,8 @@ export default function Sidebar() {
       
       {isOpen && (
         <>
-          <CartItemsTable />
-          <CheckoutCartForm/>
+          <CartItemsTable checkoutCart={checkoutCart}/>
+          <CheckoutCartForm checkoutCart={checkoutCart} dispatch={dispatch}/>
         </>
       )}
     </section>

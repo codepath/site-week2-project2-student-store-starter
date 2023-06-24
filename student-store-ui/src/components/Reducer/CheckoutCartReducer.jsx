@@ -34,12 +34,6 @@ export default function CheckoutCartReducer(checkoutCart, action){
                 } else{
                     // otherwise update cart with decremented
                     // product quantity
-                    console.log("setting cart to: ", {...checkoutCart, 
-                        [action.productID] : {
-                            quantity : newQuantity,
-                            ...action.product    
-                        }
-                    })
                     return {...checkoutCart, 
                         [action.productID] : {
                             quantity : newQuantity,

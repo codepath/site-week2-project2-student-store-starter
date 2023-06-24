@@ -16,12 +16,13 @@ import Purchases from '../Purchases/Purchases';
 import PurchaseDetails from '../PurchaseDetails/PurchaseDetails';
 export default function App() {
   const [checkoutCart, dispatch] = useReducer(CheckoutCartReducer, {});
+  
   const Overlay = () => (
     <>
     <div className="app-container">
 
       <Navbar />
-      <Sidebar />
+      <Sidebar checkoutCart={checkoutCart} dispatch={dispatch} />
       <Outlet />
       {/* <Footer /> */}
     </div>
@@ -29,15 +30,11 @@ export default function App() {
     </>
   )
   return (
-    // <div className="app-container">
-
-    <CheckoutCartDispatchContext.Provider value={dispatch}>
-      <CheckoutCartContext.Provider value={checkoutCart}>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Overlay />}>
-              <Route path="/" element={<Home />} />
-              <Route path="products/:id" element={<ProductDetails />} />
+              <Route path="/" element={<Home checkoutCart={checkoutCart} dispatch={dispatch} />} />
+              <Route path="products/:id" element={<ProductDetails checkoutCart={checkoutCart} dispatch={dispatch} />} />
               <Route path="purchases" element={<Purchases />} />
               <Route path="purchases/:id" element={<PurchaseDetails />} />
               <Route path="*" element={<NotFound />} />
@@ -46,13 +43,6 @@ export default function App() {
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
-          {/* <main className="app-content">
-      </main> */}
         </BrowserRouter>
-      </CheckoutCartContext.Provider>
-    </CheckoutCartDispatchContext.Provider>
-
-    
-
   )
 }

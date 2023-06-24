@@ -26,12 +26,12 @@ function Hero() {
 }
 
 
-export default function Home() {
-
+export default function Home({checkoutCart, dispatch}) {
+ 
   return (
     <div className="home">
       <Hero />
-      <Shop />
+      <Shop checkoutCart={checkoutCart} dispatch={dispatch} />
       <About />
       <Contact />
       <Footer />
