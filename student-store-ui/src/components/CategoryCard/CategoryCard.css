@@ -4,7 +4,6 @@
     justify-content: space-between;
 }
 
-/* .filter */
 .filter-option{
     font-size: 24px;
     text-transform: capitalize;
@@ -27,9 +26,9 @@
     cursor: pointer;
 }
 
-.filter-option.transition{
+/* .filter-option.transition{
     display: hidden;
-}
+} */
 
 .filter-image{
     width:30px;

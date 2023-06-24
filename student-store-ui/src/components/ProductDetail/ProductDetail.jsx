@@ -9,7 +9,6 @@ export default function ProductDetail({handleAddItemToCart, handleRemoveItemFrom
   const [product, setProduct] = useState(null);
   const [fetched, setFetched] = useState(false);
   const { id } = useParams();
-  // const url = `https://codepath-store-api.herokuapp.com/store/${id}`;
   const url = `http://localhost:3001/store/${id}`
   useEffect(() => {
     axios

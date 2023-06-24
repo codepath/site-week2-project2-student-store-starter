@@ -2,7 +2,7 @@ import React from "react";
 import "./Receipt.css"
 
 export default function Receipt({receipt}){
-    let receiptElements = receipt.split("\n")
+    let receiptElements = receipt?.split("\n")
     return (
         <section className="receipt">
             <h1>{receiptElements[0]}</h1>

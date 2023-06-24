@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Checkout.css";
 import { useState } from "react";
 import axios from "axios";
@@ -7,10 +7,15 @@ export default function Checkout({ style , shoppingCart}) {
   const [userData, setUserData] = useState({ name: "", email: "" });
   const [purchase, setPurchase] = useState({})
 
+  useEffect(() => {
+    if(shoppingCart.length === 0){setPurchase({})}
+  }, [shoppingCart])
+
   const handleClick = (event) => {
     event.preventDefault()
     axios.post(`http://localhost:3001/store`, {shoppingCart: shoppingCart, user: userData})
     .then(response => setPurchase(response.data.purchase))
+    setUserData({ name: "", email: "" })
   };
 
   const handleChange = (event) => {
@@ -26,6 +31,7 @@ export default function Checkout({ style , shoppingCart}) {
         placeholder="Firstname Lastname"
         onChange={handleChange}
         name="name"
+        value={userData.name}
         required
       />
       <label htmlFor="email">Email</label>
@@ -35,9 +41,10 @@ export default function Checkout({ style , shoppingCart}) {
         placeholder="example@domain.com"
         onChange={handleChange}
         name="email"
+        value={userData.email}
         required
       />
-      <button type="submit" className="checkout-btn" onClick={handleClick}>
+      <button type="submit" className="checkout-btn" onClick={handleClick} onSubmit={handleClick}>
         Check Out
       </button>
 

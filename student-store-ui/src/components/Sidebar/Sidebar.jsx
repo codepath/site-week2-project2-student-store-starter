@@ -10,11 +10,16 @@ import { useState } from "react";
 export default function Sidebar({
   shoppingCart,
   products,
+  setShoppingCart
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOnToggle = (event) => {
     setIsOpen(!isOpen);
+  };
+
+  const handleMenuClick = (event) => {
+    setIsOpen(true);
   };
 
   return (
@@ -26,7 +31,7 @@ export default function Sidebar({
       >
         <img className="btn-img" src={backButtonIcon} />
       </button>
-      <button id="shopping-cart-btn" className="side-bar-button">
+      <button id="shopping-cart-btn" className="side-bar-button" onClick={handleMenuClick}>
         <img className="btn-img" src={shoppingCartIcon} />
       </button>
       {shoppingCart.length ? (
@@ -40,11 +45,14 @@ export default function Sidebar({
           No items added to cart yet. Start shopping now!
         </h3>
       )}
-      <button id="paryment-info-btn" className="side-bar-button">
+      <button id="paryment-info-btn" className="side-bar-button" onClick={handleMenuClick}> 
         <img className="btn-img" src={paymentInfoIcon} />
       </button>
       <Checkout  style={{ display: isOpen ? "" : "none" }} shoppingCart={shoppingCart}/>
-      <button id="checkout-btn" className="side-bar-button">
+      <button id="checkout-btn" className="side-bar-button" onClick={(event) => {
+        setIsOpen(false)
+        setShoppingCart([])
+      }}>
         <img className="btn-img" src={checkOutIcon} />
       </button>
     </section>

@@ -3,6 +3,7 @@ import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 import Home from "../Home/Home";
+import History from "../History/History"
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
@@ -10,10 +11,8 @@ import ProductDetail from "../ProductDetail/ProductDetail";
 import NotFound from "../NotFound/NotFound";
 
 export default function App() {
-  // const url = "https://codepath-store-api.herokuapp.com/store"; 
   const url = "http://localhost:3001/store"
   const [products, setProducts] = useState([]);
-  // const [isOpen, setIsOpen] = useState(false);
   const [shoppingCart, setShoppingCart] = useState([]);
 
   // fetch the data
@@ -27,10 +26,6 @@ export default function App() {
         setProducts([]);
       });
   }, []);
-
-  // const adjustSidebar = (event) => {
-  //   setIsOpen(!isOpen);
-  // };
 
   const handleAddItemToCart = (id) => {
     let index = -1;
@@ -83,7 +78,6 @@ export default function App() {
                   />
                 }
               />
-              {/* <Route path="/about" element={<About/>} /> */}
               <Route
                 path="/products/:id"
                 element={
@@ -94,14 +88,19 @@ export default function App() {
                   />
                 }
               />
+              <Route
+              path="/history"
+              element={
+                <History shoppingCart={shoppingCart}/>
+              }
+              />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
           <Sidebar
-            // isOpen={isOpen}
             shoppingCart={shoppingCart}
             products={products}
-            // handleOnToggle={adjustSidebar}
+            setShoppingCart={setShoppingCart}
           />
           <Navbar />
         </BrowserRouter>

@@ -1,10 +1,10 @@
+const { match } = require("assert");
 const { BadRequestError } = require("./Errors");
 const fs = require("fs");
 
 class Store {
   constructor(db) {
     this.db = db;
-    this.id = 0;
   }
 
   getAllProducts() {
@@ -18,7 +18,7 @@ class Store {
     );
     if (!foundProduct) {
       // throw an error or do something
-      throw new BadRequestError("Product not found")
+      throw new BadRequestError("Product not found");
     } else {
       return { product: foundProduct };
     }
@@ -26,7 +26,7 @@ class Store {
 
   #containsDuplicates(shoppingCart) {
     const seenItems = new Set();
-    let duplicate = false
+    let duplicate = false;
     shoppingCart.forEach((item) => {
       if (seenItems.has(item.itemId)) {
         duplicate = true;
@@ -85,9 +85,11 @@ class Store {
 
     // if either arguement is missing
     if (shoppingCart === undefined || user === undefined) {
-      throw new BadRequestError(
-        "Shopping Cart and User Info must be present"
-      );
+      throw new BadRequestError("Shopping Cart and User Info must be present");
+    }
+
+    if(shoppingCart.length === 0) {
+        throw new BadRequestError("Can not checkout empty shopping Cart")
     }
 
     // if there are duplicates
@@ -100,18 +102,22 @@ class Store {
       this.#hasMissingFields(shoppingCart, ["itemId", "quantity"]) ||
       this.#hasMissingFields([user], ["name", "email"])
     ) {
-      throw new BadRequestError(
-        "Missing Checkout fields"
-      );
+      throw new BadRequestError("Missing Checkout fields");
     }
 
-    if(user.name.length === 0 || user.email.length === 0) {
-        throw new BadRequestError("User Info must include name and email")
+    // if the username or email is empty
+    if (user.name.length === 0 || user.email.length === 0) {
+      throw new BadRequestError("User Info must include name and email");
+    }
+
+    // store the next id
+    if (!("nextId" in this.db)) {
+      this.db.nextId = 0;
     }
 
     const subTotal = this.#getSubtotal(shoppingCart);
     const purchase = {
-      id: this.id++,
+      id: this.db.nextId++,
       name: user.name,
       email: user.email,
       order: shoppingCart,
@@ -121,15 +127,54 @@ class Store {
 
     purchase.receipt = this.#generateReceipt(purchase);
 
-    // add to the data base file
-    // add purchases filed if it isnt present
-    if (!("purchases" in this.db)) {
-      this.db.purchases = [];
-    }
     this.db.purchases.push(purchase);
-    // TODO
-    // fs.writeFile("../student-store-express-api/data/db.json", JSON.stringify(this.db, null, 4), error =>{if(error){console.error(error)}})
+    fs.writeFileSync(
+      "./data/db.json",
+      JSON.stringify(this.db, null, 4),
+      (error) => {
+        if (error) {
+          console.error(error);
+        }
+      }
+    );
     return purchase;
+  }
+
+  getAllOrders(res) {
+    const readFileCallback = (error, data) => {
+      if (error) {
+        console.error(error);
+        throw new Error("Could not retrieve orders");
+      } else {
+        res.status(200).send({orders: JSON.parse(data).purchases});
+      }
+    };
+    
+    fs.readFile(
+      "../student-store-express-api/data/db.json",
+      "utf-8",
+      readFileCallback
+    );
+  }
+
+  getOrderById(id, res) {
+    const readFileCallback = (error, data) => {
+      if (error) {
+        console.error(error);
+        throw new Error("Could not retrieve orders");
+      } else {
+        let purchases = JSON.parse(data).purchases;
+        const match = purchases.find((item) => item.id === parseInt(id));
+        match
+          ? res.status(200).send(match)
+          : res.status(400).send({ message: "No such items exist" });
+      }
+    };
+    fs.readFile(
+      "../student-store-express-api/data/db.json",
+      "utf-8",
+      readFileCallback
+    );
   }
 }
 
