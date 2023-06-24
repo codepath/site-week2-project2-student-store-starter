@@ -52,6 +52,5 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
   </a>
 
 <a href="https://www.loom.com/share/8b5200f4eaf8403f83b2e794c843e542">
-    <p>Student Store - 23 June 2023 - Watch Video</p>
     <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/8b5200f4eaf8403f83b2e794c843e542-with-play.gif">
   </a>
