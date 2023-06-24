@@ -6,6 +6,7 @@ import Loginform from "../Login/Login";
 import Checkout from "../Checkout/Checkout";
 
 function Sidebar({ShoppingList, SetShoppingList}) {
+  //useStates for sidebar login and price totals
   const[Name, SetName] = useState("")
   const[Email, SetEmail] = useState("")
   const [SubTotal, SetSubTotal] = useState(0)

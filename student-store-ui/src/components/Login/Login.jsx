@@ -1,5 +1,7 @@
 import react from "react"
 import "./Login.css"
+
+//Login function
 export default function Loginform({SetName, SetEmail}){
     return(
         <div className="Loginform">
@@ -7,6 +9,7 @@ export default function Loginform({SetName, SetEmail}){
             <form>
                 <div className="formGroup">
                     <label htmlFor="name">Name</label>
+                    {/* Logging customer information */}
                     <input type = "name" id = "name" placeholder="Enter Your Name" onChange={(event) => {SetName(event.target.value)}}/>
                 </div>
                 <div className="formGroup">

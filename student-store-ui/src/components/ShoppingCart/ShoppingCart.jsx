@@ -1,11 +1,13 @@
 import react, { useEffect, useState } from "react"
 import './Shoppingcart.css'
 
+
 export default function ShoppingCart({ShoppingList, SubTotal, SetSubTotal}){
 
-    console.log(ShoppingList)
+    // Creating state variable FirstItem with initial value false
     const [FirstItem, SetFirstItem] = useState(false)
 
+    // useEffect to update FirstItem based on the length of ShoppingList prop
     useEffect(() =>{
         if(ShoppingList?.length > 0){
             SetFirstItem(true)
@@ -14,15 +16,17 @@ export default function ShoppingCart({ShoppingList, SubTotal, SetSubTotal}){
         }
     })
 
+    // useEffect to calculate the subtotal and update the SubTotal prop
     useEffect(() => {
         let itemTotal = 0
         ShoppingList?.map((item) => {
             itemTotal += item.price * item.quantity
         })
+        // Update the SubTotal prop with the calculated value
         SetSubTotal(itemTotal)
     })
 
-
+    // Shopping Cart Categories
     return(
         <div className="Shoppingcart">
             <h2>Shopping Cart</h2>
@@ -44,6 +48,7 @@ export default function ShoppingCart({ShoppingList, SubTotal, SetSubTotal}){
                     </span>)
             })}
             </>)}
+            {/* Displaying subtotal, taxes and fees, and total cost */}
             <span className="subTotal" style={{display: FirstItem ? "" : "none"}}>
                 <p>{"Subtotal : $"}{SubTotal.toFixed(2)}</p>
                 <p>{"Taxes and Fees : $"}{(SubTotal.toFixed(2) * 0.0875).toFixed(2)}</p>

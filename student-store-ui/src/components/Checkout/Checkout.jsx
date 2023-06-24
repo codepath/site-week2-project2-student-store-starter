@@ -1,6 +1,7 @@
 import react, { useState } from "react"
 import "./Checkout.css"
 
+//Checkout feature that takes in 4 props
 export default function Checkout({ShoppingList,SubTotal,Name,Email}){
     const[Checkout, SetCheckOut] = useState(true)
     return(
@@ -8,9 +9,11 @@ export default function Checkout({ShoppingList,SubTotal,Name,Email}){
             <div className="buttonCheckout">
                 <button className="CheckoutButton" onClick={() => SetCheckOut(!Checkout)}>Checkout</button>
             </div>
+            {/* Conditioning to hide or show the display */}
             <div className="BeforeCheckout" style = {{display: Checkout ? "" : "none"}}>
                 <p>A confirmation email will be sent to you so that you can confirm this order. Once you have confirmed the order, it will be delivered to your dorm room.</p>
             </div>
+            {/* Conditioning to hide or show the display */}
             <div className="AfterCheckout" style = {{display: Checkout ? "none" : ""}}>
                 <p>Recipt</p>
                 <p>Showing recipt for {Name} available at {Email}</p>
