@@ -34,11 +34,8 @@ https://imgur.com/a/svwM252
 
 # Week 3 Assignment: Student Store Pt. 11
 
-**Live Website** 
 
 ### Walkthrough Video
-
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/nC3LD3x"  ><a href="//imgur.com/a/nC3LD3x">Week 3</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
 ## *Week 3* Application Features
 
