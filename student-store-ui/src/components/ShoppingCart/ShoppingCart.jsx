@@ -1,10 +1,15 @@
 import * as React from "react";
 import ShoppingIcon from "remixicon-react/ShoppingBasket2FillIcon";
 import "./ShoppingCart.css";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import PaymentIcon from "remixicon-react/MoneyDollarCircleFillIcon";
+import CheckoutForm from "../Checkout/CheckoutForm";
 
 export default function ShoppingCart({
+  email,
+  setEmail,
+  name,
+  setName,
   subtotal,
   setSubtotal,
   total,
@@ -13,7 +18,34 @@ export default function ShoppingCart({
   setTaxes,
   setShoppingCart,
   shoppingCart,
+  setCheckout,
+  checkout
 }) {
+
+
+  const handleName = (event) => {
+    setName(event.target.value);
+  };
+
+  const handleEmail = (event) => {
+    setEmail(event.target.value);
+  };
+
+
+  const handleCheckout = (event) => {
+    setCheckout (true);
+  };
+
+  // console.log(email)
+  // console.log(name)
+
+
+
+// function handleSubmit(e) {
+//   e.preventDefault
+// }
+
+
   useEffect(() => {
     const calcSubtotal = () => {
       let newSubTotal = 0;
@@ -41,6 +73,7 @@ export default function ShoppingCart({
 
   function emptyCart() {
     setShoppingCart([]);
+    setCheckout(false)
   }
 
   return (
@@ -110,6 +143,37 @@ export default function ShoppingCart({
           <h3>Payment Info</h3>
           <PaymentIcon />
         </span>
+        <label className="form-label" htmlFor="name">
+          Name:
+        </label>
+        <input
+          value={name}
+          onChange={handleName}
+          className="form-input"
+          name="student-name"
+          placeholder="Student Name"
+          required=""
+        />{" "}
+        <br></br>
+        <label className="form-label" htmlFor="password">
+          Email:
+        </label>
+        <input
+          value={email}
+          onChange={handleEmail}
+          className="form-input"
+          name="student-name"
+          placeholder="Student@codepath.org"
+          required
+        />
+        <input type="checkbox" 
+        // onChange={handleCheckout}
+        required />
+        <label className="checkbox-input">
+          I agree to the terms and conditions
+        </label>
+        <br></br>
+        <button id="checkout-button" onClick={handleCheckout}>Checkout</button>
       </div>
     </>
   );

@@ -4,32 +4,35 @@ import "./CheckoutForm.css"
 
 export default function CheckoutForm ({
           email,
-          setEmail,
           name,
-          setName,
           checkout,
-          setCheckout
+          setCheckout,
+          shoppingCart,
+          subtotal, 
+          total
         }) 
 
 {
     return(
         <>
-        <label className="form-label" htmlFor="name">Name:</label>
-        <input className="form-input"
-        name="student-name" placeholder="Student Name" required=""/> <br></br>
-        <label className="form-label" htmlFor="password">Email:</label>
-        <input className="form-input"
-        name="student-name" placeholder="Student@codepath.org" required/>
-        
-        <input type="checkbox" required/>
-        <label className="checkbox-input">I agree to the terms and conditions</label><br></br>
-        <button id="checkout-button">Checkout</button>
         <div className="checkout" >
             <span>
             <h3 className="check-text">Checkout Info</h3>
             <CheckoutIcon/>
             </span>
-        <p>A confirmation email will be sent to you so that you can confirm this order. Once you have confirmed the order, it will be delivered to your dorm room.</p>
+            <p>Showing receipt for {name} available at {email}.</p>
+            {shoppingCart.map((cartinfo)  => {
+            return(
+                <p>&bull; {cartinfo.quantity} total {cartinfo.product} purchased at a cost of {cartinfo.unit_price} for a total cost of {cartinfo.cost}</p>
+
+             )
+            }) }
+            <p>&bull; Before taxes, the subtotal was {subtotal}</p>
+            <p>&bull;After taxes and fees were applied, the total comes out to {total}</p>
+        
+        
+        
+        
         </div>
         </>
             )
