@@ -32,12 +32,15 @@ https://imgur.com/a/svwM252
 - [ ] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
 - [x] I added CSS hover animations and a fixed header
 
-# Week 3 Assignment: Student Store Pt. 11
+# Week 3 Assignment: Student Store Pt. 2
 
 
 ### Walkthrough Video
 
-<img src="https://i.imgur.com/KVvICo8.gif" width="40" height="40" />
+<a href="https://www.loom.com/share/2e89f5363f194a7fa0d8addd5061c667">
+    <p>Project 3: Student Store Pt. 2 - Watch Video</p>
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/2e89f5363f194a7fa0d8addd5061c667-with-play.gif">
+  </a>
 
 ## *Week 3* Application Features
 
