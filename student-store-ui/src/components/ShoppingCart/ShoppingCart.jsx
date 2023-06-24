@@ -2,8 +2,7 @@ import * as React from "react";
 import ShoppingIcon from "remixicon-react/ShoppingBasket2FillIcon";
 import "./ShoppingCart.css";
 import { useEffect } from "react";
-import PaymentIcon from "remixicon-react/MoneyDollarCircleFillIcon"
-
+import PaymentIcon from "remixicon-react/MoneyDollarCircleFillIcon";
 
 export default function ShoppingCart({
   subtotal,
@@ -86,39 +85,32 @@ export default function ShoppingCart({
                 marginBottom: "10px",
               }}
             >
-              Subtotal <span className="prices">${subtotal.toFixed(2)}</span>
+              Subtotal: <span className="prices">${subtotal.toFixed(2)}</span>
             </div>
             <div style={{ marginLeft: "8px", marginBottom: "10px" }}>
-              Taxes and Fees <span className="prices">${taxes.toFixed(2)}</span>
+              Taxes and Fees:{" "}
+              <span className="prices">${taxes.toFixed(2)}</span>
             </div>
             <div
               style={{ marginLeft: "8px", marginBottom: "10px" }}
               id="checkoutHeader"
             >
               {" "}
-              Total <span className="prices">${total.toFixed(2)}</span>
+              Total: <span className="prices">${total.toFixed(2)}</span>
             </div>
           </div>
-          <button id="sc-button" onClick={emptyCart}> Clear Cart</button>
+          <button id="sc-button" onClick={emptyCart}>
+            {" "}
+            Clear Cart
+          </button>
         </>
       )}
-      <div className="payment" >
-    <span>
-    <h3>Payment Info</h3>
-    <PaymentIcon/>
-    </span>
-        <label className="form-label" htmlFor="name">Name:</label>
-        <input className="form-input"
-        name="student-name" placeholder="Student Name" required/> <br></br>
-        <label className="form-label" htmlFor="password">Password:</label>
-        <input className="form-input"
-        name="student-name" placeholder="Student@codepath.org" required/>
-        
-        <input type="checkbox" required/>
-        <label className="checkbox-input">I agree to the terms and conditions</label><br></br>
-        <button id="checkout-button">Checkout</button>
-
-</div>
+      <div className="payment">
+        <span>
+          <h3>Payment Info</h3>
+          <PaymentIcon />
+        </span>
+      </div>
     </>
   );
 }

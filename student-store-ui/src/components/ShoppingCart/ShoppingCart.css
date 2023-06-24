@@ -59,3 +59,6 @@ table {
   margin-bottom: 20px;
   justify-content: space-between;
 }
+.shopCartItems{
+  border-bottom: black;
+}

@@ -24,12 +24,14 @@ export default function ProductDetail() {
       <Navbar />
       <Hero />
       <Search />
-      <h2 style={{ margin: "0 auto" }}>Product: {product.name}</h2>
+      <h2 style={{ margin: "0 auto", marginTop:"80px" }}>Product: {product.name}</h2>
       <img
         style={{ width: "500px", height: "500px", margin: "0 auto" }}
         src={product.image}
       />
-      <p style={{ margin: "0 auto" }}>{product.description}</p>
+        <p id="price" style={{margin:'0 auto'}}>${product.price}</p>
+      <p style={{margin: "0 auto" }}>⭐⭐⭐⭐⭐</p>
+      <p style={{ margin: "0 auto", marginBottom:"80px" }}>{product.description}</p>
     </>
   );
 }

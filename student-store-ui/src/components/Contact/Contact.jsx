@@ -1,5 +1,5 @@
 import * as React from "react"
-import happygirl from "../../images/happygirl.png"
+import contactimage from "../../images/contactimage.png"
 
 export default function Contact() {
     return(
@@ -16,12 +16,12 @@ export default function Contact() {
        margin: '0 auto',
        maxWidth:'1100px', 
        }}>
-        <ul>
+        <ul style={{marginTop:"-50px"}}>
             <ul>Email: code@path.org</ul>
             <ul>Phone: 1-800-CODEPATH</ul>
             <ul>Address: 123 Fake Street, San Francisco, CA</ul>
         </ul> 
-        <img src={happygirl} alt="happy girl at codepath" id="happygirl"/>
+        <img src={contactimage} alt="happy girl at codepath" id="happygirl" style={{display: "flex", marginLeft:"50px", marginTop:"-70px"}}/>
     </div>
     </div>
     )

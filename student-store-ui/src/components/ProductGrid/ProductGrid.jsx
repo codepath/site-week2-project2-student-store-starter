@@ -26,7 +26,7 @@ export default function ProductGrid(props) {
 
   return (
     <>
-      <h2 id="buy-now" style={{ marginLeft: "120px", font: "large" }}>
+      <h2 id="buy-now" style={{ marginLeft: "180px", font: "large" }}>
         Best Selling Products
       </h2>
       <div className="productGrid">

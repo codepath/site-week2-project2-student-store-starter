@@ -19,6 +19,13 @@ export default function ProductCard(props) {
         quantity - 1)
     }
   
+    useEffect (() => {
+      if (props.shoppingCart.length === 0) {
+      setQuantity(0)}
+    }
+    ,[props.shoppingCart])
+
+
    useEffect(() => {
     let index = props.shoppingCart?.findIndex((cart) => {
       return cart.product === props.product.name;

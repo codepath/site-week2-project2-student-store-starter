@@ -1,7 +1,6 @@
 import * as React from "react";
 import "./Sidebar.css";
 import MenuLineIcon from "remixicon-react/MenuFillIcon";
-
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import CheckoutForm from "../Checkout/CheckoutForm";
 import { useState } from "react";
@@ -25,9 +24,9 @@ export default function Sidebar({ setShoppingCart, shoppingCart }) {
       >
         {" "}
         {isOpen ? (
-          <MenuLineIcon style={{ }} />
+          <MenuLineIcon/>
         ) : (
-          <MenuLineIcon style={{ }} />
+          <MenuLineIcon/>
         )}{" "}
       </button>
       {isOpen && (
@@ -42,7 +41,14 @@ export default function Sidebar({ setShoppingCart, shoppingCart }) {
             taxes={taxes}
             setTaxes={setTaxes}
           />
-          <CheckoutForm />
+          <CheckoutForm 
+          email={email}
+          setEmail={setEmail}
+          name={name}
+          setName={setName}
+          checkout={checkout}
+          setCheckout={setCheckout}
+           />
         </>
       )}
     </div>

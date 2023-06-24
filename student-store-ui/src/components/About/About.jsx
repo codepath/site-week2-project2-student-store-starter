@@ -16,10 +16,11 @@ export default function About() {
         borderStyle: 'solid',
         display: 'flex',
         maxWidth:'1100px', 
-        margin: '0 auto'        
+        margin: '0 auto',
+
         }}>
 
-        <p>The codepath student store offers great products at great prices from a great team and for a great cause.
+        <p style={{marginTop:"-50px"}}>The codepath student store offers great products at great prices from a great team and for a great cause.
             <br />
             <br />
         We've searched far and wide for items that perk the interests of even the most eccentric students and decided to offer them all here in one place. <br />
@@ -27,7 +28,7 @@ export default function About() {
             <br />
         All proceeds go towards bringing high quality CS education to college students around the country.</p>
         
-        <img src={codepath} alt="code path giant image" id="codepath" style={{ display: "flex"}}/>
+        <img src={codepath} alt="code path giant image" id="codepath" style={{ display: "flex", marginLeft:"50px", marginTop:"-70px"}}/>
 
     </div>
     </div>)
