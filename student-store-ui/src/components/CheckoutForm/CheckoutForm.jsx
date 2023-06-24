@@ -4,7 +4,6 @@ import "./CheckoutForm.css";
 export default function CheckoutForm({
   checkoutSubmitted,
   products,
-  totalPrice,
   receiptName,
   receiptEmail,
   handleShopMore,
@@ -53,7 +52,7 @@ export default function CheckoutForm({
               </p>
               <ul className="purchase">
                 {/* {console.log("THIS IS AN ORDER: ", order)} */}
-                {order.map((item) => (
+                {order.map((item, i) => (
                   <li>
                     {item.quantity} total
                     {" " +

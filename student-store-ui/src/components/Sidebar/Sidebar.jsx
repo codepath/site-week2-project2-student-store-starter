@@ -80,7 +80,7 @@ export default function Sidebar({
               </h3>
 
               <ShoppingCart
-                key={2}
+                key={6}
                 isOpen={isOpen}
                 products={products}
                 shoppingCart={shoppingCart}
@@ -170,6 +170,7 @@ export default function Sidebar({
               </div>
 
               <CheckoutForm
+              key={5}
                 checkoutSubmitted={checkoutSubmitted}
                 products={products}
                 taxesAndFees={taxesAndFees}

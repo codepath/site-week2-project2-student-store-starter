@@ -47,7 +47,8 @@ export default function App() {
   const [totalOrderQuantity, setTotalOrderQuantity] = useState([]);
   const [filteredTransactions, setFilteredTransactions] = useState([]);
   const [transactionInput, setTransactionInput] = useState("")
-
+  const [popupOpen, setPopupOpen] = useState([]);
+  
   useEffect(() => {
     axios.get(url).then((response) => {
       setProducts(response.data.products);
@@ -203,6 +204,7 @@ export default function App() {
     setNameTerm("");
     setEmailTerm("");
     setAcceptedTermsAndConditions(false);
+    setIsOpen(false)
   }
 
   function handleAcceptTermsAndConditions(event) {
@@ -215,7 +217,7 @@ export default function App() {
       <BrowserRouter>
         <main>
           <Sidebar
-            key={"sidebar"}
+            key={4}
             products={getFilteredProducts()}
             onToggle={onToggle}
             isOpen={isOpen}
@@ -275,15 +277,12 @@ export default function App() {
                     key={3}
                     products={products}
                     // order={order}
-                    receiptName={receiptName}
-                    receiptEmail={receiptEmail}
-                    totalSpendings={totalSpendings}
                     allTransactions={(transactionInput!="")? filteredTransactions : allTransactions}
                     totalOrderQuantity={totalOrderQuantity}
-                    setTotalOrderQuantity={setTotalOrderQuantity}
                     transactionInput={transactionInput}
-                    filteredTransactions={filteredTransactions}
                     handleTransactionInput={handleTransactionInput}
+                    setPopupOpen={setPopupOpen}
+                    popupOpen={popupOpen}
                   ></Orders>
                 }
               ></Route>

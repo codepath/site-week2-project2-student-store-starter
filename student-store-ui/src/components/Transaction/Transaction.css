@@ -15,14 +15,21 @@
     height: 350px;
     width: 350px
   }
-  /* .h4{
-  color: #a9d6e5;
-  background: #012a4a;
-  width: 170px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 20px;
-  border: 6px outset #012a4a;
-  } */
+
+  .review-button{
+    height: 40px;
+    width: 140px;
+    background: #012a4a;
+    color: #fff;
+    fill: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 6px outset #012a4a;
+    margin-left: 20px;
+  }
+
+  .rating-div{
+    display: flex;
+    padding: 10px;
+  }

@@ -91,7 +91,6 @@ export default function ProductView({
                     className="star-rating"
                     style={{ width: "20px", height: "20px" }}
                   ></img>
-                  {/* TODO: IMPORT REVIEWS? */}
                 </div>
 
                 <p className="product-price">{productPrice}</p>

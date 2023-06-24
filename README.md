@@ -54,3 +54,5 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - [x] Build a page in the UI that displays the list of all past orders. The user should be able to click on any individual order to take them to a more detailed page of the transaction.
 - [x] Allow users to use an input to filter orders by the email of the person who placed the order.
 - [x] Only allow users to checkout using a valid email, name and accepting the terms and conditions for the storefront.
+- [x] Users can exit the sidebar by pressing Shop More or Exit on the sidebar
+- [x] Users can leave a review for a past order they have purchased

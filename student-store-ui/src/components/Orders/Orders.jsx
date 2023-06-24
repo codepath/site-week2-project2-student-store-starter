@@ -6,37 +6,14 @@ import Transaction from "../Transaction/Transaction";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
-const gifToDisplay =
-  "https://api.giphy.com/v1/gifs/search?q=shopping&limit=1&apiKey=RXqwRIzTKNCuE32A6fSJFG4kiYoob3hv";
-// function displayResults(results) {
-//     let gifsHTMLString = ""
-//     for (let gif of results) {
-//       gifsHTMLString += generateGifHTML(gif?.images?.original?.url ?? "")
-//     }
-//   console.log(resultsEl.innerHTML)
-//     resultsEl.innerHTML += gifsHTMLString
-//   }
-/** Render div element for a single GIF. */
-// function generateGifHTML(url) {
-//     return `
-//       <div class="gif">
-//           <img src="${url}" />
-//       </div>
-//   `
-//   }
-
 export default function Orders({
   products,
-  receiptName,
-  receiptEmail,
-  totalSpendings,
   allTransactions,
   totalOrderQuantity,
-  setTotalOrderQuantity,
-  setAllTransactions,
-  filteredTransactions,
   transactionInput,
   handleTransactionInput,
+  setPopupOpen,
+  popupOpen,
 }) {
   if (!allTransactions || allTransactions.length == 0) {
     return (
@@ -78,7 +55,7 @@ export default function Orders({
         {allTransactions?.map((transaction, i) => (
           <>
             <h4 className="order-header">
-              Transaction #{i + 1}: {totalOrderQuantity[i]} item
+              Transaction #{i + 1}: {totalOrderQuantity[i]} Items
               {totalOrderQuantity[i] > 1 ? "s" : ""} ordered by{" "}
               {transaction.name}
             </h4>
@@ -91,6 +68,8 @@ export default function Orders({
             <Transaction
               transaction={transaction}
               products={products}
+              setPopupOpen={setPopupOpen}
+              popupOpen={popupOpen}
             ></Transaction>
           </>
         ))}

@@ -1,8 +1,14 @@
 import * as React from "react";
 import "./ShoppingCart.css";
 
-export default function ShoppingCart({ isOpen, shoppingCart, products, taxesAndFees, totalPrice, subtotal }) {
- 
+export default function ShoppingCart({
+  isOpen,
+  shoppingCart,
+  products,
+  taxesAndFees,
+  totalPrice,
+  subtotal,
+}) {
   if (isOpen) {
     if (shoppingCart.length === 0) {
       return (
