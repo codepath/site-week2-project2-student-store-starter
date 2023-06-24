@@ -11,15 +11,16 @@
   left: 10%;
   font-size: 60px;
   color: #F24C3D;
-  backdrop-filter: blur(10px);
+  z-index: 3;
 }
 
 #hero-pic-header-2 {
   position: absolute;
   left: 10%;
-  top: 21%;
+  top: 16%;
   font-size: 30px;
   color: #F24C3D;
+  z-index: 3;
 }
 
 #hero-pic {
@@ -83,6 +84,11 @@
   background-color: #F29727;
   border-radius: 10px;
   padding-bottom: 10px;
+}
+
+.addDeleteBtn {
+  margin-top: 10%;
+  font-size: 25px;
 }
 
 #item-grid {

@@ -5,13 +5,12 @@ import axios from "axios"
 import "./Home.css"
 import homePic from "./heropic.jpeg"
 
-export default function Home() {
+export default function Home({ itemList, itemListSet, productCart, productCartSet, url }) {
 
   // Const Variables and States
 
   const categories = ["all categories", "food", "clothing", "accessories", "tech"]
 
-  const [itemList, itemListSet] = React.useState(null)
   const [displayedItemList, displayedItemListSet] = React.useState(null)
   
   const [currentItem, currentItemSet] = React.useState(null)
@@ -22,7 +21,6 @@ export default function Home() {
   function handleSearchBar(e) {
     const searchInput = e.target.value.toLowerCase()
     const newFilteredItemList = itemList.filter(item => item.name.toLowerCase().includes(searchInput) && item.category.includes(currentCategory))
-    console.log(newFilteredItemList)
     displayedItemListSet(newFilteredItemList)
   }
 
@@ -34,11 +32,37 @@ export default function Home() {
     displayedItemListSet(newFilteredItemList)
   }
 
-  // API/Fetch and useEffect
+  function productGridAddDel(e) {
+    e.preventDefault();
+    const currentAction = e.target.name;
+    const currentItemId = e.target.value;
+    let currentAmount = productCart.get(currentItemId);
+    if (isNaN(currentAmount)) {
+      productCartSet(map => new Map(map.set(currentItemId, 0)));
+      currentAmount = 0;
+    }
+    if (currentAction === "add") {
+      productCartSet(map => {
+        const updatedMap = new Map(map);
+        updatedMap.set(currentItemId, currentAmount + 1);
+        return updatedMap;
+      });
+    } else if (currentAction === "del" && currentAmount !== 0) {
+      productCartSet(map => {
+        const updatedMap = new Map(map);
+        updatedMap.set(currentItemId, currentAmount - 1);
+        return updatedMap;
+      });
+    }
+  }
+
+  console.log(productCart);
+
+  // API/Fetch and useEffects
 
   useEffect(() => {
     axios
-      .get("https://codepath-store-api.herokuapp.com/store")
+      .get(url + "/store")
       .then((response) => {
         itemListSet(response.data.products)
         displayedItemListSet(response.data.products)
@@ -65,7 +89,7 @@ export default function Home() {
         <div className="display-categories">
           {
             categories.map((category) => {
-              return <button type="submit" className="category-buttons" name={category} onClick={handleCategory}>{category}</button>
+              return <button type="submit" className="category-buttons" key={category} name={category} onClick={handleCategory}>{category}</button>
             })
           }
         </div>
@@ -81,6 +105,10 @@ export default function Home() {
                     </Link>
                     <h3 className="item-text">{item.name}</h3>
                     <h3 className="item-text">${item.price}</h3>
+                  </div>
+                  <div className="addDeleteItem">
+                    <button type="submit" className="addDeleteBtn" name="add" value={item.id} onClick={(e) => productGridAddDel(e)}>+</button>
+                    <button type="submit" className="addDeleteBtn" name="del" value={item.id} onClick={(e) => productGridAddDel(e)}>-</button>
                   </div>
                 </div>
               )
