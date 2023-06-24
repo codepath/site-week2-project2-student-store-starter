@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import Sidebar from '../Sidebar/Sidebar';
 import Home from '../Home/Home';
-import ProductView from '../Productview/ProductView';
+import ProductView from '../ProductView/ProductView';
 import './App.css';
 import { useToast } from '@chakra-ui/react';
 
