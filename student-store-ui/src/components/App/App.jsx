@@ -23,6 +23,7 @@ export default function App() {
       <Navbar />
       <Sidebar />
       <Outlet />
+      {/* <Footer /> */}
     </div>
 
     </>

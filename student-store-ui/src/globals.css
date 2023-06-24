@@ -24,3 +24,6 @@ body {
   width: 100%;
   border-bottom-color: (var(--p-color));
 }
+.app-container{
+  flex-direction: column;
+}

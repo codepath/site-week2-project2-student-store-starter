@@ -41,9 +41,9 @@ export default function PurchaseDetails(){
                                 )
                             })}
                         </div>
-                        {/* <p className="purchase-subtotal">{purchase.price.toFixed(2)}</p>
-                        <p className="purchase-taxes">{purchase.receipt.taxes.toFixed(2)}</p>
-                        <p className="purchase-total">{purchase.total}</p> */}
+                        <p className="purchase-taxes">Taxes: {purchase.receipt?.taxes.toFixed(2)}</p>
+                        <p className="purchase-subtotal">Subtotal: {purchase.receipt?.subtotal.toFixed(2)}</p>
+                        <p className="purchase-total">Total: {purchase.total?.toFixed(2)}</p>
 
                     </div>
                 </div>
