@@ -17,7 +17,6 @@ function ProductDetail({quantities, setQuantities}) {
     useEffect(()=> {
         axios.get(`${newUrl}/${id}`).then((response) => {
           setProd(response.data)
-          // console.log('here',response.data.product)
         })
       }, [])
       

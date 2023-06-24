@@ -3,31 +3,37 @@ import axios from "axios";
 import "./ShoppingCart.css";
 import Receipt from "../Receipt/Receipt";
 
+
 function ShoppingCart({clearCart, cart, setCart,quantities, setQuantities, originalProducts }) {
-  console.log("op", originalProducts);
-  console.log("q", quantities);
-  
+ 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+
   let subTotal = 0;
   const percentTax = 0.0875;
   const user = {};
+
   const [atCheckout, setAtCheckout] = useState(false);
 
-  console.log('ca',cart)
+  
+  const quantsObj= {}
+  for (const product of originalProducts){
+    quantsObj[product.id]= 0
+  }
 
   function handleCheckOut() {
-    user.name = name;
-    user.email = email;
-    setAtCheckout(true);
-    // setCart(shoppingCart)
+    if (JSON.stringify(quantities)===JSON.stringify(quantsObj) || name.length===0 || email.length===0){
+      alert('Incomplete fields!')
+    } else{
+      user.name = name;
+      user.email = email;
+      setAtCheckout(true);
+      axios.post("http://localhost:3001/store", { cart, user }).then((response) => {
+        console.log(response);
+      });
 
-    // shoppingCart= []
-    axios.post("http://localhost:3001/store", { cart, user }).then((response) => {
-      console.log(response);
-    });
-
-    console.log("sc", user, cart);
+    }
+    
     
   }
   
@@ -52,6 +58,7 @@ function ShoppingCart({clearCart, cart, setCart,quantities, setQuantities, origi
         <caption>Shopping Cart</caption>
         <i className="material-icons md-36">add_shopping_cart</i>
       </div>
+
       <table>
         <thead>
           <tr>
@@ -64,7 +71,6 @@ function ShoppingCart({clearCart, cart, setCart,quantities, setQuantities, origi
         <tbody>
           
           { 
-          // !atCheckout &&
           cart.map((prod) => {
             const id= prod.itemId
             const quantity= prod.quantity
@@ -72,7 +78,6 @@ function ShoppingCart({clearCart, cart, setCart,quantities, setQuantities, origi
               (product) => parseInt(id) === product.id
             );
             subTotal += quantity * product.price;
-            // shoppingCart.push({ itemId: parseInt(id), quantity: quantity });
             return (
               <tr>
                 <th> {product.name} </th>
@@ -88,18 +93,15 @@ function ShoppingCart({clearCart, cart, setCart,quantities, setQuantities, origi
           <br />
           <tr>
             <th>
-              {" "}
-              <hr />{" "}
+              <hr />
             </th>
           </tr>
           <tr>
             <th scope="row" colSpan="1">
-              {" "}
-              Subtotal{" "}
+              Subtotal
             </th>
             <th scope="row" colSpan="4">
-              {" "}
-              ${subTotal.toFixed(2)}{" "}
+              ${subTotal.toFixed(2)}
             </th>
           </tr>
 
@@ -108,23 +110,21 @@ function ShoppingCart({clearCart, cart, setCart,quantities, setQuantities, origi
               Taxes and Fees
             </th>
             <th scope="row" colSpan="4">
-              {" "}
-              ${(percentTax * subTotal).toFixed(2)}{" "}
+              ${(percentTax * subTotal).toFixed(2)}
             </th>
           </tr>
 
           <tr>
             <th scope="row" colSpan="1">
-              {" "}
-              Total{" "}
+              Total
             </th>
             <th scope="row" colSpan="4">
-              {" "}
-              ${(subTotal + percentTax * subTotal).toFixed(2)}{" "}
+              ${(subTotal + percentTax * subTotal).toFixed(2)}
             </th>
           </tr>
         </tfoot>
       </table>
+
 
       <caption className="payment-info">
         Payment Info

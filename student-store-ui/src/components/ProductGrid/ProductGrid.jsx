@@ -1,7 +1,6 @@
 import React from 'react'
 import ProductCard from '../ProductCard/ProductCard'
 import './ProductGrid.css'
-import { Link } from 'react-router-dom'
 
 function ProductGrid({cart, setCart, products, quantities, setQuantities}) {
     return (

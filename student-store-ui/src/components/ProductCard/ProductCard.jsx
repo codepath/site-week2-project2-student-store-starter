@@ -10,35 +10,26 @@ function ProductCard({
   quantities,
   setQuantities,
 }) {
-  // const [amount, setAmount] = useState(0)
-
-  // console.log('old', quantities)
-  // console.log('new', {...quantities, [product.id]: quantities[product.id]+1})
-
   function handleAddItemToCart() {
     setQuantities({ ...quantities, [product.id]: quantities[product.id] + 1 });
-    Object.entries({ ...quantities, [product.id]: quantities[product.id] + 1 })
-      .filter(([id, quantity]) => quantity > 0)
-      .forEach(([id, quantity]) =>
-        {   const idx=cart.findIndex((prod)=> parseInt(prod.itemId)===parseInt(id))
-            console.log('id', idx, cart)
-            if (idx!==-1){
-                cart[idx]={itemId: parseInt(id), quantity: quantity }
-                setCart(() => cart)
-            } else{
-                setCart(() => [...cart, { itemId: parseInt(id), quantity: quantity }])
-            }
-        }
-      );
-    // const [cart, setCart] = useState([...shoppingCart]);
-    //       setCart()
-  }
 
-  //   const shoppingCart = [];
-  //   addedToCart.forEach(([id, quantity])=> shoppingCart.push({ itemId: parseInt(id), quantity: quantity }))
-  //   const [cart, setCart] = useState([...shoppingCart]);
-  //         setCart()
-  //     }
+    const idx = cart.findIndex((prod) => {
+      return parseInt(prod.itemId) === parseInt(product.id);
+    });
+
+    if (idx !== -1) {
+      cart.splice(idx, 1, {
+        itemId: parseInt(product.id),
+        quantity: quantities[product.id] + 1,
+      });
+      setCart(cart);
+    } else {
+      setCart(() => [
+        ...cart,
+        { itemId: parseInt(product.id), quantity: quantities[product.id] + 1 },
+      ]);
+    }
+  }
 
   function handleRemoveItemToCart() {
     if (quantities[product.id] > 0) {
@@ -46,19 +37,32 @@ function ProductCard({
         ...quantities,
         [product.id]: quantities[product.id] - 1,
       });
-      Object.entries({ ...quantities, [product.id]: quantities[product.id] - 1 })
-      .filter(([id, quantity]) => quantity > 0)
-      .forEach(([id, quantity]) =>
-        {   const idx=cart.findIndex((prod)=> parseInt(prod.itemId)===parseInt(id))
-            console.log('id', idx, cart)
-            if (idx!==-1){
-                cart[idx]={itemId: parseInt(id), quantity: quantity }
-                setCart(() => cart)
-            } else{
-                setCart(() => [...cart, { itemId: parseInt(id), quantity: quantity }])
-            }
+
+      const idx = cart.findIndex((prod) => {
+        console.log(prod);
+        return parseInt(prod.itemId) === parseInt(product.id);
+      });
+      console.log("i", idx, product.id);
+      if (idx !== -1) {
+        if (quantities[product.id] - 1 === 0) {
+          cart.splice(idx, 1);
+        } else {
+          cart.splice(idx, 1, {
+            itemId: parseInt(product.id),
+            quantity: quantities[product.id] - 1,
+          });
         }
-      );
+
+        setCart(cart);
+      } else {
+        setCart(() => [
+          ...cart,
+          {
+            itemId: parseInt(product.id),
+            quantity: quantities[product.id] - 1,
+          },
+        ]);
+      }
     }
   }
 
@@ -68,7 +72,7 @@ function ProductCard({
         <img className="prod-image" src={product.image} />
         <div className="prod-details">
           <p className="prod-name"> {product.name} </p>
-          <p className="prod-price"> {`$ ${product.price.toFixed(2)}`} </p>
+          <p className="prod-price"> {`$ ${(parseFloat(product.price)).toFixed(2)}`} </p>
         </div>
       </Link>
 

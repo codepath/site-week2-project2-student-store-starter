@@ -4,11 +4,11 @@ import Sidebar from '../Sidebar/Sidebar'
 import './AppOverlay.css'
 import { Outlet } from 'react-router-dom'
 
-function AppOverlay({clearCart, cart, setCart, quantities, setQuantities, originalProducts}) {
+function AppOverlay({emptyQuantities, clearCart, cart, setCart, quantities, setQuantities, originalProducts}) {
     return (
         <div className='app-overlay'>
            
-            <Sidebar clearCart={clearCart} cart={cart} setCart={setCart} className='sidebar' quantities={quantities} setQuantities={setQuantities} originalProducts={originalProducts}/>
+            <Sidebar emptyQuantities={emptyQuantities} clearCart={clearCart} cart={cart} setCart={setCart} className='sidebar' quantities={quantities} setQuantities={setQuantities} originalProducts={originalProducts}/>
             <Navbar/>
             <Outlet/>
         </div>
