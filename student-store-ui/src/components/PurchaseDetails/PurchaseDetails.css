@@ -21,3 +21,12 @@
     border-top-width: 0px;
     border-left-width: 0px;
 }
+.action-buttons{
+    margin-top: 10rem;
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 1.25rem;
+    align-items: center;
+}

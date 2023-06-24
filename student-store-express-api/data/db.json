@@ -564,7 +564,96 @@
         "subtotal": 4.5,
         "taxes": 0.39375
       }
+    },
+    "13": {
+      "name": "Jack Black",
+      "id": 13,
+      "email": "kungfoo@panda.com",
+      "total": 2.707875,
+      "order": [
+        {
+          "quantity": 1,
+          "id": 1,
+          "name": "Rice Krispies",
+          "category": "food",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/c/cd/RKTsquares.jpg",
+          "source": "https://en.wikipedia.org/wiki/Rice_Krispies_Treats",
+          "description": "Delicious corn-based rice grains melted together with marshmallows into a square-like shape.",
+          "price": 0.99
+        },
+        {
+          "quantity": 1,
+          "id": 2,
+          "name": "Flamin Hot Cheetos",
+          "category": "food",
+          "image": "https://static.openfoodfacts.org/images/products/896/400/009/0879/front_en.14.full.jpg",
+          "source": "https://world.openfoodfacts.org/cgi/product_image.pl?code=8964000090879&id=front_en",
+          "description": "No one knows what's in the powder that covers these snacks, but wow is it amazing!",
+          "price": 1.5
+        }
+      ],
+      "createdAt": "6/23/2023, 11:47:39 PM",
+      "receipt": {
+        "subtotal": 2.49,
+        "taxes": 0.217875
+      }
+    },
+    "14": {
+      "name": "Jan",
+      "id": 14,
+      "email": "jan@yahoo.com",
+      "total": 9.754875,
+      "order": [
+        {
+          "quantity": 3,
+          "id": 3,
+          "name": "Cinnamon Rolls",
+          "category": "food",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Johns_Inc_Cinnamon_Rolls.jpg",
+          "source": "https://en.wikipedia.org/wiki/File:Johns_Inc_Cinnamon_Rolls.jpg",
+          "description": "Basically just cake for breakfast, but who's complaining?",
+          "price": 2.99
+        }
+      ],
+      "createdAt": "6/24/2023, 10:59:05 AM",
+      "receipt": {
+        "subtotal": 8.97,
+        "taxes": 0.784875
+      }
+    },
+    "15": {
+      "name": "Jac Man",
+      "id": 15,
+      "email": "jacman@outlook.com",
+      "total": 4.882875,
+      "order": [
+        {
+          "quantity": 1,
+          "id": 2,
+          "name": "Flamin Hot Cheetos",
+          "category": "food",
+          "image": "https://static.openfoodfacts.org/images/products/896/400/009/0879/front_en.14.full.jpg",
+          "source": "https://world.openfoodfacts.org/cgi/product_image.pl?code=8964000090879&id=front_en",
+          "description": "No one knows what's in the powder that covers these snacks, but wow is it amazing!",
+          "price": 1.5
+        },
+        {
+          "quantity": 1,
+          "id": 3,
+          "name": "Cinnamon Rolls",
+          "category": "food",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Johns_Inc_Cinnamon_Rolls.jpg",
+          "source": "https://en.wikipedia.org/wiki/File:Johns_Inc_Cinnamon_Rolls.jpg",
+          "description": "Basically just cake for breakfast, but who's complaining?",
+          "price": 2.99
+        }
+      ],
+      "createdAt": "6/24/2023, 11:04:42 AM",
+      "receipt": {
+        "subtotal": 4.49,
+        "taxes": 0.392875
+      }
     }
   },
-  "newPurchaseID": 13
+  "newPurchaseID": 16
 }

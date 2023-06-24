@@ -24,7 +24,7 @@ class ExpressError extends Error {
   }
   class PurchaseNotFoundError extends ExpressError{
     constructor(purchaseID){
-        super(`Purchase with ID: ${productID} Cannot Be Found`, 400)
+        super(`Purchase with ID: ${purchaseID} Cannot Be Found`, 400)
     }
   }
   class InvalidPurchaseError extends ExpressError{

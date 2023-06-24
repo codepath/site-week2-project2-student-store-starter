@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import "./PurchaseDetails.css"
@@ -44,6 +45,18 @@ export default function PurchaseDetails(){
                         <p className="purchase-subtotal">Subtotal: {purchase.receipt?.subtotal.toFixed(2)}</p>
                         <p className="purchase-total">Total: {purchase.total?.toFixed(2)}</p>
                     </div>
+                </div>
+                <div className="action-buttons">
+                    <Link to="/">
+                        <button className="compact-button back-button">
+                            Continue Shopping
+                        </button>
+                    </Link>
+                    <Link to="/purchases">
+                        <button className="compact-button back-button">
+                            View Orders
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>
