@@ -16,8 +16,8 @@ Week 2 Walk Through Video:
   </a>
 
 Week 3 Walk Through Video
-<a href="https://www.loom.com/share/759493c3f3e94f179b5fdb9cea26f2eb">
-    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/759493c3f3e94f179b5fdb9cea26f2eb-with-play.gif">
+<a href="https://www.loom.com/share/f50d28500e1648aba10dd7a65640ccbd">
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/f50d28500e1648aba10dd7a65640ccbd-with-play.gif">
   </a>
   
 ## *Week 2* Application Features
