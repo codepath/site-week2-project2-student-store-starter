@@ -47,4 +47,6 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 
 ### Recording
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/8b5200f4eaf8403f83b2e794c843e542?sid=e9fd4945-02b0-440c-a393-896b7277d2f3" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+<a href="https://www.loom.com/embed/8b5200f4eaf8403f83b2e794c843e542?sid=e9fd4945-02b0-440c-a393-896b7277d2f3">
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/b716b5fe2e5e4c8fa009a556d189c5c1-with-play.gif">
+  </a>
