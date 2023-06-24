@@ -19,10 +19,8 @@ export default function ShoppingCart({
   setShoppingCart,
   shoppingCart,
   setCheckout,
-  checkout
+  checkout,
 }) {
-
-
   const handleName = (event) => {
     setName(event.target.value);
   };
@@ -31,20 +29,9 @@ export default function ShoppingCart({
     setEmail(event.target.value);
   };
 
-
   const handleCheckout = (event) => {
-    setCheckout (true);
+    setCheckout(true);
   };
-
-  // console.log(email)
-  // console.log(name)
-
-
-
-// function handleSubmit(e) {
-//   e.preventDefault
-// }
-
 
   useEffect(() => {
     const calcSubtotal = () => {
@@ -73,8 +60,8 @@ export default function ShoppingCart({
 
   function emptyCart() {
     setShoppingCart([]);
-    setCheckout(false)
-  }
+    setCheckout(false);
+  }``
 
   return (
     <>
@@ -166,14 +153,18 @@ export default function ShoppingCart({
           placeholder="Student@codepath.org"
           required
         />
-        <input type="checkbox" 
-        // onChange={handleCheckout}
-        required />
+        <input
+          type="checkbox"
+          // onChange={handleCheckout}
+          required
+        />
         <label className="checkbox-input">
           I agree to the terms and conditions
         </label>
         <br></br>
-        <button id="checkout-button" onClick={handleCheckout}>Checkout</button>
+        <button id="checkout-button" onClick={handleCheckout}>
+          Checkout
+        </button>
       </div>
     </>
   );
