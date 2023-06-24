@@ -44,7 +44,8 @@ export default function App() {
   const [receiptTotalPrice, setReceiptTotalPrice] = useState(0);
   const [totalSpendings, setTotalSpendings] = useState(0);
   const [allTransactions, setAllTransactions] = useState([]);
-  const [totalOrderQuantity, setTotalOrderQuantity] = useState(0);
+  const [totalOrderQuantity, setTotalOrderQuantity] = useState([]);
+// let totalOrderQuantity = [];
 
   useEffect(() => {
     axios.get(url).then((response) => {

@@ -13,7 +13,7 @@ export default function Transaction({transaction, products}) {
    
     <>
 
-        {/* {console.log(transaction)} */}
+        {console.log(transaction)}
 
       <h4 className="header">
         Showing all orders for {transaction.name}. Order receipt available at{" "}
@@ -23,7 +23,7 @@ export default function Transaction({transaction, products}) {
         {transaction.order.map((item) => (
           <>
             <li>
-              {item.quantity} total
+              {item.quantity}
               {" " +
                 products.filter((product) => item.itemId === product.id)[0]
                   .name +
@@ -52,13 +52,16 @@ export default function Transaction({transaction, products}) {
                 alt="product cover"
               ></img>
             </li>
-            <li>
+            
+          </>
+          
+        ))}
+              </ul>
+        <p>
               After taxes and fees were applied, your total came out to{" "}
               {transaction.total}
-            </li>
-          </>
-        ))}
-      </ul>
+            </p>
+
     </>
   );
 }

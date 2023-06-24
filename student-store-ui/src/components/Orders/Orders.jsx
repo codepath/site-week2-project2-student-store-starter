@@ -43,16 +43,7 @@ export default function Orders({
       </div>
     );
   }
-  
-  {/* Calculate the total number of items in this order */}
-//   console.log("before", totalOrderQuantity)
-  allTransactions?.map((transaction, i) => (
-    transaction?.order.map( item => (
-        transaction.quantity = transaction.quantity + item.quantity
-        // setTotalOrderQuantity(transaction.quantity = item.quantity))
-  )))
-  )
-  console.log("this is a transaction: ", allTransactions)
+  console.log("after: ", totalOrderQuantity)
 
 
   return (
@@ -63,8 +54,8 @@ export default function Orders({
           <>
             <h4 className="header">
               {/* {console.log(transaction)} */}
-              Transaction #{i + 1}: {transaction.quantity} item
-              {transaction.quantity > 1 ? "s" : ""} ordered by{" "}
+              Transaction #{i + 1}: {totalOrderQuantity[i]} item
+              {totalOrderQuantity[i] > 1 ? "s" : ""} ordered by{" "}
               {transaction.name}
             </h4>
             <button className="see-transaction">
