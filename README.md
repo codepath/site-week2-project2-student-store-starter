@@ -50,3 +50,8 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 <a href="https://www.loom.com/embed/8b5200f4eaf8403f83b2e794c843e542?sid=e9fd4945-02b0-440c-a393-896b7277d2f3">
     <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/b716b5fe2e5e4c8fa009a556d189c5c1-with-play.gif">
   </a>
+
+<a href="https://www.loom.com/share/8b5200f4eaf8403f83b2e794c843e542">
+    <p>Student Store - 23 June 2023 - Watch Video</p>
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/8b5200f4eaf8403f83b2e794c843e542-with-play.gif">
+  </a>
