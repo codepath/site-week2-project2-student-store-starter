@@ -28,7 +28,6 @@ export default function CartTable({
   const handleClick = (event) => setShoppingCart([]);
 
   return (
-    <>
       <table className="checkoutTable" style={style}>
         <tr className="table-header">
           <th className="table-header-elements">Name</th>
@@ -73,10 +72,9 @@ export default function CartTable({
             subtotal(shoppingCart)
           ).toFixed(2)}`}</td>
         </tr>
-      </table>
-      <button className="clear-cart-btn" onClick={handleClick}>
+        <button className="clear-cart-btn" onClick={handleClick}>
         Clear Cart
       </button>
-    </>
+      </table>
   );
 }
