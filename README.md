@@ -54,6 +54,6 @@ It is a little more interactive with the use of css and animaitons.
 - [x] Your choice! Users can clear cart, using the clear cart button.
 
 ## Video WalkThrough
-<a href="https://www.loom.com/share/9e68a737749b4fcf98fe3514ef96e200">
-    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/9e68a737749b4fcf98fe3514ef96e200-with-play.gif">
+<a href="https://www.loom.com/share/5708e35eb71a45acb21b4ff66868d85f">
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/5708e35eb71a45acb21b4ff66868d85f-with-play.gif">
   </a>
