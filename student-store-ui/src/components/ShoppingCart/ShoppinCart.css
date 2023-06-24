@@ -1,0 +1,78 @@
+.header {
+    color: white;
+    margin-left: 4px
+}
+
+.form-input{
+    width:95%;
+    margin-left: 2px;
+    margin-top: 2px;
+    color: rgb(205, 137, 205);
+    /* padding: 10px; */
+
+}
+
+.form-label{
+    margin-left: 6px;
+    font-weight: bold;
+    color:rgb(205, 137, 205)
+
+}
+
+.h3{
+    color: white;
+    margin-left: 4px;
+}
+
+.h-3{
+    color: white;
+    margin-left: 4px;
+}
+
+.text{
+    color:rgb(205, 137, 205);
+    margin-left: 15px;
+    font-weight: bolder
+}
+
+.header-row {
+    display: flex;
+    border:solid;
+    background-color:rgb(205, 137, 205);
+    flex-direction: row;
+    justify-content: space-between;
+    /* flex-basis: 25%; */
+    margin: 5px;
+    align-items: center;
+    grid-template-rows: auto;
+    border-radius:10px
+}
+
+.flex-2 {
+    /* background-color: brown; */
+    width:90px;
+
+}
+
+.center{
+    width:90px;
+    ;
+
+}
+
+.button{
+    border-radius: 70px;
+    margin-left: 4px;
+    width: 30%;
+    padding: 6px;
+    color: rgb(61, 31, 90)
+}
+
+.subtotal{
+    border:solid;
+    border-radius: 10px;
+    width: 98%;
+    margin-left: 6px;
+    text-align:center;
+    background-color:rgb(205, 137, 205);
+}

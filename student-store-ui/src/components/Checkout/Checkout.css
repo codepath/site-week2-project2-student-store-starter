@@ -1,0 +1,9 @@
+.checkout-receipt{
+    border:solid;
+    border-radius: 10px;
+    width: 98%;
+    margin-left: 6px;
+    text-align:center;
+    background-color:rgb(205, 137, 205);
+
+}

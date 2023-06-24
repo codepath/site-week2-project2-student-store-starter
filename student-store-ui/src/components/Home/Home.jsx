@@ -6,38 +6,39 @@ import AboutUs from "../AboutUs/AboutUs";
 import ContactUs from "../ContactUs/ContactUs"
 import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer"
+import ProductCard from "../ProductCard/ProductCard";
 
 
-export default function Home({products}) {
+export default function Home({products, quantities, setQuantities}) {
 
-  console.log(products);
+  //console.log(products);
+  //console.log('home q', quantities)
 
   const [search, setSearch] = React.useState("")
   const [category, setCategory] = React.useState("all categories")
 
-  function addItemtoCart(){
 
-  }
+  
 
-  function createProduct(info) {
-  const [quantity, setQuantity] =React.useState(0)
+//   function createProduct(info) {
+//   const [quantity, setQuantity] =React.useState(0)
 
-  return (
-    <div className="product">
-        <Link id="product-link" to={'products/' + info.id}>
-      <div>
-        <img src={info.image} />
-        <p className="">{info.name}</p>
-        <p>⭐️⭐️⭐️⭐️⭐️</p>
-        <p>${info.price.toFixed(2)}</p>
-      </div>
-    </Link>
-    <button onClick={addItemtoCart}> - </button>
-    <button onClick={RemoveItemfromCart}> + </button>
-    </div>
+//   return (
+//     <div className="product">
+//         <Link id="product-link" to={'products/' + info.id}>
+//       <div>
+//         <img src={info.image} />
+//         <p className="">{info.name}</p>
+//         <p>⭐️⭐️⭐️⭐️⭐️</p>
+//         <p>${info.price.toFixed(2)}</p>
+//       </div>
+//     </Link>
+//     <button onClick={addItemtoCart}> - </button>
+//     <button onClick={RemoveItemfromCart}> + </button>
+//     </div>
     
-  )
-}
+//   )
+// }
 
 const searchedProducts = products?.filter((product) => {
   let searchWord = search.toLowerCase()
@@ -70,7 +71,7 @@ return (
     </nav>
 
     <div id={"buy"}className= "containers">  {
-      searchedProducts?.map(product => createProduct(product))
+      searchedProducts?.map(product => <ProductCard info={product} setQuantities={setQuantities} quantities={quantities}/>)
     }</div>
     <div id={"about"}className= "containers">
     <div id={"contact"}className="containers"></div> 

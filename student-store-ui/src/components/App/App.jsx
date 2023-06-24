@@ -19,13 +19,31 @@ export default function App() {
 
   const {id} = useParams();
   const [products, setProducts] = useState([]);
+  const [originalProducts, setOriginalProducts] = useState([])
+  const [quantities, setQuantities] = useState([])
+  const [cart, setCart] = React.useState(quantities.filter(([id, quantity]) => quantity > 0))
+
+  
 
   useEffect(() => {
     axios.get(url).then((response) => {
       setProducts(()=>response.data.products);
+      setOriginalProducts(()=> response.data.products)
+       const initQuantities=[]
+  for (const product of response.data.products){
+    initQuantities.push([product.id,0])
+  }
+      setQuantities(initQuantities)
+
     });
   }, [])
 
+  
+  //console.log('q',quantities)
+ 
+ // console.log('iq',initQuantities)
+
+  
 
   return (
     <div className="app">
@@ -33,13 +51,13 @@ export default function App() {
         
       <BrowserRouter>
       <main>
-      <Sidebar />
+      <Sidebar cart={cart} setQuantities={setQuantities} quantities={quantities} originalProducts={originalProducts}/>
       <Navbar />
       <Routes>
         <Route path="/" element={
           <>
           
-          <Home  path="" products={products} />
+          <Home  path="" products={products} quantities={quantities} setQuantities={setQuantities}/>
 
           </>
         }/>
@@ -75,19 +93,20 @@ function Details() {
 
   useEffect(() => {
     axios.get(url).then((response) => {
-      console.log(response.data)
+      console.log('yo',response.data)
       setProduct(response.data);
     });
   }, [])
+  console.log(product)
 
   return (
     <div className="details">
-      <h1>{product[0].name}</h1>
+      <h1>{product[0]?.name}</h1>
       <p>Product #{productID}</p>
-      <img src={product[0].image}></img>
-      <p>{product[0].description}</p>
+      <img src={product[0]?.image}></img>
+      <p>{product[0]?.description}</p>
       <p>⭐️⭐️⭐️⭐️⭐️</p>
-      <p>${product[0].price}</p>
+      <p>${product[0]?.price}</p>
     </div>
     // <h1>{product.name}</h1>
     // <img>{product.img}</img>
