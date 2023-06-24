@@ -40,11 +40,11 @@ It is a little more interactive with the use of css and animaitons.
 
 ### Core Features
 
-- [ ] User can click to expand the shopping cart in the left navigation.
-- [ ] Users can click the '+' button on a product cart to increment that product in the shopping cart.
-- [ ] Users can click the '-' button on a product cart to decrement that product in the shopping cart. If the count is zero, the product should be removed from the cart.
-- [ ] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
-- [ ] Users can checkout, and receive a receipt confirming their purchase.
+- [x] User can click to expand the shopping cart in the left navigation.
+- [x] Users can click the '+' button on a product cart to increment that product in the shopping cart.
+- [x] Users can click the '-' button on a product cart to decrement that product in the shopping cart. If the count is zero, the product should be removed from the cart.
+- [x] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
+- [x] Users can checkout, and receive a receipt confirming their purchase.
 
 ### Stretch Features
 
@@ -52,3 +52,8 @@ It is a little more interactive with the use of css and animaitons.
 - [ ] Build a page in the UI that displays the list of all past orders. The user should be able to click on any individual order to take them to a more detailed page of the transaction.
 - [ ] Allow users to use an input to filter orders by the email of the person who placed the order.
 - [ ] Your choice! (Replace this bullet explaining what you implemented. Example: Users can create a wish list of products they are interested in but not yet ready to purchase.)
+
+## Video WalkThrough
+<a href="https://www.loom.com/share/9e68a737749b4fcf98fe3514ef96e200">
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/9e68a737749b4fcf98fe3514ef96e200-with-play.gif">
+  </a>

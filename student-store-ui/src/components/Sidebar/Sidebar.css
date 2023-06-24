@@ -13,6 +13,11 @@
   overflow: scroll;
 }
 
+#check:checked ~ p {
+  margin-left: 1000px;
+  background-color: black;
+}
+
 .sidebarHeader {
   font-size: x-large;
   font-weight: bold;
@@ -69,3 +74,4 @@
 #check:checked ~ label {
   padding-left: 520px;
 }
+
