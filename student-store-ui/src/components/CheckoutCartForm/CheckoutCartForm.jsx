@@ -2,13 +2,30 @@ import { useState, useEffect, useContext } from "react";
 import { CheckoutCartContext, CheckoutCartDispatchContext } from "../CheckoutCartContext/CheckoutCartContext";
 import "./CheckoutCartForm.css";
 import axios from "axios";
-function PurchaseMessage(){
+function PurchaseMessage({purchase}){
     // show message if loader is inactive
     return (
         <>
         <h1>Thanks for shoppping!</h1>
         <h1>Receipt: </h1>
-        </>
+        <div className="purchase-receipt">
+          <div className="purchase-cart">
+            {purchase.order?.map((item) => {
+              return (
+                <div className="purchase-cart-row">
+                  <span>{item.name}</span>
+                  <span>{item.quantity}x</span>
+                  <span>{(item.price * item.quantity).toFixed(2)}</span>
+                </div>
+              )
+            })}
+          </div>
+          <p className="purchase-taxes">Taxes: {purchase.receipt?.taxes.toFixed(2)}</p>
+          <p className="purchase-subtotal">Subtotal: {purchase.receipt?.subtotal.toFixed(2)}</p>
+          <p className="purchase-total">Total: {purchase.total?.toFixed(2)}</p>
+        </div>
+
+      </>
     )
 }
 function Loader(){
@@ -25,15 +42,16 @@ function ErrorMessage(){
     </h2>
   )
 }
-export default function CheckoutCartForm(){
+export default function CheckoutCartForm({ checkoutCart, dispatch }){
     // form to handle user checkout credentials
-    const dispatch = useContext(CheckoutCartDispatchContext);
-    const checkoutCart = useContext(CheckoutCartContext);
+    // const dispatch = useContext(CheckoutCartDispatchContext);
+    // const checkoutCart = useContext(CheckoutCartContext);
     
     const [formData, setFormData] = useState({ name: "", email: "", agreement: false });
     const [showPurchaseMessage, setShowPurchaseMessage] = useState(false);
     const [showLoader, setShowLoader] = useState(false);
     const [showErrorMessage, setShowErrorMessage] = useState(false);
+    const [purchase, setPurchase] = useState({});
     const URL = "http://localhost:3001/store";
   
     function handleSubmit(event) {
@@ -53,15 +71,14 @@ export default function CheckoutCartForm(){
         setShowLoader(() => true);
         axios.post(URL, newPurchase)
           .then((response) => {
-            console.log("posted purchase", response);
             setShowLoader(() => false);
+            setPurchase(() => response.data);
             setShowPurchaseMessage(() => true);
             setFormData({ name: "", email: "", agreement: false});
-            dispatch({
-                type: "cleared"
-              });
+            // dispatch({
+            //     type: "cleared"
+            //   });
           }).catch((error) => {
-            console.log("unable to make purcahse", error.response.data.error);
             setShowLoader(() => false);
             setShowErrorMessage(() => true);
           });
@@ -116,7 +133,7 @@ export default function CheckoutCartForm(){
           <button>{ "Buy Now"}</button>
         </form>
         {showLoader && <Loader />}
-        {showPurchaseMessage && <PurchaseMessage />}
+        {showPurchaseMessage && <PurchaseMessage purchase={purchase} />}
         {showErrorMessage && <ErrorMessage />}
       </div>
     );

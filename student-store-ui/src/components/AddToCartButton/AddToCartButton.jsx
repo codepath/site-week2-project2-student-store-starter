@@ -1,15 +1,14 @@
 import { useContext } from "react";
 import "../AddToCartButton/AddToCartButton.css";
 import { CheckoutCartContext, CheckoutCartDispatchContext } from "../CheckoutCartContext/CheckoutCartContext";
-export default function AddToCartButtton({ product }){
-    const checkoutCart = useContext(CheckoutCartContext); // cart context
-    const dispatch = useContext(CheckoutCartDispatchContext);
+export default function AddToCartButtton({ product, checkoutCart, dispatch }){
+    // const checkoutCart = useContext(CheckoutCartContext); // cart context
+    // const dispatch = useContext(CheckoutCartDispatchContext);
     const activeClass = checkoutCart[product.id]?.quantity > 0 ? "active" : "" // helps toggle button appearence
 
     function handleAddToCartOnClick(event, product){
         if (event.target.className == "product-quantity "){
             event.target.id = "increment";
-            console.log(event.target.className);
             handleProductButtonOnClick(event, product);
         }
     }

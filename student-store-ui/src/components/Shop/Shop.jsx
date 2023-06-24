@@ -6,8 +6,22 @@ import SearchBar from "./SearchBar";
 import "./Shop.css";
 import "./QueryBars.css";
 import "./ProductGrid.css";
+function Product({product, checkoutCart, dispatch}){
+    return (
+        <div className="product" key={product.id}>
+            <Link to={`/products/${product.id}`}>
+                <img src={product.image} alt={"image of" + product.name} />
+                <div className="product-header">
+                    <p className="product-title">{product.name}</p>
+                    <p className="product-price">${product.price.toFixed(2)}</p>
+                </div>
+            </Link>
+            <AddToCartButtton checkoutCart={checkoutCart} dispatch={dispatch} product={product} />
+        </div>
+    )
+}
 
-function ProductGrid({ products, filter }) {
+function ProductGrid({ products, filter, checkoutCart, dispatch }) {
     // Returns all products in grid style using CSS
     const filteredProducts = products.filter((product) => {
         // filters products by search and category tag. 
@@ -21,22 +35,11 @@ function ProductGrid({ products, filter }) {
             <h1 className="products-title title">Best Selling Products</h1>
             <div className="product-grid">
                 {/* // renders each product */}
-                {filteredProducts.map((product) => {
-                    return (
-                        <div className="product" key={product.id}>
-                            <Link to={`/products/${product.id}`}>
-                                <img src={product.image} alt={"image of" + product.name} />
-                                <div className="product-header">
-                                    <p className="product-title">{product.name}</p>
-                                    <p className="product-price">${product.price.toFixed(2)}</p>
-                                </div>
-                            </Link>
-                            <AddToCartButtton product={product} />
-                        </div>
-
-
-                    )
-                })}
+                {filteredProducts.map((product) => <Product
+                    key={product.id}
+                    product={product}
+                    checkoutCart={checkoutCart}
+                    dispatch={dispatch} />)}
             </div>
         </>
 
@@ -63,7 +66,7 @@ function FilterBar({ updateQuery, activeCategory }) {
         </div>
     );
 };
-export default function Shop() {
+export default function Shop({ checkoutCart, dispatch }) {
     // Component displays product grids
     // with search/filter bars
     const URL_DB = "http://localhost:3001/store";
@@ -75,7 +78,6 @@ export default function Shop() {
     // data fetching
     useEffect(() => {
         axios.get(URL_DB).then((response) => {
-            console.log("fetching data...");
             setProducts(() => response.data.products);
         }).catch((e) => {
             console.log("Error: ", e)
@@ -97,7 +99,7 @@ export default function Shop() {
                     <SearchBar updateQuery={queryUpdateHandler} search={query.search} />
                     <FilterBar updateQuery={queryUpdateHandler} activeCategory={query.category} />
                 </div>
-                <ProductGrid products={products} filter={query} />
+                <ProductGrid checkoutCart={checkoutCart} dispatch={dispatch} products={products} filter={query} />
             </div>
     )
 }

@@ -12,8 +12,8 @@ function CartProductTableRow({ product }){
     )
   }
 
-export default function CartItemsTable(){
-    const checkoutCart = useContext(CheckoutCartContext); // checkout cart context
+export default function CartItemsTable({checkoutCart}){
+    // const checkoutCart = useContext(CheckoutCartContext); // checkout cart context
     const [checkoutReceipt, setCheckoutReceipt] = useState([0, 0, 0]) // [subtotal, taxesAndFees, total]]
 
     const getCartTotals = () => {
@@ -35,8 +35,6 @@ export default function CartItemsTable(){
         // calculate cart totals
         // everytime the checkout items are updated
         getCartTotals();
-      console.log("calculating totals")
-      console.log(checkoutCart)
     }, [checkoutCart]);
 
     // display user checkout items and
