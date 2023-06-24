@@ -28,6 +28,7 @@ export default function Sidebar({
   return (
     <section className={isOpen ? "sidebar open" : "sidebar closed"}>
       <ArrowRightAltIcon onClick={() => setIsOpen(!isOpen)}></ArrowRightAltIcon>
+
       {isOpen ? (
         <ShoppingCart products={products} shoppingCart={shoppingCart} />
       ) : null}
