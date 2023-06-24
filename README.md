@@ -55,15 +55,18 @@ Jordan, Niya, Sophia, Oj, and the amazing instructors!
 
 ### Core Features
 
-- [ ] User can click to expand the shopping cart in the left navigation.
-- [ ] Users can click the '+' button on a product cart to increment that product in the shopping cart.
-- [ ] Users can click the '-' button on a product cart to decrement that product in the shopping cart. If the count is zero, the product should be removed from the cart.
-- [ ] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
-- [ ] Users can checkout, and receive a receipt confirming their purchase.
+- [ X ] User can click to expand the shopping cart in the left navigation.
+- [ X ] Users can click the '+' button on a product cart to increment that product in the shopping cart.
+- [ X ] Users can click the '-' button on a product cart to decrement that product in the shopping cart. If the count is zero, the product should be removed from the cart.
+- [ X ] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
+- [ X ] Users can checkout, and receive a receipt confirming their purchase.
 
 ### Stretch Features
 
-- [ ] Create an endpoint for fetching all orders in the database and an endpoint for serving an individual order based on its ID.
-- [ ] Build a page in the UI that displays the list of all past orders. The user should be able to click on any individual order to take them to a more detailed page of the transaction.
-- [ ] Allow users to use an input to filter orders by the email of the person who placed the order.
-- [ ] Your choice! (Replace this bullet explaining what you implemented. Example: Users can create a wish list of products they are interested in but not yet ready to purchase.)
+- [ X ] Create an endpoint for fetching all orders in the database and an endpoint for serving an individual order based on its ID.
+- [ X ] Build a page in the UI that displays the list of all past orders. The user should be able to click on any individual order to take them to a more detailed page of the transaction.
+- [ X ] Allow users to use an input to filter orders by the email of the person who placed the order.
+- [ X ] Your choice! CSS animations and using the useReducer hook
+
+### Walkthrough Video
+https://www.loom.com/share/c18b8bfe2b774300a6ef57f2e14c8b58?sid=8c4aa8dc-b07e-44a9-984e-67d958e4c81b
