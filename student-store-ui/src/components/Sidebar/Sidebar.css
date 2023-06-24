@@ -6,6 +6,7 @@
     border-color: white;
     z-index: 100;
     position: fixed;
+    overflow: auto;
 }
 
 .wrapper{
@@ -64,6 +65,7 @@
     max-width: 550px;
 
     align-items: center;
+    
 }
 
 
