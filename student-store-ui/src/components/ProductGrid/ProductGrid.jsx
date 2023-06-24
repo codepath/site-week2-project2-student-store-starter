@@ -2,8 +2,6 @@ import * as React from "react";
 import "./ProductGrid.css";
 import ProductCard from "../ProductCard/ProductCard";
 
-
-
 export default function ProductGrid(props) {
   let newProducts;
 
@@ -23,7 +21,6 @@ export default function ProductGrid(props) {
     );
   }
 
-
   return (
     <>
       <h2 id="buy-now" style={{ marginLeft: "180px", font: "large" }}>
@@ -34,11 +31,11 @@ export default function ProductGrid(props) {
           <p className="gridP">Nun Here!</p>
         ) : (
           newProducts?.map((product) => (
-            <ProductCard 
-            product={product} 
-            setShoppingCart={props.setShoppingCart} 
-            shoppingCart={props.shoppingCart}
-             />
+            <ProductCard
+              product={product}
+              setShoppingCart={props.setShoppingCart}
+              shoppingCart={props.shoppingCart}
+            />
           ))
         )}
       </div>

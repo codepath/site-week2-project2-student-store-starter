@@ -23,11 +23,7 @@ export default function Sidebar({ setShoppingCart, shoppingCart }) {
         }}
       >
         {" "}
-        {isOpen ? (
-          <MenuLineIcon/>
-        ) : (
-          <MenuLineIcon/>
-        )}{" "}
+        {isOpen ? <MenuLineIcon /> : <MenuLineIcon />}{" "}
       </button>
       {isOpen && (
         <>
@@ -47,21 +43,26 @@ export default function Sidebar({ setShoppingCart, shoppingCart }) {
             checkout={checkout}
             setCheckout={setCheckout}
           />
-          
 
-
-          {checkout ? (<CheckoutForm 
-          subtotal={subtotal}
-          email={email}
-          setEmail={setEmail}
-          name={name}
-          setName={setName}
-          checkout={checkout}
-          setCheckout={setCheckout}
-          shoppingCart={shoppingCart}
-          total={total}
-           />) : (<p>A confirmation email will be sent to you so that you can confirm this order. Once you have confirmed the order, it will be delivered to your dorm room.</p>) }
-         
+          {checkout ? (
+            <CheckoutForm
+              subtotal={subtotal}
+              email={email}
+              setEmail={setEmail}
+              name={name}
+              setName={setName}
+              checkout={checkout}
+              setCheckout={setCheckout}
+              shoppingCart={shoppingCart}
+              total={total}
+            />
+          ) : (
+            <p>
+              A confirmation email will be sent to you so that you can confirm
+              this order. Once you have confirmed the order, it will be
+              delivered to your dorm room.
+            </p>
+          )}
         </>
       )}
     </div>

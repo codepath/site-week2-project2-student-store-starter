@@ -1,9 +1,8 @@
 import * as React from "react";
 import ShoppingIcon from "remixicon-react/ShoppingBasket2FillIcon";
 import "./ShoppingCart.css";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import PaymentIcon from "remixicon-react/MoneyDollarCircleFillIcon";
-import CheckoutForm from "../Checkout/CheckoutForm";
 
 export default function ShoppingCart({
   email,
@@ -19,7 +18,6 @@ export default function ShoppingCart({
   setShoppingCart,
   shoppingCart,
   setCheckout,
-  checkout,
 }) {
   const handleName = (event) => {
     setName(event.target.value);
@@ -61,7 +59,8 @@ export default function ShoppingCart({
   function emptyCart() {
     setShoppingCart([]);
     setCheckout(false);
-  }``
+  }
+  ``;
 
   return (
     <>
@@ -153,11 +152,7 @@ export default function ShoppingCart({
           placeholder="Student@codepath.org"
           required
         />
-        <input
-          type="checkbox"
-          // onChange={handleCheckout}
-          required
-        />
+        <input type="checkbox" required />
         <label className="checkbox-input">
           I agree to the terms and conditions
         </label>
