@@ -35,6 +35,8 @@ Your choice! (Replace this bullet explaining what you implemented. Example: User
 
 ## *Week 3* Application Features
 
+https://www.loom.com/share/7eeb2f624bcc4c2a97a9120e9e873968?sid=3c725ba6-ec5d-4c25-b751-550ab065a5aa
+
 ### Core Features
 
 - [x] User can click to expand the shopping cart in the left navigation.
