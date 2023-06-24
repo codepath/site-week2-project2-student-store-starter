@@ -1,8 +1,11 @@
 import * as React from "react";
 import "./ProductGrid.css";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function ProductGrid({ products, searchTerm, category }) {
+export default function ProductGrid({ products, searchTerm, category, addItem, removeItem, shoppingCart}) {
+  const [isActive, setIsActive] = useState(true);
+
   function createProduct(info) {
     return (
       <>
@@ -92,13 +95,27 @@ export default function ProductGrid({ products, searchTerm, category }) {
           </p>
           <div className="actions">
             <div className="buttons">
-              <button className="add">
+              <button className="add" onClick={() => addItem(info.id)}>
                 <i className="material-icons">add</i>
               </button>
-              <button className="remove">
+              <button className="remove" onClick={() => removeItem(info.id)}>
                 <i className="material-icons">remove</i>
               </button>
             </div>
+            {/* <span className="quantity-display">
+              <span className="quantity-box">
+                {shoppingCart.map((item)=> {
+                  if (item.itemId === info.id) 
+                  return (item.quantity);
+                  console.log(item.quantity)
+                })}
+              </span>
+
+            </span> */}
+
+          
+
+            
           </div>
         </div>
       </>

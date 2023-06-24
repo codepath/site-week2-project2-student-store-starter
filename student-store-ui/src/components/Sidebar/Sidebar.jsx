@@ -4,8 +4,11 @@ import { useState } from "react";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import CheckoutForm from "../CheckoutForm/CheckoutForm";
 
-export default function Sidebar() {
+export default function Sidebar({shoppingCart, setShoppingCart, quantity, setQuantity, products}) {
   const [sideBar, setSideBar] = useState(false);
+  const [subtotal, setSubtotal] = useState(0);
+  const[total, setTotal] = useState(0);
+  const [taxes, setTaxes] = useState(0);
 
   function handleToggleButton() {
     setSideBar((sideBar) => !sideBar);
@@ -46,12 +49,29 @@ export default function Sidebar() {
       <div className="wrapper">
         <button
           className="toggle-button button closed"
-          onClick={handleToggleButton}>
+          onClick={handleToggleButton}
+        >
           <i className="material-icons md-48">arrow_forward</i>
         </button>
-        {sideBar? <ShoppingCart /> : showIcons()}
 
-
+        {sideBar ? (
+          <ShoppingCart
+            shoppingCart={shoppingCart}
+            products={products}
+            setShoppingCart={setShoppingCart}
+            quantity={quantity}
+            subtotal={subtotal}
+            setSubtotal={setSubtotal}
+            total={total}
+            setTotal={setTotal}
+            taxes={taxes}
+            setTaxes={setTaxes}
+            setQuantity={setQuantity}
+          />
+        ) : (
+          showIcons()
+        )}
+        
       </div>
     </section>
   );

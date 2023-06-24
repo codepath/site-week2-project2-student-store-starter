@@ -15,14 +15,69 @@ export default function App() {
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [category, setCategory] = useState("All Categories");
+  const [quantity, setQuantity] = useState({});
+  const [shoppingCart, setShoppingCart] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [receipt, setReceipt] = useState({});
+  const [checkoutForm, setCheckoutForm] = useState({ name: "", email: "" });
 
-  console.log(products);
   useEffect(() => {
     axios.get(url).then((response) => {
-      console.log(response)
+      console.log(response);
       setProducts(response.data.products);
     });
   }, []);
+
+  useEffect(() => {
+    /*function that sets total by mapping over shoppingCart*/
+  }, [shoppingCart]);
+
+  function addItem(productId) {
+    let isAlreadyOpen = shoppingCart.some(
+      (product) => product.id === productId
+    );
+
+    if (isAlreadyOpen) {
+      let i = shoppingCart.findIndex((product) => product.id === productId);
+      let updatedCart = [...shoppingCart];
+      updatedCart[i] = {
+        id: updatedCart[i].id,
+        quantity: ++updatedCart[i].quantity,
+      };
+      setShoppingCart(updatedCart);
+    } else {
+      setShoppingCart([...shoppingCart, { id: productId, quantity: 1 }]);
+    }
+  }
+
+  function removeItem(productId) {
+    let isAlreadyOpen = shoppingCart.some(
+      (product) => product.id === productId
+    );
+
+    if (isAlreadyOpen) {
+      let i = shoppingCart.findIndex((product) => product.id === productId);
+      let updatedCart = [...shoppingCart];
+      updatedCart[i] = {
+        id: updatedCart[i].id,
+        quantity: --updatedCart[i].quantity,
+      };
+      setShoppingCart(updatedCart);
+    } else {
+      setShoppingCart([...shoppingCart, { id: productId, quantity: 1 }]);
+    }
+  }
+
+  const handleOnSubmitCheckout = () => {
+    setReceipt({
+      name: checkoutForm.name,
+      email: checkoutForm.email,
+      shoppingCart: shoppingCart,
+    });
+    setShoppingCart([]);
+    setCheckoutForm({ name: "", email: "" });
+    setTotalPrice(0);
+  };
 
   return (
     <div className="app">
@@ -37,6 +92,11 @@ export default function App() {
                   setCategory={setCategory}
                   searchInput={searchTerm}
                   setSearchInput={setSearchTerm}
+                  shoppingCart={shoppingCart}
+                  setShoppingCart={setShoppingCart}
+                  quantity={quantity}
+                  setQuantity={setQuantity}
+                  products={products}
                 />
               }
             >
@@ -47,6 +107,9 @@ export default function App() {
                     products={products}
                     searchTerm={searchTerm}
                     category={category}
+                    addItem={addItem}
+                    removeItem={removeItem}
+                    shoppingCart={shoppingCart}
                   />
                 }
               />
