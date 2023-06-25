@@ -9,7 +9,7 @@ function receiptCalculation(cartItems, products) {
     (subtotal += (product.price * cartItems[product.id])) : console.log(product));
 
     taxes = subtotal * 0.0875
-    total = subtotal + taxes
+    total = (subtotal + taxes).toFixed(2)
   });
   return { subtotal, taxes, total };
 }

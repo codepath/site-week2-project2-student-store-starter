@@ -35,8 +35,11 @@ Your choice! (Replace this bullet explaining what you implemented. Example: User
 
 ## *Week 3* Application Features
 
-https://www.loom.com/share/7eeb2f624bcc4c2a97a9120e9e873968?sid=3c725ba6-ec5d-4c25-b751-550ab065a5aa
+APP WALKTRHROUGH FRONTEND
+https://www.loom.com/share/c9282e0abcca4729af61d52b36363481?sid=8897fe4c-5c11-44d2-bde4-33fdc6f8fa04
 
+CODE WALKTHROUGH BACKEND (extra feature)
+https://www.loom.com/share/2ed4e4f713a64318bd0535c29d82176e?sid=5a7a29f5-b1c5-4ac4-b494-0c06576913b4
 ### Core Features
 
 - [x] User can click to expand the shopping cart in the left navigation.
