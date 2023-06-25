@@ -53,4 +53,4 @@ https://www.loom.com/share/2ed4e4f713a64318bd0535c29d82176e?sid=5a7a29f5-b1c5-4a
 - [ ] Create an endpoint for fetching all orders in the database and an endpoint for serving an individual order based on its ID.
 - [ ] Build a page in the UI that displays the list of all past orders. The user should be able to click on any individual order to take them to a more detailed page of the transaction.
 - [ ] Allow users to use an input to filter orders by the email of the person who placed the order.
-- [x] Your choice!: used the backend to calculate the receipt
+- [x] Your choice!: used the backend to calculate the receipt, showed users cannot checkout without their names and emails.
