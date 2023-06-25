@@ -36,9 +36,11 @@ Your choice! (Replace this bullet explaining what you implemented. Example: User
 ## *Week 3* Application Features
 
 APP WALKTRHROUGH FRONTEND
+- fixed the receipt (calculations were not being displayed!)
 https://www.loom.com/share/c9282e0abcca4729af61d52b36363481?sid=8897fe4c-5c11-44d2-bde4-33fdc6f8fa04
 
 CODE WALKTHROUGH BACKEND (extra feature)
+- showed how I made the receipt calculations using backend (building on the concept of safety and possible misleading inputs from users)
 https://www.loom.com/share/2ed4e4f713a64318bd0535c29d82176e?sid=5a7a29f5-b1c5-4ac4-b494-0c06576913b4
 ### Core Features
 
