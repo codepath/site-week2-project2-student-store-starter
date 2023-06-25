@@ -19,7 +19,7 @@ Week 3 Walk Through Video
 <a href="https://www.loom.com/share/f50d28500e1648aba10dd7a65640ccbd">
     <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/f50d28500e1648aba10dd7a65640ccbd-with-play.gif">
   </a>
-  
+
 ## *Week 2* Application Features
 
 ### Core Features
@@ -53,4 +53,4 @@ Week 3 Walk Through Video
 - [ ] Create an endpoint for fetching all orders in the database and an endpoint for serving an individual order based on its ID.
 - [ ] Build a page in the UI that displays the list of all past orders. The user should be able to click on any individual order to take them to a more detailed page of the transaction.
 - [ ] Allow users to use an input to filter orders by the email of the person who placed the order.
-- [ ] Your choice! (Replace this bullet explaining what you implemented. Example: Users can create a wish list of products they are interested in but not yet ready to purchase.)
+- [X] Users can clear their shopping cart after they are finished checking out.
