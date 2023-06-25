@@ -1,7 +1,7 @@
 import React from 'react'
 import './Receipt.css'
 
-function Receipt({cart,setQuantities, setCart, originalProducts, setAtCheckout, name, email, atCheckout}) {
+function Receipt({subTotal, cart, setQuantities, setCart, originalProducts, setAtCheckout, name, email, atCheckout}) {
 
     const quantsObj= {}
     for (const product of originalProducts){
@@ -25,12 +25,18 @@ function Receipt({cart,setQuantities, setCart, originalProducts, setAtCheckout, 
                 const product = originalProducts.find((product) => parseInt(product.id) === prodInCart.itemId)
                 return (
                     <li key={prodInCart.itemId}> 
-                        {prodInCart.quantity} total {product.name} at a cost of
+                        - {prodInCart.quantity} total {product.name} at a cost of
                         ${product.price.toFixed(2)} for a total of ${(product.price*prodInCart.quantity).toFixed(2)} 
                     </li>
                 ) 
             })
             }      
+            <li>
+                - Before taxes, the subtotal was ${subTotal.toFixed(2)}
+            </li>
+            <li>
+                - After taxes and fees were applied, the total comes out to ${(parseInt(subTotal.toFixed(2))*(1+0.0875)).toFixed(2)}
+            </li>
             </ul>
                 
         <button onClick={clearCart}>

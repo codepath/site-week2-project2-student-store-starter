@@ -8,7 +8,7 @@ function ShoppingCart({clearCart, cart, setCart,quantities, setQuantities, origi
  
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-
+  const [subtotal, setSubtotal] = useState(0)
   let subTotal = 0;
   const percentTax = 0.0875;
   const user = {};
@@ -27,6 +27,7 @@ function ShoppingCart({clearCart, cart, setCart,quantities, setQuantities, origi
     } else{
       user.name = name;
       user.email = email;
+      setSubtotal(subTotal)
       setAtCheckout(true);
       axios.post("http://localhost:3001/store", { cart, user }).then((response) => {
         console.log(response);
@@ -44,6 +45,7 @@ function ShoppingCart({clearCart, cart, setCart,quantities, setQuantities, origi
     <Receipt
       name={name}
       email={email}
+      subTotal={subtotal}
       cart={cart}
       setCart={setCart}
       originalProducts={originalProducts}

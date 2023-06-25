@@ -1,20 +1,31 @@
 .checkout h3{
     color: white;
-    margin-left: 5px
+    margin-left: 5px;
+    font-size: 28px;
 }
 
 .checkout p{
     color: white;
-    margin-left: 5px
+    margin-left: 5px;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .checkout li{
     color:white;
     list-style: square;
+    font-size: 18px;
+    font-weight: 600;
+
 
 }
 
 .checkout ul{
     display: flex;
     flex-direction: column;
+}
+
+.checkout{
+    margin-left: 10px;
+    margin-right: 10px
 }

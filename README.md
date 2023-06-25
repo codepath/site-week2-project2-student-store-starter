@@ -37,10 +37,9 @@ Demo recorded on Loom:
 ## *Week 3* Application Features
 
 Demo recorded on Loom:
-<a href="https://www.loom.com/share/b71ce94c165a4b449f35f16ae5c2088d">
-    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/b71ce94c165a4b449f35f16ae5c2088d-with-play.gif">
+<a href="https://www.loom.com/share/59324a163798441eaa5ecb8759a1c476">
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/59324a163798441eaa5ecb8759a1c476-1687726293061-with-play.gif">
   </a>
-
 ### Core Features
 
 - [x] User can click to expand the shopping cart in the left navigation.
