@@ -744,7 +744,7 @@
 .contact .content .summary {
   display: flex;
   flex-direction: row;
-  background: var(--dark-blue);
+  background: (#75320e);
   color: var(--pure-white);
   height: 330px;
   border: solid 1px #e0e0e0;

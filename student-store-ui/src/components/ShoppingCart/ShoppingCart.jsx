@@ -19,7 +19,7 @@ export default function ShoppingCart({
   taxes,
   setTaxes,
   checkout,
-  setCheckout
+  setCheckout,
 }) {
   const handleChange = (event) => {
     event.preventDefault();
@@ -32,10 +32,9 @@ export default function ShoppingCart({
 
   const handleCheckout = (e) => {
     e.preventDefault();
-  setCheckout(true);
+    setCheckout(true);
+    //setShoppingCart((shoppingCart = []));// -- use this code to reset shopping cart but it also sets costs to zero
   };
-
-  
 
   useEffect(() => {
     const calcSubtotal = () => {
@@ -67,7 +66,6 @@ export default function ShoppingCart({
 
   function emptyCart() {
     setShoppingCart([]);
-  
   }
 
   return (
@@ -80,7 +78,6 @@ export default function ShoppingCart({
           </span>
         </h3>
 
-     
         {shoppingCart?.length === 0 ? (
           <div className="notification">
             No items added to cart yet. Start shopping now!
@@ -109,13 +106,14 @@ export default function ShoppingCart({
                   </span>
 
                   <span className="center cart-product-price">
-                    {
-                      products?.filter((product) => product.id === item.id)[0]
-                        .price
-                    }
+                    $
+                    {products
+                      ?.filter((product) => product.id === item.id)[0]
+                      .price.toFixed(2)}
                   </span>
 
                   <span className="center cart-product-subtotal">
+                    $
                     {(
                       products?.filter((product) => product.id === item.id)[0]
                         .price * item.quantity
@@ -142,17 +140,14 @@ export default function ShoppingCart({
                 <span></span>
                 <span></span>
                 <span class="center total-price">${total.toFixed(2)}</span>
-                
               </div>
-              <button
+              {/* <button
                 className="button checkout-button"
                 onClick={handleCheckout}>
                 Clear Cart
-              </button>
-              
+              </button> */}
             </div>
           </div>
-          
         )}
 
         <div className="checkout-form">
@@ -206,7 +201,8 @@ export default function ShoppingCart({
             <div className="control">
               <button
                 className="button checkout-button"
-                onClick={handleCheckout}>
+                onClick={handleCheckout}
+              >
                 Checkout
               </button>
             </div>
@@ -219,24 +215,27 @@ export default function ShoppingCart({
               <i className="material-icons md-48">fact_check</i>
             </span>
           </h3>
-
-{!checkout ? (<div className="content">
-            <p>
-              A confirmation email will be sent to you so that you can confirm
-              this order. Once you have confirmed the order, it will be
-              delivered to your dorm room.
-            </p> </div>) :(<CheckoutForm
-            products={products}
-            email={email}
-            name={name}
-            subtotal={subtotal}
-            total={total}
-            taxes={taxes}
-            shoppingCart={shoppingCart}
-            setCheckout={setCheckout}
-          />)};
-          
-          
+          {!checkout ? (
+            <div className="content">
+              <p>
+                A confirmation email will be sent to you so that you can confirm
+                this order. Once you have confirmed the order, it will be
+                delivered to your dorm room.
+              </p>{" "}
+            </div>
+          ) : (
+            <CheckoutForm
+              products={products}
+              email={email}
+              name={name}
+              subtotal={subtotal}
+              total={total}
+              taxes={taxes}
+              shoppingCart={shoppingCart}
+              setCheckout={setCheckout}
+            />
+          )}
+          ;
         </div>
       </div>
     </div>

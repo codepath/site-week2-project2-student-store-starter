@@ -27,7 +27,7 @@ export default function CheckoutForm({ email, name, subtotal, total, taxes, shop
 
   return matchingItems.map((scart) => (
     <p key={scart.id}>
-      &bull; {scart.quantity} total {cartinfo[0].name} purchased at a cost of ${cartinfo[0].price} for a total cost of ${scart.quantity * cartinfo[0].price }
+      &bull; {scart.quantity} total {cartinfo[0].name} purchased at a cost of ${cartinfo[0].price} for a total cost of ${(scart.quantity * cartinfo[0].price).toFixed(2) }
     </p>
   ));
 })}
