@@ -14,6 +14,7 @@ export default function ShoppingCart({
   const [user, setuser] = useState("");
   const [emailUser, setemail] = useState("");
   const [submittedData, setSubmittedData] = useState(null);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const formData = {
@@ -58,17 +59,23 @@ export default function ShoppingCart({
               </table>
               <div className="purchaseCalculation">
                 <div className="subtotal">
-                  <h4>subtotal </h4>
-                  <h4>{(subtotal * 1).toFixed(2)}</h4>
+                  <table className="itemTable">
+                    <thead>
+                      <th>Subtotal</th>
+                      <th>Taxes</th>
+                      <th>Total</th>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>{subtotal.toFixed(2)}</td>
+                        <td>{(subtotal * 0.07).toFixed(2)}</td>
+                        <td>{(subtotal * 1.07).toFixed(2)}</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
-                <div className="taxesFees">
-                  <h4>Taxes </h4>
-                  <h4>{(subtotal * 0.07).toFixed(2)}</h4>
-                </div>
-                <div className="totalFee">
-                  <h4>Total </h4>
-                  <h4>{(subtotal * 1.07).toFixed(2)}</h4>
-                </div>
+                <div className="taxesFees"></div>
+                <div className="totalFee"></div>
               </div>
             </>
           </p>
@@ -137,23 +144,23 @@ export default function ShoppingCart({
           <div className="Checkout">
             <h2>Checkout Info</h2>
             <h3>Receipt</h3>
-            <p>
-              Showing receipt for {user} available at {emailUser}:
-            </p>
-            {shoppingCart.map((item, rowIndex) => (
+            <ul>
+              <p>
+                Showing receipt for {user} available at {emailUser}:
+              </p>
+              {shoppingCart.map((item, rowIndex) => (
+                <li>
+                  {item.quantity} total {item.name} at a cost of ${item.price}{" "}
+                  for a total cost of ${(item.quantity * item.price).toFixed(2)}
+                </li>
+              ))}
+
+              <li> Before taxes, the subtotal was {subtotal.toFixed(2)}</li>
               <li>
-                {" "}
-                {item.quantity} total {item.name} at a cost of ${item.price} for
-                a total cost of ${(item.quantity * item.price).toFixed(2)}
+                After taxes and fees were applied, the total comes out to $
+                {(subtotal * 1.07).toFixed(2)}
               </li>
-            ))}
-            {(setShoppingCart = [])}
-            <li> Before taxes, the subtotal was {subtotal}</li>
-            <li>
-              {" "}
-              After taxes and fees were applied, the total comes out to $
-              {(subtotal * 1.07).toFixed(2)}
-            </li>
+            </ul>
           </div>
         ) : (
           <p></p>

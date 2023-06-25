@@ -40,7 +40,7 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 
 ### Video
 
-https://www.loom.com/share/d156ead8f2774f8da8758d2ccbd19371?sid=d7808f8b-f759-4572-bce1-7cccc4920de5
+https://www.loom.com/share/c1f8b5801f8148ecbd2335e993fb90fb?sid=bd943fa8-9ddc-4ae8-9118-f88c21c44122
 
 ### Stretch Features
 
