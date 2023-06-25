@@ -44,8 +44,8 @@ export default function Cart({ cartItems, products }) {
           {products?.map((product) =>
             product.id in cartItems ? (
               subtotalDisplay += product.price * cartItems[product.id],
-              taxesDisplay += subtotalDisplay * 0.0875,
-              totalDisplay += subtotalDisplay + taxesDisplay,
+              taxesDisplay = subtotalDisplay * 0.0875,
+              totalDisplay = subtotalDisplay + taxesDisplay,
               renderItemsCart(product, cartItems[product.id])
             ) : (
               <></>

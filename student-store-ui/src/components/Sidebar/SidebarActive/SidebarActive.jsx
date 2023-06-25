@@ -59,10 +59,17 @@ export default function SidebarActive({
   };
 
   function handleCheckout() {
-    console.log("trigger", formStudentName, formStudentEmail);
     !formStudentName.studentName || !formStudentEmail.studentEmail
       ? setReceiptActive(false)
-      : (myReceipt(), setReceiptActive(true), console.log("im here"));
+      : (myReceipt(), setReceiptActive(true));
+  }
+
+  function handleExit(){
+    setReceiptActive(false)
+    formStudentName.studentName = ''
+    formStudentEmail.studentEmail = ''
+    setItemsOnCart(false)
+
   }
 
   function renderReceipt() {
@@ -96,19 +103,20 @@ export default function SidebarActive({
                     <></>
                   )
                 )}
-                <li>Before taxes, the subtotal was ${}</li>
+                <li>Before taxes, the subtotal was ${subtotal}</li>
                 <li>
-                  After taxes and fees were applied, the total comes out to ${}
+                  After taxes and fees were applied, the total comes out to ${total}
                 </li>
               </ul>
             </section>
+            <button className="checkout-button" onClick={handleExit}>Exit</button>
           </div>
         </div>
       </>
     );
   }
 
-  function testRender() {
+  function noReceipt() {
     return (
       <>
         <div className="content">
@@ -192,13 +200,12 @@ export default function SidebarActive({
                 </label>
               </div>
             </div>
-            {/* there is a p here for danger, check later */}
             <div className="field">
               <div className="control">
                 <button className="checkout-button" onClick={handleCheckout}>
                   Checkout
                 </button>
-                {receiptActive ? renderReceipt() : testRender()}
+                {receiptActive ? renderReceipt() : noReceipt()}
               </div>
             </div>
           </div>
