@@ -7,13 +7,16 @@ export default function ShoppingCart({
   setShoppingCart,
 }) {
   let subtotal = 0.0;
-  {
-    shoppingCart?.map((item) => (subtotal += item.price * item.quantity));
-  }
+  let checkTotal = 0.0;
 
   const [user, setuser] = useState("");
   const [emailUser, setemail] = useState("");
   const [submittedData, setSubmittedData] = useState(null);
+  const [receipt, setReceipt] = useState([]);
+
+  {
+    shoppingCart?.map((item) => (subtotal += item.price * item.quantity));
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -21,10 +24,19 @@ export default function ShoppingCart({
       user,
       emailUser,
     };
-    console.log("hello", emailUser);
     setSubmittedData(formData);
+    setReceipt(shoppingCart);
+    console.log(
+      "kill",
+      receipt.map((item) => (subtotal += item.price * item.quantity))
+    );
+    setShoppingCart([]);
   };
-
+  {
+    receipt?.map((item) =>
+      (checkTotal += item.price * item.quantity).toFixed(2)
+    );
+  }
   return (
     <div className="shopping-cart">
       <div className="open">
@@ -35,50 +47,48 @@ export default function ShoppingCart({
           </span>
         </h3>
         <div className="notification">
-          <p>
-            <>
-              <table className="itemTable">
-                <thead>
+          <>
+            <table className="itemTable">
+              <thead>
+                <tr>
+                  <th>Name </th>
+                  <th>Quantity </th>
+                  <th>Unit Price </th>
+                  <th> Cost</th>
+                </tr>
+              </thead>
+              <tbody>
+                {shoppingCart?.map((item, idx) => (
                   <tr>
-                    <th>Name </th>
-                    <th>Quantity </th>
-                    <th>Unit Price </th>
-                    <th> Cost</th>
+                    <td>{item.name}</td>
+                    <td>{item.quantity}</td>
+                    <td>{item.price.toFixed(2)}</td>
+                    <td>{(item.price * item.quantity).toFixed(2)}</td>
                   </tr>
-                </thead>
-                <tbody>
-                  {shoppingCart?.map((item, idx) => (
+                ))}
+              </tbody>
+            </table>
+            <div className="purchaseCalculation">
+              <div className="subtotal">
+                <table className="itemTable">
+                  <thead>
+                    <th>Subtotal</th>
+                    <th>Taxes</th>
+                    <th>Total</th>
+                  </thead>
+                  <tbody>
                     <tr>
-                      <td>{item.name}</td>
-                      <td>{item.quantity}</td>
-                      <td>{item.price}</td>
-                      <td>{(item.price * item.quantity).toFixed(2)}</td>
+                      <td>{subtotal.toFixed(2)}</td>
+                      <td>{(subtotal * 0.07).toFixed(2)}</td>
+                      <td>{(subtotal * 1.07).toFixed(2)}</td>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-              <div className="purchaseCalculation">
-                <div className="subtotal">
-                  <table className="itemTable">
-                    <thead>
-                      <th>Subtotal</th>
-                      <th>Taxes</th>
-                      <th>Total</th>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>{subtotal.toFixed(2)}</td>
-                        <td>{(subtotal * 0.07).toFixed(2)}</td>
-                        <td>{(subtotal * 1.07).toFixed(2)}</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div className="taxesFees"></div>
-                <div className="totalFee"></div>
+                  </tbody>
+                </table>
               </div>
-            </>
-          </p>
+              <div className="taxesFees"></div>
+              <div className="totalFee"></div>
+            </div>
+          </>
         </div>
         <form>
           <div className="checkout-form">
@@ -132,6 +142,7 @@ export default function ShoppingCart({
                 <button
                   className="checkout-button"
                   onClick={handleSubmit}
+                  onSubmit={handleSubmit}
                   type="submit"
                 >
                   Checkout
@@ -140,7 +151,7 @@ export default function ShoppingCart({
             </div>
           </div>
         </form>
-        {submittedData && shoppingCart.length > 0 ? (
+        {submittedData ? (
           <div className="Checkout">
             <h2>Checkout Info</h2>
             <h3>Receipt</h3>
@@ -148,22 +159,23 @@ export default function ShoppingCart({
               <p>
                 Showing receipt for {user} available at {emailUser}:
               </p>
-              {shoppingCart.map((item, rowIndex) => (
+              {receipt?.map((item) => (
                 <li>
-                  {item.quantity} total {item.name} at a cost of ${item.price}{" "}
-                  for a total cost of ${(item.quantity * item.price).toFixed(2)}
+                  {item.quantity} total {item.name} at a cost of $
+                  {item.price.toFixed(2)} for a total cost of $
+                  {(item.quantity * item.price).toFixed(2)}
                 </li>
               ))}
 
-              <li> Before taxes, the subtotal was {subtotal.toFixed(2)}</li>
+              <li> Before taxes, the subtotal was ${checkTotal.toFixed(2)}</li>
               <li>
                 After taxes and fees were applied, the total comes out to $
-                {(subtotal * 1.07).toFixed(2)}
+                {(checkTotal * 1.07).toFixed(2)}
               </li>
             </ul>
           </div>
         ) : (
-          <p></p>
+          <></>
         )}
       </div>
     </div>

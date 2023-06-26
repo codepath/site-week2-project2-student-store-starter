@@ -80,14 +80,6 @@ export default function ProductCard({
                 {shoppingCart?.find((item) => item.id === product.id)?.quantity}
               </p>
             </div>
-
-            {/* {quantity > 0 ? (
-              <div className="item-quantity">
-                <p>{quantity}</p>
-              </div>
-            ) : (
-              <></>
-            )} */}
           </div>
         </div>
       </section>
