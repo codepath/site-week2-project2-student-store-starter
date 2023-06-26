@@ -27,10 +27,15 @@ app.get('/store/:id', (req,res) => {
 })
 
 app.post('/checkout', (req, res) => {
-    const cartItems = req.body
+    const cartItems = req.body.cartItems
     const products = db.products
+    const stateTaxRates = req.body.stateTaxRates
+    const selectedState = req.body.selectedState
 
-    const receipt = receiptCalculation(cartItems, products)
+    const taxRate = stateTaxRates[selectedState]
+    
+
+    const receipt = receiptCalculation(cartItems, products, taxRate)
     res.send(receipt)
     // update purchases in db.json (hint: FileWriteSync from 'fs' module)
 })
