@@ -25,7 +25,7 @@ import GirlModel from '../../assets/images/ed-tech-survey-march-2023-schwartz.jp
 import Footer from './HomeComponents/Footer';
 import { useNavigate } from 'react-router-dom';
 
-export default function Home() {
+export default function Home({ addToCart, removeFromCart }) {
   const options = [
     {
       title: 'All Categories',
@@ -57,6 +57,8 @@ export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState(options[0]);
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [showingProducts, setShowingProducts] = useState([]);
+  const [search, setSearch] = useState('');
   const navigate = useNavigate();
 
   const fetchData = async () => {
@@ -66,6 +68,7 @@ export default function Home() {
       );
       setProducts(response.data.products);
       setFilteredProducts(response.data.products);
+      setShowingProducts(response.data.products);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -76,13 +79,43 @@ export default function Home() {
 
   const handleOptionClick = (option) => {
     setSelectedCategory(option);
-    if (option.category === null) {
-      setFilteredProducts(products);
+    if (search === '') {
+      if (option.category === null) {
+        setFilteredProducts(products);
+        setShowingProducts(products);
+      } else {
+        const filtered = products.filter(
+          (product) => product.category === option.category
+        );
+        setFilteredProducts(filtered);
+        setShowingProducts(filtered);
+      }
     } else {
-      const filtered = products.filter(
+      const filteredCategory = products.filter(
         (product) => product.category === option.category
       );
-      setFilteredProducts(filtered);
+      setFilteredProducts(filteredCategory);
+
+      const filtered = filteredCategory.filter(
+        (product) =>
+          product.category === option.category &&
+          product.name.toLowerCase().includes(search.toLowerCase())
+      );
+      setShowingProducts(filtered);
+    }
+  };
+
+  const handleSearchChange = (event) => {
+    const searchText = event.target.value;
+    setSearch(searchText);
+
+    if (searchText === '') {
+      setShowingProducts(filteredProducts);
+    } else {
+      const filtered = filteredProducts.filter((product) =>
+        product.name.toLowerCase().includes(searchText.toLowerCase())
+      );
+      setShowingProducts(filtered);
     }
   };
 
@@ -116,6 +149,7 @@ export default function Home() {
             type='search'
             placeholder='Search'
             className='p-2 w-[80%] border border-green-500 rounded-lg'
+            onChange={handleSearchChange}
           />
         </div>
         {/* Help */}
@@ -139,12 +173,20 @@ export default function Home() {
         id='products-grid'
         className='w-2/3 grid grid-cols-4 gap-4 justify-self-center m-4'
       >
-        {filteredProducts.length > 0 ? (
-          filteredProducts.map((product) => (
-            <Card key={product.id} props={product} goToProduct={goToProduct} />
+        {showingProducts.length > 0 ? (
+          showingProducts.map((product) => (
+            <Card
+              key={product.id}
+              props={product}
+              goToProduct={goToProduct}
+              addToCart={addToCart}
+              removeFromCart={removeFromCart}
+            />
           ))
         ) : (
-          <p className='text-3xl font-bold'>Loading...</p>
+          <p className='text-2xl font-semibold'>
+            I think the product you're looking for is not available
+          </p>
         )}
       </div>
       {/* About */}
