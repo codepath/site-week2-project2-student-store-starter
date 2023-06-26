@@ -4,17 +4,18 @@ import "./ProductDetails.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-export default function ProductDetails() {
+export default function ProductDetails({ addItem, removeItem }) {
   const [product, setProduct] = useState({});
-  const url = "http://localhost:3001/store";
 
   const { id } = useParams();
+  const url = `http://localhost:3001/store/${id}`;
 
   useEffect(() => {
-    axios.get(url + id).then((response) => {
-      setProduct(response.data.product);
+    axios.get(url).then((response) => {
+      setProduct(response.data.productDetails);
     });
   }, []);
+  console.log(product);
 
   return (
     <>
@@ -120,10 +121,16 @@ export default function ProductDetails() {
                   </div>
                   <div className="actions">
                     <div className="buttons">
-                      <button className="add">
+                      <button
+                        className="add"
+                        onClick={() => addItem(product.id)}
+                      >
                         <i className="material-icons">add</i>
                       </button>
-                      <button className="remove">
+                      <button
+                        className="remove"
+                        onClick={() => removeItem(product.id)}
+                      >
                         <i className="material-icons">remove</i>
                       </button>
                     </div>

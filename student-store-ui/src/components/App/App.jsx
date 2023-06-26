@@ -122,7 +122,8 @@ export default function App() {
                 }
               />
 
-              <Route path="/products/:id" element={<ProductDetails />} />
+              <Route path="/products/:id" element={<ProductDetails addItem={addItem}
+                    removeItem={removeItem} />} />
               <Route path="" element={<About />} />
             </Route>
           </Routes>

@@ -29,10 +29,18 @@ export default function ShoppingCart({
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [receiptCart, setReceiptCart] = useState({});
 
   const handleCheckout = (e) => {
     e.preventDefault();
     setCheckout(true);
+    setReceiptCart({
+      shoppingCart: shoppingCart,
+      subtotal: subtotal,
+      taxes: taxes,
+      total: total,
+    });
+    setShoppingCart([]);
     //setShoppingCart((shoppingCart = []));// -- use this code to reset shopping cart but it also sets costs to zero
   };
 
@@ -83,13 +91,13 @@ export default function ShoppingCart({
             No items added to cart yet. Start shopping now!
           </div>
         ) : (
-          <div class="CartTable">
-            <div class="header">
-              <div class="header-row">
-                <span class="flex-2">Name</span>
-                <span class="center">Quantity</span>
-                <span class="center">Unit Price</span>
-                <span class="center">Cost</span>
+          <div className="CartTable">
+            <div className="header">
+              <div className="header-row">
+                <span className="flex-2">Name</span>
+                <span className="center">Quantity</span>
+                <span className="center">Unit Price</span>
+                <span className="center">Cost</span>
               </div>
 
               {shoppingCart.map((item) => (
@@ -122,24 +130,24 @@ export default function ShoppingCart({
                 </div>
               ))}
             </div>
-            <div class="receipt">
-              <div class="receipt-subtotal">
-                <span class="label">Subtotal</span>
+            <div className="receipt">
+              <div className="receipt-subtotal">
+                <span className="label">Subtotal</span>
                 <span></span>
                 <span></span>
-                <span class="center subtotal">${subtotal.toFixed(2)}</span>
+                <span className="center subtotal">${subtotal.toFixed(2)}</span>
               </div>
-              <div class="receipt-taxes">
-                <span class="label">Taxes and Fees</span>
+              <div className="receipt-taxes">
+                <span className="label">Taxes and Fees</span>
                 <span></span>
                 <span></span>
-                <span class="center">${taxes.toFixed(2)}</span>
+                <span className="center">${taxes.toFixed(2)}</span>
               </div>
-              <div class="receipt-total">
-                <span class="label">Total</span>
+              <div className="receipt-total">
+                <span className="label">Total</span>
                 <span></span>
                 <span></span>
-                <span class="center total-price">${total.toFixed(2)}</span>
+                <span className="center total-price">${total.toFixed(2)}</span>
               </div>
               {/* <button
                 className="button checkout-button"
@@ -228,10 +236,7 @@ export default function ShoppingCart({
               products={products}
               email={email}
               name={name}
-              subtotal={subtotal}
-              total={total}
-              taxes={taxes}
-              shoppingCart={shoppingCart}
+              receiptCart={receiptCart}
               setCheckout={setCheckout}
             />
           )}
