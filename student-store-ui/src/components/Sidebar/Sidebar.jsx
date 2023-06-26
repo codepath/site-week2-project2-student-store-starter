@@ -4,12 +4,18 @@ import { useState } from "react";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import CheckoutForm from "../CheckoutForm/CheckoutForm";
 
-export default function Sidebar({shoppingCart, setShoppingCart, quantity, setQuantity, products}) {
+export default function Sidebar({
+  shoppingCart,
+  setShoppingCart,
+  quantity,
+  setQuantity,
+  products,
+}) {
   const [sideBar, setSideBar] = useState(false);
   const [subtotal, setSubtotal] = useState(0);
-  const[total, setTotal] = useState(0);
+  const [total, setTotal] = useState(0);
   const [taxes, setTaxes] = useState(0);
-  const[checkout, setCheckout] = useState(false);
+  const [checkout, setCheckout] = useState(false);
 
   function handleToggleButton() {
     setSideBar((sideBar) => !sideBar);
@@ -20,30 +26,28 @@ export default function Sidebar({shoppingCart, setShoppingCart, quantity, setQua
     }
   }
 
-  function showIcons(){
+  console.log("testing");
+
+  function showIcons() {
     return (
       <>
-      <div className="shopping-cart">
+        <div className="shopping-cart">
+          <div className="cart-icons">
+            <span className="cart-icon icon button">
+              <i className="material-icons md-48">add_shopping_cart</i>
+            </span>
 
-      <div className="cart-icons">
+            <span className="cart-icon icon button">
+              <i className="material-icons md-48">monetization_on</i>
+            </span>
 
-        <span className="cart-icon icon button">
-          <i className="material-icons md-48">add_shopping_cart</i>
-        </span>
-
-        <span className="cart-icon icon button">
-          <i className="material-icons md-48">monetization_on</i>
-        </span>
-
-        <span className="cart-icon icon button">
-          <i className="material-icons md-48">fact_check</i>
-        </span>
-
-      </div>
-    </div>
-    </>
-
-    )
+            <span className="cart-icon icon button">
+              <i className="material-icons md-48">fact_check</i>
+            </span>
+          </div>
+        </div>
+      </>
+    );
   }
   return (
     <section className={`sidebar ${sideBar ? "open" : "closed"}`}>
@@ -74,7 +78,6 @@ export default function Sidebar({shoppingCart, setShoppingCart, quantity, setQua
         ) : (
           showIcons()
         )}
-
       </div>
     </section>
   );

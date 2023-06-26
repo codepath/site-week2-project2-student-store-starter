@@ -57,11 +57,11 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 
 ### Updated Walkthrough Video
 
-  <a href="https://www.loom.com/share/59d60081a32a4d62a42002fd7f0d5285">
+<a href="https://www.loom.com/share/59d60081a32a4d62a42002fd7f0d5285">
     <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/59d60081a32a4d62a42002fd7f0d5285-with-play.gif">
   </a>
 
-<!-- This is a comment -->
+<!-- coment  -->
 
 ### Stretch Features
 

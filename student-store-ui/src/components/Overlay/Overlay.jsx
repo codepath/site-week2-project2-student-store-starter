@@ -14,19 +14,18 @@ export default function Overlay({
   setShoppingCart,
   quantity,
   setQuantity,
-products
+  products,
 }) {
   return (
     <main>
       <Navbar />
       <Hero />
-      <Sidebar 
-      shoppingCart = {shoppingCart}
-      setShoppingCart = {setShoppingCart}
-      quantity = {quantity}
-      setQuantity = {setQuantity}
-      products={products}
-
+      <Sidebar
+        shoppingCart={shoppingCart}
+        setShoppingCart={setShoppingCart}
+        quantity={quantity}
+        setQuantity={setQuantity}
+        products={products}
       />
       <SubNavBar
         searchTerm={searchInput}
