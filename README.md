@@ -10,7 +10,7 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - Add several products to the shopping cart.
 - Checkout and view the final receipt.
 
-## *Week 2* Application Features
+## _Week 2_ Application Features
 
 ### Core Features
 
@@ -21,14 +21,15 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - [x] User can click on a product in the grid to navigate to a new page containing additional product details.
 
 ### Walkthrough Video
+
 <div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/embed/0d77eea007b147c2bf0b397354ee6864?sid=11115dc7-b2c1-4717-8ed0-33fde3ffbc95" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 ### GIF
+
 <a href="https://www.loom.com/share/0d77eea007b147c2bf0b397354ee6864">
     <p>Loom Recorder Settings - 16 June 2023 - Watch Video</p>
     <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/0d77eea007b147c2bf0b397354ee6864-with-play.gif">
   </a>
-
 
 ### Stretch Features
 
@@ -38,7 +39,7 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - [ ] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
 - [ ] Your choice! (Replace this bullet explaining what you implemented. Example: Users can leave ratings for products they have purchased.)
 
-## *Week 3* Application Features
+## _Week 3_ Application Features
 
 ### Core Features
 
@@ -49,11 +50,18 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - [x] Users can checkout, and receive a receipt confirming their purchase.
 
 ### Walkthrough Video
-<a href="https://www.loom.com/share/d25f02b695114e1596ee870d3f2d14a6">
+
+<!-- <a href="https://www.loom.com/share/d25f02b695114e1596ee870d3f2d14a6">
     <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/d25f02b695114e1596ee870d3f2d14a6-with-play.gif">
+  </a> -->
+
+### Updated Walkthrough Video
+
+  <a href="https://www.loom.com/share/59d60081a32a4d62a42002fd7f0d5285">
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/59d60081a32a4d62a42002fd7f0d5285-with-play.gif">
   </a>
 
-
+<!-- This is a comment -->
 
 ### Stretch Features
 
