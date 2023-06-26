@@ -26,7 +26,7 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - [ x] Users can click the '+' button on a product cart to increment that product in the shopping cart.
 - [x ] Users can click the '-' button on a product cart to decrement that product in the shopping cart.
 - [ x] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
-- [ x] Your choice! (Replace this bullet explaining what you implemented. Example: Users can leave ratings for products they have purchased.)
+- [ x] Users track each number item added to cart via a counter displayed on the item card.
 
 - https://www.loom.com/share/c3f3a7e1f6a44993815286862aa9d93c?sid=7f3d5869-3744-43da-90dc-6183b61ce800
 
