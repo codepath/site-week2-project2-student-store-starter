@@ -4,10 +4,11 @@ import axios from "axios";
 
 import "./Cart.css";
 
-export default function Cart({ cartItems, products }) {
+export default function Cart({ cartItems, products, selectedState, stateTaxRates }) {
   let subtotalDisplay = 0
   let taxesDisplay = 0 
   let totalDisplay = 0
+  console.log('taxrate', stateTaxRates[selectedState])
   function renderItemsCart(product, quantity) {
     return (
       <>
@@ -44,7 +45,7 @@ export default function Cart({ cartItems, products }) {
           {products?.map((product) =>
             product.id in cartItems ? (
               subtotalDisplay += product.price * cartItems[product.id],
-              taxesDisplay = subtotalDisplay * 0.0875,
+              taxesDisplay = subtotalDisplay * stateTaxRates[selectedState],
               totalDisplay = subtotalDisplay + taxesDisplay,
               renderItemsCart(product, cartItems[product.id])
             ) : (
