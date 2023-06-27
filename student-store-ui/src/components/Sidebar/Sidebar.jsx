@@ -1,6 +1,7 @@
 import * as React from "react";
 import "./Sidebar.css";
 import { useState } from "react";
+import ShoppingList from "../ShoppingList/ShoppingList"; 
 
 export default function Sidebar() {
   const [isCollapsed, setIsCollapsed] = useState(true);

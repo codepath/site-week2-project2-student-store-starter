@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ListItemForm from "../ListItemForm/ListItemForm";
 import ListItem from "../ListItem/ListItem";
-import "./ShoppingList.css";
+// import "./ShoppingList.css";
 
 function ShoppingList() {
   const [items, setItems] = useState([]);
