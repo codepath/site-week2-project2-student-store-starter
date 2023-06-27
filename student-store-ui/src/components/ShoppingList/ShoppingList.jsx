@@ -3,27 +3,21 @@ import ListItemForm from "../ListItemForm/ListItemForm";
 import ListItem from "../ListItem/ListItem";
 // import "./ShoppingList.css";
 
-function ShoppingList() {
-  const [items, setItems] = useState([]);
-
-  function addItem(newItem) {
-    setItems(items => [...items, newItem]);
-  }
-
+function ShoppingList({cart}) {
   return (
-    <div className={`ShoppingList ${items.length ? "list-full" : "list-empty"}`}>
+    <div className={`ShoppingList ${Object.keys(cart).length ? "list-full" : "list-empty"}`}>
       <h1 className="title">Shopping List</h1>
 
-      <ListItemForm addItem={addItem} />
-
-      {items.length ?
-        items.map((item, idx) => (
-          <ListItem item={item} key={idx} />
+      {Object.keys(cart).length ?
+        Object.entries(cart).map(([id, quantity]) => (
+          <div key={id}>
+            <span>Product ID: {id}</span>
+            <span>Quantity: {quantity}</span>
+          </div>
         ))
-        :
+        :  
         <h3>Your shopping list is empty</h3>
       }
-
     </div>
   );
 }

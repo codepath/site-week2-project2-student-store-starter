@@ -39,7 +39,11 @@ export default function App() {
             <Hero />
             <SubNavbar setCategory={setCategory} setSearchTerm={setSearchTerm} />
             <Routes>
-              <Route path="/" element={<Home products={filteredProducts} />} />
+              <Route path="/" element={<Home 
+                      products={filteredProducts}
+                      cart={cart}
+                      setCart={setCart}
+              />} />
               <Route path="/product/:id" element={<ProductDetail products={products} />} />
             </Routes>
           </main>

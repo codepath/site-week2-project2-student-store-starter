@@ -1,8 +1,11 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import "./ProductGrid.css";
+import { useState } from 'react';
 
 export default function ProductGrid({ products, searchTerm, category }) {
+  const [cart, setCart] = useState({});
+
   const filteredProducts = products.filter((product) => {
     if (category && product.category !== category) {
       return false;
@@ -15,6 +18,24 @@ export default function ProductGrid({ products, searchTerm, category }) {
     }
     return true;
   });
+
+  function handleIncrement(id) {
+    setCart((prevCart) => {
+      return { ...prevCart, [id]: (prevCart[id] || 0) + 1 };
+    });
+  }
+  
+  function handleDecrement(id) {
+    setCart((prevCart) => {
+      if (prevCart[id] > 0) {
+        return { ...prevCart, [id]: prevCart[id] - 1 };
+      } else {
+        const newCart = { ...prevCart };
+        delete newCart[id];
+        return newCart;
+      }
+    });
+  }
 
   return (
     <div className="product-grid">
@@ -33,8 +54,15 @@ export default function ProductGrid({ products, searchTerm, category }) {
               <p>{product.price}</p>
             </div>
           </Link>
+          <div>
+            <button onClick={() => handleIncrement(product.id)}>+</button>
+            <span>{cart[product.id] || 0}</span>
+            <button onClick={() => handleDecrement(product.id)}>-</button>
+          </div>
         </section>
       ))}
     </div>
   );
 }
+
+
