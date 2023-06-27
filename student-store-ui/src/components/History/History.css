@@ -1,0 +1,61 @@
+.history {
+  background-color: #323232;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  flex-direction: column;
+  padding-top: 10%;
+}
+
+.history-data {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.history-list {
+  width: 33%;
+  background-color: black;
+  height: 80%;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  overflow-y: scroll;
+  position: relative;
+  padding: 2.5%;
+}
+
+.history-detail {
+  width: 50%;
+  background-color: black;
+  height: 80%;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  color: white;
+  padding: 2.5%;
+  display: grid;
+}
+
+.order-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 13%;
+  max-height: 100px;
+  border-radius: 15px;
+  border: none;
+  margin: 2%;
+  background-color: rgb(199, 199, 199);
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 5%;
+}
+
+.card-text {
+  line-height: 0;
+  text-align: left;
+}

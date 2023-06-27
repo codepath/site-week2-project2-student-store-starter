@@ -1,0 +1,40 @@
+* {
+  font-size: 20px;
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  margin: 2%;
+  width: 100%;
+  color: white;
+}
+
+.input-box {
+  min-width: 400px;
+  width: 100%;
+  min-height: 50px;
+  border-radius: 15px;
+  border: none;
+  margin: 2.5% auto;
+  color: black;
+  text-align: center;
+  background-color: rgb(230, 230, 230);
+}
+
+.input-box::placeholder {
+  opacity: 70%;
+}
+
+.checkout-btn {
+  color: rgb(204, 204, 204);
+  height: 55px;
+  width: 50%;
+  margin: 3.5% 0;
+  background-color: transparent;
+  border: 3px solid rgb(204, 204, 204);
+  border-radius: 15px;
+  cursor: pointer;
+}
