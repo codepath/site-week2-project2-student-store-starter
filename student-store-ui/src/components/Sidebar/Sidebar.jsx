@@ -16,6 +16,7 @@ export default function Sidebar() {
       </button>
       {!isCollapsed && (
         <>
+          <ShoppingList />
           <div>
             <p>Shopping Cart</p>
           </div>
