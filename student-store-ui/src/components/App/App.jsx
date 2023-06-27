@@ -53,3 +53,6 @@ export default function App() {
   )
 
 }
+
+{/* <Sidebar cart={cart} products={products} isCollapsed={isSidebarCollapsed} setIsCollapsed={setIsSidebarCollapsed} />
+<ProductGrid products={products} cart={cart} setCart={setCart} /> */}

@@ -3,7 +3,7 @@ import "./Sidebar.css";
 import { useState } from "react";
 import ShoppingList from "../ShoppingList/ShoppingList"; 
 
-export default function Sidebar() {
+export default function Sidebar({cart, products}) {
   const [isCollapsed, setIsCollapsed] = useState(true);
 
   const toggleSidebar = () => {
@@ -17,7 +17,7 @@ export default function Sidebar() {
       </button>
       {!isCollapsed && (
         <>
-          <ShoppingList />
+          <ShoppingList cart={cart} products={products} />
           <div>
             <p>Shopping Cart</p>
           </div>

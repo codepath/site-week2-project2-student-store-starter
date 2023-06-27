@@ -27,7 +27,7 @@ export default function ProductGrid({ products, searchTerm, category }) {
   
   function handleDecrement(id) {
     setCart((prevCart) => {
-      if (prevCart[id] > 0) {
+      if (prevCart[id] > 1) {
         return { ...prevCart, [id]: prevCart[id] - 1 };
       } else {
         const newCart = { ...prevCart };
