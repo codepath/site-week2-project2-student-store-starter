@@ -23,7 +23,7 @@ export default function Sidebar({ setShoppingCart, shoppingCart }) {
   const [savedTotal, setSavedTotal] = useState(0);
   const [lastSavedEmail, setLastSavedEmail] = useState("");
   const [lastSavedSC, setLastSavedSC] = useState([]);
-  const [checkout, setCheckout] = useState("");
+  const [checkout, setCheckout] = useState(false);
 
   const handleName = (event) => {
     setName(event.target.value);
@@ -44,7 +44,7 @@ export default function Sidebar({ setShoppingCart, shoppingCart }) {
       setEmail("");
       setName("");
       setTermsChecked(false);
-      setCheckout("purchase");
+      setCheckout(true);
     }
   }
 
@@ -57,7 +57,12 @@ export default function Sidebar({ setShoppingCart, shoppingCart }) {
       <section style={{ color: "white" }} className="sidebar">
         <div id="infoSidebar" style={{ textAlign: "center" }}>
           <p className="sidebarHeader">
-            Shopping Cart <FontAwesomeIcon className="sidebar-icon" icon={faCartPlus} bounce />
+            Shopping Cart{" "}
+            <FontAwesomeIcon
+              className="sidebar-icon"
+              icon={faCartPlus}
+              bounce
+            />
           </p>
           <ShoppingCart
             subtotal={subtotal}
@@ -71,7 +76,12 @@ export default function Sidebar({ setShoppingCart, shoppingCart }) {
           />
           <br />
           <p id="paymentHeader" className="sidebarHeader">
-            Payment Info <FontAwesomeIcon className="sidebar-icon" icon={faDollarSign} flip />
+            Payment Info{" "}
+            <FontAwesomeIcon
+              className="sidebar-icon"
+              icon={faDollarSign}
+              flip
+            />
           </p>
         </div>
         <form action="search" className="sidebar-label">
@@ -108,10 +118,7 @@ export default function Sidebar({ setShoppingCart, shoppingCart }) {
             />
             <span>
               I agree to the &thinsp;
-              <a
-                style={{ color: "white", textDecoration: "none" }}
-                href="/"
-              >
+              <a style={{ color: "aqua", textDecoration: "none" }} href="/">
                 terms and conditions
               </a>
             </span>
@@ -142,17 +149,30 @@ export default function Sidebar({ setShoppingCart, shoppingCart }) {
         </form>
         <div id="infoSidebar">
           <p className="sidebarHeader">
-            Checkout Info <FontAwesomeIcon className="sidebar-icon" icon={faListCheck} shake />
+            Checkout Info{" "}
+            <FontAwesomeIcon
+              className="sidebar-icon"
+              icon={faListCheck}
+              shake
+            />
           </p>
-          <CheckoutForm
-            checkout={checkout}
-            setCheckout={setCheckout}
-            email={lastSavedEmail}
-            name={lastSavedName}
-            shoppingCart={lastSavedSC}
-            subtotal={savedSubtotal}
-            total={savedTotal}
-          />
+          {checkout ? (
+            <CheckoutForm
+              checkout={checkout}
+              setCheckout={setCheckout}
+              email={lastSavedEmail}
+              name={lastSavedName}
+              shoppingCart={lastSavedSC}
+              subtotal={savedSubtotal}
+              total={savedTotal}
+            />
+          ) : (
+            <p style={{ fontSize: "large" }}>
+              A confirmation email will be sent to you so that you can confirm
+              this order. Once you have confirmed the order, it will be
+              delivered to your dorm room.
+            </p>
+          )}
         </div>
       </section>
     </>

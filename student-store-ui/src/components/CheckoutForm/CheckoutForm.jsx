@@ -10,11 +10,9 @@ export default function CheckoutForm({
   total,
 }) {
   function handleSubmit() {
-    setCheckout("normal");
+    setCheckout(false);
   }
   return (
-    <>
-      {checkout === "purchase" ? (
         <>
           <span style={{ fontWeight: "bold", fontSize: "large" }}>
             {" "}
@@ -50,14 +48,6 @@ export default function CheckoutForm({
               </button>
             </p>
           </div>
-        </>
-      ) : (
-        <p style={{ fontSize: "large" }}>
-          A confirmation email will be sent to you so that you can confirm this
-          order. Once you have confirmed the order, it will be delivered to your
-          dorm room.
-        </p>
-      )}
     </>
   );
 }
