@@ -1,0 +1,147 @@
+
+.checkout-form {
+    padding: 20px;
+  }
+  
+  .checkout-form h3 {
+    color: #F06292; 
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  .checkout-form h3 .button {
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .checkout-form h3 .button i {
+    font-size: 24px;
+    vertical-align: middle;
+  }
+  
+  .input-field {
+    margin-top: 20px;
+  }
+  
+  .input-field .label {
+    font-weight: 600;
+  }
+  
+  .input-field .control {
+    margin-top: 10px;
+  }
+  
+  .checkout-form-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #F06292; /* Update border color to a darker pink */
+    border-radius: 4px;
+  }
+  
+  .field {
+    margin-top: 20px;
+  }
+  
+  .field .checkbox {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+  }
+  
+  .field .checkbox input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  .is-danger {
+    margin-top: 5px;
+    color: #F44336; /* Update error message color to red */
+    font-weight: 600;
+  }
+  
+  .checkout-button {
+    background-color: #F06292; /* Update button background color to a darker pink */
+    color: #FFFFFF; /* Update button text color to white */
+  }
+  
+  .checkout-button:hover {
+    background-color: #D81B60; /* Update button hover background color to a darker shade of pink */
+  }
+  
+  .checkout-success {
+    margin-top: 20px;
+  }
+  
+  .checkout-success h3 {
+    color: #F06292; /* Update heading color to a darker pink */
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  .checkout-success h3 .button {
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .checkout-success h3 .button i {
+    font-size: 24px;
+    vertical-align: middle;
+  }
+  
+  .card {
+    margin-top: 20px;
+    border: 1px solid #F06292; 
+    border-radius: 4px;
+  }
+  
+  .card .card-head {
+    padding: 10px;
+    background-color: #F06292; 
+    color: #FFFFFF; 
+  }
+  
+  .card .card-title {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .card .card-body {
+    padding: 10px;
+  }
+  
+  .card .header {
+    font-weight: 600;
+  }
+  
+  .purchase li {
+    margin-bottom: 5px;
+  }
+  
+  .purchase li:before {
+    content: "-";
+    margin-right: 5px;
+  }
+  
+  .purchase li:last-child {
+    margin-top: 10px;
+  }
+  
+  .purchase li:last-child:before {
+    content: "";
+  }
+  
+  .purchase li::after {
+    content: "";
+  }
+  
+  .purchase li::before,
+  .purchase li::after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 5px;
+    vertical-align: middle;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid #F06292; /* Update bullet point color to a darker pink */
+  }
+  

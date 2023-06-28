@@ -1,3 +1,46 @@
 .about {
-    background-color: #C7A59D
-}
+    background: #F06292; /* Update background color to a darker pink */
+    padding: 40px;
+  }
+  
+  .about .content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .about h3 {
+    color: #FFFFFF; /* Update heading color to white */
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  .about .summary {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  
+  .about .summary .text {
+    flex: 1;
+    text-align: left;
+    color: #FFFFFF; /* Update text color to white */
+  }
+  
+  .about .summary .text p {
+    margin-bottom: 15px;
+  }
+  
+  .about .summary .media {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .about .summary .media img {
+    width: 200px;
+    height: auto;
+  }

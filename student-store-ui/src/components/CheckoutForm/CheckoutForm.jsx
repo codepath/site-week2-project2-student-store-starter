@@ -169,11 +169,6 @@ export default function CheckoutForm({
                 </li>
               </ul>
             </section>
-
-            <footer className="card-foot">
-              <button className="button is-success">Shop More</button>
-              <button className="button">Exit</button>
-            </footer>
           </div>
         </div>
       )}

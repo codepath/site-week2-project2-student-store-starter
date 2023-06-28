@@ -1,89 +1,95 @@
 import * as React from "react";
 import "./ProductCard.css";
 import { Link } from "react-router-dom";
-// import { addToCart } from ProductRow
-import ProductRow from "../ProductRow/ProductRow";
 
-export default function ProductCard({ product, cartItems, setCartItems }) {
+export default function ProductCard({
+  product,
+  shoppingCart,
+  setShoppingCart,
+}) {
   const [quantity, setQuantity] = React.useState(0);
 
-  const handleAddCartItems = () => {
+  const handleAddToCart = () => {
     setQuantity((prevQuantity) => {
       let newQuantity = prevQuantity + 1;
       let newCart;
-      const productInCart = cartItems.find(
+
+      const productInCart = shoppingCart.find(
         (item) => item.productId === product.id
       );
       if (productInCart) {
         productInCart.quantity = newQuantity;
-        newCart = cartItems.map((item) =>
+        newCart = shoppingCart.map((item) =>
           item.productId === product.id ? productInCart : item
         );
       } else {
         newCart = [
-          ...cartItems,
+          ...shoppingCart,
           { productId: product.id, quantity: newQuantity },
         ];
       }
-      setCartItems(newCart);
-      console.log(cartItems);
+
+      setShoppingCart(newCart);
       return newQuantity;
     });
   };
-  const handleRemoveCartItems = () => {
+
+  const handleRemoveFromCart = () => {
     setQuantity((prevQuantity) => {
       let newQuantity = prevQuantity > 0 ? prevQuantity - 1 : 0;
       let newCart;
-      const productInCart = cartItems.find(
+
+      const productInCart = shoppingCart.find(
         (item) => item.productId === product.id
       );
       if (productInCart) {
         if (newQuantity === 0) {
-          newCart = cartItems.filter(
+          newCart = shoppingCart.filter(
             (item) => item.productId !== product.id
           );
         } else {
           productInCart.quantity = newQuantity;
-          newCart = cartItems.map((item) =>
+          newCart = shoppingCart.map((item) =>
             item.productId === product.id ? productInCart : item
           );
         }
-        setCartItems(newCart);
+
+        setShoppingCart(newCart);
       }
-      console.log(cartItems);
+
       return newQuantity;
     });
   };
 
   return (
-    <div className="card">
-      <Link to={`products/${product.id}`}>
-        <img className="small-image" src={product.image} alt="product cover" />
-        <div className="product-info">
-          <div className="main-info">
-            <p className="product-name">{product.name}</p>
-            <div className="stars"></div>
-            <p className="product-price">{product.price}</p>
+    <div className="product-card">
+      <div className="media">
+        <Link to={`/products/${product.id}`}>
+          <img src={product.image} alt="product cover" loading="lazy" />
+        </Link>
+      </div>
+      <div className="product-info">
+        <div className="main-info">
+          <p className="product-name">{product.name}</p>
+          <div className="stars">
+            <p>★★★★☆</p>
           </div>
+          <p className="product-price">${product.price.toFixed(2)}</p>
         </div>
-      </Link>
-      <div className="actions">
-        <div className="buttons">
-          <button className="add" onClick={() => handleAddCartItems()}>
-            {/* <button className="add"> */}
-            <i className="material-icons">add</i>
-          </button>
-          {/* <button className="remove" onClick={() => handleCartItems(-1)}> */}
-          <button className="remove" onClick={() => handleRemoveCartItems()}>
-            <i className="material-icons">remove</i>
-          </button>
-          <div>
+        <div className="actions">
+          <div className="buttons">
+            <button className="add" onClick={handleAddToCart}>
+              <i className="material-icons">add</i>
+            </button>
+            <button className="remove" onClick={handleRemoveFromCart}>
+              <i className="material-icons">remove</i>
+            </button>
+          </div>
           {quantity > 0 && (
             <span className="quantity">
               <span className="amt">{quantity}</span>
             </span>
           )}
-          </div>
         </div>
       </div>
     </div>

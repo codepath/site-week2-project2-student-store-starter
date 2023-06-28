@@ -1,11 +1,25 @@
-import * as React from "react"
-import "./Home.css"
-import ProductGrid from "../ProductGrid/ProductGrid"
+import * as React from "react";
+import "./Home.css";
+import ProductGrid from "../ProductGrid/ProductGrid";
 
-export default function Home({products, searchInput, currentCategory, cartItems, setCartItems}) {
+export default function Home({
+  products,
+  searchTerm,
+  selectedCategory,
+  shoppingCart,
+  setShoppingCart,
+}) {
   return (
     <div className="home">
-          <ProductGrid products = {products} searchInput={searchInput} currentCategory={currentCategory} cartItems={cartItems} setCartItems={setCartItems}/>
+      <div className="home">
+        <ProductGrid
+          products={products}
+          searchTerm={searchTerm}
+          selectedCategory={selectedCategory}
+          setShoppingCart={setShoppingCart}
+          shoppingCart={shoppingCart}
+        />
+      </div>
     </div>
-  )
+  );
 }

@@ -1,5 +1,4 @@
-import * as React from "react";
-import "./ShoppingCart.css";
+import "./ShoppingCart.css"
 
 export default function ShoppingCart({
   shoppingCart,

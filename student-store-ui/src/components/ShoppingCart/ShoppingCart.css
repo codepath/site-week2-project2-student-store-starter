@@ -1,5 +1,81 @@
-.cart {
-    border: 30px;
-    padding: 30px;
-    /* margin-top: 50px; */
-}
+
+.open {
+    padding: 20px;
+  }
+  
+  .open h3 {
+    color: #F06292; /* Update heading color to a darker pink */
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  .open h3 .button {
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .open h3 .button i {
+    font-size: 24px;
+    vertical-align: middle;
+  }
+  
+  .CartTable {
+    margin-top: 20px;
+    border: 1px solid #F06292; /* Update border color to a darker pink */
+    border-radius: 4px;
+  }
+  
+  .CartTable .header {
+    padding: 10px;
+    background-color: #F06292; /* Update background color to a darker pink */
+    color: #FFFFFF; /* Update text color to white */
+  }
+  
+  .CartTable .header .header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+  }
+  
+  .CartTable .product-row {
+    padding: 10px;
+    border-bottom: 1px solid #F06292; /* Update border color to a darker pink */
+  }
+  
+  .CartTable .product-row:last-child {
+    border-bottom: none;
+  }
+  
+  .CartTable .product-row .cart-product-name {
+    flex: 2;
+  }
+  
+  .CartTable .product-row .center {
+    text-align: center;
+  }
+  
+  .receipt {
+    padding: 10px;
+    background-color: #FCE4EC; /* Update background color to a lighter pink */
+  }
+  
+  .receipt-subtotal,
+  .receipt-taxes,
+  .receipt-total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .receipt .label {
+    font-weight: 600;
+  }
+  
+  .notification {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #FFE0E6; /* Update background color to a light pink */
+    color: #F06292; /* Update text color to a darker pink */
+  }
+  

@@ -1,67 +1,79 @@
 import * as React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 import Home from "../Home/Home";
+import ProductDetails from "../ProductDetails/ProductDetails";
 import "./App.css";
-import Hero from "../Hero/Hero";
 import Subnavbar from "../Subnavbar/Subnavbar";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import Hero from "../Hero/Hero";
 import About from "../About/About";
 import Contact from "../Contact/Contact";
-import ProductDetail from "../ProductDetail/ProductDetail";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Footer from "../Footer/Footer";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function App() {
-  const temp = "https://codepath-store-api.herokuapp.com/store";
-  const url = "http://localhost:3001/";
+  //https://codepath-store-api.herokuapp.com/store
+  // const url = "http://localhost:3001/";
+  const url = "https://codepath-store-api.herokuapp.com/store";
 
   const [products, setProducts] = useState([]);
+  const [searchTerm, setSearchTerm] = React.useState("");
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [shoppingCart, setShoppingCart] = useState([]);
 
   useEffect(() => {
-    axios.get(temp).then((response) => {
+    axios.get(url).then((response) => {
       setProducts(response.data.products);
     });
   }, []);
 
-  const [searchInput, setSearchInput] = useState("");
-  const [currentCategory, setCurrentCategory] = useState("");
-  const [sidebar, setSidebar] = useState(false);
-  const [cartItems, setCartItems] = useState([]);
-
-  // let quantityList = [];
-
   return (
     <div className="app">
-      <BrowserRouter>
-        <main>
+      <main>
+        <BrowserRouter>
+          <Sidebar
+            shoppingCart={shoppingCart}
+            setShoppingCart={setShoppingCart}
+            products={products}
+          />
           <Navbar />
           <Hero />
           <Subnavbar
-            setSearchInput={setSearchInput}
-            setCurrentCategory={setCurrentCategory}
+            setSearchTerm={setSearchTerm}
+            setSelectedCategory={setSelectedCategory}
           />
-          <Sidebar sidebar={sidebar} setSidebar={setSidebar} cartItems={cartItems} setCartItems={setCartItems} products={products}/>
-          {/* <ProductRow products={products} cartItems={cartItems} setCartItems={setCartItems}></ProductRow> */}
           <Routes>
             <Route
               path="/"
               element={
                 <Home
                   products={products}
-                  searchInput={searchInput}
-                  currentCategory={currentCategory}
-                  cartItems={cartItems}
-                  setCartItems={setCartItems}
+                  searchTerm={searchTerm}
+                  selectedCategory={selectedCategory}
+                  shoppingCart={shoppingCart}
+                  setShoppingCart={setShoppingCart}
                 />
               }
-            />
-            <Route path="/products/:id" element={<ProductDetail />} />
+            ></Route>
+            <Route path="/About" element={<About />}></Route>
+            <Route
+              path="/products/:id"
+              element={
+                <ProductDetails
+                  shoppingCart={shoppingCart}
+                  setShoppingCart={setShoppingCart}
+                  products={products}
+                />
+              }
+            ></Route>
           </Routes>
           <About />
           <Contact />
-        </main>
-      </BrowserRouter>
+          <Footer />
+        </BrowserRouter>
+      </main>
     </div>
   );
 }

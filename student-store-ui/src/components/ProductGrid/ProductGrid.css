@@ -1,9 +1,49 @@
-.grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Each card takes 1/4th of the grid */
-    grid-gap: 20px; /* Add some spacing between the cards */
-    background-color: #A26769
-  }
+.product-grid {
+  width: 100%;
+  max-width: 100vw;
+  margin: 40px 0;
+}
 
-  /* .product-card {
-  } */
+.product-grid .content {
+  max-width: var(--content-width);
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-grid .content h3 {
+  margin: 10px 0 30px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.product-grid .content .grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.product-grid .product-card {
+  height: 350px;
+  width: 250px;
+  background: pink;
+  display: flex;
+  flex-direction: column;
+  border: solid 1px var(--border-color);
+  border-radius: 10px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.product-grid .product-card .media {
+  height: 250px;
+  width: 100%;
+  border-radius: 10px 10px 0 0; 
+  overflow: hidden; 
+}
+
+.product-grid .product-card .media img {
+  height: 250px;
+  width: 248px;
+  object-fit: cover; 
+}
