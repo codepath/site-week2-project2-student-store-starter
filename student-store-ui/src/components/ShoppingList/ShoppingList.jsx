@@ -6,7 +6,7 @@ import "./ShoppingList.css";
 function ShoppingList({cart, products}) {
   return (
     <div className={`ShoppingList ${Object.keys(cart).length ? "list-full" : "list-empty"}`}>
-      <h1 className="title">Shopping List</h1>
+      <h1 className="title">Shopping Cart 🛒</h1>
 
       {Object.keys(cart).length ?
         Object.entries(cart).map(([id, quantity]) => {
@@ -19,7 +19,7 @@ function ShoppingList({cart, products}) {
           );
         })
         :  
-        <h3>Your shopping list is empty</h3>
+        <p>No items added to cart yet. Start shopping now!</p>
       }
     </div>
   );
