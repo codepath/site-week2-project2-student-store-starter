@@ -1,33 +1,70 @@
-import * as React from "react"
-import "./Subnavbar.css"
+import * as React from "react";
+import "./Subnavbar.css";
 
-export default function Subnavbar({searchInput, setSearchInput, setCurrentCategory}) {
-
+export default function Subnavbar({
+  searchTerm,
+  setSelectedCategory,
+  setSearchTerm,
+}) {
   const handleCategory = (category) => {
-    setCurrentCategory(category);
+    setSelectedCategory(category);
   };
+
   const handleSearchChange = (event) => {
-    setSearchInput(event.target.value);
+    setSearchTerm(event.target.value);
   };
 
   return (
-    <div className="subnavbar">
-      <i className="material-icons">menu</i>
-                <li className="is-active"><button onClick={() => handleCategory("")}>All Categories</button></li>
-                <li className=""><button onClick={() => handleCategory("clothing")}>clothing</button></li>
-                <li className=""><button onClick={() => handleCategory("food")}>food</button></li>
-                <li className=""><button onClick={() => handleCategory("accessories")}>accessories</button></li>
-                <li className=""><button onClick={() => handleCategory("tech")}>tech</button>
-                </li>
-            <div className="search-bar">
+    <nav className="sub-navbar">
+      <div className="content">
+        <div className="row">
+          <div className="search-bar">
             <input
               type="text"
               name="search"
               placeholder="Search"
-              value={searchInput}
+              value={searchTerm}
               onChange={handleSearchChange}
             ></input>
           </div>
-    </div>
-  )
+          <div className="links">
+            <span className="help">
+              <i className="material-icons">help</i>Help
+            </span>
+            <div className="cart">
+              <a href="/">
+                My Cart<i className="material-icons">shopping_cart</i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="hamburger-menu">
+            <i className="material-icons">menu</i>
+          </div>
+          <ul className="category-menu open">
+            <li className="is-active">
+              <button onClick={() => handleCategory("")}>All Categories</button>
+            </li>
+            <li className="">
+              <button onClick={() => handleCategory("Clothing")}>
+                Clothing
+              </button>
+            </li>
+            <li className="">
+              <button onClick={() => handleCategory("Food")}>Food</button>
+            </li>
+            <li className="">
+              <button onClick={() => handleCategory("Accessories")}>
+                Accessories
+              </button>
+            </li>
+            <li className="">
+              <button onClick={() => handleCategory("Tech")}>Tech</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
 }

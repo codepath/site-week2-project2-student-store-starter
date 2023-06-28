@@ -19,7 +19,7 @@ export default function Sidebar({
 
   function handleOnToggle() {
     setSidebar(!sidebar);
-  }
+  };r
 
   function showIcons() {
     return (
