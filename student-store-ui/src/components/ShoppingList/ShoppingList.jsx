@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ListItemForm from "../ListItemForm/ListItemForm";
 import ListItem from "../ListItem/ListItem";
-// import "./ShoppingList.css";
+import "./ShoppingList.css";
 
 function ShoppingList({cart, products}) {
   return (
@@ -10,7 +10,7 @@ function ShoppingList({cart, products}) {
 
       {Object.keys(cart).length ?
         Object.entries(cart).map(([id, quantity]) => {
-          const product = products.find(product => product.id === id);
+          const product = products.find(product => product.id === Number(id)); 
           return (
             <div key={id}>
               <span>Product Name: {product.name}</span>

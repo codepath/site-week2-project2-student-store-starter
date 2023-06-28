@@ -15,7 +15,7 @@ export default function App() {
   const [products, setProducts] = useState([])
   const [searchTerm, setSearchTerm] = useState("")
   const [category, setCategory] = useState("")
-  const [cart, setCart] = useState([])
+  const [cart, setCart] = useState({})
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(true);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export default function App() {
   return (
     <div className="app">
       <BrowserRouter>
-      <Sidebar isCollapsed={isSidebarCollapsed} setIsCollapsed={setIsSidebarCollapsed} />
+      <Sidebar cart={cart} products={products} isCollapsed={isSidebarCollapsed} setIsCollapsed={setIsSidebarCollapsed} />
         <div className="main-content">
           <main>
             <Navbar />

@@ -2,11 +2,11 @@ import * as React from "react";
 import "./Home.css";
 import ProductGrid from "../ProductGrid/ProductGrid";
 
-export default function Home({products, searchTerm, category}) {
+export default function Home({products, searchTerm, category, cart, setCart}) {
   return (
     <div className="home">
       <div className="product-grid">
-        <ProductGrid products={products} searchTerm={searchTerm} category={category} />
+        <ProductGrid products={products} searchTerm={searchTerm} category={category} cart={cart} setCart={setCart}/>
       </div>
       
       <div className="about" id="About">

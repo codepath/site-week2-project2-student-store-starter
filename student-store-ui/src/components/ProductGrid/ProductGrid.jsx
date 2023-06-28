@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import "./ProductGrid.css";
 import { useState } from 'react';
 
-export default function ProductGrid({ products, searchTerm, category }) {
-  const [cart, setCart] = useState({});
+export default function ProductGrid({ products, searchTerm, category, cart, setCart}) {
 
   const filteredProducts = products.filter((product) => {
     if (category && product.category !== category) {
