@@ -1,0 +1,25 @@
+.footer{
+    background-color: #2f2e2e;
+    padding: 25px;
+    color: #fcfcfc;
+
+    margin-top: 50px;
+}
+
+.footer .content .top .links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer .content .top .links .link-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .content .top .links .link-column ul{
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+}

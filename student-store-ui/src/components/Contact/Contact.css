@@ -1,0 +1,14 @@
+
+.contact .content h3{
+    text-align: center;
+}
+
+.contact .content{
+    background-color: #a3815f;
+    color: white;
+}
+
+.contact .content .summary .info li{
+    text-align: center;
+    list-style-type: none;
+}

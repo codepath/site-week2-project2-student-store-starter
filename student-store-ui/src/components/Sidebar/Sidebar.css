@@ -1,0 +1,66 @@
+.sidebar.open {
+  width: 575px;
+}
+
+.sidebar.open {
+    width: 575px;
+}
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+    flex: 1;
+    transition: all .2s cubic-bezier(.215,.61,.355,1);
+    position: fixed;
+    z-index: 100;
+    top: 0px;
+    height: 100vh;
+    padding: 0;
+    overflow-y: scroll;
+    padding-bottom: 2rem;
+    background-color: #393939;
+    color: white;
+}
+
+.toggle-button{
+  background-color: #393939;
+  border: none;
+}
+
+/*
+.sidebar {
+    width: 80px;
+    height: 100%;
+    background-color: #393939;
+    transition: width 0.3s;
+    position: fixed;
+    display: block;
+    z-index: 1;
+    color: white;
+    text-align: center;
+  }
+  
+  .sidebar.open {
+    width: 300px;
+    list-style-type: none;
+  }
+
+.sidebar .sidebar-icons{
+    padding-right: 25px;
+}
+  
+.sidebar .sidebar-icons ul li{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    width: 100%;
+    padding-right: 2px;
+}
+
+.toggleButton{
+    background-color: #a3815f;
+}
+*/
