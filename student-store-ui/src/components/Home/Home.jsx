@@ -25,7 +25,7 @@ import GirlModel from '../../assets/images/ed-tech-survey-march-2023-schwartz.jp
 import Footer from './HomeComponents/Footer';
 import { useNavigate } from 'react-router-dom';
 
-export default function Home({ addToCart, removeFromCart }) {
+export default function Home({ addToCart, removeFromCart, resetQty }) {
   const options = [
     {
       title: 'All Categories',
@@ -91,17 +91,25 @@ export default function Home({ addToCart, removeFromCart }) {
         setShowingProducts(filtered);
       }
     } else {
-      const filteredCategory = products.filter(
-        (product) => product.category === option.category
-      );
-      setFilteredProducts(filteredCategory);
-
-      const filtered = filteredCategory.filter(
-        (product) =>
-          product.category === option.category &&
+      if (option.category === null) {
+        setFilteredProducts(products);
+        const filtered = products.filter((product) =>
           product.name.toLowerCase().includes(search.toLowerCase())
-      );
-      setShowingProducts(filtered);
+        );
+        setShowingProducts(filtered);
+      } else {
+        const filteredCategory = products.filter(
+          (product) => product.category === option.category
+        );
+        setFilteredProducts(filteredCategory);
+
+        const filtered = filteredCategory.filter(
+          (product) =>
+            product.category === option.category &&
+            product.name.toLowerCase().includes(search.toLowerCase())
+        );
+        setShowingProducts(filtered);
+      }
     }
   };
 
@@ -181,6 +189,7 @@ export default function Home({ addToCart, removeFromCart }) {
               goToProduct={goToProduct}
               addToCart={addToCart}
               removeFromCart={removeFromCart}
+              resetQty={resetQty}
             />
           ))
         ) : (
