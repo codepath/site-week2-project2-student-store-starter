@@ -1,22 +1,22 @@
 // YOUR CODE HERE
-import * as React from "react"
-import { BrowserRouter } from 'react-router-dom'
-import Navbar from "../Navbar/Navbar"
-import Sidebar from "../Sidebar/Sidebar"
-import Home from "../Home/Home"
-import "./App.css"
+const express = require('express');
+const morgan = require('morgan');
 
-export default function App() {
-  return (
-    <div className="app">
-      <BrowserRouter>
-        <main>
-          {/* YOUR CODE HERE! */}
-          <Navbar />
-          <Sidebar />
-          <Home />
-        </main>
-      </BrowserRouter>
-    </div>
-  )
-}
+const app = express();
+
+app.use(morgan('tiny'));
+
+app.use(express.json());
+
+const productsRouter = require('./routes/products');
+app.use('/products', productsRouter);
+
+const purchasesRouter = require('./routes/purchases');
+app.use('/purchases', purchasesRouter);
+app.use('/purchases/:id', purchasesRouter);
+
+app.get('/', (req, res) => {
+  res.status(200).json({ ping: 'pong' });
+});
+
+module.exports = app;
