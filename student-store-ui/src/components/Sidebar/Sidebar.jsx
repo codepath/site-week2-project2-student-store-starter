@@ -8,6 +8,11 @@ export default function Sidebar({ cart, setCart, products }) {
   const [subtotal, setSubtotal] = useState(0);
   const [taxesAndFees, setTaxesAndFees] = useState(0);
   const [total, setTotal] = useState(0);
+  const [paymentInfo, setPaymentInfo] = useState({
+    name: "",
+    email: "",
+    termsAndConditions: false,
+  });
 
   const toggleSidebar = () => {
     setIsCollapsed(!isCollapsed);
@@ -26,6 +31,12 @@ export default function Sidebar({ cart, setCart, products }) {
     setSubtotal(subTotal);
     setTaxesAndFees(taxes);
     setTotal(totalAmount);
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    const inputValue = type === "checkbox" ? checked : value;
+    setPaymentInfo((prevInfo) => ({ ...prevInfo, [name]: inputValue }));
   };
 
   // This effect will run whenever the cart changes
@@ -57,13 +68,25 @@ export default function Sidebar({ cart, setCart, products }) {
               <div class="input-field">
                 <label class="label">Name</label>
                 <div class="control ">
-                  <input name="name" class="checkout-form-input" type="text" placeholder="Student Name" value="" />
+                  <input
+                    name="name"
+                    class="checkout-form-input"
+                    type="text" 
+                    placeholder="Student Name" 
+                    value={paymentInfo.name}
+                    onChange={handleInputChange}
+                  />
                 </div>
               </div>
               <div class="input-field">
                 <label class="label">Email</label>
                 <div class="control">
-                  <input name="email" class="checkout-form-input" type="email" placeholder="student@codepath.org" value="" />
+                  <input 
+                    name="email" 
+                    class="checkout-form-input" 
+                    type="email" 
+                    placeholder="student@codepath.org" 
+                  />
                 </div>
               </div>
               <div class="field">
@@ -89,9 +112,8 @@ export default function Sidebar({ cart, setCart, products }) {
             <div>
               <h2>Receipt</h2>
               {/* ... Render the receipt information */}
-              <p>Subtotal: {subtotal}</p>
-              <p>Taxes and Fees: {taxesAndFees}</p>
-              <p>Total: {total}</p>
+              <p>Before taxes, the subtotal was ${subtotal}</p> 
+              <p>After taxes and fees were applied, the total comes out to ${total}</p>
             </div>
           )}
         </>
