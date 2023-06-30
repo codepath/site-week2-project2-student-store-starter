@@ -13,10 +13,6 @@
     font-weight: bolder;
 }
 
-.header-row p {
-
-}
-
 .product-row {
     display: flex;
     flex-direction: row;
