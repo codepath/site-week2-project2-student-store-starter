@@ -5,6 +5,10 @@
     color: white;
 }
 
+.navbar a {
+    color: azure;
+}
+
 .logo {
     width: 10%;
 }

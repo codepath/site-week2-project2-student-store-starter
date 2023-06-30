@@ -33,3 +33,7 @@
     justify-content: space-around;
     font-weight: bold;
 }
+
+.label a {
+    color: #00C385;
+}
