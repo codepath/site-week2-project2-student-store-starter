@@ -3,14 +3,7 @@ import ListItemForm from "../ListItemForm/ListItemForm";
 import ListItem from "../ListItem/ListItem";
 import "./ShoppingList.css";
 
-function ShoppingList({cart, products}) {
-  const subtotal = Object.entries(cart).reduce((total, [id, quantity]) => {
-    const product = products.find(product => product.id === Number(id));
-    return total + product.price * quantity;
-  }, 0);
-
-  const taxesAndFees = Number((subtotal * 0.0875).toFixed(2)); // Assuming 10% tax
-  const total = (subtotal + taxesAndFees).toFixed(2);
+function ShoppingList({cart, products, subtotal, taxesAndFees, total}) {
 
   return (
     <div className={`ShoppingList ${Object.keys(cart).length ? "list-full" : "list-empty"}`}>

@@ -32,7 +32,12 @@ export default function App() {
   return (
     <div className="app">
       <BrowserRouter>
-      <Sidebar cart={cart} products={products} isCollapsed={isSidebarCollapsed} setIsCollapsed={setIsSidebarCollapsed} />
+      <Sidebar 
+      cart={cart} 
+      products={products} 
+      isCollapsed={isSidebarCollapsed} 
+      setIsCollapsed={setIsSidebarCollapsed}
+      setCart={setCart} />
         <div className="main-content">
           <main>
             <Navbar />

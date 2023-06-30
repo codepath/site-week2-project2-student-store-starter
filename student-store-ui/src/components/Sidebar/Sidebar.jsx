@@ -1,11 +1,13 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 import "./Sidebar.css";
-import { useState } from "react";
-import ShoppingList from "../ShoppingList/ShoppingList"; 
+import ShoppingList from "../ShoppingList/ShoppingList";
 
-export default function Sidebar({cart, setCart, products}) {
+export default function Sidebar({ cart, setCart, products }) {
   const [isCollapsed, setIsCollapsed] = useState(true);
   const [checkedOut, setCheckedOut] = useState(false);
+  const [subtotal, setSubtotal] = useState(0);
+  const [taxesAndFees, setTaxesAndFees] = useState(0);
+  const [total, setTotal] = useState(0);
 
   const toggleSidebar = () => {
     setIsCollapsed(!isCollapsed);
@@ -14,7 +16,25 @@ export default function Sidebar({cart, setCart, products}) {
   const handleCheckout = () => {
     setCheckedOut(true);
     setCart({});
+    // Calculate and store the receipt information
+    const subTotal = Object.entries(cart).reduce((total, [id, quantity]) => {
+      const product = products.find((product) => product.id === Number(id));
+      return total + product.price * quantity;
+    }, 0);
+    const taxes = subTotal * 0.0875; // Assuming 8.75% tax
+    const totalAmount = subTotal + taxes;
+    setSubtotal(subTotal);
+    setTaxesAndFees(taxes);
+    setTotal(totalAmount);
   };
+
+  // This effect will run whenever the cart changes
+  useEffect(() => {
+    // If the cart is not empty, set checkedOut to false
+    if (Object.keys(cart).length > 0) {
+      setCheckedOut(false);
+    }
+  }, [cart]);
 
   return (
     <section className={`sidebar ${isCollapsed ? "collapsed" : ""}`}>
@@ -23,7 +43,7 @@ export default function Sidebar({cart, setCart, products}) {
       </button>
       {!isCollapsed && (
         <>
-          <ShoppingList cart={cart} products={products} />
+          <ShoppingList cart={cart} products={products} subtotal={subtotal} taxesAndFees={taxesAndFees} total={total} />
 
           <div>
           <div>
@@ -60,22 +80,13 @@ export default function Sidebar({cart, setCart, products}) {
             <h2>Checkout Info 📄</h2>
             <p>A confirmation email will be sent to you so that you can confirm this order. Once you have confirmed the order, it will be delivered to your dorm room.</p>
           </div>
-          {Object.keys(cart).length > 0 && (
+          {checkedOut && (
             <div>
               <h2>Receipt</h2>
-              {Object.entries(cart).map(([id, quantity]) => {
-                const product = products.find(product => product.id === Number(id)); 
-                const subtotal = product.price * quantity;
-                const taxesAndFees = Number((subtotal * 0.0875).toFixed(2)); // Assuming 8.75% tax
-                const total = (subtotal + taxesAndFees).toFixed(2);
-                return (
-                  <>
-                    <p>{quantity} total {product.name} purchased at a cost of ${product.price} for a total cost of ${subtotal}.</p>
-                    <p>Before taxes, the subtotal was ${subtotal}</p>
-                    <p>After taxes and fees were applied, the total comes out to ${total}</p>
-                  </>
-                );
-              })}
+              {/* ... Render the receipt information */}
+              <p>Subtotal: {subtotal}</p>
+              <p>Taxes and Fees: {taxesAndFees}</p>
+              <p>Total: {total}</p>
             </div>
           )}
         </>
@@ -83,9 +94,6 @@ export default function Sidebar({cart, setCart, products}) {
     </section>
   );
 }
-
-
-
 
 
 
