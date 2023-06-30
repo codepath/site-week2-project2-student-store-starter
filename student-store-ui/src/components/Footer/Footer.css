@@ -1,0 +1,27 @@
+.links-grid{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.links-column{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.links-list{
+    list-style-type: none;
+    margin-left: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.link-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: var(--text-color-dark);
+    margin-top: 15px;
+
+}

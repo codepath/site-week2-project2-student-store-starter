@@ -1,0 +1,21 @@
+.social-logo-container a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.social-logo-container a img{
+    width: 70%;
+    height: 70%;   
+    /* color: var(--text-color-light); */
+}
+
+.social-logo-container a img:hover{
+    /* change color of logo links upon hover */
+}
+
+.social-logo-container{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}

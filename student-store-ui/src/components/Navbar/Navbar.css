@@ -1,0 +1,29 @@
+.links {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 6rem;
+}
+.social-link {
+    text-decoration: none;
+    color: var(--text-color-light);
+    border-radius: 20%;
+    font-size: larger;
+    transition: color 250ms ease-in-out;
+}
+.social-link:hover{
+    color: var(--s-color);
+}
+.navbar-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.navbar{
+    z-index: 101;
+    width: 100%;
+    position: fixed;
+    background-color: var(--p-color);
+}

@@ -1,0 +1,55 @@
+
+.product-buttons{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    overflow: hidden;
+    
+}
+.product-quantity{
+    background-color: var(--p-color);
+    color: var(--text-color-light);
+    margin: 10px 0px 10px 0px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex-grow: 1;
+    text-align: center;
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+}
+.product-quantity.active{
+    background-color: beige;
+    color: var(--text-color-dark)
+}
+.product-quantity.active:hover{
+    color: initial;
+    cursor: default;
+}
+.product-quantity:hover{
+    color: var(--s-color);
+}
+.product-button{
+    height: 100%;
+    background-color: var(--p-color);
+    border-width: 0px;
+    transition: all 200ms ease-in-out;
+    color: var(--p-color);
+    cursor: pointer;
+    display: none;
+}
+.product-button.active{
+    display: block;
+    color: var(--text-color-light);
+
+}
+.product-button.active:hover{
+    opacity: 80%;
+    color: var(--s-color);
+}

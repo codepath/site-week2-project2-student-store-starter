@@ -1,0 +1,64 @@
+.cart-payment-form-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+}
+.cart-payment-form-container h1{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.cart-payment-form{
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+}
+.form-input{
+    width: 100%;
+    background-color: transparent;
+    outline-width: 0;
+    padding: 0.5rem;
+    font-size: 1.1rem;
+    border-color: var(--p-color);
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px
+
+}
+.form-input:focus{
+    border-color: var(--s-color);
+}
+.form-checkbox{
+    background-color: var(--s-color);
+}
+.compact-button{
+    max-width: 40rem;
+    width: 100%;
+    padding: 1.1rem;
+    margin-top: 0.75rem;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    background-color: transparent;
+    transition: all 100ms ease-in-out;
+    transition-property: background-color color;
+}
+.compact-button:hover{
+    background-color: var(--s-color);
+    cursor: pointer;
+    color: var(--text-color-light);
+}
+.error-message{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    text-align: center;
+}
+.view-receipt-button{
+    font-size: 1.25rem;
+}

@@ -5,4 +5,5 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  margin: 0px 12rem 0px 15rem;
 }

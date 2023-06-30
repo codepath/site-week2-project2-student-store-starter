@@ -1,6 +1,6 @@
 {
-  "products": [
-    {
+  "products": {
+    "1": {
       "id": 1,
       "name": "Rice Krispies",
       "category": "food",
@@ -9,7 +9,7 @@
       "description": "Delicious corn-based rice grains melted together with marshmallows into a square-like shape.",
       "price": 0.99
     },
-    {
+    "2": {
       "id": 2,
       "name": "Flamin Hot Cheetos",
       "category": "food",
@@ -18,7 +18,7 @@
       "description": "No one knows what's in the powder that covers these snacks, but wow is it amazing!",
       "price": 1.5
     },
-    {
+    "3": {
       "id": 3,
       "name": "Cinnamon Rolls",
       "category": "food",
@@ -27,7 +27,7 @@
       "description": "Basically just cake for breakfast, but who's complaining?",
       "price": 2.99
     },
-    {
+    "4": {
       "id": 4,
       "name": "Coconut Water",
       "category": "food",
@@ -36,7 +36,7 @@
       "description": "Somehow incredibly hydrating, while also not really being water.",
       "price": 3.25
     },
-    {
+    "5": {
       "id": 5,
       "name": "Fruit Medley",
       "category": "food",
@@ -45,7 +45,7 @@
       "description": "More fruit than you know what to do with!",
       "price": 7.5
     },
-    {
+    "6": {
       "id": 6,
       "name": "Bar Code Shirts",
       "category": "clothing",
@@ -54,7 +54,7 @@
       "description": "So you can scan yourself in the checkout aisle.",
       "price": 19.99
     },
-    {
+    "7": {
       "id": 7,
       "name": "Striped Socks",
       "category": "clothing",
@@ -63,7 +63,7 @@
       "description": "Because the dryer ate most of your socks and it never hurts to have another clean pair.",
       "price": 4.99
     },
-    {
+    "8": {
       "id": 8,
       "name": "Knitted Beanie",
       "category": "clothing",
@@ -72,7 +72,7 @@
       "description": "Keeps your head absurdly warm while the rest of your body freezes.",
       "price": 19.99
     },
-    {
+    "9": {
       "id": 9,
       "name": "Pullover Sweater",
       "category": "clothing",
@@ -81,7 +81,7 @@
       "description": "At $4.99, can you really afford NOT to buy this?",
       "price": 4.99
     },
-    {
+    "10": {
       "id": 10,
       "name": "Alpaca Wool Scarf",
       "category": "clothing",
@@ -90,7 +90,7 @@
       "description": "Legends say that the Alpaca knitted this scarf from its own fur.",
       "price": 34.99
     },
-    {
+    "11": {
       "id": 11,
       "name": "Matching Rings",
       "category": "accessories",
@@ -99,7 +99,7 @@
       "description": "Ball out and get one for each finger!",
       "price": 200
     },
-    {
+    "12": {
       "id": 12,
       "name": "Apple Watch",
       "category": "accessories",
@@ -108,7 +108,7 @@
       "description": "Why check your phone all the time when you can check your watch all the time?",
       "price": 399.99
     },
-    {
+    "13": {
       "id": 13,
       "name": "Copper Bracelet",
       "category": "accessories",
@@ -117,7 +117,7 @@
       "description": "Compliment this accessory with a batter and some wire and you have yourself a portable charger right on your wrist!",
       "price": 70
     },
-    {
+    "14": {
       "id": 14,
       "name": "Keyboard",
       "category": "tech",
@@ -126,7 +126,7 @@
       "description": "A wireless keyboard for your computer! Because who doesn't like walking around while they type up an essay.",
       "price": 110
     },
-    {
+    "15": {
       "id": 15,
       "name": "Mouse from 1998",
       "category": "tech",
@@ -135,7 +135,7 @@
       "description": "Check out this fancy Microsoft mouse that was in use right before the dot com bubble crash of the 2000s! It's a collectors' item that still works great. Brings back that 'on the verge of the world collapsing' feeling.",
       "price": 19.98
     },
-    {
+    "16": {
       "id": 16,
       "name": "Smart Glasses",
       "category": "tech",
@@ -144,6 +144,516 @@
       "description": "Have the internet mounted to your face, and get the added benefit of looking silly all the time!",
       "price": 999.99
     }
-  ],
-  "purchases": []
+  },
+  "purchases": {
+    "0": {
+      "name": "Johnny",
+      "id": 0,
+      "email": "johhny@applesee.com",
+      "total": 3.2625,
+      "order": [
+        {
+          "quantity": 2,
+          "id": 2,
+          "name": "Flamin Hot Cheetos",
+          "category": "food",
+          "image": "https://static.openfoodfacts.org/images/products/896/400/009/0879/front_en.14.full.jpg",
+          "source": "https://world.openfoodfacts.org/cgi/product_image.pl?code=8964000090879&id=front_en",
+          "description": "No one knows what's in the powder that covers these snacks, but wow is it amazing!",
+          "price": 1.5
+        }
+      ],
+      "createdAt": "6/23/2023, 1:46:36 PM",
+      "receipt": {
+        "subtotal": 3,
+        "taxes": 0.26249999999999996
+      }
+    },
+    "1": {
+      "name": "dere",
+      "id": 1,
+      "email": "ererer",
+      "total": 4.89375,
+      "order": [
+        {
+          "quantity": 3,
+          "id": 2,
+          "name": "Flamin Hot Cheetos",
+          "category": "food",
+          "image": "https://static.openfoodfacts.org/images/products/896/400/009/0879/front_en.14.full.jpg",
+          "source": "https://world.openfoodfacts.org/cgi/product_image.pl?code=8964000090879&id=front_en",
+          "description": "No one knows what's in the powder that covers these snacks, but wow is it amazing!",
+          "price": 1.5
+        }
+      ],
+      "createdAt": "6/23/2023, 2:26:40 PM",
+      "receipt": {
+        "subtotal": 4.5,
+        "taxes": 0.39375
+      }
+    },
+    "2": {
+      "name": "xss",
+      "id": 2,
+      "email": "ssss",
+      "total": 4.3065,
+      "order": [
+        {
+          "quantity": 4,
+          "id": 1,
+          "name": "Rice Krispies",
+          "category": "food",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/c/cd/RKTsquares.jpg",
+          "source": "https://en.wikipedia.org/wiki/Rice_Krispies_Treats",
+          "description": "Delicious corn-based rice grains melted together with marshmallows into a square-like shape.",
+          "price": 0.99
+        }
+      ],
+      "createdAt": "6/23/2023, 3:01:19 PM",
+      "receipt": {
+        "subtotal": 3.96,
+        "taxes": 0.3465
+      }
+    },
+    "3": {
+      "name": "Kel",
+      "id": 3,
+      "email": "Apples@gmail.com",
+      "total": 9.7875,
+      "order": [
+        {
+          "quantity": 1,
+          "id": 2,
+          "name": "Flamin Hot Cheetos",
+          "category": "food",
+          "image": "https://static.openfoodfacts.org/images/products/896/400/009/0879/front_en.14.full.jpg",
+          "source": "https://world.openfoodfacts.org/cgi/product_image.pl?code=8964000090879&id=front_en",
+          "description": "No one knows what's in the powder that covers these snacks, but wow is it amazing!",
+          "price": 1.5
+        },
+        {
+          "quantity": 1,
+          "id": 5,
+          "name": "Fruit Medley",
+          "category": "food",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Fruits.png/640px-Fruits.png",
+          "source": "https://commons.wikimedia.org/wiki/File:Fruits.png",
+          "description": "More fruit than you know what to do with!",
+          "price": 7.5
+        }
+      ],
+      "createdAt": "6/23/2023, 4:44:45 PM",
+      "receipt": {
+        "subtotal": 9,
+        "taxes": 0.7875
+      }
+    },
+    "4": {
+      "name": "sss",
+      "id": 4,
+      "email": "ssss",
+      "total": 2.707875,
+      "order": [
+        {
+          "quantity": 1,
+          "id": 1,
+          "name": "Rice Krispies",
+          "category": "food",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/c/cd/RKTsquares.jpg",
+          "source": "https://en.wikipedia.org/wiki/Rice_Krispies_Treats",
+          "description": "Delicious corn-based rice grains melted together with marshmallows into a square-like shape.",
+          "price": 0.99
+        },
+        {
+          "quantity": 1,
+          "id": 2,
+          "name": "Flamin Hot Cheetos",
+          "category": "food",
+          "image": "https://static.openfoodfacts.org/images/products/896/400/009/0879/front_en.14.full.jpg",
+          "source": "https://world.openfoodfacts.org/cgi/product_image.pl?code=8964000090879&id=front_en",
+          "description": "No one knows what's in the powder that covers these snacks, but wow is it amazing!",
+          "price": 1.5
+        }
+      ],
+      "createdAt": "6/23/2023, 4:52:48 PM",
+      "receipt": {
+        "subtotal": 2.49,
+        "taxes": 0.217875
+      }
+    },
+    "5": {
+      "name": "Pan",
+      "id": 5,
+      "email": "Panny@gmail.com",
+      "total": 20.009999999999998,
+      "order": [
+        {
+          "quantity": 9,
+          "id": 1,
+          "name": "Rice Krispies",
+          "category": "food",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/c/cd/RKTsquares.jpg",
+          "source": "https://en.wikipedia.org/wiki/Rice_Krispies_Treats",
+          "description": "Delicious corn-based rice grains melted together with marshmallows into a square-like shape.",
+          "price": 0.99
+        },
+        {
+          "quantity": 3,
+          "id": 2,
+          "name": "Flamin Hot Cheetos",
+          "category": "food",
+          "image": "https://static.openfoodfacts.org/images/products/896/400/009/0879/front_en.14.full.jpg",
+          "source": "https://world.openfoodfacts.org/cgi/product_image.pl?code=8964000090879&id=front_en",
+          "description": "No one knows what's in the powder that covers these snacks, but wow is it amazing!",
+          "price": 1.5
+        },
+        {
+          "quantity": 1,
+          "id": 7,
+          "name": "Striped Socks",
+          "category": "clothing",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Bulk_tube_socks.png",
+          "source": "https://commons.wikimedia.org/wiki/File:Bulk_tube_socks.png",
+          "description": "Because the dryer ate most of your socks and it never hurts to have another clean pair.",
+          "price": 4.99
+        }
+      ],
+      "createdAt": "6/23/2023, 11:02:24 PM",
+      "receipt": {
+        "subtotal": 18.4,
+        "taxes": 1.6099999999999999
+      }
+    },
+    "6": {
+      "name": "Jane Doe",
+      "id": 6,
+      "email": "janedoe@gmail.com",
+      "total": 4.8611249999999995,
+      "order": [
+        {
+          "quantity": 3,
+          "id": 1,
+          "name": "Rice Krispies",
+          "category": "food",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/c/cd/RKTsquares.jpg",
+          "source": "https://en.wikipedia.org/wiki/Rice_Krispies_Treats",
+          "description": "Delicious corn-based rice grains melted together with marshmallows into a square-like shape.",
+          "price": 0.99
+        },
+        {
+          "quantity": 1,
+          "id": 2,
+          "name": "Flamin Hot Cheetos",
+          "category": "food",
+          "image": "https://static.openfoodfacts.org/images/products/896/400/009/0879/front_en.14.full.jpg",
+          "source": "https://world.openfoodfacts.org/cgi/product_image.pl?code=8964000090879&id=front_en",
+          "description": "No one knows what's in the powder that covers these snacks, but wow is it amazing!",
+          "price": 1.5
+        }
+      ],
+      "createdAt": "6/23/2023, 11:05:17 PM",
+      "receipt": {
+        "subtotal": 4.47,
+        "taxes": 0.39112499999999994
+      }
+    },
+    "7": {
+      "name": "Jane Doe",
+      "id": 7,
+      "email": "janedoe@gmail.com",
+      "total": 5.41575,
+      "order": [
+        {
+          "quantity": 2,
+          "id": 1,
+          "name": "Rice Krispies",
+          "category": "food",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/c/cd/RKTsquares.jpg",
+          "source": "https://en.wikipedia.org/wiki/Rice_Krispies_Treats",
+          "description": "Delicious corn-based rice grains melted together with marshmallows into a square-like shape.",
+          "price": 0.99
+        },
+        {
+          "quantity": 2,
+          "id": 2,
+          "name": "Flamin Hot Cheetos",
+          "category": "food",
+          "image": "https://static.openfoodfacts.org/images/products/896/400/009/0879/front_en.14.full.jpg",
+          "source": "https://world.openfoodfacts.org/cgi/product_image.pl?code=8964000090879&id=front_en",
+          "description": "No one knows what's in the powder that covers these snacks, but wow is it amazing!",
+          "price": 1.5
+        }
+      ],
+      "createdAt": "6/23/2023, 11:07:15 PM",
+      "receipt": {
+        "subtotal": 4.98,
+        "taxes": 0.43575
+      }
+    },
+    "8": {
+      "name": "JaneDoe",
+      "id": 8,
+      "email": "JaneDoe@gmail.com",
+      "total": 1.63125,
+      "order": [
+        {
+          "quantity": 1,
+          "id": 2,
+          "name": "Flamin Hot Cheetos",
+          "category": "food",
+          "image": "https://static.openfoodfacts.org/images/products/896/400/009/0879/front_en.14.full.jpg",
+          "source": "https://world.openfoodfacts.org/cgi/product_image.pl?code=8964000090879&id=front_en",
+          "description": "No one knows what's in the powder that covers these snacks, but wow is it amazing!",
+          "price": 1.5
+        }
+      ],
+      "createdAt": "6/23/2023, 11:08:10 PM",
+      "receipt": {
+        "subtotal": 1.5,
+        "taxes": 0.13124999999999998
+      }
+    },
+    "9": {
+      "name": "Jane Doe",
+      "id": 9,
+      "email": "janedoe@gmail.com",
+      "total": 5.9595,
+      "order": [
+        {
+          "quantity": 1,
+          "id": 1,
+          "name": "Rice Krispies",
+          "category": "food",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/c/cd/RKTsquares.jpg",
+          "source": "https://en.wikipedia.org/wiki/Rice_Krispies_Treats",
+          "description": "Delicious corn-based rice grains melted together with marshmallows into a square-like shape.",
+          "price": 0.99
+        },
+        {
+          "quantity": 1,
+          "id": 2,
+          "name": "Flamin Hot Cheetos",
+          "category": "food",
+          "image": "https://static.openfoodfacts.org/images/products/896/400/009/0879/front_en.14.full.jpg",
+          "source": "https://world.openfoodfacts.org/cgi/product_image.pl?code=8964000090879&id=front_en",
+          "description": "No one knows what's in the powder that covers these snacks, but wow is it amazing!",
+          "price": 1.5
+        },
+        {
+          "quantity": 1,
+          "id": 3,
+          "name": "Cinnamon Rolls",
+          "category": "food",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Johns_Inc_Cinnamon_Rolls.jpg",
+          "source": "https://en.wikipedia.org/wiki/File:Johns_Inc_Cinnamon_Rolls.jpg",
+          "description": "Basically just cake for breakfast, but who's complaining?",
+          "price": 2.99
+        }
+      ],
+      "createdAt": "6/23/2023, 11:20:46 PM",
+      "receipt": {
+        "subtotal": 5.48,
+        "taxes": 0.4795
+      }
+    },
+    "10": {
+      "name": "Jane Doe",
+      "id": 10,
+      "email": "janedoe@gmail.com",
+      "total": 6.24225,
+      "order": [
+        {
+          "quantity": 1,
+          "id": 1,
+          "name": "Rice Krispies",
+          "category": "food",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/c/cd/RKTsquares.jpg",
+          "source": "https://en.wikipedia.org/wiki/Rice_Krispies_Treats",
+          "description": "Delicious corn-based rice grains melted together with marshmallows into a square-like shape.",
+          "price": 0.99
+        },
+        {
+          "quantity": 1,
+          "id": 2,
+          "name": "Flamin Hot Cheetos",
+          "category": "food",
+          "image": "https://static.openfoodfacts.org/images/products/896/400/009/0879/front_en.14.full.jpg",
+          "source": "https://world.openfoodfacts.org/cgi/product_image.pl?code=8964000090879&id=front_en",
+          "description": "No one knows what's in the powder that covers these snacks, but wow is it amazing!",
+          "price": 1.5
+        },
+        {
+          "quantity": 1,
+          "id": 4,
+          "name": "Coconut Water",
+          "category": "food",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Coconut_Drink%2C_Pangandaran.JPG/1920px-Coconut_Drink%2C_Pangandaran.JPG",
+          "source": "https://commons.wikimedia.org/wiki/Category:Coconut_water#/media/File:Coconut_Drink,_Pangandaran.JPG",
+          "description": "Somehow incredibly hydrating, while also not really being water.",
+          "price": 3.25
+        }
+      ],
+      "createdAt": "6/23/2023, 11:23:40 PM",
+      "receipt": {
+        "subtotal": 5.74,
+        "taxes": 0.50225
+      }
+    },
+    "11": {
+      "name": "John",
+      "id": 11,
+      "email": "Bobs",
+      "total": 6.24225,
+      "order": [
+        {
+          "quantity": 1,
+          "id": 1,
+          "name": "Rice Krispies",
+          "category": "food",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/c/cd/RKTsquares.jpg",
+          "source": "https://en.wikipedia.org/wiki/Rice_Krispies_Treats",
+          "description": "Delicious corn-based rice grains melted together with marshmallows into a square-like shape.",
+          "price": 0.99
+        },
+        {
+          "quantity": 1,
+          "id": 2,
+          "name": "Flamin Hot Cheetos",
+          "category": "food",
+          "image": "https://static.openfoodfacts.org/images/products/896/400/009/0879/front_en.14.full.jpg",
+          "source": "https://world.openfoodfacts.org/cgi/product_image.pl?code=8964000090879&id=front_en",
+          "description": "No one knows what's in the powder that covers these snacks, but wow is it amazing!",
+          "price": 1.5
+        },
+        {
+          "quantity": 1,
+          "id": 4,
+          "name": "Coconut Water",
+          "category": "food",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Coconut_Drink%2C_Pangandaran.JPG/1920px-Coconut_Drink%2C_Pangandaran.JPG",
+          "source": "https://commons.wikimedia.org/wiki/Category:Coconut_water#/media/File:Coconut_Drink,_Pangandaran.JPG",
+          "description": "Somehow incredibly hydrating, while also not really being water.",
+          "price": 3.25
+        }
+      ],
+      "createdAt": "6/23/2023, 11:37:11 PM",
+      "receipt": {
+        "subtotal": 5.74,
+        "taxes": 0.50225
+      }
+    },
+    "12": {
+      "name": "James Weeber",
+      "id": 12,
+      "email": "telescope@gmail.com",
+      "total": 4.89375,
+      "order": [
+        {
+          "quantity": 3,
+          "id": 2,
+          "name": "Flamin Hot Cheetos",
+          "category": "food",
+          "image": "https://static.openfoodfacts.org/images/products/896/400/009/0879/front_en.14.full.jpg",
+          "source": "https://world.openfoodfacts.org/cgi/product_image.pl?code=8964000090879&id=front_en",
+          "description": "No one knows what's in the powder that covers these snacks, but wow is it amazing!",
+          "price": 1.5
+        }
+      ],
+      "createdAt": "6/23/2023, 11:39:34 PM",
+      "receipt": {
+        "subtotal": 4.5,
+        "taxes": 0.39375
+      }
+    },
+    "13": {
+      "name": "Jack Black",
+      "id": 13,
+      "email": "kungfoo@panda.com",
+      "total": 2.707875,
+      "order": [
+        {
+          "quantity": 1,
+          "id": 1,
+          "name": "Rice Krispies",
+          "category": "food",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/c/cd/RKTsquares.jpg",
+          "source": "https://en.wikipedia.org/wiki/Rice_Krispies_Treats",
+          "description": "Delicious corn-based rice grains melted together with marshmallows into a square-like shape.",
+          "price": 0.99
+        },
+        {
+          "quantity": 1,
+          "id": 2,
+          "name": "Flamin Hot Cheetos",
+          "category": "food",
+          "image": "https://static.openfoodfacts.org/images/products/896/400/009/0879/front_en.14.full.jpg",
+          "source": "https://world.openfoodfacts.org/cgi/product_image.pl?code=8964000090879&id=front_en",
+          "description": "No one knows what's in the powder that covers these snacks, but wow is it amazing!",
+          "price": 1.5
+        }
+      ],
+      "createdAt": "6/23/2023, 11:47:39 PM",
+      "receipt": {
+        "subtotal": 2.49,
+        "taxes": 0.217875
+      }
+    },
+    "14": {
+      "name": "Jan",
+      "id": 14,
+      "email": "jan@yahoo.com",
+      "total": 9.754875,
+      "order": [
+        {
+          "quantity": 3,
+          "id": 3,
+          "name": "Cinnamon Rolls",
+          "category": "food",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Johns_Inc_Cinnamon_Rolls.jpg",
+          "source": "https://en.wikipedia.org/wiki/File:Johns_Inc_Cinnamon_Rolls.jpg",
+          "description": "Basically just cake for breakfast, but who's complaining?",
+          "price": 2.99
+        }
+      ],
+      "createdAt": "6/24/2023, 10:59:05 AM",
+      "receipt": {
+        "subtotal": 8.97,
+        "taxes": 0.784875
+      }
+    },
+    "15": {
+      "name": "Jac Man",
+      "id": 15,
+      "email": "jacman@outlook.com",
+      "total": 4.882875,
+      "order": [
+        {
+          "quantity": 1,
+          "id": 2,
+          "name": "Flamin Hot Cheetos",
+          "category": "food",
+          "image": "https://static.openfoodfacts.org/images/products/896/400/009/0879/front_en.14.full.jpg",
+          "source": "https://world.openfoodfacts.org/cgi/product_image.pl?code=8964000090879&id=front_en",
+          "description": "No one knows what's in the powder that covers these snacks, but wow is it amazing!",
+          "price": 1.5
+        },
+        {
+          "quantity": 1,
+          "id": 3,
+          "name": "Cinnamon Rolls",
+          "category": "food",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Johns_Inc_Cinnamon_Rolls.jpg",
+          "source": "https://en.wikipedia.org/wiki/File:Johns_Inc_Cinnamon_Rolls.jpg",
+          "description": "Basically just cake for breakfast, but who's complaining?",
+          "price": 2.99
+        }
+      ],
+      "createdAt": "6/24/2023, 11:04:42 AM",
+      "receipt": {
+        "subtotal": 4.49,
+        "taxes": 0.392875
+      }
+    }
+  },
+  "newPurchaseID": 16
 }
