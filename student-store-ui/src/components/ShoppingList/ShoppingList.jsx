@@ -12,10 +12,76 @@ function ShoppingList({cart, products}) {
         Object.entries(cart).map(([id, quantity]) => {
           const product = products.find(product => product.id === Number(id)); 
           return (
-            <div key={id}>
-              <span>Product Name: {product.name}</span>
-              <span>Quantity: {quantity}</span>
-            </div>
+            // <div class="CartTable">
+            //   <div class="header">
+            //     <div class="header-row">
+            //       <span class="flex-2">Name</span>
+            //       <span class="center">Quantity</span>
+            //       <span class="center">Unit Price</span>
+            //       <span class="center">Cost</span>
+            //     </div>
+            //     <div class="product-row">
+            //       // something here
+            //     </div>
+            //   </div>
+            //   <div class="receipt">
+            //     <div class="receipt-subtotal">
+            //       <span class="label">Subtotal</span>
+            //       <span></span>
+            //       <span></span>
+            //       //something here
+            //     </div>
+            //     <div class="receipt-taxes">
+            //       <span class="label">Taxes and Fees</span>
+            //       <span></span>
+            //       <span></span>
+            //       //something here
+            //     </div>
+            //     <div class="receipt-total">
+            //       <span class="label">Total</span>
+            //       <span></span>
+            //       <span></span>
+            //       //something here
+            //     </div>
+            //   </div>
+            // </div>
+
+<div class="Cart-table">
+<div class="header">
+  <div class="header-row">
+    <span class="flex-2">Name</span>
+    <span class="center">Quantity</span>
+    <span class="center">Unit Price</span>
+    <span class="center">Cost</span>
+  </div>
+  <div class="product-row">
+    <span class="flex-2 cart-product-name">Cinnamon Rolls</span>
+    <span class="center cart-product-quantity">1</span>
+    <span class="center cart-product-price">$2.99</span>
+    <span class="center cart-product-subtotal">$2.99</span>
+  </div>
+</div>
+<div class="receipt">
+  <div class="receipt-subtotal">
+    <span class="label">Subtotal</span>
+    <span></span>
+    <span></span>
+    <span class="center subtotal">$2.99</span>
+  </div>
+  <div class="receipt-taxes">
+    <span class="label">Taxes and Fees</span>
+    <span></span>
+    <span></span>
+    <span class="center">$0.26</span>
+  </div>
+  <div class="receipt-total">
+    <span class="label">Total</span>
+    <span></span>
+    <span></span>
+    <span class="center total-price">$3.25</span>
+  </div>
+</div>
+</div>
           );
         })
         :  
@@ -27,3 +93,76 @@ function ShoppingList({cart, products}) {
 
 
 export default ShoppingList;
+
+
+ <div class="CartTable">
+  <div class="header">
+    <div class="header-row">
+      <span class="flex-2">Name</span>
+      <span class="center">Quantity</span>
+      <span class="center">Unit Price</span>
+      <span class="center">Cost</span>
+    </div>
+    <div class="product-row">
+      <span class="flex-2 cart-product-name">Cinnamon Rolls</span>
+      <span class="center cart-product-quantity">1</span>
+      <span class="center cart-product-price">$2.99</span>
+      <span class="center cart-product-subtotal">$2.99</span>
+    </div>
+  </div>
+  <div class="receipt">
+    <div class="receipt-subtotal">
+      <span class="label">Subtotal</span>
+      <span></span>
+      <span></span>
+      <span class="center subtotal">$2.99</span>
+    </div>
+    <div class="receipt-taxes">
+      <span class="label">Taxes and Fees</span>
+      <span></span>
+      <span></span>
+      <span class="center">$0.26</span>
+    </div>
+    <div class="receipt-total">
+      <span class="label">Total</span>
+      <span></span>
+      <span></span>
+      <span class="center total-price">$3.25</span>
+    </div>
+  </div>
+</div>
+
+
+{/* <div class="CartTable">
+  <div class="header">
+    <div class="header-row">
+      <span class="flex-2">Name</span>
+      <span class="center">Quantity</span>
+      <span class="center">Unit Price</span>
+      <span class="center">Cost</span>
+    </div>
+    <div class="product-row">
+      // something here
+    </div>
+  </div>
+  <div class="receipt">
+    <div class="receipt-subtotal">
+      <span class="label">Subtotal</span>
+      <span></span>
+      <span></span>
+      //something here
+    </div>
+    <div class="receipt-taxes">
+      <span class="label">Taxes and Fees</span>
+      <span></span>
+      <span></span>
+      //something here
+    </div>
+    <div class="receipt-total">
+      <span class="label">Total</span>
+      <span></span>
+      <span></span>
+      //something here
+    </div>
+  </div>
+</div>  */}
