@@ -43,7 +43,12 @@ export default function Sidebar({ cart, setCart, products }) {
       </button>
       {!isCollapsed && (
         <>
-          <ShoppingList cart={cart} products={products} subtotal={subtotal} taxesAndFees={taxesAndFees} total={total} />
+          <ShoppingList 
+            cart={cart}
+            products={products}
+            subtotal={subtotal}
+            taxesAndFees={taxesAndFees} 
+            total={total} />
 
           <div>
           <div>
