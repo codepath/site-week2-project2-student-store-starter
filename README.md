@@ -40,4 +40,5 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 
 ### Video Walkthrough
 
-https://github.com/AveryMyart/site-week2-project2-student-store-starter/blob/main/site-project3.gif
+<img src='https://github.com/AveryMyart/site-week2-project2-student-store-starter/blob/main/site-project3.gif' title='Video Walkthrough' width=' alt='Video Walkthrough' />
+
