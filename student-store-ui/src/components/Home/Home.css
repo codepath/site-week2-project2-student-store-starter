@@ -1,8 +1,110 @@
+
 .home {
-  width: 100%;
   max-width: 100vw;
   height: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  margin-left: 10%;
+  width: 90%;
+  background-color: #D9DCD6;
+}
+
+.product img{
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  height: 250px;
+}
+/* .product{
+  border-style: solid;
+  height: 1000px;
+
+} */
+
+* {
+  box-sizing: border-box;
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+  /* padding: 20px; */
+  align-self: center;
+  margin-right: 10%;
+  background-color: #D9DCD6;
+
+}
+
+.product p {
+  text-align: center;
+  text-decoration: none;
+  font: bold;
+}
+
+.hero {
+  text-align: center;
+  margin-left: 40px;
+  margin-right: 280px;
+  background-color: #3A7CA5;
+  height: 400px;
+  color: #D9DCD6;
+
+}
+
+
+.Search-bar-and-filter {
+  text-align: center;
+  margin-left: 30px;
+  margin-right: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Search-bar-and-filter button {
+  border: none;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  color: #3a7ca5;
+  text-decoration: none;
+}
+
+.Search-bar-and-filter button:hover,
+.Search-bar-and-filter button.selected {
+  text-decoration: underline;
+}
+
+.Search-bar-and-filter button:hover {
+  background: #3a7ca5;
+  color: white;
+}
+
+.Search-bar-and-filter button.selected {
+  background: #3a7ca5;
+  color: white;
+}
+
+
+
+.search-input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #3A7Ca5;
+  width: 480px;
+  margin-bottom: 10px;
+  margin-left: 8px;
+  text-align: center;
+}
+
+.label{
+  display: block;
+  text-decoration: none;
+  color: #D9DCD6;
+  margin-bottom: 10px;
+  list-style: none;
 }

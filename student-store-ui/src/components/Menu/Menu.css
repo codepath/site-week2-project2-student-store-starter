@@ -1,0 +1,34 @@
+
+.Search-bar-and-filter {
+    text-align: center;
+    margin-left: 30px;
+    margin-right: 300px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .Search-bar-and-filter button {
+    border: none;
+    background-color: inherit;
+    padding: 14px 28px;
+    font-size: 24px;
+    cursor: pointer;
+    display: inline-block;
+    color: #3a7ca5;
+    text-decoration: none;
+  }
+  
+  .Search-bar-and-filter button:hover,
+  .Search-bar-and-filter button.selected {
+    text-decoration: underline;
+  }
+  
+  .Search-bar-and-filter button:hover {
+    background: #3a7ca5;
+    color: white;
+  }
+  
+  .Search-bar-and-filter button.selected {
+    background: #3a7ca5;
+    color: white;
+  }

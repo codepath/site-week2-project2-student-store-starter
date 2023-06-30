@@ -1,0 +1,34 @@
+.Footer {
+    width: 87%;
+    text-align: center;
+    height: 350px;
+    /* padding: 50px; */
+    display: flex;
+    margin-left: 40px;
+    margin-right: 480px;
+    font-size: 20px;
+    text-align: left;
+    margin-left: 40px;
+    margin-right: 280px;
+    background-color: #3A7CA5;
+    height: 300px;
+    color: #D9DCD6;
+  }
+  
+  .column {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .column h3 {
+    font-weight: bold;
+    letter-spacing: 1px;
+    /* width: 300px; */
+  }
+  
+  .column p {
+    display: block; 
+    text-decoration: none;
+    margin-bottom: 10px;
+  }
+  

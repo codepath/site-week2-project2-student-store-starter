@@ -1,0 +1,15 @@
+.hero img {
+    background: transparent;
+    height: 200px;
+    width: 200px;
+}
+
+.hero h1{
+    font-size: 50px; 
+}
+.hero h2{
+    font-size: x-large;
+}
+.hero p{
+    font-size: medium;
+}

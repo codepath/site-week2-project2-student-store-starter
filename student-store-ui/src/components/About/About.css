@@ -1,0 +1,17 @@
+.About{
+    text-align: center;
+    margin-left: 40px;
+    margin-right: 280px;
+    background-color: #3A7CA5;
+    height: 600px;  
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color: #D9DCD6;
+    font-size: xx-large;
+  
+  }
+  .About img{
+    background: transparent;
+      height: 300px;
+      width: 300px;
+  }
