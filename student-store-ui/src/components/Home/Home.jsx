@@ -7,14 +7,7 @@ import {
   contactInfo,
 } from '../../assets/style.js';
 import merchIcon from '../../assets/images/medium.jpeg';
-import {
-  InputGroup,
-  InputLeftElement,
-  Input,
-  Stack,
-  Flex,
-  filter,
-} from '@chakra-ui/react';
+import { Input} from '@chakra-ui/react';
 import { Search2Icon, QuestionIcon } from '@chakra-ui/icons';
 import { FiShoppingCart } from 'react-icons/fi';
 import Categories from './HomeComponents/Categories';
@@ -24,6 +17,7 @@ import CodePathLogo from '../../assets/images/codepathLogo.png';
 import GirlModel from '../../assets/images/ed-tech-survey-march-2023-schwartz.jpg';
 import Footer from './HomeComponents/Footer';
 import { useNavigate } from 'react-router-dom';
+
 
 export default function Home({ addToCart, removeFromCart, resetQty }) {
   const options = [

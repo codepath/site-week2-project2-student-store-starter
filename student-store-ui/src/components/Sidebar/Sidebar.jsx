@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowForwardIcon } from '@chakra-ui/icons';
+import { Input } from '@chakra-ui/react';
 
 const Sidebar = ({
   subtotal,
@@ -12,6 +13,8 @@ const Sidebar = ({
   prevTax,
   prevTotal,
   prevSubtotal,
+  handleEmailChange,
+  handleNameChange,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -38,6 +41,18 @@ const Sidebar = ({
       <div className='sidebar-content'>
         {isOpen ? (
           <div className='w-5/ bg-white rounded-md m-4 p-4 flex flex-col justify-center items-center'>
+            <Input
+              type='email'
+              placeholder='exampleperson@meta.com'
+              className='p-2 w-[80%] border border-green-800 rounded-lg my-1'
+              onChange={handleEmailChange}
+            />
+            <Input
+              type='text'
+              placeholder='John Doe'
+              className='p-2 w-[80%] border border-green-800 rounded-lg my-1'
+              onChange={handleNameChange}
+            />
             <div className='w-full m-4 flex justify-around items-center border-b border-black text-md font-medium'>
               <p className='font-semibold'>Name</p>
               <p className='font-semibold'>Price</p>
@@ -48,7 +63,7 @@ const Sidebar = ({
                 className='w-full grid grid-cols-3 border-b place-items-center border-black text-md font-medium'
                 key={key}
               >
-                <p>{key}</p>
+                <p>{value.name}</p>
                 <p>{value.price}</p>
                 <p>{value.qty}</p>
               </div>
@@ -91,7 +106,7 @@ const Sidebar = ({
                     className='w-full grid grid-cols-3 border-b place-items-center border-black text-md font-medium'
                     key={key}
                   >
-                    <p>{key}</p>
+                    <p>{value.name}</p>
                     <p>{value.price}</p>
                     <p>{value.qty}</p>
                   </div>
