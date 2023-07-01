@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { Spinner } from '@chakra-ui/react';
 
 const ProductView = () => {
   const [product, setProduct] = useState();
@@ -22,8 +23,10 @@ const ProductView = () => {
   }, []);
 
   if (!product) {
-    // Render a loading state or return null
-    return <p>Loading...</p>;
+    <div className='flex justify-center h-96 items-center flex-col gap-8'>
+      <Spinner />
+      <p>Loading info...</p>
+    </div>;
   }
 
   return (

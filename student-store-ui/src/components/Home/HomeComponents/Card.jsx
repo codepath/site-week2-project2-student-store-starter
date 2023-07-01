@@ -1,7 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AddIcon, MinusIcon } from '@chakra-ui/icons';
 
-const CardItem = ({ props, goToProduct, addToCart, removeFromCart }) => {
+const CardItem = ({
+  props,
+  goToProduct,
+  addToCart,
+  removeFromCart,
+  resetQty,
+}) => {
   const [qty, setQty] = useState(0);
 
   const handleMore = (props) => {
@@ -17,6 +23,13 @@ const CardItem = ({ props, goToProduct, addToCart, removeFromCart }) => {
       console.log(qty - 1);
     }
   };
+
+  useEffect(() => {
+    if (resetQty) {
+      setQty(0);
+    }
+  }, [resetQty]);
+
   return (
     <div
       id={props.id}
