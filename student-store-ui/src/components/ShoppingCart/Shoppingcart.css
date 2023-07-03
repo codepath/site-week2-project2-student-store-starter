@@ -1,0 +1,30 @@
+.Shoppingcart{
+    background-color: aliceblue;
+    padding: 20px;
+ }
+
+.Categories{
+    display:flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.ShoppingCartSpan{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.subTotal{
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
+    font-weight: bold;
+}
+
+.subTotal p{
+    margin-bottom: 5px;
+}
