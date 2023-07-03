@@ -1,0 +1,11 @@
+.product{
+    height: 350px;
+    width: 250px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    border: solid 1px var(#e4e4e4);
+    
+}
+
+
