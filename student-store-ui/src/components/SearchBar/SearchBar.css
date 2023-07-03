@@ -1,0 +1,18 @@
+.product-search {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.product-search input{
+    border: solid 0px;
+    border-radius: 10px;
+    height: 25px;
+    width: 300px;
+}
+
+.product-search button{
+    background: #00c385;
+    border: 0px;
+    border-radius: 10px;
+    height: 25px;
+}

@@ -1,21 +1,37 @@
 import * as React from "react"
-import { BrowserRouter } from 'react-router-dom'
-import Navbar from "../Navbar/Navbar"
-import Sidebar from "../Sidebar/Sidebar"
-import Home from "../Home/Home"
+import { useState } from "react"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+
 import "./App.css"
 
+import Sidebar from "../Sidebar/Sidebar"
+import Navbar from "../Navbar/Navbar"
+import Home from "../Home/Home"
+import ProductDetails from "../ProductDetails/ProductDetails"
+import Footer from "../Footer/Footer"
+import Hero from "../Hero/Hero"
+
 export default function App() {
+  const [cart, setCart] = useState([])
+
   return (
-    <div className="app">
-      <BrowserRouter>
-        <main>
-          {/* YOUR CODE HERE! */}
-          <Navbar />
-          <Sidebar />
-          <Home />
-        </main>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <div className="app">
+          <main>
+            <Sidebar cart={cart} setCart={setCart} />
+            <section className="page">
+              <Navbar />
+              <Hero />
+              <div className="main-content">
+                <Routes>
+                  <Route path="/" element={<Home cart={cart} setCart={setCart}/>} />
+                  <Route path="/product/:id" element={<ProductDetails />} />
+                </Routes>
+              </div>
+              <Footer />
+            </section>
+          </main>
+      </div>
+    </BrowserRouter>
   )
 }

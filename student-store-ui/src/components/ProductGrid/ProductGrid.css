@@ -1,0 +1,11 @@
+.product-grid {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 15px;
+}
+
+.product-grid a{
+    color: black !important;
+    text-decoration: none !important;
+}

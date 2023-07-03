@@ -1,0 +1,24 @@
+.contact {
+    margin-top: 70px;
+}
+
+.contact-text-box {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    background: #2c4047;
+    border: solid 1px #e0e0e0;
+    color: #fff;
+    padding: 28px 28px;
+}
+
+.contact-wrapper {
+    display: flex;
+    margin-bottom: 20px;
+
+}
+
+.contact-text {
+    width: 100px;
+}
+
