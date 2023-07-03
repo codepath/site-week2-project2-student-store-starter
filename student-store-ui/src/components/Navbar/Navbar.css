@@ -1,0 +1,32 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    background: #2C4047;
+    color: white;
+}
+
+.navbar a {
+    color: azure;
+}
+
+.logo {
+    width: 10%;
+}
+
+.socials {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    list-style-type: none;
+    margin-left: auto;
+    flex: 1;
+    max-width: 650px;
+}
+
+
