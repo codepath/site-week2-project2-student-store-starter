@@ -14,33 +14,47 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 
 ### Core Features
 
-- [ ] The website displays header, banner, search, product grid, about, contact, and footer section.
-- [ ] The website displays the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store) on initial page load.
-- [ ] Users can click on a category (clothing, food, etc.) to filter the product grid by type.
-- [ ] Users can search for products.
-- [ ] User can click on a product in the grid to navigate to a new page containing additional product details.
+- [x] The website displays header, banner, search, product grid, about, contact, and footer section.
+- [x] The website displays the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store) on initial page load.
+- [x] Users can click on a category (clothing, food, etc.) to filter the product grid by type.
+- [x] Users can search for products.
+- [x] User can click on a product in the grid to navigate to a new page containing additional product details.
 
 ### Stretch Features
 
-- [ ] Users can click to expand the shopping cart in the left navigation.
+- [x] Users can click to expand the shopping cart in the left navigation.
 - [ ] Users can click the '+' button on a product cart to increment that product in the shopping cart.
 - [ ] Users can click the '-' button on a product cart to decrement that product in the shopping cart.
 - [ ] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
 - [ ] Your choice! (Replace this bullet explaining what you implemented. Example: Users can leave ratings for products they have purchased.)
 
+### Walkthrough Video
+
+<a href="https://www.loom.com/share/5540c1e0244d49fbb8d5b4749969134f">
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/5540c1e0244d49fbb8d5b4749969134f-with-play.gif">
+  </a>
+
 ## *Week 3* Application Features
+
+### Walkthrough Video
+
+<a href="https://www.loom.com/share/632b9f31ca3e40b191ca12bc158a937e">
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/632b9f31ca3e40b191ca12bc158a937e-with-play.gif">
+</a>
+
+
 
 ### Core Features
 
-- [ ] User can click to expand the shopping cart in the left navigation.
-- [ ] Users can click the '+' button on a product cart to increment that product in the shopping cart.
-- [ ] Users can click the '-' button on a product cart to decrement that product in the shopping cart. If the count is zero, the product should be removed from the cart.
-- [ ] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
-- [ ] Users can checkout, and receive a receipt confirming their purchase.
+- [x] User can click to expand the shopping cart in the left navigation.
+- [x] Users can click the '+' button on a product cart to increment that product in the shopping cart.
+- [x] Users can click the '-' button on a product cart to decrement that product in the shopping cart. If the count is zero, the product should be removed from the cart.
+- [x] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
+- [x] Users can checkout, and receive a receipt confirming their purchase.
 
 ### Stretch Features
 
 - [ ] Create an endpoint for fetching all orders in the database and an endpoint for serving an individual order based on its ID.
 - [ ] Build a page in the UI that displays the list of all past orders. The user should be able to click on any individual order to take them to a more detailed page of the transaction.
 - [ ] Allow users to use an input to filter orders by the email of the person who placed the order.
-- [ ] Your choice! (Replace this bullet explaining what you implemented. Example: Users can create a wish list of products they are interested in but not yet ready to purchase.)
+- [x] Users can delete the content of their cart by pressing the "empty cart" button without needing to checkout. Also, the receipt calculations were done on the backend to secure the purchase.

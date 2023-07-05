@@ -1,0 +1,46 @@
+.sidebar .closed {
+    width: 80px;
+}
+
+.sidebar .open {  
+    width: 600px;
+    align-items: center;
+    margin-left: -20px;
+}
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60px;
+    flex: 1;
+    transition: all .2s cubic-bezier(.215,.61,.355,1);
+    position: fixed;
+    z-index: 100;
+    top: 0px;
+    height: 100vh;
+    padding: 0;
+    overflow-y: scroll;
+    padding-bottom: 2rem;
+    background: rgb(21, 84, 21);
+    border-right: solid 1px white;
+
+}
+
+.cart-icon{
+
+    color: white;
+    display: flex;
+    margin: 20px;
+    align-items: center;
+    
+
+}
+
+.sidebar-title{
+
+    margin-left: 60px;
+    color: white;
+}
+
+
