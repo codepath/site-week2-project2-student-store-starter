@@ -1,0 +1,17 @@
+.sidebar {
+    width: 5%;
+    height: 100%;
+    background-color: rgb(87, 2, 87);
+    display:block;
+    position:fixed;
+    overflow-y: scroll;
+}
+
+.conmail{
+    border: solid;
+    border-radius: 10px;
+    background-color: rgb(205, 137, 205);
+    width:98%;
+    margin-left: 6px;
+    text-align: center;
+}

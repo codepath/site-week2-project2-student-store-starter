@@ -1,0 +1,9 @@
+.about {
+    background-color: rgb(87, 2, 87);
+    width: 60%;
+    height: 10%;
+    padding: 10px;
+    margin-left: 20%;
+    border: solid black;
+    color: whitesmoke;
+}
