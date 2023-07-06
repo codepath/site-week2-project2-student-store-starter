@@ -1,0 +1,31 @@
+.about-cont{
+    display: flex;
+    flex-direction: row;
+    margin-left: 9%;
+    margin-right: 5%;
+    margin-top: 5%
+}
+
+.about-text{
+    background-color: white
+
+}
+
+.about-text p {
+    color: black;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5%;
+}
+
+.about-img{
+    background-color: #2c4047;
+    width: 60%;
+    justify-content: center;
+    padding: 5%
+    
+}
+
+.about-img img{
+    margin-left: 20%;
+}

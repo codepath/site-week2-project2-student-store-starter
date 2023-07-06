@@ -1,0 +1,28 @@
+.sidebar{
+    width: 5%;
+    height: 100vh;
+    background-color:#2c4047;
+    display: block;
+    position: fixed;
+    overflow-y:scroll ;
+    border-right: solid 1px white ; 
+}
+
+.open-sidebar{
+    width: 30%;
+    height: 100vh;
+    background-color:#2c4047;
+    display: block;
+    position: fixed;
+    overflow-y:scroll ;
+    border-right: solid 1px white ; 
+}
+
+.material-icons{
+    display: inline-block;
+    padding:30px;
+    color: white;
+    
+}
+
+.material-icons.md-36 { font-size: 36px; }

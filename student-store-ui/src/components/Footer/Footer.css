@@ -1,0 +1,17 @@
+.footer{
+    background-color: white;
+    margin-left:5%;
+    margin-top: 6%;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    width: 100%;
+    padding-left: 5%;
+    margin-top: auto;
+    bottom: 0;
+    
+}
+
+.footer p{
+    margin-right: 10%;
+    margin-left: 10%
+}

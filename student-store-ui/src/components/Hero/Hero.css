@@ -1,0 +1,35 @@
+.description{
+    display: flex;
+    justify-content: center;
+    color:white;
+    font-size: 30px;
+    font-family:'Times New Roman', Times, serif;
+    width: 60%;
+    padding-left: 5%
+    
+}
+
+.intro {
+    text-align: center;
+    color: white;
+    font-size: 50px;
+}
+
+.hero{
+    display:block;
+    background-color: #00c385;
+    width: 70%;
+    margin-left: 8%;
+    margin-right: 2%
+}
+
+.hero-image{
+    width: 200px;
+    height: 200px;
+}
+
+.hero div{
+    display: flex;
+    justify-content: space-between;
+}
+
