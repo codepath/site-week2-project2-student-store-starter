@@ -10,15 +10,19 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - Add several products to the shopping cart.
 - Checkout and view the final receipt.
 
+[Video Demonstration of Webpage (Project Week 2)](https://www.loom.com/share/13e549faa5f14cf5bcad4a7a0a4b13cb?sid=61491e16-3689-4757-88fd-86a2ac007e14)
+
+[Video Demonstration of Webpage (Project Week 3)](https://www.loom.com/share/40c73550238a4ffdbfba8b0f1cd4e099?sid=1aa1f0d1-61fb-40ee-979a-1924b4fa1494)
+
 ## *Week 2* Application Features
 
 ### Core Features
 
-- [ ] The website displays header, banner, search, product grid, about, contact, and footer section.
-- [ ] The website displays the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store) on initial page load.
-- [ ] Users can click on a category (clothing, food, etc.) to filter the product grid by type.
-- [ ] Users can search for products.
-- [ ] User can click on a product in the grid to navigate to a new page containing additional product details.
+- [X] The website displays header, banner, search, product grid, about, contact, and footer section.
+- [X] The website displays the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store) on initial page load.
+- [X] Users can click on a category (clothing, food, etc.) to filter the product grid by type.
+- [X] Users can search for products.
+- [X] User can click on a product in the grid to navigate to a new page containing additional product details.
 
 ### Stretch Features
 
@@ -32,11 +36,11 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 
 ### Core Features
 
-- [ ] User can click to expand the shopping cart in the left navigation.
-- [ ] Users can click the '+' button on a product cart to increment that product in the shopping cart.
-- [ ] Users can click the '-' button on a product cart to decrement that product in the shopping cart. If the count is zero, the product should be removed from the cart.
-- [ ] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
-- [ ] Users can checkout, and receive a receipt confirming their purchase.
+- [X] User can click to expand the shopping cart in the left navigation.
+- [X] Users can click the '+' button on a product cart to increment that product in the shopping cart.
+- [X] Users can click the '-' button on a product cart to decrement that product in the shopping cart. If the count is zero, the product should be removed from the cart.
+- [X] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
+- [X] Users can checkout, and receive a receipt confirming their purchase.
 
 ### Stretch Features
 

@@ -145,5 +145,23 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "id": 0,
+      "name": "a",
+      "email": "a",
+      "order": [
+        {
+          "id": "2",
+          "quantity": 3
+        },
+        {
+          "id": "3",
+          "quantity": 2
+        }
+      ],
+      "subtotal": 10.48,
+      "total": 11.397
+    }
+  ]
 }
