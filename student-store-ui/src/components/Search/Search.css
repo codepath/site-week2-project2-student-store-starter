@@ -1,0 +1,45 @@
+ #search-input {
+    font-size: 15px;
+    width: 600px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.search { 
+    margin: 0 auto;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+
+button {
+    font-size: 15px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+
+}
+
+.cat-button{
+width: 150px;
+padding: 10px;
+margin-right: 70px;
+color: black;
+background-color: white;
+border: none;
+font-size: 20px;
+}
+
+.cat-button:focus{
+position: relative;
+border-bottom: solid #9bd1e5;
+}
+
+
+.cat-button:hover{
+    background-color: #9bd1e5;
+}
+.categories{
+    margin: 0 auto;
+}

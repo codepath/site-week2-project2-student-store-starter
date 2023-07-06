@@ -1,0 +1,9 @@
+.productGrid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 5px;
+  gap: 25px;
+  margin-left: 20px;
+}
