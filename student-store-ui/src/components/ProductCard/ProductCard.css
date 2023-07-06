@@ -1,0 +1,117 @@
+.product-card {
+    background: var(--pure-white);
+    display: flex;
+    flex-direction: column;
+    border: solid 1px var(--border-color);
+    max-width: 800px
+}
+
+.product-card .media {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: center
+}
+
+.product-card .media img {
+    max-width: 800px
+}
+
+.product-card .product-info {
+    flex: 1;
+    display: flex;
+    border-top: solid 1px var(--border-color)
+}
+
+.product-card .main-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 12px
+}
+
+.product-card .main-info .product-name {
+    font-size: 15px;
+    font-weight: 500;
+    padding-bottom: 5px
+}
+
+.product-card .main-info .product-price {
+    font-size: 14px;
+
+}
+
+.product-card .actions {
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around
+}
+
+.product-card .quantity {
+    width: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 5px
+}
+
+.product-card .quantity .amt {
+    background: var(--accent-orange);
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.product-card .buttons {
+    width: 80px;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end
+}
+
+.product-card .buttons button {
+    display: flex;
+    outline: none;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    max-height: fit-content;
+    max-width: fit-content;
+    margin: 10px 5px
+}
+
+.product-card .buttons i {
+    width: 20px;
+    height: 20px;
+    border: solid 1px var(--bright-green);
+    color: var(--bright-green);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px
+}
+
+.product-card .desc {
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 600px;
+    width: 100%
+}
+.stars p{
+    font-weight: bold;
+    text-shadow: #383232;
+    color: var(--star-color-filled);
+    height: 20px;
+    width: 20px;
+    
+}
