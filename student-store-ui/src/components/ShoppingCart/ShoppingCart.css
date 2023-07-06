@@ -1,0 +1,297 @@
+
+
+.shopping-cart {
+  width: 100%;
+  color: #554028;
+}
+h3 {
+  color: white;
+  text-align: center;
+}
+.notification {
+  color: white;
+  text-align: center;
+}
+.shopping-cart .open {
+  max-width: 550px;
+}
+
+.shopping-cart .open > h3 {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shopping-cart .open > h3 > span {
+  margin-left: 10px;
+}
+
+.shopping-cart .notification {
+  color: #fff;
+  text-align: center;
+  margin: 10px;
+}
+
+.shopping-cart .cart-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  width: 100%;
+  padding-left: 0.5rem;
+}
+
+.shopping-cart .cart-icon {
+  margin-bottom: 16px;
+}
+
+.shopping-cart .CartTable {
+  width: 100%;
+  margin-top: 20px;
+  /* margin: 0 10px; */
+}
+
+.shopping-cart .CartTable .header {
+  display: flex;
+  flex-direction: column;
+  background:  #e4ddac;
+  border: solid#b4834c;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.shopping-cart .header-row {
+  display: flex;
+  height: 50px;
+  background: #e4ddac;
+  border: solid#b4834c;
+  margin-bottom: 15px;
+}
+
+.shopping-cart .header-row span {
+  flex: 1;
+  color: #b4834c;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 17px;
+  font-weight: 600;
+  margin-left: 15px;
+}
+
+.shopping-cart .header-row span.center {
+  display: flex;
+  justify-content: center;
+}
+
+.shopping-cart .flex-2 {
+  flex: 2;
+  padding-left: 10px;
+}
+
+.shopping-cart .product-row {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 20px;
+  margin-top: 10px;
+  border-bottom: solid 5px var(--border-color);
+}
+
+.shopping-cart .product-row span {
+  flex: 1;
+  
+}
+
+.shopping-cart .product-row span.center {
+  display: flex;
+  justify-content: center;
+}
+.label a{
+  color: #785834;
+  text-decoration: blue;
+}
+.shopping-cart .receipt {
+  display: flex;
+  flex-direction: column;
+  background: var(--pure-white);
+  border-radius: 4px;
+  width: 100%;
+  margin-top: 10px;
+  background-color: #e4ddac;
+  color: #554028
+}
+
+.shopping-cart .receipt span {
+  flex: 1;
+}
+
+.shopping-cart .receipt span.center {
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.shopping-cart .receipt .receipt-subtotal,
+.shopping-cart .receipt .receipt-taxes,
+.shopping-cart .receipt .receipt-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0;
+  color: #554028
+}
+
+.shopping-cart .receipt .receipt-total {
+  border-top: solid 3px #e4ddac;
+}
+
+.shopping-cart .receipt .label {
+  font-weight: 600;
+  padding-left: 10px;
+}
+
+/* Added CSS for shopping cart items */
+ .shopping-cart .cart-product-name {
+  flex: 2;
+}
+
+.shopping-cart .cart-product-quantity,
+.shopping-cart .cart-product-price,
+.shopping-cart .cart-product-subtotal {
+  display: flex;
+  justify-content: center;
+} 
+
+.shopping-cart .cart-product-subtotal {
+  flex: 1;
+}
+
+.checkout-form {
+  padding: 16px
+}
+
+.checkout-form>h3 {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.checkout-form>h3>span {
+  margin-left: 10px
+}
+
+.checkout-form .label {
+  color: #fff
+}
+
+.checkout-form .is-danger {
+  color: #554028
+}
+
+.checkout-form .input-field {
+  width: 100%;
+  margin: 5px 0
+}
+
+.checkout-form .input-field .label {
+  color: #fff
+}
+
+.checkout-form .input-field .control {
+  width: 100%;
+  margin: 5px 0
+}
+
+.checkout-form .input-field .control input {
+  width: 100%;
+  height: 36px;
+  padding: 0 15px;
+  border-radius: 8px;
+  border: solid 1px #e4e4e4;
+  flex: 1;
+  font-size: 16px
+}
+
+.checkout-form button {
+  margin-top: 10px;
+  padding: 12px 18px;
+  font-size: 18px;
+  cursor: pointer;
+  background: transparent;
+  border: solid 1px white;
+  color: #fff;
+}
+
+.header {
+  color: #554028
+}
+
+.checkout-form button:hover {
+  background-color: #b4834c;
+}
+
+.checkout-success {
+  width: 100%;
+  padding: 1rem
+}
+
+.checkout-success>h3 {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.checkout-success>h3>span {
+  margin-left: 10px
+}
+
+.checkout-success p {
+  color: #fff
+}
+
+.checkout-success .card {
+  color: #554028;
+  display: flex;
+  flex-direction: column
+}
+
+.purchase {
+  padding: 20px;
+  color: #554028
+}
+
+
+.checkout-success .card .card-title {
+  color: #554028;
+  font-weight: 20px;
+  margin-bottom: 5px
+}
+
+.checkout-success .purchase .header {
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  margin: 10px 0
+}
+
+.checkout-success .purchase {
+  padding-left: 20px;
+ 
+}
+
+.checkout-success .purchase li {
+  color: #fff
+}
+
+.checkout-success button {
+  margin: 10px;
+  padding: 12px 18px;
+  font-size: 18px;
+  cursor: pointer;
+  background: transparent;
+  border: solid 1px white;
+  color: #fff
+}
