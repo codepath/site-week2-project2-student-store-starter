@@ -17,8 +17,8 @@ export const appInfo = {
   img_src: "./student-store-express-api/data/images.png",
 };
 
-// const url = "https://codepath-store-api.herokuapp.com/store"
-const url = "http://localhost:3001"; // nonsecure
+const url = "https://codepath-store-api.herokuapp.com/store"
+// const url = "http://localhost:3001"; // nonsecure
 export default function App() {
   const [products, setProducts] = useState();
   const [searchInput, setSearchInput] = useState(); // used for search
@@ -45,10 +45,8 @@ export default function App() {
   const [totalSpendings, setTotalSpendings] = useState(0);
   const [allTransactions, setAllTransactions] = useState([]);
   const [totalOrderQuantity, setTotalOrderQuantity] = useState([]);
-  const [filteredTransactions, setFilteredTransactions] = useState([]);
-  const [transactionInput, setTransactionInput] = useState("")
-  const [popupOpen, setPopupOpen] = useState([]);
-  
+// let totalOrderQuantity = [];
+
   useEffect(() => {
     axios.get(url).then((response) => {
       setProducts(response.data.products);
@@ -136,9 +134,11 @@ export default function App() {
       );
       let updatedCart = [...shoppingCart];
       if (updatedCart[index].quantity - 1 == 0) {
+        // remove item from shopping cart array entirely
         updatedCart = shoppingCart.filter((item) => item.itemId !== productId);
         setShoppingCart(updatedCart);
       } else {
+        // Decrement the quantity by 1 for the item with the given item ID
         updatedCart[index] = {
           itemId: updatedCart[index].itemId,
           quantity: --updatedCart[index].quantity,
@@ -146,26 +146,19 @@ export default function App() {
       }
       setShoppingCart(updatedCart);
     }
-  } 
-
-  function handleTransactionInput(event){
-    setTransactionInput(event.target.value)
-    {let filteredItems = allTransactions?.filter((transaction) => {
-        return transaction.email.includes(event.target.value)
-    });
-    setFilteredTransactions(filteredItems)}   
-  }
+  } // if item is not in shopping cart yet, just do nothing
 
   // Sets the checkout form as submitted
   // Empties shopping cart, resets the name and email forms and accepted T&C state
   function handleCheckout(event) {
     if (
       nameTerm != "" &&
-      emailTerm.includes("@") && emailTerm.includes(".com") &&
+      emailTerm !== "" &&
       acceptedTermsAndConditions &&
       shoppingCart &&
       shoppingCart.length > 0
     ) {
+      // console.log(shoppingCart)
       setReceiptTotalPrice(totalPrice);
       setReceiptEmail(emailTerm);
       setReceiptName(nameTerm);
@@ -204,7 +197,6 @@ export default function App() {
     setNameTerm("");
     setEmailTerm("");
     setAcceptedTermsAndConditions(false);
-    setIsOpen(false)
   }
 
   function handleAcceptTermsAndConditions(event) {
@@ -217,7 +209,7 @@ export default function App() {
       <BrowserRouter>
         <main>
           <Sidebar
-            key={4}
+            key={"sidebar"}
             products={getFilteredProducts()}
             onToggle={onToggle}
             isOpen={isOpen}
@@ -277,12 +269,12 @@ export default function App() {
                     key={3}
                     products={products}
                     // order={order}
-                    allTransactions={(transactionInput!="")? filteredTransactions : allTransactions}
+                    receiptName={receiptName}
+                    receiptEmail={receiptEmail}
+                    totalSpendings={totalSpendings}
+                    allTransactions={allTransactions}
                     totalOrderQuantity={totalOrderQuantity}
-                    transactionInput={transactionInput}
-                    handleTransactionInput={handleTransactionInput}
-                    setPopupOpen={setPopupOpen}
-                    popupOpen={popupOpen}
+                    setTotalOrderQuantity={setTotalOrderQuantity}
                   ></Orders>
                 }
               ></Route>

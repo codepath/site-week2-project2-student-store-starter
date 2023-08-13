@@ -8,6 +8,7 @@ export default function ProductGrid({
   handleAddItemToCart,
   handleRemoveItemToCart,
 }) {
+  console.log(products)
   if (!products) {
     return; // should not display any products
   }
