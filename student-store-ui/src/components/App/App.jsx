@@ -11,11 +11,10 @@ export default function App() {
   const [searchValue, setSearchValue] = useState("");
   const [category, setCategory] = useState("");
   const [products, setProducts] = useState([]);
-  const url = "http://localhost:3001/store";
+  const url = "https://studentstore-backend.onrender.com/store";
 
   useEffect(() => {
     axios.get(url).then((response) => {
-      // console.log(response.data);
       setProducts(response.data);
     });
   }, []);

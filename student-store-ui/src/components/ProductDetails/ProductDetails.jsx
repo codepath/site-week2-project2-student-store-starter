@@ -11,7 +11,7 @@ import { useParams } from "react-router-dom";
 
 export default function ProductDetail() {
   const { id } = useParams();
-  let url = `http://localhost:3001/store/${id}`;
+  let url = `https://studentstore-backend.onrender.com/store/${id}`;
 
   const [product, setProduct] = useState([]);
 
