@@ -1,0 +1,58 @@
+.navbar {
+  background-color: var(--dark-Cp);
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+}
+.nav-logo {
+  margin-left: 150px;
+}
+
+.socials {
+  margin-right: 80px;
+  width: 500px;
+  height: 80px;
+  padding-top: 15px;
+}
+.codePathHandle {
+  font-size: 180%;
+  margin-left: 25px;
+  margin-right: 25px;
+  color: white;
+  justify-content: center;
+}
+nav ul {
+  float: right;
+  margin-right: 20px;
+}
+.nav-logo img {
+  width: 80px;
+  height: 80px;
+}
+nav ul li {
+  display: inline-block;
+  margin: 0 10px;
+  height: 60px;
+}
+
+.nav-link,
+.codePathHandle {
+  color: white;
+  padding: 7px 13px;
+  border-radius: 3px;
+  transition: 0.5s;
+}
+
+.nav-link {
+  float: inline-end;
+  font-size: 20px;
+  text-decoration: underline;
+}
+.menu-links {
+  margin-top: 22px;
+}
+
+.nav-link:hover,
+.codePathHandle:hover {
+  background: var(--light-cp);
+}

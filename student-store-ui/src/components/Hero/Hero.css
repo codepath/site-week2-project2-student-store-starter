@@ -1,0 +1,27 @@
+.hero {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: var(--light-cp);
+  width: 60%;
+  height: 350px;
+  padding: 20px;
+}
+
+.heroP{
+  width: 60%;
+}
+
+.hero-img {
+  width: 40%;
+  transition: all 0.7s;
+}
+.hero-img:hover {
+  transform: scale(1.6);
+}
+
+.intro {
+  font-size: x-large;
+  color: white;
+}
