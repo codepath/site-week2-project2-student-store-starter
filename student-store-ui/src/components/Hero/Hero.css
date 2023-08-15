@@ -9,6 +9,10 @@
   padding: 20px;
 }
 
+.heroP{
+  width: 60%;
+}
+
 .hero-img {
   width: 150px;
   transition: all 0.7s;

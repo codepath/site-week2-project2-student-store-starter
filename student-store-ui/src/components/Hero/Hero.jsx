@@ -8,7 +8,7 @@ export default function Hero() {
         <h1>
           Welcome! <br /> Find Your Merch
         </h1>
-        <p>
+        <p className="heroP">
           We have all kinds of goodies. Click on any of the items to start
           filling up your shopping cart. Checkout whenever you're ready.
         </p>
