@@ -14,7 +14,7 @@
 }
 
 .hero-img {
-  width: 150px;
+  width: 40%;
   transition: all 0.7s;
 }
 .hero-img:hover {
