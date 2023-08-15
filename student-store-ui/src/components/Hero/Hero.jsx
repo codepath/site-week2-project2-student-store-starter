@@ -10,8 +10,7 @@ export default function Hero() {
         </h1>
         <p>
           We have all kinds of goodies. Click on any of the items to start
-          filling up your <br />
-          shopping cart. Checkout whenever you're ready.
+          filling up your shopping cart. Checkout whenever you're ready.
         </p>
       </div>
       <img
