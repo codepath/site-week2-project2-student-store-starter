@@ -1,0 +1,14 @@
+A purchase will have this elements
+
+id (unique),
+email,
+name of the buyer,
+date,
+items,
+subtotal,
+tax,
+total
+
+
+items will be structured by: 
+array => key: id => qty: number, price: number, name string.

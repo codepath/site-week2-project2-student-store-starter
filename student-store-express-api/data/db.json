@@ -145,5 +145,168 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "id": "3666a4a3-bcaa-4afb-8d93-40a94b73e482",
+      "items": [
+        {
+          "id": 4,
+          "name": "Coconut Water",
+          "price": 3.25,
+          "qty": 1
+        },
+        {
+          "id": 3,
+          "name": "Cinnamon Rolls",
+          "price": 2.99,
+          "qty": 1
+        }
+      ],
+      "date": 1688003144876,
+      "email": "example@meta.com",
+      "buyerName": "John Doe",
+      "tax": 0.49920000000000003,
+      "subtotal": 6.24,
+      "total": 6.7392
+    },
+    {
+      "id": "0a47e3f4-8f9d-4b4f-9398-92682981b479",
+      "items": [
+        {
+          "id": 4,
+          "name": "Coconut Water",
+          "price": 3.25,
+          "qty": 1
+        },
+        {
+          "id": 3,
+          "name": "Cinnamon Rolls",
+          "price": 2.99,
+          "qty": 1
+        }
+      ],
+      "date": 1688003603284,
+      "email": "adrian.fersa@gmail.com",
+      "buyerName": "Dummy Guy",
+      "tax": 0.49920000000000003,
+      "subtotal": 6.24,
+      "total": 6.7392
+    },
+    {
+      "id": "e7ec4f46-e757-43e4-996b-b0bc0f16af64",
+      "items": [
+        {
+          "id": 3,
+          "name": "Cinnamon Rolls",
+          "price": 2.99,
+          "qty": 1
+        }
+      ],
+      "date": 1688163229344,
+      "email": "fuckingfacker",
+      "buyerName": "hola",
+      "tax": 0.23920000000000002,
+      "subtotal": 2.99,
+      "total": 3.2292
+    },
+    {
+      "id": "0f664388-cf89-4038-9536-3c17faa50a88",
+      "items": [
+        {
+          "id": 2,
+          "name": "Flamin Hot Cheetos",
+          "price": 1.5,
+          "qty": 1
+        },
+        {
+          "id": 3,
+          "name": "Cinnamon Rolls",
+          "price": 2.99,
+          "qty": 1
+        },
+        {
+          "id": 4,
+          "name": "Coconut Water",
+          "price": 3.25,
+          "qty": 1
+        },
+        {
+          "id": 7,
+          "name": "Striped Socks",
+          "price": 4.99,
+          "qty": 1
+        }
+      ],
+      "date": 1688171635797,
+      "email": "timelee@meta.com",
+      "buyerName": "Tim Lee",
+      "tax": 1.0184,
+      "subtotal": 12.73,
+      "total": 13.7484
+    },
+    {
+      "id": "0d734815-36e7-413a-acd7-f2f8ee643a0d",
+      "items": [
+        {
+          "id": 2,
+          "name": "Flamin Hot Cheetos",
+          "price": 1.5,
+          "qty": 1
+        },
+        {
+          "id": 3,
+          "name": "Cinnamon Rolls",
+          "price": 2.99,
+          "qty": 1
+        },
+        {
+          "id": 4,
+          "name": "Coconut Water",
+          "price": 3.25,
+          "qty": 1
+        },
+        {
+          "id": 8,
+          "name": "Knitted Beanie",
+          "price": 19.99,
+          "qty": 1
+        },
+        {
+          "id": 7,
+          "name": "Striped Socks",
+          "price": 4.99,
+          "qty": 1
+        },
+        {
+          "id": 6,
+          "name": "Bar Code Shirts",
+          "price": 19.99,
+          "qty": 1
+        }
+      ],
+      "date": 1688172956248,
+      "email": "adrianfersa@meta.comf",
+      "buyerName": "Adrian Fernandez Santana",
+      "tax": 4.2168,
+      "subtotal": 52.709999999999994,
+      "total": 56.92679999999999
+    },
+    {
+      "id": "79cbc718-0a56-4c1b-a984-de3d53d92d48",
+      "items": [
+        {
+          "id": 1,
+          "name": "Rice Krispies",
+          "price": 0.99,
+          "qty": 5
+        }
+      ],
+      "date": 1688255222135,
+      "email": "realswat@meta.com",
+      "buyerName": "Godfred Asamoah",
+      "tax": 0.396,
+      "subtotal": 4.95,
+      "total": 5.346
+    }
+  ]
 }
