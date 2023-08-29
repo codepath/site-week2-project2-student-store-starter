@@ -1,0 +1,83 @@
+.product-card .main-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 12px;
+}
+.product-card .product-info {
+  flex: 1;
+  display: flex;
+  background: #a9d6e5;
+  border-top: solid 1px #e4e4e4;
+  width: 250px
+}
+
+.product-card .main-info .product-name {
+  font-size: 15px;
+  font-weight: 500;
+}
+.product-card .main-info .product-price {
+  font-size: 14px;
+}
+
+.stars {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 40px;
+}
+.product-card .actions {
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.product-card .buttons {
+  width: 80px;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.product-card .buttons button {
+  display: flex;
+  outline: none;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  max-height: fit-content;
+  max-width: fit-content;
+  margin: 10px 5px;
+}
+.product-card .buttons i {
+  width: 20px;
+  height: 20px;
+  border: solid 1px #012a4a;
+  color: #012a4a;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.product-card .quantity {
+  width: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 5px;
+}
+
+.product-card .quantity .amt {
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
