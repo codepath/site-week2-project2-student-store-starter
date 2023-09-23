@@ -15,8 +15,8 @@ import axios from "axios";
 
 export default function App() {
   //https://codepath-store-api.herokuapp.com/store
-  // const url = "http://localhost:3001/";
-  const url = "https://codepath-store-api.herokuapp.com/store";
+  const url = "http://localhost:3001/";
+  // const url = "https://codepath-store-api.herokuapp.com/store";
 
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = React.useState("");
@@ -69,7 +69,7 @@ export default function App() {
               }
             ></Route>
           </Routes>
-          <About />
+          <About id="about"/>
           <Contact />
           <Footer />
         </BrowserRouter>

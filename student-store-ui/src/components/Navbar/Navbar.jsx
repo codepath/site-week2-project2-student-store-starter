@@ -8,8 +8,9 @@ export default function Navbar() {
         <div className="logo">
           <a href="">
             <img
-              src="https://codepath-student-store-demo.surge.sh/assets/codepath.f1b3e41a.svg"
-              alt="codepath logo"
+            style={{width: "100px"}}
+              src="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX5559842.jpg"
+              alt="logo"
             />
           </a>
         </div>
@@ -21,13 +22,13 @@ export default function Navbar() {
             </li>
           </Link>
           <li>
-            <a href="">About Us</a>
+            <a href="#About" style={{color: "white"}}>About Us</a>
           </li>
           <li>
-            <a href="">Contact Us</a>
+            <a href="" style={{color: "white"}}>Contact Us</a>
           </li>
           <li>
-            <a href="">Buy Now</a>
+            <a href="" style={{color: "white"}}>Buy Now</a>
           </li>
         </ul>
       </div>
