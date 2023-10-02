@@ -8,8 +8,8 @@ export default function Navbar() {
         <div className="logo">
           <a href="">
             <img
-            style={{width: "100px"}}
-              src="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX5559842.jpg"
+            style={{width: "60px"}}
+            src="https://codepath-student-store-demo.surge.sh/assets/student_store_icon.18e5d61a.svg"
               alt="logo"
             />
           </a>
